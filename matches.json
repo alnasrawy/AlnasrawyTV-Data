@@ -1,0 +1,34 @@
+{
+  "matches": [
+    {
+      "id": "f_1",
+      "homeTeam": "ريال مدريد",
+      "homeLogo": "",
+      "awayTeam": "برشلونة",
+      "awayLogo": "",
+      "matchTime": "22:00",
+      "competition": "الدوري الإسباني",
+      "broadcasters": [
+        {
+          "channelName": "beIN Sports 1",
+          "commentator": "عصام الشوالي"
+        }
+      ]
+    },
+    {
+      "id": "f_2",
+      "homeTeam": "مانشستر سيتي",
+      "homeLogo": "",
+      "awayTeam": "ليفربول",
+      "awayLogo": "",
+      "matchTime": "19:00",
+      "competition": "الدوري الإنجليزي",
+      "broadcasters": [
+        {
+          "channelName": "beIN Sports 2",
+          "commentator": "حفيظ دراجي"
+        }
+      ]
+    }
+  ]
+}
