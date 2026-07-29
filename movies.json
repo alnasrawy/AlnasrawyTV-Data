@@ -8,16 +8,8 @@
     "rating": 8.8,
     "year": "2026",
     "sources": [
-      {
-        "id": 1,
-        "name": "سيرفر 1 (تجريبي)",
-        "url": "https://vidsrc.me/embed/movie?tmdb=550"
-      },
-      {
-        "id": 2,
-        "name": "سيرفر 2 (تجريبي)",
-        "url": "https://vidsrc.cc/v2/embed/movie/550"
-      }
+      {"id": 1, "name": "سيرفر 1 (تجريبي)", "url": "https://vidsrc.me/embed/movie?tmdb=550"},
+      {"id": 2, "name": "سيرفر 2 (تجريبي)", "url": "https://vidsrc.cc/v2/embed/movie/550"}
     ]
   }
 ]
