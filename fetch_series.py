@@ -1,0 +1,65 @@
+import json
+import requests
+
+TMDB_API_KEY = "ebda82be344d188aaec350fa63ccf401"
+URL = f"https://api.themoviedb.org/3/trending/tv/day?api_key={TMDB_API_KEY}&language=ar-SA"
+
+def fetch_series():
+    print("🔄 Fetching TV series from TMDB...")
+    response = requests.get(URL)
+    
+    if response.status_code != 200:
+        print("❌ Failed to fetch data from TMDB")
+        return []
+
+    results = response.json().get('results', [])
+    series_list = []
+
+    for item in results[:10]: # تجربة أول 10 مسلسلات
+        tmdb_id = item.get('id')
+        title = item.get('name')
+        overview = item.get('overview', '')
+        poster_path = item.get('poster_path', '')
+        backdrop_path = item.get('backdrop_path', '')
+        vote_average = item.get('vote_average', 0)
+        first_air_date = item.get('first_air_date', '')[:4]
+
+        # بناء هيكل الموسم والأقسام والسيرفرات للحلقة الأولى كإثبات مفهوم
+        seasons = [
+            {
+                "season_number": 1,
+                "episodes": [
+                    {
+                        "episode_number": 1,
+                        "title": "الحلقة 1",
+                        "sources": [
+                            {"id": 1, "name": "سيرفر 1", "url": f"https://vidsrc.me/embed/tv?tmdb={tmdb_id}&season=1&episode=1"},
+                            {"id": 2, "name": "سيرفر 2", "url": f"https://vidsrc.cc/v2/embed/tv/{tmdb_id}/1/1"}
+                        ]
+                    }
+                ]
+            }
+        ]
+
+        series_data = {
+            "id": tmdb_id,
+            "title": title,
+            "description": overview,
+            "posterUrl": f"https://image.tmdb.org/t/p/w500{poster_path}" if poster_path else "",
+            "backdropUrl": f"https://image.tmdb.org/t/p/w780{backdrop_path}" if backdrop_path else "",
+            "rating": round(vote_average, 1),
+            "year": first_air_date,
+            "seasons": seasons
+        }
+        series_list.append(series_data)
+
+    return series_list
+
+def main():
+    series = fetch_series()
+    with open("series.json", "w", encoding="utf-8") as f:
+        json.dump(series, f, ensure_ascii=False, indent=2)
+    print(f"✅ Successfully generated series.json with {len(series)} series!")
+
+if __name__ == "__main__":
+    main()
