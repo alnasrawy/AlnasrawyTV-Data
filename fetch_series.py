@@ -1,7 +1,7 @@
 import json
 import requests
 
-TMDB_API_KEY = "ebda82be344d188aaec350fa63ccf401"
+TMDB_API_KEY = "9934aa2ab8462d1f4f1c28d5e4e48069"
 URL = f"https://api.themoviedb.org/3/trending/tv/day?api_key={TMDB_API_KEY}&language=ar-SA"
 
 # إضافة هيدر متصفح لتفادي حظر TMDB لسكربتات البايثون
