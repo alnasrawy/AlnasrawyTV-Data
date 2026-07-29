@@ -1,11 +1,11 @@
 [
   {
-    "id": 999901,
-    "title": "مسلسل تجريبي - Alnasrawy TV",
-    "description": "هذا مسلسل تجريبي للتأكد من ربط السيرفرات والتطبيق بنجاح.",
-    "posterUrl": "https://image.tmdb.org/t/p/w500/1E5baAaEse26feLBvuX3yA98pTo.jpg",
-    "backdropUrl": "https://image.tmdb.org/t/p/w780/1E5baAaEse26feLBvuX3yA98pTo.jpg",
-    "rating": 9.5,
+    "id": 278624,
+    "title": "Lucky",
+    "description": "عندما تفشل عملية سرقة بملايين الدولارات، تُجبر المحتالة \"لاكي\"،، على الفرار. وبين الهرب من الفيدراليين وزعيم جريمة لا يرحم، تقاتل \"لاكي\" للنجاة بحياتها ولإيجاد مخرج.",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/xsrkiXg8EuNNtbPtbmvCxg95gK7.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/hKXMOOvQwXiL01hfYG5nrkH0tEP.jpg",
+    "rating": 7.2,
     "year": "2026",
     "seasons": [
       {
@@ -17,13 +17,301 @@
             "sources": [
               {
                 "id": 1,
-                "name": "سيرفر 1 (تجريبي)",
-                "url": "https://vidsrc.me/embed/tv?tmdb=1396&season=1&episode=1"
+                "name": "سيرفر 1",
+                "url": "https://vidsrc.me/embed/tv?tmdb=278624&season=1&episode=1"
               },
               {
                 "id": 2,
-                "name": "سيرفر 2 (تجريبي)",
-                "url": "https://vidsrc.cc/v2/embed/tv/1396/1/1"
+                "name": "سيرفر 2",
+                "url": "https://vidsrc.cc/v2/embed/tv/278624/1/1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 327814,
+    "title": "المشروع الأخير",
+    "description": "بداية جديدة في مدرسة جديدة... إلى أن يتشكّل رابط خطير بفعل هجمات إلكترونية عنيفة إلى جانب تحدي مريب من أحد الزملاء، ما يدفع \"تامارا\" إلى خوض تحوّل جذري.",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/11rCh2E4SmdT06Qr9HsBrIftoHQ.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/rc3Jy6sWFt7PDVGFqLjvo7tle13.jpg",
+    "rating": 9.0,
+    "year": "2026",
+    "seasons": [
+      {
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "الحلقة 1",
+            "sources": [
+              {
+                "id": 1,
+                "name": "سيرفر 1",
+                "url": "https://vidsrc.me/embed/tv?tmdb=327814&season=1&episode=1"
+              },
+              {
+                "id": 2,
+                "name": "سيرفر 2",
+                "url": "https://vidsrc.cc/v2/embed/tv/327814/1/1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 287238,
+    "title": "الــثــائــرة",
+    "description": "تدور القصة حول عميلة في مكتب التحقيقات الفيدرالي (FBI) تُدعى أليس بلاك، تؤدي دورها إيمي روسوم، تنطلق في مطاردة قاتلة متسلسلة ذكية وغامضة تُدعى كاثرين. ومع تقدم الأحداث، تبدأ حياة المطاردة والمجرمة بالتشابك، ويصبح من الصعب التمييز بين الخير والشر والعدالة والانتقام",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/hf3tdaDfpkCk4XWukWlk6vh3PAW.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/iAOPgUlh7inOebFrUFHAjnFRCGS.jpg",
+    "rating": 6.3,
+    "year": "2026",
+    "seasons": [
+      {
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "الحلقة 1",
+            "sources": [
+              {
+                "id": 1,
+                "name": "سيرفر 1",
+                "url": "https://vidsrc.me/embed/tv?tmdb=287238&season=1&episode=1"
+              },
+              {
+                "id": 2,
+                "name": "سيرفر 2",
+                "url": "https://vidsrc.cc/v2/embed/tv/287238/1/1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 30984,
+    "title": "المطهر",
+    "description": "تحكي قصة الأنمي عن فتى في 15 من عمره يدعى كوروساكي إتشيغو لديه القدرة على رؤية الأشباح و الهولو و الشينيغاميين ….. ثم تبدأ الأحداث بمقابلة إتشيغو لروكيا كوتشيكي شينيغامية قادمة من مجتمع الأطياف ،، جاءت إلى العالم الحقيقي حتى تقضي على الأشباح التي تهاجم العالم الحقيقي ،، وجدت روكيا قوة كبيرة لدى إتشيغو فقامت بإعطائه القليل من قوتها حتى يستطيع إتشيغو استعمال طاقته الروحية  و تستمر الحلقات حتى تنشأ علاقة حميمة بين العالم الحقيقي و مجتمع الأطياف ،، و يظهر أعداء جدد و مفاجآت لا يمكن توقعها أبداً ،،",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/tEUE489V8OGlPAbY0VkNbkXbXMv.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/o0NsbcIvsllg6CJX0FBFY8wWbsn.jpg",
+    "rating": 8.4,
+    "year": "2004",
+    "seasons": [
+      {
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "الحلقة 1",
+            "sources": [
+              {
+                "id": 1,
+                "name": "سيرفر 1",
+                "url": "https://vidsrc.me/embed/tv?tmdb=30984&season=1&episode=1"
+              },
+              {
+                "id": 2,
+                "name": "سيرفر 2",
+                "url": "https://vidsrc.cc/v2/embed/tv/30984/1/1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 215072,
+    "title": "متجر للقتلة",
+    "description": "تضحى حياتها متاهة من الغموض غداة الانتحار المزعوم لعمّها، إذ ينهال عليها وابل من الرصاص تارة وتُحاصر بطائرات مُسيّرة للقتل تارّة، وللنجاة يتعين عليها كشف طلاسم وفاة عمّها وسبب استهدافها بلا رحمة من كلّ جانب.",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/AvrBbDO8Fhtcey94877eqOg1VOn.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/mWVeYmtCfA3zvSeZtW5bN2Khe01.jpg",
+    "rating": 8.4,
+    "year": "2024",
+    "seasons": [
+      {
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "الحلقة 1",
+            "sources": [
+              {
+                "id": 1,
+                "name": "سيرفر 1",
+                "url": "https://vidsrc.me/embed/tv?tmdb=215072&season=1&episode=1"
+              },
+              {
+                "id": 2,
+                "name": "سيرفر 2",
+                "url": "https://vidsrc.cc/v2/embed/tv/215072/1/1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 94997,
+    "title": "آل التنين",
+    "description": "تدور الأحداث قبل 200 عام من أحداث مسلسل صراع العروش. حيث سيركز على تفاصيل عائلة \"آل تارغيريان\" ولمحات هامة في تاريخ العائلة التي حكمت ويستروس منذ زمن بعيد، وصولًا إلى رقصة التنانين والصراعات الداخلية في العائلة التي دمرت كل شيء وهددت بانقراض التنانين للأبد.",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/3cV7NLkN8WY5LECzLxI73PXE5Oq.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/577eXC8wFQT0eUrJcgznSiFPRmk.jpg",
+    "rating": 8.4,
+    "year": "2022",
+    "seasons": [
+      {
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "الحلقة 1",
+            "sources": [
+              {
+                "id": 1,
+                "name": "سيرفر 1",
+                "url": "https://vidsrc.me/embed/tv?tmdb=94997&season=1&episode=1"
+              },
+              {
+                "id": 2,
+                "name": "سيرفر 2",
+                "url": "https://vidsrc.cc/v2/embed/tv/94997/1/1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 125988,
+    "title": "Silo",
+    "description": "في مستقبل خرب وسامّ، يعيش آلاف الناس في صومعة ضخمة تحت الأرض. بعد أن يخرق مأمورهم قانونها الأساسي ويموت المواطنون بطرق غامضة، تبدأ المهندسة \"جولييت\" بكشف أسرار صادمة لتعرف الحقيقة عن الصومعة.",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/uTWhbLc7Bj4qNSdW3ZvZKL8cOHv.jpg",
+    "rating": 8.2,
+    "year": "2023",
+    "seasons": [
+      {
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "الحلقة 1",
+            "sources": [
+              {
+                "id": 1,
+                "name": "سيرفر 1",
+                "url": "https://vidsrc.me/embed/tv?tmdb=125988&season=1&episode=1"
+              },
+              {
+                "id": 2,
+                "name": "سيرفر 2",
+                "url": "https://vidsrc.cc/v2/embed/tv/125988/1/1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 60625,
+    "title": "ريك ومورتي",
+    "description": "تتمحور قصة المسلسل حول مغامرات عائلة سميث المكونة من ريك سانشيز، عالم عبقري مجنون ومدمن كحول، مورتي سميث حفيد ريك المراهق ذو الأربعة عشر عام، سمر سميث؛ شقيقة مورتي ذو السابعة عشر، بيث سميث؛ ابنة ريك والدة مورتي وسمر، طبيبة حيوانات جراحية؛ جيري سميث، زوج بيث، رجل بسيط مهزوز الثقة غالباً ما يختلف مع ريك.",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/hzaQf6KjsWAO2jW1ixcTG7XClYp.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/i4PpW1XyRlBuSNSIBRIIwSjEpjl.jpg",
+    "rating": 8.7,
+    "year": "2013",
+    "seasons": [
+      {
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "الحلقة 1",
+            "sources": [
+              {
+                "id": 1,
+                "name": "سيرفر 1",
+                "url": "https://vidsrc.me/embed/tv?tmdb=60625&season=1&episode=1"
+              },
+              {
+                "id": 2,
+                "name": "سيرفر 2",
+                "url": "https://vidsrc.cc/v2/embed/tv/60625/1/1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 37854,
+    "title": "ون بيس",
+    "description": "قبل سنوات عديدة، تم إعدام ملك القراصنة - جول دي روجر - تاركا وراءه كومة ضخمة من الكنوز و الون بيس - القطعه الواحده -  الشهيرة. من يجدها سيكون اسمه ملك القراصنة الجديد. مونكي دي لوفي، وهو صبي الذي استهلك واحدة من فواكه الشيطان، يعتقد أنه سوف يسير على خطى القرصان شانكس، ويجد الون بيس. محاط بسرب من المقاتلين الماهرين واللصوص على طول الطريق. يحضر مونكي دي لوفي حفنة من طاقمه يتبعونه، رورونوا زورو، نامي، اوسوب، سانجي، تشوبر، نيكو روبن، فرانكي وبروك. سوف يفعلون أي شيء للحصول على الون بيس!",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/zftx59xeJOJtsmRdwqo4rn6zNpj.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/2rmK7mnchw9Xr3XdiTFSxTTLXqv.jpg",
+    "rating": 8.7,
+    "year": "1999",
+    "seasons": [
+      {
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "الحلقة 1",
+            "sources": [
+              {
+                "id": 1,
+                "name": "سيرفر 1",
+                "url": "https://vidsrc.me/embed/tv?tmdb=37854&season=1&episode=1"
+              },
+              {
+                "id": 2,
+                "name": "سيرفر 2",
+                "url": "https://vidsrc.cc/v2/embed/tv/37854/1/1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 295599,
+    "title": "御廷谣",
+    "description": "",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/v8Giwuf0l0XKoD29kWb9RSxiYku.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/qa3HJLBxhQQgCbaqdhtYea0Hygk.jpg",
+    "rating": 9.0,
+    "year": "2026",
+    "seasons": [
+      {
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "الحلقة 1",
+            "sources": [
+              {
+                "id": 1,
+                "name": "سيرفر 1",
+                "url": "https://vidsrc.me/embed/tv?tmdb=295599&season=1&episode=1"
+              },
+              {
+                "id": 2,
+                "name": "سيرفر 2",
+                "url": "https://vidsrc.cc/v2/embed/tv/295599/1/1"
               }
             ]
           }
