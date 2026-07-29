@@ -1,15 +1,212 @@
 [
   {
-    "id": 550,
-    "title": "فيلم تجريبي - Alnasrawy TV",
-    "description": "هذا فيلم تجريبي للتأكد من ربط السيرفرات والتطبيق بنجاح.",
-    "posterUrl": "https://image.tmdb.org/t/p/w500/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
-    "backdropUrl": "https://image.tmdb.org/t/p/w780/hZk2G17Z9539D889a8117a78a63.jpg",
-    "rating": 8.8,
+    "id": 1481343,
+    "title": "فم الشيطان",
+    "description": "يستكشف خمسة أصدقاء شبكة كهوف \"فم الشيطان\" في تايلاند في مغامرة أخيرة قبل أن تبدأ حياتهم في العالم الحقيقي، لكنهم سرعان ما يكتشفون أن هناك شيئاً ما يطاردهم تحت الماء... سريعاً وصامتاً وقاتلاً. وفي الظلام الخانق، تتلاشى الثقة، وينتشر الذعر، ويصبح كل منعطف خطأ صراعاً من أجل البقاء.",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/dabpn9mw3VQ427DEHEHuKAGQL78.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/pLyaH6k69OJHnONSmN3R7Peh6HE.jpg",
+    "rating": 6.1,
     "year": "2026",
     "sources": [
-      {"id": 1, "name": "سيرفر 1 (تجريبي)", "url": "https://vidsrc.me/embed/movie?tmdb=550"},
-      {"id": 2, "name": "سيرفر 2 (تجريبي)", "url": "https://vidsrc.cc/v2/embed/movie/550"}
+      {
+        "id": 1,
+        "name": "سيرفر 1",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1481343"
+      },
+      {
+        "id": 2,
+        "name": "سيرفر 2",
+        "url": "https://vidsrc.cc/v2/embed/movie/1481343"
+      }
+    ]
+  },
+  {
+    "id": 969681,
+    "title": "الرجل العنكبوت: يوم جديد",
+    "description": "بينما يواصل \"بيتر باركر\" حماية المدينة بصفته \"الرجل العنكبوت\" في عالمٍ لم يعد يتذكره أحد، يجد نفسه وحيدًا وهو يشاهد أصدقاءه القدامى يمضون في حياتهم من دونه. ومع تصاعد الضغوط، يبدأ بالتغير بطريقة قد تعجز قواه عن كبحها. لكن هذا التحول قد يكون أمله الوحيد لمواجهة تهديدٍ غامض وخطير يلوح في الأفق، عدو يمتلك قوة مرعبة لا يستطيع أحد حتى رؤيته، ويهدد المدينة وكل من يهتم \"بيتر\" لأمرهم.",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/1hqkM7Xo7d5zylpSolUeYAbFbe5.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/vjMvFSmGUxEtqVdaZgvFee9XkZl.jpg",
+    "rating": 7.8,
+    "year": "2026",
+    "sources": [
+      {
+        "id": 1,
+        "name": "سيرفر 1",
+        "url": "https://vidsrc.me/embed/movie?tmdb=969681"
+      },
+      {
+        "id": 2,
+        "name": "سيرفر 2",
+        "url": "https://vidsrc.cc/v2/embed/movie/969681"
+      }
+    ]
+  },
+  {
+    "id": 1081003,
+    "title": "سوبرجيرل",
+    "description": "عندما يوجّه عدوّ قاسٍ ولا يرحم ضربة مؤلمة تمسّ حياتها بشكل شخصي، تجد \"كارا زور-إل\"، المعروفة باسم سوبرجيرل، نفسها مضطرة للتعاون مع رفيق غير متوقع. وتنطلق معه في رحلة ملحمية عبر الفضاء، تسعى خلالها إلى الانتقام وتحقيق العدالة.",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/qdSh923DHzTh9vWz4pGTbYpkXIy.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/4X2YSe8PaYbsBqX3TDmmIU4vOju.jpg",
+    "rating": 6.7,
+    "year": "2026",
+    "sources": [
+      {
+        "id": 1,
+        "name": "سيرفر 1",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1081003"
+      },
+      {
+        "id": 2,
+        "name": "سيرفر 2",
+        "url": "https://vidsrc.cc/v2/embed/movie/1081003"
+      }
+    ]
+  },
+  {
+    "id": 1368337,
+    "title": "الأوديسة",
+    "description": "يتتبع الفيلم رحلة أوديسيوس، الملك الأسطوري لـ \"إيثاكا\"، في عودته الطويلة والخطرة إلى وطنه بعد انتهاء حرب طروادة. تستغرق رحلته عشر سنوات، وخلالها يواجه أوديسيوس العديد من التحديات والمخاطر والمخلوقات الأسطورية",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/kT3FyO3KVwYvnKnxHLbCi4Y7xr0.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/tYuC9kUwqhpDQ3pv1kLMqyMF1Jw.jpg",
+    "rating": 7.9,
+    "year": "2026",
+    "sources": [
+      {
+        "id": 1,
+        "name": "سيرفر 1",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1368337"
+      },
+      {
+        "id": 2,
+        "name": "سيرفر 2",
+        "url": "https://vidsrc.cc/v2/embed/movie/1368337"
+      }
+    ]
+  },
+  {
+    "id": 1311031,
+    "title": "قاتل الشياطين: قلعة اللانهاية – الفصل الأول: عودة أكازا",
+    "description": "بينما كان أعضاء فيلق قاتلي الشياطين و\"الهشيرا\" يخضعون لبرنامج تدريب جماعي يُعرف بتدريب الهشيرا استعدادًا للمعركة الحاسمة ضد الشياطين، يظهر موزان كيبوتسوجي في قصر عائلة أوبوياشيكي. ومع تعرّض قائد الفيلق للخطر، يندفع تانجيرو والهشيرا إلى المقر الرئيسي، لكنهم يجدون أنفسهم يسقطون في أعماق مكان غامض بفعل يدي موزان. الوجهة التي سقط فيها تانجيرو ورفاقه ليست سوى معقل الشياطين – قلعة اللانهاية. وهكذا، تبدأ ساحة المعركة النهائية بين فيلق قاتلي الشياطين وقوى الشر في الاشتعال.",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/4xdWWzKsO4ua6u7qu6O43HjfthR.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/1RgPyOhN4DRs225BGTlHJqCudII.jpg",
+    "rating": 8.2,
+    "year": "2025",
+    "sources": [
+      {
+        "id": 1,
+        "name": "سيرفر 1",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1311031"
+      },
+      {
+        "id": 2,
+        "name": "سيرفر 2",
+        "url": "https://vidsrc.cc/v2/embed/movie/1311031"
+      }
+    ]
+  },
+  {
+    "id": 1564614,
+    "title": "Leviticus",
+    "description": "",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/gnAsZvBygplNpp8PtjoTEYv3VPB.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/7y8zWGEjs7tresw4Hzkkf4TdkcL.jpg",
+    "rating": 6.5,
+    "year": "2026",
+    "sources": [
+      {
+        "id": 1,
+        "name": "سيرفر 1",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1564614"
+      },
+      {
+        "id": 2,
+        "name": "سيرفر 2",
+        "url": "https://vidsrc.cc/v2/embed/movie/1564614"
+      }
+    ]
+  },
+  {
+    "id": 1339713,
+    "title": "هوس",
+    "description": "بعد أن كسر غصنًا من ’صفصافة الأمنية الواحدة‘ الغامضة ليفوز بقلب الفتاة التي يعشقها، يجد رومانسي يائس نفسه يحصل على ما طلب تمامًا، لكنه سرعان ما يكتشف أن بعض الرغبات تأتي بثمن باهظ ومظلم",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/qukypUmPwd21UnNTRvUdZHd4pNJ.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/5lTZyuBTNOfawsfPT8Q0cIg6qAF.jpg",
+    "rating": 8.3,
+    "year": "2026",
+    "sources": [
+      {
+        "id": 1,
+        "name": "سيرفر 1",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1339713"
+      },
+      {
+        "id": 2,
+        "name": "سيرفر 2",
+        "url": "https://vidsrc.cc/v2/embed/movie/1339713"
+      }
+    ]
+  },
+  {
+    "id": 980431,
+    "title": "أفاتار: آخر مسخّر هواء – الأصداء والتداعيات",
+    "description": "ينغمس أفتار انغ آخر مسخّر هواء في العالم، في اكتشاف قوة قديمة يمكنها إنقاذ ثقافته من الانقراض. وبمساعدة أصدقائه، ينطلق في رحلة حول العالم للعثور عليها قبل أن تقع في الأيدي الخطأ، حيث قد تهدد بقلب السلام الذي ضحّوا بكل شيء لتحقيقه",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/3sgnSfNT27Bx5O5ukr7B26mhEQq.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/ezbrL1dMymKQZw7mDEWa2ZTzN7d.jpg",
+    "rating": 9.4,
+    "year": "2026",
+    "sources": [
+      {
+        "id": 1,
+        "name": "سيرفر 1",
+        "url": "https://vidsrc.me/embed/movie?tmdb=980431"
+      },
+      {
+        "id": 2,
+        "name": "سيرفر 2",
+        "url": "https://vidsrc.cc/v2/embed/movie/980431"
+      }
+    ]
+  },
+  {
+    "id": 1314481,
+    "title": "الشيطان يرتدي برادا 2",
+    "description": "ستبقى الأيقونات خالدة.  مع اقتراب ميراندا بريستلي من سن التقاعد، تجتمع مجدداً مع أندي ساكس لمواجهة مساعدتها السابقة التي تحولت إلى منافسة لدودة: إميلي شارلتون.",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/norHRkEH77pCtqjUOCkdYPWEI7w.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/Af907x5h9W1wVis8XrSd7ynTWuy.jpg",
+    "rating": 7.2,
+    "year": "2026",
+    "sources": [
+      {
+        "id": 1,
+        "name": "سيرفر 1",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1314481"
+      },
+      {
+        "id": 2,
+        "name": "سيرفر 2",
+        "url": "https://vidsrc.cc/v2/embed/movie/1314481"
+      }
+    ]
+  },
+  {
+    "id": 1275779,
+    "title": "يوم الإفصاح",
+    "description": "لو اكتشفت يومًا أننا لسنا وحدنا... لو جاء أحدهم وأراك الحقيقة، وأثبتها لك بما لا يدع مجالًا للشك... هل سيصيبك ذلك بالخوف؟",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/pISy0e4JlOqAU0Exa6X0svaTHJk.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/flxau5Iu7bChQHsESqvGZ3FQRaI.jpg",
+    "rating": 7.4,
+    "year": "2026",
+    "sources": [
+      {
+        "id": 1,
+        "name": "سيرفر 1",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1275779"
+      },
+      {
+        "id": 2,
+        "name": "سيرفر 2",
+        "url": "https://vidsrc.cc/v2/embed/movie/1275779"
+      }
     ]
   }
 ]
