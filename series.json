@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "id": 999901,
+    "title": "مسلسل تجريبي - Alnasrawy TV",
+    "description": "هذا مسلسل تجريبي للتأكد من ربط السيرفرات والتطبيق بنجاح.",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/1E5baAaEse26feLBvuX3yA98pTo.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w780/1E5baAaEse26feLBvuX3yA98pTo.jpg",
+    "rating": 9.5,
+    "year": "2026",
+    "seasons": [
+      {
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "الحلقة 1",
+            "sources": [
+              {
+                "id": 1,
+                "name": "سيرفر 1 (تجريبي)",
+                "url": "https://vidsrc.me/embed/tv?tmdb=1396&season=1&episode=1"
+              },
+              {
+                "id": 2,
+                "name": "سيرفر 2 (تجريبي)",
+                "url": "https://vidsrc.cc/v2/embed/tv/1396/1/1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
