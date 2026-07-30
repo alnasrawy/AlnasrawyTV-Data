@@ -1,5 +1,235 @@
 [
   {
+    "id": "1458215",
+    "title": "The Gentleman Thief",
+    "poster": "https://image.tmdb.org/t/p/w500/oMutDMODnbCZf46w0dK4wncQmDB.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/aayQcCebqLmkTZdILp9JVcFiIRL.jpg",
+    "description": "",
+    "rating": "5.9",
+    "year": "2026",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1458215"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/1458215"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/1458215"
+      }
+    ]
+  },
+  {
+    "id": "1083381",
+    "title": "الغرفة الخلفية",
+    "poster": "https://image.tmdb.org/t/p/w500/9FZaaQstyvpmmK1sHOwU39ijtCO.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/dqmMWNWfLnExDRpMtIMqI97GQFR.jpg",
+    "description": "يظهر مدخل غريب في الطابق السفلي من صالة عرض الأثاث",
+    "rating": "7.1",
+    "year": "2026",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1083381"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/1083381"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/1083381"
+      }
+    ]
+  },
+  {
+    "id": "454639",
+    "title": "أسياد الكون",
+    "poster": "https://image.tmdb.org/t/p/w500/14WqOXqc8tAKVWOZLRYLEMz3HEh.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/piV2OnzTZCyGBP9JCjlHIgKGlfo.jpg",
+    "description": "بعد فراق دام خمسة عشر عامًا، يقود سيف القوة الأمير آدم عائدًا إلى إيتيرنيا، حيث يجد موطنه محطمًا تحت حكم سكيلتور الشرير. ولإنقاذ عائلته وعالمه، يجب على آدم أن يوحد قواه مع أقرب حلفائه، تيلا ودنكان/مان-آت-آرمز، وأن يتقبل مصيره الحقيقي كـ\"هي-مان\" - أقوى رجل في الكون.",
+    "rating": "7.3",
+    "year": "2026",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=454639"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/454639"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/454639"
+      }
+    ]
+  },
+  {
+    "id": "1084244",
+    "title": "حكاية لعبة ٥",
+    "poster": "https://image.tmdb.org/t/p/w500/b9yODva86tl5Em8cOoKSQQzzAy4.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/8sSKdEmlmqF4kJUd28SqthXC4yZ.jpg",
+    "description": "عندما تحصل \"بوني\" على جهاز \"ليلي باد\" اللوحي كهدية وتنجذب إليه بشكلٍ كبير، يجد \"وودي\" و\"باز\" و\"جيسي\" وبقية الألعاب أنفسهم أمام تحدٍ غير مسبوق، إذ تصبح مهمتهم في لفت انتباهها أصعب من أي وقت مضى، بينما يواجهون تهديدًا جديدًا يهدد عالم اللعب الذي اعتادوا عليه.",
+    "rating": "7.4",
+    "year": "2026",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1084244"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/1084244"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/1084244"
+      }
+    ]
+  },
+  {
+    "id": "687163",
+    "title": "مشروع هيل ماري",
+    "poster": "https://image.tmdb.org/t/p/w500/wNnoJaRb5Oc9SodTWJLEC26wL8q.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/8Tfys3mDZVp4tNoH2ktm06a0Tau.jpg",
+    "description": "يستيقظ رايلاند غريس، مدرس العلوم، على متن مركبة فضائية تبعد سنوات ضوئية عن موطنه، فاقدًا للذاكرة تمامًا، لا يتذكر من هو ولا كيف وصل إلى هناك. ومع عودة ذاكرته تدريجيًا، يبدأ في اكتشاف مهمته: حل لغز المادة الغامضة التي تتسبب في انطفاء الشمس. عليه أن يستعين بمعرفته العلمية وأفكاره غير التقليدية لإنقاذ كل شيء على الأرض من الفناء... لكن صداقة غير متوقعة تعني أنه قد لا يضطر إلى القيام بذلك بمفرده.",
+    "rating": "8.7",
+    "year": "2026",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=687163"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/687163"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/687163"
+      }
+    ]
+  },
+  {
+    "id": "949838",
+    "title": "72 ساعة",
+    "poster": "https://image.tmdb.org/t/p/w500/9Bu1PW2R1XayqRqnl0aDOgMcrdS.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/hL5EIk48251OXlbIbRJq3yaBHk8.jpg",
+    "description": "في محاولة لإنقاذ مسيرته المهنية، ينضم مسؤول تنفيذي أربعيني إلى مجموعة من الشبان في رحلة صاخبة لتوديع العزوبية في \"ميامي\" بعد أن أضافوه إلى دردشتهم الجماعية عن طريق الخطأ.",
+    "rating": "6.8",
+    "year": "2026",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=949838"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/949838"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/949838"
+      }
+    ]
+  },
+  {
+    "id": "1228710",
+    "title": "الماندالوري وغروغو",
+    "poster": "https://image.tmdb.org/t/p/w500/o6O7sYBgDligQAdVHDkmcyjePU.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/MJcERawyqGqJdPsOBc0C449hQ9.jpg",
+    "description": "سقطت الإمبراطورية الشريرة، لكن لا يزال قادة الحرب الإمبراطوريون متفرقين في أنحاء المجرة. وبينما تعمل الجمهورية الجديدة الناشئة على حماية كل ما قاتلت من أجله الثورة، تستعين بخدمات صائد الجوائز الماندالوري الأسطوري \"دين جارين\" ومتدربه الصغير \"غروغو\".",
+    "rating": "7.4",
+    "year": "2026",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1228710"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/1228710"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/1228710"
+      }
+    ]
+  },
+  {
+    "id": "1375646",
+    "title": "مستعمرة",
+    "poster": "https://image.tmdb.org/t/p/w500/2ahVcdQM1ZBzSqXiAqu681l96Ns.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/jDvxsBemt2Iyslg7qn2WMzgxz23.jpg",
+    "description": "بالبروفيسور \"سي-جونغ\" فجأةً في جحيمٍ دامٍ، حين يتفشّى فيروسٌ سريع التحوّر خلال مؤتمرٍ للتقنية الحيوية، فتُبادر السلطات إلى إغلاق المنشأة وعزلها بالكامل. وإذ يجد نفسه محاصرًا بلا أي منفذٍ للنجاة، يخوض \"سي-جونغ\" مع حفنةٍ من الناجين معركة بقاءٍ محمومة، بينما يتحوّل المصابون أمام أعينهم إلى وحوشٍ لا تُبقي ولا تذر.",
+    "rating": "8.0",
+    "year": "2026",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1375646"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/1375646"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/1375646"
+      }
+    ]
+  },
+  {
+    "id": "1273221",
+    "title": "فلم مخيف 6",
+    "poster": "https://image.tmdb.org/t/p/w500/znHT8peERZRWG1ME3r0Db0EV8k8.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/xWBiXclrRmTggQHMRsIn84YHavs.jpg",
+    "description": "بعد ستة وعشرين عاماً من الهروب من قاتل مقنع مألوف بشكل مثير للريبة، عاد الأربعة الأساسيون إلى مرمى القاتل، ولم يعد أي فيلم رعب في مأمن",
+    "rating": "6.5",
+    "year": "2026",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1273221"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/1273221"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/1273221"
+      }
+    ]
+  },
+  {
+    "id": "1284465",
+    "title": "موت روبن هود",
+    "poster": "https://image.tmdb.org/t/p/w500/lvrejf8tNqKmOq1OA6zXNqzrx4U.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/aM3pduSU53VjcALWOfLWNw8v2TI.jpg",
+    "description": "بينما يصارع ماضيه المليء بالجرائم والقتل، يتعرض روبن هود لإصابة خطيرة بعد معركة ظن أنها ستكون الأخيرة في حياته. وبين يدي امرأة غامضة، تُمنح له فرصة جديدة للخلاص والتكفير عما ارتكبه في الماضي.",
+    "rating": "6.6",
+    "year": "2026",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1284465"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/1284465"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/1284465"
+      }
+    ]
+  },
+  {
     "id": 1481343,
     "title": "فم الشيطان",
     "description": "يستكشف خمسة أصدقاء شبكة كهوف \"فم الشيطان\" في تايلاند في مغامرة أخيرة قبل أن تبدأ حياتهم في العالم الحقيقي، لكنهم سرعان ما يكتشفون أن هناك شيئاً ما يطاردهم تحت الماء... سريعاً وصامتاً وقاتلاً. وفي الظلام الخانق، تتلاشى الثقة، وينتشر الذعر، ويصبح كل منعطف خطأ صراعاً من أجل البقاء.",
