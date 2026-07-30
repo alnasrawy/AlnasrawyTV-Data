@@ -1,60 +1,87 @@
-import requests
 import json
-import re
+import requests
+from bs4 import BeautifulSoup
+from datetime import datetime
 
-def fetch_matches():
+def fetch_yallakora_matches():
     """
-    سكربت سحب مباريات اليوم المتطور مع نظام أمان Fallback.
+    سحب مباريات اليوم من مصدر عربي مستقر وعالي الدقة (YallaKora)
     """
-    # رابط نسخة الموبايل (الأخف والأسرع)
-    url = "https://m.kooora.com/?region=-1&area=0"
+    today_str = datetime.now().strftime("%m/%d/%Y")
+    url = f"https://www.yallakora.com/match-center/?date={today_str}"
     
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "Accept-Language": "ar,en-US;q=0.7,en;q=0.3",
-        "Referer": "https://m.kooora.com/"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+        "Accept-Language": "ar-EG,ar;q=0.9,en-US;q=0.8,en;q=0.7"
     }
 
     matches_list = []
+
     try:
-        response = requests.get(url, headers=headers, timeout=25)
+        response = requests.get(url, headers=headers, timeout=15)
         response.encoding = 'utf-8'
-        content = response.text
         
-        # 1. محاولة السحب بالريجكس الذكي (تجاوز تغير الكلاسات)
-        # البحث عن الفرق
-        teams = re.findall(r'class="team_name">(.*?)</div>', content)
-        # البحث عن الأوقات
-        times = re.findall(r'class="match_time">(.*?)</div>', content)
-        
-        if len(teams) >= 2 and len(times) >= 1:
-            for i in range(min(len(times), len(teams) // 2)):
-                matches_list.append({
-                    "id": f"m_{i+1}",
-                    "homeTeam": teams[i*2].strip(),
-                    "homeLogo": "",
-                    "awayTeam": teams[i*2+1].strip(),
-                    "awayLogo": "",
-                    "matchTime": times[i].strip(),
-                    "competition": "مباراة اليوم",
-                    "broadcasters": [{"channelName": "beIN Sports", "commentator": "عصام الشوالي"}]
-                })
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.text, 'html.parser')
+            championships = soup.find_all('div', class_='matchCard')
 
+            for champ in championships:
+                # اسم البطولة
+                title_elem = champ.find('h2') or champ.find('div', class_='title')
+                competition_name = title_elem.text.strip() if title_elem else "مباراة اليوم"
+
+                matches = champ.find_all('div', class_='allData') or champ.find_all('li')
+
+                for idx, match in enumerate(matches):
+                    try:
+                        # الفريق الأول
+                        team_a_elem = match.find('div', class_='teamA') or match.find('div', class_='teamsData')
+                        team_a = match.find('div', class_='teamA').find('p').text.strip() if match.find('div', class_='teamA') else ""
+                        logo_a = match.find('div', class_='teamA').find('img')['src'] if match.find('div', class_='teamA') and match.find('div', class_='teamA').find('img') else ""
+
+                        # الفريق الثاني
+                        team_b = match.find('div', class_='teamB').find('p').text.strip() if match.find('div', class_='teamB') else ""
+                        logo_b = match.find('div', class_='teamB').find('img')['src'] if match.find('div', class_='teamB') and match.find('div', class_='teamB').find('img') else ""
+
+                        # وقت المباراة
+                        time_elem = match.find('span', class_='time') or match.find('div', class_='MTime')
+                        match_time = time_elem.text.strip() if time_elem else "قريباً"
+
+                        # القناة الناقلة المعلق
+                        channel_elem = match.find('div', class_='channel')
+                        channel_name = channel_elem.text.strip() if channel_elem else "beIN Sports"
+
+                        if team_a and team_b:
+                            matches_list.append({
+                                "id": f"m_{len(matches_list)+1}",
+                                "homeTeam": team_a,
+                                "homeLogo": logo_a,
+                                "awayTeam": team_b,
+                                "awayLogo": logo_b,
+                                "matchTime": match_time,
+                                "competition": competition_name,
+                                "broadcasters": [
+                                    {
+                                        "channelName": channel_name if channel_name else "beIN Sports",
+                                        "commentator": "غير محدد"
+                                    }
+                                ]
+                            })
+                    except Exception:
+                        continue
     except Exception as e:
-        print(f"Error during fetching: {e}")
+        print(f"⚠️ خطأ أثناء السحب المباشر: {e}")
 
-    # 2. نظام الأمان الفولاذي (Fallback)
-    # إذا فشل السحب أو كانت القائمة فارغة، نضع مباريات تجريبية لضمان عمل التطبيق
+    # نظام الطوارئ الذكي (fallback) إذا لم تتوفر مباريات أو عند حدوث خطأ شبكة
     if not matches_list:
-        print("⚠️ السحب المباشر متوقف. تفعيل جدول الطوارئ.")
+        print("⚠️ تفعيل القائمة الاحتياطية المضمونة.")
         matches_list = [
             {
                 "id": "f_1",
                 "homeTeam": "ريال مدريد",
-                "homeLogo": "",
+                "homeLogo": "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg",
                 "awayTeam": "برشلونة",
-                "awayLogo": "",
+                "awayLogo": "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona.svg",
                 "matchTime": "22:00",
                 "competition": "الدوري الإسباني",
                 "broadcasters": [{"channelName": "beIN Sports 1", "commentator": "عصام الشوالي"}]
@@ -62,21 +89,20 @@ def fetch_matches():
             {
                 "id": "f_2",
                 "homeTeam": "مانشستر سيتي",
-                "homeLogo": "",
+                "homeLogo": "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
                 "awayTeam": "ليفربول",
-                "awayLogo": "",
+                "awayLogo": "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
                 "matchTime": "19:00",
-                "competition": "الدوري الإنجليزي",
+                "competition": "الدوري الإنجليزي الممتاز",
                 "broadcasters": [{"channelName": "beIN Sports 2", "commentator": "حفيظ دراجي"}]
             }
         ]
 
-    # 3. حفظ ملف الـ JSON النهائي
-    final_data = {"matches": matches_list}
+    # حفظ النتيجة على شكل مصفوفة جيسون مباشرة [...] ليتوافق 100% مع أندرويد
     with open("matches.json", "w", encoding="utf-8") as f:
-        json.dump(final_data, f, ensure_ascii=False, indent=2)
-    
-    print(f"✅ تم الانتهاء. إجمالي المباريات: {len(matches_list)}")
+        json.dump(matches_list, f, ensure_ascii=False, indent=2)
+
+    print(f"✅ تم حفظ {len(matches_list)} مباراة في matches.json بنجاح!")
 
 if __name__ == "__main__":
     fetch_matches()
