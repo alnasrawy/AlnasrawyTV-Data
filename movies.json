@@ -1,5 +1,442 @@
 [
   {
+    "id": "1414413",
+    "title": "Brothers Under Fire",
+    "poster": "https://image.tmdb.org/t/p/w500/e5EKqk9V7N3w0WvYFhl6wSVrMp0.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/6D2NsU3FIQVthPgjT6RAsX58qZ6.jpg",
+    "description": "لا يوجد وصف متاح لهذا الفيلم حالياً.",
+    "rating": "5.7",
+    "year": "2026",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1414413"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/1414413"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/1414413"
+      }
+    ]
+  },
+  {
+    "id": "133980",
+    "title": "Bestialità",
+    "poster": "https://image.tmdb.org/t/p/w500/cOtgea9A4ivV9OzdXsjEwmxLljR.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/w62ppNXR2Jpm1nbIhdxmWqSaetB.jpg",
+    "description": "لا يوجد وصف متاح لهذا الفيلم حالياً.",
+    "rating": "4.5",
+    "year": "1976",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=133980"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/133980"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/133980"
+      }
+    ]
+  },
+  {
+    "id": "100402",
+    "title": "كابتن أمريكا: جندي الشتاء",
+    "poster": "https://image.tmdb.org/t/p/w500/eEoO2Ns5pAf5vtwAS3UXCUQRLGB.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/1RWLMyC9KcFfcaoViMiJGSSZzzr.jpg",
+    "description": "بينما يكافح ستيف روجرز من أجل تقبّل دوره في العالم الحديث، يتعاون مع زميلته المنتقمة وعميلة منظمة شيلد، الأرملة السوداء، لمحاربة تهديد جديد من التاريخ: قاتل يُعرف باسم الجندي الشتوي.",
+    "rating": "7.7",
+    "year": "2014",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=100402"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/100402"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/100402"
+      }
+    ]
+  },
+  {
+    "id": "387",
+    "title": "Das Boot",
+    "poster": "https://image.tmdb.org/t/p/w500/arqCQXHqgzZG2m5111FV4nA13RN.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/zzzhbZnSPMOON9uGt0LsdUJWYoC.jpg",
+    "description": "غواصة ألمانية تطارد سفن الحلفاء خلال الحرب العالمية الثانية ، لكنها سرعان ما تصبح مطاردة. يحاول الطاقم البقاء على قيد الحياة تحت السطح ، بينما يمتد كل من القارب وأنفسهم إلى أقصى حدودهم.",
+    "rating": "8.1",
+    "year": "1981",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=387"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/387"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/387"
+      }
+    ]
+  },
+  {
+    "id": "1654313",
+    "title": "Unanswered//butterfly",
+    "poster": "https://image.tmdb.org/t/p/w500/oI7lZLax8wHBaBhkQnFh6uLC6HJ.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/5uuTwHfgGrP8QRZOjegZxCZxr3X.jpg",
+    "description": "لا يوجد وصف متاح لهذا الفيلم حالياً.",
+    "rating": "8.0",
+    "year": "2026",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1654313"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/1654313"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/1654313"
+      }
+    ]
+  },
+  {
+    "id": "748783",
+    "title": "فيلم غارفيلد",
+    "poster": "https://image.tmdb.org/t/p/w500/cuAwBpC7iwJoxOUE5J0FPRVBE1K.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/P82NAcEsLIYgQtrtn36tYsj41m.jpg",
+    "description": "غارفيلد، القط الداخلي الشهير عالميًا، والذي يكره يوم الاثنين ويحب اللازانيا، على وشك خوض مغامرة برية في الهواء الطلق! بعد لقاء غير متوقع مع والده المفقود منذ فترة طويلة - قط الشوارع الرث فيك - يُجبر غارفيلد وصديقه الكلب أودي على ترك حياتهم المدللة تمامًا للانضمام إلى فيك في عملية سرقة مرحة وعالية المخاطر.",
+    "rating": "7.0",
+    "year": "2024",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=748783"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/748783"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/748783"
+      }
+    ]
+  },
+  {
+    "id": "335797",
+    "title": "هواة الغناء",
+    "poster": "https://image.tmdb.org/t/p/w500/rwopfpHqPCYBSgBuZwkaXXqHp14.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/z9ft5HYHzWcasR6SGcgeluxTznB.jpg",
+    "description": "يمتلك الكوالا (باستر موون) مسرحًا يمر معه بأوقات عصيبة وأزمة مالية كبيرة قد تهدد بإغلاقه، لكنه عازم على إعادة الحياة لمسرحه مرة أخرى بأية طريقة، وتصير أمامه فرصة أخيرة، وهى أن يتجه لتنظيم مسابقة غنائية كبيرة داخل المسرح لجذب أنظار واهتمام الجمهور بالمسرح من جديد.",
+    "rating": "7.1",
+    "year": "2016",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=335797"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/335797"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/335797"
+      }
+    ]
+  },
+  {
+    "id": "346",
+    "title": "الساموراي السبعة",
+    "poster": "https://image.tmdb.org/t/p/w500/1An4KVbAJAYOcroStdZmIl6MoxY.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/qvZ91FwMq6O47VViAr8vZNQz3WI.jpg",
+    "description": "يستجيب ساموراي لطلب إحدى القرى بتوفير الحماية بعدما ضاقت به سبل العيش. كانت البلدة بحاجة إلى من يدافع عنها من قطاع الطرق، لذا جمع ستة ساموراي آخرين لمساعدته في تدريب أهل القرية على الدفاع عن أنفسهم، بينما تكفّل القرويون بتوفير الطعام للمحاربين.",
+    "rating": "8.4",
+    "year": "1954",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=346"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/346"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/346"
+      }
+    ]
+  },
+  {
+    "id": "8077",
+    "title": "Alien³",
+    "poster": "https://image.tmdb.org/t/p/w500/xh5wI0UoW7DfS1IyLy3d2CgrCEP.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/lU0zVj8KcQVkPczdGGraYGiRC72.jpg",
+    "description": "في الجزء الثالث من السلسلة الشهيرة تهرب (إلين ريبلي) من كوكب الكائنات الفضائية الغريبة، لكن تتعطل السفينة الفضائية في مصفاة بترول نائية، تضطر للبقاء إلى أن يتم إنقاذها بواسطة زملائها، لكن يبدأ كابوس الفضائيين المخيف في الظهور مرة أخرى، وتبدأ في مقاتلة القاطنين في تلك المناطق النائية، فهل ستستطيع (إلين) مقاتلتهم ثانية؟",
+    "rating": "6.4",
+    "year": "1992",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=8077"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/8077"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/8077"
+      }
+    ]
+  },
+  {
+    "id": "9737",
+    "title": "فتيان اشقياء",
+    "poster": "https://image.tmdb.org/t/p/w500/x1ygBecKHfXX4M2kRhmFKWfWbJc.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/wOLTJxfv98miIQcn0oNXq9fIgXM.jpg",
+    "description": "ماركس، رب أسرة. مايك، اعزب مولع بالنساء. كلاهما في شرطة ميامي ولديهم 72 ساعة لاستعادة شحنة من المخدرات المسروقة من مركزهم، ولتعقيد الأمور، يجب عليهم أن يتبادلوا الشخصيات.",
+    "rating": "6.8",
+    "year": "1995",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=9737"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/9737"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/9737"
+      }
+    ]
+  },
+  {
+    "id": "21484",
+    "title": "Possession",
+    "poster": "https://image.tmdb.org/t/p/w500/A9bnRn05riOKWftvQlLKa2gl51n.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/zfw3fcF7d4KcWYEvps4zUfl303b.jpg",
+    "description": "لا يوجد وصف متاح لهذا الفيلم حالياً.",
+    "rating": "7.3",
+    "year": "1981",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=21484"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/21484"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/21484"
+      }
+    ]
+  },
+  {
+    "id": "537915",
+    "title": "حياتي من بعد لقائك",
+    "poster": "https://image.tmdb.org/t/p/w500/u3B2YKUjWABcxXZ6Nm9h10hLUbh.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/997ToEZvF2Obp9zNZbY5ELVnmrW.jpg",
+    "description": "تعتقد الطالبة الجامعية المستجدّة والصالحة \"تيسا يونغ\" أنّها تدرك ما تبتغيه من حياتها… حتّى تلتقي صدفةً بالشابّ الطائش المعقّد \"هاردن سكوت\".",
+    "rating": "7.1",
+    "year": "2019",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=537915"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/537915"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/537915"
+      }
+    ]
+  },
+  {
+    "id": "915935",
+    "title": "تشريح السقوط",
+    "poster": "https://image.tmdb.org/t/p/w500/cVQyC4MA931KJZ40EwAu0b7q65f.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/lDVl2jf6VB8ODl1olZ6FLvOV1gX.jpg",
+    "description": "تُتهم امرأة في جريمة قتل زوجها؛ وسريعًا يتسبب الأمر في وقوع ابنهما الكفيف بمعضلة كبيرة حينما يصبح الشاهد الوحيد على الجريمة.",
+    "rating": "7.5",
+    "year": "2023",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=915935"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/915935"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/915935"
+      }
+    ]
+  },
+  {
+    "id": "683420",
+    "title": "Border Pursuit",
+    "poster": "https://image.tmdb.org/t/p/w500/uVSBBAerupzbUfQfgj5OjqRRdMa.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w500/uVSBBAerupzbUfQfgj5OjqRRdMa.jpg",
+    "description": "لا يوجد وصف متاح لهذا الفيلم حالياً.",
+    "rating": "0.0",
+    "year": "2019",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=683420"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/683420"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/683420"
+      }
+    ]
+  },
+  {
+    "id": "1214931",
+    "title": "Nuremberg",
+    "poster": "https://image.tmdb.org/t/p/w500/xthXNYltOOm80vW5Kxjzxx5gvQ6.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/bf5TG9RODkPXmtJSgf8Iymof1wl.jpg",
+    "description": "لا يوجد وصف متاح لهذا الفيلم حالياً.",
+    "rating": "7.6",
+    "year": "2025",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1214931"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/1214931"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/1214931"
+      }
+    ]
+  },
+  {
+    "id": "758330",
+    "title": "Good Luck to You, Leo Grande",
+    "poster": "https://image.tmdb.org/t/p/w500/dxxOmTq4LgQxiyU4rW53qdj9FoN.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/3oAmqJxMqOgmnEhoOP3swpOUwzC.jpg",
+    "description": "في إطار كوميدي - درامي، يتناول العمل قصة نانسي ستوكس البالغة من العمر 55 عامًا، والتي تسعى لخوض مغامرة من خلال التواصل مع البشر والحصول على علاقات حميمة.",
+    "rating": "7.0",
+    "year": "2022",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=758330"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/758330"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/758330"
+      }
+    ]
+  },
+  {
+    "id": "32657",
+    "title": "بيرسي جاكسون والأوليمبونس: لص البرق",
+    "poster": "https://image.tmdb.org/t/p/w500/brzpTyZ5bnM7s53C1KSk1TmrMO6.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/ugiV9SpJburMOPeIyjBJyAnO1So.jpg",
+    "description": "تدور احداث فيلم حول في عالم آلهة اﻷولمب، تُسرق الصاعقة، ويتهم (زيوس) ابن (بوسيدون) بسرقتها، مانحًا إياه 14 يومًا ﻹعادة الصاعقة، أو ستكون هناك حرب ضروس بين اﻵلهة، ويدخل الطالب (بيرسي جاكسون) في آتون هذه اﻷحداث حينما يكتشف أنه سليل ﻷحد آلهة الأولمب، وعليه إيجاد حل لتسكين حالة الحرب التي تهدد الأولمب.",
+    "rating": "6.2",
+    "year": "2010",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=32657"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/32657"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/32657"
+      }
+    ]
+  },
+  {
+    "id": "526024",
+    "title": "Memorias de lo que no fue",
+    "poster": "https://image.tmdb.org/t/p/w500/eB96AxyybCIWVKNJYDRp7okiH1X.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/flxZrYmIxBZur2K8JBoFmtQdNEv.jpg",
+    "description": "لا يوجد وصف متاح لهذا الفيلم حالياً.",
+    "rating": "4.8",
+    "year": "2017",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=526024"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/526024"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/526024"
+      }
+    ]
+  },
+  {
+    "id": "122906",
+    "title": "About Time",
+    "poster": "https://image.tmdb.org/t/p/w500/ls6zswrOZVhCXQBh96DlbnLBajM.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/einbto9qLXFx9QXxEHylaxDbKPx.jpg",
+    "description": "ماذا لو جاءت كل لحظة في الحياة مع فرصة ثانية؟\r في الليلة التالية لحفلة رأس السنة الجديدة غير المرضية ، أخبر والد تيم ابنه أن الرجال في عائلته لديهم دائما القدرة على السفر عبر الزمن. لا يمكنهم تغيير التاريخ ، لكن يمكنهم تغيير ما يحدث وما حدث في حياتهم الخاصة. وهكذا تبدأ بداية درس في تعلم تقدير الحياة نفسها كما هي ، كما تأتي ، والأهم من ذلك ، الأشخاص الذين يعيشون معنا.",
+    "rating": "7.9",
+    "year": "2013",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=122906"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/122906"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/122906"
+      }
+    ]
+  },
+  {
     "id": "1108427",
     "title": "موانا",
     "poster": "https://image.tmdb.org/t/p/w500/wL0fAAvNd2Uk7Sok620oVaaItIS.jpg",
