@@ -1,5 +1,28 @@
 [
   {
+    "id": "1108427",
+    "title": "موانا",
+    "poster": "https://image.tmdb.org/t/p/w500/wL0fAAvNd2Uk7Sok620oVaaItIS.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/c6BPbkO5Npt1OdwttAxCFo06wtH.jpg",
+    "description": "تستجيب موانا المراهقة لنداء المحيط، ولأول مرة، تبحر إلى ما وراء الشعاب المرجانية لجزيرتها موتوني مع نصف الإله سيئ السمعة ماوي في رحلة لا تُنسى لاستعادة الازدهار لشعبها",
+    "rating": "5.9",
+    "year": "2026",
+    "servers": [
+      {
+        "name": "سيرفر 1 (VidSrc)",
+        "url": "https://vidsrc.me/embed/movie?tmdb=1108427"
+      },
+      {
+        "name": "سيرفر 2 (2Embed)",
+        "url": "https://www.2embed.cc/embed/1108427"
+      },
+      {
+        "name": "سيرفر 3 (VidSrc PRO)",
+        "url": "https://vidsrc.pro/embed/movie/1108427"
+      }
+    ]
+  },
+  {
     "id": "1458215",
     "title": "The Gentleman Thief",
     "poster": "https://image.tmdb.org/t/p/w500/oMutDMODnbCZf46w0dK4wncQmDB.jpg",
