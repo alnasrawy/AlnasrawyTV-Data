@@ -1,34 +1,122 @@
-{
-  "matches": [
-    {
-      "id": "f_1",
-      "homeTeam": "ريال مدريد",
-      "homeLogo": "",
-      "awayTeam": "برشلونة",
-      "awayLogo": "",
-      "matchTime": "22:00",
-      "competition": "الدوري الإسباني",
-      "broadcasters": [
-        {
-          "channelName": "beIN Sports 1",
-          "commentator": "عصام الشوالي"
-        }
-      ]
-    },
-    {
-      "id": "f_2",
-      "homeTeam": "مانشستر سيتي",
-      "homeLogo": "",
-      "awayTeam": "ليفربول",
-      "awayLogo": "",
-      "matchTime": "19:00",
-      "competition": "الدوري الإنجليزي",
-      "broadcasters": [
-        {
-          "channelName": "beIN Sports 2",
-          "commentator": "حفيظ دراجي"
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "id": "m_1",
+    "homeTeam": "ليفربول",
+    "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\25\\Liverpool12024_8_25_20_39.jpg",
+    "awayTeam": "ريكسهام",
+    "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\7\\25\\Untitled2023_7_25_23_41.jpg",
+    "matchTime": "02:30",
+    "competition": "مباريات ودية -أندية",
+    "broadcasters": [
+      {
+        "channelName": "ON Sport PLUS",
+        "commentator": "غير محدد"
+      }
+    ]
+  },
+  {
+    "id": "m_2",
+    "homeTeam": "مايوركا",
+    "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\10\\31\\Mallorca2018_10_31_12_20.jpg",
+    "awayTeam": "الاتحاد",
+    "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\7\\Ittihad2021_9_7_16_53.jpg",
+    "matchTime": "11:00",
+    "competition": "مباريات ودية -أندية",
+    "broadcasters": [
+      {
+        "channelName": "beIN Sports",
+        "commentator": "غير محدد"
+      }
+    ]
+  },
+  {
+    "id": "m_3",
+    "homeTeam": "أوجسبورج",
+    "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Augsburg2018_7_29_16_8.jpg",
+    "awayTeam": "بورنموث",
+    "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Bournemouth2018_7_29_15_32.jpg",
+    "matchTime": "17:00",
+    "competition": "مباريات ودية -أندية",
+    "broadcasters": [
+      {
+        "channelName": "beIN Sports",
+        "commentator": "غير محدد"
+      }
+    ]
+  },
+  {
+    "id": "m_4",
+    "homeTeam": "الأهلي",
+    "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\10\\19\\ahly12023_10_19_17_58.jpg",
+    "awayTeam": "لافيينا أف سي",
+    "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\7\\LaVienaFC2021_9_7_13_43.jpg",
+    "matchTime": "18:00",
+    "competition": "مباريات ودية -أندية",
+    "broadcasters": [
+      {
+        "channelName": "beIN Sports",
+        "commentator": "غير محدد"
+      }
+    ]
+  },
+  {
+    "id": "m_5",
+    "homeTeam": "الشباب",
+    "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\7\\29\\331774651_1362804437889036_4103221782658863338_n2023_7_29_22_41.jpg",
+    "awayTeam": "الأهلي القطري",
+    "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\AlAhli2018_7_26_12_14.jpg",
+    "matchTime": "18:00",
+    "competition": "مباريات ودية -أندية",
+    "broadcasters": [
+      {
+        "channelName": "beIN Sports",
+        "commentator": "غير محدد"
+      }
+    ]
+  },
+  {
+    "id": "m_6",
+    "homeTeam": "طرابزون سبور",
+    "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\7\\15\\Trabzonspor2021_7_15_15_32.jpg",
+    "awayTeam": "السد القطري",
+    "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\7\\AlSadd2021_9_7_11_27.jpg",
+    "matchTime": "18:30",
+    "competition": "مباريات ودية -أندية",
+    "broadcasters": [
+      {
+        "channelName": "beIN Sports",
+        "commentator": "غير محدد"
+      }
+    ]
+  },
+  {
+    "id": "m_7",
+    "homeTeam": "مارسيليا",
+    "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Marseille2018_7_29_17_12.jpg",
+    "awayTeam": "نيم أولمبيك",
+    "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Nimes2018_7_29_17_18.jpg",
+    "matchTime": "19:00",
+    "competition": "مباريات ودية -أندية",
+    "broadcasters": [
+      {
+        "channelName": "beIN Sports",
+        "commentator": "غير محدد"
+      }
+    ]
+  },
+  {
+    "id": "m_8",
+    "homeTeam": "مالاجا",
+    "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Malaga2018_7_29_14_55.jpg",
+    "awayTeam": "الاتحاد",
+    "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\7\\Ittihad2021_9_7_16_53.jpg",
+    "matchTime": "20:00",
+    "competition": "مباريات ودية -أندية",
+    "broadcasters": [
+      {
+        "channelName": "beIN Sports",
+        "commentator": "غير محدد"
+      }
+    ]
+  }
+]
