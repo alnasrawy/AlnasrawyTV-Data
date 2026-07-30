@@ -1,88 +1,85 @@
-import json
 import os
-import time
+import json
 import requests
 
-TMDB_API_KEY = "855850b0048962918368d2652c1e67cd"
-MOVIES_FILE = "movies.json"
-PAGES_TO_FETCH = 5  # يجلب 100 فيلم جديد في كل مرة
+# مفتاح TMDB API الخاص بحسابك
+TMDB_API_KEY = "9934aa2ab8462d1f4f1c28d5e4e48069"
 
-# 1. قراءة الأفلام المحفوظة سابقاً لمنع التكرار والحفاظ على المكتبة
-existing_movies = []
-existing_ids = set()
-
-if os.path.exists(MOVIES_FILE):
-    try:
-        with open(MOVIES_FILE, "r", encoding="utf-8") as f:
-            existing_movies = json.load(f)
-            for movie in existing_movies:
-                if "id" in movie:
-                    existing_ids.add(movie["id"])
-        print(f" تم تحميل {len(existing_movies)} فيلم سابق من الملف.")
-    except Exception as e:
-        print(f"⚠️ خطأ أثناء قراءة الملف القديم: {e}")
-
-new_movies_count = 0
-
-# 2. جلب الأفلام من TMDB (الأكثر شعبية والأعلى تقييماً)
-endpoints = [
-    "https://api.themoviedb.org/3/movie/popular",
-    "https://api.themoviedb.org/3/movie/top_rated"
-]
-
-for endpoint in endpoints:
-    for page in range(1, PAGES_TO_FETCH + 1):
-        url = f"{endpoint}?api_key={TMDB_API_KEY}&language=ar-SA&page={page}"
+def fetch_movies():
+    """
+    سحب جديد الأفلام من TMDB باللغة العربية مع الحفاظ على الأفلام القديمة
+    واستخراج 3 سيرفرات مشاهدة لكل فيلم.
+    """
+    existing_movies = []
+    
+    # 1. قراءة الأفلام المسجلة سابقاً لمنع مسحها
+    if os.path.exists("movies.json"):
         try:
-            response = requests.get(url, timeout=10)
-            if response.status_code == 200:
-                results = response.json().get("results", [])
-                for item in results:
-                    movie_id = item.get("id")
-
-                    # إذا كان الفيلم موجوداً في مكتبتنا من قبل، نتخطاه فوراً
-                    if movie_id in existing_ids:
-                        continue
-
-                    title = item.get("title") or item.get("original_title")
-                    overview = item.get("overview", "")
-                    poster_path = item.get("poster_path")
-                    backdrop_path = item.get("backdrop_path")
-                    rating = item.get("vote_average", 0)
-                    release_date = item.get("release_date", "")
-                    year = release_date.split("-")[0] if release_date else ""
-
-                    poster_url = f"https://image.tmdb.org/t/p/w500{poster_path}" if poster_path else ""
-                    backdrop_url = f"https://image.tmdb.org/t/p/w780{backdrop_path}" if backdrop_path else ""
-
-                    # إنشاء روابط السيرفرات الهجينة
-                    sources = [
-                        {"id": 1, "name": "سيرفر 1 (VidSrc)", "url": f"https://vidsrc.me/embed/movie?tmdb={movie_id}"},
-                        {"id": 2, "name": "سيرفر 2 (VidSrc CC)", "url": f"https://vidsrc.cc/v2/embed/movie/{movie_id}"},
-                        {"id": 3, "name": "سيرفر 3 (2Embed)", "url": f"https://www.2embed.cc/embed/{movie_id}"}
-                    ]
-
-                    movie_obj = {
-                        "id": movie_id,
-                        "title": title,
-                        "description": overview,
-                        "posterUrl": poster_url,
-                        "backdropUrl": backdrop_url,
-                        "rating": rating,
-                        "year": year,
-                        "sources": sources
-                    }
-
-                    existing_movies.append(movie_obj)
-                    existing_ids.add(movie_id)
-                    new_movies_count += 1
-
-            time.sleep(0.2)  # فاصل زمني لحماية الـ API
+            with open("movies.json", "r", encoding="utf-8") as f:
+                existing_movies = json.load(f)
+                if not isinstance(existing_movies, list):
+                    existing_movies = []
         except Exception as e:
-            print(f"⚠️ خطأ أثناء جلب الصفحة {page}: {e}")
+            print(f"⚠️ خطأ أثناء قراءة ملف movies.json القديم: {e}")
+            existing_movies = []
 
-# 3. حفظ القائمة المدمجة الجديدة
-if existing_movies:
-    with open(MOVIES_FILE, "w", encoding="utf-8") as f:
-        json.dump(existing_movies, f, ensure_ascii=False, indent=2)
-    print(f" تم إضافة {new_movies_count} فيلم جديد! إجمالي المكتبة الآن: {len(existing_movies)} فيلم.")
+    # معرّفات الأفلام الموجودة حالياً لتفادي التكرار
+    existing_ids = {str(m.get("id")) for m in existing_movies if isinstance(m, dict)}
+
+    # 2. جلب قائمة الأفلام الأكثر شعبية اليوم من TMDB
+    url = f"https://api.themoviedb.org/3/trending/movie/day?api_key={TMDB_API_KEY}&language=ar"
+    new_movies = []
+
+    try:
+        response = requests.get(url, timeout=15)
+        if response.status_code == 200:
+            data = response.json()
+            results = data.get("results", [])
+
+            for item in results:
+                tmdb_id = str(item.get("id"))
+                title = item.get("title") or item.get("original_title")
+                poster_path = item.get("poster_path")
+                backdrop_path = item.get("backdrop_path")
+                
+                poster = f"https://image.tmdb.org/t/p/w500{poster_path}" if poster_path else ""
+                backdrop = f"https://image.tmdb.org/t/p/w780{backdrop_path}" if backdrop_path else ""
+                overview = item.get("overview", "لا يوجد وصف متاح لهذا الفيلم حالياً.")
+                rating = str(round(item.get("vote_average", 0), 1))
+                release_year = (item.get("release_date") or "")[:4]
+
+                # إضافة الفيلم فقط إذا لم يكن موجوداً سابقاً
+                if tmdb_id not in existing_ids:
+                    movie_obj = {
+                        "id": tmdb_id,
+                        "title": title,
+                        "poster": poster,
+                        "backdrop": backdrop,
+                        "description": overview,
+                        "rating": rating,
+                        "year": release_year,
+                        "servers": [
+                            {"name": "سيرفر 1 (VidSrc)", "url": f"https://vidsrc.me/embed/movie?tmdb={tmdb_id}"},
+                            {"name": "سيرفر 2 (2Embed)", "url": f"https://www.2embed.cc/embed/{tmdb_id}"},
+                            {"name": "سيرفر 3 (VidSrc PRO)", "url": f"https://vidsrc.pro/embed/movie/{tmdb_id}"}
+                        ]
+                    }
+                    new_movies.append(movie_obj)
+
+        else:
+            print(f"⚠️ خطأ من سيرفر TMDB، رمز الاستجابة: {response.status_code}")
+
+    except Exception as e:
+        print(f"⚠️ خطأ أثناء اتصال TMDB: {e}")
+
+    # 3. دمج الأفلام الجديدة في البداية مع الاحتفاظ بالقديمة
+    final_movies_list = new_movies + existing_movies
+
+    # 4. حفظ النتيجة داخل movies.json بصيغة قائمة صريحة [...]
+    with open("movies.json", "w", encoding="utf-8") as f:
+        json.dump(final_movies_list, f, ensure_ascii=False, indent=2)
+
+    print(f"✅ تم إضافة {len(new_movies)} فيلم جديد! الإجمالي الحالي: {len(final_movies_list)} فيلم.")
+
+if __name__ == "__main__":
+    fetch_movies()
