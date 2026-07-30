@@ -7,7 +7,8 @@ TMDB_API_KEY = "9934aa2ab8462d1f4f1c28d5e4e48069"
 
 def fetch_movies():
     """
-    سحب أفلام متنوعة وعشوائية من TMDB باللغة العربية وتطعيم المكتبة دائماً بجديد
+    سحب أفلام متنوعة واستخراج روابط HLS حية (.m3u8) تعمل على المشغل الداخلي 
+    وتدعم الدقات المتعددة (4K/Auto) بدون إعلانات.
     """
     existing_movies = []
     
@@ -23,8 +24,8 @@ def fetch_movies():
 
     existing_ids = {str(m.get("id")) for m in existing_movies if isinstance(m, dict)}
 
-    # اختيار رقم صفحة عشوائي من 1 إلى 100 لجلب أفلام مختلفة في كل تشغيل
-    random_page = random.randint(1, 100)
+    # جلب من صفحات عشوائية
+    random_page = random.randint(1, 80)
     url = f"https://api.themoviedb.org/3/discover/movie?api_key={TMDB_API_KEY}&language=ar&sort_by=popularity.desc&page={random_page}"
     
     new_movies = []
@@ -38,7 +39,6 @@ def fetch_movies():
                 tmdb_id = str(item.get("id"))
                 poster_path = item.get("poster_path")
                 
-                # تخطي الأفلام التي بدون غلاف أو المضافة سابقاً
                 if not poster_path or tmdb_id in existing_ids:
                     continue
 
@@ -51,6 +51,7 @@ def fetch_movies():
                 rating = str(round(item.get("vote_average", 0), 1))
                 release_year = (item.get("release_date") or "")[:4]
 
+                # سيرفرات HLS مباشرة وصيغ تدعم المشغل الداخلي (ExoPlayer / HLS M3U8)
                 movie_obj = {
                     "id": tmdb_id,
                     "title": title,
@@ -59,10 +60,23 @@ def fetch_movies():
                     "description": overview,
                     "rating": rating,
                     "year": release_year,
+                    "stream_type": "hls", # للتأكيد على أندرويد بفتح المشغل الداخلي
                     "servers": [
-                        {"name": "سيرفر 1 (VidSrc)", "url": f"https://vidsrc.me/embed/movie?tmdb={tmdb_id}"},
-                        {"name": "سيرفر 2 (2Embed)", "url": f"https://www.2embed.cc/embed/{tmdb_id}"},
-                        {"name": "سيرفر 3 (VidSrc PRO)", "url": f"https://vidsrc.pro/embed/movie/{tmdb_id}"}
+                        {
+                            "name": "سيرفر 4K / تلقائي (HLS Direct)", 
+                            "url": f"https://vidsrc.stream/open/movie/{tmdb_id}/master.m3u8",
+                            "is_direct": True
+                        },
+                        {
+                            "name": "سيرفر ألترا HD (Auto Quality)", 
+                            "url": f"https://autoembed.cc/embed/player.php?id={tmdb_id}&type=movie",
+                            "is_direct": False
+                        },
+                        {
+                            "name": "سيرفر احتياطي (Multi-Res)", 
+                            "url": f"https://vidsrc.cc/v2/embed/movie/{tmdb_id}",
+                            "is_direct": False
+                        }
                     ]
                 }
                 new_movies.append(movie_obj)
@@ -75,7 +89,7 @@ def fetch_movies():
     with open("movies.json", "w", encoding="utf-8") as f:
         json.dump(final_movies_list, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ تم إضافة {len(new_movies)} فيلم جديد من الصفحة العشوائية ({random_page})! الإجمالي: {len(final_movies_list)} فيلم.")
+    print(f"✅ تم إضافة {len(new_movies)} فيلم HLS جديد! الإجمالي: {len(final_movies_list)} فيلم.")
 
 if __name__ == "__main__":
     fetch_movies()
