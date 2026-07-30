@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 
-def fetch_yallakora_matches():
+def fetch_matches():
     """
     سحب مباريات اليوم من مصدر عربي مستقر وعالي الدقة (YallaKora)
     """
@@ -26,7 +26,6 @@ def fetch_yallakora_matches():
             championships = soup.find_all('div', class_='matchCard')
 
             for champ in championships:
-                # اسم البطولة
                 title_elem = champ.find('h2') or champ.find('div', class_='title')
                 competition_name = title_elem.text.strip() if title_elem else "مباراة اليوم"
 
@@ -34,20 +33,15 @@ def fetch_yallakora_matches():
 
                 for idx, match in enumerate(matches):
                     try:
-                        # الفريق الأول
-                        team_a_elem = match.find('div', class_='teamA') or match.find('div', class_='teamsData')
                         team_a = match.find('div', class_='teamA').find('p').text.strip() if match.find('div', class_='teamA') else ""
                         logo_a = match.find('div', class_='teamA').find('img')['src'] if match.find('div', class_='teamA') and match.find('div', class_='teamA').find('img') else ""
 
-                        # الفريق الثاني
                         team_b = match.find('div', class_='teamB').find('p').text.strip() if match.find('div', class_='teamB') else ""
                         logo_b = match.find('div', class_='teamB').find('img')['src'] if match.find('div', class_='teamB') and match.find('div', class_='teamB').find('img') else ""
 
-                        # وقت المباراة
                         time_elem = match.find('span', class_='time') or match.find('div', class_='MTime')
                         match_time = time_elem.text.strip() if time_elem else "قريباً"
 
-                        # القناة الناقلة المعلق
                         channel_elem = match.find('div', class_='channel')
                         channel_name = channel_elem.text.strip() if channel_elem else "beIN Sports"
 
@@ -72,7 +66,7 @@ def fetch_yallakora_matches():
     except Exception as e:
         print(f"⚠️ خطأ أثناء السحب المباشر: {e}")
 
-    # نظام الطوارئ الذكي (fallback) إذا لم تتوفر مباريات أو عند حدوث خطأ شبكة
+    # نظام الطوارئ الاحتياطي
     if not matches_list:
         print("⚠️ تفعيل القائمة الاحتياطية المضمونة.")
         matches_list = [
@@ -98,7 +92,6 @@ def fetch_yallakora_matches():
             }
         ]
 
-    # حفظ النتيجة على شكل مصفوفة جيسون مباشرة [...] ليتوافق 100% مع أندرويد
     with open("matches.json", "w", encoding="utf-8") as f:
         json.dump(matches_list, f, ensure_ascii=False, indent=2)
 
