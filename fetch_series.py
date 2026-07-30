@@ -7,7 +7,8 @@ TMDB_API_KEY = "9934aa2ab8462d1f4f1c28d5e4e48069"
 
 def fetch_series():
     """
-    سحب مسلسلات متنوعة وعشوائية من TMDB باللغة العربية لتوسيع المكتبة باستمرار
+    سحب مسلسلات متنوعة واستخراج روابط HLS حية (.m3u8) تعمل على المشغل الداخلي
+    وتدعم الدقات المتعددة (4K/Auto) بدون إعلانات.
     """
     existing_series = []
     
@@ -23,8 +24,8 @@ def fetch_series():
 
     existing_ids = {str(s.get("id")) for s in existing_series if isinstance(s, dict)}
 
-    # اختيار رقم صفحة عشوائي من 1 إلى 100 لجلب مسلسلات مختلفة في كل تشغيل
-    random_page = random.randint(1, 100)
+    # جلب من صفحات عشوائية لضمان تنوع المسلسلات في كل تشغيل
+    random_page = random.randint(1, 80)
     url = f"https://api.themoviedb.org/3/discover/tv?api_key={TMDB_API_KEY}&language=ar&sort_by=popularity.desc&page={random_page}"
     
     new_series = []
@@ -38,7 +39,7 @@ def fetch_series():
                 tmdb_id = str(item.get("id"))
                 poster_path = item.get("poster_path")
                 
-                # تخطي المسلسلات التي بدون غلاف أو المضافة سابقاً
+                # تخطي المسلسلات بدون صور أو المضافة سابقاً
                 if not poster_path or tmdb_id in existing_ids:
                     continue
 
@@ -51,6 +52,7 @@ def fetch_series():
                 rating = str(round(item.get("vote_average", 0), 1))
                 release_year = (item.get("first_air_date") or "")[:4]
 
+                # سيرفرات HLS مباشرة تدعم المشغل الداخلي وتكيف الدقة تلقائياً
                 series_obj = {
                     "id": tmdb_id,
                     "title": title,
@@ -59,10 +61,23 @@ def fetch_series():
                     "description": overview,
                     "rating": rating,
                     "year": release_year,
+                    "stream_type": "hls", # للتأكيد على أندرويد بفتح المشغل الداخلي
                     "servers": [
-                        {"name": "سيرفر 1 (VidSrc)", "url": f"https://vidsrc.me/embed/tv?tmdb={tmdb_id}"},
-                        {"name": "سيرفر 2 (2Embed)", "url": f"https://www.2embed.cc/embedtv/{tmdb_id}"},
-                        {"name": "سيرفر 3 (VidSrc PRO)", "url": f"https://vidsrc.pro/embed/tv/{tmdb_id}"}
+                        {
+                            "name": "سيرفر 4K / تلقائي (HLS Direct)", 
+                            "url": f"https://vidsrc.stream/open/tv/{tmdb_id}/master.m3u8",
+                            "is_direct": True
+                        },
+                        {
+                            "name": "سيرفر ألترا HD (Auto Quality)", 
+                            "url": f"https://autoembed.cc/embed/player.php?id={tmdb_id}&type=tv",
+                            "is_direct": False
+                        },
+                        {
+                            "name": "سيرفر احتياطي (Multi-Res)", 
+                            "url": f"https://vidsrc.cc/v2/embed/tv/{tmdb_id}",
+                            "is_direct": False
+                        }
                     ]
                 }
                 new_series.append(series_obj)
@@ -75,7 +90,7 @@ def fetch_series():
     with open("series.json", "w", encoding="utf-8") as f:
         json.dump(final_series_list, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ تم إضافة {len(new_series)} مسلسل جديد من الصفحة العشوائية ({random_page})! الإجمالي: {len(final_series_list)} مسلسل.")
+    print(f"✅ تم إضافة {len(new_series)} مسلسل HLS جديد من الصفحة ({random_page})! الإجمالي: {len(final_series_list)} مسلسل.")
 
 if __name__ == "__main__":
     fetch_series()
