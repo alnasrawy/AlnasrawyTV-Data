@@ -164,8 +164,8 @@
     "channelName": "beIN Sports",
     "commentator": "غير محدد",
     "streamUrl": "",
-    "status": "LIVE",
-    "score": "0 - 1"
+    "status": "ENDED",
+    "score": "1 - 2"
   },
   {
     "id": "13",
@@ -178,8 +178,8 @@
     "channelName": "beIN Sports",
     "commentator": "غير محدد",
     "streamUrl": "",
-    "status": "UPCOMING",
-    "score": "- - -"
+    "status": "LIVE",
+    "score": "2 - 2"
   },
   {
     "id": "14",
@@ -192,8 +192,8 @@
     "channelName": "beIN Sports",
     "commentator": "غير محدد",
     "streamUrl": "",
-    "status": "UPCOMING",
-    "score": "- - -"
+    "status": "LIVE",
+    "score": "0 - 2"
   },
   {
     "id": "15",
@@ -206,8 +206,8 @@
     "channelName": "beIN Sports",
     "commentator": "غير محدد",
     "streamUrl": "",
-    "status": "UPCOMING",
-    "score": "- - -"
+    "status": "LIVE",
+    "score": "1 - 1"
   },
   {
     "id": "16",
@@ -220,8 +220,8 @@
     "channelName": "beIN Sports",
     "commentator": "غير محدد",
     "streamUrl": "",
-    "status": "UPCOMING",
-    "score": "- - -"
+    "status": "LIVE",
+    "score": "1 - 0"
   },
   {
     "id": "17",
@@ -234,8 +234,8 @@
     "channelName": "beIN Sports",
     "commentator": "غير محدد",
     "streamUrl": "",
-    "status": "UPCOMING",
-    "score": "- - -"
+    "status": "LIVE",
+    "score": "1 - 0"
   },
   {
     "id": "18",
@@ -248,8 +248,8 @@
     "channelName": "beIN Sports",
     "commentator": "غير محدد",
     "streamUrl": "",
-    "status": "UPCOMING",
-    "score": "- - -"
+    "status": "LIVE",
+    "score": "0 - 0"
   },
   {
     "id": "19",
@@ -262,11 +262,25 @@
     "channelName": "beIN Sports",
     "commentator": "غير محدد",
     "streamUrl": "",
+    "status": "LIVE",
+    "score": "0 - 1"
+  },
+  {
+    "id": "20",
+    "homeTeam": "ستوك سيتي",
+    "homeTeamLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\9\\10\\StokeCity2018_9_10_12_31.jpg",
+    "awayTeam": "فالنسيا",
+    "awayTeamLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Valencia2018_7_29_14_44.jpg",
+    "league": "مباريات ودية -أندية أخبار مالتيميديا نتائج المباريات المزيد أخبار مالتيميديا نتائج المباريات",
+    "matchTime": "20:30",
+    "channelName": "beIN Sports",
+    "commentator": "غير محدد",
+    "streamUrl": "",
     "status": "UPCOMING",
     "score": "- - -"
   },
   {
-    "id": "20",
+    "id": "21",
     "homeTeam": "جيرونا",
     "homeTeamLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\11\\123212024_8_11_23_18.jpg",
     "awayTeam": "أرسنال",
@@ -280,13 +294,55 @@
     "score": "- - -"
   },
   {
-    "id": "21",
+    "id": "22",
     "homeTeam": "لانس",
     "homeTeamLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\9\\10\\Lens2018_9_10_13_11.jpg",
     "awayTeam": "فياريال",
     "awayTeamLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Villareal2018_7_29_14_53.jpg",
     "league": "مباريات ودية -أندية أخبار مالتيميديا نتائج المباريات المزيد أخبار مالتيميديا نتائج المباريات",
     "matchTime": "21:00",
+    "channelName": "beIN Sports",
+    "commentator": "غير محدد",
+    "streamUrl": "",
+    "status": "UPCOMING",
+    "score": "- - -"
+  },
+  {
+    "id": "23",
+    "homeTeam": "بريست",
+    "homeTeamLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2019\\7\\14\\StadeBrestois2019_7_14_16_43.jpg",
+    "awayTeam": "جانجون",
+    "awayTeamLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Guingamp2018_7_29_17_16.jpg",
+    "league": "مباريات ودية -أندية أخبار مالتيميديا نتائج المباريات المزيد أخبار مالتيميديا نتائج المباريات",
+    "matchTime": "21:00",
+    "channelName": "beIN Sports",
+    "commentator": "غير محدد",
+    "streamUrl": "",
+    "status": "UPCOMING",
+    "score": "- - -"
+  },
+  {
+    "id": "24",
+    "homeTeam": "ريال بيتيس",
+    "homeTeamLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\RealBetis2018_7_29_14_50.jpg",
+    "awayTeam": "الميريا",
+    "awayTeamLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2015\\2\\18\\Almería2015_2_18_20_37.jpg",
+    "league": "مباريات ودية -أندية أخبار مالتيميديا نتائج المباريات المزيد أخبار مالتيميديا نتائج المباريات",
+    "matchTime": "21:00",
+    "channelName": "beIN Sports",
+    "commentator": "غير محدد",
+    "streamUrl": "",
+    "status": "UPCOMING",
+    "score": "- - -"
+  },
+  {
+    "id": "25",
+    "homeTeam": "ليستر سيتي",
+    "homeTeamLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\LiesterCity2018_7_29_15_32.jpg",
+    "awayTeam": "جنوى",
+    "awayTeamLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Genoa2018_7_29_15_10.jpg",
+    "league": "مباريات ودية -أندية أخبار مالتيميديا نتائج المباريات المزيد أخبار مالتيميديا نتائج المباريات",
+    "matchTime": "21:30",
     "channelName": "beIN Sports",
     "commentator": "غير محدد",
     "streamUrl": "",
