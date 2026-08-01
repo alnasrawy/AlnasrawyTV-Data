@@ -24,7 +24,7 @@
     "channelName": "beIN Sports",
     "commentator": "غير محدد",
     "streamUrl": "",
-    "status": "LIVE",
+    "status": "ENDED",
     "score": "3 - 0"
   },
   {
@@ -52,7 +52,7 @@
     "channelName": "beIN Sports",
     "commentator": "غير محدد",
     "streamUrl": "",
-    "status": "LIVE",
+    "status": "ENDED",
     "score": "0 - 1"
   },
   {
@@ -66,8 +66,8 @@
     "channelName": "beIN Sports",
     "commentator": "غير محدد",
     "streamUrl": "",
-    "status": "LIVE",
-    "score": "2 - 2"
+    "status": "ENDED",
+    "score": "4 - 3"
   },
   {
     "id": "6",
@@ -94,8 +94,8 @@
     "channelName": "أبوظبي الرياضية - HD1",
     "commentator": "غير محدد",
     "streamUrl": "",
-    "status": "UPCOMING",
-    "score": "- - -"
+    "status": "LIVE",
+    "score": "0 - 1"
   },
   {
     "id": "8",
