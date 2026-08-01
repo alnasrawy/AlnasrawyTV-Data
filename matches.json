@@ -80,7 +80,7 @@
     "channelName": "beIN Sports",
     "commentator": "غير محدد",
     "streamUrl": "",
-    "status": "LIVE",
+    "status": "ENDED",
     "score": "1 - 1"
   },
   {
@@ -95,7 +95,7 @@
     "commentator": "غير محدد",
     "streamUrl": "",
     "status": "LIVE",
-    "score": "0 - 1"
+    "score": "2 - 1"
   },
   {
     "id": "8",
@@ -108,11 +108,25 @@
     "channelName": "الشارقة الرياضية",
     "commentator": "غير محدد",
     "streamUrl": "",
+    "status": "LIVE",
+    "score": "2 - 0"
+  },
+  {
+    "id": "9",
+    "homeTeam": "هامبورج",
+    "homeTeamLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\8\\16\\Hamburg2018_8_16_10_18.jpg",
+    "awayTeam": "إيفرتون",
+    "awayTeamLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Everton2018_7_29_15_28.jpg",
+    "league": "مباريات ودية -أندية أخبار مالتيميديا نتائج المباريات المزيد أخبار مالتيميديا نتائج المباريات",
+    "matchTime": "18:00",
+    "channelName": "beIN Sports",
+    "commentator": "غير محدد",
+    "streamUrl": "",
     "status": "UPCOMING",
     "score": "- - -"
   },
   {
-    "id": "9",
+    "id": "10",
     "homeTeam": "ريال مدريد",
     "homeTeamLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\RealMadrid2018_7_29_14_47.jpg",
     "awayTeam": "فيورنتينا",
@@ -126,7 +140,7 @@
     "score": "- - -"
   },
   {
-    "id": "10",
+    "id": "11",
     "homeTeam": "النصر",
     "homeTeamLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\5\\19\\xdDArNPC_400x4002025_5_19_22_38.webp",
     "awayTeam": "إستريلا",
@@ -140,7 +154,7 @@
     "score": "- - -"
   },
   {
-    "id": "11",
+    "id": "12",
     "homeTeam": "جيرونا",
     "homeTeamLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\11\\123212024_8_11_23_18.jpg",
     "awayTeam": "أرسنال",
@@ -154,7 +168,7 @@
     "score": "- - -"
   },
   {
-    "id": "12",
+    "id": "13",
     "homeTeam": "لانس",
     "homeTeamLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\9\\10\\Lens2018_9_10_13_11.jpg",
     "awayTeam": "فياريال",
