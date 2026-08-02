@@ -4,7 +4,7 @@ import requests
 
 def get_matches_from_yallakora_api():
     today_str = datetime.now().strftime("%m/%d/%Y")
-    # رابط الـ API المباشر الذي يعتمد عليه موقع يلاكورة لجلب المباريات
+    # رابط الـ API المباشر الخاص بيلاكورة
     url = f"https://www.yallakora.com/api/v1/matches?date={today_str}"
     
     headers = {
@@ -24,7 +24,6 @@ def get_matches_from_yallakora_api():
         parsed_matches = []
         match_id = 1
 
-        # استخراج البطولات والمباريات من هيكل الـ JSON القادم
         championships = data.get('championships', [])
         
         for champ in championships:
@@ -33,11 +32,15 @@ def get_matches_from_yallakora_api():
 
             for match in matches:
                 try:
-                    home_team = match.get('TeamA', {}).get('Name', '')
-                    home_logo = match.get('TeamA', {}).get('Logo', '')
+                    # الفريق الأول (المستضيف) وشعاره
+                    team_a = match.get('TeamA', {})
+                    home_team = team_a.get('Name', '')
+                    home_logo = team_a.get('Logo', '')
 
-                    away_team = match.get('TeamB', {}).get('Name', '')
-                    away_logo = match.get('TeamB', {}).get('Logo', '')
+                    # الفريق الثاني (الضيف) وشعاره
+                    team_b = match.get('TeamB', {})
+                    away_team = team_b.get('Name', '')
+                    away_logo = team_b.get('Logo', '')
 
                     if not home_team or not away_team:
                         continue
@@ -49,7 +52,7 @@ def get_matches_from_yallakora_api():
                     away_score = match.get('TeamBScore', 0)
                     score_text = f"{home_score} - {away_score}"
 
-                    # حالة المباراة (0 لم تبدأ، 1 جارية، 2 انتهت - حسب نظامهم)
+                    # حالة المباراة (0 لم تبدأ، 1 جارية، 2 انتهت)
                     match_status = match.get('MatchStatus', 0)
                     status = "UPCOMING"
                     if match_status == 1:
@@ -57,8 +60,14 @@ def get_matches_from_yallakora_api():
                     elif match_status == 2:
                         status = "ENDED"
 
-                    channel_name = match.get('Channel', 'beIN Sports')
-                    commentator = match.get('Commentator', 'غير محدد')
+                    # القناة الناقلة والمعلق
+                    channel_name = match.get('Channel', '')
+                    if not channel_name:
+                        channel_name = "غير متوفرة"
+                        
+                    commentator = match.get('Commentator', '')
+                    if not commentator:
+                        commentator = "غير محدد"
 
                     parsed_matches.append({
                         "id": str(match_id),
@@ -88,6 +97,7 @@ def get_matches_from_yallakora_api():
 if __name__ == "__main__":
     matches_list = get_matches_from_yallakora_api()
     
+    # شرط الحماية: لا تقم بتحديث الملف إلا إذا تم جلب مباريات فعلياً لكي لا تتفريغ القائمة
     if len(matches_list) > 0:
         with open("matches.json", "w", encoding="utf-8") as f:
             json.dump(matches_list, f, ensure_ascii=False, indent=2)
