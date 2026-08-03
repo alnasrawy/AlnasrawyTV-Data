@@ -1,10 +1,14 @@
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 import json
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 def get_matches_from_yallakora_api():
-    # استخدام الصيغة القياسية للتاريخ التي تتوافق مع خوادم الـ API
-    today_str = datetime.now().strftime("%m/%d/%Y")
+    # 1. ضبط التوقيت جغرافياً (توقيت بغداد UTC+3) لضمان دقة التاريخ على سيرفرات GitHub
+    iraq_tz = timezone(timedelta(hours=3))
+    today_str = datetime.now(iraq_tz).strftime("%m/%d/%Y")
+    
     url = f"https://www.yallakora.com/api/v1/matches?date={today_str}"
     
     headers = {
@@ -12,10 +16,21 @@ def get_matches_from_yallakora_api():
         'Accept': 'application/json, text/plain, */*'
     }
 
-    print(f"🚀 بدء سحب مباريات اليوم لتاريخ: {today_str}")
+    print(f"🚀 بدء سحب مباريات اليوم لتاريخ: {today_str} (بتوقيت المنطقة)")
+
+    # 2. بناء نظام جلسة احترافي مع خاصية المحاولة التلقائية (Retry Strategy)
+    session = requests.Session()
+    retries = Retry(
+        total=3,                # عدد محاولات إعادة الاتصال
+        backoff_factor=1,       # الانتظار بين المحاولات (1ثانية، 2ثانية، 4ثانية)
+        status_forcelist=[500, 502, 503, 504] # الأخطاء التي تستدعي إعادة المحاولة
+    )
+    session.mount('https://', HTTPAdapter(max_retries=retries))
 
     try:
-        response = requests.get(url, headers=headers, timeout=15)
+        # استخدام الجلسة بدلاً من requests المباشر
+        response = session.get(url, headers=headers, timeout=15)
+        
         if response.status_code != 200:
             print(f"❌ رمز استجابة غير متوقع من الخادم: {response.status_code}")
             return []
@@ -32,12 +47,12 @@ def get_matches_from_yallakora_api():
 
             for match in matches:
                 try:
-                    # استخراج بيانات الفريق الأول (المستضيف)
+                    # الفريق الأول (المستضيف)
                     team_a = match.get('TeamA', {})
                     home_team = team_a.get('Name', '').strip()
                     home_logo = team_a.get('Logo', '').strip()
 
-                    # استخراج بيانات الفريق الثاني (الضيف)
+                    # الفريق الثاني (الضيف)
                     team_b = match.get('TeamB', {})
                     away_team = team_b.get('Name', '').strip()
                     away_logo = team_b.get('Logo', '').strip()
@@ -47,12 +62,10 @@ def get_matches_from_yallakora_api():
 
                     match_time = match.get('Time', '--:--').strip()
                     
-                    # النتيجة
                     home_score = match.get('TeamAScore', 0)
                     away_score = match.get('TeamBScore', 0)
                     score_text = f"{home_score} - {away_score}"
 
-                    # حالة المباراة (0 لم تبدأ، 1 جارية، 2 انتهت)
                     match_status = match.get('MatchStatus', 0)
                     status = "UPCOMING"
                     if match_status == 1:
@@ -60,12 +73,10 @@ def get_matches_from_yallakora_api():
                     elif match_status == 2:
                         status = "ENDED"
 
-                    # جلب اسم القناة الناقلة بدقة وتجنب القيم الفارغة
                     channel_name = match.get('Channel', '').strip()
                     if not channel_name:
                         channel_name = "غير متوفرة"
                         
-                    # جلب اسم المعلق
                     commentator = match.get('Commentator', '').strip()
                     if not commentator:
                         commentator = "غير محدد"
@@ -73,37 +84,35 @@ def get_matches_from_yallakora_api():
                     parsed_matches.append({
                         "id": str(match_id),
                         "homeTeam": home_team,
-                        "homeTeamLogo": home_logo,  # جلب رابط شعار الفريق الأول بوضوح
+                        "homeTeamLogo": home_logo,
                         "awayTeam": away_team,
-                        "awayTeamLogo": away_logo,  # جلب رابط شعار الفريق الثاني بوضوح
+                        "awayTeamLogo": away_logo,
                         "league": league_name,
                         "matchTime": match_time,
                         "channelName": channel_name,
                         "commentator": commentator,
-                        "streamUrl": "",  # يُترك فارغاً للربط اليدوي من لوحة التحكم
+                        "streamUrl": "", 
                         "status": status,
                         "score": score_text
                     })
                     match_id += 1
 
                 except Exception as inner_e:
-                    print(f"⚠️ خطأ أثناء معالجة مباراة واحدة: {inner_e}")
+                    print(f"⚠️ خطأ أثناء معالجة مباراة: {inner_e}")
                     continue
 
         return parsed_matches
 
-    except Exception as e:
-        print(f"❌ خطأ أثناء الاتصال بالشبكة: {e}")
+    except requests.exceptions.RequestException as e:
+        print(f"❌ فشل الاتصال بعدة محاولات: {e}")
         return []
 
 if __name__ == "__main__":
     matches_list = get_matches_from_yallakora_api()
     
-    # شرط الحماية: الكتابة فقط إذا تم جلب مباريات جديدة، لمنع تفريغ الملف خطأً
     if len(matches_list) > 0:
-        # الكتابة بنظام "w" لضمان تحديث مباريات اليوم فقط وإزالة مباريات الأيام القديمة المنتهية
         with open("matches.json", "w", encoding="utf-8") as f:
             json.dump(matches_list, f, ensure_ascii=False, indent=2)
-        print(f"✅ تم تحديث ملف matches.json بمباريات اليوم بنجاح! إجمالي المباريات: {len(matches_list)}")
+        print(f"✅ تم تحديث ملف matches.json بنجاح! إجمالي المباريات: {len(matches_list)}")
     else:
         print("⚠️ لم يتم جلب أي مباريات جديدة. تم الاحتفاظ بالملف القديم لحماية البيانات.")
