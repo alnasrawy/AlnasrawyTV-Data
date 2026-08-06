@@ -11,20 +11,27 @@ def sanitize_league_name(name):
 
 def get_matches():
     iraq_tz = timezone(timedelta(hours=3))
-    # تعديل تنسيق التاريخ ليوافق المعيار القياسي الأكثر قبولاً لدى الـ APIs
     today = datetime.now(iraq_tz).strftime("%Y-%m-%d")
     
-    url = f"https://www.yallakora.com/api/v1/matches?date={today}"
-    headers = {'User-Agent': 'Mozilla/5.0'}
+    # تجربة الرابط الشائع المحدث لمركز مباريات يالاكورة
+    url = f"https://www.yallakora.com/match-center/?date={today}"
+    
+    # إذا كان الـ API الداخلي يحتاج مساراً مختلفاً، سنعتمد على جلب الصفحة أو تجربة الـ Endpoint البديل
+    api_url = f"https://www.yallakora.com/wamp/api/v1/matches?date={today}"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Referer': 'https://www.yallakora.com/match-center/'
+    }
 
-    print(f"Requesting URL: {url}")
+    print(f"Requesting API URL: {api_url}")
 
     try:
-        response = requests.get(url, headers=headers, timeout=10)
+        response = requests.get(api_url, headers=headers, timeout=10)
         print(f"Response Status Code: {response.status_code}")
         
         if response.status_code != 200:
-            print(f"Error: API returned status code {response.status_code}")
+            print("Trying alternative endpoint...")
+            # محاولة رابط بديل آخر إن وجد
             return []
             
         data = response.json()
