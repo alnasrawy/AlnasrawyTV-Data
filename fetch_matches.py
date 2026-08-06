@@ -2,77 +2,85 @@ import json
 import requests
 from datetime import datetime, timezone, timedelta
 
-def sanitize_league_name(name):
-    junk = ["أخبار", "مالتيميديا", "نتائج المباريات", "المزيد", "نتائج", "جدول", "مباريات"]
-    clean_name = name.split('-')[0].strip()
-    for word in junk:
-        clean_name = clean_name.replace(word, "").strip()
-    return clean_name if clean_name else name
+# مفتاح الـ API الخاص بك المعتمد رسمياً
+API_KEY = "08bb1fd877f108a186ef75e2b2b4cac6"
 
 def get_matches():
     iraq_tz = timezone(timedelta(hours=3))
     today = datetime.now(iraq_tz).strftime("%Y-%m-%d")
     
-    api_url = f"https://www.yallakora.com/wamp/api/v1/matches?date={today}"
+    url = f"https://v3.football.api-sports.io/fixtures?date={today}"
     
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-        'Accept': 'application/json, text/plain, */*',
-        'Referer': 'https://www.yallakora.com/match-center/'
+        'x-rapidapi-host': 'v3.football.api-sports.io',
+        'x-rapidapi-key': API_KEY
     }
 
-    print(f"Requesting API URL: {api_url}")
+    print(f"Requesting API-Football for date: {today}")
 
     try:
-        response = requests.get(api_url, headers=headers, timeout=15)
+        response = requests.get(url, headers=headers, timeout=15)
         print(f"Response Status Code: {response.status_code}")
         
         if response.status_code != 200:
             print(f"Error: API returned status code {response.status_code}")
             return []
             
-        try:
-            data = response.json()
-        except json.JSONDecodeError:
-            print("Error: Response is not a valid JSON. Preview:")
-            print(response.text[:300])
-            return []
+        data = response.json()
+        fixtures = data.get('response', [])
+        print(f"Total fixtures found: {len(fixtures)}")
         
         parsed_matches = []
-        championships = data.get('championships', [])
-        print(f"Total championships found: {len(championships)}")
+        has_live_match = False
         
-        for champ in championships:
-            league = sanitize_league_name(champ.get('Title', 'مباريات متنوعة'))
-            for m in champ.get('matches', []):
-                h_score = str(m.get('TeamAScore', '0'))
-                a_score = str(m.get('TeamBScore', '0'))
+        for fixture in fixtures:
+            match_info = fixture.get('fixture', {})
+            teams = fixture.get('teams', {})
+            goals = fixture.get('goals', {})
+            league_info = fixture.get('league', {})
+            status_short = match_info.get('status', {}).get('short', 'NS')
+            
+            # تحديد الحالة بدقة للتطبيق الرئيسي
+            if status_short in ['1H', 'HT', '2H', 'ET', 'P', 'LIVE']:
+                match_status = "LIVE"
+                has_live_match = True
+            elif status_short in ['FT', 'AET', 'PEN']:
+                match_status = "ENDED"
+            else:
+                match_status = "UPCOMING"
                 
-                status_code = m.get('MatchStatus')
-                if status_code == 1:
-                    match_status = "LIVE"
-                elif status_code == 2:
-                    match_status = "ENDED"
-                else:
-                    match_status = "UPCOMING"
-                
-                parsed_matches.append({
-                    "id": str(m.get('MatchId', '0')),
-                    "homeTeam": m.get('TeamA', {}).get('Name', '').strip(),
-                    "homeTeamLogo": m.get('TeamA', {}).get('Logo', '').strip(),
-                    "awayTeam": m.get('TeamB', {}).get('Name', '').strip(),
-                    "awayTeamLogo": m.get('TeamB', {}).get('Logo', '').strip(),
-                    "league": league,
-                    "matchTime": m.get('Time', '--:--').strip(),
-                    "status": match_status,
-                    "score": f"{h_score} - {a_score}",
-                    "homeScore": h_score,
-                    "awayScore": a_score,
-                    "channelName": m.get('Channel', 'غير متوفرة').strip(),
-                    "commentator": m.get('Commentator', 'غير محدد').strip()
-                })
-                
-        print(f"Total parsed matches: {len(parsed_matches)}")
+            h_score = str(goals.get('home') if goals.get('home') is not None else 0)
+            a_score = str(goals.get('away') if goals.get('away') is not None else 0)
+            
+            # استخراج وقت المباراة بتوقيت العراق المحلي
+            match_date_utc = match_info.get('date')
+            match_time = "--:--"
+            if match_date_utc:
+                dt_utc = datetime.fromisoformat(match_date_utc.replace('Z', '+00:00'))
+                dt_iraq = dt_utc.astimezone(iraq_tz)
+                match_time = dt_iraq.strftime("%H:%M")
+
+            parsed_matches.append({
+                "id": str(match_info.get('id', '0')),
+                "homeTeam": teams.get('home', {}).get('name', '').strip(),
+                "homeTeamLogo": teams.get('home', {}).get('logo', '').strip(),
+                "awayTeam": teams.get('away', {}).get('name', '').strip(),
+                "awayTeamLogo": teams.get('away', {}).get('logo', '').strip(),
+                "league": league_info.get('name', 'مباريات متنوعة').strip(),
+                "matchTime": match_time,
+                "status": match_status,
+                "score": f"{h_score} - {a_score}",
+                "homeScore": h_score,
+                "awayScore": a_score,
+                "channelName": "غير متوفرة",
+                "commentator": "غير محدد"
+            })
+            
+        if has_live_match:
+            print("Status: LIVE matches detected! Updating live scores.")
+        else:
+            print("Status: No live matches right now.")
+            
         return parsed_matches
         
     except Exception as e:
