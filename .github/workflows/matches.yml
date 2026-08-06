@@ -2,7 +2,13 @@ name: Update Matches Data Automatically
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    # 1:00 AM بتوقيت العراق (22:00 UTC) - جلب جدول اليوم الجديد
+    - cron: '0 22 * * *'
+    
+    # من 2:00 ظهراً إلى 1:00 بعد منتصف الليل بتوقيت العراق - تحديث كل 15 دقيقة
+    # (يقابلها من 11:00 صباحاً إلى 22:00 مساءً بتوقيت UTC)
+    - cron: '*/15 11-22 * * *'
+    
   workflow_dispatch:
 
 permissions:
@@ -13,15 +19,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
       - uses: actions/setup-python@v5
         with: { python-version: '3.10' }
+        
       - name: Install Dependencies
         run: pip install requests
+        
       - name: Run Fetch Script
         run: python fetch_matches.py
+        
       - name: Commit and Push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Bot"
           git add matches.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🚀 Updates: Live Scores & Leagues Cleaned" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🚀 Updates: API-Football Live Scores" && git push)
