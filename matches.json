@@ -52,10 +52,10 @@
     "awayTeamLogo": "https://media.api-sports.io/football/teams/24539.png",
     "league": "U19 Bundesliga",
     "matchTime": "14:00",
-    "status": "UPCOMING",
-    "score": "0 - 0",
+    "status": "ENDED",
+    "score": "0 - 2",
     "homeScore": "0",
-    "awayScore": "0",
+    "awayScore": "2",
     "channelName": "غير متوفرة",
     "commentator": "غير محدد"
   },
