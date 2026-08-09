@@ -1,110 +1,148 @@
-import json
 import requests
-from datetime import datetime, timezone, timedelta
+from bs4 import BeautifulSoup
+import json
+import time
+import random
+from datetime import datetime, timedelta, timezone
 
-API_KEY = "08bb1fd877f108a186ef75e2b2b4cac6"
-
-# قائمة الكلمات المفتاحية للدوريات والبطولات الهامة والوديات التي نريد الاحتفاظ بها
-ALLOWED_LEAGUES_KEYWORDS = [
-    "premier league", "la liga", "serie a", "bundesliga", "ligue 1",
-    "champions league", "europa league", "conference league",
-    "world cup", "caf champions league", "afc champions league",
-    "friendly", "ودية", "دوري أبطال", "الدوري الإنجليزي", "الدوري الإسباني",
-    "الدوري الإيطالي", "الدوري الألماني", "الدوري الفرنسي", "كأس"
+# 🕵️ قائمة هويات المتصفحات للتمويه (User-Agent Rotation)
+USER_AGENTS = [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 17_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Mobile/15E148 Safari/604.1",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0",
+    "Mozilla/5.0 (Linux; Android 13; SM-S918B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36"
 ]
 
-def is_allowed_league(league_name):
-    league_lower = league_name.lower()
-    for keyword in ALLOWED_LEAGUES_KEYWORDS:
-        if keyword in league_lower:
-            return True
-    return False
+PRIORITY_LEAGUES = [
+    "دوري أبطال أوروبا", "الدوري الإنجليزي", "الدوري الإسباني", 
+    "الدوري السعودي", "الدوري العراقي", "الدوري الألماني", 
+    "الدوري الفرنسي", "الدوري الإيطالي", "دوري أبطال آسيا", "مباريات ودية", "كأس"
+]
 
-def get_matches():
-    iraq_tz = timezone(timedelta(hours=3))
-    today = datetime.now(iraq_tz).strftime("%Y-%m-%d")
+class GhostScraper:
+    def __init__(self):
+        self.session = requests.Session()
+
+    def get_headers(self, referer):
+        return {
+            'User-Agent': random.choice(USER_AGENTS),
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+            'Accept-Language': 'ar,en-US;q=0.7,en;q=0.3',
+            'Referer': referer,
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1',
+            'Sec-Fetch-Dest': 'document',
+            'Sec-Fetch-Mode': 'navigate',
+            'Sec-Fetch-Site': 'same-origin',
+        }
+
+    def safe_get(self, url):
+        # 🚶 محاكاة التأخير البشري
+        time.sleep(random.uniform(2.5, 5.2))
+        try:
+            # استخدام جوجل كرابط إحالة للتمويه في الطلب الأول
+            ref = "https://www.google.com/search?q=koora+live"
+            res = self.session.get(url, headers=self.get_headers(ref), timeout=25)
+            res.encoding = 'utf-8'
+            return res
+        except Exception as e:
+            print(f"⚠️ Security Bypass Failed for {url}: {e}")
+            return None
+
+def clean_name(name):
+    junk = ["نادي", "فريق", "fc", "f.c", "sc", "u23", "شباب", "الأوليمبي"]
+    name = name.lower()
+    for word in junk: name = name.replace(word, "")
+    return name.strip()
+
+def fetch_yallakora(scraper, date_str):
+    print("🕵️ Stealth Mode: Accessing YallaKora...")
+    url = f"https://www.yallakora.com/match-center/?date={date_str}"
+    res = scraper.safe_get(url)
+    if not res: return []
     
-    url = f"https://v3.football.api-sports.io/fixtures?date={today}"
+    soup = BeautifulSoup(res.content, 'html.parser')
+    matches = []
+    for card in soup.find_all('div', class_='matchCard'):
+        league = card.find('h2').text.strip()
+        for m in card.find_all('div', class_='allMatch'):
+            try:
+                t1 = m.find('div', class_='teamA').find('p').text.strip()
+                t2 = m.find('div', class_='teamB').find('p').text.strip()
+                scores = m.find('span', class_='score').find_all('b')
+                s1, s2 = (scores[0].text.strip(), scores[1].text.strip()) if len(scores) > 1 else ("0", "0")
+                st = m.find('div', class_='matchStatus').text.strip()
+                matches.append({
+                    "homeTeam": t1, "awayTeam": t2, "league": league,
+                    "homeLogo": m.find('div', class_='teamA').find('img')['src'],
+                    "awayLogo": m.find('div', class_='teamB').find('img')['src'],
+                    "score": f"{s1} - {s2}", "homeScore": s1, "awayScore": s2,
+                    "matchTime": m.find('span', class_='time').text.strip(),
+                    "status": "LIVE" if "جارية" in st else ("ENDED" if "انتهت" in st else "UPCOMING"),
+                    "channelName": m.find('div', class_='channel').text.strip() if m.find('div', class_='channel') else "غير متوفرة",
+                    "commentator": m.find('div', class_='icon-commentator').parent.text.strip() if m.find('div', class_='icon-commentator') else "غير محدد",
+                    "source": "yallakora"
+                })
+            except: continue
+    return matches
+
+def fetch_filgoal(scraper):
+    print("🕵️ Stealth Mode: Accessing FilGoal...")
+    url = "https://www.filgoal.com/matches/"
+    res = scraper.safe_get(url)
+    if not res: return []
     
-    headers = {
-        'x-rapidapi-host': 'v3.football.api-sports.io',
-        'x-rapidapi-key': API_KEY
-    }
-
-    print(f"Requesting API-Football for date: {today}")
-
-    try:
-        response = requests.get(url, headers=headers, timeout=15)
-        print(f"Response Status Code: {response.status_code}")
-        
-        if response.status_code != 200:
-            print(f"Error: API returned status code {response.status_code}")
-            return []
+    soup = BeautifulSoup(res.content, 'html.parser')
+    matches = []
+    for m in soup.find_all('div', class_='mc-data'):
+        try:
+            t1 = m.find('div', class_='team-a').find('strong').text.strip()
+            t2 = m.find('div', class_='team-b').find('strong').text.strip()
+            score_div = m.find('div', class_='score')
+            s1, s2 = "0", "0"
+            if score_div:
+                pts = score_div.find_all('span')
+                if len(pts) > 1: s1, s2 = pts[0].text.strip(), pts[1].text.strip()
             
-        data = response.json()
-        fixtures = data.get('response', [])
-        print(f"Total fixtures from API: {len(fixtures)}")
-        
-        parsed_matches = []
-        has_live_match = False
-        
-        for fixture in fixtures:
-            league_info = fixture.get('league', {})
-            league_name = league_info.get('name', '').strip()
-            
-            # تطبيق الفلترة: إذا لم يكن الدوري من ضمن الدوريات المستهدفة، يتم تخطيه
-            if not is_allowed_league(league_name):
-                continue
-                
-            match_info = fixture.get('fixture', {})
-            teams = fixture.get('teams', {})
-            goals = fixture.get('goals', {})
-            status_short = match_info.get('status', {}).get('short', 'NS')
-            
-            if status_short in ['1H', 'HT', '2H', 'ET', 'P', 'LIVE']:
-                match_status = "LIVE"
-                has_live_match = True
-            elif status_short in ['FT', 'AET', 'PEN']:
-                match_status = "ENDED"
-            else:
-                match_status = "UPCOMING"
-                
-            h_score = str(goals.get('home') if goals.get('home') is not None else 0)
-            a_score = str(goals.get('away') if goals.get('away') is not None else 0)
-            
-            match_date_utc = match_info.get('date')
-            match_time = "--:--"
-            if match_date_utc:
-                dt_utc = datetime.fromisoformat(match_date_utc.replace('Z', '+00:00'))
-                dt_iraq = dt_utc.astimezone(iraq_tz)
-                match_time = dt_iraq.strftime("%H:%M")
-
-            parsed_matches.append({
-                "id": str(match_info.get('id', '0')),
-                "homeTeam": teams.get('home', {}).get('name', '').strip(),
-                "homeTeamLogo": teams.get('home', {}).get('logo', '').strip(),
-                "awayTeam": teams.get('away', {}).get('name', '').strip(),
-                "awayTeamLogo": teams.get('away', {}).get('logo', '').strip(),
-                "league": league_name,
-                "matchTime": match_time,
-                "status": match_status,
-                "score": f"{h_score} - {a_score}",
-                "homeScore": h_score,
-                "awayScore": a_score,
-                "channelName": "غير متوفرة",
-                "commentator": "غير محدد"
+            st_txt = m.find('div', class_='match-status').text.strip() if m.find('div', class_='match-status') else ""
+            matches.append({
+                "homeTeam": t1, "awayTeam": t2, "league": "بطولة دولية",
+                "homeLogo": "https:" + m.find('div', class_='team-a').find('img')['src'],
+                "awayLogo": "https:" + m.find('div', class_='team-b').find('img')['src'],
+                "score": f"{s1} - {s2}", "homeScore": s1, "awayScore": s2,
+                "matchTime": m.find('div', class_='match-time').text.strip() if m.find('div', class_='match-time') else "--:--",
+                "status": "LIVE" if "شغال" in st_txt else ("ENDED" if "انتهت" in st_txt else "UPCOMING"),
+                "channelName": "غير متوفرة", "commentator": "غير محدد", "source": "filgoal"
             })
-            
-        print(f"Total filtered matches saved: {len(parsed_matches)}")
-        return parsed_matches
-        
-    except Exception as e:
-        print(f"CRITICAL EXCEPTION: {str(e)}")
-        return []
+        except: continue
+    return matches
 
 if __name__ == "__main__":
-    matches = get_matches()
-    # نقوم بالتحديث حتى لو كانت القائمة فارغة لضمان مزامنة الملف، أو حفظ المباريات المصفاة
+    iraq_tz = timezone(timedelta(hours=3))
+    now = datetime.now(iraq_tz)
+    
+    ghost = GhostScraper()
+    
+    # 🚀 جلب البيانات بحماية قصوى
+    all_data = fetch_yallakora(ghost, now.strftime('%m/%d/%Y')) + fetch_filgoal(ghost)
+    
+    # دمج المكررات بذكاء
+    final_matches = {}
+    for m in all_data:
+        key = f"{clean_name(m['homeTeam'])}_vs_{clean_name(m['awayTeam'])}"
+        if key not in final_matches:
+            final_matches[key] = m
+        elif m['source'] == 'yallakora':
+            final_matches[key] = m
+
+    matches_list = list(final_matches.values())
+    for m in matches_list:
+        m['priority'] = next((i for i, p in enumerate(PRIORITY_LEAGUES) if p in m['league']), 100)
+    
+    matches_list.sort(key=lambda x: (x['priority'], x['matchTime']))
+    
     with open("matches.json", "w", encoding="utf-8") as f:
-        json.dump(matches, f, ensure_ascii=False, indent=2)
-    print("matches.json updated successfully with filtered data.")
+        json.dump(matches_list, f, ensure_ascii=False, indent=2)
+        
+    print(f"🏁 Stealth Update Complete. Total: {len(matches_list)}")
