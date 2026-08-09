@@ -1,15 +1,15 @@
-name: Alnasrawy TV Matches Auto-Sync
+name: Alnasrawy TV Matches Smart-Sync (Credit Saver)
 
 on:
   schedule:
-    # تحديث كل 5 دقائق خلال وقت المباريات (من 11 صباحاً حتى 11 مساءً UTC)
-    # يقابلها من 2 ظهراً حتى 2 بعد منتصف الليل بتوقيت العراق
-    - cron: '*/5 11-23 * * *'
+    # 🌙 1. جلب قائمة اليوم الجديد (12:00 فجراً بتوقيت العراق / 9:00 مساءً UTC)
+    - cron: '0 21 * * *'
     
-    # تحديث كل ساعة في بقية اليوم للحفاظ على الهدوء
-    - cron: '0 0-10 * * *'
+    # 🔥 2. تحديثات النتائج اللحظية كل 10 دقائق (من 2:00 ظهراً حتى 1:00 فجراً بتوقيت العراق)
+    # تقابلها من 11:00 صباحاً حتى 10:00 مساءً بتوقيت UTC
+    - cron: '*/10 11-22 * * *'
     
-  workflow_dispatch: # يسمح لك بتشغيل التحديث يدوياً
+  workflow_dispatch: # متاح للتشغيل اليدوي للطوارئ
 
 permissions:
   contents: write
@@ -19,20 +19,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
       - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
           
-      - name: Install Requirements
+      - name: Install Dependencies
         run: pip install requests beautifulsoup4
         
       - name: Run Scraper
         run: python fetch_matches.py
         
-      - name: Commit Changes
+      - name: Auto-Commit Results
         run: |
           git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.name "Alnasrawy Bot"
           git add matches.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "⚽ Live Score Update: $(date)" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "⚽ Match Data Updated [$(date)]" && git push)
