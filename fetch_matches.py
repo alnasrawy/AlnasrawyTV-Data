@@ -55,6 +55,145 @@ VIP_TEAMS = [
 
 BLOCKLIST = ["شباب", "رديف", "u23", "u19", "درجة ثانية", "درجة ثالثة", "هواة", "سيدات"]
 
+# ================= تحميل config.json (الإعدادات كلها بيانات لا كود) =================
+def _load_config(path="config.json"):
+    cfg = {}
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            cfg = json.load(f)
+    except Exception:
+        pass
+    return cfg
+
+_CFG = _load_config()
+_cfg_vip = _CFG.get("vip", {}) or {}
+if _cfg_vip.get("leagues"):
+    LEAGUES_MAPPING = _cfg_vip["leagues"]
+if _cfg_vip.get("general_keywords"):
+    GENERAL_VIP_KEYWORDS = _cfg_vip["general_keywords"]
+if _cfg_vip.get("teams"):
+    VIP_TEAMS = _cfg_vip["teams"]
+if _cfg_vip.get("blocklist"):
+    BLOCKLIST = _cfg_vip["blocklist"]
+
+TELEGRAM = _CFG.get("telegram", {}) or {}
+SITES_CFG = _CFG.get("sites", {}) or {}
+GLOBAL_DELAY = _CFG.get("global_delay", [1.0, 2.0]) or [1.0, 2.0]
+FILGOAL_CACHE_TTL = float(_CFG.get("filgoal_cache_ttl_minutes", 30))
+
+# ================= كاش فيلجول (يُحفظ في filgoal_cache.json ويعاد رفعه في كل دورة) =================
+FILGOAL_CACHE_FILE = "filgoal_cache.json"
+FILGOAL_CACHE = {}
+
+def _load_filgoal_cache():
+    try:
+        with open(FILGOAL_CACHE_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+def _save_filgoal_cache():
+    try:
+        with open(FILGOAL_CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(FILGOAL_CACHE, f, ensure_ascii=False, indent=1)
+    except Exception:
+        pass
+
+# ================= حالة الإشعارات (يُحفظ في state.json) =================
+STATE_FILE = "state.json"
+
+def _load_state():
+    try:
+        with open(STATE_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {"started_notified": {}, "ended_notified": {}, "prev_status": {}}
+
+def _save_state(state):
+    try:
+        with open(STATE_FILE, "w", encoding="utf-8") as f:
+            json.dump(state, f, ensure_ascii=False, indent=1)
+    except Exception:
+        pass
+
+_TG_WARNED = {"once": False}
+
+def send_telegram(text):
+    """إرسال رسالة للقناة عبر البوت. التوكين يأتي من متغير البيئة TG_BOT_TOKEN (سر GitHub) — لا يُخزن في الملفات."""
+    if not TELEGRAM.get("enabled"):
+        return False
+    token = os.environ.get("TG_BOT_TOKEN")
+    chat = (TELEGRAM.get("channel") or "").strip()
+    if not token or not chat:
+        if not _TG_WARNED["once"]:
+            print("    ⚠️ Telegram: TG_BOT_TOKEN (سر GitHub) أو channel غير مضبوط — تخطي الإشعارات.")
+            _TG_WARNED["once"] = True
+        return False
+    try:
+        resp = requests.post(
+            f"https://api.telegram.org/bot{token}/sendMessage",
+            json={"chat_id": chat, "text": text, "disable_web_page_preview": True},
+            timeout=20,
+        )
+        return resp.status_code == 200
+    except Exception as e:
+        print(f"    ❌ Telegram send failed: {e}")
+        return False
+
+def _run_telegram_notifications(final_list, state):
+    """تنبيه بدء المباراة + ملخص نهاية المباراة (النتيجة + الهدافون لكل فريق)."""
+    now = datetime.now(TZ)
+    sent = []
+    for m in final_list:
+        key = "_".join(sorted([clean_name(m['homeTeam']), clean_name(m['awayTeam'])]))
+        prev = state.get('prev_status', {}).get(key)
+        status = m['status']
+        state.setdefault('prev_status', {})[key] = status
+        started = state.setdefault('started_notified', {})
+        ended = state.setdefault('ended_notified', {})
+
+        # ---- تنبيه بدء المباراة ----
+        if TELEGRAM.get("send_start_alerts", True) and status == "لم تبدأ" and not started.get(key):
+            time_str = m['scoreOrTime']
+            if ':' in time_str and '-' not in time_str:
+                try:
+                    hm = time_str.replace('م', '').replace('ص', '').strip()
+                    start_dt = datetime.combine(now.date(), datetime.strptime(hm, '%H:%M').time()).replace(tzinfo=TZ)
+                    window = timedelta(minutes=TELEGRAM.get("start_alert_minutes", 15))
+                    if now >= start_dt - window and now < start_dt:
+                        text = (f"🔔 تبدأ قريباً\n\n"
+                                f"🏆 {m['league']}\n"
+                                f"{m['homeTeam']} 🆚 {m['awayTeam']}\n"
+                                f"⏰ {m['scoreOrTime']}\n"
+                                f"📺 {', '.join(m['channels']) or '—'}")
+                        if send_telegram(text):
+                            started[key] = True
+                            sent.append(f"start:{m['homeTeam']} vs {m['awayTeam']}")
+                except Exception:
+                    pass
+
+        # ---- ملخص نهاية المباراة ----
+        if TELEGRAM.get("send_end_summary", True) and status == "انتهت" and not ended.get(key) and prev != "انتهت":
+            scorers = m.get('scorers') or {"home": [], "away": []}
+            text = (f"🏁 انتهت المباراة\n\n"
+                    f"🏆 {m['league']}\n"
+                    f"{m['homeTeam']} {m['scoreOrTime']} {m['awayTeam']}\n")
+            home_sc = scorers.get('home') or []
+            away_sc = scorers.get('away') or []
+            if home_sc or away_sc:
+                text += "\n⚽ الهدافون:\n"
+                if home_sc:
+                    text += f"  {m['homeTeam']}: " + "، ".join(f"{n} {t}" for n, t in home_sc) + "\n"
+                if away_sc:
+                    text += f"  {m['awayTeam']}: " + "، ".join(f"{n} {t}" for n, t in away_sc) + "\n"
+            text += f"\n📺 {', '.join(m['channels']) or '—'}"
+            if send_telegram(text):
+                ended[key] = True
+                sent.append(f"end:{m['homeTeam']} vs {m['awayTeam']}")
+
+    if sent:
+        print(f"    -> 📨 Telegram notifications sent: {len(sent)}")
+
 
 # 💡 أداة الجراحة الجديدة: استخراج القنوات بالتعابير النمطية (Regex)
 def extract_channels_with_regex(text):
@@ -100,6 +239,22 @@ def extract_btolat_channels(match_card):
                 if name and name not in channels:
                     channels.append(name)
     return channels
+
+
+def extract_filgoal_scorers(html):
+    """أهداف المباراة من صفحة فيلجول التفصيلية (/matches/{id}/coverage).
+    بنية أهداف الأرض: <a>اللاعب</a> <span>الدقيقة</span> (والضيف بالعكس) — نستخرج الاثنين معاً."""
+    scorers = {"home": [], "away": []}
+    for side in ("home", "away"):
+        for ul in re.finditer(r'<ul id="goals' + side.title() + r'_\d+"[^>]*>(.*?)</ul>', html, re.S):
+            for li in re.finditer(r'<li[^>]*>(.*?)</li>', ul.group(1), re.S):
+                name = re.search(r'<a[^>]*>([^<]+)</a>', li.group(1))
+                minute = re.search(r'<span>\s*([^<]+)</span>', li.group(1))
+                if name:
+                    n = name.group(1).strip()
+                    mnt = minute.group(1).strip() if minute else ""
+                    scorers[side].append((n, mnt))
+    return scorers
 
 
 # ================= دوال الاستخراج المساعدة =================
@@ -163,7 +318,7 @@ class GhostScraper:
 
     def fetch(self, url, source_name):
         session, ip_type = self._get_identity()
-        time.sleep(random.uniform(1.0, 2.0))
+        time.sleep(random.uniform(GLOBAL_DELAY[0], GLOBAL_DELAY[1]))
         try:
             response = session.get(url, timeout=30)
             if response.status_code == 200:
@@ -261,27 +416,47 @@ class GhostScraper:
                         return html[start:k + 1]
         return None
 
-    def _fetch_filgoal_detail(self, match_id):
-        """القنوات والمعلقون لا يظهرون في صفحة القائمة؛ تُجلب من صفحة المباراة التفصيلية."""
-        url = f"https://www.filgoal.com/matches/{match_id}"
+    def _fetch_filgoal_detail(self, match_id, status=""):
+        """القنوات والمعلقون والأهداف من صفحة المباراة التفصيلية (/coverage).
+        مع كاش في filgoal_cache.json حتى لا نعيد الجلب كل 10 دقائق (توفير رصيد GitHub).
+        نعيد الجلب فقط إذا انتهت صلاحية الكاش أو تغيّرت حالة المباراة (مثلاً انتهت → نحتاج الهدافين)."""
+        cached = FILGOAL_CACHE.get(match_id)
+        now = time.time()
+        if cached and (now - cached.get('at', 0)) / 60.0 < FILGOAL_CACHE_TTL and cached.get('status') == status:
+            return {
+                "channels": list(cached.get('channels', [])),
+                "commenters": list(cached.get('commenters', [])),
+                "scorers": dict(cached.get('scorers', {"home": [], "away": []})),
+            }
+        url = f"https://www.filgoal.com/matches/{match_id}/coverage"
         html = self.fetch(url, f"FilGoal (match {match_id})")
-        channels, commenters = [], []
+        result = {"channels": [], "commenters": [], "scorers": {"home": [], "away": []}}
         if not html:
-            return channels, commenters
+            if cached:
+                result["channels"] = list(cached.get('channels', []))
+                result["commenters"] = list(cached.get('commenters', []))
+                result["scorers"] = dict(cached.get('scorers', {"home": [], "away": []}))
+            return result
         try:
             raw = self._parse_filgoal_viewmodel(html)
             if raw:
                 data = json.loads(raw)
                 for tv in (data.get('TvCoverage') or []):
                     name = (tv.get('TvChannelName') or '').strip()
-                    if name and name not in channels:
-                        channels.append(name)
+                    if name and name not in result["channels"]:
+                        result["channels"].append(name)
                     comm = (tv.get('CommenterName') or '').strip()
-                    if comm and comm not in commenters:
-                        commenters.append(comm)
+                    if comm and comm not in result["commenters"]:
+                        result["commenters"].append(comm)
         except Exception:
             pass
-        return channels, commenters
+        result["scorers"] = extract_filgoal_scorers(html)
+        FILGOAL_CACHE[match_id] = {
+            "at": now, "status": status,
+            "channels": result["channels"], "commenters": result["commenters"],
+            "scorers": result["scorers"],
+        }
+        return result
 
     def _parse_filgoal_jsonld(self, html, seen):
         """مباريات اليوم الكاملة موجودة في JSON-LD — السلايدر لا يعرضها كلها (إنتر×بيتيس مثلًا).
@@ -406,16 +581,19 @@ class GhostScraper:
         # نكمل من JSON-LD (القائمة الكاملة) بربط الأسماء بأرقام المباريات
         self._parse_filgoal_jsonld(html, seen)
 
-        # 💡 القنوات والمعلقون من صفحة كل مباراة تفصيلية (غير موجودة في صفحة القائمة)
+        # 💡 القنوات والمعلقون والأهداف من صفحة كل مباراة تفصيلية (/coverage)
         for m in seen.values():
             match_id = m.pop('_match_id', None)
             if not match_id or not _is_vip_candidate(m):
                 continue
-            detail_channels, commenters = self._fetch_filgoal_detail(match_id)
-            if detail_channels:
-                m['channels'] = dedup_channels([c for c in m['channels'] + detail_channels if c])
-            if commenters and not m['commentator']:
-                m['commentator'] = ' / '.join(commenters)
+            detail = self._fetch_filgoal_detail(match_id, status=m['status'])
+            if detail['channels']:
+                m['channels'] = dedup_channels([c for c in m['channels'] + detail['channels'] if c])
+            if detail['commenters'] and not m['commentator']:
+                m['commentator'] = ' / '.join(detail['commenters'])
+            # الأهداف نهمها فقط للمباريات المنتهية (في لبعض ids يعيد فيلجول مباراة قديمة منتهية)
+            if m['status'] == "انتهت":
+                m['scorers'] = detail['scorers']
 
         return list(seen.values())
 
@@ -522,10 +700,11 @@ def clean_name(name):
 # ================= توحيد أسماء القنوات (عربي/إنجليزي) للدمج =================
 def _channel_key(name):
     s = name.strip()
-    s = s.replace('بى ان سبورت', 'beIN SPORTS').replace('بين سبورت', 'beIN SPORTS')
+    s = s.replace('بى ان سبورت', 'beIN SPORTS').replace('بين سبورت', 'beIN SPORTS').replace('بي ان سبورت', 'beIN SPORTS').replace('بىن سبورت', 'beIN SPORTS')
     s = s.replace('اون سبورت', 'On Sport').replace('أون سبورت', 'On Sport')
+    s = s.replace('أون تايم سبورتس', 'ON Time Sports').replace('اون تايم سبورتس', 'ON Time Sports')
     s = s.replace('أبو ظبي', 'أبوظبي').replace('ابو ظبي', 'أبوظبي').replace('ابوظبي', 'أبوظبي')
-    s = s.replace('ماكس', 'MAX').replace('بلس', 'PLUS')
+    s = s.replace('ماكس', 'MAX').replace('بلس', 'PLUS').replace('بريميوم', 'Premium')
     s = re.sub(r'\s*HD\s*$', '', s, flags=re.IGNORECASE)
     s = s.lower()
     return re.sub(r'\s+', '', s)
@@ -616,6 +795,8 @@ def extract_first_match_time(matches_list):
 scraper_engine = GhostScraper()
 
 def execute_full_cycle():
+    global FILGOAL_CACHE
+    FILGOAL_CACHE = _load_filgoal_cache()
     now = datetime.now(TZ)
     yalla_date = now.strftime('%m/%d/%Y')
     fil_date = now.strftime('%Y-%m-%d')
@@ -623,14 +804,20 @@ def execute_full_cycle():
     today_str = yalla_date
     print(f"\n-> Fetching Matches for Date: {today_str}...")
 
-    yalla = scraper_engine.scrape_yalla(yalla_date)
-    print(f"    -> يالاكورة: {len(yalla)} مباراة")
-    fil = scraper_engine.scrape_filgoal(fil_date)
-    print(f"    -> فيلجول: {len(fil)} مباراة")
-    bto = scraper_engine.scrape_btolat()
-    print(f"    -> بطولات: {len(bto)} مباراة")
+    all_raw = []
+    if SITES_CFG.get("yallakora", {}).get("enabled", True):
+        yalla = scraper_engine.scrape_yalla(yalla_date)
+        print(f"    -> يالاكورة: {len(yalla)} مباراة")
+        all_raw += yalla
+    if SITES_CFG.get("filgoal", {}).get("enabled", True):
+        fil = scraper_engine.scrape_filgoal(fil_date)
+        print(f"    -> فيلجول: {len(fil)} مباراة")
+        all_raw += fil
+    if SITES_CFG.get("btolat", {}).get("enabled", True):
+        bto = scraper_engine.scrape_btolat()
+        print(f"    -> بطولات: {len(bto)} مباراة")
+        all_raw += bto
 
-    all_raw = yalla + fil + bto
     print(f"\n-> [Debug] Total Raw Matches Extracted: {len(all_raw)}")
 
     merged = {}
@@ -676,6 +863,10 @@ def execute_full_cycle():
                 merged[key]['scoreOrTime'] = new_score
                 merged[key]['status'] = new_status
 
+            # 6. 💡 نقل الهدافين إن غابوا (للملخص النهائي في تيليجرام)
+            if not merged[key].get('scorers') and m.get('scorers'):
+                merged[key]['scorers'] = m['scorers']
+
     final_list = filter_and_rank(list(merged.values()))
 
     print("\n-> VIP Matches Extracted & Standardized:")
@@ -689,6 +880,15 @@ def execute_full_cycle():
         json.dump(final_list, f, ensure_ascii=False, indent=4)
 
     print(f"\n-> [OK] Smart-Filtered & Saved {len(final_list)} matches to matches.json.")
+
+    # 💡 إشعارات تيليجرام (بدء المباراة + ملخص النهاية بالهدافين) — تعتمد على الحالة المحفوظة
+    state = _load_state()
+    _run_telegram_notifications(final_list, state)
+    _save_state(state)
+
+    # 💡 حفظ كاش فيلجول لاستخدامه في الدورة القادمة
+    _save_filgoal_cache()
+
     return final_list
 
 if __name__ == "__main__":
