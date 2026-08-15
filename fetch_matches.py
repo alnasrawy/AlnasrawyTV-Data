@@ -33,7 +33,7 @@ LEAGUES_MAPPING = {
     "كوبا أمريكا": ["كوبا أمريكا", "كوبا امريكا"],
     "كأس أمم أفريقيا": ["أمم أفريقيا", "أمم إفريقيا", "الأمم الإفريقية"],
     "كأس آسيا": ["كأس آسيا", "أمم آسيا", "الأمم الآسيوية"],
-    "الدوري الإنجليزي": ["إنجليزي", "الإنجليزي", "بريميرليج", "البريميرليج", "انجلترا", "الممتاز"],
+    "الدوري الإنجليزي": ["إنجليزي", "الإنجليزي", "بريميرليج", "البريميرليج", "انجلترا"],
     "الدوري الإسباني": ["إسباني", "الإسباني", "ليجا", "الليجا", "اسبانيا"],
     "الدوري الإيطالي": ["إيطالي", "الإيطالي", "كالتشيو", "الكالتشيو", "ايطاليا"],
     "الدوري الألماني": ["ألماني", "الألماني", "بوندسليجا", "البوندسليجا", "المانيا"],
@@ -125,6 +125,24 @@ def get_logo(img_tag, base_url=""):
     if logo.startswith('//'): logo = 'https:' + logo
     elif logo and not logo.startswith('http') and base_url: logo = base_url + logo
     return logo
+
+def _norm_key(s):
+    """تطبيع نص عربي/إنجليزي للمقارنة (تجاهل الفراغات والشرطات والهمزات)."""
+    s = re.sub(r'[\s\-_]+', '', s or '')
+    return s.replace('أ', 'ا').replace('إ', 'ا').replace('آ', 'ا').replace('ة', 'ه').replace('ى', 'ي').lower()
+
+
+def _is_vip_candidate(m):
+    """نفس منطق filter_and_rank للـ VIP — نستخدمه قبل جلب صفحات المباريات التفصيلية
+    حتى لا نضيع طلبات على مباريات سيتم استبعادها أصلاً."""
+    raw_league = m['league']
+    for keywords in LEAGUES_MAPPING.values():
+        if any(kw in raw_league for kw in keywords):
+            return True
+    if any(v in raw_league for v in GENERAL_VIP_KEYWORDS):
+        return True
+    return any(t in m['homeTeam'] or t in m['awayTeam'] for t in VIP_TEAMS)
+
 
 # ================= محرك التخفي والاتصال =================
 class GhostScraper:
@@ -243,13 +261,13 @@ class GhostScraper:
                         return html[start:k + 1]
         return None
 
-    def _fetch_filgoal_channels(self, match_id):
-        """القنوات لا تظهر في صفحة القائمة؛ تُجلب من صفحة المباراة التفصيلية."""
+    def _fetch_filgoal_detail(self, match_id):
+        """القنوات والمعلقون لا يظهرون في صفحة القائمة؛ تُجلب من صفحة المباراة التفصيلية."""
         url = f"https://www.filgoal.com/matches/{match_id}"
         html = self.fetch(url, f"FilGoal (match {match_id})")
-        channels = []
+        channels, commenters = [], []
         if not html:
-            return channels
+            return channels, commenters
         try:
             raw = self._parse_filgoal_viewmodel(html)
             if raw:
@@ -258,9 +276,64 @@ class GhostScraper:
                     name = (tv.get('TvChannelName') or '').strip()
                     if name and name not in channels:
                         channels.append(name)
+                    comm = (tv.get('CommenterName') or '').strip()
+                    if comm and comm not in commenters:
+                        commenters.append(comm)
         except Exception:
             pass
-        return channels
+        return channels, commenters
+
+    def _parse_filgoal_jsonld(self, html, seen):
+        """مباريات اليوم الكاملة موجودة في JSON-LD — السلايدر لا يعرضها كلها (إنتر×بيتيس مثلًا).
+        نحل رقم كل مباراة بربط أسماء الفريقين بروابط /matches/{id} في الصفحة."""
+        links = {}
+        for m in re.finditer(r'/matches/(\d+)/([^"\' ]+)', html):
+            links.setdefault(m.group(1), m.group(2))
+        events = []
+        for m in re.finditer(r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>', html, re.S):
+            try:
+                data = json.loads(m.group(1).strip())
+            except Exception:
+                continue
+            stack = [data]
+            while stack:
+                node = stack.pop()
+                if isinstance(node, dict):
+                    if node.get('@type') == 'SportsEvent':
+                        events.append(node)
+                    stack.extend(node.values())
+                elif isinstance(node, list):
+                    stack.extend(node)
+        for ev in events:
+            home = (ev.get('homeTeam') or {}).get('name') or ''
+            away = (ev.get('awayTeam') or {}).get('name') or ''
+            if not home or not away:
+                continue
+            match_id = None
+            for mid, slug in links.items():
+                sn = _norm_key(slug)
+                if _norm_key(home) in sn and _norm_key(away) in sn:
+                    match_id = mid
+                    break
+            key = match_id if match_id else f"ld-{_norm_key(home)}_{_norm_key(away)}"
+            if key in seen:
+                continue
+            league = ""
+            desc = ev.get('description') or ev.get('name') or ''
+            lm = re.search(r'في بطولة\s+(.+)', desc)
+            if lm:
+                league = " ".join(lm.group(1).split())
+            if any(b in league for b in BLOCKLIST):
+                continue
+            start = ev.get('startDate') or ''
+            time_str = start[11:16] if len(start) >= 16 else ""
+            seen[key] = {
+                "league": league, "homeTeam": home, "homeLogo": "",
+                "awayTeam": away, "awayLogo": "", "scoreOrTime": time_str,
+                "status": "لم تبدأ", "channels": [], "commentator": "",
+                "source": "FilGoal", "_match_id": match_id
+            }
+        return seen
 
     def scrape_filgoal(self, date_str):
         print(f"-> [Source 2] FilGoal ({date_str})...")
@@ -324,16 +397,25 @@ class GhostScraper:
                     "league": league, "homeTeam": team1, "homeLogo": logo1,
                     "awayTeam": team2, "awayLogo": logo2, "scoreOrTime": score,
                     "status": status, "channels": channels, "commentator": comm,
-                    "source": "FilGoal"
+                    "source": "FilGoal", "_match_id": match_id
                 }
             except Exception:
                 continue
 
-        # 💡 جلب القنوات من صفحة كل مباراة (غير موجودة في صفحة القائمة إطلاقاً)
-        for match_id, m in seen.items():
-            detail_channels = self._fetch_filgoal_channels(match_id)
+        # 💡 السلايدر لا يعرض كل مباريات اليوم (مثل إنتر×ريال بيتيس)
+        # نكمل من JSON-LD (القائمة الكاملة) بربط الأسماء بأرقام المباريات
+        self._parse_filgoal_jsonld(html, seen)
+
+        # 💡 القنوات والمعلقون من صفحة كل مباراة تفصيلية (غير موجودة في صفحة القائمة)
+        for m in seen.values():
+            match_id = m.pop('_match_id', None)
+            if not match_id or not _is_vip_candidate(m):
+                continue
+            detail_channels, commenters = self._fetch_filgoal_detail(match_id)
             if detail_channels:
                 m['channels'] = dedup_channels([c for c in m['channels'] + detail_channels if c])
+            if commenters and not m['commentator']:
+                m['commentator'] = ' / '.join(commenters)
 
         return list(seen.values())
 
@@ -419,13 +501,20 @@ _SPELLING_FIXES = {
     "لايبزج": "لايبزيج",
     "ميونخ": "ميونيخ",
     "ميدلسبروه": "ميدلسبره",
+    "إنتر ميلان": "إنتر",
+    "النصر السعودي": "النصر",
+    "اتحاد جدة": "الاتحاد",
+    "شباب الأهلي دبي": "شباب الأهلي",
+    "الميناء البصرة": "الميناء",
+    "غاز الشمال": "Ghaz Al Shamal",
 }
 
 # ================= دالة صناعة "بصمة الفريق" للدمج =================
 def clean_name(name):
-    name = name.replace("أ", "ا").replace("إ", "ا").replace("آ", "ا").replace("ة", "ه").replace("ى", "ي").replace("يي", "ي")
+    name = name.strip()
     for src, dst in _SPELLING_FIXES.items():
         name = name.replace(src, dst)
+    name = name.replace("أ", "ا").replace("إ", "ا").replace("آ", "ا").replace("ة", "ه").replace("ى", "ي").replace("يي", "ي")
     for w in ["نادي", "فريق", "هوتسبر", "fc", "sc", "ديبورتيفو", "اتلتيكو", "ايه سي", "سي اف", "كلوب"]:
         name = name.lower().replace(w, "")
     return name.strip().replace(" ", "")
