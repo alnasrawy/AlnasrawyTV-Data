@@ -11,6 +11,7 @@ TZ = timezone(timedelta(hours=3))
 PROXIES_LIST = []
 
 # ================= القاموس الذكي الشامل لتوحيد أسماء البطولات =================
+# 💡 السكربت الآن يحترم هذا الترتيب حرفياً في ترتيب المباريات (الأوروبية أولاً ثم العربية)
 LEAGUES_MAPPING = {
     "دوري أبطال أوروبا": ["أبطال أوروبا", "دوري الابطال", "دوري الأبطال"],
     "الدوري الأوروبي": ["الدوري الأوروبي", "اليوروباليج", "يوروباليغ"],
@@ -285,24 +286,30 @@ def clean_name(name):
     return name.strip()
 
 
-# ================= الفلترة والتوحيد =================
+# ================= الفلترة والتوحيد والتصنيف الذكي =================
 def filter_and_rank(matches_list):
     filtered = []
     for m in matches_list:
         raw_league = m['league']
         std_league = raw_league
         is_vip_league = False
+        league_rank = 999  # ترتيب افتراضي متأخر للبطولات غير المعروفة
 
-        for official_name, keywords in LEAGUES_MAPPING.items():
+        # 1. تحديد البطولة وإعطائها رتبة بناءً على مكانها في القاموس الذكي أعلاه
+        for idx, (official_name, keywords) in enumerate(LEAGUES_MAPPING.items()):
             if any(kw in raw_league for kw in keywords):
                 std_league = official_name
                 is_vip_league = True
+                league_rank = idx  # كلما كان الرقم أقل، ظهرت البطولة أولاً (الأوروبي ثم العربي)
                 break
 
+        # 2. إذا لم تكن في القاموس، ولكنها تحمل كلمة مفتاحية هامة (مثل كأس أو سوبر)
         if not is_vip_league:
             if any(v in raw_league for v in GENERAL_VIP_KEYWORDS):
                 is_vip_league = True
+                league_rank = 50  # رتبة متوسطة بعد البطولات الكبرى
 
+        # 3. التحقق مما إذا كان الفريق VIP
         is_vip_team = False
         for t in VIP_TEAMS:
             if t in m['homeTeam'] or t in m['awayTeam']:
@@ -311,10 +318,26 @@ def filter_and_rank(matches_list):
 
         if is_vip_league or is_vip_team:
             m['league'] = std_league
-            m['priority'] = 1 if is_vip_league else (2 if is_vip_team else 3)
+            m['league_rank'] = league_rank if is_vip_league else 100
+            m['team_rank'] = 0 if is_vip_team else 1
             filtered.append(m)
 
-    filtered.sort(key=lambda x: (0 if "دقيقة" in x['status'] or "شوط" in x['status'] else 1, x['priority']))
+    # الترتيب النهائي الفولاذي:
+    # 1. المباشر أولاً (دقيقة أو شوط)
+    # 2. ثم ترتيب البطولة (الأوروبية العالمية أولاً ثم العربية والمحلية)
+    # 3. ثم هل الفريق VIP أم لا
+    filtered.sort(key=lambda x: (
+        0 if "دقيقة" in x['status'] or "شوط" in x['status'] else 1, 
+        x['league_rank'], 
+        x['team_rank']
+    ))
+
+    # تنظيف المفاتيح المؤقتة لكي لا تظهر في ملف الـ JSON النهائي
+    for m in filtered:
+        m.pop('league_rank', None)
+        m.pop('team_rank', None)
+        m.pop('priority', None)
+
     return filtered
 
 
@@ -373,7 +396,6 @@ def execute_full_cycle():
         for m in final_list:
             print(f"   ✅ [{m['league']}] {m['homeTeam']} {m['scoreOrTime']} {m['awayTeam']} | {m['status']}")
 
-    # التعديل الهام جداً: قمنا بتغيير اسم الملف إلى matches.json لكي تتصل به لوحة التحكم مباشرة
     with open("matches.json", "w", encoding="utf-8") as f:
         json.dump(final_list, f, ensure_ascii=False, indent=4)
 
@@ -390,7 +412,6 @@ def autonomous_mode():
 if __name__ == "__main__":
     try:
         print("-> Running single fetch cycle for GitHub Actions...")
-        # قمنا بتعطيل autonomous_mode هنا واستدعينا دورة الجلب لمرة واحدة ليسمح لـ GitHub بإغلاق العملية بنجاح
         execute_full_cycle()
     except KeyboardInterrupt:
         print("\n🛑 System stopped by user.")
