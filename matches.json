@@ -31,7 +31,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\Alwasl2018_7_25_15_22.jpg",
         "awayTeam": "يونايتد اف سي",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\527001955_122093570684972004_1405618893921874169_n2026_8_2_20_36.webp",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "1 - 0",
         "status": "الشوط الأول",
         "channels": [],
         "commentator": "",
@@ -218,7 +218,7 @@
         "awayTeam": "برمنجهام سيتي",
         "awayLogo": "https://img.btolat.com/teamslogo/9039.png?v=667",
         "scoreOrTime": "0 - 0",
-        "status": "12'",
+        "status": "31'",
         "channels": [
             "BEIN SPORTS 2"
         ],
@@ -288,7 +288,7 @@
         "awayTeam": "سوتيرول بولدزانو",
         "awayLogo": "https://img.btolat.com/teamslogo/12041.png?v=818",
         "scoreOrTime": "1 - 1",
-        "status": "38'",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -300,7 +300,7 @@
         "awayTeam": "بادوفا",
         "awayLogo": "https://img.btolat.com/teamslogo/11956.png?v=491",
         "scoreOrTime": "0 - 0",
-        "status": "10'",
+        "status": "29'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -485,7 +485,7 @@
         "awayTeam": "الطلبة",
         "awayLogo": "https://img.btolat.com/teamslogo/11517.png?v=211",
         "scoreOrTime": "0 - 1",
-        "status": "51'",
+        "status": "70'",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -510,8 +510,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11534.png?v=205",
         "awayTeam": "غاز الشمال",
         "awayLogo": "https://img.btolat.com/",
-        "scoreOrTime": "0 - 0",
-        "status": "52'",
+        "scoreOrTime": "1 - 0",
+        "status": "72'",
         "channels": [
             "العراقية السريانية"
         ],
@@ -703,7 +703,7 @@
         "awayTeam": "ميلان",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\ACMilan2018_7_29_15_9.jpg",
         "scoreOrTime": "2 - 4",
-        "status": "مباشر",
+        "status": "انتهت",
         "channels": [
             "On Sport Plus",
             "STC TV"
@@ -746,7 +746,9 @@
         "channels": [
             "ON Sport PLUS",
             "الشارقة الرياضية",
-            "أبوظبي الرياضية 1 HD"
+            "أبوظبي الرياضية 1 HD",
+            "الكويت الرياضية",
+            "AD Sports Premium Extra"
         ],
         "commentator": "حازم عبدالسلام",
         "source": "Yallakora + FilGoal + Btolat"
