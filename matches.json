@@ -1,5 +1,19 @@
 [
     {
+        "league": "الدوري الإسباني",
+        "homeTeam": "اشبيلية",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Sevilla2018_7_29_14_45.jpg",
+        "awayTeam": "رايو فاييكانو",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\5\\RayoVallecano2021_9_5_14_18.jpg",
+        "scoreOrTime": "0 - 1",
+        "status": "الشوط الثاني",
+        "channels": [
+            "بى ان سبورت 1HD"
+        ],
+        "commentator": "",
+        "source": "Yallakora + FilGoal"
+    },
+    {
         "league": "الدوري الإنجليزي",
         "homeTeam": "أرسنال",
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/83.png",
@@ -43,20 +57,6 @@
             ],
             "away": []
         }
-    },
-    {
-        "league": "الدوري الإسباني",
-        "homeTeam": "اشبيلية",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Sevilla2018_7_29_14_45.jpg",
-        "awayTeam": "رايو فاييكانو",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\5\\RayoVallecano2021_9_5_14_18.jpg",
-        "scoreOrTime": "0 - 1",
-        "status": "استراحة",
-        "channels": [
-            "بى ان سبورت 1HD"
-        ],
-        "commentator": "",
-        "source": "Yallakora + FilGoal"
     },
     {
         "league": "الدوري الإسباني",
@@ -551,7 +551,7 @@
         "awayTeam": "مودينا",
         "awayLogo": "https://img.btolat.com/teamslogo/11940.png?v=632",
         "scoreOrTime": "3 - 2",
-        "status": "89'",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -563,7 +563,7 @@
         "awayTeam": "كاراريزي",
         "awayLogo": "https://img.btolat.com/teamslogo/11838.png?v=880",
         "scoreOrTime": "1 - 0",
-        "status": "61'",
+        "status": "79'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
