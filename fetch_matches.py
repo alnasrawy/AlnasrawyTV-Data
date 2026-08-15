@@ -1,12 +1,21 @@
 import os
 import sys
+import io
 import json
 import random
 import time
 import re
+import hashlib
+import tempfile
 from datetime import datetime, timedelta, timezone
 from curl_cffi import requests
 from bs4 import BeautifulSoup
+
+# 💡 مكتبات رسم بطاقة المباراة (تُستخدم لإنشاء صورة PNG احترافية للإشعارات)
+try:
+    from PIL import Image, ImageDraw
+except Exception:
+    Image = ImageDraw = None
 
 # 💡 ضمان طباعة العربية على Windows (الكونسول الافتراضي cp1252 يكسر السكربت عند الطباعة)
 if sys.platform == "win32":
@@ -140,8 +149,302 @@ def send_telegram(text):
         print(f"    ❌ Telegram send failed: {e}")
         return False
 
+def send_telegram_photo(png_bytes, caption=""):
+    """إرسال صورة كارت المباراة (PNG) إلى القناة عبر البوت."""
+    if not TELEGRAM.get("enabled"):
+        return False
+    token = os.environ.get("TG_BOT_TOKEN")
+    chat = (TELEGRAM.get("channel") or "").strip()
+    if not token or not chat:
+        if not _TG_WARNED["once"]:
+            print("    ⚠️ Telegram: TG_BOT_TOKEN (سر GitHub) أو channel غير مضبوط — تخطي الإشعارات.")
+            _TG_WARNED["once"] = True
+        return False
+    try:
+        resp = requests.post(
+            f"https://api.telegram.org/bot{token}/sendPhoto",
+            data={"chat_id": chat, "caption": caption},
+            files={"photo": ("match_card.png", png_bytes, "image/png")},
+            timeout=60,
+        )
+        return resp.status_code == 200
+    except Exception as e:
+        print(f"    ❌ Telegram sendPhoto failed: {e}")
+        return False
+
+
+# ================= مولّد بطاقة المباراة (صورة احترافية) =================
+_FONT_CACHE = {}
+_LOGO_CACHE = {}
+
+_ARABIC_FONT_URLS = [
+    "https://raw.githubusercontent.com/google/fonts/main/ofl/tajawal/Tajawal-Regular.ttf",
+    "https://raw.githubusercontent.com/google/fonts/main/ofl/tajawal/Tajawal-Bold.ttf",
+]
+
+_SYSTEM_FONT_CANDIDATES = [
+    r"C:\Windows\Fonts\segoeui.ttf", r"C:\Windows\Fonts\arial.ttf", r"C:\Windows\Fonts\tahoma.ttf",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    "/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf",
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+]
+
+
+def _font_path(kind):
+    p = os.path.join(tempfile.gettempdir(), f"card_font_{kind}.ttf")
+    if os.path.exists(p) and os.path.getsize(p) > 5000:
+        return p
+    url = _ARABIC_FONT_URLS[0 if kind == "regular" else 1]
+    try:
+        r = requests.get(url, timeout=20, impersonate="chrome120")
+        if r.status_code == 200 and len(r.content) > 5000:
+            with open(p, "wb") as f:
+                f.write(r.content)
+            return p
+    except Exception:
+        pass
+    for cand in _SYSTEM_FONT_CANDIDATES:
+        if os.path.exists(cand):
+            return cand
+    return None
+
+
+def _font(size, bold=False):
+    key = (size, bold)
+    if key in _FONT_CACHE:
+        return _FONT_CACHE[key]
+    from PIL import ImageFont
+    path = _font_path("bold" if bold else "regular")
+    try:
+        font = ImageFont.truetype(path, size) if path else ImageFont.load_default()
+    except Exception:
+        font = ImageFont.load_default()
+    _FONT_CACHE[key] = font
+    return font
+
+
+def _shape(text):
+    """إعادة تشكيل النص العربي + الاتجاه من اليمين لليسار للعرض الصحيح داخل الصورة."""
+    try:
+        import arabic_reshaper
+        from bidi.algorithm import get_display
+        return get_display(arabic_reshaper.reshape(str(text)))
+    except Exception:
+        return str(text)
+
+
+def _draw_centered(draw, cx, y, text, font, fill, max_w):
+    s = _shape(text)
+    w = draw.textlength(s, font=font)
+    if w <= max_w:
+        draw.text((cx - w / 2, y), s, font=font, fill=fill)
+        return
+    words = s.split()
+    lines, cur = [], ""
+    for wd in words:
+        t = (cur + " " + wd).strip()
+        if draw.textlength(t, font=font) <= max_w:
+            cur = t
+        else:
+            if cur:
+                lines.append(cur)
+            cur = wd
+    if cur:
+        lines.append(cur)
+    for i, ln in enumerate(lines):
+        lw = draw.textlength(ln, font=font)
+        draw.text((cx - lw / 2, y + i * (font.size + 6)), ln, font=font, fill=fill)
+
+
+def _draw_right(draw, xr, y, text, font, fill, max_w):
+    s = _shape(text)
+    w = draw.textlength(s, font=font)
+    if w <= max_w:
+        draw.text((xr - w, y), s, font=font, fill=fill)
+        return
+    words = s.split()
+    lines, cur = [], ""
+    for wd in words:
+        t = (cur + " " + wd).strip()
+        if draw.textlength(t, font=font) <= max_w:
+            cur = t
+        else:
+            if cur:
+                lines.append(cur)
+            cur = wd
+    if cur:
+        lines.append(cur)
+    for i, ln in enumerate(lines):
+        lw = draw.textlength(ln, font=font)
+        draw.text((xr - lw, y + i * (font.size + 6)), ln, font=font, fill=fill)
+
+
+def _draw_tv_icon(d, cx, cy, color, scale=1.0):
+    w, h = 46 * scale, 34 * scale
+    x, y = cx - w / 2, cy - h / 2
+    d.rounded_rectangle([x, y, x + w, y + h], radius=6, outline=color, width=3)
+    d.line([x + w / 2, y - 12, x + w / 2, y], fill=color, width=3)
+    d.line([x - 10, y - 16, x + w + 10, y - 16], fill=color, width=3)
+    d.line([x + w / 2 - 12, y + h + 8, x + w / 2 + 12, y + h + 8], fill=color, width=3)
+    d.line([x + w / 2, y + h, x + w / 2, y + h + 8], fill=color, width=3)
+    d.rounded_rectangle([x + 6, y + 6, x + w - 6, y + h - 6], radius=3, outline=(70, 90, 150), width=2)
+
+
+_TEAM_PALETTE = [
+    (26, 35, 126), (13, 71, 161), (0, 101, 151), (2, 119, 189), (56, 142, 60), (124, 179, 66),
+    (173, 20, 87), (194, 24, 91), (136, 14, 79), (245, 124, 0), (230, 81, 0), (191, 54, 12),
+    (69, 39, 160), (81, 45, 168), (3, 155, 229), (18, 137, 167), (27, 94, 32), (255, 109, 0),
+]
+
+
+def _team_color(name):
+    h = int(hashlib.md5(name.encode("utf-8")).hexdigest(), 16)
+    return _TEAM_PALETTE[h % len(_TEAM_PALETTE)]
+
+
+def _load_team_logo(url, team_name, size=210):
+    """تحميل لوجو الفريق من رابط المسح، وإن فشل نرسم دائرة ملونة بأول حرف من اسم الفريق."""
+    key = (url, team_name, size)
+    if key in _LOGO_CACHE:
+        return _LOGO_CACHE[key]
+    img = None
+    if url:
+        try:
+            r = requests.get(url, timeout=15, impersonate="chrome120",
+                             headers={"Referer": "https://www.filgoal.com/"})
+            if r.status_code == 200 and len(r.content) > 100:
+                img = Image.open(io.BytesIO(r.content)).convert("RGBA")
+                img.thumbnail((size, size), Image.LANCZOS)
+        except Exception:
+            img = None
+    canvas = Image.new("RGBA", (size, size), (255, 255, 255, 255))
+    d = ImageDraw.Draw(canvas)
+    if img is not None:
+        canvas.alpha_composite(img, ((size - img.width) // 2, (size - img.height) // 2))
+    else:
+        color = _team_color(team_name)
+        d.ellipse([0, 0, size, size], fill=color + (255,))
+        f = _font(int(size * 0.42), bold=True)
+        letter = _shape((team_name.strip()[:1]) or "?")
+        lw = d.textlength(letter, font=f)
+        d.text(((size - lw) / 2, (size - f.size) / 2), letter, font=f, fill=(255, 255, 255))
+    mask = Image.new("L", (size, size), 0)
+    ImageDraw.Draw(mask).ellipse([0, 0, size, size], fill=255)
+    canvas.putalpha(mask)
+    _LOGO_CACHE[key] = canvas
+    return canvas
+
+
+def compose_match_card(match, kind="end"):
+    """يرسم بطاقة المباراة الاحترافية ويعيد بايتات PNG، أو None عند فشل الرسم.
+    kind: 'start' (تنبيه بدء) أو 'end' (ملخص نهاية مع الهدافين)."""
+    if Image is None or ImageDraw is None:
+        return None
+    league = match.get('league', '') or ''
+    home = match.get('homeTeam', '') or ''
+    away = match.get('awayTeam', '') or ''
+    score_or_time = match.get('scoreOrTime', '') or '-:-'
+    status = match.get('status', '') or ''
+    channels = [c for c in (match.get('channels') or []) if c]
+    scorers = match.get('scorers') or {"home": [], "away": []}
+    hs = scorers.get('home') or []
+    aw = scorers.get('away') or []
+
+    is_score = '-' in score_or_time
+    n_lines = max(len(hs), len(aw), 1)
+    H = (680 + min(n_lines, 6) * 52) if kind == "end" else 540
+    W = 1080
+    img = Image.new("RGBA", (W, H), (13, 18, 42, 255))
+    d = ImageDraw.Draw(img, "RGBA")
+
+    # خلفية متدرجة داكنة
+    top_c = (24, 34, 68)
+    bot_c = (10, 13, 30)
+    for y in range(H):
+        t = y / H
+        c = tuple(int(top_c[i] + (bot_c[i] - top_c[i]) * t) for i in range(3))
+        d.line([(0, y), (W, y)], fill=c)
+
+    GOLD = (245, 197, 66, 255)
+    WHITE = (255, 255, 255, 255)
+    MUTED = (170, 180, 210, 255)
+    RED = (255, 120, 120, 255)
+    GREEN = (80, 220, 150, 255)
+
+    # شريط ذهبي علوي
+    d.rectangle([0, 0, W, 10], fill=GOLD)
+
+    # اسم البطولة
+    _draw_centered(d, W // 2, 30, league, _font(42, bold=True), GOLD, W - 120)
+
+    # المنتصف: لوجو أرض | النتيجة/الوقت | لوجو ضيف
+    cx_h, cx_a = 240, W - 240
+    cy_mid = 210
+    home_logo = _load_team_logo(match.get('homeLogo'), home)
+    away_logo = _load_team_logo(match.get('awayLogo'), away)
+    img.alpha_composite(home_logo, (cx_h - home_logo.width // 2, cy_mid - home_logo.height // 2))
+    img.alpha_composite(away_logo, (cx_a - away_logo.width // 2, cy_mid - away_logo.height // 2))
+
+    center_txt = score_or_time if kind == "start" or not is_score else score_or_time
+    if kind == "end" and is_score:
+        parts = [p.strip() for p in score_or_time.split('-')]
+        score_style = _font(120, bold=True)
+        if len(parts) == 2:
+            w1 = d.textlength(parts[0], font=score_style)
+            w2 = d.textlength(parts[1], font=score_style)
+            dash = _font(90, bold=True)
+            wdash = d.textlength(" – ", font=dash)
+            total = w1 + w2 + wdash
+            x0 = W / 2 - total / 2
+            d.text((x0, cy_mid - 64), parts[0], font=score_style, fill=WHITE)
+            d.text((x0 + w1, cy_mid - 46), " – ", font=dash, fill=GOLD)
+            d.text((x0 + w1 + wdash, cy_mid - 64), parts[1], font=score_style, fill=WHITE)
+        else:
+            _draw_centered(d, W // 2, cy_mid - 64, score_or_time, score_style, WHITE, 400)
+    else:
+        _draw_centered(d, W // 2, cy_mid - 60, score_or_time, _font(110, bold=True),
+                       GOLD if not is_score else WHITE, 420)
+
+    # أسماء الفرق أسفل اللوجوهات (في المنتصف لكل عمود)
+    _draw_centered(d, cx_h, cy_mid + 118, home, _font(36, bold=True), WHITE, 300)
+    _draw_centered(d, cx_a, cy_mid + 118, away, _font(36, bold=True), WHITE, 300)
+
+    # شارة الحالة
+    st_color = GREEN if status == "انتهت" else (GOLD if status == "لم تبدأ" else (255, 180, 90, 255))
+    _draw_centered(d, W // 2, cy_mid + 168, status, _font(28, bold=True), st_color, 400)
+
+    # أقسام الهدافين (للملخص النهائي فقط): كل فريق وهدافيه منفصلين
+    y_sc = cy_mid + 215
+    if kind == "end" and (hs or aw):
+        d.line([60, y_sc - 6, W - 60, y_sc - 6], fill=(60, 80, 140, 255), width=2)
+        _draw_centered(d, W // 2, y_sc, "الهدافون", _font(34, bold=True), GOLD, 300)
+        y_col = y_sc + 52
+        for side, cx, team, lst in (("home", 300, home, hs), ("away", W - 300, away, aw)):
+            _draw_centered(d, cx, y_col, team, _font(30, bold=True), GOLD, 420)
+            iy = y_col + 46
+            for name, minute in lst[:6]:
+                line = f"• {name}  {minute}"
+                _draw_centered(d, cx, iy, line, _font(28), WHITE, 440)
+                iy += 44
+            if len(lst) > 6:
+                _draw_centered(d, cx, iy, f"+{len(lst) - 6}", _font(26), MUTED, 100)
+
+    # الشريط السفلي: أيقونة الشاشة + القنوات (أو رسالة إن لم تُحدد قناة)
+    bar_y = H - 110
+    d.rounded_rectangle([40, bar_y, W - 40, H - 20], radius=18, fill=(18, 26, 54, 235), outline=(60, 80, 140, 255), width=2)
+    _draw_tv_icon(d, 120, bar_y + 45, GOLD)
+    if channels:
+        _draw_right(d, W - 70, bar_y + 22, " • ".join(channels), _font(32, bold=True), WHITE, W - 300)
+    else:
+        _draw_right(d, W - 70, bar_y + 22, "لم يتم تحديد قناة بعد", _font(32, bold=True), (255, 150, 80, 255), W - 300)
+
+    buf = io.BytesIO()
+    img.convert("RGB").save(buf, format="PNG")
+    return buf.getvalue()
+
+
 def _run_telegram_notifications(final_list, state):
-    """تنبيه بدء المباراة + ملخص نهاية المباراة (النتيجة + الهدافون لكل فريق)."""
+    """تنبيه بدء المباراة + ملخص نهاية المباراة — كارت مصور احترافي (لوجو + النتيجة + الهدافون لكل فريق + القنوات)."""
     now = datetime.now(TZ)
     sent = []
     for m in final_list:
@@ -161,12 +464,17 @@ def _run_telegram_notifications(final_list, state):
                     start_dt = datetime.combine(now.date(), datetime.strptime(hm, '%H:%M').time()).replace(tzinfo=TZ)
                     window = timedelta(minutes=TELEGRAM.get("start_alert_minutes", 15))
                     if now >= start_dt - window and now < start_dt:
-                        text = (f"🔔 تبدأ قريباً\n\n"
-                                f"🏆 {m['league']}\n"
-                                f"{m['homeTeam']} 🆚 {m['awayTeam']}\n"
-                                f"⏰ {m['scoreOrTime']}\n"
-                                f"📺 {', '.join(m['channels']) or '—'}")
-                        if send_telegram(text):
+                        caption = f"🔔 تبدأ قريباً | {m['league']}"
+                        card = compose_match_card(m, 'start')
+                        ok = send_telegram_photo(card, caption) if card else False
+                        if not ok:
+                            text = (f"🔔 تبدأ قريباً\n\n"
+                                    f"🏆 {m['league']}\n"
+                                    f"{m['homeTeam']} 🆚 {m['awayTeam']}\n"
+                                    f"⏰ {m['scoreOrTime']}\n"
+                                    f"📺 {', '.join(m['channels']) or 'لم يتم تحديد قناة بعد'}")
+                            ok = send_telegram(text)
+                        if ok:
                             started[key] = True
                             sent.append(f"start:{m['homeTeam']} vs {m['awayTeam']}")
                 except Exception:
@@ -174,20 +482,25 @@ def _run_telegram_notifications(final_list, state):
 
         # ---- ملخص نهاية المباراة ----
         if TELEGRAM.get("send_end_summary", True) and status == "انتهت" and not ended.get(key) and prev != "انتهت":
-            scorers = m.get('scorers') or {"home": [], "away": []}
-            text = (f"🏁 انتهت المباراة\n\n"
-                    f"🏆 {m['league']}\n"
-                    f"{m['homeTeam']} {m['scoreOrTime']} {m['awayTeam']}\n")
-            home_sc = scorers.get('home') or []
-            away_sc = scorers.get('away') or []
-            if home_sc or away_sc:
-                text += "\n⚽ الهدافون:\n"
-                if home_sc:
-                    text += f"  {m['homeTeam']}: " + "، ".join(f"{n} {t}" for n, t in home_sc) + "\n"
-                if away_sc:
-                    text += f"  {m['awayTeam']}: " + "، ".join(f"{n} {t}" for n, t in away_sc) + "\n"
-            text += f"\n📺 {', '.join(m['channels']) or '—'}"
-            if send_telegram(text):
+            caption = f"🏁 انتهت المباراة | {m['league']}"
+            card = compose_match_card(m, 'end')
+            ok = send_telegram_photo(card, caption) if card else False
+            if not ok:
+                scorers = m.get('scorers') or {"home": [], "away": []}
+                text = (f"🏁 انتهت المباراة\n\n"
+                        f"🏆 {m['league']}\n"
+                        f"{m['homeTeam']} {m['scoreOrTime']} {m['awayTeam']}\n")
+                home_sc = scorers.get('home') or []
+                away_sc = scorers.get('away') or []
+                if home_sc or away_sc:
+                    text += "\n⚽ الهدافون:\n"
+                    if home_sc:
+                        text += f"  {m['homeTeam']}: " + "، ".join(f"{n} {t}" for n, t in home_sc) + "\n"
+                    if away_sc:
+                        text += f"  {m['awayTeam']}: " + "، ".join(f"{n} {t}" for n, t in away_sc) + "\n"
+                text += f"\n📺 {', '.join(m['channels']) or 'لم يتم تحديد قناة بعد'}"
+                ok = send_telegram(text)
+            if ok:
                 ended[key] = True
                 sent.append(f"end:{m['homeTeam']} vs {m['awayTeam']}")
 
