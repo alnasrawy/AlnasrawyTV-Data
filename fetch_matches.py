@@ -11,7 +11,6 @@ TZ = timezone(timedelta(hours=3))
 PROXIES_LIST = []
 
 # ================= القاموس الذكي الشامل لتوحيد أسماء البطولات =================
-# 💡 السكربت الآن يحترم هذا الترتيب حرفياً في ترتيب المباريات (الأوروبية أولاً ثم العربية)
 LEAGUES_MAPPING = {
     "دوري أبطال أوروبا": ["أبطال أوروبا", "دوري الابطال", "دوري الأبطال"],
     "الدوري الأوروبي": ["الدوري الأوروبي", "اليوروباليج", "يوروباليغ"],
@@ -45,7 +44,7 @@ VIP_TEAMS = [
 
 BLOCKLIST = ["شباب", "رديف", "u23", "u19", "درجة ثانية", "درجة ثالثة", "هواة", "سيدات"]
 
-# ================= دالة الاستخراج الدقيقة لأسماء الفرق =================
+# ================= دوال الاستخراج المساعدة =================
 def extract_team_name(team_div):
     if not team_div: return ""
     strong_tag = team_div.find('strong')
@@ -67,9 +66,7 @@ def extract_team_name(team_div):
             return alt_text
     return ""
 
-
 def get_logo(img_tag, base_url=""):
-    """يفضّل data-src (بسبب lazyload) على src (اللي غالباً placeholder)"""
     if not img_tag:
         return ""
     logo = img_tag.get('data-src') or img_tag.get('src', '')
@@ -78,7 +75,6 @@ def get_logo(img_tag, base_url=""):
     elif logo and not logo.startswith('http') and base_url:
         logo = base_url + logo
     return logo
-
 
 # ================= محرك التخفي والاتصال =================
 class GhostScraper:
@@ -124,7 +120,6 @@ class GhostScraper:
             league = " ".join(league_tag.text.split()) if league_tag else "بطولة غير معروفة"
             if any(b in league for b in BLOCKLIST): continue
 
-            # كل مباراة هي div بها class="item" (وسط تسميات إضافية مثل future/liItem)
             items = card.find_all(lambda tag: tag.name == 'div' and 'item' in tag.get('class', []))
             for item in items:
                 try:
@@ -135,14 +130,10 @@ class GhostScraper:
                     t_b = teams_data.find('div', class_='teamB')
                     if not t_a or not t_b: continue
 
-                    team1 = extract_team_name(t_a)
-                    team2 = extract_team_name(t_b)
+                    team1, team2 = extract_team_name(t_a), extract_team_name(t_b)
                     if not team1 or not team2: continue
+                    logo1, logo2 = get_logo(t_a.find('img')), get_logo(t_b.find('img'))
 
-                    logo1 = get_logo(t_a.find('img'))
-                    logo2 = get_logo(t_b.find('img'))
-
-                    # النتيجة أو الوقت
                     score = "-:-"
                     mresult = teams_data.find('div', class_='MResult')
                     if mresult:
@@ -153,11 +144,9 @@ class GhostScraper:
                         elif time_span:
                             score = time_span.text.strip()
 
-                    # الحالة (على مستوى المباراة item، مو داخل teamsData)
                     status_tag = item.find('div', class_='matchStatus')
                     status = " ".join(status_tag.text.split()) if status_tag else "غير محدد"
 
-                    # القناة (أيضاً على مستوى item)
                     ch_div = item.find('div', class_='channel')
                     channels = [c.strip() for c in ch_div.text.split('/') if c.strip()] if ch_div else []
 
@@ -183,7 +172,6 @@ class GhostScraper:
         if not html: return matches
 
         soup = BeautifulSoup(html, 'html.parser')
-        # الحاوي وسم <li> مو <div>
         for li in soup.find_all('li', class_='match-header-holder'):
             try:
                 h6 = li.find('h6')
@@ -194,19 +182,12 @@ class GhostScraper:
                 away_b = li.find('b', class_='away-score')
                 if not home_b or not away_b: continue
 
-                home_block = home_b.parent
-                away_block = away_b.parent
-
-                team1 = extract_team_name(home_block)
-                team2 = extract_team_name(away_block)
+                team1, team2 = extract_team_name(home_b.parent), extract_team_name(away_b.parent)
                 if not team1 or not team2: continue
-
-                logo1 = get_logo(home_block.find('img'))
-                logo2 = get_logo(away_block.find('img'))
+                logo1, logo2 = get_logo(home_b.parent.find('img')), get_logo(away_b.parent.find('img'))
 
                 score1 = home_b.get_text(strip=True)
                 score2 = away_b.get_text(strip=True)
-
                 status_tag = li.find('span', class_='status')
                 status = status_tag.text.strip() if status_tag else "غير محدد"
 
@@ -216,10 +197,26 @@ class GhostScraper:
                     time_tag = li.find('span', class_='time')
                     score = time_tag.text.strip() if time_tag and time_tag.text.strip() else "-:-"
 
+                # ----- استخراج القنوات بذكاء من فيلجول -----
+                channels = []
+                for span in li.find_all('span'):
+                    # البحث عن أيقونات التلفاز أو كلاسات القنوات
+                    if span.find('i', class_=lambda c: c and ('tv' in c.lower() or 'screen' in c.lower() or 'television' in c.lower())):
+                        txt = span.text.strip()
+                        if txt: channels = [txt]
+                        break
+
+                # ----- استخراج المعلق بذكاء من فيلجول -----
+                comm = ""
+                for span in li.find_all('span'):
+                    if span.find('i', class_=lambda c: c and ('mic' in c.lower() or 'microphone' in c.lower())):
+                        comm = span.text.replace('معلق:', '').strip()
+                        break
+
                 matches.append({
                     "league": league, "homeTeam": team1, "homeLogo": logo1,
                     "awayTeam": team2, "awayLogo": logo2, "scoreOrTime": score,
-                    "status": status, "channels": [], "commentator": "",
+                    "status": status, "channels": channels, "commentator": comm,
                     "source": "FilGoal"
                 })
             except Exception:
@@ -236,16 +233,12 @@ class GhostScraper:
         soup = BeautifulSoup(html, 'html.parser')
         for m in soup.find_all('div', class_='match-card'):
             try:
-                # الفرق وسمها <a> مو <div>
                 teams = m.find_all(lambda tag: tag.name == 'a' and 'team' in tag.get('class', []))
                 if len(teams) < 2: continue
 
-                team1 = extract_team_name(teams[0])
-                team2 = extract_team_name(teams[1])
+                team1, team2 = extract_team_name(teams[0]), extract_team_name(teams[1])
                 if not team1 or not team2: continue
-
-                logo1 = get_logo(teams[0].find('img'))
-                logo2 = get_logo(teams[1].find('img'))
+                logo1, logo2 = get_logo(teams[0].find('img')), get_logo(teams[1].find('img'))
 
                 score = "-:-"
                 score_div = m.find('div', class_='scoreRresult')
@@ -269,10 +262,22 @@ class GhostScraper:
                 league_tag = league_card.find(['h2', 'h3']) if league_card else None
                 league = " ".join(league_tag.text.split()) if league_tag else "بطولة غير معروفة"
 
+                # ----- استخراج القنوات من بطولات -----
+                channels = []
+                ch_elems = m.find_all(lambda tag: tag.name in ['span', 'div', 'p'] and tag.get('class') and any('channel' in c.lower() or 'tv' in c.lower() for c in tag.get('class', [])))
+                for ch in ch_elems:
+                    channels.extend([c.strip() for c in ch.text.split('/') if c.strip()])
+
+                # ----- استخراج المعلق من بطولات -----
+                comm = ""
+                comm_elem = m.find(lambda tag: tag.name in ['span', 'div', 'p'] and tag.get('class') and any('commentator' in c.lower() or 'mic' in c.lower() for c in tag.get('class', [])))
+                if comm_elem:
+                    comm = comm_elem.text.replace('معلق:', '').strip()
+
                 matches.append({
                     "league": league, "homeTeam": team1, "homeLogo": logo1,
                     "awayTeam": team2, "awayLogo": logo2, "scoreOrTime": score,
-                    "status": status, "channels": [], "commentator": "",
+                    "status": status, "channels": channels, "commentator": comm,
                     "source": "Btolat"
                 })
             except Exception:
@@ -293,23 +298,20 @@ def filter_and_rank(matches_list):
         raw_league = m['league']
         std_league = raw_league
         is_vip_league = False
-        league_rank = 999  # ترتيب افتراضي متأخر للبطولات غير المعروفة
+        league_rank = 999 
 
-        # 1. تحديد البطولة وإعطائها رتبة بناءً على مكانها في القاموس الذكي أعلاه
         for idx, (official_name, keywords) in enumerate(LEAGUES_MAPPING.items()):
             if any(kw in raw_league for kw in keywords):
                 std_league = official_name
                 is_vip_league = True
-                league_rank = idx  # كلما كان الرقم أقل، ظهرت البطولة أولاً (الأوروبي ثم العربي)
+                league_rank = idx  
                 break
 
-        # 2. إذا لم تكن في القاموس، ولكنها تحمل كلمة مفتاحية هامة (مثل كأس أو سوبر)
         if not is_vip_league:
             if any(v in raw_league for v in GENERAL_VIP_KEYWORDS):
                 is_vip_league = True
-                league_rank = 50  # رتبة متوسطة بعد البطولات الكبرى
+                league_rank = 50  
 
-        # 3. التحقق مما إذا كان الفريق VIP
         is_vip_team = False
         for t in VIP_TEAMS:
             if t in m['homeTeam'] or t in m['awayTeam']:
@@ -322,38 +324,18 @@ def filter_and_rank(matches_list):
             m['team_rank'] = 0 if is_vip_team else 1
             filtered.append(m)
 
-    # الترتيب النهائي الفولاذي:
-    # 1. المباشر أولاً (دقيقة أو شوط)
-    # 2. ثم ترتيب البطولة (الأوروبية العالمية أولاً ثم العربية والمحلية)
-    # 3. ثم هل الفريق VIP أم لا
     filtered.sort(key=lambda x: (
         0 if "دقيقة" in x['status'] or "شوط" in x['status'] else 1, 
         x['league_rank'], 
         x['team_rank']
     ))
 
-    # تنظيف المفاتيح المؤقتة لكي لا تظهر في ملف الـ JSON النهائي
     for m in filtered:
         m.pop('league_rank', None)
         m.pop('team_rank', None)
         m.pop('priority', None)
 
     return filtered
-
-
-def extract_first_match_time(matches_list):
-    earliest_time = None
-    for m in matches_list:
-        score_val = m.get('scoreOrTime', '')
-        if ':' in score_val and '-' not in score_val:
-            try:
-                time_str = score_val.strip().replace('م', '').replace('ص', '').strip()
-                match_time = datetime.strptime(time_str, '%H:%M').time()
-                if earliest_time is None or match_time < earliest_time:
-                    earliest_time = match_time
-            except Exception:
-                continue
-    return earliest_time
 
 
 # ================= العقل المدبر والتشغيل =================
@@ -383,9 +365,22 @@ def execute_full_cycle():
         if key not in merged:
             merged[key] = m
         else:
-            if not merged[key]['channels'] and m['channels']: merged[key]['channels'] = m['channels']
-            if not merged[key]['commentator'] and m['commentator']: merged[key]['commentator'] = m['commentator']
-            if m['source'] not in merged[key]['source']: merged[key]['source'] += f" + {m['source']}"
+            # ----- الدمج الجراحي الذكي للقنوات -----
+            combined_channels = merged[key]['channels'] + m['channels']
+            # الحفاظ على القنوات وإزالة أي تكرار
+            merged[key]['channels'] = list(dict.fromkeys([c.strip() for c in combined_channels if c.strip()]))
+            
+            # ----- الدمج الجراحي الذكي للمعلقين -----
+            curr_comm = merged[key]['commentator']
+            new_comm = m['commentator']
+            if not curr_comm and new_comm:
+                merged[key]['commentator'] = new_comm
+            elif curr_comm and new_comm and new_comm not in curr_comm:
+                merged[key]['commentator'] = f"{curr_comm} / {new_comm}"
+
+            # ----- دمج المصادر -----
+            if m['source'] not in merged[key]['source']: 
+                merged[key]['source'] += f" + {m['source']}"
 
     final_list = filter_and_rank(list(merged.values()))
 
@@ -401,12 +396,6 @@ def execute_full_cycle():
 
     print(f"\n-> [OK] Smart-Filtered & Saved {len(final_list)} matches to matches.json.")
     return final_list
-
-
-# ================= نظام التشغيل المستمر (الأتمتة) - مُعطل عمداً ليناسب سيرفرات غيت هب =================
-def autonomous_mode():
-    print("هذه الدالة تستخدم فقط عند تشغيل السكربت على حاسوبك الشخصي. في GitHub نعتمد على مجدول المهام.")
-    pass
 
 
 if __name__ == "__main__":
