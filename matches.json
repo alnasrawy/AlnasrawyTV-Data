@@ -18,7 +18,7 @@
         "awayTeam": "ماميلودي صنداونز",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/577.png",
         "scoreOrTime": "16:00",
-        "status": "لم تبدأ",
+        "status": "بعد قليل",
         "channels": [],
         "commentator": "",
         "source": "FilGoal"
@@ -54,7 +54,7 @@
         "awayTeam": "بريستون نورث إند",
         "awayLogo": "https://img.btolat.com/teamslogo/9317.png?v=402",
         "scoreOrTime": "2 - 0",
-        "status": "30'",
+        "status": "54'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -575,7 +575,9 @@
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\RealBetis2018_7_29_14_50.jpg",
         "scoreOrTime": "20:30",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "ON Sport PLUS"
+        ],
         "commentator": "",
         "source": "Yallakora + Btolat"
     },
@@ -621,7 +623,7 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/137.png",
         "awayTeam": "مانشستر يونايتد",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/95.png",
-        "scoreOrTime": "15:00",
+        "scoreOrTime": "17:45",
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
