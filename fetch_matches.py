@@ -181,11 +181,24 @@ def send_telegram_photo(png_bytes, caption=""):
 # ================= مولّد بطاقة المباراة (صورة احترافية) =================
 _FONT_CACHE = {}
 _LOGO_CACHE = {}
+_SHAPE_WARNED = {"once": False}
 
 _ARABIC_FONT_URLS = [
     "https://raw.githubusercontent.com/google/fonts/main/ofl/tajawal/Tajawal-Regular.ttf",
     "https://raw.githubusercontent.com/google/fonts/main/ofl/tajawal/Tajawal-Bold.ttf",
 ]
+
+# 💡 مسارات الخط المحمّل مسبقاً في الـ workflow (مضمون 100% — يمنع سقوط السكربت على خط بدون عربية)
+_FONT_PREFERRED_PATHS = {
+    "regular": [
+        "/tmp/alnasrawy_fonts/tajawal_regular.ttf",
+        r"C:\Users\Ahmed\Documents\Default Project\tajawal_regular.ttf",
+    ],
+    "bold": [
+        "/tmp/alnasrawy_fonts/tajawal_bold.ttf",
+        r"C:\Users\Ahmed\Documents\Default Project\tajawal_bold.ttf",
+    ],
+}
 
 _SYSTEM_FONT_CANDIDATES = [
     r"C:\Windows\Fonts\segoeui.ttf", r"C:\Windows\Fonts\arial.ttf", r"C:\Windows\Fonts\tahoma.ttf",
@@ -196,18 +209,25 @@ _SYSTEM_FONT_CANDIDATES = [
 
 
 def _font_path(kind):
+    # 1) الخط المحمّل مسبقاً في الـ workflow (الأضمن)
+    for p in _FONT_PREFERRED_PATHS.get(kind, []):
+        if os.path.exists(p) and os.path.getsize(p) > 5000:
+            return p
+    # 2) خط محمّل مسبقاً في جلسة سابقة (temp)
     p = os.path.join(tempfile.gettempdir(), f"card_font_{kind}.ttf")
     if os.path.exists(p) and os.path.getsize(p) > 5000:
         return p
+    # 3) تنزيل Tajawal مباشرة
     url = _ARABIC_FONT_URLS[0 if kind == "regular" else 1]
     try:
-        r = requests.get(url, timeout=20, impersonate="chrome120")
+        r = requests.get(url, timeout=25, impersonate="chrome120")
         if r.status_code == 200 and len(r.content) > 5000:
             with open(p, "wb") as f:
                 f.write(r.content)
             return p
     except Exception:
         pass
+    # 4) خط نظام يدعم العربية إن وُجد
     for cand in _SYSTEM_FONT_CANDIDATES:
         if os.path.exists(cand):
             return cand
@@ -220,10 +240,14 @@ def _font(size, bold=False):
         return _FONT_CACHE[key]
     from PIL import ImageFont
     path = _font_path("bold" if bold else "regular")
-    try:
-        font = ImageFont.truetype(path, size) if path else ImageFont.load_default()
-    except Exception:
-        font = ImageFont.load_default()
+    font = None
+    if path:
+        try:
+            font = ImageFont.truetype(path, size)
+        except Exception:
+            font = None
+    if font is None:
+        print("    ⚠️ لا يوجد خط عربي متاح (فشل تحميل Tajawal) — سيتم إرسال نص بديل بدلاً من كارت مشوّه.")
     _FONT_CACHE[key] = font
     return font
 
@@ -235,10 +259,15 @@ def _shape(text):
         from bidi.algorithm import get_display
         return get_display(arabic_reshaper.reshape(str(text)))
     except Exception:
+        if not _SHAPE_WARNED["once"]:
+            print("    ⚠️ arabic_reshaper / python-bidi غير مثبتة! ثبّتها في الـ workflow وإلا ظهر النص العربي مشوهاً.")
+            _SHAPE_WARNED["once"] = True
         return str(text)
 
 
 def _draw_centered(draw, cx, y, text, font, fill, max_w):
+    if font is None:
+        return
     s = _shape(text)
     w = draw.textlength(s, font=font)
     if w <= max_w:
@@ -262,6 +291,8 @@ def _draw_centered(draw, cx, y, text, font, fill, max_w):
 
 
 def _draw_right(draw, xr, y, text, font, fill, max_w):
+    if font is None:
+        return
     s = _shape(text)
     w = draw.textlength(s, font=font)
     if w <= max_w:
@@ -331,8 +362,9 @@ def _load_team_logo(url, team_name, size=210):
         d.ellipse([0, 0, size, size], fill=color + (255,))
         f = _font(int(size * 0.42), bold=True)
         letter = _shape((team_name.strip()[:1]) or "?")
-        lw = d.textlength(letter, font=f)
-        d.text(((size - lw) / 2, (size - f.size) / 2), letter, font=f, fill=(255, 255, 255))
+        if f is not None:
+            lw = d.textlength(letter, font=f)
+            d.text(((size - lw) / 2, (size - f.size) / 2), letter, font=f, fill=(255, 255, 255))
     mask = Image.new("L", (size, size), 0)
     ImageDraw.Draw(mask).ellipse([0, 0, size, size], fill=255)
     canvas.putalpha(mask)
@@ -344,6 +376,8 @@ def compose_match_card(match, kind="end"):
     """يرسم بطاقة المباراة الاحترافية ويعيد بايتات PNG، أو None عند فشل الرسم.
     kind: 'start' (تنبيه بدء) أو 'end' (ملخص نهاية مع الهدافين)."""
     if Image is None or ImageDraw is None:
+        return None
+    if _font(30, bold=True) is None:
         return None
     league = match.get('league', '') or ''
     home = match.get('homeTeam', '') or ''
@@ -469,7 +503,9 @@ def _run_telegram_notifications(final_list, state):
                     start_dt = datetime.combine(now.date(), datetime.strptime(hm, '%H:%M').time()).replace(tzinfo=TZ)
                     window = timedelta(minutes=TELEGRAM.get("start_alert_minutes", 15))
                     if now >= start_dt - window and now < start_dt:
-                        caption = f"🔔 تبدأ قريباً | {m['league']}"
+                        caption = (f"🔔 تبدأ قريباً | {m['league']}\n"
+                                   f"{m['homeTeam']} 🆚 {m['awayTeam']} — {m['scoreOrTime']}\n"
+                                   f"📺 {', '.join(m['channels']) or 'لم يتم تحديد قناة بعد'}")
                         card = compose_match_card(m, 'start')
                         ok = send_telegram_photo(card, caption) if card else False
                         if not ok:
@@ -487,7 +523,18 @@ def _run_telegram_notifications(final_list, state):
 
         # ---- ملخص نهاية المباراة ----
         if TELEGRAM.get("send_end_summary", True) and status == "انتهت" and not ended.get(key) and prev != "انتهت":
-            caption = f"🏁 انتهت المباراة | {m['league']}"
+            _sc = m.get('scorers') or {"home": [], "away": []}
+            cap_sc = ""
+            hsc = _sc.get('home') or []
+            asc = _sc.get('away') or []
+            if hsc:
+                cap_sc += f"\n⚽ {m['homeTeam']}: " + "، ".join(f"{n} ({t})" for n, t in hsc)
+            if asc:
+                cap_sc += f"\n⚽ {m['awayTeam']}: " + "، ".join(f"{n} ({t})" for n, t in asc)
+            caption = (f"🏁 انتهت المباراة | {m['league']}\n"
+                       f"{m['homeTeam']} {m['scoreOrTime']} {m['awayTeam']}"
+                       f"{cap_sc}\n"
+                       f"📺 {', '.join(m['channels']) or 'لم يتم تحديد قناة بعد'}")
             card = compose_match_card(m, 'end')
             ok = send_telegram_photo(card, caption) if card else False
             if not ok:
