@@ -54,7 +54,7 @@
         "awayTeam": "بريستون نورث إند",
         "awayLogo": "https://img.btolat.com/teamslogo/9317.png?v=402",
         "scoreOrTime": "2 - 0",
-        "status": "54'",
+        "status": "61'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -155,7 +155,7 @@
             "بى ان سبورت 3 HD"
         ],
         "commentator": "",
-        "source": "Yallakora"
+        "source": "Yallakora + FilGoal + Btolat"
     },
     {
         "league": "الدوري الإسباني",
@@ -169,31 +169,7 @@
             "بى ان سبورت 1HD"
         ],
         "commentator": "",
-        "source": "Yallakora"
-    },
-    {
-        "league": "الدوري الإسباني",
-        "homeTeam": "إشبيلية",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/126.png",
-        "awayTeam": "رايو فايكانو",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/122.png",
-        "scoreOrTime": "22:30",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal"
-    },
-    {
-        "league": "الدوري الإسباني",
-        "homeTeam": "ديبورتيفو ألافيس",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/115.png",
-        "awayTeam": "خيتافي",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/317.png",
-        "scoreOrTime": "20:30",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal + Btolat"
+        "source": "Yallakora + FilGoal"
     },
     {
         "league": "الدوري الإسباني",
