@@ -288,7 +288,7 @@
         "awayTeam": "سوتيرول بولدزانو",
         "awayLogo": "https://img.btolat.com/teamslogo/12041.png?v=818",
         "scoreOrTime": "2 - 1",
-        "status": "65'",
+        "status": "68'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -485,7 +485,7 @@
         "awayTeam": "الطلبة",
         "awayLogo": "https://img.btolat.com/teamslogo/11517.png?v=211",
         "scoreOrTime": "2 - 1",
-        "status": "90+'",
+        "status": "انتهت",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -513,7 +513,7 @@
         "awayTeam": "غاز الشمال",
         "awayLogo": "https://img.btolat.com/",
         "scoreOrTime": "1 - 0",
-        "status": "90+'",
+        "status": "انتهت",
         "channels": [
             "العراقية السريانية"
         ],
@@ -737,7 +737,11 @@
             "AD Sports Premium Extra"
         ],
         "commentator": "عيسى الحربين",
-        "source": "Yallakora + FilGoal + Btolat"
+        "source": "Yallakora + FilGoal + Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "مباريات ودية -أندية",
