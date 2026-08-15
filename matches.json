@@ -98,7 +98,7 @@
         "awayTeam": "كوينز بارك رينجرز",
         "awayLogo": "https://img.btolat.com/teamslogo/9318.png?v=694",
         "scoreOrTime": "1 - 3",
-        "status": "79'",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat"
@@ -134,7 +134,7 @@
         "awayTeam": "ميلوول",
         "awayLogo": "https://img.btolat.com/teamslogo/9276.png?v=589",
         "scoreOrTime": "0 - 2",
-        "status": "85'",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat"
@@ -158,7 +158,7 @@
         "awayTeam": "ديربي كاونتي",
         "awayLogo": "https://img.btolat.com/teamslogo/9133.png?v=92",
         "scoreOrTime": "2 - 1",
-        "status": "83'",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -169,8 +169,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/9296.png?v=268",
         "awayTeam": "وست بروميتش",
         "awayLogo": "https://img.btolat.com/teamslogo/9426.png?v=743",
-        "scoreOrTime": "0 - 1",
-        "status": "86'",
+        "scoreOrTime": "1 - 2",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -182,7 +182,7 @@
         "awayTeam": "سوانسي سيتي",
         "awayLogo": "https://img.btolat.com/teamslogo/9387.png?v=826",
         "scoreOrTime": "1 - 2",
-        "status": "83'",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -193,8 +193,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/9348.png?v=695",
         "awayTeam": "برمنجهام سيتي",
         "awayLogo": "https://img.btolat.com/teamslogo/9039.png?v=667",
-        "scoreOrTime": "07:30 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "12'",
         "channels": [
             "BEIN SPORTS 2"
         ],
@@ -263,8 +263,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11845.png?v=257",
         "awayTeam": "سوتيرول بولدزانو",
         "awayLogo": "https://img.btolat.com/teamslogo/12041.png?v=818",
-        "scoreOrTime": "07:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "1 - 1",
+        "status": "38'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -275,8 +275,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/12051.png?v=714",
         "awayTeam": "بادوفا",
         "awayLogo": "https://img.btolat.com/teamslogo/11956.png?v=491",
-        "scoreOrTime": "07:30 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "10'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -460,8 +460,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/41312.png?v=850",
         "awayTeam": "الطلبة",
         "awayLogo": "https://img.btolat.com/teamslogo/11517.png?v=211",
-        "scoreOrTime": "0 - 0",
-        "status": "12'",
+        "scoreOrTime": "0 - 1",
+        "status": "51'",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -487,7 +487,7 @@
         "awayTeam": "غاز الشمال",
         "awayLogo": "https://img.btolat.com/",
         "scoreOrTime": "0 - 0",
-        "status": "13'",
+        "status": "52'",
         "channels": [
             "العراقية السريانية"
         ],
@@ -709,7 +709,11 @@
             "STC TV"
         ],
         "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat"
+        "source": "Yallakora + FilGoal + Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "مباريات ودية -أندية",
