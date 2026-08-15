@@ -5,7 +5,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\11\\11082024_8_11_23_19.jpg",
         "awayTeam": "خيتافي",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Getafe2018_7_29_14_53.jpg",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "1 - 0",
         "status": "الشوط الثاني",
         "channels": [
             "beIN SPORTS 3 HD"
@@ -20,7 +20,7 @@
         "awayTeam": "الخلود",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\9\\25\\Al_Kholood_Club12025_9_25_0_22.webp",
         "scoreOrTime": "1 - 0",
-        "status": "الشوط الأول",
+        "status": "الشوط الثاني",
         "channels": [
             "ثمانية 2"
         ],
@@ -34,7 +34,7 @@
         "awayTeam": "الفتح",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\2\\3\\fath12023_2_3_16_33.jpg",
         "scoreOrTime": "2 - 0",
-        "status": "الشوط الأول",
+        "status": "الشوط الثاني",
         "channels": [
             "ثمانية 1",
             "ثمانية"
@@ -128,8 +128,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/12088.png?v=610",
         "awayTeam": "مودينا",
         "awayLogo": "https://img.btolat.com/teamslogo/11940.png?v=632",
-        "scoreOrTime": "0 - 0",
-        "status": "3'",
+        "scoreOrTime": "0 - 1",
+        "status": "20'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -305,7 +305,7 @@
         "awayTeam": "الميناء",
         "awayLogo": "https://img.btolat.com/teamslogo/11506.png?v=721",
         "scoreOrTime": "0 - 0",
-        "status": "'",
+        "status": "46'",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -333,7 +333,7 @@
         "awayTeam": "الموصل",
         "awayLogo": "https://img.btolat.com/",
         "scoreOrTime": "0 - 0",
-        "status": "'",
+        "status": "49'",
         "channels": [
             "العراقية السريانية"
         ],
