@@ -5,7 +5,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\Alzafra2018_7_26_11_51.jpg",
         "awayTeam": "الشــارقة",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\logoL_14632647842026_8_2_20_22.webp",
-        "scoreOrTime": "0 - 1",
+        "scoreOrTime": "1 - 2",
         "status": "الشوط الثاني",
         "channels": [],
         "commentator": "",
@@ -92,7 +92,7 @@
         "awayTeam": "كوينز بارك رينجرز",
         "awayLogo": "https://img.btolat.com/teamslogo/9318.png?v=694",
         "scoreOrTime": "1 - 3",
-        "status": "67'",
+        "status": "79'",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat"
@@ -128,7 +128,7 @@
         "awayTeam": "ميلوول",
         "awayLogo": "https://img.btolat.com/teamslogo/9276.png?v=589",
         "scoreOrTime": "0 - 2",
-        "status": "73'",
+        "status": "85'",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat"
@@ -151,8 +151,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/9088.png?v=731",
         "awayTeam": "ديربي كاونتي",
         "awayLogo": "https://img.btolat.com/teamslogo/9133.png?v=92",
-        "scoreOrTime": "1 - 1",
-        "status": "71'",
+        "scoreOrTime": "2 - 1",
+        "status": "83'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -163,8 +163,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/9296.png?v=268",
         "awayTeam": "وست بروميتش",
         "awayLogo": "https://img.btolat.com/teamslogo/9426.png?v=743",
-        "scoreOrTime": "0 - 0",
-        "status": "74'",
+        "scoreOrTime": "0 - 1",
+        "status": "86'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -176,7 +176,7 @@
         "awayTeam": "سوانسي سيتي",
         "awayLogo": "https://img.btolat.com/teamslogo/9387.png?v=826",
         "scoreOrTime": "1 - 2",
-        "status": "71'",
+        "status": "83'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -189,7 +189,9 @@
         "awayLogo": "https://img.btolat.com/teamslogo/9039.png?v=667",
         "scoreOrTime": "07:30 م",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "BEIN SPORTS 2"
+        ],
         "commentator": "",
         "source": "Btolat"
     },
@@ -388,8 +390,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/41312.png?v=850",
         "awayTeam": "الطلبة",
         "awayLogo": "https://img.btolat.com/teamslogo/11517.png?v=211",
-        "scoreOrTime": "18:30",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "12'",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -414,8 +416,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11534.png?v=205",
         "awayTeam": "غاز الشمال",
         "awayLogo": "https://img.btolat.com/",
-        "scoreOrTime": "18:30",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "13'",
         "channels": [
             "العراقية السريانية"
         ],
@@ -552,8 +554,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\19\\1482024_8_19_21_30.jpg",
         "awayTeam": "هوفنهايم",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Hoffenheim2018_7_29_16_6.jpg",
-        "scoreOrTime": "2 - 0",
-        "status": "مباشر",
+        "scoreOrTime": "3 - 0",
+        "status": "انتهت",
         "channels": [
             "ON Sport MAX"
         ],
@@ -581,18 +583,18 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\BorussiaDortmund2018_7_29_16_4.jpg",
         "awayTeam": "روما",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\ASRoma2018_7_29_15_7.jpg",
-        "scoreOrTime": "18:30",
-        "status": "لم تبدأ",
+        "scoreOrTime": "1 - 2",
+        "status": "مباشر",
         "channels": [
             "ON Sport",
             "On Sport Plus",
-            "أبوظبي الرياضية 1 HD",
             "الشارقة الرياضية",
+            "أبوظبي الرياضية 1 HD",
             "ON Sport 1",
             "الكويت الرياضية",
             "AD Sports Premium Extra"
         ],
-        "commentator": "",
+        "commentator": "عيسى الحربين",
         "source": "Yallakora + FilGoal + Btolat"
     },
     {
