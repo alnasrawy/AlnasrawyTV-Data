@@ -19,7 +19,9 @@
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/94.png",
         "scoreOrTime": "17:00",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "beIN SPORTS 1 HD"
+        ],
         "commentator": "",
         "source": "FilGoal"
     },
@@ -29,7 +31,7 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/460.png",
         "awayTeam": "ماميلودي صنداونز",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/577.png",
-        "scoreOrTime": "1 - 0",
+        "scoreOrTime": "1 - 1",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -45,7 +47,7 @@
         "status": "مباشر",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal"
+        "source": "FilGoal + Btolat"
     },
     {
         "league": "الدوري الإنجليزي",
@@ -77,8 +79,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/9066.png?v=886",
         "awayTeam": "ميلوول",
         "awayLogo": "https://img.btolat.com/teamslogo/9276.png?v=589",
-        "scoreOrTime": "0 - 0",
-        "status": "32'",
+        "scoreOrTime": "0 - 1",
+        "status": "41'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -90,19 +92,7 @@
         "awayTeam": "ديربي كاونتي",
         "awayLogo": "https://img.btolat.com/teamslogo/9133.png?v=92",
         "scoreOrTime": "0 - 1",
-        "status": "32'",
-        "channels": [],
-        "commentator": "",
-        "source": "Btolat"
-    },
-    {
-        "league": "الدوري الإنجليزي",
-        "homeTeam": "ميدلسبروه",
-        "homeLogo": "https://img.btolat.com/teamslogo/9274.png?v=710",
-        "awayTeam": "لينكولن سيتي",
-        "awayLogo": "https://img.btolat.com/teamslogo/9247.png?v=203",
-        "scoreOrTime": "0 - 1",
-        "status": "32'",
+        "status": "41'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -114,7 +104,7 @@
         "awayTeam": "وست بروميتش",
         "awayLogo": "https://img.btolat.com/teamslogo/9426.png?v=743",
         "scoreOrTime": "0 - 0",
-        "status": "32'",
+        "status": "41'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -125,8 +115,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/9314.png?v=198",
         "awayTeam": "كوينز بارك رينجرز",
         "awayLogo": "https://img.btolat.com/teamslogo/9318.png?v=694",
-        "scoreOrTime": "1 - 0",
-        "status": "31'",
+        "scoreOrTime": "1 - 2",
+        "status": "41'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -138,7 +128,7 @@
         "awayTeam": "سوانسي سيتي",
         "awayLogo": "https://img.btolat.com/teamslogo/9387.png?v=826",
         "scoreOrTime": "1 - 1",
-        "status": "32'",
+        "status": "41'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -164,7 +154,7 @@
         "scoreOrTime": "20:30",
         "status": "لم تبدأ",
         "channels": [
-            "بى ان سبورت 3 HD"
+            "beIN SPORTS 3 HD"
         ],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat"
@@ -178,7 +168,7 @@
         "scoreOrTime": "22:30",
         "status": "لم تبدأ",
         "channels": [
-            "بى ان سبورت 1HD"
+            "beIN SPORTS 1 HD"
         ],
         "commentator": "",
         "source": "Yallakora + FilGoal"
@@ -191,7 +181,9 @@
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/127.png",
         "scoreOrTime": "18:00",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "beIN SPORTS 3 HD"
+        ],
         "commentator": "",
         "source": "FilGoal"
     },
@@ -203,7 +195,9 @@
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/314.png",
         "scoreOrTime": "20:00",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "beIN SPORTS 2 HD"
+        ],
         "commentator": "",
         "source": "FilGoal"
     },
@@ -278,7 +272,8 @@
         "scoreOrTime": "21:00",
         "status": "لم تبدأ",
         "channels": [
-            "ثمانية 1"
+            "ثمانية 1",
+            "ثمانية"
         ],
         "commentator": "",
         "source": "Yallakora + FilGoal"
@@ -291,7 +286,9 @@
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/663.png",
         "scoreOrTime": "4 - 2",
         "status": "انتهت",
-        "channels": [],
+        "channels": [
+            "ثمانية 1"
+        ],
         "commentator": "",
         "source": "FilGoal"
     },
@@ -303,7 +300,9 @@
         "awayLogo": "https://img.btolat.com/teamslogo/14996.png?v=508",
         "scoreOrTime": "09:00 م",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "ثمانية 1"
+        ],
         "commentator": "",
         "source": "Btolat"
     },
@@ -329,7 +328,9 @@
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1445.png",
         "scoreOrTime": "2 - 1",
         "status": "انتهت",
-        "channels": [],
+        "channels": [
+            "ثمانية 3"
+        ],
         "commentator": "",
         "source": "FilGoal"
     },
@@ -341,7 +342,9 @@
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/181.png",
         "scoreOrTime": "4 - 2",
         "status": "انتهت",
-        "channels": [],
+        "channels": [
+            "ثمانية 2"
+        ],
         "commentator": "",
         "source": "FilGoal"
     },
@@ -353,7 +356,9 @@
         "awayLogo": "https://img.btolat.com/teamslogo/30602.png?v=45",
         "scoreOrTime": "09:00 م",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "ثمانية 2"
+        ],
         "commentator": "",
         "source": "Btolat"
     },
@@ -483,7 +488,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Chelsea2018_7_29_15_28.jpg",
         "awayTeam": "ريال سوسيداد",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\RealSociedad2018_7_29_14_56.jpg",
-        "scoreOrTime": "2 - 1",
+        "scoreOrTime": "3 - 1",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -497,9 +502,13 @@
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Leipzig2018_7_29_16_8.jpg",
         "scoreOrTime": "1 - 0",
         "status": "مباشر",
-        "channels": [],
+        "channels": [
+            "أبوظبي الرياضية 1 HD",
+            "أبو ظبي الرياضية 2",
+            "الكويت الرياضية"
+        ],
         "commentator": "",
-        "source": "Yallakora"
+        "source": "Yallakora + FilGoal + Btolat"
     },
     {
         "league": "مباريات ودية -أندية",
@@ -507,7 +516,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\19\\1482024_8_19_21_30.jpg",
         "awayTeam": "هوفنهايم",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Hoffenheim2018_7_29_16_6.jpg",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "1 - 0",
         "status": "مباشر",
         "channels": [
             "ON Sport MAX"
@@ -524,10 +533,11 @@
         "scoreOrTime": "17:45",
         "status": "لم تبدأ",
         "channels": [
-            "ON Sport PLUS"
+            "ON Sport PLUS",
+            "STC TV"
         ],
         "commentator": "",
-        "source": "Yallakora + Btolat"
+        "source": "Yallakora + FilGoal + Btolat"
     },
     {
         "league": "مباريات ودية -أندية",
@@ -538,10 +548,13 @@
         "scoreOrTime": "18:30",
         "status": "لم تبدأ",
         "channels": [
-            "ON Sport"
+            "ON Sport",
+            "On Sport Plus",
+            "أبوظبي الرياضية 1 HD",
+            "الشارقة الرياضية"
         ],
         "commentator": "",
-        "source": "Yallakora"
+        "source": "Yallakora + FilGoal + Btolat"
     },
     {
         "league": "مباريات ودية -أندية",
@@ -583,42 +596,6 @@
     },
     {
         "league": "مباريات ودية - أندية",
-        "homeTeam": "بوروسيا دورتموند",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/154.png",
-        "awayTeam": "روما",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/143.png",
-        "scoreOrTime": "18:30",
-        "status": "بعد قليل",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal + Btolat"
-    },
-    {
-        "league": "مباريات ودية - أندية",
-        "homeTeam": "ميلان",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/137.png",
-        "awayTeam": "مانشستر يونايتد",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/95.png",
-        "scoreOrTime": "17:45",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal"
-    },
-    {
-        "league": "مباريات ودية - أندية",
-        "homeTeam": "بايرن ميونيخ",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/153.png",
-        "awayTeam": "لايبزج",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1742.png",
-        "scoreOrTime": "0 - 0",
-        "status": "مباشر",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal"
-    },
-    {
-        "league": "مباريات ودية - أندية",
         "homeTeam": "بازل",
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/344.png",
         "awayTeam": "برشلونة",
@@ -649,20 +626,11 @@
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/132.png",
         "scoreOrTime": "20:00",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "On Sport Plus",
+            "أبو ظبي الرياضية"
+        ],
         "commentator": "",
         "source": "FilGoal"
-    },
-    {
-        "league": "مباريات ودية أندية",
-        "homeTeam": "بايرن ميونخ",
-        "homeLogo": "https://img.btolat.com/teamslogo/10285.png?v=768",
-        "awayTeam": "لايبزيج",
-        "awayLogo": "https://img.btolat.com/teamslogo/10552.png?v=743",
-        "scoreOrTime": "1 - 0",
-        "status": "'",
-        "channels": [],
-        "commentator": "",
-        "source": "Btolat"
     }
 ]
