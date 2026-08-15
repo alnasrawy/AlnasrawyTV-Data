@@ -14,52 +14,6 @@
         "source": "Yallakora + FilGoal"
     },
     {
-        "league": "الدوري السعودي",
-        "homeTeam": "الاتحاد",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\7\\Ittihad2021_9_7_16_53.jpg",
-        "awayTeam": "الخلود",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\9\\25\\Al_Kholood_Club12025_9_25_0_22.webp",
-        "scoreOrTime": "1 - 1",
-        "status": "الشوط الثاني",
-        "channels": [
-            "ثمانية 2"
-        ],
-        "commentator": "جعفر الصليح",
-        "source": "Yallakora + FilGoal + Btolat"
-    },
-    {
-        "league": "الدوري السعودي",
-        "homeTeam": "النصر",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\5\\19\\xdDArNPC_400x4002025_5_19_22_38.webp",
-        "awayTeam": "الفتح",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\2\\3\\fath12023_2_3_16_33.jpg",
-        "scoreOrTime": "3 - 0",
-        "status": "الشوط الثاني",
-        "channels": [
-            "ثمانية 1",
-            "ثمانية"
-        ],
-        "commentator": "فهد العتيبي",
-        "source": "Yallakora + FilGoal + Btolat",
-        "scorers": {
-            "home": [
-                [
-                    "سامو كوستا",
-                    "73'"
-                ],
-                [
-                    "جواو فيليكس",
-                    "40'"
-                ],
-                [
-                    "أنجيلو جابرييل",
-                    "37'"
-                ]
-            ],
-            "away": []
-        }
-    },
-    {
         "league": "الدوري الإنجليزي",
         "homeTeam": "أرسنال",
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/83.png",
@@ -163,7 +117,7 @@
         "awayTeam": "مودينا",
         "awayLogo": "https://img.btolat.com/teamslogo/11940.png?v=632",
         "scoreOrTime": "1 - 2",
-        "status": "50'",
+        "status": "65'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -175,10 +129,70 @@
         "awayTeam": "كاراريزي",
         "awayLogo": "https://img.btolat.com/teamslogo/11838.png?v=880",
         "scoreOrTime": "1 - 0",
-        "status": "40'",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
+    },
+    {
+        "league": "الدوري السعودي",
+        "homeTeam": "الاتحاد",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\7\\Ittihad2021_9_7_16_53.jpg",
+        "awayTeam": "الخلود",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\9\\25\\Al_Kholood_Club12025_9_25_0_22.webp",
+        "scoreOrTime": "1 - 1",
+        "status": "انتهت",
+        "channels": [
+            "ثمانية 2"
+        ],
+        "commentator": "جعفر الصليح",
+        "source": "Yallakora + FilGoal + Btolat",
+        "scorers": {
+            "home": [
+                [
+                    "يوسف النصيري",
+                    "43'"
+                ]
+            ],
+            "away": [
+                [
+                    "جوليان دومينجيش",
+                    "52'"
+                ]
+            ]
+        }
+    },
+    {
+        "league": "الدوري السعودي",
+        "homeTeam": "النصر",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\5\\19\\xdDArNPC_400x4002025_5_19_22_38.webp",
+        "awayTeam": "الفتح",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\2\\3\\fath12023_2_3_16_33.jpg",
+        "scoreOrTime": "3 - 0",
+        "status": "انتهت",
+        "channels": [
+            "ثمانية 1",
+            "ثمانية"
+        ],
+        "commentator": "فهد العتيبي",
+        "source": "Yallakora + FilGoal + Btolat",
+        "scorers": {
+            "home": [
+                [
+                    "سامو كوستا",
+                    "73'"
+                ],
+                [
+                    "جواو فيليكس",
+                    "40'"
+                ],
+                [
+                    "أنجيلو جابرييل",
+                    "37'"
+                ]
+            ],
+            "away": []
+        }
     },
     {
         "league": "الدوري السعودي",
@@ -339,7 +353,7 @@
         "awayTeam": "الميناء",
         "awayLogo": "https://img.btolat.com/teamslogo/11506.png?v=721",
         "scoreOrTime": "0 - 0",
-        "status": "90+'",
+        "status": "انتهت",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -367,7 +381,7 @@
         "awayTeam": "الموصل",
         "awayLogo": "https://img.btolat.com/",
         "scoreOrTime": "1 - 1",
-        "status": "90+'",
+        "status": "انتهت",
         "channels": [
             "العراقية السريانية"
         ],
