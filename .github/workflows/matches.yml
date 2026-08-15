@@ -24,8 +24,8 @@ jobs:
           python-version: '3.10'
           
       - name: Install Dependencies
-        # 👈 هنا تم التعديل الهام جداً لإضافة مكتبة التخفي الجديدة
-        run: pip install curl_cffi beautifulsoup4
+        # 👈 مكتبة التخفي + مكتبات رسم بطاقة المباراة (Pillow + العربية)
+        run: pip install curl_cffi beautifulsoup4 pillow arabic-reshaper python-bidi
         
       - name: Run Scraper
         env:
