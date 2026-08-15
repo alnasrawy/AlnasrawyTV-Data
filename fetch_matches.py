@@ -64,13 +64,10 @@ VIP_TEAMS = [
 
 BLOCKLIST = ["شباب", "رديف", "u23", "u19", "درجة ثانية", "درجة ثالثة", "هواة", "سيدات"]
 
-# 💡 أندية الدوري الإنجليزي الممتاز فقط — المصادر تسمّي الممتاز والتشامبيونشيب
-# بنفس الاسم "الدوري الإنجليزي"، لذلك نفلتر مباريات الدوري الإنجليزي على قائمة الممتاز.
-PREMIER_LEAGUE_TEAMS = [
-    "أرسنال", "أستون فيلا", "برينتفورد", "بورنموث", "برايتون", "تشيلسي", "كوفنتري", "كريستال بالاس",
-    "إيفرتون", "فولهام", "هال سيتي", "إبسويتش", "ليدز", "ليفربول", "مانشستر سيتي", "مانشستر يونايتد",
-    "نيوكاسل", "نوتنجهام فورست", "سندرلاند", "توتنهام"
-]
+# 💡 قوائم بيضاء لأندية الدرجة الأولى (وليس الثانية) — المصادر تسمّي الدرجة الأولى والثانية
+# بنفس الاسم (الدوري الإنجليزي = الممتاز + التشامبيونشيب، الإيطالي = سيري آ + سيري بي، ...).
+# المفتاح = الاسم الرسمي في LEAGUES_MAPPING، والقيمة = أندية الدرجة الأولى فقط (موسم 2026-27).
+TOP_LEAGUE_TEAMS = {}
 
 # ================= تحميل config.json (الإعدادات كلها بيانات لا كود) =================
 def _load_config(path="config.json"):
@@ -93,7 +90,10 @@ if _cfg_vip.get("teams"):
 if _cfg_vip.get("blocklist"):
     BLOCKLIST = _cfg_vip["blocklist"]
 if _cfg_vip.get("premier_league_teams"):
-    PREMIER_LEAGUE_TEAMS = _cfg_vip["premier_league_teams"]
+    TOP_LEAGUE_TEAMS["الدوري الإنجليزي"] = _cfg_vip["premier_league_teams"]
+if _cfg_vip.get("top_league_teams"):
+    for k, v in _cfg_vip["top_league_teams"].items():
+        TOP_LEAGUE_TEAMS[k] = v
 
 TELEGRAM = _CFG.get("telegram", {}) or {}
 SITES_CFG = _CFG.get("sites", {}) or {}
@@ -419,6 +419,37 @@ def _load_team_logo(url, team_name, size=210):
     return canvas
 
 
+def _wrap_lines(draw, text, font, max_w):
+    """يقسّم نصاً إلى أسطر حسب عرض متاح (يستخدم _draw_centered نفس المنطق)."""
+    direction = _text_direction(text)
+    words = str(text).split()
+    lines, cur = [], ""
+    for wd in words:
+        t = (cur + " " + wd).strip()
+        if draw.textlength(t, font=font, direction=direction) <= max_w:
+            cur = t
+        else:
+            if cur:
+                lines.append(cur)
+            cur = wd
+    if cur:
+        lines.append(cur)
+    return lines or [str(text)]
+
+
+def _draw_badge(d, cx, cy, text, font, fill, bg):
+    """شارة (بيل) دائرية الزوايا حول نص — لشارة الحالة."""
+    if font is None:
+        return
+    s = _shape(text)
+    direction = _text_direction(s)
+    tw = d.textlength(s, font=font, direction=direction)
+    w, h = tw + 56, font.size + 26
+    x0, y0 = cx - w / 2, cy - h / 2
+    d.rounded_rectangle([x0, y0, x0 + w, y0 + h], radius=h / 2, fill=bg, outline=fill, width=2)
+    d.text((cx - tw / 2, y0 + (h - font.size) / 2), s, font=font, fill=fill, direction=direction)
+
+
 def compose_match_card(match, kind="end"):
     """يرسم بطاقة المباراة الاحترافية ويعيد بايتات PNG، أو None عند فشل الرسم.
     kind: 'start' (تنبيه بدء) أو 'end' (ملخص نهاية مع الهدافين)."""
@@ -437,92 +468,126 @@ def compose_match_card(match, kind="end"):
     aw = scorers.get('away') or []
 
     is_score = '-' in score_or_time
-    n_lines = max(len(hs), len(aw), 1)
-    H = (680 + min(n_lines, 6) * 52) if kind == "end" else 540
     W = 1080
+    H = 620 if kind == "start" else 760 + min(max(len(hs), len(aw), 1), 6) * 50
     img = Image.new("RGBA", (W, H), (13, 18, 42, 255))
     d = ImageDraw.Draw(img, "RGBA")
 
-    # خلفية متدرجة داكنة
-    top_c = (24, 34, 68)
+    # خلفية متدرجة داكنة مع توهج مركزي خفيف
+    top_c = (26, 37, 74)
     bot_c = (10, 13, 30)
     for y in range(H):
         t = y / H
         c = tuple(int(top_c[i] + (bot_c[i] - top_c[i]) * t) for i in range(3))
         d.line([(0, y), (W, y)], fill=c)
+    glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    gd = ImageDraw.Draw(glow)
+    gd.ellipse([W / 2 - 360, 60, W / 2 + 360, 60 + 560], fill=(60, 90, 170, 40))
+    img = Image.alpha_composite(img, glow)
+    d = ImageDraw.Draw(img, "RGBA")
 
     GOLD = (245, 197, 66, 255)
     WHITE = (255, 255, 255, 255)
     MUTED = (170, 180, 210, 255)
     RED = (255, 120, 120, 255)
     GREEN = (80, 220, 150, 255)
+    PANEL = (22, 30, 62, 220)
 
     # شريط ذهبي علوي
-    d.rectangle([0, 0, W, 10], fill=GOLD)
+    d.rectangle([0, 0, W, 8], fill=GOLD)
 
-    # اسم البطولة
-    _draw_centered(d, W // 2, 30, league, _font(42, bold=True), GOLD, W - 120)
+    # رأس البطولة: اسم في شريط زجاجي صغير
+    league_font = _font(40, bold=True)
+    if league:
+        ls = _shape(league)
+        ld = _text_direction(ls)
+        lw = d.textlength(ls, font=league_font, direction=ld)
+        lbox_w = lw + 90
+        lbox_x = W / 2 - lbox_w / 2
+        d.rounded_rectangle([lbox_x, 26, lbox_x + lbox_w, 82], radius=28, fill=(255, 255, 255, 16), outline=(245, 197, 66, 70), width=2)
+        d.text((W / 2 - lw / 2, 40), ls, font=league_font, fill=GOLD, direction=ld)
 
     # المنتصف: لوجو أرض | النتيجة/الوقت | لوجو ضيف
-    cx_h, cx_a = 240, W - 240
-    cy_mid = 210
-    home_logo = _load_team_logo(match.get('homeLogo'), home)
-    away_logo = _load_team_logo(match.get('awayLogo'), away)
-    img.alpha_composite(home_logo, (cx_h - home_logo.width // 2, cy_mid - home_logo.height // 2))
-    img.alpha_composite(away_logo, (cx_a - away_logo.width // 2, cy_mid - away_logo.height // 2))
+    L = 210
+    cx_h, cx_a = 250, W - 250
+    cy_logo = 240
+    home_logo = _load_team_logo(match.get('homeLogo'), home, size=L)
+    away_logo = _load_team_logo(match.get('awayLogo'), away, size=L)
+    for cx, lg in ((cx_h, home_logo), (cx_a, away_logo)):
+        halo = Image.new("RGBA", (L + 40, L + 40), (0, 0, 0, 0))
+        hd = ImageDraw.Draw(halo)
+        hd.ellipse([0, 0, L + 40, L + 40], fill=(255, 255, 255, 26))
+        img.alpha_composite(halo, (cx - (L + 40) // 2, cy_logo - (L + 40) // 2))
+        img.alpha_composite(lg, (cx - L // 2, cy_logo - L // 2))
 
-    center_txt = score_or_time if kind == "start" or not is_score else score_or_time
+    # لوحة النتيجة/الوقت الزجاجية بين اللوجوهين
+    panel_w, panel_h = 340, 130
+    px, py = W / 2 - panel_w / 2, cy_logo - panel_h / 2 - 8
+    d.rounded_rectangle([px, py, px + panel_w, py + panel_h], radius=24, fill=PANEL, outline=(245, 197, 66, 90), width=2)
+
     if kind == "end" and is_score:
         parts = [p.strip() for p in score_or_time.split('-')]
-        score_style = _font(120, bold=True)
+        score_style = _font(104, bold=True)
         if len(parts) == 2:
             w1 = d.textlength(parts[0], font=score_style)
             w2 = d.textlength(parts[1], font=score_style)
-            dash = _font(90, bold=True)
+            dash = _font(80, bold=True)
             wdash = d.textlength(" – ", font=dash)
             total = w1 + w2 + wdash
             x0 = W / 2 - total / 2
-            d.text((x0, cy_mid - 64), parts[0], font=score_style, fill=WHITE)
-            d.text((x0 + w1, cy_mid - 46), " – ", font=dash, fill=GOLD)
-            d.text((x0 + w1 + wdash, cy_mid - 64), parts[1], font=score_style, fill=WHITE)
+            d.text((x0, py + 18), parts[0], font=score_style, fill=WHITE)
+            d.text((x0 + w1, py + 36), " – ", font=dash, fill=GOLD)
+            d.text((x0 + w1 + wdash, py + 18), parts[1], font=score_style, fill=WHITE)
         else:
-            _draw_centered(d, W // 2, cy_mid - 64, score_or_time, score_style, WHITE, 400)
+            _draw_centered(d, W // 2, py + 18, score_or_time, score_style, WHITE, panel_w - 30)
     else:
-        _draw_centered(d, W // 2, cy_mid - 60, score_or_time, _font(110, bold=True),
-                       GOLD if not is_score else WHITE, 420)
+        _draw_centered(d, W // 2, py + 16, score_or_time, _font(100, bold=True),
+                       GOLD if not is_score else WHITE, panel_w - 30)
 
-    # أسماء الفرق أسفل اللوجوهات (في المنتصف لكل عمود)
-    _draw_centered(d, cx_h, cy_mid + 118, home, _font(36, bold=True), WHITE, 300)
-    _draw_centered(d, cx_a, cy_mid + 118, away, _font(36, bold=True), WHITE, 300)
+    # أسماء الفرق أسفل اللوجوهات + خط لوني مميز
+    _draw_centered(d, cx_h, cy_logo + 130, home, _font(36, bold=True), WHITE, 300)
+    _draw_centered(d, cx_a, cy_logo + 130, away, _font(36, bold=True), WHITE, 300)
+    hc = _team_color(home)
+    ac = _team_color(away)
+    d.rounded_rectangle([cx_h - 55, cy_logo + 196, cx_h + 55, cy_logo + 202], radius=3, fill=hc)
+    d.rounded_rectangle([cx_a - 55, cy_logo + 196, cx_a + 55, cy_logo + 202], radius=3, fill=ac)
 
     # شارة الحالة
     st_color = GREEN if status == "انتهت" else (GOLD if status == "لم تبدأ" else (255, 180, 90, 255))
-    _draw_centered(d, W // 2, cy_mid + 168, status, _font(28, bold=True), st_color, 400)
+    st_bg = (80, 220, 150, 40) if status == "انتهت" else ((245, 197, 66, 40) if status == "لم تبدأ" else (255, 180, 90, 40))
+    _draw_badge(d, W // 2, cy_logo + 238, status or "—", _font(26, bold=True), st_color, st_bg)
 
-    # أقسام الهدافين (للملخص النهائي فقط): كل فريق وهدافيه منفصلين
-    y_sc = cy_mid + 215
+    # أقسام الهدافين (للملخص النهائي فقط): عمودان بفاصل مركزي
     if kind == "end" and (hs or aw):
-        d.line([60, y_sc - 6, W - 60, y_sc - 6], fill=(60, 80, 140, 255), width=2)
-        _draw_centered(d, W // 2, y_sc, "الهدافون", _font(34, bold=True), GOLD, 300)
-        y_col = y_sc + 52
-        for side, cx, team, lst in (("home", 300, home, hs), ("away", W - 300, away, aw)):
-            _draw_centered(d, cx, y_col, team, _font(30, bold=True), GOLD, 420)
-            iy = y_col + 46
+        y_sep = cy_logo + 285
+        d.line([80, y_sep, W - 80, y_sep], fill=(60, 80, 140, 160), width=2)
+        _draw_centered(d, W // 2, y_sep + 14, "الهدافون", _font(32, bold=True), GOLD, 300)
+        col_top = y_sep + 62
+        col_h, col_a = W / 2 - 40, W / 2 + 40
+        # فاصل عمودي بين الفريقين
+        d.line([W / 2, col_top - 6, W / 2, col_top + 56 + max(len(hs), len(aw), 1) * 46], fill=(60, 80, 140, 120), width=2)
+        for cx, team, lst in ((col_h - 130, home, hs), (col_a + 130, away, aw)):
+            _draw_centered(d, cx, col_top, team, _font(28, bold=True), _team_color(team), 430)
+            iy = col_top + 44
             for name, minute in lst[:6]:
-                line = f"• {name}  {minute}"
-                _draw_centered(d, cx, iy, line, _font(28), WHITE, 440)
+                line = f"• {name}  ({minute})"
+                _draw_centered(d, cx, iy, line, _font(26), WHITE, 440)
                 iy += 44
             if len(lst) > 6:
-                _draw_centered(d, cx, iy, f"+{len(lst) - 6}", _font(26), MUTED, 100)
+                _draw_centered(d, cx, iy, f"+{len(lst) - 6}", _font(24), MUTED, 100)
 
-    # الشريط السفلي: أيقونة الشاشة + القنوات (أو رسالة إن لم تُحدد قناة)
-    bar_y = H - 110
-    d.rounded_rectangle([40, bar_y, W - 40, H - 20], radius=18, fill=(18, 26, 54, 235), outline=(60, 80, 140, 255), width=2)
-    _draw_tv_icon(d, 120, bar_y + 45, GOLD)
+    # الشريط السفلي: أيقونة الشاشة + القنوات (يتكيف ارتفاعه مع عدد الأسطر)
+    ch_text = " • ".join(channels) if channels else "لم يتم تحديد قناة بعد"
+    ch_font = _font(32, bold=True)
+    ch_lines = _wrap_lines(d, ch_text, ch_font, W - 300)
+    bar_h = max(96, 30 + len(ch_lines) * 48)
+    bar_y = H - bar_h - 16
+    d.rounded_rectangle([40, bar_y, W - 40, H - 12], radius=20, fill=(18, 26, 54, 235), outline=(60, 80, 140, 255), width=2)
+    _draw_tv_icon(d, 120, bar_y + bar_h / 2 - 6, GOLD)
     if channels:
-        _draw_right(d, W - 70, bar_y + 22, " • ".join(channels), _font(32, bold=True), WHITE, W - 300)
+        _draw_right(d, W - 70, bar_y + 16, ch_text, ch_font, WHITE, W - 300)
     else:
-        _draw_right(d, W - 70, bar_y + 22, "لم يتم تحديد قناة بعد", _font(32, bold=True), (255, 150, 80, 255), W - 300)
+        _draw_right(d, W - 70, bar_y + 16, ch_text, ch_font, (255, 150, 80, 255), W - 300)
 
     buf = io.BytesIO()
     img.convert("RGB").save(buf, format="PNG")
@@ -709,7 +774,7 @@ def get_logo(img_tag, base_url=""):
 
 def _norm_key(s):
     """تطبيع نص عربي/إنجليزي للمقارنة (تجاهل الفراغات والشرطات والهمزات)."""
-    s = re.sub(r'[\s\-_]+', '', s or '')
+    s = re.sub(r'[\s\-_ـ]+', '', s or '')
     return s.replace('أ', 'ا').replace('إ', 'ا').replace('آ', 'ا').replace('ة', 'ه').replace('ى', 'ي').lower()
 
 
@@ -719,26 +784,35 @@ def _is_english_league(raw_league):
     return any(kw in raw_league for kw in kws)
 
 
-def _is_premier_league_match(m):
-    """مباراة بين ناديين من الدوري الإنجليزي الممتاز (وليس التشامبيونشيب/الدرجة الأولى)."""
+def _is_top_league_match(m, official_name):
+    """هل المباراة بين ناديين من الدرجة الأولى لهذه البطولة؟
+
+    المصادر تسمّي الدرجة الأولى والثانية بنفس الاسم (الدوري الإنجليزي/الإيطالي/...).
+    إذا كانت البطولة لها قائمة بيضاء (TOP_LEAGUE_TEAMS) فكلاهما يجب أن يكونا من أنديتها؛
+    وإلا تُقبل المباراة كما هي (لا توجد قائمة بيضاء للبطولة)."""
+    whitelist = TOP_LEAGUE_TEAMS.get(official_name)
+    if not whitelist:
+        return True
     home, away = _norm_key(m['homeTeam']), _norm_key(m['awayTeam'])
-    pl = [_norm_key(t) for t in PREMIER_LEAGUE_TEAMS]
-    return (any(t and (t in home or home in t) for t in pl) and
-            any(t and (t in away or away in t) for t in pl))
+    teams = [_norm_key(t) for t in whitelist]
+    return (any(t and (t in home or home in t) for t in teams) and
+            any(t and (t in away or away in t) for t in teams))
 
 
 def _is_vip_candidate(m):
     """نفس منطق filter_and_rank للـ VIP — نستخدمه قبل جلب صفحات المباريات التفصيلية
     حتى لا نضيع طلبات على مباريات سيتم استبعادها أصلاً."""
     raw_league = m['league']
-    for official_name, keywords in LEAGUES_MAPPING.items():
-        if any(kw in raw_league for kw in keywords):
-            # الدوري الإنجليزي: الممتاز فقط (المصادر تخلط التشامبيونشيب بنفس الاسم)
-            if official_name == "الدوري الإنجليزي" and not _is_premier_league_match(m):
-                return False
-            return True
+    # الكؤوس/البطولات العامة تُفحص أولاً — حتى لا تبتلعها مطابقة الدوري
     if any(v in raw_league for v in GENERAL_VIP_KEYWORDS):
         return True
+    for official_name, keywords in LEAGUES_MAPPING.items():
+        if any(kw in raw_league for kw in keywords):
+            # البطولات ذات القوائم البيضاء (مثل الدوري الإنجليزي/الإيطالي): الدرجة الأولى فقط
+            # لأن المصادر تسمّي الأولى والثانية بنفس الاسم
+            if not _is_top_league_match(m, official_name):
+                return False
+            return True
     return any(t in m['homeTeam'] or t in m['awayTeam'] for t in VIP_TEAMS)
 
 
@@ -1180,21 +1254,22 @@ def filter_and_rank(matches_list):
         is_vip_league = False
         league_rank = 999 
 
-        for idx, (official_name, keywords) in enumerate(LEAGUES_MAPPING.items()):
-            if any(kw in raw_league for kw in keywords):
-                std_league = official_name
-                is_vip_league = True
-                league_rank = idx  
-                break
+        # أولاً: الكؤوس/البطولات العامة (مثل "كأس إيطاليا") — فحصها قبل البطولات
+        # حتى لا تبتلعها مطابقة الدوري (مثال: "إيطالي" موجودة في "كأس إيطاليا").
+        if any(v in raw_league for v in GENERAL_VIP_KEYWORDS):
+            is_vip_league = True
+            league_rank = 50
+        else:
+            for idx, (official_name, keywords) in enumerate(LEAGUES_MAPPING.items()):
+                if any(kw in raw_league for kw in keywords):
+                    std_league = official_name
+                    is_vip_league = True
+                    league_rank = idx  
+                    break
 
-        # الدوري الإنجليزي: الممتاز فقط — المصادر تسمّي التشامبيونشيب بنفس الاسم
-        if is_vip_league and std_league == "الدوري الإنجليزي" and not _is_premier_league_match(m):
+        # البطولات ذات القوائم البيضاء: الدرجة الأولى فقط — المصادر تسمّي الأولى والثانية بنفس الاسم
+        if is_vip_league and not _is_top_league_match(m, std_league):
             continue
-
-        if not is_vip_league:
-            if any(v in raw_league for v in GENERAL_VIP_KEYWORDS):
-                is_vip_league = True
-                league_rank = 50  
 
         is_vip_team = False
         for t in VIP_TEAMS:
