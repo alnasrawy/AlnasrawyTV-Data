@@ -161,10 +161,15 @@ def send_telegram_photo(png_bytes, caption=""):
             _TG_WARNED["once"] = True
         return False
     try:
+        from curl_cffi import CurlMime
+        mime = CurlMime.from_list([{
+            "name": "photo", "filename": "match_card.png",
+            "data": png_bytes, "content_type": "image/png",
+        }])
         resp = requests.post(
             f"https://api.telegram.org/bot{token}/sendPhoto",
             data={"chat_id": chat, "caption": caption},
-            files={"photo": ("match_card.png", png_bytes, "image/png")},
+            multipart=mime,
             timeout=60,
         )
         return resp.status_code == 200
