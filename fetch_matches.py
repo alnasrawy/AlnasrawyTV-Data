@@ -3,6 +3,7 @@ import sys
 import json
 import random
 import time
+import re
 from datetime import datetime, timedelta, timezone
 from curl_cffi import requests
 from bs4 import BeautifulSoup
@@ -46,26 +47,47 @@ VIP_TEAMS = [
 
 BLOCKLIST = ["شباب", "رديف", "u23", "u19", "درجة ثانية", "درجة ثالثة", "هواة", "سيدات"]
 
+
+# 💡 أداة الجراحة الجديدة: استخراج القنوات بالتعابير النمطية (Regex)
+def extract_channels_with_regex(text):
+    patterns = [
+        r'(beIN\s*SPORTS(?:\s*(?:HD|MAX|Premium|Xtra|FR|EN|ES))?(?:\s*\d+)?)',
+        r'(SSC(?:\s*SPORTS)?(?:\s*(?:HD|SD|Extra))?(?:\s*\d+)?)',
+        r'(ON\s*Time\s*Sports(?:\s*\d+)?)',
+        r'(On\s*Sport(?:\s*Plus)?)',
+        r'(أبو\s*ظبي\s*الرياضية(?:\s*(?:HD|Premium))?(?:\s*\d+)?)',
+        r'(أبوظبي\s*الرياضية(?:\s*(?:HD|Premium))?(?:\s*\d+)?)',
+        r'(الكأس(?:\s*(?:HD|SD))?(?:\s*(?:One|Two|Three|Four|Five|\d+))?)',
+        r'(الرابعة(?:\s*الرياضية)?)',
+        r'(الرياضية\s*المغربية)',
+        r'(السعودية\s*الرياضية)',
+        r'(ثمانية\s*\d+)'
+    ]
+    found_channels = []
+    for p in patterns:
+        matches = re.findall(p, text, re.IGNORECASE)
+        for match in matches:
+            c = str(match).strip()
+            if c and c not in found_channels:
+                found_channels.append(c)
+    return found_channels
+
+
 # ================= دوال الاستخراج المساعدة =================
 def extract_team_name(team_div):
     if not team_div: return ""
     strong_tag = team_div.find('strong')
-    if strong_tag and strong_tag.text.strip():
-        return " ".join(strong_tag.text.split())
+    if strong_tag and strong_tag.text.strip(): return " ".join(strong_tag.text.split())
     p_tag = team_div.find('p')
-    if p_tag and p_tag.text.strip():
-        return " ".join(p_tag.text.split())
+    if p_tag and p_tag.text.strip(): return " ".join(p_tag.text.split())
     span_tag = team_div.find('span')
-    if span_tag and span_tag.text.strip():
-        return " ".join(span_tag.text.split())
+    if span_tag and span_tag.text.strip(): return " ".join(span_tag.text.split())
     text = " ".join(team_div.text.split())
-    if text and not text.isdigit():
-        return text
+    if text and not text.isdigit(): return text
     img = team_div.find('img')
     if img and img.get('alt'):
         alt_text = img.get('alt').strip()
-        if alt_text and not alt_text.isdigit():
-            return alt_text
+        if alt_text and not alt_text.isdigit(): return alt_text
     return ""
 
 def get_logo(img_tag, base_url=""):
@@ -108,8 +130,13 @@ class GhostScraper:
     # ================= يالاكورة =================
     def scrape_yalla(self, date_str):
         print(f"-> [Source 1] Yallakora ({date_str})...")
+        # 💡 الحل الجذري لتغير روابط يلا كورة: توفير بديل في حال الفشل
         url = f"https://www.yallakora.com/match-center/?date={date_str}"
-        html = self.fetch(url, "Yallakora")
+        html = self.fetch(url, "Yallakora (match-center)")
+        if not html or 'matchCard' not in html:
+            url = f"https://www.yallakora.com/matches-center?date={date_str}"
+            html = self.fetch(url, "Yallakora (matches-center)")
+            
         matches = []
         if not html: return matches
 
@@ -129,9 +156,11 @@ class GhostScraper:
                     t_b = teams_data.find('div', class_='teamB')
                     if not t_a or not t_b: continue
 
-                    team1, team2 = extract_team_name(t_a), extract_team_name(t_b)
+                    team1 = extract_team_name(t_a)
+                    team2 = extract_team_name(t_b)
                     if not team1 or not team2: continue
-                    logo1, logo2 = get_logo(t_a.find('img')), get_logo(t_b.find('img'))
+                    logo1 = get_logo(t_a.find('img'))
+                    logo2 = get_logo(t_b.find('img'))
 
                     score = "-:-"
                     mresult = teams_data.find('div', class_='MResult')
@@ -181,9 +210,11 @@ class GhostScraper:
                 away_b = li.find('b', class_='away-score')
                 if not home_b or not away_b: continue
 
-                team1, team2 = extract_team_name(home_b.parent), extract_team_name(away_b.parent)
+                team1 = extract_team_name(home_b.parent)
+                team2 = extract_team_name(away_b.parent)
                 if not team1 or not team2: continue
-                logo1, logo2 = get_logo(home_b.parent.find('img')), get_logo(away_b.parent.find('img'))
+                logo1 = get_logo(home_b.parent.find('img'))
+                logo2 = get_logo(away_b.parent.find('img'))
 
                 score1 = home_b.get_text(strip=True)
                 score2 = away_b.get_text(strip=True)
@@ -196,19 +227,24 @@ class GhostScraper:
                     time_tag = li.find('span', class_='time')
                     score = time_tag.text.strip() if time_tag and time_tag.text.strip() else "-:-"
 
-                channels = []
+                # 💡 استخدام الرادار الجديد لجلب القنوات والمعلقين من نصوص فيلجول
+                full_text = li.text.replace('\n', ' ')
+                channels = extract_channels_with_regex(full_text)
+                
                 comm = ""
-                for icon in li.find_all(['i', 'svg', 'img']):
-                    icon_class = " ".join(icon.get('class', [])).lower()
-                    parent = icon.parent
-                    if not parent: continue
-                    
-                    if 'television' in icon_class or 'tv' in icon_class or 'screen' in icon_class:
-                        txt = parent.text.strip()
-                        if txt and txt not in channels: channels.append(txt)
-                    elif 'mic' in icon_class or 'commentator' in icon_class:
-                        txt = parent.text.replace('معلق:', '').strip()
-                        if txt: comm = txt
+                comm_match = re.search(r'(?:معلق|المعلق|بصوت)\s*:?\s*([أ-يa-zA-Z\s]+)', full_text)
+                if comm_match:
+                    c = comm_match.group(1).split('-')[0].split('|')[0].strip()
+                    if len(c) < 30 and c not in ['غير محدد', 'لا يوجد']: comm = c
+
+                if not comm:
+                    for icon in li.find_all(['i', 'svg', 'img']):
+                        icon_class = " ".join(icon.get('class', [])).lower()
+                        if 'mic' in icon_class or 'commentator' in icon_class:
+                            parent = icon.parent
+                            if parent:
+                                txt = parent.text.replace('معلق:', '').strip()
+                                if txt and len(txt) < 30: comm = txt
 
                 matches.append({
                     "league": league, "homeTeam": team1, "homeLogo": logo1,
@@ -223,7 +259,13 @@ class GhostScraper:
     # ================= بطولات =================
     def scrape_btolat(self):
         print("-> [Source 3] Btolat...")
-        html = self.fetch("https://www.btolat.com/matches", "Btolat")
+        # 💡 الحل الجذري لتغير روابط بطولات: توفير بديل في حال الفشل
+        url = "https://www.btolat.com/matches"
+        html = self.fetch(url, "Btolat (/matches)")
+        if not html or 'match-card' not in html:
+             url = "https://www.btolat.com/matches-score"
+             html = self.fetch(url, "Btolat (/matches-score)")
+             
         matches = []
         if not html: return matches
 
@@ -233,9 +275,11 @@ class GhostScraper:
                 teams = m.find_all(lambda tag: tag.name == 'a' and 'team' in tag.get('class', []))
                 if len(teams) < 2: continue
 
-                team1, team2 = extract_team_name(teams[0]), extract_team_name(teams[1])
+                team1 = extract_team_name(teams[0])
+                team2 = extract_team_name(teams[1])
                 if not team1 or not team2: continue
-                logo1, logo2 = get_logo(teams[0].find('img')), get_logo(teams[1].find('img'))
+                logo1 = get_logo(teams[0].find('img'))
+                logo2 = get_logo(teams[1].find('img'))
 
                 score = "-:-"
                 score_div = m.find('div', class_='scoreRresult')
@@ -259,19 +303,24 @@ class GhostScraper:
                 league_tag = league_card.find(['h2', 'h3']) if league_card else None
                 league = " ".join(league_tag.text.split()) if league_tag else "بطولة غير معروفة"
 
-                channels = []
+                # 💡 استخدام الرادار الجديد لبطولات
+                full_text = m.text.replace('\n', ' ')
+                channels = extract_channels_with_regex(full_text)
+                
                 comm = ""
-                for icon in m.find_all(['i', 'svg', 'img']):
-                    icon_class = " ".join(icon.get('class', [])).lower()
-                    parent = icon.parent
-                    if not parent: continue
-                    
-                    if 'tv' in icon_class or 'screen' in icon_class or 'channel' in icon_class:
-                        txt = parent.text.strip()
-                        if txt: channels.extend([c.strip() for c in txt.split('/') if c.strip()])
-                    elif 'mic' in icon_class or 'commentator' in icon_class:
-                        txt = parent.text.replace('معلق:', '').strip()
-                        if txt: comm = txt
+                comm_match = re.search(r'(?:معلق|المعلق|بصوت)\s*:?\s*([أ-يa-zA-Z\s]+)', full_text)
+                if comm_match:
+                    c = comm_match.group(1).split('-')[0].split('|')[0].strip()
+                    if len(c) < 30 and c not in ['غير محدد', 'لا يوجد']: comm = c
+
+                if not comm:
+                    for icon in m.find_all(['i', 'svg', 'img']):
+                        icon_class = " ".join(icon.get('class', [])).lower()
+                        if 'mic' in icon_class or 'commentator' in icon_class:
+                            parent = icon.parent
+                            if parent:
+                                txt = parent.text.replace('معلق:', '').strip()
+                                if txt and len(txt) < 30: comm = txt
 
                 matches.append({
                     "league": league, "homeTeam": team1, "homeLogo": logo1,
@@ -289,7 +338,6 @@ def clean_name(name):
     for w in ["نادي", "فريق", "fc", "sc", "ديبورتيفو", "اتلتيكو", "ايه سي", "سي اف", "كلوب"]:
         name = name.lower().replace(w, "")
     return name.strip().replace(" ", "")
-
 
 # ================= الفلترة والتوحيد والتصنيف الذكي =================
 def filter_and_rank(matches_list):
@@ -337,7 +385,6 @@ def filter_and_rank(matches_list):
 
     return filtered
 
-
 # ================= دالة استخراج وقت أقرب مباراة للدرع الذكي =================
 def extract_first_match_time(matches_list):
     earliest_time = None
@@ -354,7 +401,6 @@ def extract_first_match_time(matches_list):
             except Exception:
                 continue
     return earliest_time
-
 
 # ================= العقل المدبر والتشغيل =================
 scraper_engine = GhostScraper()
@@ -384,9 +430,11 @@ def execute_full_cycle():
         if key not in merged:
             merged[key] = m
         else:
+            # 1. دمج القنوات بذكاء
             combined_channels = merged[key]['channels'] + m['channels']
             merged[key]['channels'] = list(dict.fromkeys([c.strip() for c in combined_channels if c.strip()]))
             
+            # 2. دمج المعلقين
             curr_comm = merged[key]['commentator']
             new_comm = m['commentator']
             if not curr_comm and new_comm:
@@ -394,8 +442,26 @@ def execute_full_cycle():
             elif curr_comm and new_comm and new_comm not in curr_comm:
                 merged[key]['commentator'] = f"{curr_comm} / {new_comm}"
 
+            # 3. توثيق المصدر
             if m['source'] not in merged[key]['source']: 
                 merged[key]['source'] += f" + {m['source']}"
+                
+            # 4. 💡 التحديث الشامل: نقل الشعارات المفقودة
+            if not merged[key]['homeLogo'] and m['homeLogo']: merged[key]['homeLogo'] = m['homeLogo']
+            if not merged[key]['awayLogo'] and m['awayLogo']: merged[key]['awayLogo'] = m['awayLogo']
+            
+            # 5. 💡 التحديث الشامل: إحلال النتيجة الحية بدلاً من وقت المباراة
+            old_score = merged[key]['scoreOrTime']
+            new_score = m['scoreOrTime']
+            old_status = merged[key]['status']
+            new_status = m['status']
+            
+            old_is_not_started = ('-' not in old_score and ':' in old_score) or old_status in ["لم تبدأ", "غير محدد", ""]
+            new_is_live_or_done = ('-' in new_score and ':' not in new_score) or any(s in new_status for s in ['دقيقة', 'شوط', 'انتهت', 'نهاية'])
+            
+            if old_is_not_started and new_is_live_or_done:
+                merged[key]['scoreOrTime'] = new_score
+                merged[key]['status'] = new_status
 
     final_list = filter_and_rank(list(merged.values()))
 
@@ -412,17 +478,14 @@ def execute_full_cycle():
     print(f"\n-> [OK] Smart-Filtered & Saved {len(final_list)} matches to matches.json.")
     return final_list
 
-
 if __name__ == "__main__":
     try:
         print("-> GitHub Actions Cycle Triggered...")
         now = datetime.now(TZ)
         
-        # 1. التحديث الإجباري لجدول اليوم (الساعة 12 فجراً)
         is_midnight_sync = (now.hour == 0 or now.hour == 1 or not os.path.exists("matches.json"))
         
         if not is_midnight_sync:
-            # 2. تفعيل الدرع الذكي: فحص موعد أقرب مباراة
             with open("matches.json", "r", encoding="utf-8") as f:
                 try:
                     saved_matches = json.load(f)
@@ -435,15 +498,14 @@ if __name__ == "__main__":
                         if now < wake_dt:
                             print(f"-> 🌙 أقرب مباراة ستكون الساعة {first_time}. الوقت لا يزال مبكراً.")
                             print(f"-> 💤 السكربت سيتوقف فوراً لتوفير رصيد GitHub. لن يتم سحب أي بيانات الآن.")
-                            sys.exit(0)  # إنهاء فوري لحفظ دقائق غيت هب
+                            sys.exit(0)
                 except Exception:
                     pass 
         
-        # 3. إذا كان الوقت مناسباً نقوم ببدء العمل
         execute_full_cycle()
 
     except SystemExit:
-        pass # خروج سلمي هادئ
+        pass
     except KeyboardInterrupt:
         print("\n🛑 System stopped by user.")
     except Exception as e:
