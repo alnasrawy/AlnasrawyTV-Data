@@ -182,6 +182,37 @@ def send_telegram_photo(png_bytes, caption=""):
 _FONT_CACHE = {}
 _LOGO_CACHE = {}
 _SHAPE_WARNED = {"once": False}
+_RAQM = {"done": False, "value": False}
+
+
+def _uses_raqm():
+    """هل Pillow مثبّتة مع libraqm؟ إن نعم، Pillow تتشكّل النص العربي تلقائياً (OpenType shaping) —
+    لذلك يجب ألا نُعيد التشكيل يدوياً بـ arabic_reshaper وإلا حدث تشكيل مزدوج وأحرف متداخلة.
+    (wheels الرسمية لـ Pillow على Linux تأتي مع libraqm مفعّل — راجع سجل GitHub Actions.)"""
+    if not _RAQM["done"]:
+        try:
+            from PIL import features
+            _RAQM["value"] = bool(features.check("raqm"))
+        except Exception:
+            _RAQM["value"] = False
+        _RAQM["done"] = True
+    return _RAQM["value"]
+
+
+def _contains_rtl(text):
+    """يكشف إن كان النص يحتوي على أحرف عربية (RTL) لتحديد اتجاه الرسم مع libraqm."""
+    return any(
+        ('\u0600' <= c <= '\u06FF') or ('\u0750' <= c <= '\u077F') or
+        ('\uFB50' <= c <= '\uFDFF') or ('\uFE70' <= c <= '\uFEFF')
+        for c in str(text)
+    )
+
+
+def _text_direction(text):
+    """اتجاه النص الذي يُمرَّر إلى Pillow عند تفعيل libraqm (None = بدون raqm / نص LTR)."""
+    if not _uses_raqm():
+        return None
+    return "rtl" if _contains_rtl(str(text)) else None
 
 _ARABIC_FONT_URLS = [
     "https://raw.githubusercontent.com/google/fonts/main/ofl/tajawal/Tajawal-Regular.ttf",
@@ -253,7 +284,11 @@ def _font(size, bold=False):
 
 
 def _shape(text):
-    """إعادة تشكيل النص العربي + الاتجاه من اليمين لليسار للعرض الصحيح داخل الصورة."""
+    """إعادة تشكيل النص العربي + الاتجاه من اليمين لليسار للعرض الصحيح داخل الصورة.
+    ملاحظة مهمة: إذا كانت Pillow مثبّتة مع libraqm فإنها تتشكّل النص تلقائياً،
+    وإعادة التشكيل اليدوي هنا تُفسد النص (تشكيل مزدوج → أحرف متداخلة)."""
+    if _uses_raqm():
+        return str(text)
     try:
         import arabic_reshaper
         from bidi.algorithm import get_display
@@ -269,15 +304,16 @@ def _draw_centered(draw, cx, y, text, font, fill, max_w):
     if font is None:
         return
     s = _shape(text)
-    w = draw.textlength(s, font=font)
+    direction = _text_direction(s)
+    w = draw.textlength(s, font=font, direction=direction)
     if w <= max_w:
-        draw.text((cx - w / 2, y), s, font=font, fill=fill)
+        draw.text((cx - w / 2, y), s, font=font, fill=fill, direction=direction)
         return
     words = s.split()
     lines, cur = [], ""
     for wd in words:
         t = (cur + " " + wd).strip()
-        if draw.textlength(t, font=font) <= max_w:
+        if draw.textlength(t, font=font, direction=direction) <= max_w:
             cur = t
         else:
             if cur:
@@ -286,23 +322,24 @@ def _draw_centered(draw, cx, y, text, font, fill, max_w):
     if cur:
         lines.append(cur)
     for i, ln in enumerate(lines):
-        lw = draw.textlength(ln, font=font)
-        draw.text((cx - lw / 2, y + i * (font.size + 6)), ln, font=font, fill=fill)
+        lw = draw.textlength(ln, font=font, direction=direction)
+        draw.text((cx - lw / 2, y + i * (font.size + 6)), ln, font=font, fill=fill, direction=direction)
 
 
 def _draw_right(draw, xr, y, text, font, fill, max_w):
     if font is None:
         return
     s = _shape(text)
-    w = draw.textlength(s, font=font)
+    direction = _text_direction(s)
+    w = draw.textlength(s, font=font, direction=direction)
     if w <= max_w:
-        draw.text((xr - w, y), s, font=font, fill=fill)
+        draw.text((xr - w, y), s, font=font, fill=fill, direction=direction)
         return
     words = s.split()
     lines, cur = [], ""
     for wd in words:
         t = (cur + " " + wd).strip()
-        if draw.textlength(t, font=font) <= max_w:
+        if draw.textlength(t, font=font, direction=direction) <= max_w:
             cur = t
         else:
             if cur:
@@ -311,8 +348,8 @@ def _draw_right(draw, xr, y, text, font, fill, max_w):
     if cur:
         lines.append(cur)
     for i, ln in enumerate(lines):
-        lw = draw.textlength(ln, font=font)
-        draw.text((xr - lw, y + i * (font.size + 6)), ln, font=font, fill=fill)
+        lw = draw.textlength(ln, font=font, direction=direction)
+        draw.text((xr - lw, y + i * (font.size + 6)), ln, font=font, fill=fill, direction=direction)
 
 
 def _draw_tv_icon(d, cx, cy, color, scale=1.0):
@@ -482,6 +519,17 @@ def compose_match_card(match, kind="end"):
     return buf.getvalue()
 
 
+def _format_channels(channels):
+    """تنسيق القنوات كقائمة نقطية مرتبة (كل قناة في سطر) — أو رسالة إن لم تُحدد قناة."""
+    ch = [c for c in (channels or []) if c]
+    if not ch:
+        return "📺 القنوات:\n• لم يتم تحديد قناة بعد"
+    lines = ["📺 القنوات:"]
+    for c in ch:
+        lines.append(f"• {c}")
+    return "\n".join(lines)
+
+
 def _run_telegram_notifications(final_list, state):
     """تنبيه بدء المباراة + ملخص نهاية المباراة — كارت مصور احترافي (لوجو + النتيجة + الهدافون لكل فريق + القنوات)."""
     now = datetime.now(TZ)
@@ -503,17 +551,19 @@ def _run_telegram_notifications(final_list, state):
                     start_dt = datetime.combine(now.date(), datetime.strptime(hm, '%H:%M').time()).replace(tzinfo=TZ)
                     window = timedelta(minutes=TELEGRAM.get("start_alert_minutes", 15))
                     if now >= start_dt - window and now < start_dt:
-                        caption = (f"🔔 تبدأ قريباً | {m['league']}\n"
-                                   f"{m['homeTeam']} 🆚 {m['awayTeam']} — {m['scoreOrTime']}\n"
-                                   f"📺 {', '.join(m['channels']) or 'لم يتم تحديد قناة بعد'}")
+                        caption = (f"🔔 تبدأ قريباً\n\n"
+                                   f"🏆 {m['league']}\n"
+                                   f"⚽ {m['homeTeam']} 🆚 {m['awayTeam']}\n"
+                                   f"⏰ {m['scoreOrTime']}\n\n"
+                                   f"{_format_channels(m['channels'])}")
                         card = compose_match_card(m, 'start')
                         ok = send_telegram_photo(card, caption) if card else False
                         if not ok:
                             text = (f"🔔 تبدأ قريباً\n\n"
                                     f"🏆 {m['league']}\n"
-                                    f"{m['homeTeam']} 🆚 {m['awayTeam']}\n"
-                                    f"⏰ {m['scoreOrTime']}\n"
-                                    f"📺 {', '.join(m['channels']) or 'لم يتم تحديد قناة بعد'}")
+                                    f"⚽ {m['homeTeam']} 🆚 {m['awayTeam']}\n"
+                                    f"⏰ {m['scoreOrTime']}\n\n"
+                                    f"{_format_channels(m['channels'])}")
                             ok = send_telegram(text)
                         if ok:
                             started[key] = True
@@ -528,20 +578,21 @@ def _run_telegram_notifications(final_list, state):
             hsc = _sc.get('home') or []
             asc = _sc.get('away') or []
             if hsc:
-                cap_sc += f"\n⚽ {m['homeTeam']}: " + "، ".join(f"{n} ({t})" for n, t in hsc)
+                cap_sc += f"\n\n⚽ {m['homeTeam']}:\n" + "\n".join(f"  • {n} ({t})" for n, t in hsc)
             if asc:
-                cap_sc += f"\n⚽ {m['awayTeam']}: " + "، ".join(f"{n} ({t})" for n, t in asc)
-            caption = (f"🏁 انتهت المباراة | {m['league']}\n"
-                       f"{m['homeTeam']} {m['scoreOrTime']} {m['awayTeam']}"
-                       f"{cap_sc}\n"
-                       f"📺 {', '.join(m['channels']) or 'لم يتم تحديد قناة بعد'}")
+                cap_sc += f"\n⚽ {m['awayTeam']}:\n" + "\n".join(f"  • {n} ({t})" for n, t in asc)
+            caption = (f"🏁 انتهت المباراة\n\n"
+                       f"🏆 {m['league']}\n"
+                       f"⚽ {m['homeTeam']} {m['scoreOrTime']} {m['awayTeam']}"
+                       f"{cap_sc}\n\n"
+                       f"{_format_channels(m['channels'])}")
             card = compose_match_card(m, 'end')
             ok = send_telegram_photo(card, caption) if card else False
             if not ok:
                 scorers = m.get('scorers') or {"home": [], "away": []}
                 text = (f"🏁 انتهت المباراة\n\n"
                         f"🏆 {m['league']}\n"
-                        f"{m['homeTeam']} {m['scoreOrTime']} {m['awayTeam']}\n")
+                        f"⚽ {m['homeTeam']} {m['scoreOrTime']} {m['awayTeam']}\n")
                 home_sc = scorers.get('home') or []
                 away_sc = scorers.get('away') or []
                 if home_sc or away_sc:
@@ -550,7 +601,7 @@ def _run_telegram_notifications(final_list, state):
                         text += f"  {m['homeTeam']}: " + "، ".join(f"{n} {t}" for n, t in home_sc) + "\n"
                     if away_sc:
                         text += f"  {m['awayTeam']}: " + "، ".join(f"{n} {t}" for n, t in away_sc) + "\n"
-                text += f"\n📺 {', '.join(m['channels']) or 'لم يتم تحديد قناة بعد'}"
+                text += f"\n\n{_format_channels(m['channels'])}"
                 ok = send_telegram(text)
             if ok:
                 ended[key] = True
