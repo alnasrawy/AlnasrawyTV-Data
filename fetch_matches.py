@@ -8,6 +8,14 @@ from datetime import datetime, timedelta, timezone
 from curl_cffi import requests
 from bs4 import BeautifulSoup
 
+# 💡 ضمان طباعة العربية على Windows (الكونسول الافتراضي cp1252 يكسر السكربت عند الطباعة)
+if sys.platform == "win32":
+    for _stream in (sys.stdout, sys.stderr):
+        try:
+            _stream.reconfigure(encoding='utf-8', errors='replace')
+        except Exception:
+            pass
+
 # ================= إعدادات النظام الأساسية =================
 BROWSERS = ["chrome120"]
 TZ = timezone(timedelta(hours=3))
@@ -71,6 +79,27 @@ def extract_channels_with_regex(text):
             if c and c not in found_channels:
                 found_channels.append(c)
     return found_channels
+
+
+def extract_btolat_channels(match_card):
+    """قنوات بطولات تعيش في div.match-footer (أخ خارجي للـ match-card).
+    النصوص داخل .sc-interp تشمل المعلقين أيضاً، لذلك نأخذ فقط ما تسبقه أيقونة تلفاز (rect)."""
+    channels = []
+    li = match_card.parent
+    if not li:
+        return channels
+    footer = li.select_one('div.match-footer')
+    if not footer:
+        return channels
+    for pill in footer.select('[data-dc-tpl="42"]'):
+        for txt_span in pill.select('[data-dc-tpl="44"] .sc-interp'):
+            holder = txt_span.parent
+            prev_svg = holder.find_previous_sibling('svg')
+            if prev_svg is not None and prev_svg.select_one('[data-dc-tpl="38"]'):
+                name = txt_span.get_text(strip=True)
+                if name and name not in channels:
+                    channels.append(name)
+    return channels
 
 
 # ================= دوال الاستخراج المساعدة =================
@@ -192,16 +221,61 @@ class GhostScraper:
         return matches
 
     # ================= فيلجول =================
+    def _parse_filgoal_viewmodel(self, html):
+        """استخراج نص JSON لمتغير viewModelData (يحوي TvCoverage) من صفحة المباراة."""
+        m = re.search(r'var viewModelData\s*=\s*', html)
+        if not m:
+            return None
+        start = m.end()
+        depth, in_str, esc = 0, False, False
+        for k in range(start, len(html)):
+            ch = html[k]
+            if in_str:
+                if esc: esc = False
+                elif ch == '\\': esc = True
+                elif ch == '"': in_str = False
+            else:
+                if ch == '"': in_str = True
+                elif ch == '{': depth += 1
+                elif ch == '}':
+                    depth -= 1
+                    if depth == 0:
+                        return html[start:k + 1]
+        return None
+
+    def _fetch_filgoal_channels(self, match_id):
+        """القنوات لا تظهر في صفحة القائمة؛ تُجلب من صفحة المباراة التفصيلية."""
+        url = f"https://www.filgoal.com/matches/{match_id}"
+        html = self.fetch(url, f"FilGoal (match {match_id})")
+        channels = []
+        if not html:
+            return channels
+        try:
+            raw = self._parse_filgoal_viewmodel(html)
+            if raw:
+                data = json.loads(raw)
+                for tv in (data.get('TvCoverage') or []):
+                    name = (tv.get('TvChannelName') or '').strip()
+                    if name and name not in channels:
+                        channels.append(name)
+        except Exception:
+            pass
+        return channels
+
     def scrape_filgoal(self, date_str):
         print(f"-> [Source 2] FilGoal ({date_str})...")
         url = f"https://www.filgoal.com/matches/?date={date_str}"
         html = self.fetch(url, "FilGoal")
-        matches = []
-        if not html: return matches
+        if not html: return []
 
         soup = BeautifulSoup(html, 'html.parser')
+        seen = {}  # ديدوب حسب data-match-id (الصفحة تعرض الكارت مرتين في بعض السلايدرات)
         for li in soup.find_all('li', class_='match-header-holder'):
             try:
+                match_id = li.get('data-match-id')
+                if not match_id or match_id in seen:
+                    continue
+
                 h6 = li.find('h6')
                 league = " ".join(h6.text.split()) if h6 else "بطولة غير معروفة"
                 if any(b in league for b in BLOCKLIST): continue
@@ -246,15 +320,22 @@ class GhostScraper:
                                 txt = parent.text.replace('معلق:', '').strip()
                                 if txt and len(txt) < 30: comm = txt
 
-                matches.append({
+                seen[match_id] = {
                     "league": league, "homeTeam": team1, "homeLogo": logo1,
                     "awayTeam": team2, "awayLogo": logo2, "scoreOrTime": score,
                     "status": status, "channels": channels, "commentator": comm,
                     "source": "FilGoal"
-                })
+                }
             except Exception:
                 continue
-        return matches
+
+        # 💡 جلب القنوات من صفحة كل مباراة (غير موجودة في صفحة القائمة إطلاقاً)
+        for match_id, m in seen.items():
+            detail_channels = self._fetch_filgoal_channels(match_id)
+            if detail_channels:
+                m['channels'] = dedup_channels([c for c in m['channels'] + detail_channels if c])
+
+        return list(seen.values())
 
     # ================= بطولات =================
     def scrape_btolat(self):
@@ -303,9 +384,9 @@ class GhostScraper:
                 league_tag = league_card.find(['h2', 'h3']) if league_card else None
                 league = " ".join(league_tag.text.split()) if league_tag else "بطولة غير معروفة"
 
-                # 💡 استخدام الرادار الجديد لبطولات
+                # 💡 استخدام الرادار الجديد + الـ footer لبطولات (القنوات في أخ خارجي للمباراة)
                 full_text = m.text.replace('\n', ' ')
-                channels = extract_channels_with_regex(full_text)
+                channels = dedup_channels(extract_btolat_channels(m) + extract_channels_with_regex(full_text))
                 
                 comm = ""
                 comm_match = re.search(r'(?:معلق|المعلق|بصوت)\s*:?\s*([أ-يa-zA-Z\s]+)', full_text)
@@ -332,12 +413,52 @@ class GhostScraper:
                 continue
         return matches
 
+# 💡 توحيد الاختلافات الشائعة في كتابة أسماء الفرق (نفس الفريق بصيغتين)
+_SPELLING_FIXES = {
+    "بروسيا": "بوروسيا",
+    "لايبزج": "لايبزيج",
+    "ميونخ": "ميونيخ",
+    "ميدلسبروه": "ميدلسبره",
+}
+
 # ================= دالة صناعة "بصمة الفريق" للدمج =================
 def clean_name(name):
     name = name.replace("أ", "ا").replace("إ", "ا").replace("آ", "ا").replace("ة", "ه").replace("ى", "ي").replace("يي", "ي")
-    for w in ["نادي", "فريق", "fc", "sc", "ديبورتيفو", "اتلتيكو", "ايه سي", "سي اف", "كلوب"]:
+    for src, dst in _SPELLING_FIXES.items():
+        name = name.replace(src, dst)
+    for w in ["نادي", "فريق", "هوتسبر", "fc", "sc", "ديبورتيفو", "اتلتيكو", "ايه سي", "سي اف", "كلوب"]:
         name = name.lower().replace(w, "")
     return name.strip().replace(" ", "")
+
+# ================= توحيد أسماء القنوات (عربي/إنجليزي) للدمج =================
+def _channel_key(name):
+    s = name.strip()
+    s = s.replace('بى ان سبورت', 'beIN SPORTS').replace('بين سبورت', 'beIN SPORTS')
+    s = s.replace('اون سبورت', 'On Sport').replace('أون سبورت', 'On Sport')
+    s = s.replace('أبو ظبي', 'أبوظبي').replace('ابو ظبي', 'أبوظبي').replace('ابوظبي', 'أبوظبي')
+    s = s.replace('ماكس', 'MAX').replace('بلس', 'PLUS')
+    s = re.sub(r'\s*HD\s*$', '', s, flags=re.IGNORECASE)
+    s = s.lower()
+    return re.sub(r'\s+', '', s)
+
+def _channel_priority(name):
+    # الأسماء المكتوبة بالإنجليزية الأصيلة تُفضل على الترجمة العربية عند العرض
+    return 0 if re.search(r'[a-zA-Z]', name) and not re.search(r'[\u0600-\u06ff]', name) else 1
+
+def dedup_channels(channels):
+    seen, order = {}, []
+    for c in channels:
+        c = c.strip()
+        if not c:
+            continue
+        k = _channel_key(c)
+        if k in seen:
+            if _channel_priority(c) < _channel_priority(seen[k]):
+                seen[k] = c
+            continue
+        seen[k] = c
+        order.append(k)
+    return [seen[k] for k in order]
 
 # ================= الفلترة والتوحيد والتصنيف الذكي =================
 def filter_and_rank(matches_list):
@@ -425,14 +546,17 @@ def execute_full_cycle():
 
     merged = {}
     for m in all_raw:
-        key = f"{clean_name(m['homeTeam'])}_{clean_name(m['awayTeam'])}"
+        # 💡 مفتاح الدمج: زوج الفريقين مفرّزاً (ميلان×مانشستر = مانشستر×ميلان)
+        home_key = clean_name(m['homeTeam'])
+        away_key = clean_name(m['awayTeam'])
+        key = "_".join(sorted([home_key, away_key]))
         
         if key not in merged:
             merged[key] = m
         else:
-            # 1. دمج القنوات بذكاء
+            # 1. دمج القنوات بذكاء (توحيد الصيغ العربية/الإنجليزية وإزالة التكرار)
             combined_channels = merged[key]['channels'] + m['channels']
-            merged[key]['channels'] = list(dict.fromkeys([c.strip() for c in combined_channels if c.strip()]))
+            merged[key]['channels'] = dedup_channels(combined_channels)
             
             # 2. دمج المعلقين
             curr_comm = merged[key]['commentator']
@@ -470,7 +594,7 @@ def execute_full_cycle():
         print("   [No VIP matches found!]")
     else:
         for m in final_list:
-            print(f"   ✅ [{m['league']}] {m['homeTeam']} {m['scoreOrTime']} {m['awayTeam']} | {m['status']}")
+            print(f"   ✅ [{m['league']}] {m['homeTeam']} {m['scoreOrTime']} {m['awayTeam']} | {m['status']} | {', '.join(m['channels'])}")
 
     with open("matches.json", "w", encoding="utf-8") as f:
         json.dump(final_list, f, ensure_ascii=False, indent=4)
