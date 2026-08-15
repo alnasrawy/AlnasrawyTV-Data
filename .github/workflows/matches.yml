@@ -28,11 +28,13 @@ jobs:
         run: pip install curl_cffi beautifulsoup4
         
       - name: Run Scraper
+        env:
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
         run: python fetch_matches.py
         
       - name: Auto-Commit Results
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "Alnasrawy Bot"
-          git add matches.json
+          git add matches.json state.json filgoal_cache.json config.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "⚽ Match Data Updated [$(date)]" && git push)
