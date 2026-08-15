@@ -43,24 +43,6 @@
         "source": "Yallakora + FilGoal + Btolat"
     },
     {
-        "league": "الدوري السعودي",
-        "homeTeam": "التعاون",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\11\\10\\tawwoun2023_11_10_17_9.jpg",
-        "awayTeam": "الخليج",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\8\\12\\khaleej12023_8_12_15_55.jpg",
-        "scoreOrTime": "0 - 0",
-        "status": "الشوط الثاني",
-        "channels": [
-            "ثمانية 3"
-        ],
-        "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat",
-        "scorers": {
-            "home": [],
-            "away": []
-        }
-    },
-    {
         "league": "الدوري الإماراتي",
         "homeTeam": "خورفكان",
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\8\\Khorfakkan2021_9_8_10_22.jpg",
@@ -78,7 +60,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\Alwasl2018_7_25_15_22.jpg",
         "awayTeam": "يونايتد اف سي",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\527001955_122093570684972004_1405618893921874169_n2026_8_2_20_36.webp",
-        "scoreOrTime": "1 - 1",
+        "scoreOrTime": "2 - 1",
         "status": "الشوط الثاني",
         "channels": [],
         "commentator": "",
@@ -159,7 +141,7 @@
         "awayTeam": "بادوفا",
         "awayLogo": "https://img.btolat.com/teamslogo/11956.png?v=491",
         "scoreOrTime": "1 - 0",
-        "status": "82'",
+        "status": "88'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -230,6 +212,24 @@
                     "59'"
                 ]
             ]
+        }
+    },
+    {
+        "league": "الدوري السعودي",
+        "homeTeam": "التعاون",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\11\\10\\tawwoun2023_11_10_17_9.jpg",
+        "awayTeam": "الخليج",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\8\\12\\khaleej12023_8_12_15_55.jpg",
+        "scoreOrTime": "0 - 0",
+        "status": "انتهت",
+        "channels": [
+            "ثمانية 3"
+        ],
+        "commentator": "",
+        "source": "Yallakora + FilGoal + Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
         }
     },
     {
@@ -329,7 +329,7 @@
         "awayTeam": "الميناء",
         "awayLogo": "https://img.btolat.com/teamslogo/11506.png?v=721",
         "scoreOrTime": "0 - 0",
-        "status": "11'",
+        "status": "16'",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -357,7 +357,7 @@
         "awayTeam": "الموصل",
         "awayLogo": "https://img.btolat.com/",
         "scoreOrTime": "0 - 0",
-        "status": "13'",
+        "status": "18'",
         "channels": [
             "العراقية السريانية"
         ],
