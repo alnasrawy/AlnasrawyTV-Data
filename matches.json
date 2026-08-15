@@ -29,7 +29,7 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/460.png",
         "awayTeam": "ماميلودي صنداونز",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/577.png",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "1 - 0",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -78,7 +78,7 @@
         "awayTeam": "ميلوول",
         "awayLogo": "https://img.btolat.com/teamslogo/9276.png?v=589",
         "scoreOrTime": "0 - 0",
-        "status": "14'",
+        "status": "32'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -89,8 +89,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/9088.png?v=731",
         "awayTeam": "ديربي كاونتي",
         "awayLogo": "https://img.btolat.com/teamslogo/9133.png?v=92",
-        "scoreOrTime": "0 - 0",
-        "status": "14'",
+        "scoreOrTime": "0 - 1",
+        "status": "32'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -102,7 +102,7 @@
         "awayTeam": "لينكولن سيتي",
         "awayLogo": "https://img.btolat.com/teamslogo/9247.png?v=203",
         "scoreOrTime": "0 - 1",
-        "status": "14'",
+        "status": "32'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -114,7 +114,7 @@
         "awayTeam": "وست بروميتش",
         "awayLogo": "https://img.btolat.com/teamslogo/9426.png?v=743",
         "scoreOrTime": "0 - 0",
-        "status": "14'",
+        "status": "32'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -125,8 +125,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/9314.png?v=198",
         "awayTeam": "كوينز بارك رينجرز",
         "awayLogo": "https://img.btolat.com/teamslogo/9318.png?v=694",
-        "scoreOrTime": "0 - 0",
-        "status": "14'",
+        "scoreOrTime": "1 - 0",
+        "status": "31'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -137,8 +137,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/9378.png?v=346",
         "awayTeam": "سوانسي سيتي",
         "awayLogo": "https://img.btolat.com/teamslogo/9387.png?v=826",
-        "scoreOrTime": "1 - 0",
-        "status": "14'",
+        "scoreOrTime": "1 - 1",
+        "status": "32'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -588,7 +588,7 @@
         "awayTeam": "روما",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/143.png",
         "scoreOrTime": "18:30",
-        "status": "لم تبدأ",
+        "status": "بعد قليل",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat"
@@ -660,7 +660,7 @@
         "awayTeam": "لايبزيج",
         "awayLogo": "https://img.btolat.com/teamslogo/10552.png?v=743",
         "scoreOrTime": "1 - 0",
-        "status": "43'",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
