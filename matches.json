@@ -1,5 +1,19 @@
 [
     {
+        "league": "الدوري الإسباني",
+        "homeTeam": "ألافيس",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\11\\11082024_8_11_23_19.jpg",
+        "awayTeam": "خيتافي",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Getafe2018_7_29_14_53.jpg",
+        "scoreOrTime": "0 - 0",
+        "status": "الشوط الأول",
+        "channels": [
+            "beIN SPORTS 3 HD"
+        ],
+        "commentator": "نوفل باشي",
+        "source": "Yallakora + FilGoal + Btolat"
+    },
+    {
         "league": "الدوري السعودي",
         "homeTeam": "التعاون",
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\11\\10\\tawwoun2023_11_10_17_9.jpg",
@@ -12,30 +26,6 @@
         ],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat"
-    },
-    {
-        "league": "الدوري الإماراتي",
-        "homeTeam": "خورفكان",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\8\\Khorfakkan2021_9_8_10_22.jpg",
-        "awayTeam": "شباب الأهلي",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\ShababAlAhliDubai2018_7_26_11_51.jpg",
-        "scoreOrTime": "1 - 0",
-        "status": "الشوط الأول",
-        "channels": [],
-        "commentator": "",
-        "source": "Yallakora + FilGoal"
-    },
-    {
-        "league": "الدوري الإماراتي",
-        "homeTeam": "الوصل",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\Alwasl2018_7_25_15_22.jpg",
-        "awayTeam": "يونايتد اف سي",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\527001955_122093570684972004_1405618893921874169_n2026_8_2_20_36.webp",
-        "scoreOrTime": "1 - 1",
-        "status": "الشوط الأول",
-        "channels": [],
-        "commentator": "",
-        "source": "Yallakora + FilGoal"
     },
     {
         "league": "الدوري الإنجليزي",
@@ -218,26 +208,12 @@
         "awayTeam": "برمنجهام سيتي",
         "awayLogo": "https://img.btolat.com/teamslogo/9039.png?v=667",
         "scoreOrTime": "0 - 0",
-        "status": "'",
+        "status": "59'",
         "channels": [
             "BEIN SPORTS 2"
         ],
         "commentator": "",
         "source": "Btolat"
-    },
-    {
-        "league": "الدوري الإسباني",
-        "homeTeam": "ألافيس",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\11\\11082024_8_11_23_19.jpg",
-        "awayTeam": "خيتافي",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Getafe2018_7_29_14_53.jpg",
-        "scoreOrTime": "20:30",
-        "status": "لم تبدأ",
-        "channels": [
-            "beIN SPORTS 3 HD"
-        ],
-        "commentator": "نوفل باشي",
-        "source": "Yallakora + FilGoal + Btolat"
     },
     {
         "league": "الدوري الإسباني",
@@ -288,7 +264,7 @@
         "awayTeam": "سوتيرول بولدزانو",
         "awayLogo": "https://img.btolat.com/teamslogo/12041.png?v=818",
         "scoreOrTime": "2 - 1",
-        "status": "68'",
+        "status": "84'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -300,7 +276,7 @@
         "awayTeam": "بادوفا",
         "awayLogo": "https://img.btolat.com/teamslogo/11956.png?v=491",
         "scoreOrTime": "1 - 0",
-        "status": "'",
+        "status": "56'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -536,6 +512,18 @@
     },
     {
         "league": "الدوري الإماراتي",
+        "homeTeam": "خورفكان",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\8\\Khorfakkan2021_9_8_10_22.jpg",
+        "awayTeam": "شباب الأهلي",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\ShababAlAhliDubai2018_7_26_11_51.jpg",
+        "scoreOrTime": "1 - 0",
+        "status": "استراحة",
+        "channels": [],
+        "commentator": "",
+        "source": "Yallakora + FilGoal"
+    },
+    {
+        "league": "الدوري الإماراتي",
         "homeTeam": "النصر",
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/873.png",
         "awayTeam": "اتحاد كلباء",
@@ -579,6 +567,18 @@
         "channels": [],
         "commentator": "",
         "source": "Yallakora"
+    },
+    {
+        "league": "الدوري الإماراتي",
+        "homeTeam": "الوصل",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\Alwasl2018_7_25_15_22.jpg",
+        "awayTeam": "يونايتد اف سي",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\527001955_122093570684972004_1405618893921874169_n2026_8_2_20_36.webp",
+        "scoreOrTime": "1 - 1",
+        "status": "استراحة",
+        "channels": [],
+        "commentator": "",
+        "source": "Yallakora + FilGoal"
     },
     {
         "league": "الدوري الإماراتي",
@@ -749,8 +749,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\5\\InterMilan2021_9_5_16_40.jpg",
         "awayTeam": "ريال بيتيس",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\RealBetis2018_7_29_14_50.jpg",
-        "scoreOrTime": "20:30",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "مباشر",
         "channels": [
             "ON Sport PLUS",
             "الشارقة الرياضية",
