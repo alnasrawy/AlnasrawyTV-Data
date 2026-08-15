@@ -31,11 +31,15 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/96.png",
         "awayTeam": "لينكولن سيتي",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1902.png",
-        "scoreOrTime": "0 - 0",
-        "status": "مباشر",
+        "scoreOrTime": "2 - 1",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat"
+        "source": "FilGoal + Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "الدوري الإنجليزي",
@@ -340,7 +344,37 @@
             "ثمانية 1"
         ],
         "commentator": "مشاري القرني",
-        "source": "FilGoal"
+        "source": "FilGoal",
+        "scorers": {
+            "home": [
+                [
+                    "روبن نيفيز",
+                    "82'"
+                ],
+                [
+                    "روبن نيفيز",
+                    "28'"
+                ],
+                [
+                    "مالكوم فيليبي",
+                    "26'"
+                ],
+                [
+                    "كريم بنزيمة",
+                    "19'"
+                ]
+            ],
+            "away": [
+                [
+                    "ثيو بونجوندا",
+                    "64'"
+                ],
+                [
+                    "أليكساندر ميندي",
+                    "59'"
+                ]
+            ]
+        }
     },
     {
         "league": "الدوري السعودي",
@@ -368,7 +402,25 @@
             "ثمانية 3"
         ],
         "commentator": "",
-        "source": "FilGoal"
+        "source": "FilGoal",
+        "scorers": {
+            "home": [
+                [
+                    "سعيد بن رحمة",
+                    "36'"
+                ],
+                [
+                    "أمادو كوني",
+                    "26'"
+                ]
+            ],
+            "away": [
+                [
+                    "هوجو مورا",
+                    "75'"
+                ]
+            ]
+        }
     },
     {
         "league": "الدوري السعودي",
@@ -382,7 +434,37 @@
             "ثمانية 2"
         ],
         "commentator": "راشد الدوسري",
-        "source": "FilGoal"
+        "source": "FilGoal",
+        "scorers": {
+            "home": [
+                [
+                    "موسى ديمبيلي",
+                    "8+ 90'"
+                ],
+                [
+                    "ريان ميسي",
+                    "79'"
+                ],
+                [
+                    "موسى ديمبيلي",
+                    "54'"
+                ],
+                [
+                    "موسى ديمبيلي",
+                    "22'"
+                ]
+            ],
+            "away": [
+                [
+                    "بيرنارد مينساه",
+                    "56'"
+                ],
+                [
+                    "تيدي أوكو",
+                    "5+ 45'"
+                ]
+            ]
+        }
     },
     {
         "league": "الدوري العراقي",
@@ -458,7 +540,29 @@
         "status": "انتهت",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal"
+        "source": "FilGoal",
+        "scorers": {
+            "home": [
+                [
+                    "كريس بيديا",
+                    "77'"
+                ],
+                [
+                    "عبد الله توريه",
+                    "64'"
+                ]
+            ],
+            "away": [
+                [
+                    "سامان قدوس",
+                    "20'"
+                ],
+                [
+                    "نيمانيا يوفيتش",
+                    "7'"
+                ]
+            ]
+        }
     },
     {
         "league": "الدوري الإماراتي",
@@ -482,7 +586,33 @@
         "status": "انتهت",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal"
+        "source": "FilGoal",
+        "scorers": {
+            "home": [
+                [
+                    "براهيما ديارا",
+                    "3+ 90'"
+                ],
+                [
+                    "محمد قرباني",
+                    "77'"
+                ]
+            ],
+            "away": [
+                [
+                    "فيكتور هنريكي",
+                    "83'"
+                ],
+                [
+                    "فيكتور هنريكي",
+                    "51'"
+                ],
+                [
+                    "لورينسي رودريجيز",
+                    "5'"
+                ]
+            ]
+        }
     },
     {
         "league": "الدوري الإماراتي",
@@ -546,7 +676,11 @@
             "الكويت الرياضية"
         ],
         "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat"
+        "source": "Yallakora + FilGoal + Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "مباريات ودية -أندية",
@@ -568,7 +702,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\ManchesterUnited2018_7_29_15_29.jpg",
         "awayTeam": "ميلان",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\ACMilan2018_7_29_15_9.jpg",
-        "scoreOrTime": "1 - 1",
+        "scoreOrTime": "2 - 2",
         "status": "مباشر",
         "channels": [
             "On Sport Plus",
@@ -583,7 +717,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\BorussiaDortmund2018_7_29_16_4.jpg",
         "awayTeam": "روما",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\ASRoma2018_7_29_15_7.jpg",
-        "scoreOrTime": "1 - 2",
+        "scoreOrTime": "2 - 2",
         "status": "مباشر",
         "channels": [
             "ON Sport",
@@ -623,7 +757,16 @@
         "status": "انتهت",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal"
+        "source": "FilGoal",
+        "scorers": {
+            "home": [
+                [
+                    "أشرف بنشرقي",
+                    "66'"
+                ]
+            ],
+            "away": []
+        }
     },
     {
         "league": "مباريات ودية - أندية",
@@ -635,7 +778,11 @@
         "status": "انتهت",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal"
+        "source": "FilGoal",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "مباريات ودية - أندية",
