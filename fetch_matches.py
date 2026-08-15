@@ -1,3 +1,5 @@
+import os
+import sys
 import json
 import random
 import time
@@ -127,8 +129,7 @@ class GhostScraper:
                     t_b = teams_data.find('div', class_='teamB')
                     if not t_a or not t_b: continue
 
-                    team1 = extract_team_name(t_a)
-                    team2 = extract_team_name(t_b)
+                    team1, team2 = extract_team_name(t_a), extract_team_name(t_b)
                     if not team1 or not team2: continue
                     logo1, logo2 = get_logo(t_a.find('img')), get_logo(t_b.find('img'))
 
@@ -195,7 +196,6 @@ class GhostScraper:
                     time_tag = li.find('span', class_='time')
                     score = time_tag.text.strip() if time_tag and time_tag.text.strip() else "-:-"
 
-                # 💡 التدخل الجراحي: البحث عن أيقونات التلفاز والميكروفون بذكاء
                 channels = []
                 comm = ""
                 for icon in li.find_all(['i', 'svg', 'img']):
@@ -259,7 +259,6 @@ class GhostScraper:
                 league_tag = league_card.find(['h2', 'h3']) if league_card else None
                 league = " ".join(league_tag.text.split()) if league_tag else "بطولة غير معروفة"
 
-                # 💡 التدخل الجراحي لموقع بطولات
                 channels = []
                 comm = ""
                 for icon in m.find_all(['i', 'svg', 'img']):
@@ -284,21 +283,12 @@ class GhostScraper:
                 continue
         return matches
 
-
-# ================= دالة صناعة "بصمة الفريق" للدمج الفولاذي =================
+# ================= دالة صناعة "بصمة الفريق" للدمج =================
 def clean_name(name):
-    # 1. توحيد الحروف العربية 
     name = name.replace("أ", "ا").replace("إ", "ا").replace("آ", "ا").replace("ة", "ه").replace("ى", "ي").replace("يي", "ي")
-    # 2. إزالة الكلمات الزائدة لتوحيد (ديبورتيفو ألافيس == ألافيس)
     for w in ["نادي", "فريق", "fc", "sc", "ديبورتيفو", "اتلتيكو", "ايه سي", "سي اف", "كلوب"]:
         name = name.lower().replace(w, "")
-    name = name.strip()
-    # 3. إزالة ال التعريف
-    if name.startswith("ال"):
-        name = name[2:]
-    # 4. إزالة الفراغات لضمان التطابق التام (رايو فايكانو == رايوفايكانو)
-    name = name.replace(" ", "")
-    return name
+    return name.strip().replace(" ", "")
 
 
 # ================= الفلترة والتوحيد والتصنيف الذكي =================
@@ -348,6 +338,24 @@ def filter_and_rank(matches_list):
     return filtered
 
 
+# ================= دالة استخراج وقت أقرب مباراة للدرع الذكي =================
+def extract_first_match_time(matches_list):
+    earliest_time = None
+    for m in matches_list:
+        if m.get('status') == "انتهت": continue
+        
+        score_val = m.get('scoreOrTime', '')
+        if ':' in score_val and '-' not in score_val:
+            try:
+                time_str = score_val.strip().replace('م', '').replace('ص', '').strip()
+                match_time = datetime.strptime(time_str, '%H:%M').time()
+                if earliest_time is None or match_time < earliest_time:
+                    earliest_time = match_time
+            except Exception:
+                continue
+    return earliest_time
+
+
 # ================= العقل المدبر والتشغيل =================
 scraper_engine = GhostScraper()
 
@@ -371,17 +379,14 @@ def execute_full_cycle():
 
     merged = {}
     for m in all_raw:
-        # هنا يتم استخدام الدالة الجديدة للدمج
         key = f"{clean_name(m['homeTeam'])}_{clean_name(m['awayTeam'])}"
         
         if key not in merged:
             merged[key] = m
         else:
-            # 💡 الدمج الجراحي للقنوات
             combined_channels = merged[key]['channels'] + m['channels']
             merged[key]['channels'] = list(dict.fromkeys([c.strip() for c in combined_channels if c.strip()]))
             
-            # 💡 الدمج الجراحي للمعلقين
             curr_comm = merged[key]['commentator']
             new_comm = m['commentator']
             if not curr_comm and new_comm:
@@ -408,16 +413,37 @@ def execute_full_cycle():
     return final_list
 
 
-# ================= نظام التشغيل المستمر (الأتمتة) =================
-def autonomous_mode():
-    print("هذه الدالة تستخدم فقط عند تشغيل السكربت على حاسوبك الشخصي. في GitHub نعتمد على مجدول المهام.")
-    pass
-
-
 if __name__ == "__main__":
     try:
-        print("-> Running single fetch cycle for GitHub Actions...")
+        print("-> GitHub Actions Cycle Triggered...")
+        now = datetime.now(TZ)
+        
+        # 1. التحديث الإجباري لجدول اليوم (الساعة 12 فجراً)
+        is_midnight_sync = (now.hour == 0 or now.hour == 1 or not os.path.exists("matches.json"))
+        
+        if not is_midnight_sync:
+            # 2. تفعيل الدرع الذكي: فحص موعد أقرب مباراة
+            with open("matches.json", "r", encoding="utf-8") as f:
+                try:
+                    saved_matches = json.load(f)
+                    first_time = extract_first_match_time(saved_matches)
+                    
+                    if first_time:
+                        match_dt = datetime.combine(now.date(), first_time).replace(tzinfo=TZ)
+                        wake_dt = match_dt - timedelta(minutes=15)
+                        
+                        if now < wake_dt:
+                            print(f"-> 🌙 أقرب مباراة ستكون الساعة {first_time}. الوقت لا يزال مبكراً.")
+                            print(f"-> 💤 السكربت سيتوقف فوراً لتوفير رصيد GitHub. لن يتم سحب أي بيانات الآن.")
+                            sys.exit(0)  # إنهاء فوري لحفظ دقائق غيت هب
+                except Exception:
+                    pass 
+        
+        # 3. إذا كان الوقت مناسباً نقوم ببدء العمل
         execute_full_cycle()
+
+    except SystemExit:
+        pass # خروج سلمي هادئ
     except KeyboardInterrupt:
         print("\n🛑 System stopped by user.")
     except Exception as e:
