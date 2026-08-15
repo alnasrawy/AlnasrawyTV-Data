@@ -24,7 +24,8 @@ jobs:
           python-version: '3.10'
           
       - name: Install Dependencies
-        run: pip install requests beautifulsoup4
+        # 👈 هنا تم التعديل الهام جداً لإضافة مكتبة التخفي الجديدة
+        run: pip install curl_cffi beautifulsoup4
         
       - name: Run Scraper
         run: python fetch_matches.py
