@@ -6,7 +6,7 @@
         "awayTeam": "الخليج",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\8\\12\\khaleej12023_8_12_15_55.jpg",
         "scoreOrTime": "0 - 0",
-        "status": "الشوط الأول",
+        "status": "الشوط الثاني",
         "channels": [
             "ثمانية 3"
         ],
@@ -19,7 +19,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\8\\Khorfakkan2021_9_8_10_22.jpg",
         "awayTeam": "شباب الأهلي",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\ShababAlAhliDubai2018_7_26_11_51.jpg",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "1 - 0",
         "status": "الشوط الأول",
         "channels": [],
         "commentator": "",
@@ -31,7 +31,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\Alwasl2018_7_25_15_22.jpg",
         "awayTeam": "يونايتد اف سي",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\527001955_122093570684972004_1405618893921874169_n2026_8_2_20_36.webp",
-        "scoreOrTime": "1 - 0",
+        "scoreOrTime": "1 - 1",
         "status": "الشوط الأول",
         "channels": [],
         "commentator": "",
@@ -218,7 +218,7 @@
         "awayTeam": "برمنجهام سيتي",
         "awayLogo": "https://img.btolat.com/teamslogo/9039.png?v=667",
         "scoreOrTime": "0 - 0",
-        "status": "31'",
+        "status": "'",
         "channels": [
             "BEIN SPORTS 2"
         ],
@@ -287,8 +287,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11845.png?v=257",
         "awayTeam": "سوتيرول بولدزانو",
         "awayLogo": "https://img.btolat.com/teamslogo/12041.png?v=818",
-        "scoreOrTime": "1 - 1",
-        "status": "'",
+        "scoreOrTime": "2 - 1",
+        "status": "65'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -299,8 +299,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/12051.png?v=714",
         "awayTeam": "بادوفا",
         "awayLogo": "https://img.btolat.com/teamslogo/11956.png?v=491",
-        "scoreOrTime": "0 - 0",
-        "status": "29'",
+        "scoreOrTime": "1 - 0",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -484,8 +484,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/41312.png?v=850",
         "awayTeam": "الطلبة",
         "awayLogo": "https://img.btolat.com/teamslogo/11517.png?v=211",
-        "scoreOrTime": "0 - 1",
-        "status": "70'",
+        "scoreOrTime": "2 - 1",
+        "status": "90+'",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -500,7 +500,9 @@
         "awayLogo": "https://img.btolat.com/teamslogo/11506.png?v=721",
         "scoreOrTime": "21:00",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "العراقية الرياضية"
+        ],
         "commentator": "",
         "source": "FilGoal + Btolat"
     },
@@ -511,7 +513,7 @@
         "awayTeam": "غاز الشمال",
         "awayLogo": "https://img.btolat.com/",
         "scoreOrTime": "1 - 0",
-        "status": "72'",
+        "status": "90+'",
         "channels": [
             "العراقية السريانية"
         ],
@@ -526,7 +528,9 @@
         "awayLogo": "https://img.btolat.com/",
         "scoreOrTime": "21:00",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "العراقية السريانية"
+        ],
         "commentator": "",
         "source": "FilGoal + Btolat"
     },
@@ -722,7 +726,7 @@
         "awayTeam": "روما",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\ASRoma2018_7_29_15_7.jpg",
         "scoreOrTime": "2 - 2",
-        "status": "مباشر",
+        "status": "انتهت",
         "channels": [
             "ON Sport",
             "On Sport Plus",
