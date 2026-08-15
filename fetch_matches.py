@@ -67,13 +67,10 @@ def extract_team_name(team_div):
     return ""
 
 def get_logo(img_tag, base_url=""):
-    if not img_tag:
-        return ""
+    if not img_tag: return ""
     logo = img_tag.get('data-src') or img_tag.get('src', '')
-    if logo.startswith('//'):
-        logo = 'https:' + logo
-    elif logo and not logo.startswith('http') and base_url:
-        logo = base_url + logo
+    if logo.startswith('//'): logo = 'https:' + logo
+    elif logo and not logo.startswith('http') and base_url: logo = base_url + logo
     return logo
 
 # ================= محرك التخفي والاتصال =================
@@ -130,7 +127,8 @@ class GhostScraper:
                     t_b = teams_data.find('div', class_='teamB')
                     if not t_a or not t_b: continue
 
-                    team1, team2 = extract_team_name(t_a), extract_team_name(t_b)
+                    team1 = extract_team_name(t_a)
+                    team2 = extract_team_name(t_b)
                     if not team1 or not team2: continue
                     logo1, logo2 = get_logo(t_a.find('img')), get_logo(t_b.find('img'))
 
@@ -197,21 +195,20 @@ class GhostScraper:
                     time_tag = li.find('span', class_='time')
                     score = time_tag.text.strip() if time_tag and time_tag.text.strip() else "-:-"
 
-                # ----- استخراج القنوات بذكاء من فيلجول -----
+                # 💡 التدخل الجراحي: البحث عن أيقونات التلفاز والميكروفون بذكاء
                 channels = []
-                for span in li.find_all('span'):
-                    # البحث عن أيقونات التلفاز أو كلاسات القنوات
-                    if span.find('i', class_=lambda c: c and ('tv' in c.lower() or 'screen' in c.lower() or 'television' in c.lower())):
-                        txt = span.text.strip()
-                        if txt: channels = [txt]
-                        break
-
-                # ----- استخراج المعلق بذكاء من فيلجول -----
                 comm = ""
-                for span in li.find_all('span'):
-                    if span.find('i', class_=lambda c: c and ('mic' in c.lower() or 'microphone' in c.lower())):
-                        comm = span.text.replace('معلق:', '').strip()
-                        break
+                for icon in li.find_all(['i', 'svg', 'img']):
+                    icon_class = " ".join(icon.get('class', [])).lower()
+                    parent = icon.parent
+                    if not parent: continue
+                    
+                    if 'television' in icon_class or 'tv' in icon_class or 'screen' in icon_class:
+                        txt = parent.text.strip()
+                        if txt and txt not in channels: channels.append(txt)
+                    elif 'mic' in icon_class or 'commentator' in icon_class:
+                        txt = parent.text.replace('معلق:', '').strip()
+                        if txt: comm = txt
 
                 matches.append({
                     "league": league, "homeTeam": team1, "homeLogo": logo1,
@@ -262,17 +259,20 @@ class GhostScraper:
                 league_tag = league_card.find(['h2', 'h3']) if league_card else None
                 league = " ".join(league_tag.text.split()) if league_tag else "بطولة غير معروفة"
 
-                # ----- استخراج القنوات من بطولات -----
+                # 💡 التدخل الجراحي لموقع بطولات
                 channels = []
-                ch_elems = m.find_all(lambda tag: tag.name in ['span', 'div', 'p'] and tag.get('class') and any('channel' in c.lower() or 'tv' in c.lower() for c in tag.get('class', [])))
-                for ch in ch_elems:
-                    channels.extend([c.strip() for c in ch.text.split('/') if c.strip()])
-
-                # ----- استخراج المعلق من بطولات -----
                 comm = ""
-                comm_elem = m.find(lambda tag: tag.name in ['span', 'div', 'p'] and tag.get('class') and any('commentator' in c.lower() or 'mic' in c.lower() for c in tag.get('class', [])))
-                if comm_elem:
-                    comm = comm_elem.text.replace('معلق:', '').strip()
+                for icon in m.find_all(['i', 'svg', 'img']):
+                    icon_class = " ".join(icon.get('class', [])).lower()
+                    parent = icon.parent
+                    if not parent: continue
+                    
+                    if 'tv' in icon_class or 'screen' in icon_class or 'channel' in icon_class:
+                        txt = parent.text.strip()
+                        if txt: channels.extend([c.strip() for c in txt.split('/') if c.strip()])
+                    elif 'mic' in icon_class or 'commentator' in icon_class:
+                        txt = parent.text.replace('معلق:', '').strip()
+                        if txt: comm = txt
 
                 matches.append({
                     "league": league, "homeTeam": team1, "homeLogo": logo1,
@@ -285,10 +285,20 @@ class GhostScraper:
         return matches
 
 
-# ================= تنظيف الأسماء للدمج =================
+# ================= دالة صناعة "بصمة الفريق" للدمج الفولاذي =================
 def clean_name(name):
-    for w in ["نادي", "فريق", "fc", "sc"]: name = name.lower().replace(w, "")
-    return name.strip()
+    # 1. توحيد الحروف العربية 
+    name = name.replace("أ", "ا").replace("إ", "ا").replace("آ", "ا").replace("ة", "ه").replace("ى", "ي").replace("يي", "ي")
+    # 2. إزالة الكلمات الزائدة لتوحيد (ديبورتيفو ألافيس == ألافيس)
+    for w in ["نادي", "فريق", "fc", "sc", "ديبورتيفو", "اتلتيكو", "ايه سي", "سي اف", "كلوب"]:
+        name = name.lower().replace(w, "")
+    name = name.strip()
+    # 3. إزالة ال التعريف
+    if name.startswith("ال"):
+        name = name[2:]
+    # 4. إزالة الفراغات لضمان التطابق التام (رايو فايكانو == رايوفايكانو)
+    name = name.replace(" ", "")
+    return name
 
 
 # ================= الفلترة والتوحيد والتصنيف الذكي =================
@@ -361,16 +371,17 @@ def execute_full_cycle():
 
     merged = {}
     for m in all_raw:
+        # هنا يتم استخدام الدالة الجديدة للدمج
         key = f"{clean_name(m['homeTeam'])}_{clean_name(m['awayTeam'])}"
+        
         if key not in merged:
             merged[key] = m
         else:
-            # ----- الدمج الجراحي الذكي للقنوات -----
+            # 💡 الدمج الجراحي للقنوات
             combined_channels = merged[key]['channels'] + m['channels']
-            # الحفاظ على القنوات وإزالة أي تكرار
             merged[key]['channels'] = list(dict.fromkeys([c.strip() for c in combined_channels if c.strip()]))
             
-            # ----- الدمج الجراحي الذكي للمعلقين -----
+            # 💡 الدمج الجراحي للمعلقين
             curr_comm = merged[key]['commentator']
             new_comm = m['commentator']
             if not curr_comm and new_comm:
@@ -378,7 +389,6 @@ def execute_full_cycle():
             elif curr_comm and new_comm and new_comm not in curr_comm:
                 merged[key]['commentator'] = f"{curr_comm} / {new_comm}"
 
-            # ----- دمج المصادر -----
             if m['source'] not in merged[key]['source']: 
                 merged[key]['source'] += f" + {m['source']}"
 
@@ -396,6 +406,12 @@ def execute_full_cycle():
 
     print(f"\n-> [OK] Smart-Filtered & Saved {len(final_list)} matches to matches.json.")
     return final_list
+
+
+# ================= نظام التشغيل المستمر (الأتمتة) =================
+def autonomous_mode():
+    print("هذه الدالة تستخدم فقط عند تشغيل السكربت على حاسوبك الشخصي. في GitHub نعتمد على مجدول المهام.")
+    pass
 
 
 if __name__ == "__main__":
