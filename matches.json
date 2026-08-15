@@ -1,5 +1,17 @@
 [
     {
+        "league": "الدوري الإماراتي",
+        "homeTeam": "الظفرة",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\Alzafra2018_7_26_11_51.jpg",
+        "awayTeam": "الشــارقة",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\logoL_14632647842026_8_2_20_22.webp",
+        "scoreOrTime": "0 - 0",
+        "status": "الشوط الأول",
+        "channels": [],
+        "commentator": "",
+        "source": "Yallakora"
+    },
+    {
         "league": "الدوري الإنجليزي",
         "homeTeam": "أرسنال",
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/83.png",
@@ -29,8 +41,8 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/96.png",
         "awayTeam": "لينكولن سيتي",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1902.png",
-        "scoreOrTime": "17:00",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "مباشر",
         "channels": [],
         "commentator": "",
         "source": "FilGoal"
@@ -65,8 +77,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/9066.png?v=886",
         "awayTeam": "ميلوول",
         "awayLogo": "https://img.btolat.com/teamslogo/9276.png?v=589",
-        "scoreOrTime": "05:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "14'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -77,8 +89,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/9088.png?v=731",
         "awayTeam": "ديربي كاونتي",
         "awayLogo": "https://img.btolat.com/teamslogo/9133.png?v=92",
-        "scoreOrTime": "05:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "14'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -89,8 +101,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/9274.png?v=710",
         "awayTeam": "لينكولن سيتي",
         "awayLogo": "https://img.btolat.com/teamslogo/9247.png?v=203",
-        "scoreOrTime": "05:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 1",
+        "status": "14'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -101,8 +113,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/9296.png?v=268",
         "awayTeam": "وست بروميتش",
         "awayLogo": "https://img.btolat.com/teamslogo/9426.png?v=743",
-        "scoreOrTime": "05:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "14'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -113,8 +125,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/9314.png?v=198",
         "awayTeam": "كوينز بارك رينجرز",
         "awayLogo": "https://img.btolat.com/teamslogo/9318.png?v=694",
-        "scoreOrTime": "05:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "14'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -125,8 +137,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/9378.png?v=346",
         "awayTeam": "سوانسي سيتي",
         "awayLogo": "https://img.btolat.com/teamslogo/9387.png?v=826",
-        "scoreOrTime": "05:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "1 - 0",
+        "status": "14'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -419,18 +431,6 @@
     },
     {
         "league": "الدوري الإماراتي",
-        "homeTeam": "الظفرة",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\Alzafra2018_7_26_11_51.jpg",
-        "awayTeam": "الشــارقة",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\logoL_14632647842026_8_2_20_22.webp",
-        "scoreOrTime": "17:10",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "Yallakora"
-    },
-    {
-        "league": "الدوري الإماراتي",
         "homeTeam": "الوصل",
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\Alwasl2018_7_25_15_22.jpg",
         "awayTeam": "يونايتد اف سي",
@@ -483,7 +483,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Chelsea2018_7_29_15_28.jpg",
         "awayTeam": "ريال سوسيداد",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\RealSociedad2018_7_29_14_56.jpg",
-        "scoreOrTime": "1 - 1",
+        "scoreOrTime": "2 - 1",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -660,7 +660,7 @@
         "awayTeam": "لايبزيج",
         "awayLogo": "https://img.btolat.com/teamslogo/10552.png?v=743",
         "scoreOrTime": "1 - 0",
-        "status": "30'",
+        "status": "43'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
