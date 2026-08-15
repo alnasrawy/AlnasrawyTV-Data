@@ -1,5 +1,149 @@
 [
     {
+        "league": "الدوري الإنجليزي",
+        "homeTeam": "أرسنال",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/83.png",
+        "awayTeam": "مانشستر سيتي",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/94.png",
+        "scoreOrTime": "17:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal"
+    },
+    {
+        "league": "الدوري الإنجليزي",
+        "homeTeam": "كايزر تشيفز",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/460.png",
+        "awayTeam": "ماميلودي صنداونز",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/577.png",
+        "scoreOrTime": "16:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal"
+    },
+    {
+        "league": "الدوري الإنجليزي",
+        "homeTeam": "ميدلسبره",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/96.png",
+        "awayTeam": "لينكولن سيتي",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1902.png",
+        "scoreOrTime": "17:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal"
+    },
+    {
+        "league": "الدوري الإنجليزي",
+        "homeTeam": "بيرنلي",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/992.png",
+        "awayTeam": "وست هام يونايتد",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/103.png",
+        "scoreOrTime": "18:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal"
+    },
+    {
+        "league": "الدوري الإنجليزي",
+        "homeTeam": "بولتون واندررز",
+        "homeLogo": "https://img.btolat.com/teamslogo/9048.png?v=271",
+        "awayTeam": "بريستون نورث إند",
+        "awayLogo": "https://img.btolat.com/teamslogo/9317.png?v=402",
+        "scoreOrTime": "02:30 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Btolat"
+    },
+    {
+        "league": "الدوري الإنجليزي",
+        "homeTeam": "بريستول سيتي",
+        "homeLogo": "https://img.btolat.com/teamslogo/9066.png?v=886",
+        "awayTeam": "ميلوول",
+        "awayLogo": "https://img.btolat.com/teamslogo/9276.png?v=589",
+        "scoreOrTime": "05:00 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Btolat"
+    },
+    {
+        "league": "الدوري الإنجليزي",
+        "homeTeam": "تشارلتون أثليتيك",
+        "homeLogo": "https://img.btolat.com/teamslogo/9088.png?v=731",
+        "awayTeam": "ديربي كاونتي",
+        "awayLogo": "https://img.btolat.com/teamslogo/9133.png?v=92",
+        "scoreOrTime": "05:00 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Btolat"
+    },
+    {
+        "league": "الدوري الإنجليزي",
+        "homeTeam": "ميدلسبروه",
+        "homeLogo": "https://img.btolat.com/teamslogo/9274.png?v=710",
+        "awayTeam": "لينكولن سيتي",
+        "awayLogo": "https://img.btolat.com/teamslogo/9247.png?v=203",
+        "scoreOrTime": "05:00 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Btolat"
+    },
+    {
+        "league": "الدوري الإنجليزي",
+        "homeTeam": "نورويتش سيتي",
+        "homeLogo": "https://img.btolat.com/teamslogo/9296.png?v=268",
+        "awayTeam": "وست بروميتش",
+        "awayLogo": "https://img.btolat.com/teamslogo/9426.png?v=743",
+        "scoreOrTime": "05:00 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Btolat"
+    },
+    {
+        "league": "الدوري الإنجليزي",
+        "homeTeam": "بورتسموث",
+        "homeLogo": "https://img.btolat.com/teamslogo/9314.png?v=198",
+        "awayTeam": "كوينز بارك رينجرز",
+        "awayLogo": "https://img.btolat.com/teamslogo/9318.png?v=694",
+        "scoreOrTime": "05:00 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Btolat"
+    },
+    {
+        "league": "الدوري الإنجليزي",
+        "homeTeam": "ستوك سيتي",
+        "homeLogo": "https://img.btolat.com/teamslogo/9378.png?v=346",
+        "awayTeam": "سوانسي سيتي",
+        "awayLogo": "https://img.btolat.com/teamslogo/9387.png?v=826",
+        "scoreOrTime": "05:00 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Btolat"
+    },
+    {
+        "league": "الدوري الإنجليزي",
+        "homeTeam": "شيفيلد يونايتد",
+        "homeLogo": "https://img.btolat.com/teamslogo/9348.png?v=695",
+        "awayTeam": "برمنجهام سيتي",
+        "awayLogo": "https://img.btolat.com/teamslogo/9039.png?v=667",
+        "scoreOrTime": "07:30 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Btolat"
+    },
+    {
         "league": "الدوري الإسباني",
         "homeTeam": "ألافيس",
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\11\\11082024_8_11_23_19.jpg",
@@ -11,8 +155,7 @@
             "بى ان سبورت 3 HD"
         ],
         "commentator": "",
-        "source": "Yallakora",
-        "priority": 1
+        "source": "Yallakora"
     },
     {
         "league": "الدوري الإسباني",
@@ -26,23 +169,103 @@
             "بى ان سبورت 1HD"
         ],
         "commentator": "",
-        "source": "Yallakora",
-        "priority": 1
+        "source": "Yallakora"
     },
     {
-        "league": "الدوري السعودي",
-        "homeTeam": "التعاون",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\11\\10\\tawwoun2023_11_10_17_9.jpg",
-        "awayTeam": "الخليج",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\8\\12\\khaleej12023_8_12_15_55.jpg",
-        "scoreOrTime": "19:15",
+        "league": "الدوري الإسباني",
+        "homeTeam": "إشبيلية",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/126.png",
+        "awayTeam": "رايو فايكانو",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/122.png",
+        "scoreOrTime": "22:30",
         "status": "لم تبدأ",
-        "channels": [
-            "ثمانية 3"
-        ],
+        "channels": [],
         "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat",
-        "priority": 1
+        "source": "FilGoal"
+    },
+    {
+        "league": "الدوري الإسباني",
+        "homeTeam": "ديبورتيفو ألافيس",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/115.png",
+        "awayTeam": "خيتافي",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/317.png",
+        "scoreOrTime": "20:30",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal + Btolat"
+    },
+    {
+        "league": "الدوري الإسباني",
+        "homeTeam": "راسينج سانتاندير",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/146.png",
+        "awayTeam": "فياريال",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/127.png",
+        "scoreOrTime": "18:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal"
+    },
+    {
+        "league": "الدوري الإسباني",
+        "homeTeam": "إسبانيول",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/119.png",
+        "awayTeam": "ليفانتي",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/314.png",
+        "scoreOrTime": "20:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal"
+    },
+    {
+        "league": "الدوري الإيطالي",
+        "homeTeam": "كاتاندزارو",
+        "homeLogo": "https://img.btolat.com/teamslogo/11845.png?v=257",
+        "awayTeam": "سوتيرول بولدزانو",
+        "awayLogo": "https://img.btolat.com/teamslogo/12041.png?v=818",
+        "scoreOrTime": "07:00 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Btolat"
+    },
+    {
+        "league": "الدوري الإيطالي",
+        "homeTeam": "أودينيزي",
+        "homeLogo": "https://img.btolat.com/teamslogo/12051.png?v=714",
+        "awayTeam": "بادوفا",
+        "awayLogo": "https://img.btolat.com/teamslogo/11956.png?v=491",
+        "scoreOrTime": "07:30 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Btolat"
+    },
+    {
+        "league": "الدوري الإيطالي",
+        "homeTeam": "فينيتسيا",
+        "homeLogo": "https://img.btolat.com/teamslogo/12088.png?v=610",
+        "awayTeam": "مودينا",
+        "awayLogo": "https://img.btolat.com/teamslogo/11940.png?v=632",
+        "scoreOrTime": "09:45 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Btolat"
+    },
+    {
+        "league": "الدوري الإيطالي",
+        "homeTeam": "تورينو",
+        "homeLogo": "https://img.btolat.com/teamslogo/12046.png?v=79",
+        "awayTeam": "كاراريزي",
+        "awayLogo": "https://img.btolat.com/teamslogo/11838.png?v=880",
+        "scoreOrTime": "10:15 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Btolat"
     },
     {
         "league": "الدوري السعودي",
@@ -56,8 +279,7 @@
             "ثمانية 2"
         ],
         "commentator": "",
-        "source": "Yallakora + FilGoal",
-        "priority": 1
+        "source": "Yallakora + FilGoal"
     },
     {
         "league": "الدوري السعودي",
@@ -71,47 +293,7 @@
             "ثمانية 1"
         ],
         "commentator": "",
-        "source": "Yallakora + FilGoal",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإماراتي",
-        "homeTeam": "الظفرة",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\Alzafra2018_7_26_11_51.jpg",
-        "awayTeam": "الشــارقة",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\logoL_14632647842026_8_2_20_22.webp",
-        "scoreOrTime": "17:10",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "Yallakora",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإماراتي",
-        "homeTeam": "الوصل",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\Alwasl2018_7_25_15_22.jpg",
-        "awayTeam": "يونايتد اف سي",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\527001955_122093570684972004_1405618893921874169_n2026_8_2_20_36.webp",
-        "scoreOrTime": "19:45",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "Yallakora",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإماراتي",
-        "homeTeam": "خورفكان",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\8\\Khorfakkan2021_9_8_10_22.jpg",
-        "awayTeam": "شباب الأهلي",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\ShababAlAhliDubai2018_7_26_11_51.jpg",
-        "scoreOrTime": "19:45",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "Yallakora",
-        "priority": 1
+        "source": "Yallakora + FilGoal"
     },
     {
         "league": "الدوري السعودي",
@@ -123,203 +305,7 @@
         "status": "انتهت",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal",
-        "priority": 1
-    },
-    {
-        "league": "الدوري السعودي",
-        "homeTeam": "نيوم",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/13692.png",
-        "awayTeam": "الفيحاء",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1445.png",
-        "scoreOrTime": "2 - 1",
-        "status": "انتهت",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "priority": 1
-    },
-    {
-        "league": "الدوري السعودي",
-        "homeTeam": "الاتفاق",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/182.png",
-        "awayTeam": "الرياض",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/181.png",
-        "scoreOrTime": "4 - 2",
-        "status": "انتهت",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإماراتي",
-        "homeTeam": "النصر",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/873.png",
-        "awayTeam": "اتحاد كلباء",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1374.png",
-        "scoreOrTime": "2 - 2",
-        "status": "انتهت",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإماراتي",
-        "homeTeam": "الوحدة",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/876.png",
-        "awayTeam": "عجمان",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/868.png",
-        "scoreOrTime": "2 - 3",
-        "status": "انتهت",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإسباني",
-        "homeTeam": "إشبيلية",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/126.png",
-        "awayTeam": "رايو فايكانو",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/122.png",
-        "scoreOrTime": "22:30",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإسباني",
-        "homeTeam": "ديبورتيفو ألافيس",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/115.png",
-        "awayTeam": "خيتافي",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/317.png",
-        "scoreOrTime": "20:30",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal + Btolat",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإنجليزي",
-        "homeTeam": "كايزر تشيفز",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/460.png",
-        "awayTeam": "ماميلودي صنداونز",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/577.png",
-        "scoreOrTime": "16:00",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإنجليزي",
-        "homeTeam": "ميدلسبره",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/96.png",
-        "awayTeam": "لينكولن سيتي",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1902.png",
-        "scoreOrTime": "17:00",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإنجليزي",
-        "homeTeam": "أرسنال",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/83.png",
-        "awayTeam": "مانشستر سيتي",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/94.png",
-        "scoreOrTime": "17:00",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإسباني",
-        "homeTeam": "راسينج سانتاندير",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/146.png",
-        "awayTeam": "فياريال",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/127.png",
-        "scoreOrTime": "18:00",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإسباني",
-        "homeTeam": "إسبانيول",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/119.png",
-        "awayTeam": "ليفانتي",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/314.png",
-        "scoreOrTime": "20:00",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإنجليزي",
-        "homeTeam": "بيرنلي",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/992.png",
-        "awayTeam": "وست هام يونايتد",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/103.png",
-        "scoreOrTime": "18:00",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإماراتي",
-        "homeTeam": "بني ياس",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/1198.png",
-        "awayTeam": "العين",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/871.png",
-        "scoreOrTime": "19:45",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإماراتي",
-        "homeTeam": "حتا",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/1254.png",
-        "awayTeam": "الجزيرة",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/875.png",
-        "scoreOrTime": "17:10",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "priority": 1
-    },
-    {
-        "league": "الدوري السعودي",
-        "homeTeam": "اتحاد جدة",
-        "homeLogo": "https://img.btolat.com/teamslogo/15003.png?v=80",
-        "awayTeam": "الخلود",
-        "awayLogo": "https://img.btolat.com/teamslogo/30602.png?v=45",
-        "scoreOrTime": "09:00 م",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "Btolat",
-        "priority": 1
+        "source": "FilGoal"
     },
     {
         "league": "الدوري السعودي",
@@ -331,112 +317,57 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Btolat",
-        "priority": 1
+        "source": "Btolat"
     },
     {
-        "league": "الدوري الإنجليزي",
-        "homeTeam": "بولتون واندررز",
-        "homeLogo": "https://img.btolat.com/teamslogo/9048.png?v=271",
-        "awayTeam": "بريستون نورث إند",
-        "awayLogo": "https://img.btolat.com/teamslogo/9317.png?v=402",
-        "scoreOrTime": "02:30 م",
+        "league": "الدوري السعودي",
+        "homeTeam": "التعاون",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\11\\10\\tawwoun2023_11_10_17_9.jpg",
+        "awayTeam": "الخليج",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\8\\12\\khaleej12023_8_12_15_55.jpg",
+        "scoreOrTime": "19:15",
+        "status": "لم تبدأ",
+        "channels": [
+            "ثمانية 3"
+        ],
+        "commentator": "",
+        "source": "Yallakora + FilGoal + Btolat"
+    },
+    {
+        "league": "الدوري السعودي",
+        "homeTeam": "نيوم",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/13692.png",
+        "awayTeam": "الفيحاء",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1445.png",
+        "scoreOrTime": "2 - 1",
+        "status": "انتهت",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal"
+    },
+    {
+        "league": "الدوري السعودي",
+        "homeTeam": "الاتفاق",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/182.png",
+        "awayTeam": "الرياض",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/181.png",
+        "scoreOrTime": "4 - 2",
+        "status": "انتهت",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal"
+    },
+    {
+        "league": "الدوري السعودي",
+        "homeTeam": "اتحاد جدة",
+        "homeLogo": "https://img.btolat.com/teamslogo/15003.png?v=80",
+        "awayTeam": "الخلود",
+        "awayLogo": "https://img.btolat.com/teamslogo/30602.png?v=45",
+        "scoreOrTime": "09:00 م",
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Btolat",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإنجليزي",
-        "homeTeam": "بريستول سيتي",
-        "homeLogo": "https://img.btolat.com/teamslogo/9066.png?v=886",
-        "awayTeam": "ميلوول",
-        "awayLogo": "https://img.btolat.com/teamslogo/9276.png?v=589",
-        "scoreOrTime": "05:00 م",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "Btolat",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإنجليزي",
-        "homeTeam": "تشارلتون أثليتيك",
-        "homeLogo": "https://img.btolat.com/teamslogo/9088.png?v=731",
-        "awayTeam": "ديربي كاونتي",
-        "awayLogo": "https://img.btolat.com/teamslogo/9133.png?v=92",
-        "scoreOrTime": "05:00 م",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "Btolat",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإنجليزي",
-        "homeTeam": "ميدلسبروه",
-        "homeLogo": "https://img.btolat.com/teamslogo/9274.png?v=710",
-        "awayTeam": "لينكولن سيتي",
-        "awayLogo": "https://img.btolat.com/teamslogo/9247.png?v=203",
-        "scoreOrTime": "05:00 م",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "Btolat",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإنجليزي",
-        "homeTeam": "نورويتش سيتي",
-        "homeLogo": "https://img.btolat.com/teamslogo/9296.png?v=268",
-        "awayTeam": "وست بروميتش",
-        "awayLogo": "https://img.btolat.com/teamslogo/9426.png?v=743",
-        "scoreOrTime": "05:00 م",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "Btolat",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإنجليزي",
-        "homeTeam": "بورتسموث",
-        "homeLogo": "https://img.btolat.com/teamslogo/9314.png?v=198",
-        "awayTeam": "كوينز بارك رينجرز",
-        "awayLogo": "https://img.btolat.com/teamslogo/9318.png?v=694",
-        "scoreOrTime": "05:00 م",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "Btolat",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإنجليزي",
-        "homeTeam": "ستوك سيتي",
-        "homeLogo": "https://img.btolat.com/teamslogo/9378.png?v=346",
-        "awayTeam": "سوانسي سيتي",
-        "awayLogo": "https://img.btolat.com/teamslogo/9387.png?v=826",
-        "scoreOrTime": "05:00 م",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "Btolat",
-        "priority": 1
-    },
-    {
-        "league": "الدوري الإنجليزي",
-        "homeTeam": "شيفيلد يونايتد",
-        "homeLogo": "https://img.btolat.com/teamslogo/9348.png?v=695",
-        "awayTeam": "برمنجهام سيتي",
-        "awayLogo": "https://img.btolat.com/teamslogo/9039.png?v=667",
-        "scoreOrTime": "07:30 م",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "Btolat",
-        "priority": 1
+        "source": "Btolat"
     },
     {
         "league": "الدوري العراقي",
@@ -448,34 +379,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Btolat",
-        "priority": 1
-    },
-    {
-        "league": "الدوري العراقي",
-        "homeTeam": "زاخو",
-        "homeLogo": "https://img.btolat.com/teamslogo/11534.png?v=205",
-        "awayTeam": "Ghaz Al Shamal",
-        "awayLogo": "https://img.btolat.com/",
-        "scoreOrTime": "06:30 م",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "Btolat",
-        "priority": 1
-    },
-    {
-        "league": "الدوري العراقي",
-        "homeTeam": "الكرمة",
-        "homeLogo": "https://img.btolat.com/teamslogo/41313.png?v=847",
-        "awayTeam": "الموصل",
-        "awayLogo": "https://img.btolat.com/",
-        "scoreOrTime": "09:00 م",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "Btolat",
-        "priority": 1
+        "source": "Btolat"
     },
     {
         "league": "الدوري العراقي",
@@ -487,60 +391,115 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Btolat",
-        "priority": 1
+        "source": "Btolat"
     },
     {
-        "league": "الدوري الإيطالي",
-        "homeTeam": "كاتاندزارو",
-        "homeLogo": "https://img.btolat.com/teamslogo/11845.png?v=257",
-        "awayTeam": "سوتيرول بولدزانو",
-        "awayLogo": "https://img.btolat.com/teamslogo/12041.png?v=818",
-        "scoreOrTime": "07:00 م",
+        "league": "الدوري العراقي",
+        "homeTeam": "زاخو",
+        "homeLogo": "https://img.btolat.com/teamslogo/11534.png?v=205",
+        "awayTeam": "Ghaz Al Shamal",
+        "awayLogo": "https://img.btolat.com/",
+        "scoreOrTime": "06:30 م",
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Btolat",
-        "priority": 1
+        "source": "Btolat"
     },
     {
-        "league": "الدوري الإيطالي",
-        "homeTeam": "أودينيزي",
-        "homeLogo": "https://img.btolat.com/teamslogo/12051.png?v=714",
-        "awayTeam": "بادوفا",
-        "awayLogo": "https://img.btolat.com/teamslogo/11956.png?v=491",
-        "scoreOrTime": "07:30 م",
+        "league": "الدوري العراقي",
+        "homeTeam": "الكرمة",
+        "homeLogo": "https://img.btolat.com/teamslogo/41313.png?v=847",
+        "awayTeam": "الموصل",
+        "awayLogo": "https://img.btolat.com/",
+        "scoreOrTime": "09:00 م",
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Btolat",
-        "priority": 1
+        "source": "Btolat"
     },
     {
-        "league": "الدوري الإيطالي",
-        "homeTeam": "فينيتسيا",
-        "homeLogo": "https://img.btolat.com/teamslogo/12088.png?v=610",
-        "awayTeam": "مودينا",
-        "awayLogo": "https://img.btolat.com/teamslogo/11940.png?v=632",
-        "scoreOrTime": "09:45 م",
+        "league": "الدوري الإماراتي",
+        "homeTeam": "خورفكان",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\8\\Khorfakkan2021_9_8_10_22.jpg",
+        "awayTeam": "شباب الأهلي",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\ShababAlAhliDubai2018_7_26_11_51.jpg",
+        "scoreOrTime": "19:45",
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Btolat",
-        "priority": 1
+        "source": "Yallakora"
     },
     {
-        "league": "الدوري الإيطالي",
-        "homeTeam": "تورينو",
-        "homeLogo": "https://img.btolat.com/teamslogo/12046.png?v=79",
-        "awayTeam": "كاراريزي",
-        "awayLogo": "https://img.btolat.com/teamslogo/11838.png?v=880",
-        "scoreOrTime": "10:15 م",
+        "league": "الدوري الإماراتي",
+        "homeTeam": "النصر",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/873.png",
+        "awayTeam": "اتحاد كلباء",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1374.png",
+        "scoreOrTime": "2 - 2",
+        "status": "انتهت",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal"
+    },
+    {
+        "league": "الدوري الإماراتي",
+        "homeTeam": "الظفرة",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\Alzafra2018_7_26_11_51.jpg",
+        "awayTeam": "الشــارقة",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\logoL_14632647842026_8_2_20_22.webp",
+        "scoreOrTime": "17:10",
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Btolat",
-        "priority": 1
+        "source": "Yallakora"
+    },
+    {
+        "league": "الدوري الإماراتي",
+        "homeTeam": "الوصل",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\Alwasl2018_7_25_15_22.jpg",
+        "awayTeam": "يونايتد اف سي",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\527001955_122093570684972004_1405618893921874169_n2026_8_2_20_36.webp",
+        "scoreOrTime": "19:45",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Yallakora"
+    },
+    {
+        "league": "الدوري الإماراتي",
+        "homeTeam": "الوحدة",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/876.png",
+        "awayTeam": "عجمان",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/868.png",
+        "scoreOrTime": "2 - 3",
+        "status": "انتهت",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal"
+    },
+    {
+        "league": "الدوري الإماراتي",
+        "homeTeam": "بني ياس",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/1198.png",
+        "awayTeam": "العين",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/871.png",
+        "scoreOrTime": "19:45",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal"
+    },
+    {
+        "league": "الدوري الإماراتي",
+        "homeTeam": "حتا",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/1254.png",
+        "awayTeam": "الجزيرة",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/875.png",
+        "scoreOrTime": "17:10",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal"
     },
     {
         "league": "مباريات ودية -أندية",
@@ -552,8 +511,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Yallakora + Btolat",
-        "priority": 2
+        "source": "Yallakora + Btolat"
     },
     {
         "league": "مباريات ودية -أندية",
@@ -565,8 +523,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Yallakora",
-        "priority": 2
+        "source": "Yallakora"
     },
     {
         "league": "مباريات ودية -أندية",
@@ -580,8 +537,7 @@
             "ON Sport MAX"
         ],
         "commentator": "",
-        "source": "Yallakora + Btolat",
-        "priority": 2
+        "source": "Yallakora + Btolat"
     },
     {
         "league": "مباريات ودية -أندية",
@@ -595,8 +551,7 @@
             "ON Sport PLUS"
         ],
         "commentator": "",
-        "source": "Yallakora + Btolat",
-        "priority": 2
+        "source": "Yallakora + Btolat"
     },
     {
         "league": "مباريات ودية -أندية",
@@ -610,8 +565,7 @@
             "ON Sport"
         ],
         "commentator": "",
-        "source": "Yallakora",
-        "priority": 2
+        "source": "Yallakora"
     },
     {
         "league": "مباريات ودية -أندية",
@@ -623,8 +577,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Yallakora + Btolat",
-        "priority": 2
+        "source": "Yallakora + Btolat"
     },
     {
         "league": "مباريات ودية - أندية",
@@ -636,8 +589,7 @@
         "status": "انتهت",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal",
-        "priority": 2
+        "source": "FilGoal"
     },
     {
         "league": "مباريات ودية - أندية",
@@ -649,8 +601,7 @@
         "status": "انتهت",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal",
-        "priority": 2
+        "source": "FilGoal"
     },
     {
         "league": "مباريات ودية - أندية",
@@ -662,8 +613,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat",
-        "priority": 2
+        "source": "FilGoal + Btolat"
     },
     {
         "league": "مباريات ودية - أندية",
@@ -675,8 +625,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal",
-        "priority": 2
+        "source": "FilGoal"
     },
     {
         "league": "مباريات ودية - أندية",
@@ -688,8 +637,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal",
-        "priority": 2
+        "source": "FilGoal"
     },
     {
         "league": "مباريات ودية - أندية",
@@ -701,8 +649,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal",
-        "priority": 2
+        "source": "FilGoal"
     },
     {
         "league": "مباريات ودية - أندية",
@@ -714,8 +661,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal",
-        "priority": 2
+        "source": "FilGoal"
     },
     {
         "league": "مباريات ودية - أندية",
@@ -727,8 +673,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal",
-        "priority": 2
+        "source": "FilGoal"
     },
     {
         "league": "مباريات ودية أندية",
@@ -740,7 +685,6 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Btolat",
-        "priority": 2
+        "source": "Btolat"
     }
 ]
