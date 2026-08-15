@@ -64,6 +64,14 @@ VIP_TEAMS = [
 
 BLOCKLIST = ["شباب", "رديف", "u23", "u19", "درجة ثانية", "درجة ثالثة", "هواة", "سيدات"]
 
+# 💡 أندية الدوري الإنجليزي الممتاز فقط — المصادر تسمّي الممتاز والتشامبيونشيب
+# بنفس الاسم "الدوري الإنجليزي"، لذلك نفلتر مباريات الدوري الإنجليزي على قائمة الممتاز.
+PREMIER_LEAGUE_TEAMS = [
+    "أرسنال", "أستون فيلا", "برينتفورد", "بورنموث", "برايتون", "تشيلسي", "كوفنتري", "كريستال بالاس",
+    "إيفرتون", "فولهام", "هال سيتي", "إبسويتش", "ليدز", "ليفربول", "مانشستر سيتي", "مانشستر يونايتد",
+    "نيوكاسل", "نوتنجهام فورست", "سندرلاند", "توتنهام"
+]
+
 # ================= تحميل config.json (الإعدادات كلها بيانات لا كود) =================
 def _load_config(path="config.json"):
     cfg = {}
@@ -84,6 +92,8 @@ if _cfg_vip.get("teams"):
     VIP_TEAMS = _cfg_vip["teams"]
 if _cfg_vip.get("blocklist"):
     BLOCKLIST = _cfg_vip["blocklist"]
+if _cfg_vip.get("premier_league_teams"):
+    PREMIER_LEAGUE_TEAMS = _cfg_vip["premier_league_teams"]
 
 TELEGRAM = _CFG.get("telegram", {}) or {}
 SITES_CFG = _CFG.get("sites", {}) or {}
@@ -703,12 +713,29 @@ def _norm_key(s):
     return s.replace('أ', 'ا').replace('إ', 'ا').replace('آ', 'ا').replace('ة', 'ه').replace('ى', 'ي').lower()
 
 
+def _is_english_league(raw_league):
+    """مباريات الدوري الإنجليزي (الممتاز + التشامبيونشيب يُسمّيان بنفس الاسم في المصادر)."""
+    kws = LEAGUES_MAPPING.get("الدوري الإنجليزي", []) or ["إنجليزي", "بريميرليج", "انجلترا"]
+    return any(kw in raw_league for kw in kws)
+
+
+def _is_premier_league_match(m):
+    """مباراة بين ناديين من الدوري الإنجليزي الممتاز (وليس التشامبيونشيب/الدرجة الأولى)."""
+    home, away = _norm_key(m['homeTeam']), _norm_key(m['awayTeam'])
+    pl = [_norm_key(t) for t in PREMIER_LEAGUE_TEAMS]
+    return (any(t and (t in home or home in t) for t in pl) and
+            any(t and (t in away or away in t) for t in pl))
+
+
 def _is_vip_candidate(m):
     """نفس منطق filter_and_rank للـ VIP — نستخدمه قبل جلب صفحات المباريات التفصيلية
     حتى لا نضيع طلبات على مباريات سيتم استبعادها أصلاً."""
     raw_league = m['league']
-    for keywords in LEAGUES_MAPPING.values():
+    for official_name, keywords in LEAGUES_MAPPING.items():
         if any(kw in raw_league for kw in keywords):
+            # الدوري الإنجليزي: الممتاز فقط (المصادر تخلط التشامبيونشيب بنفس الاسم)
+            if official_name == "الدوري الإنجليزي" and not _is_premier_league_match(m):
+                return False
             return True
     if any(v in raw_league for v in GENERAL_VIP_KEYWORDS):
         return True
@@ -1159,6 +1186,10 @@ def filter_and_rank(matches_list):
                 is_vip_league = True
                 league_rank = idx  
                 break
+
+        # الدوري الإنجليزي: الممتاز فقط — المصادر تسمّي التشامبيونشيب بنفس الاسم
+        if is_vip_league and std_league == "الدوري الإنجليزي" and not _is_premier_league_match(m):
+            continue
 
         if not is_vip_league:
             if any(v in raw_league for v in GENERAL_VIP_KEYWORDS):
