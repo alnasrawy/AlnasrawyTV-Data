@@ -209,7 +209,7 @@
         "awayTeam": "كربلاء",
         "awayLogo": "https://img.btolat.com/teamslogo/11524.png?v=701",
         "scoreOrTime": "1 - 1",
-        "status": "90+'",
+        "status": "انتهت",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -329,8 +329,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15021.png?v=132",
         "awayTeam": "الشباب السعودي",
         "awayLogo": "https://img.btolat.com/teamslogo/15017.png?v=890",
-        "scoreOrTime": "1 - 1",
-        "status": "90+'",
+        "scoreOrTime": "2 - 1",
+        "status": "103'",
         "channels": [
             "ثمانية 2",
             "تطبيق ثمانية"
@@ -339,6 +339,10 @@
         "source": "Btolat",
         "scorers": {
             "home": [
+                [
+                    "موراتو",
+                    "91'"
+                ],
                 [
                     "M. Khadhari",
                     "43'"
@@ -359,7 +363,7 @@
         "awayTeam": "باريس سان جيرمان",
         "awayLogo": "https://img.btolat.com/teamslogo/10061.png?v=680",
         "scoreOrTime": "1 - 0",
-        "status": "54'",
+        "status": "72'",
         "channels": [
             "BEIN SPORTS 1"
         ],
@@ -650,7 +654,7 @@
         "awayTeam": "فيرتوس إينتيلا",
         "awayLogo": "https://img.btolat.com/teamslogo/11744.png?v=487",
         "scoreOrTime": "2 - 1",
-        "status": "47'",
+        "status": "65'",
         "channels": [
             "MBC شاهد | رياضة"
         ],
@@ -682,7 +686,7 @@
         "awayTeam": "مانتوفا",
         "awayLogo": "https://img.btolat.com/teamslogo/11934.png?v=612",
         "scoreOrTime": "0 - 0",
-        "status": "43'",
+        "status": "'",
         "channels": [
             "إم بي سي أكشن",
             "MBC شاهد | رياضة"
