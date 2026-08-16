@@ -19,7 +19,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\BaniYas2018_7_26_11_52.jpg",
         "awayTeam": "العين",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\10\\29\\21502024_10_29_19_14.jpg",
-        "scoreOrTime": "1 - 0",
+        "scoreOrTime": "2 - 1",
         "status": "الشوط الأول",
         "channels": [
             "أبوظبي الرياضية - HD1"
@@ -171,7 +171,9 @@
         "awayLogo": "https://img.btolat.com/teamslogo/11524.png?v=701",
         "scoreOrTime": "21:00",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "العراقية الرياضية"
+        ],
         "commentator": "",
         "source": "FilGoal + Btolat"
     },
@@ -195,7 +197,9 @@
         "awayLogo": "https://img.btolat.com/teamslogo/11523.png?v=283",
         "scoreOrTime": "21:00",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "العراقية السريانية"
+        ],
         "commentator": "",
         "source": "FilGoal + Btolat"
     },
@@ -205,8 +209,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11521.png?v=209",
         "awayTeam": "غراف",
         "awayLogo": "https://img.btolat.com/",
-        "scoreOrTime": "0 - 1",
-        "status": "78'",
+        "scoreOrTime": "1 - 1",
+        "status": "انتهت",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -261,7 +265,10 @@
         "awayLogo": "https://img.btolat.com/teamslogo/15017.png?v=890",
         "scoreOrTime": "09:00 م",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "ثمانية 2",
+            "تطبيق ثمانية"
+        ],
         "commentator": "",
         "source": "Btolat"
     },
@@ -286,7 +293,7 @@
         "awayTeam": "الحزم",
         "awayLogo": "https://img.btolat.com/teamslogo/15000.png?v=241",
         "scoreOrTime": "1 - 2",
-        "status": "'",
+        "status": "58'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -298,7 +305,7 @@
         "awayTeam": "أبها",
         "awayLogo": "https://img.btolat.com/teamslogo/14988.png?v=379",
         "scoreOrTime": "0 - 0",
-        "status": "30'",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -357,8 +364,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11898.png?v=216",
         "awayTeam": "يوفي ستابيا",
         "awayLogo": "https://img.btolat.com/teamslogo/11921.png?v=460",
-        "scoreOrTime": "3 - 0",
-        "status": "47'",
+        "scoreOrTime": "3 - 1",
+        "status": "70'",
         "channels": [
             "MBC شاهد | رياضة"
         ],
@@ -371,8 +378,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11903.png?v=640",
         "awayTeam": "أسكولي",
         "awayLogo": "https://img.btolat.com/teamslogo/11769.png?v=905",
-        "scoreOrTime": "0 - 1",
-        "status": "38'",
+        "scoreOrTime": "2 - 1",
+        "status": "'",
         "channels": [
             "MBC شاهد | رياضة"
         ],
@@ -444,7 +451,8 @@
         "status": "انتهت",
         "channels": [
             "ON Sport PLUS",
-            "أبو ظبي الرياضية"
+            "أبو ظبي الرياضية",
+            "الكويت الرياضية"
         ],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat"
@@ -508,7 +516,11 @@
         "status": "انتهت",
         "channels": [],
         "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat"
+        "source": "Yallakora + FilGoal + Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "مباريات ودية -أندية",
