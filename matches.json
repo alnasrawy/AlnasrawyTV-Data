@@ -1,5 +1,19 @@
 [
     {
+        "league": "كأس السوبر الفرنسي",
+        "homeTeam": "لانس",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\9\\10\\Lens2018_9_10_13_11.jpg",
+        "awayTeam": "باريس سان جيرمان",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\PSG2018_7_29_17_12.jpg",
+        "scoreOrTime": "1 - 0",
+        "status": "الشوط الثاني",
+        "channels": [
+            "beIN SPORTS 1 HD"
+        ],
+        "commentator": "أحمد البلوشي",
+        "source": "Yallakora + FilGoal"
+    },
+    {
         "league": "الدوري الإسباني",
         "homeTeam": "اسبانيول",
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Espanyol2018_7_29_14_44.jpg",
@@ -194,8 +208,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11512.png?v=547",
         "awayTeam": "كربلاء",
         "awayLogo": "https://img.btolat.com/teamslogo/11524.png?v=701",
-        "scoreOrTime": "1 - 0",
-        "status": "86'",
+        "scoreOrTime": "1 - 1",
+        "status": "90+'",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -230,7 +244,7 @@
         "awayTeam": "الكهرباء",
         "awayLogo": "https://img.btolat.com/teamslogo/11523.png?v=283",
         "scoreOrTime": "2 - 0",
-        "status": "90+'",
+        "status": "انتهت",
         "channels": [
             "العراقية السريانية"
         ],
@@ -310,27 +324,13 @@
         "source": "FilGoal"
     },
     {
-        "league": "كأس السوبر الفرنسي",
-        "homeTeam": "لانس",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\9\\10\\Lens2018_9_10_13_11.jpg",
-        "awayTeam": "باريس سان جيرمان",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\PSG2018_7_29_17_12.jpg",
-        "scoreOrTime": "1 - 0",
-        "status": "استراحة",
-        "channels": [
-            "beIN SPORTS 1 HD"
-        ],
-        "commentator": "أحمد البلوشي",
-        "source": "Yallakora + FilGoal"
-    },
-    {
         "league": "كأس خادم الحرمين",
         "homeTeam": "الوحدة",
         "homeLogo": "https://img.btolat.com/teamslogo/15021.png?v=132",
         "awayTeam": "الشباب السعودي",
         "awayLogo": "https://img.btolat.com/teamslogo/15017.png?v=890",
         "scoreOrTime": "1 - 1",
-        "status": "87'",
+        "status": "90+'",
         "channels": [
             "ثمانية 2",
             "تطبيق ثمانية"
@@ -359,7 +359,7 @@
         "awayTeam": "باريس سان جيرمان",
         "awayLogo": "https://img.btolat.com/teamslogo/10061.png?v=680",
         "scoreOrTime": "1 - 0",
-        "status": "'",
+        "status": "54'",
         "channels": [
             "BEIN SPORTS 1"
         ],
@@ -420,7 +420,7 @@
         "awayTeam": "أبها",
         "awayLogo": "https://img.btolat.com/teamslogo/14988.png?v=379",
         "scoreOrTime": "0 - 0",
-        "status": "'",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
@@ -650,7 +650,7 @@
         "awayTeam": "فيرتوس إينتيلا",
         "awayLogo": "https://img.btolat.com/teamslogo/11744.png?v=487",
         "scoreOrTime": "2 - 1",
-        "status": "'",
+        "status": "47'",
         "channels": [
             "MBC شاهد | رياضة"
         ],
@@ -682,7 +682,7 @@
         "awayTeam": "مانتوفا",
         "awayLogo": "https://img.btolat.com/teamslogo/11934.png?v=612",
         "scoreOrTime": "0 - 0",
-        "status": "34'",
+        "status": "43'",
         "channels": [
             "إم بي سي أكشن",
             "MBC شاهد | رياضة"
