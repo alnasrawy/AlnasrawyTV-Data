@@ -329,8 +329,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15021.png?v=132",
         "awayTeam": "الشباب السعودي",
         "awayLogo": "https://img.btolat.com/teamslogo/15017.png?v=890",
-        "scoreOrTime": "2 - 1",
-        "status": "103'",
+        "scoreOrTime": "3 - 2",
+        "status": "122'",
         "channels": [
             "ثمانية 2",
             "تطبيق ثمانية"
@@ -339,6 +339,10 @@
         "source": "Btolat",
         "scorers": {
             "home": [
+                [
+                    "داروين غونزاليس",
+                    "120'"
+                ],
                 [
                     "موراتو",
                     "91'"
@@ -349,6 +353,10 @@
                 ]
             ],
             "away": [
+                [
+                    "جوش برونهيل",
+                    "114'"
+                ],
                 [
                     "يانيك كاراسكو",
                     "56'"
@@ -363,7 +371,7 @@
         "awayTeam": "باريس سان جيرمان",
         "awayLogo": "https://img.btolat.com/teamslogo/10061.png?v=680",
         "scoreOrTime": "1 - 0",
-        "status": "72'",
+        "status": "90+'",
         "channels": [
             "BEIN SPORTS 1"
         ],
@@ -653,8 +661,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11914.png?v=867",
         "awayTeam": "فيرتوس إينتيلا",
         "awayLogo": "https://img.btolat.com/teamslogo/11744.png?v=487",
-        "scoreOrTime": "2 - 1",
-        "status": "65'",
+        "scoreOrTime": "2 - 2",
+        "status": "88'",
         "channels": [
             "MBC شاهد | رياضة"
         ],
@@ -673,6 +681,10 @@
             ],
             "away": [
                 [
+                    "Andrea Franzoni",
+                    "84'"
+                ],
+                [
                     "Bernat Guiu",
                     "16'"
                 ]
@@ -686,7 +698,7 @@
         "awayTeam": "مانتوفا",
         "awayLogo": "https://img.btolat.com/teamslogo/11934.png?v=612",
         "scoreOrTime": "0 - 0",
-        "status": "'",
+        "status": "65'",
         "channels": [
             "إم بي سي أكشن",
             "MBC شاهد | رياضة"
