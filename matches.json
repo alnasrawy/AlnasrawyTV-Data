@@ -1,5 +1,19 @@
 [
     {
+        "league": "الدوري الإماراتي",
+        "homeTeam": "حتا",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\logoL_1374551152026_8_2_20_26.webp",
+        "awayTeam": "الجــزيرة",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\AlJazira2018_7_25_14_59.jpg",
+        "scoreOrTime": "0 - 0",
+        "status": "الشوط الأول",
+        "channels": [
+            "أبوظبي الرياضية - HD1"
+        ],
+        "commentator": "",
+        "source": "Yallakora"
+    },
+    {
         "league": "الدرع الخيرية",
         "homeTeam": "أرسنال",
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\5\\Arsenal2021_9_5_14_15.jpg",
@@ -207,23 +221,11 @@
         "awayLogo": "https://img.btolat.com/",
         "scoreOrTime": "06:30 م",
         "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "Btolat"
-    },
-    {
-        "league": "الدوري الإماراتي",
-        "homeTeam": "حتا",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\logoL_1374551152026_8_2_20_26.webp",
-        "awayTeam": "الجــزيرة",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\AlJazira2018_7_25_14_59.jpg",
-        "scoreOrTime": "17:10",
-        "status": "لم تبدأ",
         "channels": [
-            "أبوظبي الرياضية - HD1"
+            "العراقية الرياضية"
         ],
         "commentator": "",
-        "source": "Yallakora"
+        "source": "Btolat"
     },
     {
         "league": "الدوري الإماراتي",
@@ -321,8 +323,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15086.png?v=122",
         "awayTeam": "إنفيرنيس",
         "awayLogo": "https://img.btolat.com/teamslogo/15090.png?v=541",
-        "scoreOrTime": "2 - 2",
-        "status": "71'",
+        "scoreOrTime": "5 - 2",
+        "status": "90+'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -334,7 +336,7 @@
         "awayTeam": "بارتيك ثيستيل",
         "awayLogo": "https://img.btolat.com/teamslogo/15105.png?v=909",
         "scoreOrTime": "1 - 0",
-        "status": "77'",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -346,7 +348,7 @@
         "awayTeam": "ماذرويل",
         "awayLogo": "https://img.btolat.com/teamslogo/15102.png?v=65",
         "scoreOrTime": "0 - 0",
-        "status": "75'",
+        "status": "90+'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -444,8 +446,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\9\\10\\Basel2018_9_10_12_37.jpg",
         "awayTeam": "برشلونة",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Barcelona2018_7_29_14_44.jpg",
-        "scoreOrTime": "17:30",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "مباشر",
         "channels": [],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat"
@@ -456,8 +458,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\24\\Zamalek2018_7_24_13_31.jpg",
         "awayTeam": "مودرن سبورت",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\7\\3\\modern-12024_7_3_22_17.jpg",
-        "scoreOrTime": "18:00",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "مباشر",
         "channels": [],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat"
