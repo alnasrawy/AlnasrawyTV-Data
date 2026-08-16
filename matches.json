@@ -5,27 +5,13 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Espanyol2018_7_29_14_44.jpg",
         "awayTeam": "ليفانتي",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Levante2018_7_29_14_48.jpg",
-        "scoreOrTime": "1 - 0",
+        "scoreOrTime": "2 - 0",
         "status": "الشوط الأول",
         "channels": [
             "beIN SPORTS 2 HD"
         ],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat"
-    },
-    {
-        "league": "الدوري الإماراتي",
-        "homeTeam": "بني ياس",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\BaniYas2018_7_26_11_52.jpg",
-        "awayTeam": "العين",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\10\\29\\21502024_10_29_19_14.jpg",
-        "scoreOrTime": "2 - 1",
-        "status": "الشوط الأول",
-        "channels": [
-            "أبوظبي الرياضية - HD1"
-        ],
-        "commentator": "",
-        "source": "Yallakora + FilGoal"
     },
     {
         "league": "الدوري الإسباني",
@@ -233,6 +219,20 @@
     },
     {
         "league": "الدوري الإماراتي",
+        "homeTeam": "بني ياس",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\BaniYas2018_7_26_11_52.jpg",
+        "awayTeam": "العين",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\10\\29\\21502024_10_29_19_14.jpg",
+        "scoreOrTime": "2 - 1",
+        "status": "استراحة",
+        "channels": [
+            "أبوظبي الرياضية - HD1"
+        ],
+        "commentator": "",
+        "source": "Yallakora + FilGoal"
+    },
+    {
+        "league": "الدوري الإماراتي",
         "homeTeam": "حتا",
         "homeLogo": "",
         "awayTeam": "الجزيرة",
@@ -292,8 +292,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/30595.png?v=134",
         "awayTeam": "الحزم",
         "awayLogo": "https://img.btolat.com/teamslogo/15000.png?v=241",
-        "scoreOrTime": "1 - 2",
-        "status": "58'",
+        "scoreOrTime": "2 - 3",
+        "status": "74'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -305,7 +305,7 @@
         "awayTeam": "أبها",
         "awayLogo": "https://img.btolat.com/teamslogo/14988.png?v=379",
         "scoreOrTime": "0 - 0",
-        "status": "'",
+        "status": "47'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -364,8 +364,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11898.png?v=216",
         "awayTeam": "يوفي ستابيا",
         "awayLogo": "https://img.btolat.com/teamslogo/11921.png?v=460",
-        "scoreOrTime": "3 - 1",
-        "status": "70'",
+        "scoreOrTime": "4 - 1",
+        "status": "86'",
         "channels": [
             "MBC شاهد | رياضة"
         ],
@@ -379,7 +379,7 @@
         "awayTeam": "أسكولي",
         "awayLogo": "https://img.btolat.com/teamslogo/11769.png?v=905",
         "scoreOrTime": "2 - 1",
-        "status": "'",
+        "status": "57'",
         "channels": [
             "MBC شاهد | رياضة"
         ],
