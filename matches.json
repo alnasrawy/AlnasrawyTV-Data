@@ -205,7 +205,9 @@
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\AlJazira2018_7_25_14_59.jpg",
         "scoreOrTime": "17:10",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "أبوظبي الرياضية - HD1"
+        ],
         "commentator": "",
         "source": "Yallakora"
     },
@@ -217,7 +219,9 @@
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\10\\29\\21502024_10_29_19_14.jpg",
         "scoreOrTime": "19:45",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "أبوظبي الرياضية - HD1"
+        ],
         "commentator": "",
         "source": "Yallakora + FilGoal"
     },
@@ -301,8 +305,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15086.png?v=122",
         "awayTeam": "إنفيرنيس",
         "awayLogo": "https://img.btolat.com/teamslogo/15090.png?v=541",
-        "scoreOrTime": "04:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "1 - 0",
+        "status": "21'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -310,11 +314,11 @@
     {
         "league": "كأس الدوري الأسكتلندي",
         "homeTeam": "هيبرنيان",
-        "homeLogo": "https://img.btolat.com/teamslogo/15088.png?v=817",
+        "homeLogo": "https://img.btolat.com/teamslogo/15088.png?v=141",
         "awayTeam": "بارتيك ثيستيل",
-        "awayLogo": "https://img.btolat.com/teamslogo/15105.png?v=941",
-        "scoreOrTime": "04:00 م",
-        "status": "لم تبدأ",
+        "awayLogo": "https://img.btolat.com/teamslogo/15105.png?v=909",
+        "scoreOrTime": "1 - 0",
+        "status": "22'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -322,11 +326,11 @@
     {
         "league": "كأس الدوري الأسكتلندي",
         "homeTeam": "ستينهاوسيميور",
-        "homeLogo": "https://img.btolat.com/teamslogo/15121.png?v=611",
+        "homeLogo": "https://img.btolat.com/teamslogo/15121.png?v=671",
         "awayTeam": "ماذرويل",
-        "awayLogo": "https://img.btolat.com/teamslogo/15102.png?v=169",
-        "scoreOrTime": "04:00 م",
-        "status": "لم تبدأ",
+        "awayLogo": "https://img.btolat.com/teamslogo/15102.png?v=65",
+        "scoreOrTime": "0 - 0",
+        "status": "21'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -427,7 +431,7 @@
         "awayTeam": "هوفنهايم",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Hoffenheim2018_7_29_16_6.jpg",
         "scoreOrTime": "2 - 2",
-        "status": "مباشر",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Yallakora + Btolat"
