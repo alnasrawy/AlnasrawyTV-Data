@@ -61,7 +61,7 @@
     {
         "league": "الدوري الإسباني",
         "homeTeam": "راسينج سانتاندير",
-        "homeLogo": "https://img.btolat.com/teamslogo/16096.png?v=141",
+        "homeLogo": "https://img.btolat.com/teamslogo/16096.png?v=197",
         "awayTeam": "فياريال",
         "awayLogo": "https://img.btolat.com/teamslogo/16270.png?v=607",
         "scoreOrTime": "18:00",
@@ -306,7 +306,7 @@
         "awayTeam": "إنفيرنيس",
         "awayLogo": "https://img.btolat.com/teamslogo/15090.png?v=541",
         "scoreOrTime": "1 - 0",
-        "status": "21'",
+        "status": "45+'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -318,7 +318,7 @@
         "awayTeam": "بارتيك ثيستيل",
         "awayLogo": "https://img.btolat.com/teamslogo/15105.png?v=909",
         "scoreOrTime": "1 - 0",
-        "status": "22'",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -330,7 +330,7 @@
         "awayTeam": "ماذرويل",
         "awayLogo": "https://img.btolat.com/teamslogo/15102.png?v=65",
         "scoreOrTime": "0 - 0",
-        "status": "21'",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -444,9 +444,7 @@
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Barcelona2018_7_29_14_44.jpg",
         "scoreOrTime": "17:30",
         "status": "لم تبدأ",
-        "channels": [
-            "قناة نادي برشلونة على يوتيوب"
-        ],
+        "channels": [],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat"
     },
