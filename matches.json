@@ -6,7 +6,7 @@
         "awayTeam": "الجــزيرة",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\AlJazira2018_7_25_14_59.jpg",
         "scoreOrTime": "0 - 1",
-        "status": "الشوط الأول",
+        "status": "الشوط الثاني",
         "channels": [
             "أبوظبي الرياضية - HD1"
         ],
@@ -19,7 +19,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\5\\Arsenal2021_9_5_14_15.jpg",
         "awayTeam": "مانشستر سيتي",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\ManchesterCity2018_7_29_15_27.jpg",
-        "scoreOrTime": "2 - 0",
+        "scoreOrTime": "3 - 0",
         "status": "الشوط الثاني",
         "channels": [
             "beIN SPORTS 1 HD"
@@ -92,8 +92,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/16096.png?v=197",
         "awayTeam": "فياريال",
         "awayLogo": "https://img.btolat.com/teamslogo/16270.png?v=607",
-        "scoreOrTime": "0 - 0",
-        "status": "8'",
+        "scoreOrTime": "1 - 0",
+        "status": "31'",
         "channels": [
             "beIN SPORTS 3 HD"
         ],
@@ -219,8 +219,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11521.png?v=209",
         "awayTeam": "غراف",
         "awayLogo": "https://img.btolat.com/",
-        "scoreOrTime": "06:30 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "2'",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -347,8 +347,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15121.png?v=671",
         "awayTeam": "ماذرويل",
         "awayLogo": "https://img.btolat.com/teamslogo/15102.png?v=65",
-        "scoreOrTime": "0 - 0",
-        "status": "104'",
+        "scoreOrTime": "1 - 0",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -359,8 +359,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15113.png?v=93",
         "awayTeam": "سانت ميرين",
         "awayLogo": "https://img.btolat.com/teamslogo/15120.png?v=965",
-        "scoreOrTime": "0 - 0",
-        "status": "8'",
+        "scoreOrTime": "2 - 1",
+        "status": "31'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -373,7 +373,9 @@
         "awayLogo": "https://img.btolat.com/teamslogo/11921.png?v=460",
         "scoreOrTime": "07:00 م",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "MBC شاهد | رياضة"
+        ],
         "commentator": "",
         "source": "Btolat"
     },
@@ -446,7 +448,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\9\\10\\Basel2018_9_10_12_37.jpg",
         "awayTeam": "برشلونة",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Barcelona2018_7_29_14_44.jpg",
-        "scoreOrTime": "0 - 1",
+        "scoreOrTime": "1 - 1",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -458,7 +460,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\24\\Zamalek2018_7_24_13_31.jpg",
         "awayTeam": "مودرن سبورت",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\7\\3\\modern-12024_7_3_22_17.jpg",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "1 - 0",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -470,7 +472,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Schalke2018_7_29_16_4.jpg",
         "awayTeam": "ريال مدريد",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\RealMadrid2018_7_29_14_47.jpg",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "0 - 2",
         "status": "مباشر",
         "channels": [
             "STC TV"
@@ -552,8 +554,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/10576.png?v=607",
         "awayTeam": "ريال مدريد",
         "awayLogo": "https://img.btolat.com/teamslogo/16110.png?v=903",
-        "scoreOrTime": "0 - 1",
-        "status": "9'",
+        "scoreOrTime": "0 - 2",
+        "status": "32'",
         "channels": [
             "Stc Sports HD1"
         ],
