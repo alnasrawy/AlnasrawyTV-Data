@@ -747,15 +747,50 @@ def _draw_badge(d, cx, cy, text, font, fill, bg):
     d.text((cx - tw / 2, y0 + (h - font.size) / 2), s, font=font, fill=fill, direction=direction)
 
 
-def _draw_ball_icon(d, cx, cy, r, color):
-    """كرة قدم بسيطة: دائرة ذهبية بحدود وخطوط — تُستخدم بدل إيموجي ⚽ (لا يُرسم بالخط العربي)."""
-    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=color)
-    d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(255, 255, 255, 200), width=2)
-    d.arc([cx - r * 0.7, cy - r * 0.7, cx + r * 0.7, cy + r * 0.7], 210, 330, fill=(255, 255, 255, 180), width=2)
+def _draw_status_pill(d, cx, cy, text, fill, bg, outline):
+    """شارة الحالة مثل .status-pill في القالب: نقطة + نص، خلفية صلبة ملونة
+    أو شفافة بحدود ملونة عندما outline=True (حالة مباشر)."""
+    if fill is None:
+        return
+    font = _font(29, bold=True)
+    s = _shape(text)
+    direction = _text_direction(s)
+    tw = d.textlength(s, font=font, direction=direction)
+    dot_r = 7
+    gap = 14
+    w = tw + dot_r * 2 + gap + 36
+    h = font.size + 26
+    x0, y0 = cx - w / 2, cy - h / 2
+    if outline:
+        d.rounded_rectangle([x0, y0, x0 + w, y0 + h], radius=h / 2, fill=(255, 255, 255, 6),
+                            outline=fill, width=2)
+    else:
+        d.rounded_rectangle([x0, y0, x0 + w, y0 + h], radius=h / 2, fill=bg)
+    d.ellipse([x0 + 22 - dot_r, cy - dot_r, x0 + 22 + dot_r, cy + dot_r], fill=fill)
+    d.text((x0 + 22 + dot_r + gap, y0 + (h - font.size) / 2), s, font=font, fill=fill, direction=direction)
+
+
+def _draw_star(d, cx, cy, r, fill):
+    """نجمة خماسية بسيطة — بديل إيموجي 🏆 (لا يُرسم بالخط العربي)."""
+    import math
+    pts = []
+    for i in range(10):
+        ang = -math.pi / 2 + i * math.pi / 5
+        rad = r if i % 2 == 0 else r * 0.45
+        pts.append((cx + rad * math.cos(ang), cy + rad * math.sin(ang)))
+    d.polygon(pts, fill=fill)
+
+
+def _draw_ball(d, cx, cy, r):
+    """كرة قدم مصغّرة (⚽) مرسومة بخطوط — تُستخدم بدل الإيموجي."""
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(248, 250, 252, 255))
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(70, 78, 92, 255), width=2)
+    d.arc([cx - r * 0.8, cy - r * 0.8, cx + r * 0.8, cy + r * 0.8], 200, 340, fill=(70, 78, 92, 255), width=2)
+    d.arc([cx - r * 0.8, cy - r * 0.8, cx + r * 0.8, cy + r * 0.8], 20, 160, fill=(70, 78, 92, 255), width=2)
 
 
 def compose_match_card(match, kind="end"):
-    """يرسم بطاقة المباراة الاحترافية (تصميم HTML زجاجي داكن) ويعيد بايتات PNG،
+    """يرسم بطاقة المباراة مطابقة لقالب HTML الزجاجي الداكن (RTL) ويعيد بايتات PNG،
     أو None عند فشل الرسم.
     kind: 'start' (تنبيه بدء) أو 'end' (ملخص نهاية مع الهدافين)."""
     if Image is None or ImageDraw is None:
@@ -774,199 +809,235 @@ def compose_match_card(match, kind="end"):
 
     is_score = '-' in score_or_time
     W = 1080
-    # ارتفاع ثابت + مساحة الهدافين (عمود أطول عدد اسماء × ارتفاع الصف)
-    scorer_rows = min(max(len(hs), len(aw), 0), 6)
-    H = 620 if kind == "start" else 700 + max(0, scorer_rows) * 46
+    s = 2.25  # مقياس التحويل من قالب 480px → 1080px
+
+    # ── مقاسات ثابتة من القالب (مضروبة في مقياس التحويل) ──
+    MARGIN = 30            # هامش حول البطاقة (القالب يعرضها فوق خلفية الصفحة)
+    PAD = 54               # حشوة البطاقة الداخلية (24px × 2.25)
+    RAD = 40               # زوايا البطاقة الدائرية
+    WRAP = int(84 * s)     # 189 قطر الدائرة البيضاء خلف اللوجو
+    LOGO = int(60 * s)     # 135 اللوجو بداخلها
+    inner_x0 = MARGIN + PAD
+    inner_x1 = W - MARGIN - PAD
+    cx_home = inner_x1 - WRAP // 2          # يمين (RTL أول عمود = المضيف)
+    cx_away = inner_x0 + WRAP // 2          # يسار
+    badge_y = MARGIN + 40
+    badge_h = 74
+    cy_logo = badge_y + badge_h + 50 + WRAP // 2
+    name_y = cy_logo + WRAP // 2 + 27
+    accent_y = name_y + 41
+    accent_bottom = accent_y + 7
+    st_cy = accent_bottom + 76
+    div_y = st_cy + 36 + 45 + 4
+    title_y = div_y + 9 + 40
+    grid_top = title_y + 44 + 31
+
+    rows_n = min(max(len(hs), len(aw), 0), 6)
+    if kind == "start":
+        H = 810
+    else:
+        H = int(grid_top + rows_n * 62 + 30 + MARGIN + 30)
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img, "RGBA")
 
-    # ── خلفية متدرجة داكنة (زجاجية) + توهج ذهبي مركزي ──
-    top_c = (18, 24, 44)
-    bot_c = (8, 11, 24)
+    # ── خلفية الصفحة: تدرج داكن + توهجات شعاعية (مثل body في القالب) ──
+    top_c = (5, 7, 13)       # #05070d
+    mid_c = (12, 18, 32)     # #0c1220
     for y in range(H):
-        t = y / H
-        c = tuple(int(top_c[i] + (bot_c[i] - top_c[i]) * t) for i in range(3))
+        t = y / max(1, int(H * 0.6))
+        if t < 1:
+            c = tuple(int(top_c[i] + (mid_c[i] - top_c[i]) * t) for i in range(3))
+        else:
+            t2 = (y - H * 0.6) / max(1, int(H * 0.4))
+            c = tuple(int(mid_c[i] + (top_c[i] - mid_c[i]) * t2) for i in range(3))
         d.line([(0, y), (W, y)], fill=c + (255,))
     glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     gd = ImageDraw.Draw(glow)
-    gd.ellipse([W / 2 - 380, -40, W / 2 + 380, -40 + 640], fill=(232, 184, 75, 22))
-    gd.ellipse([-100, -80, 420, 560], fill=(59, 90, 180, 26))
-    gd.ellipse([W - 420, -80, W + 100, 560], fill=(59, 90, 180, 26))
+    gd.ellipse([int(W * 0.10), -160, int(W * 0.55), 320], fill=(232, 184, 75, 26))     # ذهبي أعلى يسار
+    gd.ellipse([int(W * 0.55), -120, W + 80, 360], fill=(59, 90, 180, 40))             # أزرق أعلى يمين
     img = Image.alpha_composite(img, glow)
     d = ImageDraw.Draw(img, "RGBA")
 
+    # ── البطاقة الزجاجية نفسها (مثل .card) ──
+    d.rounded_rectangle([MARGIN, MARGIN, W - MARGIN, H - MARGIN], radius=RAD,
+                        fill=(18, 26, 46, 140), outline=(255, 255, 255, 20), width=2)
+
+    # توهج ذهبي خلف اللوجوهين (مثل .card::before)
+    glow2 = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    g2 = ImageDraw.Draw(glow2)
+    g2.ellipse([W / 2 - 430, 40, W / 2 + 430, 40 + 620], fill=(232, 184, 75, 22))
+    img = Image.alpha_composite(img, glow2)
+    d = ImageDraw.Draw(img, "RGBA")
+
+    # ── الألوان من القالب ──
     GOLD = (232, 184, 75, 255)
     GOLD_SOFT = (246, 223, 160, 255)
-    WHITE = (245, 247, 251, 255)
+    TEXT_HI = (245, 247, 251, 255)
     TEXT_MID = (170, 178, 197, 255)
     TEXT_LOW = (106, 116, 136, 255)
-    LINE = (255, 255, 255, 22)
+    LINE = (255, 255, 255, 20)
 
-    # ── شارة نوع المباراة (اسم البطولة) أعلى البطاقة ──
+    # ── شارة البطولة (مثل .badge) ──
     badge_font = _font(30, bold=True)
     if league:
         ls = _shape(league)
         ld = _text_direction(ls)
         lw = d.textlength(ls, font=badge_font, direction=ld)
-        bw = lw + 64
+        star_r = 17
+        bw = lw + star_r * 2 + 20 + 90      # نص + نجمة + فجوة + حشوة (45+45)
         bx = W / 2 - bw / 2
-        d.rounded_rectangle([bx, 30, bx + bw, 86], radius=28, fill=(232, 184, 75, 30), outline=(232, 184, 75, 90), width=2)
-        # أيقونة نجمة ذهبية صغيرة يسار النص (بدل إيموجي 🏆)
-        d.polygon([(bx + 36, 48), (bx + 42, 62), (bx + 57, 63), (bx + 45, 73), (bx + 49, 88),
-                   (bx + 36, 80), (bx + 23, 88), (bx + 27, 73), (bx + 15, 63), (bx + 30, 62)], fill=GOLD)
-        d.text((W / 2 - lw / 2 + 4, 44), ls, font=badge_font, fill=GOLD_SOFT, direction=ld)
+        by = badge_y
+        bh = badge_h
+        d.rounded_rectangle([bx, by, bx + bw, by + bh], radius=bh / 2,
+                            fill=(232, 184, 75, 30), outline=(232, 184, 75, 90), width=2)
+        # RTL: النجمة على يمين النص
+        star_cx = bx + 45 + star_r
+        text_x = star_cx + star_r + 20
+        _draw_star(d, star_cx, by + bh / 2, star_r, GOLD)
+        d.text((text_x, by + (bh - badge_font.size) / 2), ls, font=badge_font,
+               fill=GOLD_SOFT, direction=ld)
 
-    # ── صف الفريقين + النتيجة ──
-    L = 170                       # حجم اللوجو
-    cx_h, cx_a = 250, W - 250
-    cy_logo = 250
-    home_logo = _load_team_logo(match.get('homeLogo'), home, league=league, size=L)
-    away_logo = _load_team_logo(match.get('awayLogo'), away, league=league, size=L)
-    for cx, lg in ((cx_h, home_logo), (cx_a, away_logo)):
-        # هالة/دائرة بيضاء خلف اللوجو (مثل .team-logo-wrap)
-        ring = L + 24
-        halo = Image.new("RGBA", (ring, ring), (0, 0, 0, 0))
-        hd = ImageDraw.Draw(halo)
-        hd.ellipse([0, 0, ring, ring], fill=(255, 255, 255, 255), outline=(255, 255, 255, 20), width=2)
-        img.alpha_composite(halo, (cx - ring // 2, cy_logo - ring // 2))
-        img.alpha_composite(lg, (cx - L // 2, cy_logo - L // 2))
+    # ── صف الفريقين (RTL: المضيف يمين، الضيف يسار) ──
+    home_logo = _load_team_logo(match.get('homeLogo'), home, league=league, size=LOGO)
+    away_logo = _load_team_logo(match.get('awayLogo'), away, league=league, size=LOGO)
+    for cx, lg in ((cx_home, home_logo), (cx_away, away_logo)):
+        # دائرة بيضاء خلف اللوجو (مثل .team-logo-wrap)
+        d.ellipse([cx - WRAP / 2, cy_logo - WRAP / 2, cx + WRAP / 2, cy_logo + WRAP / 2],
+                  fill=(255, 255, 255, 255), outline=(255, 255, 255, 20), width=2)
+        img.alpha_composite(lg, (int(cx - LOGO / 2), int(cy_logo - LOGO / 2)))
+    d = ImageDraw.Draw(img, "RGBA")
 
-    # أسماء الفرق + شريط لوني مميز
-    name_font = _font(34, bold=True)
-    _draw_centered(d, cx_h, cy_logo + ring // 2 + 18, home, name_font, WHITE, 300)
-    _draw_centered(d, cx_a, cy_logo + ring // 2 + 18, away, name_font, WHITE, 300)
+    # أسماء الفرق + شريط لوني مميز (مثل .team-name / .team-accent)
+    name_font = _font(36, bold=True)
+    name_y = cy_logo + WRAP / 2 + 27
+    _draw_centered(d, cx_home, name_y, home, name_font, TEXT_HI, 380)
+    _draw_centered(d, cx_away, name_y, away, name_font, TEXT_HI, 380)
     hc = _team_color(home)
     ac = _team_color(away)
-    name_bot = cy_logo + ring // 2 + 18 + 52
-    d.rounded_rectangle([cx_h - 34, name_bot, cx_h + 34, name_bot + 5], radius=3, fill=hc + (255,))
-    d.rounded_rectangle([cx_a - 34, name_bot, cx_a + 34, name_bot + 5], radius=3, fill=ac + (255,))
+    accent_y = name_y + 50 - 9
+    d.rounded_rectangle([cx_home - 50, accent_y, cx_home + 50, accent_y + 7], radius=4, fill=hc + (255,))
+    d.rounded_rectangle([cx_away - 50, accent_y, cx_away + 50, accent_y + 7], radius=4, fill=ac + (255,))
 
-    # ── لوحة النتيجة/الوقت المركزية ──
-    panel_w, panel_h = 330, 128
+    # ── لوحة النتيجة/الوقت (مثل .score-panel) ──
+    panel_w, panel_h = int(118 * s) + 70, 150
     px, py = W / 2 - panel_w / 2, cy_logo - panel_h / 2
-    d.rounded_rectangle([px, py, px + panel_w, py + panel_h], radius=20, fill=(255, 255, 255, 14),
-                        outline=(232, 184, 75, 100), width=2)
+    d.rounded_rectangle([px, py, px + panel_w, py + panel_h], radius=20,
+                        fill=(255, 255, 255, 14), outline=(232, 184, 75, 100), width=2)
 
     if kind == "end" and is_score:
         parts = [p.strip() for p in score_or_time.split('-')]
-        score_style = _font(96, bold=True)
+        score_style = _font(76, bold=True)
         if len(parts) == 2:
             w1 = d.textlength(parts[0], font=score_style)
             w2 = d.textlength(parts[1], font=score_style)
-            dash = _font(70, bold=True)
+            dash = _font(45, bold=True)
             wdash = d.textlength(" – ", font=dash)
             total = w1 + w2 + wdash
             x0 = W / 2 - total / 2
             baseline = py + (panel_h - score_style.size) / 2 - 2
-            d.text((x0, baseline), parts[0], font=score_style, fill=WHITE)
+            d.text((x0, baseline), parts[0], font=score_style, fill=TEXT_HI)
             d.text((x0 + w1, baseline + (score_style.size - dash.size) / 2), " – ", font=dash, fill=GOLD)
-            d.text((x0 + w1 + wdash, baseline), parts[1], font=score_style, fill=WHITE)
+            d.text((x0 + w1 + wdash, baseline), parts[1], font=score_style, fill=TEXT_HI)
         else:
-            _draw_centered(d, W // 2, py + 16, score_or_time, score_style, WHITE, panel_w - 30)
+            _draw_centered(d, W // 2, py + 20, score_or_time, score_style, TEXT_HI, panel_w - 30)
     else:
-        _draw_centered(d, W // 2, py + 14, score_or_time, _font(92, bold=True),
-                       GOLD if not is_score else WHITE, panel_w - 30)
+        _draw_centered(d, W // 2, py + 18, score_or_time, _font(72, bold=True),
+                       GOLD if not is_score else TEXT_HI, panel_w - 30)
 
     # ── شارة الحالة (مثل .status-pill) ──
     if status == "انتهت":
-        st_color, st_bg = (8, 26, 16, 255), (34, 197, 94, 255)
+        st_color, st_bg, st_border = (5, 7, 13, 255), (34, 197, 94, 255), False
     elif status == "لم تبدأ":
-        st_color, st_bg = (30, 22, 0, 255), (232, 184, 75, 255)
+        st_color, st_bg, st_border = (30, 22, 0, 255), (232, 184, 75, 255), False
     else:  # مباشر — حدود حمراء وخلفية شفافة
-        st_color, st_bg = (239, 68, 68, 255), None
-    st_y = name_bot + 24
-    _draw_badge(d, W // 2, st_y, status or "—", _font(26, bold=True), st_color, st_bg)
+        st_color, st_bg, st_border = (239, 68, 68, 255), None, True
+    st_cy = accent_y + 7 + 40 + 36
+    _draw_status_pill(d, W // 2, st_cy, status or "—", st_color, st_bg, st_border)
 
-    # ── الهدافون (للملخص النهائي فقط) ──
+    # ── فاصل (مثل .divider) ──
+    div_y = st_cy + 36 + 45 + 4
+    d.line([inner_x0, div_y, inner_x1, div_y], fill=LINE, width=1)
+
+    # ── عنوان الهدافين (مثل .scorers-title) ──
+    title_y = div_y + 9 + 40
     if kind == "end":
-        y_sep = st_y + 40
-        d.line([70, y_sep, W - 70, y_sep], fill=LINE, width=2)
-        # عنوان "الهدافون" ذهبي
-        _draw_centered(d, W // 2, y_sep + 16, "الهدافون", _font(30, bold=True), GOLD_SOFT, 300)
+        tfont = _font(31, bold=True)
+        ttxt = _shape("الهدافون")
+        tdir = _text_direction(ttxt)
+        tw = d.textlength(ttxt, font=tfont, direction=tdir)
+        ball_r = 15
+        ttotal = ball_r * 2 + 14 + tw
+        tx0 = W / 2 - ttotal / 2
+        _draw_ball(d, tx0 + ball_r, title_y + 20, ball_r)
+        d.text((tx0 + ball_r * 2 + 14, title_y), ttxt, font=tfont, fill=GOLD_SOFT, direction=tdir)
 
-        if hs or aw:
-            col_top = y_sep + 64
-            # عمودا الهدافين: أيمن تحت الفريق الأيمن، أيسر تحت الفريق الأيسر
-            # أعمدة متساوية العرض بفاصل عمودي مركزي
-            col_w = 470
-            col_h_x = W / 2 - 40 - col_w      # عمود الفريق المضيف (يسار البطاقة RTL)
-            col_a_x = W / 2 + 40              # عمود الفريق الضيف (يمين البطاقة)
-            # أسماء الأعمدة بلون الفريق
-            hf = _font(26, bold=True)
-            _draw_centered(d, col_h_x + col_w / 2, col_top, home, hf, hc + (255,), col_w)
-            _draw_centered(d, col_a_x + col_w / 2, col_top, away, hf, ac + (255,), col_w)
-            # فاصل عمودي مركزي
-            div_y1 = col_top - 4
-            div_y2 = col_top + 6 + max(len(hs), len(aw), 1) * 46
-            d.line([W / 2, div_y1, W / 2, div_y2], fill=(255, 255, 255, 30), width=2)
+    # ── شبكة الهدافين (مثل .scorers-grid) — عمودان بفاصل عمودي مركزي ──
+    if kind == "end" and (hs or aw):
+        grid_top = title_y + 44 + 31
+        col_gap = 22
+        div_x = W / 2
+        col_w = (inner_x1 - inner_x0 - col_gap * 2 - 2) / 2
+        x_home = inner_x1 - col_w          # عمود المضيف (يمين)
+        x_away = inner_x0                  # عمود الضيف (يسار)
 
-            scorer_font = _font(26)
-            minute_font = _font(21, bold=True)
-            for cx0, team, lst, is_away in ((col_h_x, home, hs, False), (col_a_x, away, aw, True)):
-                iy = col_top + 46
-                for name, minute in lst[:6]:
-                    # محاذاة الأسماء: الفريق المضيف إلى اليمين (بداية من يمين عموده)،
-                    # والضيف إلى اليسار — ليتقابل الخطان نحو الفاصل المركزي.
-                    if is_away:
-                        x_start = cx0
-                    else:
-                        x_start = cx0 + col_w
-                    sn = _shape(name)
-                    snd = _text_direction(sn)
-                    nw = d.textlength(sn, font=scorer_font, direction=snd)
-                    # دائرة كرة ذهبية قبل الاسم
-                    ball_r = 11
-                    if is_away:
-                        bx = x_start + ball_r + 6
-                    else:
-                        bx = x_start - ball_r - 6
-                    _draw_ball_icon(d, bx, iy, ball_r, GOLD)
-                    # دقيقة في شريحة صغيرة بجانب الاسم
-                    mtxt = _shape(str(minute))
-                    md = _text_direction(mtxt)
-                    mw = d.textlength(mtxt, font=minute_font, direction=md)
-                    chip_pad = 10
-                    if is_away:
-                        # الاسم ثم الشريحة بعدها (يميناً لليسار)
-                        nx = bx + ball_r + 10
-                        name_top = iy - scorer_font.size / 2
-                        d.text((nx, name_top), sn, font=scorer_font, fill=WHITE, direction=snd)
-                        cx_chip = nx + nw + chip_pad + mw / 2
-                        d.rounded_rectangle([cx_chip - mw / 2 - chip_pad, iy - 18, cx_chip + mw / 2 + chip_pad, iy + 18],
-                                            radius=9, fill=(255, 255, 255, 14))
-                        d.text((cx_chip - mw / 2, name_top + (scorer_font.size - minute_font.size) / 2),
-                               mtxt, font=minute_font, fill=TEXT_LOW, direction=md)
-                    else:
-                        # الشريحة ثم الاسم (يساراً لليمين نحو الفاصل)
-                        cx_chip = bx - ball_r - 10 - mw / 2
-                        d.rounded_rectangle([cx_chip - mw / 2 - chip_pad, iy - 18, cx_chip + mw / 2 + chip_pad, iy + 18],
-                                            radius=9, fill=(255, 255, 255, 14))
-                        name_top = iy - scorer_font.size / 2
-                        d.text((cx_chip - mw / 2, name_top + (scorer_font.size - minute_font.size) / 2),
-                               mtxt, font=minute_font, fill=TEXT_LOW, direction=md)
-                        d.text((cx_chip + mw / 2 + chip_pad, name_top), sn, font=scorer_font, fill=WHITE, direction=snd)
-                    iy += 46
-                if len(lst) > 6:
-                    _draw_centered(d, cx0 + col_w / 2, iy, f"+{len(lst) - 6}", _font(22), TEXT_MID, 100)
-        else:
-            _draw_centered(d, W // 2, y_sep + 62, "لا توجد أهداف مسجّلة", _font(26), TEXT_LOW, 500)
+        # فاصل عمودي مركزي
+        d.line([div_x, grid_top - 6, div_x, grid_top + rows_n * 62 + 6], fill=LINE, width=2)
+
+        scorer_font = _font(30)
+        minute_font = _font(26, bold=True)
+        for cx0, lst, is_away in ((x_home, hs, False), (x_away, aw, True)):
+            iy = grid_top + 31
+            for name, minute in lst[:6]:
+                sn = _shape(name)
+                snd = _text_direction(sn)
+                nw = d.textlength(sn, font=scorer_font, direction=snd)
+                mtxt = _shape(str(minute))
+                mw = d.textlength(mtxt, font=minute_font)
+                chip_pad = 12
+                chip_h = 38
+                ball_r = 13
+                gap = 10
+                if is_away:
+                    # عمود الضيف: يبدأ من الحافة اليسرى، وترتيب RTL: كرة ثم اسم ثم شريحة
+                    chip_left = cx0
+                    nx = chip_left + mw + chip_pad * 2 + gap
+                    name_x = nx
+                    ball_cx = name_x + nw + gap + ball_r
+                else:
+                    # عمود المضيف: يلتصق بالحافة اليمنى، ترتيب RTL: كرة ثم اسم ثم شريحة
+                    ball_cx = inner_x1 - ball_r
+                    name_x = ball_cx - ball_r - gap - nw
+                    chip_left = name_x - gap - mw - chip_pad * 2
+                _draw_ball(d, ball_cx, iy, ball_r)
+                d.rounded_rectangle([chip_left, iy - chip_h / 2, chip_left + mw + chip_pad * 2, iy + chip_h / 2],
+                                    radius=chip_h / 2, fill=(255, 255, 255, 14))
+                d.text((chip_left + chip_pad, iy - minute_font.size / 2), mtxt, font=minute_font, fill=TEXT_LOW)
+                d.text((name_x, iy - scorer_font.size / 2), sn, font=scorer_font, fill=TEXT_HI, direction=snd)
+                iy += 62
+            if not lst:
+                _draw_centered(d, cx0 + col_w / 2, grid_top + 31, "—", scorer_font, TEXT_LOW, col_w)
+    elif kind == "end":
+        _draw_centered(d, W // 2, title_y + 60, "لا توجد أهداف مسجّلة", _font(30), TEXT_LOW, 500)
 
     # ── الشريط السفلي: القنوات (بدء المباراة فقط) ──
     if kind == "start":
         ch_text = " • ".join(channels) if channels else "لم يتم تحديد قناة بعد"
         ch_font = _font(30, bold=True)
-        ch_lines = _wrap_lines(d, ch_text, ch_font, W - 300)
+        ch_lines = _wrap_lines(d, ch_text, ch_font, W - 320)
         bar_h = max(92, 26 + len(ch_lines) * 44)
-        bar_y = H - bar_h - 16
-        d.rounded_rectangle([40, bar_y, W - 40, H - 12], radius=20, fill=(18, 26, 54, 235), outline=(60, 80, 140, 255), width=2)
-        _draw_tv_icon(d, 120, bar_y + bar_h / 2 - 6, GOLD)
+        bar_y = H - bar_h - 60
+        d.rounded_rectangle([MARGIN + 20, bar_y, W - MARGIN - 20, bar_y + bar_h], radius=20,
+                            fill=(18, 26, 54, 235), outline=(60, 80, 140, 255), width=2)
+        _draw_tv_icon(d, MARGIN + 90, bar_y + bar_h / 2 - 6, GOLD)
         if channels:
-            _draw_right(d, W - 70, bar_y + 16, ch_text, ch_font, WHITE, W - 300)
+            _draw_right(d, W - MARGIN - 50, bar_y + 16, ch_text, ch_font, TEXT_HI, W - 320)
         else:
-            _draw_right(d, W - 70, bar_y + 16, ch_text, ch_font, (255, 150, 80, 255), W - 300)
+            _draw_right(d, W - MARGIN - 50, bar_y + 16, ch_text, ch_font, (255, 150, 80, 255), W - 320)
 
     buf = io.BytesIO()
-    img.convert("RGB").save(buf, format="PNG")
+    flat = Image.new("RGBA", (W, H), (5, 7, 13, 255))
+    flat = Image.alpha_composite(flat, img)
+    flat.convert("RGB").save(buf, format="PNG")
     return buf.getvalue()
 
 
