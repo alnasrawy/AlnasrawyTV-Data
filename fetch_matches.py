@@ -438,7 +438,7 @@ def _wrap_lines(draw, text, font, max_w):
 
 
 def _draw_badge(d, cx, cy, text, font, fill, bg):
-    """شارة (بيل) دائرية الزوايا حول نص — لشارة الحالة."""
+    """شارة (بيل) دائرية الزوايا حول نص — خلفية صلبة ونص متباين دائماً."""
     if font is None:
         return
     s = _shape(text)
@@ -446,7 +446,7 @@ def _draw_badge(d, cx, cy, text, font, fill, bg):
     tw = d.textlength(s, font=font, direction=direction)
     w, h = tw + 56, font.size + 26
     x0, y0 = cx - w / 2, cy - h / 2
-    d.rounded_rectangle([x0, y0, x0 + w, y0 + h], radius=h / 2, fill=bg, outline=fill, width=2)
+    d.rounded_rectangle([x0, y0, x0 + w, y0 + h], radius=h / 2, fill=bg)
     d.text((cx - tw / 2, y0 + (h - font.size) / 2), s, font=font, fill=fill, direction=direction)
 
 
@@ -469,7 +469,7 @@ def compose_match_card(match, kind="end"):
 
     is_score = '-' in score_or_time
     W = 1080
-    H = 620 if kind == "start" else 760 + min(max(len(hs), len(aw), 1), 6) * 50
+    H = 620 if kind == "start" else 700 + min(max(len(hs), len(aw), 1), 6) * 44
     img = Image.new("RGBA", (W, H), (13, 18, 42, 255))
     d = ImageDraw.Draw(img, "RGBA")
 
@@ -535,9 +535,10 @@ def compose_match_card(match, kind="end"):
             wdash = d.textlength(" – ", font=dash)
             total = w1 + w2 + wdash
             x0 = W / 2 - total / 2
-            d.text((x0, py + 18), parts[0], font=score_style, fill=WHITE)
-            d.text((x0 + w1, py + 36), " – ", font=dash, fill=GOLD)
-            d.text((x0 + w1 + wdash, py + 18), parts[1], font=score_style, fill=WHITE)
+            baseline = py + (panel_h - score_style.size) / 2 - 2
+            d.text((x0, baseline), parts[0], font=score_style, fill=WHITE)
+            d.text((x0 + w1, baseline + (score_style.size - dash.size) / 2), " – ", font=dash, fill=GOLD)
+            d.text((x0 + w1 + wdash, baseline), parts[1], font=score_style, fill=WHITE)
         else:
             _draw_centered(d, W // 2, py + 18, score_or_time, score_style, WHITE, panel_w - 30)
     else:
@@ -552,42 +553,50 @@ def compose_match_card(match, kind="end"):
     d.rounded_rectangle([cx_h - 55, cy_logo + 196, cx_h + 55, cy_logo + 202], radius=3, fill=hc)
     d.rounded_rectangle([cx_a - 55, cy_logo + 196, cx_a + 55, cy_logo + 202], radius=3, fill=ac)
 
-    # شارة الحالة
-    st_color = GREEN if status == "انتهت" else (GOLD if status == "لم تبدأ" else (255, 180, 90, 255))
-    st_bg = (80, 220, 150, 40) if status == "انتهت" else ((245, 197, 66, 40) if status == "لم تبدأ" else (255, 180, 90, 40))
-    _draw_badge(d, W // 2, cy_logo + 238, status or "—", _font(26, bold=True), st_color, st_bg)
+    # شارة الحالة — خلفية صلبة غامقة ونص فاتح متباين (كان النص يذوب في الخلفية الشفافة)
+    if status == "انتهت":
+        st_color, st_bg = (8, 26, 16, 255), (120, 255, 180, 255)
+    elif status == "لم تبدأ":
+        st_color, st_bg = (30, 22, 0, 255), (255, 210, 110, 255)
+    else:
+        st_color, st_bg = (40, 20, 0, 255), (255, 190, 110, 255)
+    _draw_badge(d, W // 2, cy_logo + 238, status or "—", _font(28, bold=True), st_color, st_bg)
 
     # أقسام الهدافين (للملخص النهائي فقط): عمودان بفاصل مركزي
-    if kind == "end" and (hs or aw):
+    if kind == "end":
         y_sep = cy_logo + 285
         d.line([80, y_sep, W - 80, y_sep], fill=(60, 80, 140, 160), width=2)
         _draw_centered(d, W // 2, y_sep + 14, "الهدافون", _font(32, bold=True), GOLD, 300)
-        col_top = y_sep + 62
-        col_h, col_a = W / 2 - 40, W / 2 + 40
-        # فاصل عمودي بين الفريقين
-        d.line([W / 2, col_top - 6, W / 2, col_top + 56 + max(len(hs), len(aw), 1) * 46], fill=(60, 80, 140, 120), width=2)
-        for cx, team, lst in ((col_h - 130, home, hs), (col_a + 130, away, aw)):
-            _draw_centered(d, cx, col_top, team, _font(28, bold=True), _team_color(team), 430)
-            iy = col_top + 44
-            for name, minute in lst[:6]:
-                line = f"• {name}  ({minute})"
-                _draw_centered(d, cx, iy, line, _font(26), WHITE, 440)
-                iy += 44
-            if len(lst) > 6:
-                _draw_centered(d, cx, iy, f"+{len(lst) - 6}", _font(24), MUTED, 100)
+        if hs or aw:
+            col_top = y_sep + 62
+            col_h, col_a = W / 2 - 40, W / 2 + 40
+            # فاصل عمودي بين الفريقين
+            d.line([W / 2, col_top - 6, W / 2, col_top + 56 + max(len(hs), len(aw), 1) * 46], fill=(60, 80, 140, 120), width=2)
+            for cx, team, lst in ((col_h - 130, home, hs), (col_a + 130, away, aw)):
+                _draw_centered(d, cx, col_top, team, _font(28, bold=True), _team_color(team), 430)
+                iy = col_top + 44
+                for name, minute in lst[:6]:
+                    line = f"• {name}  ({minute})"
+                    _draw_centered(d, cx, iy, line, _font(26), WHITE, 440)
+                    iy += 44
+                if len(lst) > 6:
+                    _draw_centered(d, cx, iy, f"+{len(lst) - 6}", _font(24), MUTED, 100)
+        else:
+            _draw_centered(d, W // 2, y_sep + 62, "لا توجد أهداف مسجّلة", _font(26), MUTED, 500)
 
-    # الشريط السفلي: أيقونة الشاشة + القنوات (يتكيف ارتفاعه مع عدد الأسطر)
-    ch_text = " • ".join(channels) if channels else "لم يتم تحديد قناة بعد"
-    ch_font = _font(32, bold=True)
-    ch_lines = _wrap_lines(d, ch_text, ch_font, W - 300)
-    bar_h = max(96, 30 + len(ch_lines) * 48)
-    bar_y = H - bar_h - 16
-    d.rounded_rectangle([40, bar_y, W - 40, H - 12], radius=20, fill=(18, 26, 54, 235), outline=(60, 80, 140, 255), width=2)
-    _draw_tv_icon(d, 120, bar_y + bar_h / 2 - 6, GOLD)
-    if channels:
-        _draw_right(d, W - 70, bar_y + 16, ch_text, ch_font, WHITE, W - 300)
-    else:
-        _draw_right(d, W - 70, bar_y + 16, ch_text, ch_font, (255, 150, 80, 255), W - 300)
+    # الشريط السفلي: أيقونة الشاشة + القنوات (بدء المباراة فقط — ملخص النهاية لا يعرض قناة النقل)
+    if kind == "start":
+        ch_text = " • ".join(channels) if channels else "لم يتم تحديد قناة بعد"
+        ch_font = _font(32, bold=True)
+        ch_lines = _wrap_lines(d, ch_text, ch_font, W - 300)
+        bar_h = max(96, 30 + len(ch_lines) * 48)
+        bar_y = H - bar_h - 16
+        d.rounded_rectangle([40, bar_y, W - 40, H - 12], radius=20, fill=(18, 26, 54, 235), outline=(60, 80, 140, 255), width=2)
+        _draw_tv_icon(d, 120, bar_y + bar_h / 2 - 6, GOLD)
+        if channels:
+            _draw_right(d, W - 70, bar_y + 16, ch_text, ch_font, WHITE, W - 300)
+        else:
+            _draw_right(d, W - 70, bar_y + 16, ch_text, ch_font, (255, 150, 80, 255), W - 300)
 
     buf = io.BytesIO()
     img.convert("RGB").save(buf, format="PNG")
