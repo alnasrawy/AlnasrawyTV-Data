@@ -45,6 +45,18 @@
         "source": "Yallakora + FilGoal + Btolat"
     },
     {
+        "league": "كأس خادم الحرمين الشريفين",
+        "homeTeam": "الرائد",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\Alraed2018_7_25_17_10.jpg",
+        "awayTeam": "الهلال",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\13\\11142024_8_13_20_18.jpg",
+        "scoreOrTime": "21:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Yallakora"
+    },
+    {
         "league": "كأس السوبر الفرنسي",
         "homeTeam": "لانس",
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/309.png",
@@ -92,6 +104,54 @@
         "source": "Btolat"
     },
     {
+        "league": "كأس خادم الحرمين الشريفين",
+        "homeTeam": "نادي الأنوار",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\17\\Al-Anwar Club12026_8_17_0_28.webp",
+        "awayTeam": "أهلي جدة",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\8\\20\\al-ahli-logo-png22025_8_20_16_10.webp",
+        "scoreOrTime": "19:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Yallakora"
+    },
+    {
+        "league": "كأس خادم الحرمين الشريفين",
+        "homeTeam": "الزلفي",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/teamlogo/4510-2-2014-21-27-52.jpg",
+        "awayTeam": "الرياض",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\xOyjlucX_400x4002026_8_2_18_28.webp",
+        "scoreOrTime": "19:15",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Yallakora"
+    },
+    {
+        "league": "كأس خادم الحرمين الشريفين",
+        "homeTeam": "الطــائي",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\8\\11\\al-tai12023_8_11_17_30.jpg",
+        "awayTeam": "القادسية",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\23\\Al_Qadsiah12024_8_23_16_52.jpg",
+        "scoreOrTime": "19:15",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Yallakora"
+    },
+    {
+        "league": "كأس خادم الحرمين الشريفين",
+        "homeTeam": "العدالة",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2019\\8\\19\\Untitled-12019_8_19_22_12.jpg",
+        "awayTeam": "الفيحاء",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\7\\AlFayha2021_9_7_17_37.jpg",
+        "scoreOrTime": "21:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Yallakora + Btolat"
+    },
+    {
         "league": "كأس خادم الحرمين",
         "homeTeam": "الطائي",
         "homeLogo": "https://img.btolat.com/teamslogo/15020.png?v=332",
@@ -110,18 +170,6 @@
         "awayTeam": "الرياض",
         "awayLogo": "https://img.btolat.com/teamslogo/15016.png?v=649",
         "scoreOrTime": "07:15 م",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "Btolat"
-    },
-    {
-        "league": "كأس خادم الحرمين",
-        "homeTeam": "العدالة",
-        "homeLogo": "https://img.btolat.com/teamslogo/14989.png?v=315",
-        "awayTeam": "الفيحاء",
-        "awayLogo": "https://img.btolat.com/teamslogo/14998.png?v=677",
-        "scoreOrTime": "09:00 م",
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
