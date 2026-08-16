@@ -5,7 +5,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\9\\10\\Lens2018_9_10_13_11.jpg",
         "awayTeam": "باريس سان جيرمان",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\PSG2018_7_29_17_12.jpg",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "1 - 0",
         "status": "الشوط الأول",
         "channels": [
             "beIN SPORTS 1 HD"
@@ -209,7 +209,7 @@
         "awayTeam": "كربلاء",
         "awayLogo": "https://img.btolat.com/teamslogo/11524.png?v=701",
         "scoreOrTime": "1 - 0",
-        "status": "48'",
+        "status": "62'",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -244,7 +244,7 @@
         "awayTeam": "الكهرباء",
         "awayLogo": "https://img.btolat.com/teamslogo/11523.png?v=283",
         "scoreOrTime": "2 - 0",
-        "status": "53'",
+        "status": "67'",
         "channels": [
             "العراقية السريانية"
         ],
@@ -329,8 +329,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15021.png?v=132",
         "awayTeam": "الشباب السعودي",
         "awayLogo": "https://img.btolat.com/teamslogo/15017.png?v=890",
-        "scoreOrTime": "1 - 0",
-        "status": "49'",
+        "scoreOrTime": "1 - 1",
+        "status": "63'",
         "channels": [
             "ثمانية 2",
             "تطبيق ثمانية"
@@ -344,7 +344,12 @@
                     "43'"
                 ]
             ],
-            "away": []
+            "away": [
+                [
+                    "يانيك كاراسكو",
+                    "56'"
+                ]
+            ]
         }
     },
     {
@@ -353,15 +358,20 @@
         "homeLogo": "https://img.btolat.com/teamslogo/9998.png?v=402",
         "awayTeam": "باريس سان جيرمان",
         "awayLogo": "https://img.btolat.com/teamslogo/10061.png?v=680",
-        "scoreOrTime": "0 - 0",
-        "status": "27'",
+        "scoreOrTime": "1 - 0",
+        "status": "40'",
         "channels": [
             "BEIN SPORTS 1"
         ],
         "commentator": "",
         "source": "Btolat",
         "scorers": {
-            "home": [],
+            "home": [
+                [
+                    "ف. توفين",
+                    "32'"
+                ]
+            ],
             "away": []
         }
     },
@@ -410,7 +420,7 @@
         "awayTeam": "أبها",
         "awayLogo": "https://img.btolat.com/teamslogo/14988.png?v=379",
         "scoreOrTime": "0 - 0",
-        "status": "'",
+        "status": "119'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
@@ -639,8 +649,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11914.png?v=867",
         "awayTeam": "فيرتوس إينتيلا",
         "awayLogo": "https://img.btolat.com/teamslogo/11744.png?v=487",
-        "scoreOrTime": "1 - 1",
-        "status": "24'",
+        "scoreOrTime": "2 - 1",
+        "status": "37'",
         "channels": [
             "MBC شاهد | رياضة"
         ],
@@ -648,6 +658,10 @@
         "source": "Btolat",
         "scorers": {
             "home": [
+                [
+                    "أمين سار",
+                    "36'"
+                ],
                 [
                     "ماتيا كومبانيون",
                     "20'"
@@ -667,14 +681,18 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11925.png?v=782",
         "awayTeam": "مانتوفا",
         "awayLogo": "https://img.btolat.com/teamslogo/11934.png?v=612",
-        "scoreOrTime": "10:15 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "10'",
         "channels": [
             "إم بي سي أكشن",
             "MBC شاهد | رياضة"
         ],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "الدرع الخيرية",
