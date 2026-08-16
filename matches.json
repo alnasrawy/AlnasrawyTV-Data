@@ -1,5 +1,19 @@
 [
     {
+        "league": "الدوري الإماراتي",
+        "homeTeam": "بني ياس",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\BaniYas2018_7_26_11_52.jpg",
+        "awayTeam": "العين",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\10\\29\\21502024_10_29_19_14.jpg",
+        "scoreOrTime": "0 - 0",
+        "status": "الشوط الأول",
+        "channels": [
+            "أبوظبي الرياضية - HD1"
+        ],
+        "commentator": "",
+        "source": "Yallakora + FilGoal"
+    },
+    {
         "league": "الدوري الإسباني",
         "homeTeam": "اسبانيول",
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Espanyol2018_7_29_14_44.jpg",
@@ -65,7 +79,7 @@
         "awayTeam": "فياريال",
         "awayLogo": "https://img.btolat.com/teamslogo/16270.png?v=607",
         "scoreOrTime": "2 - 2",
-        "status": "74'",
+        "status": "90+'",
         "channels": [
             "beIN SPORTS 3 HD"
         ],
@@ -192,7 +206,7 @@
         "awayTeam": "غراف",
         "awayLogo": "https://img.btolat.com/",
         "scoreOrTime": "0 - 1",
-        "status": "'",
+        "status": "63'",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -212,20 +226,6 @@
         ],
         "commentator": "",
         "source": "Yallakora"
-    },
-    {
-        "league": "الدوري الإماراتي",
-        "homeTeam": "بني ياس",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\BaniYas2018_7_26_11_52.jpg",
-        "awayTeam": "العين",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\10\\29\\21502024_10_29_19_14.jpg",
-        "scoreOrTime": "19:45",
-        "status": "لم تبدأ",
-        "channels": [
-            "أبوظبي الرياضية - HD1"
-        ],
-        "commentator": "",
-        "source": "Yallakora + FilGoal"
     },
     {
         "league": "الدوري الإماراتي",
@@ -285,8 +285,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/30595.png?v=134",
         "awayTeam": "الحزم",
         "awayLogo": "https://img.btolat.com/teamslogo/15000.png?v=241",
-        "scoreOrTime": "0 - 1",
-        "status": "23'",
+        "scoreOrTime": "1 - 2",
+        "status": "41'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -297,8 +297,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15011.png?v=371",
         "awayTeam": "أبها",
         "awayLogo": "https://img.btolat.com/teamslogo/14988.png?v=379",
-        "scoreOrTime": "07:40 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "14'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -346,7 +346,7 @@
         "awayTeam": "سانت ميرين",
         "awayLogo": "https://img.btolat.com/teamslogo/15120.png?v=965",
         "scoreOrTime": "5 - 1",
-        "status": "78'",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -357,8 +357,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11898.png?v=216",
         "awayTeam": "يوفي ستابيا",
         "awayLogo": "https://img.btolat.com/teamslogo/11921.png?v=460",
-        "scoreOrTime": "2 - 0",
-        "status": "33'",
+        "scoreOrTime": "3 - 0",
+        "status": "'",
         "channels": [
             "MBC شاهد | رياضة"
         ],
@@ -372,7 +372,7 @@
         "awayTeam": "أسكولي",
         "awayLogo": "https://img.btolat.com/teamslogo/11769.png?v=905",
         "scoreOrTime": "0 - 0",
-        "status": "6'",
+        "status": "23'",
         "channels": [
             "MBC شاهد | رياضة"
         ],
@@ -517,12 +517,16 @@
         "awayTeam": "ريال مدريد",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\RealMadrid2018_7_29_14_47.jpg",
         "scoreOrTime": "0 - 3",
-        "status": "مباشر",
+        "status": "انتهت",
         "channels": [
             "STC TV"
         ],
         "commentator": "",
-        "source": "Yallakora + FilGoal"
+        "source": "Yallakora + FilGoal",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "مباريات ودية - أندية",
@@ -599,7 +603,7 @@
         "awayTeam": "ريال مدريد",
         "awayLogo": "https://img.btolat.com/teamslogo/16110.png?v=903",
         "scoreOrTime": "0 - 3",
-        "status": "82'",
+        "status": "انتهت",
         "channels": [
             "Stc Sports HD1"
         ],
