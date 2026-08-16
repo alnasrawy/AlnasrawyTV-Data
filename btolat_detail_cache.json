@@ -1,1 +1,21 @@
-{}
+{
+ "https://www.btolat.com/matches/details/214077": {
+  "at": 1786918584.3832586,
+  "scorers": {
+   "home": [],
+   "away": []
+  }
+ },
+ "https://www.btolat.com/matches/details/214078": {
+  "at": 1786918585.8245876,
+  "scorers": {
+   "home": [
+    [
+     "بيني تراوري",
+     "4'"
+    ]
+   ],
+   "away": []
+  }
+ }
+}
