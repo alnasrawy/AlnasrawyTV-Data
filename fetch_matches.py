@@ -104,6 +104,11 @@ FILGOAL_CACHE_TTL = float(_CFG.get("filgoal_cache_ttl_minutes", 30))
 FILGOAL_CACHE_FILE = "filgoal_cache.json"
 FILGOAL_CACHE = {}
 
+# ================= كاش تفاصيل بطولات (أهداف المباريات المنتهية) =================
+BTOLAT_DETAIL_CACHE_FILE = "btolat_detail_cache.json"
+BTOLAT_DETAIL_CACHE = {}
+BTOLAT_DETAIL_TTL = float(_CFG.get("btolat_detail_cache_ttl_minutes", 60))
+
 def _load_filgoal_cache():
     try:
         with open(FILGOAL_CACHE_FILE, "r", encoding="utf-8") as f:
@@ -115,6 +120,21 @@ def _save_filgoal_cache():
     try:
         with open(FILGOAL_CACHE_FILE, "w", encoding="utf-8") as f:
             json.dump(FILGOAL_CACHE, f, ensure_ascii=False, indent=1)
+    except Exception:
+        pass
+
+
+def _load_btolat_detail_cache():
+    try:
+        with open(BTOLAT_DETAIL_CACHE_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+def _save_btolat_detail_cache():
+    try:
+        with open(BTOLAT_DETAIL_CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(BTOLAT_DETAIL_CACHE, f, ensure_ascii=False, indent=1)
     except Exception:
         pass
 
@@ -710,7 +730,8 @@ def _wrap_lines(draw, text, font, max_w):
 
 
 def _draw_badge(d, cx, cy, text, font, fill, bg):
-    """شارة (بيل) دائرية الزوايا حول نص — خلفية صلبة ونص متباين دائماً."""
+    """شارة (بيل) دائرية الزوايا حول نص — خلفية صلبة ونص متباين دائماً.
+    إذا كان bg = None تُرسم خلفية شفافة مع حدود بلون fill (نمط "مباشر" LIVE)."""
     if font is None:
         return
     s = _shape(text)
@@ -718,12 +739,24 @@ def _draw_badge(d, cx, cy, text, font, fill, bg):
     tw = d.textlength(s, font=font, direction=direction)
     w, h = tw + 56, font.size + 26
     x0, y0 = cx - w / 2, cy - h / 2
-    d.rounded_rectangle([x0, y0, x0 + w, y0 + h], radius=h / 2, fill=bg)
+    if bg is not None:
+        d.rounded_rectangle([x0, y0, x0 + w, y0 + h], radius=h / 2, fill=bg)
+    else:
+        d.rounded_rectangle([x0, y0, x0 + w, y0 + h], radius=h / 2, fill=(255, 255, 255, 6),
+                            outline=fill, width=2)
     d.text((cx - tw / 2, y0 + (h - font.size) / 2), s, font=font, fill=fill, direction=direction)
 
 
+def _draw_ball_icon(d, cx, cy, r, color):
+    """كرة قدم بسيطة: دائرة ذهبية بحدود وخطوط — تُستخدم بدل إيموجي ⚽ (لا يُرسم بالخط العربي)."""
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=color)
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(255, 255, 255, 200), width=2)
+    d.arc([cx - r * 0.7, cy - r * 0.7, cx + r * 0.7, cy + r * 0.7], 210, 330, fill=(255, 255, 255, 180), width=2)
+
+
 def compose_match_card(match, kind="end"):
-    """يرسم بطاقة المباراة الاحترافية ويعيد بايتات PNG، أو None عند فشل الرسم.
+    """يرسم بطاقة المباراة الاحترافية (تصميم HTML زجاجي داكن) ويعيد بايتات PNG،
+    أو None عند فشل الرسم.
     kind: 'start' (تنبيه بدء) أو 'end' (ملخص نهاية مع الهدافين)."""
     if Image is None or ImageDraw is None:
         return None
@@ -741,69 +774,86 @@ def compose_match_card(match, kind="end"):
 
     is_score = '-' in score_or_time
     W = 1080
-    H = 620 if kind == "start" else 700 + min(max(len(hs), len(aw), 1), 6) * 44
-    img = Image.new("RGBA", (W, H), (13, 18, 42, 255))
+    # ارتفاع ثابت + مساحة الهدافين (عمود أطول عدد اسماء × ارتفاع الصف)
+    scorer_rows = min(max(len(hs), len(aw), 0), 6)
+    H = 620 if kind == "start" else 700 + max(0, scorer_rows) * 46
+    img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img, "RGBA")
 
-    # خلفية متدرجة داكنة مع توهج مركزي خفيف
-    top_c = (26, 37, 74)
-    bot_c = (10, 13, 30)
+    # ── خلفية متدرجة داكنة (زجاجية) + توهج ذهبي مركزي ──
+    top_c = (18, 24, 44)
+    bot_c = (8, 11, 24)
     for y in range(H):
         t = y / H
         c = tuple(int(top_c[i] + (bot_c[i] - top_c[i]) * t) for i in range(3))
-        d.line([(0, y), (W, y)], fill=c)
+        d.line([(0, y), (W, y)], fill=c + (255,))
     glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     gd = ImageDraw.Draw(glow)
-    gd.ellipse([W / 2 - 360, 60, W / 2 + 360, 60 + 560], fill=(60, 90, 170, 40))
+    gd.ellipse([W / 2 - 380, -40, W / 2 + 380, -40 + 640], fill=(232, 184, 75, 22))
+    gd.ellipse([-100, -80, 420, 560], fill=(59, 90, 180, 26))
+    gd.ellipse([W - 420, -80, W + 100, 560], fill=(59, 90, 180, 26))
     img = Image.alpha_composite(img, glow)
     d = ImageDraw.Draw(img, "RGBA")
 
-    GOLD = (245, 197, 66, 255)
-    WHITE = (255, 255, 255, 255)
-    MUTED = (170, 180, 210, 255)
-    RED = (255, 120, 120, 255)
-    GREEN = (80, 220, 150, 255)
-    PANEL = (22, 30, 62, 220)
+    GOLD = (232, 184, 75, 255)
+    GOLD_SOFT = (246, 223, 160, 255)
+    WHITE = (245, 247, 251, 255)
+    TEXT_MID = (170, 178, 197, 255)
+    TEXT_LOW = (106, 116, 136, 255)
+    LINE = (255, 255, 255, 22)
 
-    # شريط ذهبي علوي
-    d.rectangle([0, 0, W, 8], fill=GOLD)
-
-    # رأس البطولة: اسم في شريط زجاجي صغير
-    league_font = _font(40, bold=True)
+    # ── شارة نوع المباراة (اسم البطولة) أعلى البطاقة ──
+    badge_font = _font(30, bold=True)
     if league:
         ls = _shape(league)
         ld = _text_direction(ls)
-        lw = d.textlength(ls, font=league_font, direction=ld)
-        lbox_w = lw + 90
-        lbox_x = W / 2 - lbox_w / 2
-        d.rounded_rectangle([lbox_x, 26, lbox_x + lbox_w, 82], radius=28, fill=(255, 255, 255, 16), outline=(245, 197, 66, 70), width=2)
-        d.text((W / 2 - lw / 2, 40), ls, font=league_font, fill=GOLD, direction=ld)
+        lw = d.textlength(ls, font=badge_font, direction=ld)
+        bw = lw + 64
+        bx = W / 2 - bw / 2
+        d.rounded_rectangle([bx, 30, bx + bw, 86], radius=28, fill=(232, 184, 75, 30), outline=(232, 184, 75, 90), width=2)
+        # أيقونة نجمة ذهبية صغيرة يسار النص (بدل إيموجي 🏆)
+        d.polygon([(bx + 36, 48), (bx + 42, 62), (bx + 57, 63), (bx + 45, 73), (bx + 49, 88),
+                   (bx + 36, 80), (bx + 23, 88), (bx + 27, 73), (bx + 15, 63), (bx + 30, 62)], fill=GOLD)
+        d.text((W / 2 - lw / 2 + 4, 44), ls, font=badge_font, fill=GOLD_SOFT, direction=ld)
 
-    # المنتصف: لوجو أرض | النتيجة/الوقت | لوجو ضيف
-    L = 210
+    # ── صف الفريقين + النتيجة ──
+    L = 170                       # حجم اللوجو
     cx_h, cx_a = 250, W - 250
-    cy_logo = 240
+    cy_logo = 250
     home_logo = _load_team_logo(match.get('homeLogo'), home, league=league, size=L)
     away_logo = _load_team_logo(match.get('awayLogo'), away, league=league, size=L)
     for cx, lg in ((cx_h, home_logo), (cx_a, away_logo)):
-        halo = Image.new("RGBA", (L + 40, L + 40), (0, 0, 0, 0))
+        # هالة/دائرة بيضاء خلف اللوجو (مثل .team-logo-wrap)
+        ring = L + 24
+        halo = Image.new("RGBA", (ring, ring), (0, 0, 0, 0))
         hd = ImageDraw.Draw(halo)
-        hd.ellipse([0, 0, L + 40, L + 40], fill=(255, 255, 255, 26))
-        img.alpha_composite(halo, (cx - (L + 40) // 2, cy_logo - (L + 40) // 2))
+        hd.ellipse([0, 0, ring, ring], fill=(255, 255, 255, 255), outline=(255, 255, 255, 20), width=2)
+        img.alpha_composite(halo, (cx - ring // 2, cy_logo - ring // 2))
         img.alpha_composite(lg, (cx - L // 2, cy_logo - L // 2))
 
-    # لوحة النتيجة/الوقت الزجاجية بين اللوجوهين
-    panel_w, panel_h = 340, 130
-    px, py = W / 2 - panel_w / 2, cy_logo - panel_h / 2 - 8
-    d.rounded_rectangle([px, py, px + panel_w, py + panel_h], radius=24, fill=PANEL, outline=(245, 197, 66, 90), width=2)
+    # أسماء الفرق + شريط لوني مميز
+    name_font = _font(34, bold=True)
+    _draw_centered(d, cx_h, cy_logo + ring // 2 + 18, home, name_font, WHITE, 300)
+    _draw_centered(d, cx_a, cy_logo + ring // 2 + 18, away, name_font, WHITE, 300)
+    hc = _team_color(home)
+    ac = _team_color(away)
+    name_bot = cy_logo + ring // 2 + 18 + 52
+    d.rounded_rectangle([cx_h - 34, name_bot, cx_h + 34, name_bot + 5], radius=3, fill=hc + (255,))
+    d.rounded_rectangle([cx_a - 34, name_bot, cx_a + 34, name_bot + 5], radius=3, fill=ac + (255,))
+
+    # ── لوحة النتيجة/الوقت المركزية ──
+    panel_w, panel_h = 330, 128
+    px, py = W / 2 - panel_w / 2, cy_logo - panel_h / 2
+    d.rounded_rectangle([px, py, px + panel_w, py + panel_h], radius=20, fill=(255, 255, 255, 14),
+                        outline=(232, 184, 75, 100), width=2)
 
     if kind == "end" and is_score:
         parts = [p.strip() for p in score_or_time.split('-')]
-        score_style = _font(104, bold=True)
+        score_style = _font(96, bold=True)
         if len(parts) == 2:
             w1 = d.textlength(parts[0], font=score_style)
             w2 = d.textlength(parts[1], font=score_style)
-            dash = _font(80, bold=True)
+            dash = _font(70, bold=True)
             wdash = d.textlength(" – ", font=dash)
             total = w1 + w2 + wdash
             x0 = W / 2 - total / 2
@@ -812,56 +862,101 @@ def compose_match_card(match, kind="end"):
             d.text((x0 + w1, baseline + (score_style.size - dash.size) / 2), " – ", font=dash, fill=GOLD)
             d.text((x0 + w1 + wdash, baseline), parts[1], font=score_style, fill=WHITE)
         else:
-            _draw_centered(d, W // 2, py + 18, score_or_time, score_style, WHITE, panel_w - 30)
+            _draw_centered(d, W // 2, py + 16, score_or_time, score_style, WHITE, panel_w - 30)
     else:
-        _draw_centered(d, W // 2, py + 16, score_or_time, _font(100, bold=True),
+        _draw_centered(d, W // 2, py + 14, score_or_time, _font(92, bold=True),
                        GOLD if not is_score else WHITE, panel_w - 30)
 
-    # أسماء الفرق أسفل اللوجوهات + خط لوني مميز
-    _draw_centered(d, cx_h, cy_logo + 130, home, _font(36, bold=True), WHITE, 300)
-    _draw_centered(d, cx_a, cy_logo + 130, away, _font(36, bold=True), WHITE, 300)
-    hc = _team_color(home)
-    ac = _team_color(away)
-    d.rounded_rectangle([cx_h - 55, cy_logo + 196, cx_h + 55, cy_logo + 202], radius=3, fill=hc)
-    d.rounded_rectangle([cx_a - 55, cy_logo + 196, cx_a + 55, cy_logo + 202], radius=3, fill=ac)
-
-    # شارة الحالة — خلفية صلبة غامقة ونص فاتح متباين (كان النص يذوب في الخلفية الشفافة)
+    # ── شارة الحالة (مثل .status-pill) ──
     if status == "انتهت":
-        st_color, st_bg = (8, 26, 16, 255), (120, 255, 180, 255)
+        st_color, st_bg = (8, 26, 16, 255), (34, 197, 94, 255)
     elif status == "لم تبدأ":
-        st_color, st_bg = (30, 22, 0, 255), (255, 210, 110, 255)
-    else:
-        st_color, st_bg = (40, 20, 0, 255), (255, 190, 110, 255)
-    _draw_badge(d, W // 2, cy_logo + 238, status or "—", _font(28, bold=True), st_color, st_bg)
+        st_color, st_bg = (30, 22, 0, 255), (232, 184, 75, 255)
+    else:  # مباشر — حدود حمراء وخلفية شفافة
+        st_color, st_bg = (239, 68, 68, 255), None
+    st_y = name_bot + 24
+    _draw_badge(d, W // 2, st_y, status or "—", _font(26, bold=True), st_color, st_bg)
 
-    # أقسام الهدافين (للملخص النهائي فقط): عمودان بفاصل مركزي
+    # ── الهدافون (للملخص النهائي فقط) ──
     if kind == "end":
-        y_sep = cy_logo + 285
-        d.line([80, y_sep, W - 80, y_sep], fill=(60, 80, 140, 160), width=2)
-        _draw_centered(d, W // 2, y_sep + 14, "الهدافون", _font(32, bold=True), GOLD, 300)
-        if hs or aw:
-            col_top = y_sep + 62
-            col_h, col_a = W / 2 - 40, W / 2 + 40
-            # فاصل عمودي بين الفريقين
-            d.line([W / 2, col_top - 6, W / 2, col_top + 56 + max(len(hs), len(aw), 1) * 46], fill=(60, 80, 140, 120), width=2)
-            for cx, team, lst in ((col_h - 130, home, hs), (col_a + 130, away, aw)):
-                _draw_centered(d, cx, col_top, team, _font(28, bold=True), _team_color(team), 430)
-                iy = col_top + 44
-                for name, minute in lst[:6]:
-                    line = f"• {name}  ({minute})"
-                    _draw_centered(d, cx, iy, line, _font(26), WHITE, 440)
-                    iy += 44
-                if len(lst) > 6:
-                    _draw_centered(d, cx, iy, f"+{len(lst) - 6}", _font(24), MUTED, 100)
-        else:
-            _draw_centered(d, W // 2, y_sep + 62, "لا توجد أهداف مسجّلة", _font(26), MUTED, 500)
+        y_sep = st_y + 40
+        d.line([70, y_sep, W - 70, y_sep], fill=LINE, width=2)
+        # عنوان "الهدافون" ذهبي
+        _draw_centered(d, W // 2, y_sep + 16, "الهدافون", _font(30, bold=True), GOLD_SOFT, 300)
 
-    # الشريط السفلي: أيقونة الشاشة + القنوات (بدء المباراة فقط — ملخص النهاية لا يعرض قناة النقل)
+        if hs or aw:
+            col_top = y_sep + 64
+            # عمودا الهدافين: أيمن تحت الفريق الأيمن، أيسر تحت الفريق الأيسر
+            # أعمدة متساوية العرض بفاصل عمودي مركزي
+            col_w = 470
+            col_h_x = W / 2 - 40 - col_w      # عمود الفريق المضيف (يسار البطاقة RTL)
+            col_a_x = W / 2 + 40              # عمود الفريق الضيف (يمين البطاقة)
+            # أسماء الأعمدة بلون الفريق
+            hf = _font(26, bold=True)
+            _draw_centered(d, col_h_x + col_w / 2, col_top, home, hf, hc + (255,), col_w)
+            _draw_centered(d, col_a_x + col_w / 2, col_top, away, hf, ac + (255,), col_w)
+            # فاصل عمودي مركزي
+            div_y1 = col_top - 4
+            div_y2 = col_top + 6 + max(len(hs), len(aw), 1) * 46
+            d.line([W / 2, div_y1, W / 2, div_y2], fill=(255, 255, 255, 30), width=2)
+
+            scorer_font = _font(26)
+            minute_font = _font(21, bold=True)
+            for cx0, team, lst, is_away in ((col_h_x, home, hs, False), (col_a_x, away, aw, True)):
+                iy = col_top + 46
+                for name, minute in lst[:6]:
+                    # محاذاة الأسماء: الفريق المضيف إلى اليمين (بداية من يمين عموده)،
+                    # والضيف إلى اليسار — ليتقابل الخطان نحو الفاصل المركزي.
+                    if is_away:
+                        x_start = cx0
+                    else:
+                        x_start = cx0 + col_w
+                    sn = _shape(name)
+                    snd = _text_direction(sn)
+                    nw = d.textlength(sn, font=scorer_font, direction=snd)
+                    # دائرة كرة ذهبية قبل الاسم
+                    ball_r = 11
+                    if is_away:
+                        bx = x_start + ball_r + 6
+                    else:
+                        bx = x_start - ball_r - 6
+                    _draw_ball_icon(d, bx, iy, ball_r, GOLD)
+                    # دقيقة في شريحة صغيرة بجانب الاسم
+                    mtxt = _shape(str(minute))
+                    md = _text_direction(mtxt)
+                    mw = d.textlength(mtxt, font=minute_font, direction=md)
+                    chip_pad = 10
+                    if is_away:
+                        # الاسم ثم الشريحة بعدها (يميناً لليسار)
+                        nx = bx + ball_r + 10
+                        name_top = iy - scorer_font.size / 2
+                        d.text((nx, name_top), sn, font=scorer_font, fill=WHITE, direction=snd)
+                        cx_chip = nx + nw + chip_pad + mw / 2
+                        d.rounded_rectangle([cx_chip - mw / 2 - chip_pad, iy - 18, cx_chip + mw / 2 + chip_pad, iy + 18],
+                                            radius=9, fill=(255, 255, 255, 14))
+                        d.text((cx_chip - mw / 2, name_top + (scorer_font.size - minute_font.size) / 2),
+                               mtxt, font=minute_font, fill=TEXT_LOW, direction=md)
+                    else:
+                        # الشريحة ثم الاسم (يساراً لليمين نحو الفاصل)
+                        cx_chip = bx - ball_r - 10 - mw / 2
+                        d.rounded_rectangle([cx_chip - mw / 2 - chip_pad, iy - 18, cx_chip + mw / 2 + chip_pad, iy + 18],
+                                            radius=9, fill=(255, 255, 255, 14))
+                        name_top = iy - scorer_font.size / 2
+                        d.text((cx_chip - mw / 2, name_top + (scorer_font.size - minute_font.size) / 2),
+                               mtxt, font=minute_font, fill=TEXT_LOW, direction=md)
+                        d.text((cx_chip + mw / 2 + chip_pad, name_top), sn, font=scorer_font, fill=WHITE, direction=snd)
+                    iy += 46
+                if len(lst) > 6:
+                    _draw_centered(d, cx0 + col_w / 2, iy, f"+{len(lst) - 6}", _font(22), TEXT_MID, 100)
+        else:
+            _draw_centered(d, W // 2, y_sep + 62, "لا توجد أهداف مسجّلة", _font(26), TEXT_LOW, 500)
+
+    # ── الشريط السفلي: القنوات (بدء المباراة فقط) ──
     if kind == "start":
         ch_text = " • ".join(channels) if channels else "لم يتم تحديد قناة بعد"
-        ch_font = _font(32, bold=True)
+        ch_font = _font(30, bold=True)
         ch_lines = _wrap_lines(d, ch_text, ch_font, W - 300)
-        bar_h = max(96, 30 + len(ch_lines) * 48)
+        bar_h = max(92, 26 + len(ch_lines) * 44)
         bar_y = H - bar_h - 16
         d.rounded_rectangle([40, bar_y, W - 40, H - 12], radius=20, fill=(18, 26, 54, 235), outline=(60, 80, 140, 255), width=2)
         _draw_tv_icon(d, 120, bar_y + bar_h / 2 - 6, GOLD)
@@ -1026,6 +1121,26 @@ def extract_filgoal_scorers(html):
                     n = name.group(1).strip()
                     mnt = minute.group(1).strip() if minute else ""
                     scorers[side].append((n, mnt))
+    return scorers
+
+
+def extract_btolat_scorers(html):
+    """أهداف المباراة من صفحة تفاصيل بطولات (/matches/details/{id}).
+    بنية الأهداف: <div class="getGoal"> <span class="goalTime clr2">57'</span>
+    <span class="goalPlayer">اللاعب</span> </div> — أهداف الأرض داخل getGoalsTeamA والضيف داخل getGoalsTeamB."""
+    scorers = {"home": [], "away": []}
+    soup = BeautifulSoup(html, 'html.parser')
+    for side, cls in (("home", "getGoalsTeamA"), ("away", "getGoalsTeamB")):
+        cont = soup.find('div', class_=cls)
+        if not cont:
+            continue
+        for g in cont.find_all('div', class_='getGoal'):
+            name = g.find('span', class_='goalPlayer')
+            mnt = g.find('span', class_='goalTime')
+            n = name.get_text(strip=True) if name else ""
+            mnt_s = mnt.get_text(strip=True) if mnt else ""
+            if n:
+                scorers[side].append((n, mnt_s))
     return scorers
 
 
@@ -1461,15 +1576,47 @@ class GhostScraper:
                                 txt = parent.text.replace('معلق:', '').strip()
                                 if txt and len(txt) < 30: comm = txt
 
-                matches.append({
+                # 💡 رابط صفحة التفاصيل لاستخراج أسماء الهدافين (المباريات المنتهية فقط)
+                details_url = ""
+                state_link = m.find('a', class_='match-state')
+                if state_link and state_link.get('href'):
+                    details_url = "https://www.btolat.com" + state_link['href']
+
+                match_item = {
                     "league": league, "homeTeam": team1, "homeLogo": logo1,
                     "awayTeam": team2, "awayLogo": logo2, "scoreOrTime": score,
                     "status": status, "channels": channels, "commentator": comm,
                     "source": "Btolat"
-                })
+                }
+                if details_url:
+                    match_item["_btolat_details"] = details_url
+                matches.append(match_item)
             except Exception:
                 continue
+
+        # 💡 أسماء الهدافين من صفحة تفاصيل بطولات (للمباريات المنتهية فقط — مثل فيلجول)
+        for match_item in matches:
+            du = match_item.pop('_btolat_details', None)
+            if not du or not self._btolat_is_ended(match_item):
+                continue
+            match_item['scorers'] = self._fetch_btolat_scorers(du, match_item)
         return matches
+
+    def _btolat_is_ended(self, m):
+        st = (m.get('status') or '').strip()
+        sc = m.get('scoreOrTime', '')
+        return 'انتهت' in st or 'نهاية' in st or ('-' in sc and ':' not in sc)
+
+    def _fetch_btolat_scorers(self, details_url, match_item):
+        """أهداف المباراة من صفحة تفاصيل بطولات مع كاش محلي (TTL) لتوفير الطلبات."""
+        cached = BTOLAT_DETAIL_CACHE.get(details_url)
+        now = time.time()
+        if cached and (now - cached.get('at', 0)) / 60.0 < BTOLAT_DETAIL_TTL:
+            return dict(cached.get('scorers', {"home": [], "away": []}))
+        html = self.fetch(details_url, f"Btolat (details {details_url.rsplit('/', 1)[-1]})")
+        scorers = extract_btolat_scorers(html) if html else {"home": [], "away": []}
+        BTOLAT_DETAIL_CACHE[details_url] = {"at": now, "scorers": scorers}
+        return scorers
 
 # 💡 توحيد الاختلافات الشائعة في كتابة أسماء الفرق (نفس الفريق بصيغتين)
 _SPELLING_FIXES = {
@@ -1481,6 +1628,7 @@ _SPELLING_FIXES = {
     "النصر السعودي": "النصر",
     "اتحاد جدة": "الاتحاد",
     "شباب الأهلي دبي": "شباب الأهلي",
+    "شالكه 04": "شالكه",
     "الميناء البصرة": "الميناء",
     "غاز الشمال": "Ghaz Al Shamal",
 }
@@ -1598,8 +1746,9 @@ def extract_first_match_time(matches_list):
 scraper_engine = GhostScraper()
 
 def execute_full_cycle():
-    global FILGOAL_CACHE
+    global FILGOAL_CACHE, BTOLAT_DETAIL_CACHE
     FILGOAL_CACHE = _load_filgoal_cache()
+    BTOLAT_DETAIL_CACHE = _load_btolat_detail_cache()
     now = datetime.now(TZ)
     yalla_date = now.strftime('%m/%d/%Y')
     fil_date = now.strftime('%Y-%m-%d')
@@ -1667,8 +1816,10 @@ def execute_full_cycle():
                 merged[key]['status'] = new_status
 
             # 6. 💡 نقل الهدافين إن غابوا (للملخص النهائي في تيليجرام)
-            if not merged[key].get('scorers') and m.get('scorers'):
-                merged[key]['scorers'] = m['scorers']
+            merged_sc = merged[key].get('scorers') or {}
+            m_sc = m.get('scorers') or {}
+            if not (merged_sc.get('home') or merged_sc.get('away')) and (m_sc.get('home') or m_sc.get('away')):
+                merged[key]['scorers'] = m_sc
 
     final_list = filter_and_rank(list(merged.values()))
 
@@ -1691,6 +1842,9 @@ def execute_full_cycle():
 
     # 💡 حفظ كاش فيلجول لاستخدامه في الدورة القادمة
     _save_filgoal_cache()
+
+    # 💡 حفظ كاش تفاصيل بطولات (أهداف المباريات المنتهية)
+    _save_btolat_detail_cache()
 
     return final_list
 
