@@ -14,20 +14,6 @@
         "source": "Yallakora"
     },
     {
-        "league": "الدرع الخيرية",
-        "homeTeam": "أرسنال",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\5\\Arsenal2021_9_5_14_15.jpg",
-        "awayTeam": "مانشستر سيتي",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\ManchesterCity2018_7_29_15_27.jpg",
-        "scoreOrTime": "3 - 0",
-        "status": "الشوط الثاني",
-        "channels": [
-            "beIN SPORTS 1 HD"
-        ],
-        "commentator": "عامر الخوذيري",
-        "source": "Yallakora + FilGoal + Btolat"
-    },
-    {
         "league": "الدوري الإسباني",
         "homeTeam": "اسبانيول",
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Espanyol2018_7_29_14_44.jpg",
@@ -220,7 +206,7 @@
         "awayTeam": "غراف",
         "awayLogo": "https://img.btolat.com/",
         "scoreOrTime": "0 - 0",
-        "status": "23'",
+        "status": "29'",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -414,6 +400,37 @@
         "channels": [],
         "commentator": "",
         "source": "Btolat"
+    },
+    {
+        "league": "الدرع الخيرية",
+        "homeTeam": "أرسنال",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\5\\Arsenal2021_9_5_14_15.jpg",
+        "awayTeam": "مانشستر سيتي",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\ManchesterCity2018_7_29_15_27.jpg",
+        "scoreOrTime": "3 - 0",
+        "status": "انتهت",
+        "channels": [
+            "beIN SPORTS 1 HD"
+        ],
+        "commentator": "عامر الخوذيري",
+        "source": "Yallakora + FilGoal + Btolat",
+        "scorers": {
+            "home": [
+                [
+                    "مارتن أوديجارد",
+                    "48'"
+                ],
+                [
+                    "كاي هافيرتز",
+                    "28'"
+                ],
+                [
+                    "ريكاردو كالافيوري",
+                    "1'"
+                ]
+            ],
+            "away": []
+        }
     },
     {
         "league": "مباريات ودية -أندية",
