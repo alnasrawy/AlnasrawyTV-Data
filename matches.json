@@ -6,12 +6,39 @@
         "awayTeam": "ليفانتي",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Levante2018_7_29_14_48.jpg",
         "scoreOrTime": "2 - 0",
-        "status": "الشوط الأول",
+        "status": "الشوط الثاني",
         "channels": [
             "beIN SPORTS 2 HD"
         ],
         "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat"
+        "source": "Yallakora + FilGoal + Btolat",
+        "scorers": {
+            "home": [
+                [
+                    "روبرتو فرنانديز",
+                    "40'"
+                ],
+                [
+                    "روبرتو فرنانديز",
+                    "5'"
+                ]
+            ],
+            "away": []
+        }
+    },
+    {
+        "league": "الدوري الإماراتي",
+        "homeTeam": "بني ياس",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\BaniYas2018_7_26_11_52.jpg",
+        "awayTeam": "العين",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\10\\29\\21502024_10_29_19_14.jpg",
+        "scoreOrTime": "2 - 1",
+        "status": "الشوط الثاني",
+        "channels": [
+            "أبوظبي الرياضية - HD1"
+        ],
+        "commentator": "",
+        "source": "Yallakora + FilGoal"
     },
     {
         "league": "الدوري الإسباني",
@@ -70,7 +97,29 @@
             "beIN SPORTS 3 HD"
         ],
         "commentator": "عامر الخوذيري",
-        "source": "FilGoal + Btolat"
+        "source": "FilGoal + Btolat",
+        "scorers": {
+            "home": [
+                [
+                    "سيرخيو مارتينيز",
+                    "34'"
+                ],
+                [
+                    "أندريس مارتين",
+                    "21'"
+                ]
+            ],
+            "away": [
+                [
+                    "نيكولاس بيبي",
+                    "45'"
+                ],
+                [
+                    "بابي جايي",
+                    "45'"
+                ]
+            ]
+        }
     },
     {
         "league": "الدوري السعودي",
@@ -155,8 +204,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11512.png?v=547",
         "awayTeam": "كربلاء",
         "awayLogo": "https://img.btolat.com/teamslogo/11524.png?v=701",
-        "scoreOrTime": "21:00",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "23'",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -181,8 +230,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11519.png?v=205",
         "awayTeam": "الكهرباء",
         "awayLogo": "https://img.btolat.com/teamslogo/11523.png?v=283",
-        "scoreOrTime": "21:00",
-        "status": "لم تبدأ",
+        "scoreOrTime": "1 - 0",
+        "status": "27'",
         "channels": [
             "العراقية السريانية"
         ],
@@ -201,7 +250,16 @@
             "العراقية الرياضية"
         ],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": [
+                [
+                    "P. Mumba",
+                    "42'"
+                ]
+            ]
+        }
     },
     {
         "league": "الدوري الإماراتي",
@@ -216,20 +274,6 @@
         ],
         "commentator": "",
         "source": "Yallakora"
-    },
-    {
-        "league": "الدوري الإماراتي",
-        "homeTeam": "بني ياس",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\26\\BaniYas2018_7_26_11_52.jpg",
-        "awayTeam": "العين",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\10\\29\\21502024_10_29_19_14.jpg",
-        "scoreOrTime": "2 - 1",
-        "status": "استراحة",
-        "channels": [
-            "أبوظبي الرياضية - HD1"
-        ],
-        "commentator": "",
-        "source": "Yallakora + FilGoal"
     },
     {
         "league": "الدوري الإماراتي",
@@ -263,14 +307,18 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15021.png?v=132",
         "awayTeam": "الشباب السعودي",
         "awayLogo": "https://img.btolat.com/teamslogo/15017.png?v=890",
-        "scoreOrTime": "09:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "25'",
         "channels": [
             "ثمانية 2",
             "تطبيق ثمانية"
         ],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "كأس السوبر الفرنسي",
@@ -293,10 +341,36 @@
         "awayTeam": "الحزم",
         "awayLogo": "https://img.btolat.com/teamslogo/15000.png?v=241",
         "scoreOrTime": "2 - 3",
-        "status": "83'",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [
+                [
+                    "أمين بن حميدة \r\n                                        (on)",
+                    "69'"
+                ],
+                [
+                    "Y. Zakir",
+                    "27'"
+                ]
+            ],
+            "away": [
+                [
+                    "سلطان تنكر",
+                    "65'"
+                ],
+                [
+                    "أفيميكو بولولو",
+                    "37'"
+                ],
+                [
+                    "أفيميكو بولولو",
+                    "5'"
+                ]
+            ]
+        }
     },
     {
         "league": "كأس خادم الحرمين",
@@ -305,10 +379,14 @@
         "awayTeam": "أبها",
         "awayLogo": "https://img.btolat.com/teamslogo/14988.png?v=379",
         "scoreOrTime": "0 - 0",
-        "status": "56'",
+        "status": "83'",
         "channels": [],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "كأس الدوري الأسكتلندي",
@@ -320,7 +398,45 @@
         "status": "انتهت",
         "channels": [],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [
+                [
+                    "كالفن ميلر",
+                    "90'"
+                ],
+                [
+                    "كلوديو براغا",
+                    "90'"
+                ],
+                [
+                    "جيمس ويلسون",
+                    "84'"
+                ],
+                [
+                    "كالفن ميلر",
+                    "83'"
+                ],
+                [
+                    "روجرز ماتو",
+                    "59'"
+                ],
+                [
+                    "كريستيان بورشجريفينك",
+                    "16'"
+                ]
+            ],
+            "away": [
+                [
+                    "ألفي بافيدج",
+                    "56'"
+                ],
+                [
+                    "ريان دنكان",
+                    "56'"
+                ]
+            ]
+        }
     },
     {
         "league": "كأس الدوري الأسكتلندي",
@@ -332,7 +448,16 @@
         "status": "انتهت",
         "channels": [],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [
+                [
+                    "أوين إلدينج",
+                    "12'"
+                ]
+            ],
+            "away": []
+        }
     },
     {
         "league": "كأس الدوري الأسكتلندي",
@@ -344,7 +469,16 @@
         "status": "انتهت",
         "channels": [],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [
+                [
+                    "إيوان أورايلي",
+                    "113'"
+                ]
+            ],
+            "away": []
+        }
     },
     {
         "league": "كأس الدوري الأسكتلندي",
@@ -356,7 +490,37 @@
         "status": "انتهت",
         "channels": [],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [
+                [
+                    "R. McCausland",
+                    "74'"
+                ],
+                [
+                    "جيمس بنريسي",
+                    "54'"
+                ],
+                [
+                    "جيدي غاساما",
+                    "53'"
+                ],
+                [
+                    "فانيا دراغويفيتش",
+                    "18'"
+                ],
+                [
+                    "R. Naderi",
+                    "10'"
+                ]
+            ],
+            "away": [
+                [
+                    "C. Mochrie",
+                    "31'"
+                ]
+            ]
+        }
     },
     {
         "league": "كأس إيطاليا",
@@ -365,12 +529,38 @@
         "awayTeam": "يوفي ستابيا",
         "awayLogo": "https://img.btolat.com/teamslogo/11921.png?v=460",
         "scoreOrTime": "4 - 1",
-        "status": "90+'",
+        "status": "انتهت",
         "channels": [
             "MBC شاهد | رياضة"
         ],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [
+                [
+                    "جورج كفيرنادزه",
+                    "71'"
+                ],
+                [
+                    "Antonio Raimondo",
+                    "38'"
+                ],
+                [
+                    "ماتيو تشيكيلا",
+                    "30'"
+                ],
+                [
+                    "جورج كفيرنادزه",
+                    "21'"
+                ]
+            ],
+            "away": [
+                [
+                    "ليوناردو كانديلوني",
+                    "48'"
+                ]
+            ]
+        }
     },
     {
         "league": "كأس إيطاليا",
@@ -378,13 +568,39 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11903.png?v=640",
         "awayTeam": "أسكولي",
         "awayLogo": "https://img.btolat.com/teamslogo/11769.png?v=905",
-        "scoreOrTime": "3 - 1",
-        "status": "66'",
+        "scoreOrTime": "4 - 1",
+        "status": "90+'",
         "channels": [
             "MBC شاهد | رياضة"
         ],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [
+                [
+                    "إلياس هافل",
+                    "80'"
+                ],
+                [
+                    "لورينزو كولومبو",
+                    "61'"
+                ],
+                [
+                    "Tommaso Baldanzi",
+                    "45'"
+                ],
+                [
+                    "أليساندرو ماركاندالي",
+                    "42'"
+                ]
+            ],
+            "away": [
+                [
+                    "أندريا سيليبو",
+                    "25'"
+                ]
+            ]
+        }
     },
     {
         "league": "كأس إيطاليا",
@@ -394,7 +610,9 @@
         "awayLogo": "https://img.btolat.com/teamslogo/11744.png?v=487",
         "scoreOrTime": "09:45 م",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "MBC شاهد | رياضة"
+        ],
         "commentator": "",
         "source": "Btolat"
     },
@@ -455,7 +673,16 @@
             "الكويت الرياضية"
         ],
         "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat"
+        "source": "Yallakora + FilGoal + Btolat",
+        "scorers": {
+            "home": [
+                [
+                    "كودي جاكبو",
+                    "23'"
+                ]
+            ],
+            "away": []
+        }
     },
     {
         "league": "مباريات ودية -أندية",
@@ -467,7 +694,29 @@
         "status": "انتهت",
         "channels": [],
         "commentator": "",
-        "source": "Yallakora + Btolat"
+        "source": "Yallakora + Btolat",
+        "scorers": {
+            "home": [
+                [
+                    "لوكا ويليامز بارنيت",
+                    "45'"
+                ],
+                [
+                    "بن دافيز",
+                    "20'"
+                ]
+            ],
+            "away": [
+                [
+                    "فالنتين جيندري",
+                    "55'"
+                ],
+                [
+                    "آدم هلوزيك",
+                    "16'"
+                ]
+            ]
+        }
     },
     {
         "league": "مباريات ودية -أندية",
@@ -516,11 +765,7 @@
         "status": "انتهت",
         "channels": [],
         "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat",
-        "scorers": {
-            "home": [],
-            "away": []
-        }
+        "source": "Yallakora + FilGoal + Btolat"
     },
     {
         "league": "مباريات ودية -أندية",
@@ -531,13 +776,27 @@
         "scoreOrTime": "0 - 3",
         "status": "انتهت",
         "channels": [
-            "STC TV"
+            "STC TV",
+            "Stc Sports HD1"
         ],
         "commentator": "",
-        "source": "Yallakora + FilGoal",
+        "source": "Yallakora + FilGoal + Btolat",
         "scorers": {
             "home": [],
-            "away": []
+            "away": [
+                [
+                    "كارلوس إسبي",
+                    "57'"
+                ],
+                [
+                    "دين هويسن",
+                    "20'"
+                ],
+                [
+                    "كيليان مبابي",
+                    "7'"
+                ]
+            ]
         }
     },
     {
@@ -606,20 +865,32 @@
         "status": "انتهت",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat"
-    },
-    {
-        "league": "مباريات ودية أندية",
-        "homeTeam": "شالكه 04",
-        "homeLogo": "https://img.btolat.com/teamslogo/10576.png?v=607",
-        "awayTeam": "ريال مدريد",
-        "awayLogo": "https://img.btolat.com/teamslogo/16110.png?v=903",
-        "scoreOrTime": "0 - 3",
-        "status": "انتهت",
-        "channels": [
-            "Stc Sports HD1"
-        ],
-        "commentator": "",
-        "source": "Btolat"
+        "source": "FilGoal + Btolat",
+        "scorers": {
+            "home": [
+                [
+                    "هاني مختار",
+                    "64'"
+                ],
+                [
+                    "سام سوريدج",
+                    "57'"
+                ],
+                [
+                    "هاني مختار",
+                    "49'"
+                ],
+                [
+                    "أندي آرييل نجار رودريجيز",
+                    "17'"
+                ]
+            ],
+            "away": [
+                [
+                    "تيلاسكو سيجوفيا",
+                    "45'"
+                ]
+            ]
+        }
     }
 ]
