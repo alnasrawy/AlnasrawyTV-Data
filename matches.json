@@ -1,5 +1,19 @@
 [
     {
+        "league": "الدرع الخيرية",
+        "homeTeam": "أرسنال",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\5\\Arsenal2021_9_5_14_15.jpg",
+        "awayTeam": "مانشستر سيتي",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\ManchesterCity2018_7_29_15_27.jpg",
+        "scoreOrTime": "2 - 0",
+        "status": "الشوط الأول",
+        "channels": [
+            "beIN SPORTS 1 HD"
+        ],
+        "commentator": "عامر الخوذيري",
+        "source": "Yallakora + FilGoal + Btolat"
+    },
+    {
         "league": "الدوري الإسباني",
         "homeTeam": "اسبانيول",
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Espanyol2018_7_29_14_44.jpg",
@@ -271,7 +285,9 @@
         "awayLogo": "https://img.btolat.com/teamslogo/10061.png?v=680",
         "scoreOrTime": "09:45 م",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "BEIN SPORTS 1"
+        ],
         "commentator": "",
         "source": "Btolat"
     },
@@ -305,8 +321,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15086.png?v=122",
         "awayTeam": "إنفيرنيس",
         "awayLogo": "https://img.btolat.com/teamslogo/15090.png?v=541",
-        "scoreOrTime": "1 - 0",
-        "status": "'",
+        "scoreOrTime": "2 - 2",
+        "status": "71'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -318,7 +334,7 @@
         "awayTeam": "بارتيك ثيستيل",
         "awayLogo": "https://img.btolat.com/teamslogo/15105.png?v=909",
         "scoreOrTime": "1 - 0",
-        "status": "47'",
+        "status": "77'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -330,7 +346,7 @@
         "awayTeam": "ماذرويل",
         "awayLogo": "https://img.btolat.com/teamslogo/15102.png?v=65",
         "scoreOrTime": "0 - 0",
-        "status": "'",
+        "status": "75'",
         "channels": [],
         "commentator": "",
         "source": "Btolat"
@@ -394,20 +410,6 @@
         "channels": [],
         "commentator": "",
         "source": "Btolat"
-    },
-    {
-        "league": "الدرع الخيرية",
-        "homeTeam": "أرسنال",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\5\\Arsenal2021_9_5_14_15.jpg",
-        "awayTeam": "مانشستر سيتي",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\ManchesterCity2018_7_29_15_27.jpg",
-        "scoreOrTime": "17:00",
-        "status": "لم تبدأ",
-        "channels": [
-            "beIN SPORTS 1 HD"
-        ],
-        "commentator": "عامر الخوذيري",
-        "source": "Yallakora + FilGoal + Btolat"
     },
     {
         "league": "مباريات ودية -أندية",
