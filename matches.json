@@ -46,20 +46,6 @@
     },
     {
         "league": "الدوري الإسباني",
-        "homeTeam": "راسينج سانتاندير",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/146.png",
-        "awayTeam": "فياريال",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/127.png",
-        "scoreOrTime": "18:00",
-        "status": "لم تبدأ",
-        "channels": [
-            "beIN SPORTS 3 HD"
-        ],
-        "commentator": "عامر الخوذيري",
-        "source": "FilGoal + Btolat"
-    },
-    {
-        "league": "الدوري الإسباني",
         "homeTeam": "ديبورتيفو لاكورونيا",
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/114.png",
         "awayTeam": "إلتشي",
@@ -71,6 +57,20 @@
         ],
         "commentator": "",
         "source": "FilGoal"
+    },
+    {
+        "league": "الدوري الإسباني",
+        "homeTeam": "راسينج سانتاندير",
+        "homeLogo": "https://img.btolat.com/teamslogo/16096.png?v=141",
+        "awayTeam": "فياريال",
+        "awayLogo": "https://img.btolat.com/teamslogo/16270.png?v=607",
+        "scoreOrTime": "18:00",
+        "status": "لم تبدأ",
+        "channels": [
+            "beIN SPORTS 3 HD"
+        ],
+        "commentator": "عامر الخوذيري",
+        "source": "FilGoal + Btolat"
     },
     {
         "league": "الدوري السعودي",
@@ -152,14 +152,14 @@
     {
         "league": "الدوري العراقي",
         "homeTeam": "الشرطة",
-        "homeLogo": "",
+        "homeLogo": "https://img.btolat.com/teamslogo/11512.png?v=547",
         "awayTeam": "كربلاء",
-        "awayLogo": "",
+        "awayLogo": "https://img.btolat.com/teamslogo/11524.png?v=701",
         "scoreOrTime": "21:00",
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal"
+        "source": "FilGoal + Btolat"
     },
     {
         "league": "الدوري العراقي",
@@ -176,14 +176,26 @@
     {
         "league": "الدوري العراقي",
         "homeTeam": "أربيل",
-        "homeLogo": "",
+        "homeLogo": "https://img.btolat.com/teamslogo/11519.png?v=205",
         "awayTeam": "الكهرباء",
-        "awayLogo": "",
+        "awayLogo": "https://img.btolat.com/teamslogo/11523.png?v=283",
         "scoreOrTime": "21:00",
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal"
+        "source": "FilGoal + Btolat"
+    },
+    {
+        "league": "الدوري العراقي",
+        "homeTeam": "دهوك",
+        "homeLogo": "https://img.btolat.com/teamslogo/11521.png?v=209",
+        "awayTeam": "غراف",
+        "awayLogo": "https://img.btolat.com/",
+        "scoreOrTime": "06:30 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Btolat"
     },
     {
         "league": "الدوري الإماراتي",
@@ -212,9 +224,9 @@
     {
         "league": "الدوري الإماراتي",
         "homeTeam": "حتا",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/1254.png",
+        "homeLogo": "",
         "awayTeam": "الجزيرة",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/875.png",
+        "awayLogo": "",
         "scoreOrTime": "17:10",
         "status": "لم تبدأ",
         "channels": [],
@@ -230,10 +242,10 @@
         "scoreOrTime": "21:45",
         "status": "لم تبدأ",
         "channels": [
-            "بى ان سبورت 1HD"
+            "beIN SPORTS 1 HD"
         ],
-        "commentator": "",
-        "source": "Yallakora"
+        "commentator": "أحمد البلوشي",
+        "source": "Yallakora + FilGoal"
     },
     {
         "league": "كأس خادم الحرمين",
@@ -249,10 +261,10 @@
     },
     {
         "league": "كأس السوبر الفرنسي",
-        "homeTeam": "باريس سان جيرمان",
-        "homeLogo": "https://img.btolat.com/teamslogo/10061.png?v=680",
-        "awayTeam": "لينس",
-        "awayLogo": "https://img.btolat.com/teamslogo/9998.png?v=402",
+        "homeTeam": "لينس",
+        "homeLogo": "https://img.btolat.com/teamslogo/9998.png?v=402",
+        "awayTeam": "باريس سان جيرمان",
+        "awayLogo": "https://img.btolat.com/teamslogo/10061.png?v=680",
         "scoreOrTime": "09:45 م",
         "status": "لم تبدأ",
         "channels": [],
@@ -286,9 +298,9 @@
     {
         "league": "كأس الدوري الأسكتلندي",
         "homeTeam": "هارت أوف ميدلوثيان",
-        "homeLogo": "https://img.btolat.com/teamslogo/15086.png?v=260",
+        "homeLogo": "https://img.btolat.com/teamslogo/15086.png?v=122",
         "awayTeam": "إنفيرنيس",
-        "awayLogo": "https://img.btolat.com/teamslogo/15090.png?v=546",
+        "awayLogo": "https://img.btolat.com/teamslogo/15090.png?v=541",
         "scoreOrTime": "04:00 م",
         "status": "لم تبدأ",
         "channels": [],
@@ -298,9 +310,9 @@
     {
         "league": "كأس الدوري الأسكتلندي",
         "homeTeam": "هيبرنيان",
-        "homeLogo": "https://img.btolat.com/teamslogo/15088.png?v=493",
+        "homeLogo": "https://img.btolat.com/teamslogo/15088.png?v=817",
         "awayTeam": "بارتيك ثيستيل",
-        "awayLogo": "https://img.btolat.com/teamslogo/15105.png?v=804",
+        "awayLogo": "https://img.btolat.com/teamslogo/15105.png?v=941",
         "scoreOrTime": "04:00 م",
         "status": "لم تبدأ",
         "channels": [],
@@ -310,9 +322,9 @@
     {
         "league": "كأس الدوري الأسكتلندي",
         "homeTeam": "ستينهاوسيميور",
-        "homeLogo": "https://img.btolat.com/teamslogo/15121.png?v=552",
+        "homeLogo": "https://img.btolat.com/teamslogo/15121.png?v=611",
         "awayTeam": "ماذرويل",
-        "awayLogo": "https://img.btolat.com/teamslogo/15102.png?v=131",
+        "awayLogo": "https://img.btolat.com/teamslogo/15102.png?v=169",
         "scoreOrTime": "04:00 م",
         "status": "لم تبدأ",
         "channels": [],
@@ -322,7 +334,7 @@
     {
         "league": "كأس الدوري الأسكتلندي",
         "homeTeam": "جلاسكو رينجرز",
-        "homeLogo": "https://img.btolat.com/teamslogo/15113.png?v=249",
+        "homeLogo": "https://img.btolat.com/teamslogo/15113.png?v=93",
         "awayTeam": "سانت ميرين",
         "awayLogo": "https://img.btolat.com/teamslogo/15120.png?v=965",
         "scoreOrTime": "06:00 م",
@@ -390,7 +402,7 @@
         "channels": [
             "beIN SPORTS 1 HD"
         ],
-        "commentator": "",
+        "commentator": "عامر الخوذيري",
         "source": "Yallakora + FilGoal + Btolat"
     },
     {
@@ -399,8 +411,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\25\\Liverpool12024_8_25_20_39.jpg",
         "awayTeam": "كومو",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\12\\10472024_8_12_20_53.jpg",
-        "scoreOrTime": "13:30",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "36'",
         "channels": [
             "ON Sport PLUS",
             "أبو ظبي الرياضية"
@@ -414,8 +426,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\19\\1482024_8_19_21_30.jpg",
         "awayTeam": "هوفنهايم",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Hoffenheim2018_7_29_16_6.jpg",
-        "scoreOrTime": "14:00",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "7'",
         "channels": [],
         "commentator": "",
         "source": "Yallakora + Btolat"
@@ -517,11 +529,11 @@
     {
         "league": "الدوري الأمريكي - دور المجموعات",
         "homeTeam": "ناشفيل",
-        "homeLogo": "https://img.btolat.com/teamslogo/29167.png?v=21",
+        "homeLogo": "https://img.btolat.com/teamslogo/29167.png?v=993",
         "awayTeam": "إنتر ميامي",
-        "awayLogo": "https://img.btolat.com/teamslogo/32374.png?v=938",
-        "scoreOrTime": "03:30",
-        "status": "لم تبدأ",
+        "awayLogo": "https://img.btolat.com/teamslogo/32374.png?v=404",
+        "scoreOrTime": "4 - 1",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat"
@@ -534,7 +546,9 @@
         "awayLogo": "https://img.btolat.com/teamslogo/16110.png?v=903",
         "scoreOrTime": "06:00 م",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "Stc Sports HD1"
+        ],
         "commentator": "",
         "source": "Btolat"
     }
