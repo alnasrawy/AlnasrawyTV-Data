@@ -89,8 +89,8 @@
         "homeLogo": "https://img.btolat.com/",
         "awayTeam": "الأهلي السعودي",
         "awayLogo": "https://img.btolat.com/teamslogo/14990.png?v=282",
-        "scoreOrTime": "0 - 1",
-        "status": "74'",
+        "scoreOrTime": "1 - 2",
+        "status": "90+'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
@@ -125,7 +125,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\17\\Al-Anwar Club12026_8_17_0_28.webp",
         "awayTeam": "أهلي جدة",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\8\\20\\al-ahli-logo-png22025_8_20_16_10.webp",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "0 - 1",
         "status": "مباشر",
         "channels": [
             "ثمانية 1"
@@ -153,7 +153,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\8\\11\\al-tai12023_8_11_17_30.jpg",
         "awayTeam": "القادسية",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\23\\Al_Qadsiah12024_8_23_16_52.jpg",
-        "scoreOrTime": "0 - 3",
+        "scoreOrTime": "0 - 4",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -180,7 +180,7 @@
         "awayTeam": "القادسية السعودي",
         "awayLogo": "https://img.btolat.com/teamslogo/15013.png?v=404",
         "scoreOrTime": "0 - 4",
-        "status": "62'",
+        "status": "84'",
         "channels": [
             "تطبيق ثمانية",
             "ثمانية 3"
@@ -211,14 +211,18 @@
         "homeLogo": "https://img.btolat.com/teamslogo/23306.png?v=109",
         "awayTeam": "الرياض",
         "awayLogo": "https://img.btolat.com/teamslogo/15016.png?v=837",
-        "scoreOrTime": "0 - 1",
-        "status": "61'",
+        "scoreOrTime": "0 - 2",
+        "status": "84'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
         "scorers": {
             "home": [],
             "away": [
+                [
+                    "لياندرو أنتونيس",
+                    "74'"
+                ],
                 [
                     "لياندرو أنتونيس",
                     "25'"
@@ -233,7 +237,7 @@
         "awayTeam": "إمبولي",
         "awayLogo": "https://img.btolat.com/teamslogo/11867.png?v=81",
         "scoreOrTime": "1 - 1",
-        "status": "77'",
+        "status": "90+'",
         "channels": [
             "MBC شاهد | رياضة"
         ],
@@ -256,7 +260,7 @@
         "awayTeam": "تشيزينا",
         "awayLogo": "https://img.btolat.com/teamslogo/11849.png?v=327",
         "scoreOrTime": "2 - 0",
-        "status": "'",
+        "status": "66'",
         "channels": [
             "MBC شاهد | رياضة"
         ],
@@ -264,6 +268,10 @@
         "source": "Btolat",
         "scorers": {
             "home": [
+                [
+                    "فاسيليجي أتسيتش",
+                    "45'"
+                ],
                 [
                     "كريستيان فولباتو",
                     "13'"
