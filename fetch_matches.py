@@ -688,7 +688,20 @@ def _load_team_logo(url, team_name, league=None, size=210):
                              headers={"Referer": "https://www.filgoal.com/"})
             if r.status_code == 200 and len(r.content) > 100:
                 img = Image.open(io.BytesIO(r.content)).convert("RGBA")
+                # قص الفراغ الشفاف حول اللوجو ثم تكبيره ليملأ الدائرة تقريباً
+                try:
+                    bbox = img.getbbox()
+                    if bbox:
+                        img = img.crop(bbox)
+                except Exception:
+                    pass
                 img.thumbnail((size, size), Image.LANCZOS)
+                w, h = img.size
+                small = min(w, h)
+                target_small = size * 0.92
+                if small and small < target_small:
+                    f = target_small / small
+                    img = img.resize((max(1, int(w * f)), max(1, int(h * f))), Image.LANCZOS)
                 break
         except Exception:
             img = None
@@ -815,8 +828,8 @@ def compose_match_card(match, kind="end"):
     MARGIN = 30            # هامش حول البطاقة (القالب يعرضها فوق خلفية الصفحة)
     PAD = 54               # حشوة البطاقة الداخلية (24px × 2.25)
     RAD = 40               # زوايا البطاقة الدائرية
-    WRAP = int(84 * s)     # 189 قطر الدائرة البيضاء خلف اللوجو
-    LOGO = int(60 * s)     # 135 اللوجو بداخلها
+    WRAP = int(64 * s) + 26      # 170 قطر الدائرة البيضاء (حلقة رفيعة فقط)
+    LOGO = int(64 * s)           # 144 اللوجو يكاد يملأها
     inner_x0 = MARGIN + PAD
     inner_x1 = W - MARGIN - PAD
     cx_home = inner_x1 - WRAP // 2          # يمين (RTL أول عمود = المضيف)
@@ -935,9 +948,11 @@ def compose_match_card(match, kind="end"):
             total = w1 + w2 + wdash
             x0 = W / 2 - total / 2
             baseline = py + (panel_h - score_style.size) / 2 - 2
-            d.text((x0, baseline), parts[0], font=score_style, fill=TEXT_HI)
-            d.text((x0 + w1, baseline + (score_style.size - dash.size) / 2), " – ", font=dash, fill=GOLD)
-            d.text((x0 + w1 + wdash, baseline), parts[1], font=score_style, fill=TEXT_HI)
+            # RTL: المضيف (يمين) نتيجته على اليمين والضيف (يسار) نتيجته على اليسار
+            # العدد الأول = المضيف، الثاني = الضيف → نرسم الضيف يساراً والمضيف يميناً
+            d.text((x0, baseline), parts[1], font=score_style, fill=TEXT_HI)
+            d.text((x0 + w2, baseline + (score_style.size - dash.size) / 2), " – ", font=dash, fill=GOLD)
+            d.text((x0 + w2 + wdash, baseline), parts[0], font=score_style, fill=TEXT_HI)
         else:
             _draw_centered(d, W // 2, py + 20, score_or_time, score_style, TEXT_HI, panel_w - 30)
     else:
@@ -1400,13 +1415,14 @@ class GhostScraper:
                         return html[start:k + 1]
         return None
 
-    def _fetch_filgoal_detail(self, match_id, status=""):
+    def _fetch_filgoal_detail(self, match_id, status="", force=False):
         """القنوات والمعلقون والأهداف من صفحة المباراة التفصيلية (/coverage).
         مع كاش في filgoal_cache.json حتى لا نعيد الجلب كل 10 دقائق (توفير رصيد GitHub).
-        نعيد الجلب فقط إذا انتهت صلاحية الكاش أو تغيّرت حالة المباراة (مثلاً انتهت → نحتاج الهدافين)."""
+        نعيد الجلب فقط إذا انتهت صلاحية الكاش أو تغيّرت حالة المباراة (مثلاً انتهت → نحتاج الهدافين).
+        force=True يتجاوز الكاش (يُستخدم في خطوة التعبئة اللاحقة للمباريات المنتهية)."""
         cached = FILGOAL_CACHE.get(match_id)
         now = time.time()
-        if cached and (now - cached.get('at', 0)) / 60.0 < FILGOAL_CACHE_TTL and cached.get('status') == status:
+        if cached and not force and (now - cached.get('at', 0)) / 60.0 < FILGOAL_CACHE_TTL and cached.get('status') == status:
             return {
                 "channels": list(cached.get('channels', [])),
                 "commenters": list(cached.get('commenters', [])),
@@ -1567,7 +1583,7 @@ class GhostScraper:
 
         # 💡 القنوات والمعلقون والأهداف من صفحة كل مباراة تفصيلية (/coverage)
         for m in seen.values():
-            match_id = m.pop('_match_id', None)
+            match_id = m.get('_match_id')
             if not match_id or not _is_vip_candidate(m):
                 continue
             detail = self._fetch_filgoal_detail(match_id, status=m['status'])
@@ -1578,6 +1594,7 @@ class GhostScraper:
             # الأهداف نهمها فقط للمباريات المنتهية (في لبعض ids يعيد فيلجول مباراة قديمة منتهية)
             if m['status'] == "انتهت":
                 m['scorers'] = detail['scorers']
+                m['_filgoal_id'] = match_id
 
         return list(seen.values())
 
@@ -1668,9 +1685,13 @@ class GhostScraper:
         # 💡 أسماء الهدافين من صفحة تفاصيل بطولات (للمباريات المنتهية فقط — مثل فيلجول)
         for match_item in matches:
             du = match_item.pop('_btolat_details', None)
-            if not du or not self._btolat_is_ended(match_item):
+            if not du:
                 continue
-            match_item['scorers'] = self._fetch_btolat_scorers(du, match_item)
+            if self._btolat_is_ended(match_item):
+                match_item['scorers'] = self._fetch_btolat_scorers(du, match_item)
+                # 💡 نحتفظ برابط التفاصيل على المباراة المنتهية: إذا بقيت الأهداف فارغة
+                # (مثلاً كانت حالة بطولات متأخرة لحظة المسح)، نعيد الجلب في خطوة التعبئة اللاحقة
+                match_item['_btolat_details'] = du
         return matches
 
     def _btolat_is_ended(self, m):
@@ -1678,11 +1699,12 @@ class GhostScraper:
         sc = m.get('scoreOrTime', '')
         return 'انتهت' in st or 'نهاية' in st or ('-' in sc and ':' not in sc)
 
-    def _fetch_btolat_scorers(self, details_url, match_item):
-        """أهداف المباراة من صفحة تفاصيل بطولات مع كاش محلي (TTL) لتوفير الطلبات."""
+    def _fetch_btolat_scorers(self, details_url, match_item, force=False):
+        """أهداف المباراة من صفحة تفاصيل بطولات مع كاش محلي (TTL) لتوفير الطلبات.
+        force=True يتجاوز الكاش (يُستخدم في خطوة التعبئة اللاحقة للمباريات المنتهية)."""
         cached = BTOLAT_DETAIL_CACHE.get(details_url)
         now = time.time()
-        if cached and (now - cached.get('at', 0)) / 60.0 < BTOLAT_DETAIL_TTL:
+        if cached and not force and (now - cached.get('at', 0)) / 60.0 < BTOLAT_DETAIL_TTL:
             return dict(cached.get('scorers', {"home": [], "away": []}))
         html = self.fetch(details_url, f"Btolat (details {details_url.rsplit('/', 1)[-1]})")
         scorers = extract_btolat_scorers(html) if html else {"home": [], "away": []}
@@ -1816,6 +1838,32 @@ def extract_first_match_time(matches_list):
 # ================= العقل المدبر والتشغيل =================
 scraper_engine = GhostScraper()
 
+def _backfill_scorers(matches):
+    """تعبئة الأهداف للمباريات المنتهية التي لم تصلنا أهدافها بعد (تأخر حالة المصدر لحظة
+    المسح). نعيد جلب صفحة تفاصيل بطولات/فيلجول بتجاهل الكاش لأن حالة النهاية نهائية."""
+    import random as _rnd
+    for m in matches:
+        sc = m.get('scorers') or {}
+        if sc.get('home') or sc.get('away'):
+            continue
+        score = m.get('scoreOrTime', '')
+        ended = m.get('status') == "انتهت" or ('-' in score and ':' not in score)
+        if not ended:
+            continue
+        du = m.get('_btolat_details')
+        if du:
+            got = scraper_engine._fetch_btolat_scorers(du, m, force=True)
+            if got.get('home') or got.get('away'):
+                m['scorers'] = got
+                continue
+            time.sleep(_rnd.uniform(GLOBAL_DELAY[0], GLOBAL_DELAY[1]))
+        fid = m.get('_filgoal_id')
+        if fid:
+            det = scraper_engine._fetch_filgoal_detail(fid, status=m.get('status'), force=True)
+            if det['scorers'] and (det['scorers'].get('home') or det['scorers'].get('away')):
+                m['scorers'] = det['scorers']
+
+
 def execute_full_cycle():
     global FILGOAL_CACHE, BTOLAT_DETAIL_CACHE
     FILGOAL_CACHE = _load_filgoal_cache()
@@ -1892,7 +1940,22 @@ def execute_full_cycle():
             if not (merged_sc.get('home') or merged_sc.get('away')) and (m_sc.get('home') or m_sc.get('away')):
                 merged[key]['scorers'] = m_sc
 
+            # 7. 💡 نقل مفاتيح التفاصيل الخاصة (رابط بطولات / رقم فيلجول)
+            #    حتى تصل لخطوة التعبئة اللاحقة للأهداف لو بقيت فارغة
+            for pk in ('_btolat_details', '_filgoal_id'):
+                if not merged[key].get(pk) and m.get(pk):
+                    merged[key][pk] = m[pk]
+
     final_list = filter_and_rank(list(merged.values()))
+
+    # 💡 خطوة التعبئة اللاحقة: مباراة انتهت ولم تصلنا أهدافها (تأخر حالة بطولات مثلاً)
+    #    نعيد جلب صفحة التفاصيل الآن — مع تجاهل الكاش الفارغ لأن النتيجة النهائية مستقرة
+    _backfill_scorers(final_list)
+
+    # 💡 إزالة المفاتيح الداخلية قبل الحفظ والإشعارات
+    for m in final_list:
+        m.pop('_btolat_details', None)
+        m.pop('_filgoal_id', None)
 
     print("\n-> VIP Matches Extracted & Standardized:")
     if not final_list:
