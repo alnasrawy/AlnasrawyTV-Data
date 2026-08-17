@@ -87,16 +87,47 @@
   }
  },
  "https://www.btolat.com/matches/details/226634": {
-  "at": 1786983079.1584544,
+  "at": 1786985155.1049707,
   "scorers": {
    "home": [],
    "away": []
   }
  },
  "https://www.btolat.com/matches/details/226672": {
-  "at": 1786983083.2009766,
+  "at": 1786985161.1102214,
   "scorers": {
    "home": [],
+   "away": []
+  }
+ },
+ "https://www.btolat.com/matches/details/226643": {
+  "at": 1786985158.3579226,
+  "scorers": {
+   "home": [],
+   "away": []
+  }
+ },
+ "https://www.btolat.com/matches/details/226646": {
+  "at": 1786985150.3869393,
+  "scorers": {
+   "home": [],
+   "away": [
+    [
+     "لياندرو أنتونيس",
+     "25'"
+    ]
+   ]
+  }
+ },
+ "https://www.btolat.com/matches/details/226673": {
+  "at": 1786985163.8474731,
+  "scorers": {
+   "home": [
+    [
+     "كريستيان فولباتو",
+     "13'"
+    ]
+   ],
    "away": []
   }
  }
