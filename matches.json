@@ -90,7 +90,7 @@
         "awayTeam": "الأهلي السعودي",
         "awayLogo": "https://img.btolat.com/teamslogo/14990.png?v=282",
         "scoreOrTime": "0 - 0",
-        "status": "45+'",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
@@ -131,7 +131,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/teamlogo/4510-2-2014-21-27-52.jpg",
         "awayTeam": "الرياض",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\xOyjlucX_400x4002026_8_2_18_28.webp",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "0 - 1",
         "status": "مباشر",
         "channels": [
             "تطبيق ثمانية"
@@ -145,7 +145,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\8\\11\\al-tai12023_8_11_17_30.jpg",
         "awayTeam": "القادسية",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\23\\Al_Qadsiah12024_8_23_16_52.jpg",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "0 - 2",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -169,8 +169,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15020.png?v=332",
         "awayTeam": "القادسية السعودي",
         "awayLogo": "https://img.btolat.com/teamslogo/15013.png?v=404",
-        "scoreOrTime": "0 - 1",
-        "status": "31'",
+        "scoreOrTime": "0 - 3",
+        "status": "'",
         "channels": [
             "تطبيق ثمانية",
             "ثمانية 3"
@@ -189,7 +189,7 @@
         "awayTeam": "الرياض",
         "awayLogo": "https://img.btolat.com/teamslogo/15016.png?v=837",
         "scoreOrTime": "0 - 1",
-        "status": "30'",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
@@ -209,15 +209,20 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11968.png?v=533",
         "awayTeam": "إمبولي",
         "awayLogo": "https://img.btolat.com/teamslogo/11867.png?v=81",
-        "scoreOrTime": "0 - 0",
-        "status": "44'",
+        "scoreOrTime": "1 - 0",
+        "status": "'",
         "channels": [
             "MBC شاهد | رياضة"
         ],
         "commentator": "",
         "source": "Btolat",
         "scorers": {
-            "home": [],
+            "home": [
+                [
+                    "توماسو ماراس",
+                    "44'"
+                ]
+            ],
             "away": []
         }
     },
@@ -227,8 +232,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/12013.png?v=127",
         "awayTeam": "تشيزينا",
         "awayLogo": "https://img.btolat.com/teamslogo/11849.png?v=327",
-        "scoreOrTime": "0 - 0",
-        "status": "13'",
+        "scoreOrTime": "1 - 0",
+        "status": "32'",
         "channels": [
             "MBC شاهد | رياضة"
         ],
