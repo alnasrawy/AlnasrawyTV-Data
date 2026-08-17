@@ -51,8 +51,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\Alraed2018_7_25_17_10.jpg",
         "awayTeam": "الهلال",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\13\\11142024_8_13_20_18.jpg",
-        "scoreOrTime": "21:00",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 1",
+        "status": "مباشر",
         "channels": [
             "ثمانية 2"
         ],
@@ -90,7 +90,7 @@
         "awayTeam": "الأهلي السعودي",
         "awayLogo": "https://img.btolat.com/teamslogo/14990.png?v=282",
         "scoreOrTime": "1 - 2",
-        "status": "90+'",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
@@ -110,14 +110,23 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15014.png?v=303",
         "awayTeam": "الهلال السعودي",
         "awayLogo": "https://img.btolat.com/teamslogo/15001.png?v=248",
-        "scoreOrTime": "09:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 1",
+        "status": "33'",
         "channels": [
             "تطبيق ثمانية",
             "ثمانية 2"
         ],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": [
+                [
+                    "روبين نيفيز",
+                    "14'"
+                ]
+            ]
+        }
     },
     {
         "league": "كأس خادم الحرمين الشريفين",
@@ -125,8 +134,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\17\\Al-Anwar Club12026_8_17_0_28.webp",
         "awayTeam": "أهلي جدة",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\8\\20\\al-ahli-logo-png22025_8_20_16_10.webp",
-        "scoreOrTime": "0 - 1",
-        "status": "مباشر",
+        "scoreOrTime": "1 - 2",
+        "status": "انتهت",
         "channels": [
             "ثمانية 1"
         ],
@@ -139,8 +148,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/teamlogo/4510-2-2014-21-27-52.jpg",
         "awayTeam": "الرياض",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\xOyjlucX_400x4002026_8_2_18_28.webp",
-        "scoreOrTime": "0 - 1",
-        "status": "مباشر",
+        "scoreOrTime": "0 - 2",
+        "status": "انتهت",
         "channels": [
             "تطبيق ثمانية"
         ],
@@ -153,8 +162,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\8\\11\\al-tai12023_8_11_17_30.jpg",
         "awayTeam": "القادسية",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\23\\Al_Qadsiah12024_8_23_16_52.jpg",
-        "scoreOrTime": "0 - 4",
-        "status": "مباشر",
+        "scoreOrTime": "0 - 5",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Yallakora"
@@ -165,8 +174,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2019\\8\\19\\Untitled-12019_8_19_22_12.jpg",
         "awayTeam": "الفيحاء",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\7\\AlFayha2021_9_7_17_37.jpg",
-        "scoreOrTime": "21:00",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "مباشر",
         "channels": [
             "ثمانية 4"
         ],
@@ -179,8 +188,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15020.png?v=332",
         "awayTeam": "القادسية السعودي",
         "awayLogo": "https://img.btolat.com/teamslogo/15013.png?v=404",
-        "scoreOrTime": "0 - 4",
-        "status": "84'",
+        "scoreOrTime": "0 - 5",
+        "status": "انتهت",
         "channels": [
             "تطبيق ثمانية",
             "ثمانية 3"
@@ -212,7 +221,7 @@
         "awayTeam": "الرياض",
         "awayLogo": "https://img.btolat.com/teamslogo/15016.png?v=837",
         "scoreOrTime": "0 - 2",
-        "status": "84'",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
@@ -237,7 +246,7 @@
         "awayTeam": "إمبولي",
         "awayLogo": "https://img.btolat.com/teamslogo/11867.png?v=81",
         "scoreOrTime": "1 - 1",
-        "status": "90+'",
+        "status": "انتهت",
         "channels": [
             "MBC شاهد | رياضة"
         ],
@@ -250,7 +259,12 @@
                     "44'"
                 ]
             ],
-            "away": []
+            "away": [
+                [
+                    "إدواردو سابوريتي",
+                    "61'"
+                ]
+            ]
         }
     },
     {
@@ -259,8 +273,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/12013.png?v=127",
         "awayTeam": "تشيزينا",
         "awayLogo": "https://img.btolat.com/teamslogo/11849.png?v=327",
-        "scoreOrTime": "2 - 0",
-        "status": "66'",
+        "scoreOrTime": "3 - 0",
+        "status": "انتهت",
         "channels": [
             "MBC شاهد | رياضة"
         ],
@@ -288,7 +302,9 @@
         "awayLogo": "https://img.btolat.com/teamslogo/12005.png?v=821",
         "scoreOrTime": "09:45 م",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "MBC شاهد | رياضة"
+        ],
         "commentator": "",
         "source": "Btolat"
     },
@@ -300,7 +316,10 @@
         "awayLogo": "https://img.btolat.com/teamslogo/11926.png?v=397",
         "scoreOrTime": "10:15 م",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "MBC شاهد | رياضة",
+            "إم بي سي أكشن"
+        ],
         "commentator": "",
         "source": "Btolat"
     },

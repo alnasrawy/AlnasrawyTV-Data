@@ -1,6 +1,6 @@
 {
  "https://www.btolat.com/matches/details/214077": {
-  "at": 1786986263.69066,
+  "at": 1786991586.6278892,
   "scorers": {
    "home": [
     [
@@ -21,7 +21,7 @@
   }
  },
  "https://www.btolat.com/matches/details/214078": {
-  "at": 1786986265.4641263,
+  "at": 1786991588.5186098,
   "scorers": {
    "home": [
     [
@@ -50,7 +50,7 @@
   }
  },
  "https://www.btolat.com/matches/details/214070": {
-  "at": 1786986267.0399165,
+  "at": 1786991589.8348231,
   "scorers": {
    "home": [
     [
@@ -71,7 +71,7 @@
   }
  },
  "https://www.btolat.com/matches/details/214079": {
-  "at": 1786986268.6015894,
+  "at": 1786991591.444044,
   "scorers": {
    "home": [],
    "away": [
@@ -99,7 +99,7 @@
   }
  },
  "https://www.btolat.com/matches/details/226672": {
-  "at": 1786986276.5662448,
+  "at": 1786991592.730537,
   "scorers": {
    "home": [
     [
@@ -107,7 +107,12 @@
      "44'"
     ]
    ],
-   "away": []
+   "away": [
+    [
+     "إدواردو سابوريتي",
+     "61'"
+    ]
+   ]
   }
  },
  "https://www.btolat.com/matches/details/226643": {
@@ -159,6 +164,32 @@
      "13'"
     ]
    ],
+   "away": []
+  }
+ },
+ "https://www.btolat.com/matches/details/226642": {
+  "at": 1786991580.3921564,
+  "scorers": {
+   "home": [],
+   "away": [
+    [
+     "روبين نيفيز",
+     "14'"
+    ]
+   ]
+  }
+ },
+ "https://www.btolat.com/matches/details/226633": {
+  "at": 1786991594.876264,
+  "scorers": {
+   "home": [],
+   "away": []
+  }
+ },
+ "https://www.btolat.com/matches/details/228714": {
+  "at": 1786991584.468915,
+  "scorers": {
+   "home": [],
    "away": []
   }
  }
