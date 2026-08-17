@@ -53,7 +53,9 @@
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\13\\11142024_8_13_20_18.jpg",
         "scoreOrTime": "21:00",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "ثمانية 2"
+        ],
         "commentator": "",
         "source": "Yallakora"
     },
@@ -113,7 +115,9 @@
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\8\\20\\al-ahli-logo-png22025_8_20_16_10.webp",
         "scoreOrTime": "19:00",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "ثمانية 1"
+        ],
         "commentator": "",
         "source": "Yallakora"
     },
@@ -125,7 +129,9 @@
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\xOyjlucX_400x4002026_8_2_18_28.webp",
         "scoreOrTime": "19:15",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "تطبيق ثمانية"
+        ],
         "commentator": "",
         "source": "Yallakora"
     },
