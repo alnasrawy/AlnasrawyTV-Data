@@ -66,7 +66,7 @@
             "ثمانية 2"
         ],
         "commentator": "",
-        "source": "Yallakora"
+        "source": "Yallakora + FilGoal"
     },
     {
         "league": "كأس السوبر الفرنسي",
@@ -91,6 +91,19 @@
             ],
             "away": []
         }
+    },
+    {
+        "league": "كأس خادم الحرمين الشريفين - دور الـ 32",
+        "homeTeam": "الأنوار",
+        "homeLogo": "",
+        "awayTeam": "الأهلي",
+        "awayLogo": "",
+        "scoreOrTime": "19:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal",
+        "_match_id": "376512"
     },
     {
         "league": "كأس خادم الحرمين",
@@ -128,8 +141,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15014.png?v=303",
         "awayTeam": "الهلال السعودي",
         "awayLogo": "https://img.btolat.com/teamslogo/15001.png?v=248",
-        "scoreOrTime": "0 - 1",
-        "status": "75'",
+        "scoreOrTime": "0 - 2",
+        "status": "90+'",
         "channels": [
             "تطبيق ثمانية",
             "ثمانية 2"
@@ -172,7 +185,7 @@
             "تطبيق ثمانية"
         ],
         "commentator": "",
-        "source": "Yallakora"
+        "source": "Yallakora + FilGoal"
     },
     {
         "league": "كأس خادم الحرمين الشريفين",
@@ -198,7 +211,7 @@
             "ثمانية 4"
         ],
         "commentator": "",
-        "source": "Yallakora + Btolat",
+        "source": "Yallakora + FilGoal + Btolat",
         "scorers": {
             "home": [],
             "away": [
@@ -212,6 +225,19 @@
                 ]
             ]
         }
+    },
+    {
+        "league": "كأس خادم الحرمين الشريفين - دور الـ 32",
+        "homeTeam": "الطائي",
+        "homeLogo": "",
+        "awayTeam": "القادسية",
+        "awayLogo": "",
+        "scoreOrTime": "19:15",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal",
+        "_match_id": "376510"
     },
     {
         "league": "كأس خادم الحرمين",
@@ -336,7 +362,7 @@
         "awayTeam": "سامبدوريا",
         "awayLogo": "https://img.btolat.com/teamslogo/12005.png?v=821",
         "scoreOrTime": "1 - 0",
-        "status": "'",
+        "status": "51'",
         "channels": [
             "MBC شاهد | رياضة"
         ],
@@ -359,7 +385,7 @@
         "awayTeam": "ليتشي",
         "awayLogo": "https://img.btolat.com/teamslogo/11926.png?v=397",
         "scoreOrTime": "1 - 0",
-        "status": "17'",
+        "status": "35'",
         "channels": [
             "MBC شاهد | رياضة",
             "إم بي سي أكشن"
