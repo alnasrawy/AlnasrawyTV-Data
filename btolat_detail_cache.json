@@ -1,6 +1,6 @@
 {
  "https://www.btolat.com/matches/details/214077": {
-  "at": 1786991586.6278892,
+  "at": 1786995392.1815307,
   "scorers": {
    "home": [
     [
@@ -21,7 +21,7 @@
   }
  },
  "https://www.btolat.com/matches/details/214078": {
-  "at": 1786991588.5186098,
+  "at": 1786995394.4650915,
   "scorers": {
    "home": [
     [
@@ -50,7 +50,7 @@
   }
  },
  "https://www.btolat.com/matches/details/214070": {
-  "at": 1786991589.8348231,
+  "at": 1786995396.1321635,
   "scorers": {
    "home": [
     [
@@ -71,7 +71,7 @@
   }
  },
  "https://www.btolat.com/matches/details/214079": {
-  "at": 1786991591.444044,
+  "at": 1786995397.774348,
   "scorers": {
    "home": [],
    "away": [
@@ -108,7 +108,7 @@
   }
  },
  "https://www.btolat.com/matches/details/226672": {
-  "at": 1786991592.730537,
+  "at": 1786995400.0485003,
   "scorers": {
    "home": [
     [
@@ -181,7 +181,7 @@
   }
  },
  "https://www.btolat.com/matches/details/226642": {
-  "at": 1786991580.3921564,
+  "at": 1786995385.8952239,
   "scorers": {
    "home": [],
    "away": [
@@ -209,16 +209,35 @@
   }
  },
  "https://www.btolat.com/matches/details/228714": {
-  "at": 1786991584.468915,
+  "at": 1786995387.928561,
   "scorers": {
-   "home": [],
-   "away": []
+   "home": [
+    [
+     "إيمري كيلينتش",
+     "43'"
+    ],
+    [
+     "ماريوس موانديلمادجي",
+     "30'"
+    ]
+   ],
+   "away": [
+    [
+     "أليكس ماتوس",
+     "3'"
+    ]
+   ]
   }
  },
  "https://www.btolat.com/matches/details/227675": {
-  "at": 1786993771.1415539,
+  "at": 1786995403.6223328,
   "scorers": {
-   "home": [],
+   "home": [
+    [
+     "بيير إيميريك أوباميانج",
+     "21'"
+    ]
+   ],
    "away": []
   }
  },
@@ -244,6 +263,34 @@
      "3'"
     ]
    ]
+  }
+ },
+ "https://www.btolat.com/matches/details/228393": {
+  "at": 1786995390.229616,
+  "scorers": {
+   "home": [],
+   "away": [
+    [
+     "رافا سيلفا",
+     "14'"
+    ],
+    [
+     "جيانلوكا بريستياني",
+     "3'"
+    ]
+   ]
+  }
+ },
+ "https://www.btolat.com/matches/details/226675": {
+  "at": 1786995401.6889296,
+  "scorers": {
+   "home": [
+    [
+     "دومينيك فافاسوري",
+     "15'"
+    ]
+   ],
+   "away": []
   }
  }
 }
