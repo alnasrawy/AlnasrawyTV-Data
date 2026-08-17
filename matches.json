@@ -89,11 +89,15 @@
         "homeLogo": "https://img.btolat.com/",
         "awayTeam": "الأهلي السعودي",
         "awayLogo": "https://img.btolat.com/teamslogo/14990.png?v=282",
-        "scoreOrTime": "07:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "11'",
         "channels": [],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "كأس خادم الحرمين",
@@ -192,13 +196,17 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11968.png?v=533",
         "awayTeam": "إمبولي",
         "awayLogo": "https://img.btolat.com/teamslogo/11867.png?v=81",
-        "scoreOrTime": "07:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "9'",
         "channels": [
             "MBC شاهد | رياضة"
         ],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "كأس إيطاليا",
