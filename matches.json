@@ -5,8 +5,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\DeportivoLaCoruna2018_7_29_14_52.jpg",
         "awayTeam": "إلتشي",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2015\\2\\18\\Elche CF2015_2_18_20_41.jpg",
-        "scoreOrTime": "1 - 0",
-        "status": "الشوط الأول",
+        "scoreOrTime": "1 - 1",
+        "status": "الشوط الثاني",
         "channels": [
             "beIN SPORTS 3 HD"
         ],
@@ -19,7 +19,12 @@
                     "21'"
                 ]
             ],
-            "away": []
+            "away": [
+                [
+                    "مارك أغوادو",
+                    "76'"
+                ]
+            ]
         }
     },
     {
@@ -152,6 +157,10 @@
         "scorers": {
             "home": [],
             "away": [
+                [
+                    "روبين نيفيز",
+                    "80'"
+                ],
                 [
                     "روبين نيفيز",
                     "14'"
@@ -361,8 +370,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11859.png?v=178",
         "awayTeam": "سامبدوريا",
         "awayLogo": "https://img.btolat.com/teamslogo/12005.png?v=821",
-        "scoreOrTime": "1 - 0",
-        "status": "68'",
+        "scoreOrTime": "2 - 0",
+        "status": "انتهت",
         "channels": [
             "MBC شاهد | رياضة"
         ],
@@ -385,7 +394,7 @@
         "awayTeam": "ليتشي",
         "awayLogo": "https://img.btolat.com/teamslogo/11926.png?v=397",
         "scoreOrTime": "2 - 0",
-        "status": "45+'",
+        "status": "57'",
         "channels": [
             "MBC شاهد | رياضة",
             "إم بي سي أكشن"
@@ -394,6 +403,10 @@
         "source": "Btolat",
         "scorers": {
             "home": [
+                [
+                    "جويل بروهيانبالو",
+                    "42'"
+                ],
                 [
                     "دومينيك فافاسوري",
                     "15'"
