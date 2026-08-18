@@ -7,9 +7,13 @@
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/211.png",
         "scoreOrTime": "22:00",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "Paramount+",
+            "DAZN USA",
+            "CBS Sports Golazo"
+        ],
         "commentator": "",
-        "source": "FilGoal + Btolat",
+        "source": "FilGoal + Btolat + LiveSoccerTV",
         "_match_id": "376497"
     },
     {
@@ -20,9 +24,12 @@
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1769.png",
         "scoreOrTime": "22:00",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "Paramount+",
+            "ViX"
+        ],
         "commentator": "",
-        "source": "FilGoal + Btolat",
+        "source": "FilGoal + Btolat + LiveSoccerTV",
         "_match_id": "376496"
     },
     {
@@ -33,9 +40,15 @@
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/221.png",
         "scoreOrTime": "22:00",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "Paramount+",
+            "TUDN USA",
+            "TUDN.com",
+            "TUDN App",
+            "ViX"
+        ],
         "commentator": "",
-        "source": "FilGoal + Btolat",
+        "source": "FilGoal + Btolat + LiveSoccerTV",
         "_match_id": "376498"
     },
     {
@@ -116,7 +129,8 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat"
+        "source": "Yallakora + FilGoal + Btolat",
+        "_match_id": "376519"
     },
     {
         "league": "كأس خادم الحرمين الشريفين",
@@ -128,7 +142,8 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat"
+        "source": "Yallakora + FilGoal + Btolat",
+        "_match_id": "376521"
     },
     {
         "league": "كأس خادم الحرمين الشريفين",
@@ -174,7 +189,8 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat"
+        "source": "Yallakora + FilGoal + Btolat",
+        "_match_id": "376520"
     },
     {
         "league": "كأس خادم الحرمين الشريفين",
@@ -198,7 +214,8 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat"
+        "source": "Yallakora + FilGoal + Btolat",
+        "_match_id": "376522"
     },
     {
         "league": "كأس خادم الحرمين الشريفين",
@@ -304,6 +321,6 @@
             "الكويت الرياضية"
         ],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat + LiveSoccerTV"
     }
 ]
