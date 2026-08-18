@@ -9,7 +9,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat + LiveSoccerTV",
+        "source": "FilGoal + Btolat",
         "_match_id": "376497"
     },
     {
@@ -22,7 +22,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat + LiveSoccerTV",
+        "source": "FilGoal + Btolat",
         "_match_id": "376496"
     },
     {
@@ -35,7 +35,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat + LiveSoccerTV",
+        "source": "FilGoal + Btolat",
         "_match_id": "376498"
     },
     {
@@ -121,6 +121,14 @@
         "scorers": {
             "home": [],
             "away": [
+                [
+                    "دانيلو بيريرا",
+                    "51'"
+                ],
+                [
+                    "جورج إيلينيخينا",
+                    "38'"
+                ],
                 [
                     "جورج إيلينيخينا",
                     "16'"
@@ -329,8 +337,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/10433.png?v=813",
         "awayTeam": "بايرن ميونخ",
         "awayLogo": "https://img.btolat.com/teamslogo/10285.png?v=38",
-        "scoreOrTime": "2 - 3",
-        "status": "82'",
+        "scoreOrTime": "2 - 4",
+        "status": "انتهت",
         "channels": [
             "الكويت الرياضية"
         ],
