@@ -9,7 +9,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat",
+        "source": "FilGoal + Btolat + LiveSoccerTV",
         "_match_id": "376497"
     },
     {
@@ -22,7 +22,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat",
+        "source": "FilGoal + Btolat + LiveSoccerTV",
         "_match_id": "376496"
     },
     {
@@ -35,7 +35,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat",
+        "source": "FilGoal + Btolat + LiveSoccerTV",
         "_match_id": "376498"
     },
     {
@@ -112,7 +112,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\9\\25\\Untitled2023_9_25_0_13.jpg",
         "awayTeam": "الاتحاد",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\7\\Ittihad2021_9_7_16_53.jpg",
-        "scoreOrTime": "0 - 1",
+        "scoreOrTime": "0 - 3",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -181,7 +181,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\28\\AlOkhdood-NewLogo2024_8_28_21_15.jpg",
         "awayTeam": "الخليج",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\8\\12\\khaleej12023_8_12_15_55.jpg",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "1 - 0",
         "status": "مباشر",
         "channels": [
             "تطبيق ثمانية"
@@ -205,7 +205,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\9\\25\\Untitled122023_9_25_0_14.jpg",
         "awayTeam": "الاتفـــــاق",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\Ettifaq2018_7_25_17_9.jpg",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "1 - 0",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -329,8 +329,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/10433.png?v=813",
         "awayTeam": "بايرن ميونخ",
         "awayLogo": "https://img.btolat.com/teamslogo/10285.png?v=38",
-        "scoreOrTime": "2 - 2",
-        "status": "49'",
+        "scoreOrTime": "2 - 3",
+        "status": "82'",
         "channels": [
             "الكويت الرياضية"
         ],
