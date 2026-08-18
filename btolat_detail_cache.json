@@ -156,17 +156,22 @@
   }
  },
  "https://www.btolat.com/matches/details/232713": {
-  "at": 1787081720.5618775,
+  "at": 1787082786.6501453,
   "scorers": {
    "home": [],
    "away": []
   }
  },
  "https://www.btolat.com/matches/details/232728": {
-  "at": 1787081712.0886676,
+  "at": 1787082784.5411534,
   "scorers": {
    "home": [],
-   "away": []
+   "away": [
+    [
+     "لويس أوبيندا",
+     "40'"
+    ]
+   ]
   }
  }
 }

@@ -5,12 +5,21 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/350.png",
         "awayTeam": "أولمبيك ليون",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/211.png",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "0 - 1",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat",
-        "_match_id": "376497"
+        "_match_id": "376497",
+        "scorers": {
+            "home": [],
+            "away": [
+                [
+                    "لويس أوبيندا",
+                    "40'"
+                ]
+            ]
+        }
     },
     {
         "league": "دوري أبطال أوروبا",
@@ -18,7 +27,7 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/791.png",
         "awayTeam": "فايكينج",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1769.png",
-        "scoreOrTime": "2 - 1",
+        "scoreOrTime": "2 - 2",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
