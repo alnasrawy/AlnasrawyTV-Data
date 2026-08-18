@@ -11,85 +11,7 @@
             "بى ان سبورت 1HD"
         ],
         "commentator": "",
-        "source": "Yallakora + FilGoal",
-        "_match_id": "376499"
-    },
-    {
-        "league": "دوري أبطال أوروبا",
-        "homeTeam": "فنربخشة",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/350.png",
-        "awayTeam": "أولمبيك ليون",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/211.png",
-        "scoreOrTime": "1 - 1",
-        "status": "انتهت",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "_match_id": "376497",
-        "scorers": {
-            "home": [],
-            "away": []
-        }
-    },
-    {
-        "league": "دوري أبطال أوروبا",
-        "homeTeam": "دينامو زغرب",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/791.png",
-        "awayTeam": "فايكينج",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1769.png",
-        "scoreOrTime": "2 - 2",
-        "status": "انتهت",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "_match_id": "376496",
-        "scorers": {
-            "home": [],
-            "away": []
-        }
-    },
-    {
-        "league": "دوري أبطال أوروبا",
-        "homeTeam": "ليفسكي صوفيا",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/664.png",
-        "awayTeam": "آيك أثينا",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/221.png",
-        "scoreOrTime": "0 - 0",
-        "status": "انتهت",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "_match_id": "376498",
-        "scorers": {
-            "home": [],
-            "away": []
-        }
-    },
-    {
-        "league": "دوري أبطال أوروبا",
-        "homeTeam": "سلوفان براتيسلافا",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/1324.png",
-        "awayTeam": "سيلجي",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/13733.png",
-        "scoreOrTime": "22:00",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "_match_id": "376502"
-    },
-    {
-        "league": "دوري أبطال أوروبا",
-        "homeTeam": "نيميجين",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/370.png",
-        "awayTeam": "بودو/جليمت",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/12803.png",
-        "scoreOrTime": "22:00",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "_match_id": "376501"
+        "source": "Yallakora"
     },
     {
         "league": "دوري أبطال أوروبا",
@@ -140,79 +62,6 @@
         "source": "Btolat"
     },
     {
-        "league": "الدوري السعودي",
-        "homeTeam": "الفيحاء",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/1445.png",
-        "awayTeam": "الهلال",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/269.png",
-        "scoreOrTime": "21:00",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "_match_id": "375120"
-    },
-    {
-        "league": "الدوري العراقي",
-        "homeTeam": "الجولان",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/14466.png",
-        "awayTeam": "الكرخ",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1220.png",
-        "scoreOrTime": "21:00",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "_match_id": "376441"
-    },
-    {
-        "league": "الدوري القطري",
-        "homeTeam": "الوكرة",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/563.png",
-        "awayTeam": "نادي قطر",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1140.png",
-        "scoreOrTime": "17:15",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "_match_id": "374612"
-    },
-    {
-        "league": "كأس خادم الحرمين الشريفين",
-        "homeTeam": "النجمة",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/183.png",
-        "awayTeam": "الاتحاد",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/175.png",
-        "scoreOrTime": "0 - 3",
-        "status": "انتهت",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "_match_id": "376519",
-        "scorers": {
-            "home": [],
-            "away": []
-        }
-    },
-    {
-        "league": "كأس خادم الحرمين الشريفين",
-        "homeTeam": "الدرعية",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/1443.png",
-        "awayTeam": "النصر",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/177.png",
-        "scoreOrTime": "1 - 4",
-        "status": "انتهت",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "_match_id": "376521",
-        "scorers": {
-            "home": [],
-            "away": []
-        }
-    },
-    {
         "league": "كأس خادم الحرمين الشريفين",
         "homeTeam": "ضمك",
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\3\\16\\Untitled2024_3_16_21_53.jpg",
@@ -222,8 +71,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat",
-        "_match_id": "376523"
+        "source": "Yallakora + Btolat"
     },
     {
         "league": "كأس خادم الحرمين الشريفين",
@@ -235,8 +83,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat",
-        "_match_id": "376524"
+        "source": "Yallakora + Btolat"
     },
     {
         "league": "كأس خادم الحرمين الشريفين",
@@ -248,72 +95,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "Yallakora + FilGoal",
-        "_match_id": "376525"
-    },
-    {
-        "league": "كأس خادم الحرمين الشريفين",
-        "homeTeam": "الفيصلي",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/663.png",
-        "awayTeam": "نيوم",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/13692.png",
-        "scoreOrTime": "1 - 3",
-        "status": "انتهت",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "_match_id": "376522",
-        "scorers": {
-            "home": [],
-            "away": []
-        }
-    },
-    {
-        "league": "كأس خادم الحرمين الشريفين",
-        "homeTeam": "الجبلين",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/1631.png",
-        "awayTeam": "الاتفاق",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/182.png",
-        "scoreOrTime": "1 - 0",
-        "status": "انتهت",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "_match_id": "376518",
-        "scorers": {
-            "home": [],
-            "away": []
-        }
-    },
-    {
-        "league": "كأس خادم الحرمين الشريفين",
-        "homeTeam": "الأخدود",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/12747.png",
-        "awayTeam": "الخليج",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/188.png",
-        "scoreOrTime": "2 - 0",
-        "status": "انتهت",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "_match_id": "376520",
-        "scorers": {
-            "home": [],
-            "away": []
-        }
-    },
-    {
-        "league": "دوري أبطال أوروبا - التصفيات التأهيلية",
-        "homeTeam": "هابويل بئر السبع",
-        "homeLogo": "",
-        "awayTeam": "صباح باكو",
-        "awayLogo": "",
-        "scoreOrTime": "22:00",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "FilGoal",
-        "_match_id": "376500"
+        "source": "Yallakora"
     },
     {
         "league": "كأس خادم الحرمين",
@@ -336,22 +118,8 @@
         "scoreOrTime": "21:00",
         "status": "لم تبدأ",
         "channels": [],
-        "commentator": "أيمن الكاشف / مؤمن حسن",
-        "source": "Yallakora + FilGoal + Btolat",
-        "_match_id": "375119"
-    },
-    {
-        "league": "الدوري الأمريكي",
-        "homeTeam": "فيلادلفيا يونيون",
-        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/1618.png",
-        "awayTeam": "إنتر ميامي",
-        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/12790.png",
-        "scoreOrTime": "02:30",
-        "status": "لم تبدأ",
-        "channels": [],
         "commentator": "",
-        "source": "FilGoal",
-        "_match_id": "375771"
+        "source": "Yallakora + Btolat"
     },
     {
         "league": "الدوري الاسباني",
