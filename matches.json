@@ -6,13 +6,18 @@
         "awayTeam": "أولمبيك ليون",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/211.png",
         "scoreOrTime": "1 - 1",
-        "status": "مباشر",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat",
         "_match_id": "376497",
         "scorers": {
-            "home": [],
+            "home": [
+                [
+                    "ماسون جرينوود",
+                    "47'"
+                ]
+            ],
             "away": [
                 [
                     "لويس أوبيندا",
@@ -63,11 +68,15 @@
         "awayTeam": "آيك أثينا",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/221.png",
         "scoreOrTime": "0 - 0",
-        "status": "مباشر",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat",
-        "_match_id": "376498"
+        "_match_id": "376498",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "دوري أبطال أوروبا",
