@@ -38,6 +38,7 @@ jobs:
       - name: Run Scraper
         env:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+        working-directory: matches_data
         run: python fetch_matches.py
 
       - name: Auto-Commit Results
