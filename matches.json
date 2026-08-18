@@ -6,7 +6,7 @@
         "awayTeam": "أولمبيك ليون",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/211.png",
         "scoreOrTime": "22:00",
-        "status": "لم تبدأ",
+        "status": "بعد قليل",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat",
@@ -19,7 +19,7 @@
         "awayTeam": "فايكينج",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1769.png",
         "scoreOrTime": "22:00",
-        "status": "لم تبدأ",
+        "status": "بعد قليل",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat",
@@ -32,7 +32,7 @@
         "awayTeam": "آيك أثينا",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/221.png",
         "scoreOrTime": "22:00",
-        "status": "لم تبدأ",
+        "status": "بعد قليل",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat",
@@ -113,7 +113,7 @@
         "awayTeam": "الاتحاد",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\7\\Ittihad2021_9_7_16_53.jpg",
         "scoreOrTime": "0 - 3",
-        "status": "مباشر",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat",
@@ -142,12 +142,26 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\2\\ak6LtnRz_400x4002026_8_2_18_32.webp",
         "awayTeam": "النصر",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\5\\19\\xdDArNPC_400x4002025_5_19_22_38.webp",
-        "scoreOrTime": "21:00",
-        "status": "لم تبدأ",
+        "scoreOrTime": "1 - 1",
+        "status": "مباشر",
         "channels": [],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat",
-        "_match_id": "376521"
+        "_match_id": "376521",
+        "scorers": {
+            "home": [
+                [
+                    "أوسكار رودريجيز",
+                    "2'"
+                ]
+            ],
+            "away": [
+                [
+                    "محمد سيماكان",
+                    "11'"
+                ]
+            ]
+        }
     },
     {
         "league": "كأس خادم الحرمين الشريفين",
@@ -189,8 +203,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\28\\AlOkhdood-NewLogo2024_8_28_21_15.jpg",
         "awayTeam": "الخليج",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\8\\12\\khaleej12023_8_12_15_55.jpg",
-        "scoreOrTime": "1 - 0",
-        "status": "مباشر",
+        "scoreOrTime": "2 - 0",
+        "status": "انتهت",
         "channels": [
             "تطبيق ثمانية"
         ],
@@ -199,6 +213,10 @@
         "_match_id": "376520",
         "scorers": {
             "home": [
+                [
+                    "روي بيدرو",
+                    "79'"
+                ],
                 [
                     "روي بيدرو",
                     "37'"
@@ -214,7 +232,7 @@
         "awayTeam": "الاتفـــــاق",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\Ettifaq2018_7_25_17_9.jpg",
         "scoreOrTime": "1 - 0",
-        "status": "مباشر",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Yallakora"
@@ -225,12 +243,21 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2022\\4\\14\\AL-FAISALY-FC12022_4_14_11_16.jpg",
         "awayTeam": "نادي نيوم",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\7\\21\\neom2024_7_21_16_52.jpg",
-        "scoreOrTime": "21:00",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "مباشر",
         "channels": [],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat",
-        "_match_id": "376522"
+        "_match_id": "376522",
+        "scorers": {
+            "home": [
+                [
+                    "سعود حداد",
+                    "21'"
+                ]
+            ],
+            "away": []
+        }
     },
     {
         "league": "كأس خادم الحرمين الشريفين",
@@ -290,7 +317,7 @@
         "awayTeam": "الاتفاق",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/182.png",
         "scoreOrTime": "1 - 0",
-        "status": "مباشر",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat",
@@ -332,10 +359,10 @@
         "_match_id": "375119"
     },
     {
-        "league": "مباريات ودية أندية",
-        "homeTeam": "هايدينهايم",
+        "league": "مباريات ودية - أندية - مباريات ودية",
+        "homeTeam": "هايدنهايم",
         "homeLogo": "https://img.btolat.com/teamslogo/10433.png?v=813",
-        "awayTeam": "بايرن ميونخ",
+        "awayTeam": "بايرن ميونيخ",
         "awayLogo": "https://img.btolat.com/teamslogo/10285.png?v=38",
         "scoreOrTime": "2 - 4",
         "status": "انتهت",
@@ -343,7 +370,8 @@
             "الكويت الرياضية"
         ],
         "commentator": "",
-        "source": "Btolat",
+        "source": "FilGoal + Btolat",
+        "_match_id": "376586",
         "scorers": {
             "home": [
                 [
@@ -356,6 +384,14 @@
                 ]
             ],
             "away": [
+                [
+                    "ناثانيال براون",
+                    "84'"
+                ],
+                [
+                    "لويس دياز",
+                    "78'"
+                ],
                 [
                     "أريون إبراهيموفيتش",
                     "47'"
