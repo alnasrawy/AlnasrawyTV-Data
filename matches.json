@@ -18,12 +18,30 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/791.png",
         "awayTeam": "فايكينج",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1769.png",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "2 - 1",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat",
-        "_match_id": "376496"
+        "_match_id": "376496",
+        "scorers": {
+            "home": [
+                [
+                    "ماتيو ليسيتسا",
+                    "10'"
+                ],
+                [
+                    "ديون دجيون",
+                    "6'"
+                ]
+            ],
+            "away": [
+                [
+                    "بيتر كريستيانسن",
+                    "26'"
+                ]
+            ]
+        }
     },
     {
         "league": "دوري أبطال أوروبا",
@@ -157,6 +175,18 @@
             ],
             "away": [
                 [
+                    "جواو فيليكس",
+                    "68'"
+                ],
+                [
+                    "عبد الله الحمدان",
+                    "37'"
+                ],
+                [
+                    "جواو فيليكس",
+                    "36'"
+                ],
+                [
                     "محمد سيماكان",
                     "11'"
                 ]
@@ -243,7 +273,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2022\\4\\14\\AL-FAISALY-FC12022_4_14_11_16.jpg",
         "awayTeam": "نادي نيوم",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\7\\21\\neom2024_7_21_16_52.jpg",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "1 - 2",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -256,7 +286,20 @@
                     "21'"
                 ]
             ],
-            "away": []
+            "away": [
+                [
+                    "ألكسندر لاكازيت",
+                    "68'"
+                ],
+                [
+                    "عبد الله صبيط \r\n                                        (on)",
+                    "45'"
+                ],
+                [
+                    "سعيد بن رحمه",
+                    "36'"
+                ]
+            ]
         }
     },
     {
