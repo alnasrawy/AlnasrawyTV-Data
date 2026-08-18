@@ -9,7 +9,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat + LiveSoccerTV",
+        "source": "FilGoal + Btolat",
         "_match_id": "376497"
     },
     {
@@ -22,7 +22,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat + LiveSoccerTV",
+        "source": "FilGoal + Btolat",
         "_match_id": "376496"
     },
     {
@@ -35,7 +35,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat + LiveSoccerTV",
+        "source": "FilGoal + Btolat",
         "_match_id": "376498"
     },
     {
@@ -306,6 +306,6 @@
             "الكويت الرياضية"
         ],
         "commentator": "",
-        "source": "Btolat + LiveSoccerTV"
+        "source": "Btolat"
     }
 ]
