@@ -80,9 +80,9 @@
     {
         "league": "دوري أبطال أوروبا",
         "homeTeam": "فناربخشة",
-        "homeLogo": "https://img.btolat.com/teamslogo/17027.png?v=954",
+        "homeLogo": "https://img.btolat.com/teamslogo/17027.png?v=672",
         "awayTeam": "أولمبيك ليون",
-        "awayLogo": "https://img.btolat.com/teamslogo/10040.png?v=802",
+        "awayLogo": "https://img.btolat.com/teamslogo/10040.png?v=204",
         "scoreOrTime": "10:00 م",
         "status": "لم تبدأ",
         "channels": [],
@@ -307,12 +307,14 @@
     {
         "league": "مباريات ودية أندية",
         "homeTeam": "هايدينهايم",
-        "homeLogo": "https://img.btolat.com/teamslogo/10433.png?v=500",
+        "homeLogo": "https://img.btolat.com/teamslogo/10433.png?v=813",
         "awayTeam": "بايرن ميونخ",
-        "awayLogo": "https://img.btolat.com/teamslogo/10285.png?v=768",
+        "awayLogo": "https://img.btolat.com/teamslogo/10285.png?v=38",
         "scoreOrTime": "07:00 م",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "الكويت الرياضية"
+        ],
         "commentator": "",
         "source": "Btolat"
     }
