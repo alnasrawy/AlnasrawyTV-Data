@@ -9,7 +9,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat + LiveSoccerTV",
+        "source": "FilGoal + Btolat",
         "_match_id": "376497"
     },
     {
@@ -22,7 +22,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat + LiveSoccerTV",
+        "source": "FilGoal + Btolat",
         "_match_id": "376496"
     },
     {
@@ -35,7 +35,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat + LiveSoccerTV",
+        "source": "FilGoal + Btolat",
         "_match_id": "376498"
     },
     {
@@ -188,7 +188,16 @@
         ],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat",
-        "_match_id": "376520"
+        "_match_id": "376520",
+        "scorers": {
+            "home": [
+                [
+                    "روي بيدرو",
+                    "37'"
+                ]
+            ],
+            "away": []
+        }
     },
     {
         "league": "كأس خادم الحرمين الشريفين",
@@ -272,12 +281,21 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/1631.png",
         "awayTeam": "الاتفاق",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/182.png",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "1 - 0",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat",
-        "_match_id": "376518"
+        "_match_id": "376518",
+        "scorers": {
+            "home": [
+                [
+                    "لوفانور",
+                    "42'"
+                ]
+            ],
+            "away": []
+        }
     },
     {
         "league": "كأس خادم الحرمين الشريفين",
@@ -311,8 +329,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/10433.png?v=813",
         "awayTeam": "بايرن ميونخ",
         "awayLogo": "https://img.btolat.com/teamslogo/10285.png?v=38",
-        "scoreOrTime": "2 - 1",
-        "status": "45'",
+        "scoreOrTime": "2 - 2",
+        "status": "49'",
         "channels": [
             "الكويت الرياضية"
         ],
@@ -321,11 +339,24 @@
         "scorers": {
             "home": [
                 [
+                    "جوليان نيهيس",
+                    "44'"
+                ],
+                [
                     "يانيك فاغنر",
                     "5'"
                 ]
             ],
-            "away": []
+            "away": [
+                [
+                    "أريون إبراهيموفيتش",
+                    "47'"
+                ],
+                [
+                    "فيليبي تشافيز",
+                    "25'"
+                ]
+            ]
         }
     }
 ]
