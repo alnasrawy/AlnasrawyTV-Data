@@ -2214,11 +2214,42 @@ def _channel_priority(name):
     # الأسماء المكتوبة بالإنجليزية الأصيلة تُفضل على الترجمة العربية عند العرض
     return 0 if re.search(r'[a-zA-Z]', name) and not re.search(r'[\u0600-\u06ff]', name) else 1
 
+# ================= فلتر القنوات: الشرق الأوسط وشمال أفريقيا فقط =================
+# المصادر (خاصة LiveSoccerTV) تعيد قنوات عالمية (DAZN, Paramount+, CBS...) لا يريدها المستخدم.
+# القاعدة: كل قناة عربية = MENA دائماً. القناة الإنجليزية مقبولة فقط إن كانت علامة معروفة
+# في المنطقة (beIN / TOD / SSC / ON Time / OSN / Starzplay...) أو من قناة عربية إنجليزية الاسم
+# (Abu Dhabi / Dubai / Alkass / Kuwait Sports...)؛ أي إنجليزية أخرى تُحذف.
+_NON_MENA_CHANNELS_RE = re.compile(
+    r'^(dazn|paramount|cbs|espn|skysports|skyitalia|skygermany|skysportde|'
+    r'btsport|tntsports|supersport|elevensports|foxsports|nbcsports|univision|'
+    r'telemundo|movistar|viaplay|rmcsport|canal\+|rtl|prosieben|starhub|'
+    r'pptv|goltv|laligatv|premiersports|arenasport|sportklub|sportsnet|tsn|'
+    r'televisa|azteca|beinsports?(fr|usa|us|au|aus|australia|es|spain|'
+    r'de|germany|it|italy|uk|th|hk|malaysia|singapore|indonesia|turkey|latin|'
+    r'brazil|mexico|argentina|india|pakistan|vietnam|japan|korea))'
+)
+_MENA_ENGLISH_CHANNELS = re.compile(
+    r'^(bein|tod|ssc|stc|osn|starzplay|shahid|art|alkass|adsports|abudhabi|'
+    r'dubai|ajj|ajsport|ontime|saudisport|kfsport|kuwaitsport|qatar|iraq|'
+    r'jordan|mbc|nilesport|on\.?time|sportssaudi|sauditv)'
+)
+
+
+def _is_mena_channel(name):
+    """هل القناة من الشرق الأوسط/شمال أفريقيا؟
+    عربية دائماً نعم؛ إنجليزية فقط إذا كانت علامة معروفة في المنطقة (ولا تطابق قائمة أجنبية)."""
+    if re.search(r'[\u0600-\u06ff]', name):
+        return True
+    k = _channel_key(name)
+    if _NON_MENA_CHANNELS_RE.match(k):
+        return False
+    return bool(_MENA_ENGLISH_CHANNELS.match(k))
+
 def dedup_channels(channels):
     seen, order = {}, []
     for c in channels:
         c = c.strip()
-        if not c:
+        if not c or not _is_mena_channel(c):
             continue
         k = _channel_key(c)
         if k in seen:
