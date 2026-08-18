@@ -9,7 +9,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat",
+        "source": "FilGoal + Btolat + LiveSoccerTV",
         "_match_id": "376497"
     },
     {
@@ -22,7 +22,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat",
+        "source": "FilGoal + Btolat + LiveSoccerTV",
         "_match_id": "376496"
     },
     {
@@ -35,7 +35,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat",
+        "source": "FilGoal + Btolat + LiveSoccerTV",
         "_match_id": "376498"
     },
     {
@@ -262,7 +262,7 @@
         "awayTeam": "الاتفاق",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/182.png",
         "scoreOrTime": "19:15",
-        "status": "لم تبدأ",
+        "status": "بعد قليل",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat",
@@ -306,6 +306,6 @@
             "الكويت الرياضية"
         ],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat + LiveSoccerTV"
     }
 ]
