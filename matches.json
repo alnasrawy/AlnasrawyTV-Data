@@ -7,14 +7,9 @@
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/211.png",
         "scoreOrTime": "22:00",
         "status": "لم تبدأ",
-        "channels": [
-            "beIN Sports HD 1",
-            "beIN Sports English",
-            "beIN SPORTS CONNECT",
-            "TOD"
-        ],
+        "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat + LiveSoccerTV",
+        "source": "FilGoal + Btolat",
         "_match_id": "376497"
     },
     {
@@ -25,13 +20,9 @@
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/1769.png",
         "scoreOrTime": "22:00",
         "status": "لم تبدأ",
-        "channels": [
-            "beIN Sports HD 2",
-            "beIN SPORTS CONNECT",
-            "TOD"
-        ],
+        "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat + LiveSoccerTV",
+        "source": "FilGoal + Btolat",
         "_match_id": "376496"
     },
     {
@@ -42,14 +33,9 @@
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/221.png",
         "scoreOrTime": "22:00",
         "status": "لم تبدأ",
-        "channels": [
-            "beIN Sports HD 3",
-            "beIN Sports English 2",
-            "beIN SPORTS CONNECT",
-            "TOD"
-        ],
+        "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat + LiveSoccerTV",
+        "source": "FilGoal + Btolat",
         "_match_id": "376498"
     },
     {
@@ -60,14 +46,9 @@
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/12694.png",
         "scoreOrTime": "22:00",
         "status": "لم تبدأ",
-        "channels": [
-            "beIN Sports HD 1",
-            "beIN Sports English",
-            "beIN SPORTS CONNECT",
-            "TOD"
-        ],
+        "channels": [],
         "commentator": "",
-        "source": "FilGoal + LiveSoccerTV",
+        "source": "FilGoal",
         "_match_id": "376499"
     },
     {
@@ -91,30 +72,10 @@
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/12803.png",
         "scoreOrTime": "22:00",
         "status": "لم تبدأ",
-        "channels": [
-            "beIN Sports HD 4",
-            "beIN SPORTS CONNECT",
-            "TOD"
-        ],
+        "channels": [],
         "commentator": "",
-        "source": "FilGoal + LiveSoccerTV",
+        "source": "FilGoal",
         "_match_id": "376501"
-    },
-    {
-        "league": "دوري أبطال أوروبا",
-        "homeTeam": "هبوعيل بئر السبع",
-        "homeLogo": "",
-        "awayTeam": "صباح",
-        "awayLogo": "",
-        "scoreOrTime": "15:00",
-        "status": "لم تبدأ",
-        "channels": [
-            "beIN Sports English 2",
-            "beIN SPORTS CONNECT",
-            "TOD"
-        ],
-        "commentator": "",
-        "source": "LiveSoccerTV"
     },
     {
         "league": "الدوري الإسباني",
@@ -330,7 +291,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "أيمن الكاشف",
-        "source": "FilGoal + LiveSoccerTV",
+        "source": "FilGoal",
         "_match_id": "375119"
     },
     {
@@ -345,6 +306,6 @@
             "الكويت الرياضية"
         ],
         "commentator": "",
-        "source": "Btolat + LiveSoccerTV"
+        "source": "Btolat"
     }
 ]
