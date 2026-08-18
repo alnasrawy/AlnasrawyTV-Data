@@ -45,7 +45,7 @@
   }
  },
  "https://www.btolat.com/matches/details/226639": {
-  "at": 1787075884.2700026,
+  "at": 1787080020.238971,
   "scorers": {
    "home": [],
    "away": [
@@ -106,6 +106,27 @@
      "21'"
     ]
    ],
+   "away": []
+  }
+ },
+ "https://www.btolat.com/matches/details/232712": {
+  "at": 1787080029.762441,
+  "scorers": {
+   "home": [],
+   "away": []
+  }
+ },
+ "https://www.btolat.com/matches/details/232713": {
+  "at": 1787080035.0281403,
+  "scorers": {
+   "home": [],
+   "away": []
+  }
+ },
+ "https://www.btolat.com/matches/details/232728": {
+  "at": 1787080023.9141693,
+  "scorers": {
+   "home": [],
    "away": []
   }
  }
