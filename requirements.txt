@@ -1,0 +1,5 @@
+curl_cffi
+beautifulsoup4
+pillow
+arabic-reshaper
+python-bidi

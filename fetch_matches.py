@@ -11,6 +11,10 @@ from datetime import datetime, timedelta, timezone
 from curl_cffi import requests
 from bs4 import BeautifulSoup
 
+# 💡 مجلد هذا السكربت (المجلد المنفصل matches_data) — كل الملفات تُفتح نسبةً إليه
+#    حتى يعمل السكربت من أي مكان (مباشرة أو عبر GitHub Actions).
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # 💡 مكتبات رسم بطاقة المباراة (تُستخدم لإنشاء صورة PNG احترافية للإشعارات)
 try:
     from PIL import Image, ImageDraw
@@ -70,7 +74,9 @@ BLOCKLIST = ["شباب", "رديف", "u23", "u19", "درجة ثانية", "در�
 TOP_LEAGUE_TEAMS = {}
 
 # ================= تحميل config.json (الإعدادات كلها بيانات لا كود) =================
-def _load_config(path="config.json"):
+def _load_config(path=None):
+    if path is None:
+        path = os.path.join(BASE_DIR, "config.json")
     cfg = {}
     try:
         with open(path, "r", encoding="utf-8") as f:
@@ -101,11 +107,11 @@ GLOBAL_DELAY = _CFG.get("global_delay", [1.0, 2.0]) or [1.0, 2.0]
 FILGOAL_CACHE_TTL = float(_CFG.get("filgoal_cache_ttl_minutes", 30))
 
 # ================= كاش فيلجول (يُحفظ في filgoal_cache.json ويعاد رفعه في كل دورة) =================
-FILGOAL_CACHE_FILE = "filgoal_cache.json"
+FILGOAL_CACHE_FILE = os.path.join(BASE_DIR, "filgoal_cache.json")
 FILGOAL_CACHE = {}
 
 # ================= كاش تفاصيل بطولات (أهداف المباريات المنتهية) =================
-BTOLAT_DETAIL_CACHE_FILE = "btolat_detail_cache.json"
+BTOLAT_DETAIL_CACHE_FILE = os.path.join(BASE_DIR, "btolat_detail_cache.json")
 BTOLAT_DETAIL_CACHE = {}
 BTOLAT_DETAIL_TTL = float(_CFG.get("btolat_detail_cache_ttl_minutes", 60))
 
@@ -139,7 +145,8 @@ def _save_btolat_detail_cache():
         pass
 
 # ================= حالة الإشعارات (يُحفظ في state.json) =================
-STATE_FILE = "state.json"
+STATE_FILE = os.path.join(BASE_DIR, "state.json")
+MATCHES_FILE = os.path.join(BASE_DIR, "matches.json")
 
 def _load_state():
     try:
@@ -845,7 +852,7 @@ def compose_match_card(match, kind="end"):
     title_y = div_y + 9 + 40
     grid_top = title_y + 44 + 31
 
-    rows_n = min(max(len(hs), len(aw), 0), 6)
+    rows_n = max(len(hs), len(aw), 0)
     if kind == "start":
         H = 810
     else:
@@ -1002,7 +1009,7 @@ def compose_match_card(match, kind="end"):
         minute_font = _font(26, bold=True)
         for cx0, lst, is_away in ((x_home, hs, False), (x_away, aw, True)):
             iy = grid_top + 31
-            for name, minute in lst[:6]:
+            for name, minute in lst:
                 sn = _shape(name)
                 snd = _text_direction(sn)
                 nw = d.textlength(sn, font=scorer_font, direction=snd)
@@ -1196,17 +1203,34 @@ def extract_btolat_channels(match_card):
 
 def extract_filgoal_scorers(html):
     """أهداف المباراة من صفحة فيلجول التفصيلية (/matches/{id}/coverage).
-    بنية أهداف الأرض: <a>اللاعب</a> <span>الدقيقة</span> (والضيف بالعكس) — نستخرج الاثنين معاً."""
+    نبحث عن كل قوائم ul#goalsHome_* / ul#goalsAway_* ونستخرج من كل li الاسم والدقيقة
+    (تتفاوت بنية العناصر: الاسم قبل الدقيقة أو بعدها، وأحياناً الاسم نص عادي دون <a>)."""
     scorers = {"home": [], "away": []}
-    for side in ("home", "away"):
-        for ul in re.finditer(r'<ul id="goals' + side.title() + r'_\d+"[^>]*>(.*?)</ul>', html, re.S):
-            for li in re.finditer(r'<li[^>]*>(.*?)</li>', ul.group(1), re.S):
-                name = re.search(r'<a[^>]*>([^<]+)</a>', li.group(1))
-                minute = re.search(r'<span>\s*([^<]+)</span>', li.group(1))
+    soup = BeautifulSoup(html, 'html.parser')
+    for side, prefix in (("home", "goalsHome"), ("away", "goalsAway")):
+        for ul in soup.find_all('ul'):
+            uid = ul.get('id') or ''
+            if not uid.startswith(prefix):
+                continue
+            for li in ul.find_all('li'):
+                if li.find('li'):
+                    continue
+                a = li.find('a')
+                span = li.find('span')
+                name = a.get_text(strip=True) if a else ""
+                mnt = span.get_text(strip=True) if span else ""
+                if not name:
+                    txt = li.get_text(strip=True)
+                    if mnt:
+                        name = txt.replace(mnt, "").strip(" -–")
+                    else:
+                        mm = re.search(r'^(.*?)\s+(\d+\'?)\s*$', txt)
+                        name = mm.group(1).strip() if mm else txt
+                if not mnt:
+                    mm = re.search(r"(\d+['’]?)", li.get_text())
+                    mnt = mm.group(1) if mm else ""
                 if name:
-                    n = name.group(1).strip()
-                    mnt = minute.group(1).strip() if minute else ""
-                    scorers[side].append((n, mnt))
+                    scorers[side].append((name, mnt))
     return scorers
 
 
@@ -1689,9 +1713,71 @@ class GhostScraper:
                 continue
             if self._btolat_is_ended(match_item):
                 match_item['scorers'] = self._fetch_btolat_scorers(du, match_item)
-                # 💡 نحتفظ برابط التفاصيل على المباراة المنتهية: إذا بقيت الأهداف فارغة
-                # (مثلاً كانت حالة بطولات متأخرة لحظة المسح)، نعيد الجلب في خطوة التعبئة اللاحقة
-                match_item['_btolat_details'] = du
+            # 💡 نحتفظ برابط التفاصيل دائماً (منتهية أو حيّة): إذا كانت المباراة حيّة لحظة المسح
+            #    وبقيت الأهداف فارغة، خطوة التعبئة اللاحقة تعيد الجلب بعد انتقالها إلى "انتهت"
+            match_item['_btolat_details'] = du
+        return matches
+
+    # ================= LiveSoccerTV (قنوات + مواعيد فقط) =================
+    def scrape_livesoccertv(self):
+        """مصدر رابع: جدول اليوم من LiveSoccerTV — قنوات ممتازة + مواعيد + حالة.
+        لا يوفر النتيجة ولا الهدافين (صفحات التفاصيل محجوبة 403)، لذا نستخدمه للتكميل.
+        أسماء الفرق/البطولات بالإنجليزية تُترجم إلى العربية حتى تندمج مع المصادر العربية."""
+        print("-> [Source 4] LiveSoccerTV...")
+        url = "https://www.livesoccertv.com/"
+        html = self.fetch(url, "LiveSoccerTV (schedule)")
+        matches = []
+        if not html:
+            return matches
+        soup = BeautifulSoup(html, 'html.parser')
+        for row in soup.select('tr.matchrow'):
+            try:
+                prev = row.find_previous('tr', class_='sortable_comp')
+                league_raw = prev.get_text(strip=True) if prev else ""
+                lname = league_raw.strip('▴ ›»').strip()
+                if ' - ' in lname:
+                    lname = lname.split(' - ', 1)[1]
+                league = _ls_lookup(_LS_LEAGUE_EN_AR, lname)
+
+                name_el = row.select_one('div.match-name-col a')
+                title = name_el.get_text(strip=True) if name_el else ""
+                parts = re.split(r'\s+vs\s+', title, flags=re.I)
+                if len(parts) != 2:
+                    continue
+                h_ar = _ls_lookup(_LS_TEAM_EN_AR, parts[0].strip())
+                a_ar = _ls_lookup(_LS_TEAM_EN_AR, parts[1].strip())
+                if not h_ar or not a_ar:
+                    continue
+
+                # نحتفظ بالصف فقط إذا كان من بطولة VIP أو فيه فريق VIP (الباقي سيرفضه الفلتر)
+                if not league and not (_is_vip_team_name(h_ar) or _is_vip_team_name(a_ar)):
+                    continue
+
+                ts_el = row.select_one('span.ts')
+                time_str = ts_el.get_text(strip=True) if ts_el else ""
+                inprog_el = row.select_one('span.inprogress')
+                ip = inprog_el.get_text(strip=True) if inprog_el else ""
+                if ip == 'FT':
+                    status = 'انتهت'
+                elif ip and 'live' not in ip.lower():
+                    status = ip  # مثل "70'" أو "HT"
+                else:
+                    status = 'لم تبدأ'
+
+                channels = []
+                for a in row.select('div.mchannels a.homech'):
+                    t = a.get_text(strip=True)
+                    if t and t not in channels:
+                        channels.append(t)
+
+                matches.append({
+                    "league": league or lname, "homeTeam": h_ar, "homeLogo": "",
+                    "awayTeam": a_ar, "awayLogo": "", "scoreOrTime": time_str,
+                    "status": status, "channels": dedup_channels(channels),
+                    "commentator": "", "source": "LiveSoccerTV"
+                })
+            except Exception:
+                continue
         return matches
 
     def _btolat_is_ended(self, m):
@@ -1712,6 +1798,371 @@ class GhostScraper:
         return scorers
 
 # 💡 توحيد الاختلافات الشائعة في كتابة أسماء الفرق (نفس الفريق بصيغتين)
+# ================= LiveSoccerTV: ترجمة أسماء البطولات/الفرق من الإنجليزية =================
+# المفاتيح تُنظَّم عبر _norm_key (بدون فراغات/شرطات، أحرف صغيرة) عند البحث
+_LS_LEAGUE_EN_AR = {
+    "UEFA Champions League": "دوري أبطال أوروبا",
+    "Champions League": "دوري أبطال أوروبا",
+    "UEFA Europa League": "الدوري الأوروبي",
+    "Europa League": "الدوري الأوروبي",
+    "UEFA Conference League": "دوري المؤتمر الأوروبي",
+    "Conference League": "دوري المؤتمر الأوروبي",
+    "Premier League": "الدوري الإنجليزي",
+    "EFL Championship": "الدوري الإنجليزي",
+    "Championship": "الدوري الإنجليزي",
+    "LaLiga": "الدوري الإسباني",
+    "La Liga": "الدوري الإسباني",
+    "Serie A": "الدوري الإيطالي",
+    "Serie B": "الدوري الإيطالي",
+    "Bundesliga": "الدوري الألماني",
+    "2. Bundesliga": "الدوري الألماني",
+    "Ligue 1": "الدوري الفرنسي",
+    "Ligue 2": "الدوري الفرنسي",
+    "Saudi Pro League": "الدوري السعودي",
+    "Roshn Saudi League": "الدوري السعودي",
+    "Saudi First Division": "الدوري السعودي",
+    "Iraqi Premier League": "الدوري العراقي",
+    "Iraq Stars League": "الدوري العراقي",
+    "Egyptian Premier League": "الدوري المصري",
+    "Botola Pro": "الدوري المغربي",
+    "UAE Pro League": "الدوري الإماراتي",
+    "Qatar Stars League": "الدوري القطري",
+    "CAF Champions League": "دوري أبطال أفريقيا",
+    "African Champions League": "دوري أبطال أفريقيا",
+    "AFC Champions League": "دوري أبطال آسيا",
+    "Asian Champions League": "دوري أبطال آسيا",
+    "FIFA World Cup": "كأس العالم",
+    "Copa America": "كوبا أمريكا",
+    "African Cup of Nations": "كأس أمم أفريقيا",
+    "European Championship": "كأس أمم أوروبا",
+    "Club Friendly": "ودية",
+    "Friendly": "ودية",
+    "International Friendly": "ودية دولية",
+    "Eredivisie": "الدوري الهولندي",
+    "Primeira Liga": "الدوري البرتغالي",
+    "Belgian Pro League": "الدوري البلجيكي",
+    "Scottish Premiership": "الدوري الاسكتلندي",
+    "Super Lig": "الدوري التركي",
+    "Greek Super League": "الدوري اليوناني",
+    "Brasileirao Serie A": "الدوري البرازيلي",
+    "Copa Libertadores": "كوبا ليبرتادوريس",
+    "FA Cup": "كأس الاتحاد الإنجليزي",
+    "DFB-Pokal": "كأس ألمانيا",
+    "Copa del Rey": "كأس إسبانيا",
+    "Coppa Italia": "كأس إيطاليا",
+}
+
+_LS_TEAM_EN_AR = {
+    # ===== أوروبا — أندية كبرى =====
+    "Real Madrid": "ريال مدريد",
+    "Real Madrid II": "ريال مدريد",
+    "Barcelona": "برشلونة",
+    "Atletico Madrid": "أتلتيكو",
+    "Atlético Madrid": "أتلتيكو",
+    "Athletic Bilbao": "أتلتيك بلباو",
+    "Athletic Club": "أتلتيك بلباو",
+    "Bayern Munich": "بايرن ميونيخ",
+    "Bayern München": "بايرن ميونيخ",
+    "Bayer Leverkusen": "باير ليفركوزن",
+    "Borussia Dortmund": "بوروسيا دورتموند",
+    "Dortmund": "بوروسيا دورتموند",
+    "RB Leipzig": "لايبزيج",
+    "Leipzig": "لايبزيج",
+    "Paris Saint-Germain": "باريس سان جيرمان",
+    "PSG": "باريس سان جيرمان",
+    "Marseille": "أولمبيك مارسيليا",
+    "Olympique Lyonnais": "أولمبيك ليون",
+    "Lyon": "أولمبيك ليون",
+    "Monaco": "موناكو",
+    "Lille": "ليل",
+    "Rennes": "رين",
+    "Nice": "نيس",
+    "Lens": "لانس",
+    "Nantes": "نانت",
+    "Toulouse": "تولوز",
+    "Reims": "رانس",
+    "Strasbourg": "ستراسبورغ",
+    "Montpellier": "مونبلييه",
+    "Brest": "بريست",
+    "Auxerre": "أوكسير",
+    "Le Havre": "لوهافر",
+    "Angers": "أنجيه",
+    "Saint-Etienne": "سانت إتيان",
+    "Manchester City": "مانشستر سيتي",
+    "Manchester United": "مانشستر يونايتد",
+    "Liverpool": "ليفربول",
+    "Arsenal": "أرسنال",
+    "Chelsea": "تشيلسي",
+    "Tottenham": "توتنهام",
+    "Newcastle United": "نيوكاسل",
+    "Aston Villa": "أستون فيلا",
+    "West Ham United": "وست هام يونايتد",
+    "Brighton": "برايتون",
+    "Fulham": "فولهام",
+    "Everton": "إيفرتون",
+    "Wolves": "ولفرهامبتون",
+    "Wolverhampton": "ولفرهامبتون",
+    "Leicester": "ليستر سيتي",
+    "Leeds": "ليدز",
+    "Nottingham Forest": "نوتينغهام فورست",
+    "Crystal Palace": "كريستال بالاس",
+    "Brentford": "برينتفورد",
+    "Bournemouth": "بورنموث",
+    "Southampton": "ساوثهامبتون",
+    "Ipswich": "إيبسويتش",
+    "Juventus": "يوفنتوس",
+    "AC Milan": "ميلان",
+    "Milan": "ميلان",
+    "Inter Milan": "إنتر ميلان",
+    "AS Roma": "روما",
+    "Roma": "روما",
+    "Napoli": "نابولي",
+    "Lazio": "لاتسيو",
+    "Atalanta": "أتالانتا",
+    "Fiorentina": "فيورنتينا",
+    "Bologna": "بولونيا",
+    "Genoa": "جنوى",
+    "Udinese": "أودينيزي",
+    "Torino": "تورينو",
+    "Verona": "فيرونا",
+    "Parma": "بارما",
+    "Empoli": "إمبولي",
+    "Como": "كومو",
+    "Lecce": "ليتشي",
+    "Cagliari": "كالياري",
+    "Sassuolo": "ساسولو",
+    "Sampdoria": "سامبدوريا",
+    "Ajax": "أياكس",
+    "PSV": "بي إس في",
+    "Feyenoord": "فينورد",
+    "NEC": "نيك",
+    "Sporting CP": "سبورتينغ لشبونة",
+    "Benfica": "بنفيكا",
+    "Porto": "بورتو",
+    "Anderlecht": "أندرلخت",
+    "Club Brugge": "كلوب بروج",
+    "Celtic": "سلتيك",
+    "Rangers": "رينجرز",
+    "Galatasaray": "غلطة سراي",
+    "Fenerbahçe": "فنربخشة",
+    "Fenerbahce": "فنربخشة",
+    "Besiktas": "بشكتاش",
+    "Olympiacos": "أولمبياكوس",
+    "PAOK": "باوك",
+    "AEK Athens": "أيك أثينا",
+    "Panathinaikos": "باناثينايكوس",
+    "Dinamo Zagreb": "دينامو زغرب",
+    "Red Star Belgrade": "النجم الأحمر",
+    "Shakhtar Donetsk": "شاختار دونيتسك",
+    "Shakhtar": "شاختار دونيتسك",
+    # ===== أندية عالمية =====
+    "São Paulo": "ساو باولو",
+    "Sao Paulo": "ساو باولو",
+    "Flamengo": "فلامنغو",
+    "Palmeiras": "بالميراس",
+    "Corinthians": "كورينثيانز",
+    "Fluminense": "فلومينينسي",
+    "River Plate": "ريفر بليت",
+    "Boca Juniors": "بوكا جونيورز",
+    "Estudiantes": "إستوديانتيس",
+    "Racing Club": "راسينغ",
+    "Racing": "راسينغ",
+    "Colo-Colo": "كولو كولو",
+    "Penarol": "بينارول",
+    "Nacional Montevideo": "ناسيونال مونتيفيديو",
+    "Bolívar": "بوليفار",
+    "Bolivar": "بوليفار",
+    "LDU Quito": "ليغا دو كيتو",
+    "Barcelona SC": "برشلونة الإكوادوري",
+    "Independiente del Valle": "إنديبندينتي ديل فاليه",
+    "Deportes Tolima": "ديبورتيس توليما",
+    "Universidad Católica": "جامعة كاتوليكا",
+    "Universidad Catolica": "جامعة كاتوليكا",
+    # ===== سعودية =====
+    "Al-Hilal": "الهلال",
+    "Al-Nassr": "النصر",
+    "Al-Ittihad": "الاتحاد",
+    "Al-Ahli": "الأهلي",
+    "Al-Shabab": "الشباب",
+    "Al-Taawoun": "التعاون",
+    "Al-Fateh": "الفتح",
+    "Al-Ettifaq": "الاتفاق",
+    "Al-Okhdood": "الأخدود",
+    "Al-Khaleej": "الخليج",
+    "Al-Qadsiah": "القادسية",
+    "Al-Wehda": "الوحدة",
+    "Al-Riyadh": "الرياض",
+    "Al-Fayha": "الفيحاء",
+    "Al-Kholood": "الخلود",
+    "Al-Najma": "النجمة",
+    "Al-Faisaly": "الفيصلي",
+    "Al-Jabalain": "الجبلين",
+    "Al-Raed": "الرائد",
+    "Al-Tai": "الطائي",
+    "Damac": "ضمك",
+    "NEOM": "نيوم",
+    "Al-Diriyah": "الدرعية",
+    # ===== عراقية =====
+    "Al-Zawraa": "الزوراء",
+    "Al-Quwa Al-Jawiya": "القوة الجوية",
+    "Al-Shorta": "الشرطة",
+    "Al-Talaba": "الطلبة",
+    "Erbil": "أربيل",
+    "Al-Najaf": "النجف",
+    "Al-Minaa": "الميناء",
+    "Al-Karkh": "الكرخ",
+    "Naft Al-Basra": "نفط البصرة",
+    "Duhok": "دهوك",
+    "Karbala": "كربلاء",
+    "Al-Naft": "نفط",
+    "Al-Hudood": "الحدود",
+    "Al-Qasim": "القاسم",
+    "Al-Diwaniya": "الديوانية",
+    "Naft Maysan": "نفط ميسان",
+    "Naft Al-Wasat": "نفط الوسط",
+    "Al-Sinaa": "الصناعة",
+    "Al-Kahrabaa": "الكهرباء",
+    "Amanat Baghdad": "أمانة بغداد",
+    "Zakho": "زاخو",
+    "Newroz": "نوروز",
+    # ===== مصرية =====
+    "Al Ahly": "الأهلي",
+    "Zamalek": "الزمالك",
+    "Pyramids": "بيراميدز",
+    "Ismaily": "الإسماعيلي",
+    "Al Masry": "المصري",
+    "El Gouna": "الجونة",
+    "Ceramica Cleopatra": "سيراميكا كليوباترا",
+    "Smouha": "سموحة",
+    "Enppi": "إنبي",
+    "Pharco": "فاركو",
+    "Tala'a El Gaish": "طلائع الجيش",
+    "Bank Al Ahly": "البنك الأهلي",
+    "Al Mokawloon": "المقاولون العرب",
+    "Haras El Hodood": "حرس الحدود",
+    "Al Ittihad Alexandria": "الاتحاد السكندري",
+    "Future": "مودرن فيوتشر",
+    # ===== مغربية =====
+    "Wydad": "الوداد",
+    "Wydad AC": "الوداد",
+    "Raja": "الرجاء",
+    "Raja Casablanca": "الرجاء",
+    "FAR Rabat": "الجيش الملكي",
+    "RSB Berkane": "نهضة بركان",
+    "Hassania Agadir": "حسنية أكادير",
+    "Moghreb Tetouan": "المغرب التطواني",
+    "Difaâ El Jadida": "الداخلة",
+    "Olympic Safi": "أولمبيك أسفي",
+    "Maghreb Fez": "المغرب الفاسي",
+    # ===== تونسية =====
+    "Esperance": "الترجي",
+    "Esperance Tunis": "الترجي",
+    "Espérance de Tunis": "الترجي",
+    "Club Africain": "النادي الإفريقي",
+    "Etoile du Sahel": "النجم الساحلي",
+    "CS Sfaxien": "النادي الصفاقسي",
+    "US Monastir": "اتحاد المنستير",
+    "Stade Tunisien": "الملعب التونسي",
+    # ===== جزائرية =====
+    "MC Alger": "مولودية الجزائر",
+    "USM Alger": "اتحاد الجزائر",
+    "CR Belouizdad": "شباب بلوزداد",
+    "ES Setif": "وفاق سطيف",
+    "JS Kabylie": "شبيبة القبائل",
+    "CS Constantine": "شباب قسنطينة",
+    "JS Saoura": "شبيبة الساورة",
+    "MC Oran": "مولودية وهران",
+    # ===== إماراتية =====
+    "Al Ain": "العين",
+    "Al Wahda": "الوحدة",
+    "Al Wasl": "الوصل",
+    "Shabab Al Ahli": "شباب الأهلي",
+    "Sharjah": "الشارقة",
+    "Ajman": "عجمان",
+    "Baniyas": "بن ياس",
+    "Al Nasr Dubai": "النصر الإماراتي",
+    "Al Jazira": "الجزيرة الإماراتي",
+    "Al Bataeh": "البطائح",
+    "Kalba": "كلباء",
+    "Khor Fakkan": "خورفكان",
+    "Al Dhafra": "الظفرة",
+    # ===== قطرية =====
+    "Al Sadd": "السد",
+    "Al Duhail": "الدحيل",
+    "Al Rayyan": "الريان",
+    "Al Gharafa": "الغرافة",
+    "Al Arabi": "العربي القطري",
+    "Al Wakrah": "الوكرة",
+    "Al Ahli Doha": "الأهلي القطري",
+    "Umm Salal": "أم صلال",
+    "Qatar SC": "قطر",
+    "Al Shamal": "الشمال",
+    "Al Markhiya": "المرخية",
+    # ===== كويتية =====
+    "Kuwait SC": "الكويت",
+    "Al Qadsia": "القادسية الكويتي",
+    "Al Arabi Kuwait": "العربي الكويتي",
+    "Al Salmiya": "السالمية",
+    "Al Fahaheel": "الفحيحيل",
+    # ===== أردنية =====
+    "Al Wehdat": "الوحدات",
+    "Al Faisaly Jordan": "الفيصلي الأردني",
+    "Al Hussein": "الحسين إربد",
+    # ===== أخرى من الصفحات =====
+    "Viking": "فايكنغ",
+    "Levski Sofia": "ليفسكي صوفيا",
+    "Persib": "برسيب",
+    "Bali United": "بالي يونايتد",
+    "Heidenheim": "هايدنهايم",
+    "LASK Linz": "لاسك لينز",
+    "Bodø / Glimt": "بودو غليمت",
+    "Hapoel Be'er Sheva": "هبوعيل بئر السبع",
+    "Sabah": "صباح",
+    "Elche": "إلتشي",
+    "Villarreal": "فياريال",
+    "Real Betis": "ريال بيتيس",
+    "Real Sociedad": "ريال سوسيداد",
+    "Sevilla": "إشبيلية",
+    "Valencia": "فالنسيا",
+    "Girona": "جيرونا",
+    "Getafe": "خيتافي",
+    "Mallorca": "مايوركا",
+    "Las Palmas": "لاس بالماس",
+    "Osasuna": "أوساسونا",
+    "Celta Vigo": "سيلتا فيغو",
+    "Espanyol": "إسبانيول",
+    "Rayo Vallecano": "رايو فاييكانو",
+    "Leganes": "ليغانيس",
+    "Alaves": "ألافيس",
+    "Freiburg": "فرايبورغ",
+    "Stuttgart": "شتوتغارت",
+    "Hoffenheim": "هوفنهايم",
+    "Mainz": "ماينز",
+    "Werder Bremen": "فيردر بريمن",
+    "Wolfsburg": "فولفسبورغ",
+    "Borussia Monchengladbach": "بوروسيا مونشنغلادباخ",
+    "Gladbach": "بوروسيا مونشنغلادباخ",
+    "Augsburg": "أوغسبورغ",
+    "Union Berlin": "يونيون برلين",
+    "Koln": "كولن",
+    "FC Koln": "كولن",
+    "St. Pauli": "سانت باولي",
+    "Eintracht Frankfurt": "آينتراخت فرانكفورت",
+    "Hamburg": "هامبورغ",
+    "Hertha Berlin": "هرتا برلين",
+}
+
+
+def _ls_lookup(mapping, name):
+    """بحث في قواميس الترجمة: جرب الاسم كما هو ثم بصيغته المُنظَّمة (_norm_key)"""
+    return mapping.get(name) or mapping.get(_norm_key(name))
+
+
+def _is_vip_team_name(name):
+    """هل اسم الفريق يطابق أحد فرق VIP؟ (نفس منطق filter_and_rank)"""
+    return any(t in name for t in VIP_TEAMS)
+
+
 _SPELLING_FIXES = {
     "بروسيا": "بوروسيا",
     "لايبزج": "لايبزيج",
@@ -1724,6 +2175,16 @@ _SPELLING_FIXES = {
     "شالكه 04": "شالكه",
     "الميناء البصرة": "الميناء",
     "غاز الشمال": "Ghaz Al Shamal",
+    "فايكينج": "فايكنغ",
+    "فايكينغ": "فايكنغ",
+    "فناربخشة": "فنربخشة",
+    "آيك أثينا": "أيك أثينا",
+    "سيلتك": "سلتيك",
+    "نيميجين": "نيك",
+    "نيميخن": "نيك",
+    "هايدينهايم": "هايدنهايم",
+    "بودو/جليمت": "بودو غليمت",
+    "بودو / جليمت": "بودو غليمت",
 }
 
 # ================= دالة صناعة "بصمة الفريق" للدمج =================
@@ -1888,6 +2349,10 @@ def execute_full_cycle():
         bto = scraper_engine.scrape_btolat()
         print(f"    -> بطولات: {len(bto)} مباراة")
         all_raw += bto
+    if SITES_CFG.get("livesoccertv", {}).get("enabled", False):
+        lsv = scraper_engine.scrape_livesoccertv()
+        print(f"    -> لايف سوكر تي في: {len(lsv)} مباراة")
+        all_raw += lsv
 
     print(f"\n-> [Debug] Total Raw Matches Extracted: {len(all_raw)}")
 
@@ -1964,7 +2429,7 @@ def execute_full_cycle():
         for m in final_list:
             print(f"   ✅ [{m['league']}] {m['homeTeam']} {m['scoreOrTime']} {m['awayTeam']} | {m['status']} | {', '.join(m['channels'])}")
 
-    with open("matches.json", "w", encoding="utf-8") as f:
+    with open(MATCHES_FILE, "w", encoding="utf-8") as f:
         json.dump(final_list, f, ensure_ascii=False, indent=4)
 
     print(f"\n-> [OK] Smart-Filtered & Saved {len(final_list)} matches to matches.json.")
@@ -1987,10 +2452,10 @@ if __name__ == "__main__":
         print("-> GitHub Actions Cycle Triggered...")
         now = datetime.now(TZ)
         
-        is_midnight_sync = (now.hour == 0 or now.hour == 1 or not os.path.exists("matches.json"))
+        is_midnight_sync = (now.hour == 0 or now.hour == 1 or not os.path.exists(MATCHES_FILE))
         
         if not is_midnight_sync:
-            with open("matches.json", "r", encoding="utf-8") as f:
+            with open(MATCHES_FILE, "r", encoding="utf-8") as f:
                 try:
                     saved_matches = json.load(f)
                     first_time = extract_first_match_time(saved_matches)
