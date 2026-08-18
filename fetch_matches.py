@@ -1615,10 +1615,11 @@ class GhostScraper:
                 m['channels'] = dedup_channels([c for c in m['channels'] + detail['channels'] if c])
             if detail['commenters'] and not m['commentator']:
                 m['commentator'] = ' / '.join(detail['commenters'])
-            # الأهداف نهمها فقط للمباريات المنتهية (في لبعض ids يعيد فيلجول مباراة قديمة منتهية)
+            # الأهداف نهمها فقط للمباريات المنتهية (في بعض ids يعيد فيلجول مباراة قديمة منتهية)
+            # لكن نحتفظ برقم المباراة دائماً حتى تعيد التعبئة اللاحقة جلب الأهداف بعد انتهائها
             if m['status'] == "انتهت":
                 m['scorers'] = detail['scorers']
-                m['_filgoal_id'] = match_id
+            m['_filgoal_id'] = match_id
 
         return list(seen.values())
 
@@ -2318,7 +2319,7 @@ def _backfill_scorers(matches):
                 m['scorers'] = got
                 continue
             time.sleep(_rnd.uniform(GLOBAL_DELAY[0], GLOBAL_DELAY[1]))
-        fid = m.get('_filgoal_id')
+        fid = m.get('_filgoal_id') or m.get('_match_id')
         if fid:
             det = scraper_engine._fetch_filgoal_detail(fid, status=m.get('status'), force=True)
             if det['scorers'] and (det['scorers'].get('home') or det['scorers'].get('away')):
@@ -2407,7 +2408,7 @@ def execute_full_cycle():
 
             # 7. 💡 نقل مفاتيح التفاصيل الخاصة (رابط بطولات / رقم فيلجول)
             #    حتى تصل لخطوة التعبئة اللاحقة للأهداف لو بقيت فارغة
-            for pk in ('_btolat_details', '_filgoal_id'):
+            for pk in ('_btolat_details', '_filgoal_id', '_match_id'):
                 if not merged[key].get(pk) and m.get(pk):
                     merged[key][pk] = m[pk]
 
