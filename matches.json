@@ -5,8 +5,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\8\\12\\Celtic2018_8_12_13_0.jpg",
         "awayTeam": "لاسك لينز",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\7\\15\\Lask2021_7_15_9_46.jpg",
-        "scoreOrTime": "1 - 0",
-        "status": "الشوط الأول",
+        "scoreOrTime": "2 - 0",
+        "status": "استراحة",
         "channels": [
             "beIN SPORTS 1 HD"
         ],
@@ -20,7 +20,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\7\\SlovanBratislava2021_9_7_11_11.jpg",
         "awayTeam": "نادي تسيليي",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\11\\27\\nk-celje-logo-png_seeklogo-5305772024_11_27_19_1.jpg",
-        "scoreOrTime": "1 - 0",
+        "scoreOrTime": "1 - 1",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -41,7 +41,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2022\\9\\15\\YK-Generic-team-logo2022_9_15_22_0.jpg",
         "awayTeam": "صباح إف كيه",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\SABAH FC LOGO 112026_8_19_19_51.webp",
-        "scoreOrTime": "0 - 1",
+        "scoreOrTime": "1 - 1",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -53,7 +53,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\NEC Nijmegen12026_8_19_20_8.webp",
         "awayTeam": "جليمت",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\8\\32021_9_8_20_53.jpg",
-        "scoreOrTime": "0 - 1",
+        "scoreOrTime": "0 - 2",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -143,7 +143,7 @@
         "awayTeam": "لاسك لينز",
         "awayLogo": "https://img.btolat.com/teamslogo/6413.png?v=403",
         "scoreOrTime": "2 - 0",
-        "status": "41'",
+        "status": "'",
         "channels": [
             "BEIN SPORTS 1"
         ],
@@ -169,8 +169,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11650.png?v=845",
         "awayTeam": "نادي صباح",
         "awayLogo": "https://img.btolat.com/teamslogo/28874.png?v=214",
-        "scoreOrTime": "0 - 1",
-        "status": "41'",
+        "scoreOrTime": "1 - 1",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
@@ -190,8 +190,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/13340.png?v=734",
         "awayTeam": "بودو جليمت",
         "awayLogo": "https://img.btolat.com/teamslogo/13694.png?v=438",
-        "scoreOrTime": "0 - 1",
-        "status": "41'",
+        "scoreOrTime": "0 - 2",
+        "status": "'",
         "channels": [
             "BEIN SPORTS 2"
         ],
@@ -361,8 +361,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\17\\Al-Ula FC2026_8_17_0_47.webp",
         "awayTeam": "الفتح",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\2\\3\\fath12023_2_3_16_33.jpg",
-        "scoreOrTime": "2 - 0",
-        "status": "مباشر",
+        "scoreOrTime": "3 - 0",
+        "status": "انتهت",
         "channels": [
             "ثمانية 2",
             "ثمانية"
@@ -442,7 +442,7 @@
         "awayTeam": "الفتح",
         "awayLogo": "https://img.btolat.com/teamslogo/14996.png?v=30",
         "scoreOrTime": "3 - 0",
-        "status": "80'",
+        "status": "انتهت",
         "channels": [
             "تطبيق ثمانية"
         ],
@@ -477,11 +477,20 @@
         "scorers": {
             "home": [
                 [
+                    "رافينها",
+                    "45'"
+                ],
+                [
                     "حمزة عبد الكريم",
                     "29'"
                 ]
             ],
-            "away": []
+            "away": [
+                [
+                    "احمد سيد زيزو",
+                    "51'"
+                ]
+            ]
         }
     },
     {
@@ -504,7 +513,7 @@
         "awayTeam": "ملقا",
         "awayLogo": "https://img.btolat.com/teamslogo/16050.png?v=284",
         "scoreOrTime": "0 - 0",
-        "status": "33'",
+        "status": "'",
         "channels": [
             "BEIN SPORTS 4"
         ],
