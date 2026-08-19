@@ -196,7 +196,7 @@
   }
  },
  "https://www.btolat.com/matches/details/226647": {
-  "at": 1787163249.416737,
+  "at": 1787166979.0591586,
   "scorers": {
    "home": [],
    "away": [
@@ -263,12 +263,61 @@
   }
  },
  "https://www.btolat.com/matches/details/226644": {
-  "at": 1787163251.4375885,
+  "at": 1787166980.4268975,
   "scorers": {
    "home": [
     [
+     "يوان باربيت",
+     "23'"
+    ],
+    [
      "رومل سمير كيوتو روبنسون",
      "4'"
+    ]
+   ],
+   "away": []
+  }
+ },
+ "https://www.btolat.com/matches/details/227672": {
+  "at": 1787167014.6837597,
+  "scorers": {
+   "home": [],
+   "away": []
+  }
+ },
+ "https://www.btolat.com/matches/details/232109": {
+  "at": 1787166997.017024,
+  "scorers": {
+   "home": [],
+   "away": []
+  }
+ },
+ "https://www.btolat.com/matches/details/232729": {
+  "at": 1787166974.41336,
+  "scorers": {
+   "home": [],
+   "away": [
+    [
+     "فيلكو سيميتش",
+     "7'"
+    ]
+   ]
+  }
+ },
+ "https://www.btolat.com/matches/details/232730": {
+  "at": 1787167000.5778003,
+  "scorers": {
+   "home": [],
+   "away": []
+  }
+ },
+ "https://www.btolat.com/matches/details/232731": {
+  "at": 1787166977.479833,
+  "scorers": {
+   "home": [
+    [
+     "R. Čerepkai",
+     "15'"
     ]
    ],
    "away": []

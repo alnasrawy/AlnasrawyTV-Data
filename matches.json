@@ -5,8 +5,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\8\\12\\Celtic2018_8_12_13_0.jpg",
         "awayTeam": "لاسك لينز",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\7\\15\\Lask2021_7_15_9_46.jpg",
-        "scoreOrTime": "22:00",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "الشوط الأول",
         "channels": [
             "beIN SPORTS 1 HD"
         ],
@@ -20,11 +20,20 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\7\\SlovanBratislava2021_9_7_11_11.jpg",
         "awayTeam": "نادي تسيليي",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\11\\27\\nk-celje-logo-png_seeklogo-5305772024_11_27_19_1.jpg",
-        "scoreOrTime": "22:00",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "مباشر",
         "channels": [],
         "commentator": "",
-        "source": "Yallakora + Btolat"
+        "source": "Yallakora + Btolat",
+        "scorers": {
+            "home": [
+                [
+                    "R. Čerepkai",
+                    "15'"
+                ]
+            ],
+            "away": []
+        }
     },
     {
         "league": "دوري أبطال أوروبا",
@@ -32,8 +41,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2022\\9\\15\\YK-Generic-team-logo2022_9_15_22_0.jpg",
         "awayTeam": "صباح إف كيه",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\SABAH FC LOGO 112026_8_19_19_51.webp",
-        "scoreOrTime": "22:00",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "مباشر",
         "channels": [],
         "commentator": "",
         "source": "Yallakora"
@@ -44,8 +53,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\NEC Nijmegen12026_8_19_20_8.webp",
         "awayTeam": "جليمت",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\8\\32021_9_8_20_53.jpg",
-        "scoreOrTime": "22:00",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "مباشر",
         "channels": [],
         "commentator": "",
         "source": "Yallakora"
@@ -107,8 +116,8 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/1324.png",
         "awayTeam": "سيلجي",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/13733.png",
-        "scoreOrTime": "22:00",
-        "status": "بعد قليل",
+        "scoreOrTime": "0 - 0",
+        "status": "مباشر",
         "channels": [],
         "commentator": "",
         "source": "FilGoal",
@@ -120,8 +129,8 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/370.png",
         "awayTeam": "بودو/جليمت",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/12803.png",
-        "scoreOrTime": "22:00",
-        "status": "بعد قليل",
+        "scoreOrTime": "0 - 0",
+        "status": "مباشر",
         "channels": [],
         "commentator": "",
         "source": "FilGoal",
@@ -133,13 +142,17 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15049.png?v=568",
         "awayTeam": "لاسك لينز",
         "awayLogo": "https://img.btolat.com/teamslogo/6413.png?v=403",
-        "scoreOrTime": "10:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "16'",
         "channels": [
             "BEIN SPORTS 1"
         ],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "دوري أبطال أوروبا",
@@ -147,11 +160,20 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11650.png?v=845",
         "awayTeam": "نادي صباح",
         "awayLogo": "https://img.btolat.com/teamslogo/28874.png?v=214",
-        "scoreOrTime": "10:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 1",
+        "status": "16'",
         "channels": [],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": [
+                [
+                    "فيلكو سيميتش",
+                    "7'"
+                ]
+            ]
+        }
     },
     {
         "league": "دوري أبطال أوروبا",
@@ -159,13 +181,17 @@
         "homeLogo": "https://img.btolat.com/teamslogo/13340.png?v=734",
         "awayTeam": "بودو جليمت",
         "awayLogo": "https://img.btolat.com/teamslogo/13694.png?v=438",
-        "scoreOrTime": "10:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "16'",
         "channels": [
             "BEIN SPORTS 2"
         ],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "الدوري السعودي",
@@ -402,7 +428,7 @@
         "awayTeam": "الفتح",
         "awayLogo": "https://img.btolat.com/teamslogo/14996.png?v=30",
         "scoreOrTime": "2 - 0",
-        "status": "'",
+        "status": "55'",
         "channels": [
             "تطبيق ثمانية"
         ],
@@ -410,6 +436,10 @@
         "source": "Btolat",
         "scorers": {
             "home": [
+                [
+                    "يوان باربيت",
+                    "23'"
+                ],
                 [
                     "رومل سمير كيوتو روبنسون",
                     "4'"
@@ -459,12 +489,16 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15692.png?v=492",
         "awayTeam": "ملقا",
         "awayLogo": "https://img.btolat.com/teamslogo/16050.png?v=284",
-        "scoreOrTime": "10:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "8'",
         "channels": [
             "BEIN SPORTS 4"
         ],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     }
 ]
