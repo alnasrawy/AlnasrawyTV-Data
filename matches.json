@@ -5,7 +5,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\8\\12\\Celtic2018_8_12_13_0.jpg",
         "awayTeam": "لاسك لينز",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\7\\15\\Lask2021_7_15_9_46.jpg",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "22:00",
         "status": "لم تبدأ",
         "channels": [
             "beIN SPORTS 1 HD"
@@ -13,6 +13,18 @@
         "commentator": "أحمد البلوشي",
         "source": "Yallakora + FilGoal",
         "_match_id": "376499"
+    },
+    {
+        "league": "دوري أبطال أوروبا",
+        "homeTeam": "سلوفان براتيسلافا",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\7\\SlovanBratislava2021_9_7_11_11.jpg",
+        "awayTeam": "نادي تسيليي",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\11\\27\\nk-celje-logo-png_seeklogo-5305772024_11_27_19_1.jpg",
+        "scoreOrTime": "22:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Yallakora + Btolat"
     },
     {
         "league": "دوري أبطال أوروبا",
@@ -132,18 +144,6 @@
         "source": "Btolat"
     },
     {
-        "league": "دوري أبطال أوروبا",
-        "homeTeam": "سلوفان براتيسلافا",
-        "homeLogo": "https://img.btolat.com/teamslogo/15437.png?v=501",
-        "awayTeam": "تسيليى",
-        "awayLogo": "https://img.btolat.com/teamslogo/15468.png?v=44",
-        "scoreOrTime": "10:00 م",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "Btolat"
-    },
-    {
         "league": "الدوري السعودي",
         "homeTeam": "الفيحاء",
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/1445.png",
@@ -222,8 +222,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\3\\16\\Untitled2024_3_16_21_53.jpg",
         "awayTeam": "التعاون",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\11\\10\\tawwoun2023_11_10_17_9.jpg",
-        "scoreOrTime": "19:15",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "مباشر",
         "channels": [
             "ثمانية 1",
             "ثمانية"
@@ -238,8 +238,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\gedda12026_8_19_19_11.webp",
         "awayTeam": "الخلود",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\9\\25\\Al_Kholood_Club12025_9_25_0_22.webp",
-        "scoreOrTime": "19:30",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 2",
+        "status": "17'",
         "channels": [
             "ثمانية 3",
             "ثمانية",
@@ -247,7 +247,20 @@
         ],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat",
-        "_match_id": "376524"
+        "_match_id": "376524",
+        "scorers": {
+            "home": [],
+            "away": [
+                [
+                    "إيكر كورتاخارينا",
+                    "16'"
+                ],
+                [
+                    "إيكر كورتاخارينا",
+                    "3'"
+                ]
+            ]
+        }
     },
     {
         "league": "كأس خادم الحرمين الشريفين",
