@@ -8,9 +8,9 @@
         "scoreOrTime": "22:00",
         "status": "لم تبدأ",
         "channels": [
-            "بى ان سبورت 1HD"
+            "beIN SPORTS 1 HD"
         ],
-        "commentator": "",
+        "commentator": "أحمد البلوشي",
         "source": "Yallakora + FilGoal",
         "_match_id": "376499"
     },
@@ -99,16 +99,18 @@
         "awayLogo": "https://img.btolat.com/teamslogo/6413.png?v=403",
         "scoreOrTime": "10:00 م",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "BEIN SPORTS 1"
+        ],
         "commentator": "",
         "source": "Btolat"
     },
     {
         "league": "دوري أبطال أوروبا",
         "homeTeam": "هابويل بير شيفا",
-        "homeLogo": "https://img.btolat.com/teamslogo/11650.png?v=30",
+        "homeLogo": "https://img.btolat.com/teamslogo/11650.png?v=845",
         "awayTeam": "نادي صباح",
-        "awayLogo": "https://img.btolat.com/teamslogo/28874.png?v=439",
+        "awayLogo": "https://img.btolat.com/teamslogo/28874.png?v=214",
         "scoreOrTime": "10:00 م",
         "status": "لم تبدأ",
         "channels": [],
@@ -118,21 +120,23 @@
     {
         "league": "دوري أبطال أوروبا",
         "homeTeam": "نيميجن",
-        "homeLogo": "https://img.btolat.com/teamslogo/13340.png?v=2",
+        "homeLogo": "https://img.btolat.com/teamslogo/13340.png?v=734",
         "awayTeam": "بودو جليمت",
-        "awayLogo": "https://img.btolat.com/teamslogo/13694.png?v=341",
+        "awayLogo": "https://img.btolat.com/teamslogo/13694.png?v=438",
         "scoreOrTime": "10:00 م",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "BEIN SPORTS 2"
+        ],
         "commentator": "",
         "source": "Btolat"
     },
     {
         "league": "دوري أبطال أوروبا",
         "homeTeam": "سلوفان براتيسلافا",
-        "homeLogo": "https://img.btolat.com/teamslogo/15437.png?v=985",
+        "homeLogo": "https://img.btolat.com/teamslogo/15437.png?v=501",
         "awayTeam": "تسيليى",
-        "awayLogo": "https://img.btolat.com/teamslogo/15468.png?v=14",
+        "awayLogo": "https://img.btolat.com/teamslogo/15468.png?v=44",
         "scoreOrTime": "10:00 م",
         "status": "لم تبدأ",
         "channels": [],
@@ -220,7 +224,9 @@
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\11\\10\\tawwoun2023_11_10_17_9.jpg",
         "scoreOrTime": "19:15",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "ثمانية"
+        ],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat",
         "_match_id": "376523"
@@ -233,7 +239,9 @@
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\9\\25\\Al_Kholood_Club12025_9_25_0_22.webp",
         "scoreOrTime": "19:30",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "ثمانية"
+        ],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat",
         "_match_id": "376524"
@@ -246,7 +254,9 @@
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\2\\3\\fath12023_2_3_16_33.jpg",
         "scoreOrTime": "21:00",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "ثمانية"
+        ],
         "commentator": "",
         "source": "Yallakora + FilGoal",
         "_match_id": "376525"
@@ -320,7 +330,7 @@
         "homeTeam": "Al-Ula",
         "homeLogo": "https://img.btolat.com/",
         "awayTeam": "الفتح",
-        "awayLogo": "https://img.btolat.com/teamslogo/14996.png?v=508",
+        "awayLogo": "https://img.btolat.com/teamslogo/14996.png?v=30",
         "scoreOrTime": "09:00 م",
         "status": "لم تبدأ",
         "channels": [],
@@ -356,9 +366,9 @@
     {
         "league": "الدوري الاسباني",
         "homeTeam": "أتلتيكو مدريد",
-        "homeLogo": "https://img.btolat.com/teamslogo/15692.png?v=514",
+        "homeLogo": "https://img.btolat.com/teamslogo/15692.png?v=492",
         "awayTeam": "ملقا",
-        "awayLogo": "https://img.btolat.com/teamslogo/16050.png?v=606",
+        "awayLogo": "https://img.btolat.com/teamslogo/16050.png?v=284",
         "scoreOrTime": "10:00 م",
         "status": "لم تبدأ",
         "channels": [],
