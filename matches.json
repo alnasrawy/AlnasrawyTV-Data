@@ -5,7 +5,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\8\\12\\Celtic2018_8_12_13_0.jpg",
         "awayTeam": "لاسك لينز",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\7\\15\\Lask2021_7_15_9_46.jpg",
-        "scoreOrTime": "2 - 0",
+        "scoreOrTime": "3 - 0",
         "status": "الشوط الثاني",
         "channels": [
             "beIN SPORTS 1 HD"
@@ -46,7 +46,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2022\\9\\15\\YK-Generic-team-logo2022_9_15_22_0.jpg",
         "awayTeam": "صباح إف كيه",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\SABAH FC LOGO 112026_8_19_19_51.webp",
-        "scoreOrTime": "1 - 1",
+        "scoreOrTime": "2 - 1",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -58,7 +58,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\NEC Nijmegen12026_8_19_20_8.webp",
         "awayTeam": "جليمت",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\8\\32021_9_8_20_53.jpg",
-        "scoreOrTime": "0 - 3",
+        "scoreOrTime": "1 - 3",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -148,7 +148,7 @@
         "awayTeam": "لاسك لينز",
         "awayLogo": "https://img.btolat.com/teamslogo/6413.png?v=403",
         "scoreOrTime": "3 - 0",
-        "status": "69'",
+        "status": "90+'",
         "channels": [
             "BEIN SPORTS 1"
         ],
@@ -156,6 +156,10 @@
         "source": "Btolat",
         "scorers": {
             "home": [
+                [
+                    "C. Durán",
+                    "67'"
+                ],
                 [
                     "C. Durán",
                     "38'"
@@ -174,8 +178,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/11650.png?v=845",
         "awayTeam": "نادي صباح",
         "awayLogo": "https://img.btolat.com/teamslogo/28874.png?v=214",
-        "scoreOrTime": "1 - 1",
-        "status": "68'",
+        "scoreOrTime": "2 - 1",
+        "status": "90+'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
@@ -200,16 +204,29 @@
         "homeLogo": "https://img.btolat.com/teamslogo/13340.png?v=734",
         "awayTeam": "بودو جليمت",
         "awayLogo": "https://img.btolat.com/teamslogo/13694.png?v=438",
-        "scoreOrTime": "0 - 3",
-        "status": "66'",
+        "scoreOrTime": "1 - 3",
+        "status": "90'",
         "channels": [
             "BEIN SPORTS 2"
         ],
         "commentator": "",
         "source": "Btolat",
         "scorers": {
-            "home": [],
+            "home": [
+                [
+                    "كليمنت بيشوف",
+                    "85'"
+                ]
+            ],
             "away": [
+                [
+                    "هايتام أليسامي",
+                    "50'"
+                ],
+                [
+                    "أندرياس كلاوسن هيلمرسون",
+                    "44'"
+                ],
                 [
                     "سوندر فيت",
                     "25'"
@@ -526,15 +543,20 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15692.png?v=492",
         "awayTeam": "ملقا",
         "awayLogo": "https://img.btolat.com/teamslogo/16050.png?v=284",
-        "scoreOrTime": "0 - 0",
-        "status": "57'",
+        "scoreOrTime": "1 - 0",
+        "status": "81'",
         "channels": [
             "BEIN SPORTS 4"
         ],
         "commentator": "",
         "source": "Btolat",
         "scorers": {
-            "home": [],
+            "home": [
+                [
+                    "لي كانج إن",
+                    "70'"
+                ]
+            ],
             "away": []
         }
     }
