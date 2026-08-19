@@ -6,7 +6,7 @@
         "awayTeam": "لاسك لينز",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\7\\15\\Lask2021_7_15_9_46.jpg",
         "scoreOrTime": "2 - 0",
-        "status": "استراحة",
+        "status": "الشوط الثاني",
         "channels": [
             "beIN SPORTS 1 HD"
         ],
@@ -32,7 +32,12 @@
                     "15'"
                 ]
             ],
-            "away": []
+            "away": [
+                [
+                    "ميلوت أفديلي",
+                    "41'"
+                ]
+            ]
         }
     },
     {
@@ -53,7 +58,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\NEC Nijmegen12026_8_19_20_8.webp",
         "awayTeam": "جليمت",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\8\\32021_9_8_20_53.jpg",
-        "scoreOrTime": "0 - 2",
+        "scoreOrTime": "0 - 3",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -129,7 +134,7 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/370.png",
         "awayTeam": "بودو/جليمت",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/12803.png",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "0 - 3",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -142,8 +147,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15049.png?v=568",
         "awayTeam": "لاسك لينز",
         "awayLogo": "https://img.btolat.com/teamslogo/6413.png?v=403",
-        "scoreOrTime": "2 - 0",
-        "status": "'",
+        "scoreOrTime": "3 - 0",
+        "status": "69'",
         "channels": [
             "BEIN SPORTS 1"
         ],
@@ -170,12 +175,17 @@
         "awayTeam": "نادي صباح",
         "awayLogo": "https://img.btolat.com/teamslogo/28874.png?v=214",
         "scoreOrTime": "1 - 1",
-        "status": "'",
+        "status": "68'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
         "scorers": {
-            "home": [],
+            "home": [
+                [
+                    "جافون إيست",
+                    "43'"
+                ]
+            ],
             "away": [
                 [
                     "فيلكو سيميتش",
@@ -190,8 +200,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/13340.png?v=734",
         "awayTeam": "بودو جليمت",
         "awayLogo": "https://img.btolat.com/teamslogo/13694.png?v=438",
-        "scoreOrTime": "0 - 2",
-        "status": "'",
+        "scoreOrTime": "0 - 3",
+        "status": "66'",
         "channels": [
             "BEIN SPORTS 2"
         ],
@@ -451,6 +461,10 @@
         "scorers": {
             "home": [
                 [
+                    "S. Sow",
+                    "75'"
+                ],
+                [
                     "يوان باربيت",
                     "23'"
                 ],
@@ -469,15 +483,14 @@
         "awayTeam": "الأهلي",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\10\\19\\ahly12023_10_19_17_58.jpg",
         "scoreOrTime": "2 - 1",
-        "status": "مباشر",
+        "status": "انتهت",
         "channels": [],
         "commentator": "أيمن الكاشف / مؤمن حسن",
         "source": "Yallakora + FilGoal + Btolat",
-        "_match_id": "375119",
         "scorers": {
             "home": [
                 [
-                    "رافينها",
+                    "رافينيا",
                     "45'"
                 ],
                 [
@@ -487,11 +500,12 @@
             ],
             "away": [
                 [
-                    "احمد سيد زيزو",
+                    "أحمد سيد زيزو",
                     "51'"
                 ]
             ]
-        }
+        },
+        "_match_id": "375119"
     },
     {
         "league": "الدوري الأمريكي",
@@ -513,7 +527,7 @@
         "awayTeam": "ملقا",
         "awayLogo": "https://img.btolat.com/teamslogo/16050.png?v=284",
         "scoreOrTime": "0 - 0",
-        "status": "'",
+        "status": "57'",
         "channels": [
             "BEIN SPORTS 4"
         ],
