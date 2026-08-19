@@ -11,7 +11,7 @@
             "beIN SPORTS 1 HD"
         ],
         "commentator": "أحمد البلوشي",
-        "source": "Yallakora + FilGoal + LiveSoccerTV",
+        "source": "Yallakora + FilGoal",
         "_match_id": "376499"
     },
     {
@@ -32,6 +32,18 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2022\\9\\15\\YK-Generic-team-logo2022_9_15_22_0.jpg",
         "awayTeam": "صباح إف كيه",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\SABAH FC LOGO 112026_8_19_19_51.webp",
+        "scoreOrTime": "22:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Yallakora"
+    },
+    {
+        "league": "دوري أبطال أوروبا",
+        "homeTeam": "إن إي سي نيميخن",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\NEC Nijmegen12026_8_19_20_8.webp",
+        "awayTeam": "جليمت",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\8\\32021_9_8_20_53.jpg",
         "scoreOrTime": "22:00",
         "status": "لم تبدأ",
         "channels": [],
@@ -112,7 +124,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal + LiveSoccerTV",
+        "source": "FilGoal",
         "_match_id": "376501"
     },
     {
@@ -154,18 +166,6 @@
         ],
         "commentator": "",
         "source": "Btolat"
-    },
-    {
-        "league": "دوري أبطال أوروبا",
-        "homeTeam": "هبوعيل بئر السبع",
-        "homeLogo": "",
-        "awayTeam": "صباح",
-        "awayLogo": "",
-        "scoreOrTime": "3:00pm",
-        "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
-        "source": "LiveSoccerTV"
     },
     {
         "league": "الدوري السعودي",
@@ -246,7 +246,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\3\\16\\Untitled2024_3_16_21_53.jpg",
         "awayTeam": "التعاون",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\11\\10\\tawwoun2023_11_10_17_9.jpg",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "0 - 1",
         "status": "مباشر",
         "channels": [
             "ثمانية 1",
@@ -271,8 +271,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\gedda12026_8_19_19_11.webp",
         "awayTeam": "الخلود",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\9\\25\\Al_Kholood_Club12025_9_25_0_22.webp",
-        "scoreOrTime": "0 - 3",
-        "status": "33'",
+        "scoreOrTime": "0 - 4",
+        "status": "مباشر",
         "channels": [
             "ثمانية 3",
             "ثمانية",
@@ -399,7 +399,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "أيمن الكاشف / مؤمن حسن",
-        "source": "Yallakora + FilGoal + Btolat + LiveSoccerTV",
+        "source": "Yallakora + FilGoal + Btolat",
         "_match_id": "375119"
     },
     {
