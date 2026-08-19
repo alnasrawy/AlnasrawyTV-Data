@@ -5,7 +5,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\8\\12\\Celtic2018_8_12_13_0.jpg",
         "awayTeam": "لاسك لينز",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\7\\15\\Lask2021_7_15_9_46.jpg",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "1 - 0",
         "status": "الشوط الأول",
         "channels": [
             "beIN SPORTS 1 HD"
@@ -20,7 +20,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\7\\SlovanBratislava2021_9_7_11_11.jpg",
         "awayTeam": "نادي تسيليي",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\11\\27\\nk-celje-logo-png_seeklogo-5305772024_11_27_19_1.jpg",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "1 - 0",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -41,7 +41,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2022\\9\\15\\YK-Generic-team-logo2022_9_15_22_0.jpg",
         "awayTeam": "صباح إف كيه",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\SABAH FC LOGO 112026_8_19_19_51.webp",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "0 - 1",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -53,7 +53,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\NEC Nijmegen12026_8_19_20_8.webp",
         "awayTeam": "جليمت",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\8\\32021_9_8_20_53.jpg",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "0 - 1",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -116,7 +116,7 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/1324.png",
         "awayTeam": "سيلجي",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/13733.png",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "1 - 0",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
@@ -142,15 +142,24 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15049.png?v=568",
         "awayTeam": "لاسك لينز",
         "awayLogo": "https://img.btolat.com/teamslogo/6413.png?v=403",
-        "scoreOrTime": "0 - 0",
-        "status": "16'",
+        "scoreOrTime": "2 - 0",
+        "status": "41'",
         "channels": [
             "BEIN SPORTS 1"
         ],
         "commentator": "",
         "source": "Btolat",
         "scorers": {
-            "home": [],
+            "home": [
+                [
+                    "C. Durán",
+                    "38'"
+                ],
+                [
+                    "بنيامين نايغرين",
+                    "26'"
+                ]
+            ],
             "away": []
         }
     },
@@ -161,7 +170,7 @@
         "awayTeam": "نادي صباح",
         "awayLogo": "https://img.btolat.com/teamslogo/28874.png?v=214",
         "scoreOrTime": "0 - 1",
-        "status": "16'",
+        "status": "41'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
@@ -181,8 +190,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/13340.png?v=734",
         "awayTeam": "بودو جليمت",
         "awayLogo": "https://img.btolat.com/teamslogo/13694.png?v=438",
-        "scoreOrTime": "0 - 0",
-        "status": "16'",
+        "scoreOrTime": "0 - 1",
+        "status": "41'",
         "channels": [
             "BEIN SPORTS 2"
         ],
@@ -190,7 +199,12 @@
         "source": "Btolat",
         "scorers": {
             "home": [],
-            "away": []
+            "away": [
+                [
+                    "سوندر فيت",
+                    "25'"
+                ]
+            ]
         }
     },
     {
@@ -427,8 +441,8 @@
         "homeLogo": "https://img.btolat.com/",
         "awayTeam": "الفتح",
         "awayLogo": "https://img.btolat.com/teamslogo/14996.png?v=30",
-        "scoreOrTime": "2 - 0",
-        "status": "55'",
+        "scoreOrTime": "3 - 0",
+        "status": "80'",
         "channels": [
             "تطبيق ثمانية"
         ],
@@ -454,7 +468,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Barcelona2018_7_29_14_44.jpg",
         "awayTeam": "الأهلي",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\10\\19\\ahly12023_10_19_17_58.jpg",
-        "scoreOrTime": "2 - 0",
+        "scoreOrTime": "2 - 1",
         "status": "مباشر",
         "channels": [],
         "commentator": "أيمن الكاشف / مؤمن حسن",
@@ -490,7 +504,7 @@
         "awayTeam": "ملقا",
         "awayLogo": "https://img.btolat.com/teamslogo/16050.png?v=284",
         "scoreOrTime": "0 - 0",
-        "status": "8'",
+        "status": "33'",
         "channels": [
             "BEIN SPORTS 4"
         ],

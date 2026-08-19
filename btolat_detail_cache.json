@@ -279,16 +279,25 @@
   }
  },
  "https://www.btolat.com/matches/details/227672": {
-  "at": 1787167014.6837597,
+  "at": 1787168497.661267,
   "scorers": {
    "home": [],
    "away": []
   }
  },
  "https://www.btolat.com/matches/details/232109": {
-  "at": 1787166997.017024,
+  "at": 1787168482.11593,
   "scorers": {
-   "home": [],
+   "home": [
+    [
+     "C. Durán",
+     "38'"
+    ],
+    [
+     "بنيامين نايغرين",
+     "26'"
+    ]
+   ],
    "away": []
   }
  },
@@ -305,10 +314,15 @@
   }
  },
  "https://www.btolat.com/matches/details/232730": {
-  "at": 1787167000.5778003,
+  "at": 1787168483.8260398,
   "scorers": {
    "home": [],
-   "away": []
+   "away": [
+    [
+     "سوندر فيت",
+     "25'"
+    ]
+   ]
   }
  },
  "https://www.btolat.com/matches/details/232731": {
