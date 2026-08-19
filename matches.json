@@ -11,7 +11,7 @@
             "beIN SPORTS 1 HD"
         ],
         "commentator": "أحمد البلوشي",
-        "source": "Yallakora + FilGoal",
+        "source": "Yallakora + FilGoal + LiveSoccerTV",
         "_match_id": "376499"
     },
     {
@@ -25,6 +25,18 @@
         "channels": [],
         "commentator": "",
         "source": "Yallakora + Btolat"
+    },
+    {
+        "league": "دوري أبطال أوروبا",
+        "homeTeam": "هابويل بئر سبع",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2022\\9\\15\\YK-Generic-team-logo2022_9_15_22_0.jpg",
+        "awayTeam": "صباح إف كيه",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\SABAH FC LOGO 112026_8_19_19_51.webp",
+        "scoreOrTime": "22:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Yallakora"
     },
     {
         "league": "دوري أبطال أوروبا",
@@ -100,7 +112,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal",
+        "source": "FilGoal + LiveSoccerTV",
         "_match_id": "376501"
     },
     {
@@ -142,6 +154,18 @@
         ],
         "commentator": "",
         "source": "Btolat"
+    },
+    {
+        "league": "دوري أبطال أوروبا",
+        "homeTeam": "هبوعيل بئر السبع",
+        "homeLogo": "",
+        "awayTeam": "صباح",
+        "awayLogo": "",
+        "scoreOrTime": "3:00pm",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "LiveSoccerTV"
     },
     {
         "league": "الدوري السعودي",
@@ -230,7 +254,16 @@
         ],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat",
-        "_match_id": "376523"
+        "_match_id": "376523",
+        "scorers": {
+            "home": [],
+            "away": [
+                [
+                    "عبد الرزاق حمد الله",
+                    "45'"
+                ]
+            ]
+        }
     },
     {
         "league": "كأس خادم الحرمين الشريفين",
@@ -238,8 +271,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\gedda12026_8_19_19_11.webp",
         "awayTeam": "الخلود",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\9\\25\\Al_Kholood_Club12025_9_25_0_22.webp",
-        "scoreOrTime": "0 - 2",
-        "status": "17'",
+        "scoreOrTime": "0 - 3",
+        "status": "33'",
         "channels": [
             "ثمانية 3",
             "ثمانية",
@@ -366,7 +399,7 @@
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "أيمن الكاشف / مؤمن حسن",
-        "source": "Yallakora + FilGoal + Btolat",
+        "source": "Yallakora + FilGoal + Btolat + LiveSoccerTV",
         "_match_id": "375119"
     },
     {
