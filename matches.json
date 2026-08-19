@@ -108,7 +108,7 @@
         "awayTeam": "سيلجي",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/13733.png",
         "scoreOrTime": "22:00",
-        "status": "لم تبدأ",
+        "status": "بعد قليل",
         "channels": [],
         "commentator": "",
         "source": "FilGoal",
@@ -121,7 +121,7 @@
         "awayTeam": "بودو/جليمت",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/12803.png",
         "scoreOrTime": "22:00",
-        "status": "لم تبدأ",
+        "status": "بعد قليل",
         "channels": [],
         "commentator": "",
         "source": "FilGoal",
@@ -246,7 +246,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\3\\16\\Untitled2024_3_16_21_53.jpg",
         "awayTeam": "التعاون",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\11\\10\\tawwoun2023_11_10_17_9.jpg",
-        "scoreOrTime": "0 - 1",
+        "scoreOrTime": "0 - 2",
         "status": "مباشر",
         "channels": [
             "ثمانية 1",
@@ -271,7 +271,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\gedda12026_8_19_19_11.webp",
         "awayTeam": "الخلود",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\9\\25\\Al_Kholood_Club12025_9_25_0_22.webp",
-        "scoreOrTime": "0 - 4",
+        "scoreOrTime": "0 - 5",
         "status": "مباشر",
         "channels": [
             "ثمانية 3",
@@ -284,6 +284,18 @@
         "scorers": {
             "home": [],
             "away": [
+                [
+                    "جوجا",
+                    "46'"
+                ],
+                [
+                    "كوبا دا كوستا",
+                    "40'"
+                ],
+                [
+                    "إيكر كورتاخارينا",
+                    "27'"
+                ],
                 [
                     "إيكر كورتاخارينا",
                     "16'"

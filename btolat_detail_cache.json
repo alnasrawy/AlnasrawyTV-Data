@@ -175,21 +175,21 @@
   }
  },
  "https://www.btolat.com/matches/details/222939": {
-  "at": 1787158099.680975,
+  "at": 1787162021.8159375,
   "scorers": {
    "home": [],
    "away": []
   }
  },
  "https://www.btolat.com/matches/details/222941": {
-  "at": 1787158101.5519795,
+  "at": 1787162023.466867,
   "scorers": {
    "home": [],
    "away": []
   }
  },
  "https://www.btolat.com/matches/details/233186": {
-  "at": 1787158102.6815019,
+  "at": 1787162025.0131397,
   "scorers": {
    "home": [],
    "away": []
@@ -208,10 +208,22 @@
   }
  },
  "https://www.btolat.com/matches/details/226648": {
-  "at": 1787158097.6507351,
+  "at": 1787162020.1314878,
   "scorers": {
    "home": [],
    "away": [
+    [
+     "جوجا",
+     "46'"
+    ],
+    [
+     "كوبا دا كوستا",
+     "40'"
+    ],
+    [
+     "إيكر كورتاخارينا",
+     "27'"
+    ],
     [
      "إيكر كورتاخارينا",
      "16'"
@@ -221,6 +233,13 @@
      "3'"
     ]
    ]
+  }
+ },
+ "https://www.btolat.com/matches/details/234023": {
+  "at": 1787162027.135401,
+  "scorers": {
+   "home": [],
+   "away": []
   }
  }
 }
