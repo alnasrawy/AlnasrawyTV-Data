@@ -11,7 +11,7 @@
             "beIN SPORTS 1 HD"
         ],
         "commentator": "أحمد البلوشي",
-        "source": "Yallakora + FilGoal",
+        "source": "Yallakora + FilGoal + LiveSoccerTV",
         "_match_id": "376499"
     },
     {
@@ -124,7 +124,7 @@
         "status": "بعد قليل",
         "channels": [],
         "commentator": "",
-        "source": "FilGoal",
+        "source": "FilGoal + LiveSoccerTV",
         "_match_id": "376501"
     },
     {
@@ -166,6 +166,18 @@
         ],
         "commentator": "",
         "source": "Btolat"
+    },
+    {
+        "league": "دوري أبطال أوروبا",
+        "homeTeam": "هبوعيل بئر السبع",
+        "homeLogo": "",
+        "awayTeam": "صباح",
+        "awayLogo": "",
+        "scoreOrTime": "15:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "LiveSoccerTV"
     },
     {
         "league": "الدوري السعودي",
@@ -246,7 +258,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\3\\16\\Untitled2024_3_16_21_53.jpg",
         "awayTeam": "التعاون",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\11\\10\\tawwoun2023_11_10_17_9.jpg",
-        "scoreOrTime": "0 - 2",
+        "scoreOrTime": "0 - 3",
         "status": "مباشر",
         "channels": [
             "ثمانية 1",
@@ -258,6 +270,14 @@
         "scorers": {
             "home": [],
             "away": [
+                [
+                    "سيف رجب",
+                    "77'"
+                ],
+                [
+                    "راكان الطليحي",
+                    "55'"
+                ],
                 [
                     "عبد الرزاق حمد الله",
                     "45'"
@@ -313,8 +333,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\17\\Al-Ula FC2026_8_17_0_47.webp",
         "awayTeam": "الفتح",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\2\\3\\fath12023_2_3_16_33.jpg",
-        "scoreOrTime": "21:00",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "مباشر",
         "channels": [
             "ثمانية 2",
             "ثمانية"
@@ -393,13 +413,22 @@
         "homeLogo": "https://img.btolat.com/",
         "awayTeam": "الفتح",
         "awayLogo": "https://img.btolat.com/teamslogo/14996.png?v=30",
-        "scoreOrTime": "09:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "1 - 0",
+        "status": "14'",
         "channels": [
             "تطبيق ثمانية"
         ],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [
+                [
+                    "رومل سمير كيوتو روبنسون",
+                    "4'"
+                ]
+            ],
+            "away": []
+        }
     },
     {
         "league": "كأس خوان جامبر",
@@ -407,8 +436,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\Barcelona2018_7_29_14_44.jpg",
         "awayTeam": "الأهلي",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2023\\10\\19\\ahly12023_10_19_17_58.jpg",
-        "scoreOrTime": "21:00",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "مباشر",
         "channels": [],
         "commentator": "أيمن الكاشف / مؤمن حسن",
         "source": "Yallakora + FilGoal + Btolat",
