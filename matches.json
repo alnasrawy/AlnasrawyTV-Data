@@ -446,22 +446,20 @@
     {
         "league": "الدوري العراقي",
         "homeTeam": "غاز الشمال",
-        "homeLogo": "https://img.btolat.com/",
+        "homeLogo": "",
         "awayTeam": "الكهرباء",
-        "awayLogo": "https://img.btolat.com/teamslogo/11523.png?v=741",
+        "awayLogo": "",
         "scoreOrTime": "18:30",
         "status": "لم تبدأ",
-        "channels": [
-            "العراقية الرياضية"
-        ],
+        "channels": [],
         "commentator": "",
-        "source": "FilGoal + Btolat",
+        "source": "FilGoal",
         "_match_id": "376439"
     },
     {
         "league": "الدوري العراقي",
         "homeTeam": "نفط ميسان ",
-        "homeLogo": "https://img.btolat.com/teamslogo/18739.png?v=194",
+        "homeLogo": "https://img.btolat.com/teamslogo/18739.png?v=448",
         "awayTeam": "النفط",
         "awayLogo": "https://img.btolat.com/teamslogo/11528.png?v=819",
         "scoreOrTime": "18:40",
@@ -491,14 +489,16 @@
     {
         "league": "الدوري العراقي",
         "homeTeam": "الجولان",
-        "homeLogo": "",
+        "homeLogo": "https://img.btolat.com/teamslogo/45011.png?v=436",
         "awayTeam": "الكرخ ",
-        "awayLogo": "",
+        "awayLogo": "https://img.btolat.com/teamslogo/18734.png?v=521",
         "scoreOrTime": "21:00",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "العراقية السريانية"
+        ],
         "commentator": "",
-        "source": "FilGoal",
+        "source": "FilGoal + Btolat",
         "_match_id": "376441"
     },
     {
