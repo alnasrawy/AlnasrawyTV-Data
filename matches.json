@@ -5,8 +5,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\5\\22026_8_5_23_0.webp",
         "awayTeam": "نادي قطر",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\5\\12026_8_5_22_59.webp",
-        "scoreOrTime": "0 - 0",
-        "status": "الشوط الأول",
+        "scoreOrTime": "1 - 1",
+        "status": "الشوط الثاني",
         "channels": [
             "beIN SPORTS 1 HD",
             "BEIN SPORTS 6",
@@ -261,11 +261,24 @@
         "homeLogo": "https://img.btolat.com/teamslogo/12248.png?v=54",
         "awayTeam": "أندرلخت",
         "awayLogo": "https://img.btolat.com/teamslogo/6740.png?v=392",
-        "scoreOrTime": "06:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 2",
+        "status": "43'",
         "channels": [],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": [
+                [
+                    "لوكاس أمبروس",
+                    "24'"
+                ],
+                [
+                    "ياكو أوكسانين \r\n                                        (on)",
+                    "3'"
+                ]
+            ]
+        }
     },
     {
         "league": "الدوري الأوروبي",
@@ -493,8 +506,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/18739.png?v=448",
         "awayTeam": "النفط",
         "awayLogo": "https://img.btolat.com/teamslogo/11528.png?v=819",
-        "scoreOrTime": "18:40",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "12'",
         "channels": [
             "العراقية السريانية"
         ],
@@ -611,7 +624,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\24\\AlentagAlharby2018_7_24_13_33.jpg",
         "awayTeam": "النصر",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\8\\1\\Elnasr2018_8_1_16_20.jpg",
-        "scoreOrTime": "0 - 0",
+        "scoreOrTime": "1 - 1",
         "status": "مباشر",
         "channels": [],
         "commentator": "",
