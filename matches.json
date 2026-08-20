@@ -1,17 +1,28 @@
 [
     {
-        "league": "الدوري الأوروبي",
-        "homeTeam": "طرابزون سبور",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\7\\15\\Trabzonspor2021_7_15_15_32.jpg",
-        "awayTeam": "فيرينتسفاروشي",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\7\\14\\FerencvarosiTC2021_7_14_17_33.jpg",
-        "scoreOrTime": "0 - 1",
-        "status": "الشوط الأول",
+        "league": "الدوري القطري",
+        "homeTeam": "الريان",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\5\\12026_8_5_22_58.webp",
+        "awayTeam": "نادي لوسيل",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\7\\16\\lucail sc2026_7_16_23_36.webp",
+        "scoreOrTime": "1 - 0",
+        "status": "الشوط الثاني",
         "channels": [
-            "ON Sport"
+            "الكأس 6",
+            "beIN SPORTS 1 HD"
         ],
         "commentator": "",
-        "source": "Yallakora"
+        "source": "Yallakora + FilGoal + Btolat",
+        "_match_id": "374613",
+        "scorers": {
+            "home": [
+                [
+                    "Gabriel Pereira",
+                    "43'"
+                ]
+            ],
+            "away": []
+        }
     },
     {
         "league": "دوري أبطال أوروبا",
@@ -69,6 +80,20 @@
     {
         "league": "الدوري الأوروبي",
         "homeTeam": "طرابزون سبور",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\7\\15\\Trabzonspor2021_7_15_15_32.jpg",
+        "awayTeam": "فيرينتسفاروشي",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\7\\14\\FerencvarosiTC2021_7_14_17_33.jpg",
+        "scoreOrTime": "0 - 1",
+        "status": "استراحة",
+        "channels": [
+            "ON Sport"
+        ],
+        "commentator": "",
+        "source": "Yallakora"
+    },
+    {
+        "league": "الدوري الأوروبي",
+        "homeTeam": "طرابزون سبور",
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/328.png",
         "awayTeam": "فرينكفاروزي",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/12681.png",
@@ -113,12 +138,21 @@
         "homeLogo": "https://img.btolat.com/teamslogo/16524.png?v=573",
         "awayTeam": "سالزبورج",
         "awayLogo": "https://img.btolat.com/teamslogo/6468.png?v=359",
-        "scoreOrTime": "0 - 0",
-        "status": "85'",
+        "scoreOrTime": "0 - 1",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat",
-        "_match_id": "376417"
+        "_match_id": "376417",
+        "scorers": {
+            "home": [],
+            "away": [
+                [
+                    "توم بيتيرسون \r\n                                        (on)",
+                    "90'"
+                ]
+            ]
+        }
     },
     {
         "league": "الدوري الأوروبي",
@@ -259,13 +293,21 @@
         "homeLogo": "https://img.btolat.com/teamslogo/14006.png?v=707",
         "awayTeam": "سابورتالو",
         "awayLogo": "https://img.btolat.com/teamslogo/22441.png?v=487",
-        "scoreOrTime": "3 - 0",
-        "status": "81'",
+        "scoreOrTime": "4 - 0",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
         "scorers": {
             "home": [
+                [
+                    "سيرجيو لوزانو",
+                    "90'"
+                ],
+                [
+                    "إبراهيم الحسن \r\n                                        (on)",
+                    "62'"
+                ],
                 [
                     "خيسوس إيماز",
                     "34'"
@@ -285,7 +327,7 @@
         "awayTeam": "فيرينسفاروش",
         "awayLogo": "https://img.btolat.com/teamslogo/11132.png?v=478",
         "scoreOrTime": "0 - 1",
-        "status": "41'",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
@@ -306,7 +348,7 @@
         "awayTeam": "آرارات أرمينيا",
         "awayLogo": "https://img.btolat.com/teamslogo/28347.png?v=882",
         "scoreOrTime": "1 - 1",
-        "status": "42'",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
@@ -332,7 +374,7 @@
         "awayTeam": "كوانا زالجيريس",
         "awayLogo": "https://img.btolat.com/teamslogo/12598.png?v=639",
         "scoreOrTime": "2 - 0",
-        "status": "41'",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
@@ -357,7 +399,7 @@
         "awayTeam": "ليلستروم",
         "awayLogo": "https://img.btolat.com/teamslogo/13736.png?v=828",
         "scoreOrTime": "0 - 0",
-        "status": "43'",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
@@ -377,13 +419,17 @@
         "homeLogo": "https://img.btolat.com/teamslogo/14065.png?v=213",
         "awayTeam": "تون",
         "awayLogo": "https://img.btolat.com/teamslogo/16779.png?v=383",
-        "scoreOrTime": "4 - 0",
-        "status": "41'",
+        "scoreOrTime": "5 - 0",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
         "scorers": {
             "home": [
+                [
+                    "رادوسلاف مورافسكي",
+                    "45'"
+                ],
                 [
                     "ماتيوز سكريبتشاك",
                     "31'"
@@ -410,11 +456,15 @@
         "homeLogo": "https://img.btolat.com/teamslogo/10827.png?v=480",
         "awayTeam": "سسكا صوفيا",
         "awayLogo": "https://img.btolat.com/teamslogo/7713.png?v=577",
-        "scoreOrTime": "09:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "2'",
         "channels": [],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "الدوري الأوروبي",
@@ -531,13 +581,17 @@
         "homeLogo": "https://img.btolat.com/teamslogo/14998.png?v=936",
         "awayTeam": "الهلال السعودي",
         "awayLogo": "https://img.btolat.com/teamslogo/15001.png?v=248",
-        "scoreOrTime": "09:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "2'",
         "channels": [
             "تطبيق ثمانية"
         ],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "الدوري العراقي",
@@ -677,31 +731,6 @@
         }
     },
     {
-        "league": "الدوري القطري",
-        "homeTeam": "الريان",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\5\\12026_8_5_22_58.webp",
-        "awayTeam": "نادي لوسيل",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\7\\16\\lucail sc2026_7_16_23_36.webp",
-        "scoreOrTime": "1 - 0",
-        "status": "استراحة",
-        "channels": [
-            "الكأس 6",
-            "beIN SPORTS 1 HD"
-        ],
-        "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat",
-        "_match_id": "374613",
-        "scorers": {
-            "home": [
-                [
-                    "Gabriel Pereira",
-                    "43'"
-                ]
-            ],
-            "away": []
-        }
-    },
-    {
         "league": "كأس خادم الحرمين الشريفين",
         "homeTeam": "ضمك",
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/1549.png",
@@ -820,7 +849,7 @@
         "awayTeam": "كوبنهاجن",
         "awayLogo": "https://img.btolat.com/teamslogo/8757.png?v=16",
         "scoreOrTime": "0 - 0",
-        "status": "84'",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
@@ -835,10 +864,14 @@
         "homeLogo": "https://img.btolat.com/teamslogo/25278.png?v=75",
         "awayTeam": "إنتر إسكالديس",
         "awayLogo": "https://img.btolat.com/teamslogo/5834.png?v=103",
-        "scoreOrTime": "09:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "2'",
         "channels": [],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     }
 ]
