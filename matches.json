@@ -549,7 +549,9 @@
         "scoreOrTime": "17:15",
         "status": "لم تبدأ",
         "channels": [
-            "beIN SPORTS 1 HD"
+            "beIN SPORTS 1 HD",
+            "BEIN SPORTS 6",
+            "ALKASS 5 HD"
         ],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat",
@@ -595,8 +597,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\24\\AlentagAlharby2018_7_24_13_33.jpg",
         "awayTeam": "النصر",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\8\\1\\Elnasr2018_8_1_16_20.jpg",
-        "scoreOrTime": "16:30",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "مباشر",
         "channels": [],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat",
