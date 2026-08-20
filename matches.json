@@ -1,5 +1,22 @@
 [
     {
+        "league": "الدوري القطري",
+        "homeTeam": "الوكرة",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\5\\22026_8_5_23_0.webp",
+        "awayTeam": "نادي قطر",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\5\\12026_8_5_22_59.webp",
+        "scoreOrTime": "0 - 0",
+        "status": "الشوط الأول",
+        "channels": [
+            "beIN SPORTS 1 HD",
+            "BEIN SPORTS 6",
+            "ALKASS 5 HD"
+        ],
+        "commentator": "",
+        "source": "Yallakora + FilGoal + Btolat",
+        "_match_id": "374612"
+    },
+    {
         "league": "دوري أبطال أوروبا",
         "homeTeam": "سيلتك",
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/215.png",
@@ -539,23 +556,6 @@
         "commentator": "أيمن الكاشف",
         "source": "FilGoal",
         "_match_id": "375859"
-    },
-    {
-        "league": "الدوري القطري",
-        "homeTeam": "الوكرة",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\5\\22026_8_5_23_0.webp",
-        "awayTeam": "نادي قطر",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\5\\12026_8_5_22_59.webp",
-        "scoreOrTime": "17:15",
-        "status": "لم تبدأ",
-        "channels": [
-            "beIN SPORTS 1 HD",
-            "BEIN SPORTS 6",
-            "ALKASS 5 HD"
-        ],
-        "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat",
-        "_match_id": "374612"
     },
     {
         "league": "الدوري القطري",
