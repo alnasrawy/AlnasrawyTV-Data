@@ -714,50 +714,77 @@
   }
  },
  "https://www.btolat.com/matches/details/229122": {
-  "at": 1787238095.5527093,
+  "at": 1787241902.7088356,
   "scorers": {
    "home": [],
    "away": []
   }
  },
  "https://www.btolat.com/matches/details/229123": {
-  "at": 1787240714.8205826,
+  "at": 1787241934.2551868,
   "scorers": {
    "home": [],
    "away": []
   }
  },
  "https://www.btolat.com/matches/details/229124": {
-  "at": 1787238097.9012263,
+  "at": 1787241904.3022077,
   "scorers": {
    "home": [],
-   "away": []
+   "away": [
+    [
+     "Arafat Al Haj",
+     "45'"
+    ]
+   ]
   }
  },
  "https://www.btolat.com/matches/details/229125": {
-  "at": 1787238100.1579454,
+  "at": 1787241906.2937155,
   "scorers": {
-   "home": [],
+   "home": [
+    [
+     "مصطفى محمد",
+     "77'"
+    ],
+    [
+     "Arafat Al Haj",
+     "25'"
+    ]
+   ],
    "away": []
   }
  },
  "https://www.btolat.com/matches/details/229126": {
-  "at": 1787238101.752726,
+  "at": 1787241907.7125378,
   "scorers": {
    "home": [],
-   "away": []
+   "away": [
+    [
+     "محمد مدحت",
+     "83'"
+    ]
+   ]
   }
  },
  "https://www.btolat.com/matches/details/230889": {
-  "at": 1787238105.2900145,
+  "at": 1787241909.4932919,
   "scorers": {
    "home": [
+    [
+     "أمين زحزوح",
+     "67'"
+    ],
     [
      "رضوان بركان",
      "45'"
     ]
    ],
    "away": [
+    [
+     "برونو تاباتا",
+     "79'"
+    ],
     [
      "ا.غونارسون",
      "18'"
@@ -789,7 +816,35 @@
   }
  },
  "https://www.btolat.com/matches/details/233360": {
-  "at": 1787240700.1417718,
+  "at": 1787241927.5487022,
+  "scorers": {
+   "home": [],
+   "away": []
+  }
+ },
+ "https://www.btolat.com/matches/details/233101": {
+  "at": 1787241923.963687,
+  "scorers": {
+   "home": [],
+   "away": []
+  }
+ },
+ "https://www.btolat.com/matches/details/233071": {
+  "at": 1787241918.2579112,
+  "scorers": {
+   "home": [],
+   "away": []
+  }
+ },
+ "https://www.btolat.com/matches/details/233083": {
+  "at": 1787241939.9487216,
+  "scorers": {
+   "home": [],
+   "away": []
+  }
+ },
+ "https://www.btolat.com/matches/details/233084": {
+  "at": 1787241900.758862,
   "scorers": {
    "home": [],
    "away": []
