@@ -2,10 +2,14 @@ name: Alnasrawy TV Matches Smart-Sync (Credit Saver)
 
 on:
   schedule:
+    # 🌙 1. جلب قائمة اليوم الجديد (12:00 فجراً بتوقيت العراق / 9:00 مساءً UTC)
     - cron: '0 21 * * *'
+
+    # 🔥 2. تحديثات النتائج اللحظية كل 10 دقائق (من 2:00 ظهراً حتى 1:00 فجراً بتوقيت العراق)
+    # تقابلها من 11:00 صباحاً حتى 10:00 مساءً بتوقيت UTC
     - cron: '*/10 11-22 * * *'
 
-  workflow_dispatch:
+  workflow_dispatch: # متاح للتشغيل اليدوي للطوارئ
 
 permissions:
   contents: write
@@ -20,6 +24,7 @@ jobs:
           python-version: '3.10'
 
       - name: Download Arabic Fonts
+        # 💡 خط Tajawal يُحمَّل مسبقاً (مضمون) حتى لا يسقط سكربت الرسم على خط بدون عربية
         run: |
           mkdir -p /tmp/alnasrawy_fonts
           curl -fsSL -o /tmp/alnasrawy_fonts/tajawal_regular.ttf "https://raw.githubusercontent.com/google/fonts/main/ofl/tajawal/Tajawal-Regular.ttf"
@@ -27,6 +32,7 @@ jobs:
           ls -la /tmp/alnasrawy_fonts
 
       - name: Install Dependencies
+        # 👈 مكتبة التخفي + مكتبات رسم بطاقة المباراة (Pillow + العربية)
         run: pip install curl_cffi beautifulsoup4 pillow arabic-reshaper python-bidi
 
       - name: Run Scraper
