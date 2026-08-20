@@ -11,7 +11,7 @@ from datetime import datetime, timedelta, timezone
 from curl_cffi import requests
 from bs4 import BeautifulSoup
 
-# 💡 مجلد هذا السكربت (المجلد المنفصل matches_data) — كل الملفات تُفتح نسبةً إليه
+# 💡 مجلد هذا السكربت — كل الملفات تُفتح نسبةً إليه
 #    حتى يعمل السكربت من أي مكان (مباشرة أو عبر GitHub Actions).
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -412,8 +412,8 @@ _TEAM_LOGO_FALLBACK = {
     "اتحادكلباء": "https://semedia.filgoal.com/Photos/Team/Medium/1374.png",
     "اتلتيكومدريد": "https://semedia.filgoal.com/Photos/Team/Medium/147.png",
     "اتليتكبلباو": "https://semedia.filgoal.com/Photos/Team/Medium/116.png",
-    "ارسنال": "https://semedia.filgoal.com/Photos/Team/Medium/83.png",
-    "اسبانيول": "https://semedia.filgoal.com/Photos/Team/Medium/119.png",
+    "ارسنال": "https://cdn.livesoccertv.com/tt/images/teams/england/logos/arsenal.png",
+    "اسبانيول": "https://cdn.livesoccertv.com/tt/images/teams/spain/logos/espanyol.png",
     "استونفيلا": "https://semedia.filgoal.com/Photos/Team/Medium/84.png",
     "اسكولي": "https://semedia.filgoal.com/Photos/Team/Medium/536.png",
     "اشبيليه": "https://semedia.filgoal.com/Photos/Team/Medium/126.png",
@@ -422,11 +422,11 @@ _TEAM_LOGO_FALLBACK = {
     "الاخدود": "https://semedia.filgoal.com/Photos/Team/Medium/12747.png",
     "الافيس": "https://semedia.filgoal.com/Photos/Team/Medium/115.png",
     "الانصار": "https://semedia.filgoal.com/Photos/Team/Medium/320.png",
-    "الاهلي": "https://semedia.filgoal.com/Photos/Team/Medium/1.png",
+    "الاهلي": "https://cdn.livesoccertv.com/tt/images/teams/egypt/logos/al-ahly.png",
     "الاهليالاماراتي": "https://semedia.filgoal.com/Photos/Team/Medium/1199.png",
     "الباسيتي": "https://semedia.filgoal.com/Photos/Team/Medium/206.png",
     "الباطن": "https://semedia.filgoal.com/Photos/Team/Medium/1442.png",
-    "التشي": "https://semedia.filgoal.com/Photos/Team/Medium/1393.png",
+    "التشي": "https://cdn.livesoccertv.com/tt/images/teams/spain/logos/elche-cf.png",
     "التعاون": "https://semedia.filgoal.com/Photos/Team/Medium/1043.png",
     "الجبيل": "https://semedia.filgoal.com/Photos/Team/Medium/12749.png",
     "الجزيره": "https://semedia.filgoal.com/Photos/Team/Medium/875.png",
@@ -440,11 +440,11 @@ _TEAM_LOGO_FALLBACK = {
     "الرائد": "https://semedia.filgoal.com/Photos/Team/Medium/184.png",
     "الرياض": "https://semedia.filgoal.com/Photos/Team/Medium/181.png",
     "الزمالك": "https://semedia.filgoal.com/Photos/Team/Medium/2.png",
-    "الزوراء": "https://semedia.filgoal.com/Photos/Team/Medium/290.png",
+    "الزوراء": "https://cdn.livesoccertv.com/tt/images/teams/iraq/logos/al-zawraa.png",
     "السد": "https://semedia.filgoal.com/Photos/Team/Medium/12746.png",
     "الشارقه": "https://semedia.filgoal.com/Photos/Team/Medium/872.png",
     "الشباب": "https://semedia.filgoal.com/Photos/Team/Medium/180.png",
-    "الشرطه": "https://semedia.filgoal.com/Photos/Team/Medium/1218.png",
+    "الشرطه": "https://cdn.livesoccertv.com/tt/images/teams/iraq/logos/al-shorta.png",
     "الشعله": "https://semedia.filgoal.com/Photos/Team/Medium/186.png",
     "الصقور": "https://semedia.filgoal.com/Photos/Team/Medium/12741.png",
     "الطائي": "https://semedia.filgoal.com/Photos/Team/Medium/185.png",
@@ -459,7 +459,7 @@ _TEAM_LOGO_FALLBACK = {
     "الفيصلي": "https://semedia.filgoal.com/Photos/Team/Medium/663.png",
     "القادسيه": "https://semedia.filgoal.com/Photos/Team/Medium/179.png",
     "القواتالمسلحه": "https://semedia.filgoal.com/Photos/Team/Medium/1253.png",
-    "القوهالجويه": "https://semedia.filgoal.com/Photos/Team/Medium/877.png",
+    "القوهالجويه": "https://cdn.livesoccertv.com/tt/images/teams/iraq/logos/al-quwa-jawiya.png",
     "الكرخ": "https://semedia.filgoal.com/Photos/Team/Medium/1220.png",
     "الكرمه": "https://img.btolat.com/teamslogo/41313.png?v=847",
     "المجزل": "https://semedia.filgoal.com/Photos/Team/Medium/1444.png",
@@ -499,9 +499,9 @@ _TEAM_LOGO_FALLBACK = {
     "باليرمو": "https://semedia.filgoal.com/Photos/Team/Medium/322.png",
     "بايرليفركوزن": "https://semedia.filgoal.com/Photos/Team/Medium/156.png",
     "بايرنب": "https://semedia.filgoal.com/Photos/Team/Medium/1517.png",
-    "بايرنميونيخ": "https://semedia.filgoal.com/Photos/Team/Medium/153.png",
+    "بايرنميونيخ": "https://cdn.livesoccertv.com/tt/images/teams/germany/logos/bayern-munchen.png",
     "برايتون": "https://semedia.filgoal.com/Photos/Team/Medium/1426.png",
-    "برشلونه": "https://semedia.filgoal.com/Photos/Team/Medium/111.png",
+    "برشلونه": "https://cdn.livesoccertv.com/tt/images/teams/spain/logos/barcelona.png",
     "برمنجامسيتي": "https://semedia.filgoal.com/Photos/Team/Medium/85.png",
     "برمنجهامسيتي": "https://img.btolat.com/teamslogo/9039.png?v=667",
     "بروسيادورتموند": "https://semedia.filgoal.com/Photos/Team/Medium/154.png",
@@ -528,7 +528,7 @@ _TEAM_LOGO_FALLBACK = {
     "تريفيزو": "https://semedia.filgoal.com/Photos/Team/Medium/537.png",
     "تشارلتوناتليتك": "https://semedia.filgoal.com/Photos/Team/Medium/88.png",
     "تشارلتوناثليتيك": "https://img.btolat.com/teamslogo/9088.png?v=731",
-    "تشيلسي": "https://semedia.filgoal.com/Photos/Team/Medium/89.png",
+    "تشيلسي": "https://cdn.livesoccertv.com/tt/images/teams/england/logos/chelsea.png",
     "توتنهامهوتسبر": "https://semedia.filgoal.com/Photos/Team/Medium/101.png",
     "تورينو": "https://semedia.filgoal.com/Photos/Team/Medium/144.png",
     "تولوز": "https://semedia.filgoal.com/Photos/Team/Medium/315.png",
@@ -552,9 +552,9 @@ _TEAM_LOGO_FALLBACK = {
     "روما": "https://semedia.filgoal.com/Photos/Team/Medium/143.png",
     "ريالبيتيس": "https://semedia.filgoal.com/Photos/Team/Medium/123.png",
     "ريالسرقسطه": "https://semedia.filgoal.com/Photos/Team/Medium/207.png",
-    "ريالسوسيداد": "https://semedia.filgoal.com/Photos/Team/Medium/124.png",
+    "ريالسوسيداد": "https://cdn.livesoccertv.com/tt/images/teams/spain/logos/real-sociedad-de-futbol.png",
     "ريالمايوركا": "https://semedia.filgoal.com/Photos/Team/Medium/121.png",
-    "ريالمدريد": "https://semedia.filgoal.com/Photos/Team/Medium/110.png",
+    "ريالمدريد": "https://cdn.livesoccertv.com/tt/images/teams/spain/logos/real-madrid.png",
     "ريالمورسيا": "https://semedia.filgoal.com/Photos/Team/Medium/208.png",
     "ريجينا": "https://semedia.filgoal.com/Photos/Team/Medium/142.png",
     "زاخو": "https://semedia.filgoal.com/Photos/Team/Medium/1230.png",
@@ -616,11 +616,12 @@ _TEAM_LOGO_FALLBACK = {
     "ليدزيونايتد": "https://semedia.filgoal.com/Photos/Team/Medium/92.png",
     "ليسترسيتي": "https://semedia.filgoal.com/Photos/Team/Medium/199.png",
     "ليفانتي": "https://semedia.filgoal.com/Photos/Team/Medium/314.png",
-    "ليفربول": "https://semedia.filgoal.com/Photos/Team/Medium/93.png",
+    "نيوكاسل": "https://cdn.livesoccertv.com/tt/images/teams/england/logos/newcastle-united.png",
+    "ليفربول": "https://cdn.livesoccertv.com/tt/images/teams/england/logos/liverpool.png",
     "ليل": "https://semedia.filgoal.com/Photos/Team/Medium/310.png",
     "لينكولنسيتي": "https://semedia.filgoal.com/Photos/Team/Medium/1902.png",
     "مانشسترسيتي": "https://semedia.filgoal.com/Photos/Team/Medium/94.png",
-    "مانشستريونايتد": "https://semedia.filgoal.com/Photos/Team/Medium/95.png",
+    "مانشستريونايتد": "https://cdn.livesoccertv.com/tt/images/teams/england/logos/manchester-united.png",
     "ماينز05": "https://semedia.filgoal.com/Photos/Team/Medium/297.png",
     "مودينا": "https://semedia.filgoal.com/Photos/Team/Medium/138.png",
     "مولده": "https://semedia.filgoal.com/Photos/Team/Medium/1371.png",
@@ -654,7 +655,7 @@ _TEAM_LOGO_FALLBACK = {
     "ويجان": "https://semedia.filgoal.com/Photos/Team/Medium/516.png",
     "ويلفرهامبتون": "https://semedia.filgoal.com/Photos/Team/Medium/200.png",
     "ويمبلدون": "https://semedia.filgoal.com/Photos/Team/Medium/1900.png",
-    "يوفنتوس": "https://semedia.filgoal.com/Photos/Team/Medium/135.png",
+    "يوفنتوس": "https://cdn.livesoccertv.com/tt/images/teams/italy/logos/juventus.png",
 }
 
 _TEAM_LOGO_FALLBACK_LEAGUE = {
@@ -749,22 +750,7 @@ def _wrap_lines(draw, text, font, max_w):
     return lines or [str(text)]
 
 
-def _draw_badge(d, cx, cy, text, font, fill, bg):
-    """شارة (بيل) دائرية الزوايا حول نص — خلفية صلبة ونص متباين دائماً.
-    إذا كان bg = None تُرسم خلفية شفافة مع حدود بلون fill (نمط "مباشر" LIVE)."""
-    if font is None:
-        return
-    s = _shape(text)
-    direction = _text_direction(s)
-    tw = d.textlength(s, font=font, direction=direction)
-    w, h = tw + 56, font.size + 26
-    x0, y0 = cx - w / 2, cy - h / 2
-    if bg is not None:
-        d.rounded_rectangle([x0, y0, x0 + w, y0 + h], radius=h / 2, fill=bg)
-    else:
-        d.rounded_rectangle([x0, y0, x0 + w, y0 + h], radius=h / 2, fill=(255, 255, 255, 6),
-                            outline=fill, width=2)
-    d.text((cx - tw / 2, y0 + (h - font.size) / 2), s, font=font, fill=fill, direction=direction)
+
 
 
 def _draw_status_pill(d, cx, cy, text, fill, bg, outline):
@@ -1282,12 +1268,6 @@ def _norm_key(s):
     """تطبيع نص عربي/إنجليزي للمقارنة (تجاهل الفراغات والشرطات والهمزات)."""
     s = re.sub(r'[\s\-_ـ]+', '', s or '')
     return s.replace('أ', 'ا').replace('إ', 'ا').replace('آ', 'ا').replace('ة', 'ه').replace('ى', 'ي').lower()
-
-
-def _is_english_league(raw_league):
-    """مباريات الدوري الإنجليزي (الممتاز + التشامبيونشيب يُسمّيان بنفس الاسم في المصادر)."""
-    kws = LEAGUES_MAPPING.get("الدوري الإنجليزي", []) or ["إنجليزي", "بريميرليج", "انجلترا"]
-    return any(kw in raw_league for kw in kws)
 
 
 def _is_top_league_match(m, official_name):
