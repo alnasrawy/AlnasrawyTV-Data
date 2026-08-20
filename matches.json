@@ -1,43 +1,19 @@
 [
     {
         "league": "الدوري القطري",
-        "homeTeam": "الوكرة",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\5\\22026_8_5_23_0.webp",
-        "awayTeam": "نادي قطر",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\5\\12026_8_5_22_59.webp",
-        "scoreOrTime": "1 - 1",
-        "status": "الشوط الثاني",
+        "homeTeam": "الريان",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\5\\12026_8_5_22_58.webp",
+        "awayTeam": "نادي لوسيل",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\7\\16\\lucail sc2026_7_16_23_36.webp",
+        "scoreOrTime": "0 - 0",
+        "status": "الشوط الأول",
         "channels": [
-            "الكأس 5",
-            "beIN SPORTS 1 HD",
-            "BEIN SPORTS 6",
-            "ALKASS 5 HD"
+            "الكأس 6",
+            "beIN SPORTS 1 HD"
         ],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat",
-        "_match_id": "374612",
-        "scorers": {
-            "home": [
-                [
-                    "أمين زحزوح",
-                    "67'"
-                ],
-                [
-                    "رضوان بركان",
-                    "45'"
-                ]
-            ],
-            "away": [
-                [
-                    "برونو تاباتا",
-                    "79'"
-                ],
-                [
-                    "ا.غونارسون",
-                    "18'"
-                ]
-            ]
-        }
+        "_match_id": "374613"
     },
     {
         "league": "دوري أبطال أوروبا",
@@ -96,7 +72,7 @@
         "league": "الدوري الأوروبي",
         "homeTeam": "طرابزون سبور",
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\7\\15\\Trabzonspor2021_7_15_15_32.jpg",
-        "awayTeam": "فيرينكفاروسي",
+        "awayTeam": "فيرينتسفاروشي",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\7\\14\\FerencvarosiTC2021_7_14_17_33.jpg",
         "scoreOrTime": "20:00",
         "status": "لم تبدأ",
@@ -154,7 +130,7 @@
         "awayTeam": "سالزبورج",
         "awayLogo": "https://img.btolat.com/teamslogo/6468.png?v=359",
         "scoreOrTime": "0 - 0",
-        "status": "5'",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat",
@@ -271,13 +247,17 @@
         "awayTeam": "أندرلخت",
         "awayLogo": "https://img.btolat.com/teamslogo/6740.png?v=392",
         "scoreOrTime": "0 - 3",
-        "status": "'",
+        "status": "87'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
         "scorers": {
             "home": [],
             "away": [
+                [
+                    "دانيلو سيكان",
+                    "45'"
+                ],
                 [
                     "لوكاس أمبروس",
                     "24'"
@@ -295,13 +275,22 @@
         "homeLogo": "https://img.btolat.com/teamslogo/14006.png?v=707",
         "awayTeam": "سابورتالو",
         "awayLogo": "https://img.btolat.com/teamslogo/22441.png?v=487",
-        "scoreOrTime": "0 - 0",
-        "status": "5'",
+        "scoreOrTime": "1 - 0",
+        "status": "45+'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
         "scorers": {
-            "home": [],
+            "home": [
+                [
+                    "خيسوس إيماز",
+                    "34'"
+                ],
+                [
+                    "جيريمي أغبونيفو",
+                    "34'"
+                ]
+            ],
             "away": []
         }
     },
@@ -520,7 +509,7 @@
         "awayTeam": "النفط",
         "awayLogo": "https://img.btolat.com/teamslogo/11528.png?v=819",
         "scoreOrTime": "0 - 0",
-        "status": "33'",
+        "status": "51'",
         "channels": [
             "العراقية السريانية"
         ],
@@ -599,19 +588,43 @@
     },
     {
         "league": "الدوري القطري",
-        "homeTeam": "الريان",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\5\\12026_8_5_22_58.webp",
-        "awayTeam": "نادي لوسيل",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\7\\16\\lucail sc2026_7_16_23_36.webp",
-        "scoreOrTime": "19:30",
-        "status": "لم تبدأ",
+        "homeTeam": "الوكرة",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\5\\22026_8_5_23_0.webp",
+        "awayTeam": "نادي قطر",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\5\\12026_8_5_22_59.webp",
+        "scoreOrTime": "2 - 2",
+        "status": "انتهت",
         "channels": [
-            "الكأس 6",
-            "beIN SPORTS 1 HD"
+            "الكأس 5",
+            "beIN SPORTS 1 HD",
+            "BEIN SPORTS 6",
+            "ALKASS 5 HD"
         ],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat",
-        "_match_id": "374613"
+        "_match_id": "374612",
+        "scorers": {
+            "home": [
+                [
+                    "أمين زحزوح",
+                    "67'"
+                ],
+                [
+                    "رضوان بركان",
+                    "45'"
+                ]
+            ],
+            "away": [
+                [
+                    "برونو تاباتا",
+                    "79'"
+                ],
+                [
+                    "ا.غونارسون",
+                    "18'"
+                ]
+            ]
+        }
     },
     {
         "league": "كأس خادم الحرمين الشريفين",
@@ -732,7 +745,7 @@
         "awayTeam": "كوبنهاجن",
         "awayLogo": "https://img.btolat.com/teamslogo/8757.png?v=16",
         "scoreOrTime": "0 - 0",
-        "status": "5'",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
