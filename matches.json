@@ -5,45 +5,22 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\5\\RayoVallecano2021_9_5_14_18.jpg",
         "awayTeam": "ألافيس",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\11\\11082024_8_11_23_19.jpg",
-        "scoreOrTime": "0 - 0",
-        "status": "الشوط الأول",
+        "scoreOrTime": "1 - 0",
+        "status": "الشوط الثاني",
         "channels": [
             "بى ان سبورت 3 HD"
         ],
         "commentator": "",
         "source": "Yallakora + FilGoal",
-        "_match_id": "375007"
-    },
-    {
-        "league": "الدوري السعودي",
-        "homeTeam": "الفيحاء",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\7\\AlFayha2021_9_7_17_37.jpg",
-        "awayTeam": "الهلال",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\13\\11142024_8_13_20_18.jpg",
-        "scoreOrTime": "0 - 2",
-        "status": "الشوط الثاني",
-        "channels": [
-            "ثمانية 1"
-        ],
-        "commentator": "عبد الله الحربي",
-        "source": "Yallakora + FilGoal",
-        "_match_id": "375120",
+        "_match_id": "375007",
         "scorers": {
-            "home": [],
-            "away": [
+            "home": [
                 [
-                    "ناصر الدوسري",
-                    "88'"
-                ],
-                [
-                    "سلطان مندش",
-                    "46'"
-                ],
-                [
-                    "سيرجي ميلينكوفيتش سافيتش",
-                    "31'"
+                    "سيرخيو كاميو",
+                    "48'"
                 ]
-            ]
+            ],
+            "away": []
         }
     },
     {
@@ -136,7 +113,7 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/332.png",
         "awayTeam": "آرهوس جمناستيك",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/13352.png",
-        "scoreOrTime": "2 - 1",
+        "scoreOrTime": "3 - 1",
         "status": "مباشر",
         "channels": [
             "beIN SPORTS 1 HD"
@@ -489,13 +466,17 @@
         "homeLogo": "https://img.btolat.com/teamslogo/10827.png?v=480",
         "awayTeam": "سسكا صوفيا",
         "awayLogo": "https://img.btolat.com/teamslogo/7713.png?v=577",
-        "scoreOrTime": "2 - 0",
-        "status": "89'",
+        "scoreOrTime": "3 - 0",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
         "scorers": {
             "home": [
+                [
+                    "L. Dickmann",
+                    "90'"
+                ],
                 [
                     "تاكسيارشيس فونتاس",
                     "51'"
@@ -514,13 +495,18 @@
         "homeLogo": "https://img.btolat.com/teamslogo/6882.png?v=708",
         "awayTeam": "أومونيا نيقوسيا",
         "awayLogo": "https://img.btolat.com/teamslogo/8452.png?v=343",
-        "scoreOrTime": "0 - 0",
-        "status": "87'",
+        "scoreOrTime": "1 - 0",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
         "scorers": {
-            "home": [],
+            "home": [
+                [
+                    "شوجو تانجوتشي",
+                    "90'"
+                ]
+            ],
             "away": []
         }
     },
@@ -530,13 +516,17 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15173.png?v=615",
         "awayTeam": "فيكتوريا بلزين",
         "awayLogo": "https://img.btolat.com/teamslogo/8649.png?v=638",
-        "scoreOrTime": "2 - 0",
-        "status": "86'",
+        "scoreOrTime": "3 - 0",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
         "scorers": {
             "home": [
+                [
+                    "ألكسندر كاتاي",
+                    "88'"
+                ],
                 [
                     "ميركو إيفانيتش",
                     "53'"
@@ -555,13 +545,17 @@
         "homeLogo": "https://img.btolat.com/teamslogo/14267.png?v=537",
         "awayTeam": "آرهوس",
         "awayLogo": "https://img.btolat.com/teamslogo/8683.png?v=566",
-        "scoreOrTime": "2 - 1",
-        "status": "45+'",
+        "scoreOrTime": "3 - 1",
+        "status": "78'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
         "scorers": {
             "home": [
+                [
+                    "فانجيليس بافليديس",
+                    "45'"
+                ],
                 [
                     "لياندرو باريرو",
                     "31'"
@@ -591,6 +585,38 @@
         "commentator": "",
         "source": "FilGoal",
         "_match_id": "374400"
+    },
+    {
+        "league": "الدوري السعودي",
+        "homeTeam": "الفيحاء",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\7\\AlFayha2021_9_7_17_37.jpg",
+        "awayTeam": "الهلال",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2024\\8\\13\\11142024_8_13_20_18.jpg",
+        "scoreOrTime": "0 - 3",
+        "status": "انتهت",
+        "channels": [
+            "ثمانية 1"
+        ],
+        "commentator": "عبد الله الحربي",
+        "source": "Yallakora + FilGoal",
+        "scorers": {
+            "home": [],
+            "away": [
+                [
+                    "ناصر الدوسري",
+                    "88'"
+                ],
+                [
+                    "سلطان مندش",
+                    "46'"
+                ],
+                [
+                    "سيرجي ميلينكوفيتش سافيتش",
+                    "31'"
+                ]
+            ]
+        },
+        "_match_id": "375120"
     },
     {
         "league": "الدوري السعودي",
@@ -629,7 +655,7 @@
         "awayTeam": "الهلال السعودي",
         "awayLogo": "https://img.btolat.com/teamslogo/15001.png?v=248",
         "scoreOrTime": "0 - 3",
-        "status": "90'",
+        "status": "انتهت",
         "channels": [
             "تطبيق ثمانية"
         ],
@@ -688,7 +714,7 @@
         "awayTeam": "زاخو",
         "awayLogo": "https://img.btolat.com/teamslogo/11534.png?v=147",
         "scoreOrTime": "2 - 1",
-        "status": "84'",
+        "status": "انتهت",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -716,8 +742,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/45011.png?v=436",
         "awayTeam": "الكرخ ",
         "awayLogo": "https://img.btolat.com/teamslogo/18734.png?v=521",
-        "scoreOrTime": "0 - 0",
-        "status": "82'",
+        "scoreOrTime": "1 - 0",
+        "status": "انتهت",
         "channels": [
             "العراقية السريانية"
         ],
@@ -973,7 +999,7 @@
         "awayTeam": "إنتر إسكالديس",
         "awayLogo": "https://img.btolat.com/teamslogo/5834.png?v=103",
         "scoreOrTime": "2 - 2",
-        "status": "90+'",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
