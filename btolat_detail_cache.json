@@ -714,45 +714,55 @@
   }
  },
  "https://www.btolat.com/matches/details/229122": {
-  "at": 1787234059.1513197,
+  "at": 1787238095.5527093,
   "scorers": {
    "home": [],
    "away": []
   }
  },
  "https://www.btolat.com/matches/details/229123": {
-  "at": 1787235804.334891,
+  "at": 1787238116.4096222,
   "scorers": {
    "home": [],
    "away": []
   }
  },
  "https://www.btolat.com/matches/details/229124": {
-  "at": 1787234062.1324036,
+  "at": 1787238097.9012263,
   "scorers": {
    "home": [],
    "away": []
   }
  },
  "https://www.btolat.com/matches/details/229125": {
-  "at": 1787234064.0086396,
+  "at": 1787238100.1579454,
   "scorers": {
    "home": [],
    "away": []
   }
  },
  "https://www.btolat.com/matches/details/229126": {
-  "at": 1787234066.2584057,
+  "at": 1787238101.752726,
   "scorers": {
    "home": [],
    "away": []
   }
  },
  "https://www.btolat.com/matches/details/230889": {
-  "at": 1787235788.4197888,
+  "at": 1787238105.2900145,
   "scorers": {
-   "home": [],
-   "away": []
+   "home": [
+    [
+     "رضوان بركان",
+     "45'"
+    ]
+   ],
+   "away": [
+    [
+     "ا.غونارسون",
+     "18'"
+    ]
+   ]
   }
  }
 }
