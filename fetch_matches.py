@@ -115,6 +115,24 @@ BTOLAT_DETAIL_CACHE_FILE = os.path.join(BASE_DIR, "btolat_detail_cache.json")
 BTOLAT_DETAIL_CACHE = {}
 BTOLAT_DETAIL_TTL = float(_CFG.get("btolat_detail_cache_ttl_minutes", 60))
 
+# ================= كاش شعارات يلا شووت (يتحدث تلقائياً مع كل تشغيل) =================
+YSSCORES_LOGOS_FILE = os.path.join(BASE_DIR, "ysscores_logos.json")
+YSSCORES_LOGOS = {}
+
+def _load_ysscores_logos_cache():
+    try:
+        with open(YSSCORES_LOGOS_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+def _save_ysscores_logos_cache():
+    try:
+        with open(YSSCORES_LOGOS_FILE, "w", encoding="utf-8") as f:
+            json.dump(YSSCORES_LOGOS, f, ensure_ascii=False, indent=1)
+    except Exception:
+        pass
+
 def _load_filgoal_cache():
     try:
         with open(FILGOAL_CACHE_FILE, "r", encoding="utf-8") as f:
@@ -683,6 +701,9 @@ def _load_team_logo(url, team_name, league=None, size=210):
         return _LOGO_CACHE[key]
     candidates = [url] if url else []
     tkey = _norm_key(team_name)
+    yss_logo = YSSCORES_LOGOS.get(tkey)
+    if yss_logo and yss_logo not in candidates:
+        candidates.insert(0, yss_logo)
     fb = _TEAM_LOGO_FALLBACK.get(tkey)
     if fb and fb not in candidates:
         candidates.append(fb)
@@ -692,8 +713,15 @@ def _load_team_logo(url, team_name, league=None, size=210):
     img = None
     for u in candidates:
         try:
+            ref = "https://www.filgoal.com/"
+            if "ysscores" in u:
+                ref = "https://www.ysscores.com/"
+            elif "btolat" in u:
+                ref = "https://www.btolat.com/"
+            elif "livesoccertv" in u:
+                ref = "https://www.livesoccertv.com/"
             r = requests.get(u, timeout=15, impersonate="chrome120",
-                             headers={"Referer": "https://www.filgoal.com/"})
+                             headers={"Referer": ref})
             if r.status_code == 200 and len(r.content) > 100:
                 img = Image.open(io.BytesIO(r.content)).convert("RGBA")
                 # قص الفراغ الشفاف حول اللوجو ثم تكبيره ليملأ الدائرة تقريباً
@@ -821,8 +849,8 @@ def compose_match_card(match, kind="end"):
     MARGIN = 30            # هامش حول البطاقة (القالب يعرضها فوق خلفية الصفحة)
     PAD = 54               # حشوة البطاقة الداخلية (24px × 2.25)
     RAD = 40               # زوايا البطاقة الدائرية
-    WRAP = int(64 * s) + 26      # 170 قطر الدائرة البيضاء (حلقة رفيعة فقط)
-    LOGO = int(64 * s)           # 144 اللوجو يكاد يملأها
+    WRAP = int(80 * s) + 26      # 206 قطر الدائرة البيضاء (حلقة رفيعة فقط)
+    LOGO = int(80 * s)           # 180 اللوجو يملأ الدائرة بشكل أفضل
     inner_x0 = MARGIN + PAD
     inner_x1 = W - MARGIN - PAD
     cx_home = inner_x1 - WRAP // 2          # يمين (RTL أول عمود = المضيف)
@@ -1761,6 +1789,146 @@ class GhostScraper:
                 continue
         return matches
 
+    # ================= YSscores (يلا شووت) =================
+    def scrape_ysscores(self):
+        """مصدر خامس: يلا شووت — بطولات عربية + أسماء مباشرة + شعارات عالية الدقة + توقيت + حالة + نتيجة.
+        الصفحة الرئيسية توفر كل البيانات الأساسية، وصفحات التفاصيل توفر القنوات والمعلقين."""
+        print("-> [Source 5] YSscores...")
+        url = "https://www.ysscores.com/ar/today_matches"
+        html = self.fetch(url, "YSscores (today_matches)")
+        matches = []
+        if not html:
+            return matches
+        soup = BeautifulSoup(html, 'html.parser')
+        for wrapper in soup.select('div.matches-wrapper[champ_title]'):
+            try:
+                league = wrapper.get('champ_title', '').strip()
+                for row in wrapper.select('a.ajax-match-item[match_id]'):
+                    try:
+                        home_name = row.get('home_name', '').strip()
+                        away_name = row.get('away_name', '').strip()
+                        if not home_name or not away_name:
+                            continue
+                        match_id = row.get('match_id', '')
+                        home_logo = row.get('home_image', '')
+                        away_logo = row.get('away_image', '')
+                        if '/teams/64/' in home_logo:
+                            home_logo = home_logo.replace('/teams/64/', '/teams/128/')
+                        if '/teams/64/' in away_logo:
+                            away_logo = away_logo.replace('/teams/64/', '/teams/128/')
+                        if not league and not (_is_vip_team_name(home_name) or _is_vip_team_name(away_name)):
+                            continue
+                        time_el = row.select_one('.result-wrap b.match-date')
+                        time_str = time_el.get_text(strip=True) if time_el else ""
+                        result_status = row.select_one('.result-wrap .result-status-text')
+                        classes = row.get('class') or []
+                        if result_status:
+                            stxt = result_status.get_text(strip=True)
+                            if 'انتهت' in stxt:
+                                status = 'انتهت'
+                            else:
+                                status = stxt
+                        elif 'live-match' in classes:
+                            status = 'جارية'
+                        elif 'stopped-match' in classes:
+                            status = 'متوقفة'
+                        else:
+                            status = 'لم تبدأ'
+                        hs_el = row.select_one('.first-team-result')
+                        aws_el = row.select_one('.second-team-result')
+                        if hs_el and aws_el:
+                            hs = hs_el.get_text(strip=True)
+                            aws = aws_el.get_text(strip=True)
+                            score_or_time = f"{hs}-{aws}" if hs and aws else time_str
+                        else:
+                            score_or_time = time_str
+                        detail_url = row.get('href', '')
+                        if detail_url and not detail_url.startswith('http'):
+                            detail_url = f"https://www.ysscores.com{detail_url}"
+                        m = {
+                            "league": league, "homeTeam": home_name, "homeLogo": home_logo,
+                            "awayTeam": away_name, "awayLogo": away_logo,
+                            "scoreOrTime": score_or_time, "status": status,
+                            "channels": [], "commentator": "", "source": "YSscores",
+                        }
+                        if match_id:
+                            m['_ysscores_id'] = match_id
+                        if detail_url:
+                            m['_ysscores_detail'] = detail_url
+                        if home_logo:
+                            YSSCORES_LOGOS[_norm_key(home_name)] = home_logo
+                        if away_logo:
+                            YSSCORES_LOGOS[_norm_key(away_name)] = away_logo
+                        matches.append(m)
+                    except Exception:
+                        continue
+            except Exception:
+                continue
+        return matches
+
+    def _fetch_ysscores_detail(self, detail_url, match_id=""):
+        """صفحة تفاصيل مباراة يلا شووت — قنوات + معلقين + شعارات 128px + الملعب."""
+        html = self.fetch(detail_url, f"YSscores (detail {match_id})")
+        if not html:
+            return {}
+        result = {}
+        soup = BeautifulSoup(html, 'html.parser')
+        for script in soup.select('script[type="application/ld+json"]'):
+            try:
+                data = json.loads(script.string or '')
+                if data.get('@type') == 'SportsEvent':
+                    ht = data.get('homeTeam', {})
+                    at = data.get('awayTeam', {})
+                    if ht.get('logo'):
+                        result['homeLogo'] = ht['logo']
+                    if at.get('logo'):
+                        result['awayLogo'] = at['logo']
+                    loc = data.get('location', {})
+                    if loc.get('name'):
+                        result['stadium'] = loc['name']
+                    break
+            except Exception:
+                continue
+        channels = []
+        commentators = []
+        for item in soup.select('.match-info-item.sub'):
+            ch_el = item.select_one('.title a.channel_info')
+            co_el = item.select_one('.content a[href*="/commentator/"]')
+            if ch_el:
+                ch_name = ch_el.get_text(strip=True)
+                if ch_name and ch_name not in channels:
+                    channels.append(ch_name)
+            if co_el:
+                co_name = co_el.get_text(strip=True)
+                if co_name and co_name not in commentators:
+                    commentators.append(co_name)
+        if channels:
+            result['channels'] = channels
+        if commentators:
+            result['commentator'] = ' / '.join(commentators)
+        return result
+
+    def _enrich_ysscores_details(self, matches):
+        """جلب صفحات التفاصيل لكل مباراة يلا شووت لتحسين الشعارات والقنوات والمعلقين."""
+        yss_matches = [m for m in matches if '_ysscores_detail' in m]
+        if not yss_matches:
+            return
+        print(f"    -> جلب تفاصيل {len(yss_matches)} مباراة من YSscores...")
+        for m in yss_matches:
+            detail = self._fetch_ysscores_detail(m['_ysscores_detail'], m.get('_ysscores_id', ''))
+            if not detail:
+                continue
+            if detail.get('homeLogo'):
+                m['homeLogo'] = detail['homeLogo']
+                YSSCORES_LOGOS[_norm_key(m['homeTeam'])] = detail['homeLogo']
+            if detail.get('awayLogo'):
+                m['awayLogo'] = detail['awayLogo']
+                YSSCORES_LOGOS[_norm_key(m['awayTeam'])] = detail['awayLogo']
+            if detail.get('channels'):
+                m['channels'] = dedup_channels(m.get('channels', []) + detail['channels'])
+            if detail.get('commentator') and not m.get('commentator'):
+                m['commentator'] = detail['commentator']
+
     def _btolat_is_ended(self, m):
         st = (m.get('status') or '').strip()
         sc = m.get('scoreOrTime', '')
@@ -2338,9 +2506,10 @@ def _backfill_scorers(matches):
 
 
 def execute_full_cycle():
-    global FILGOAL_CACHE, BTOLAT_DETAIL_CACHE
+    global FILGOAL_CACHE, BTOLAT_DETAIL_CACHE, YSSCORES_LOGOS
     FILGOAL_CACHE = _load_filgoal_cache()
     BTOLAT_DETAIL_CACHE = _load_btolat_detail_cache()
+    YSSCORES_LOGOS = _load_ysscores_logos_cache()
     now = datetime.now(TZ)
     yalla_date = now.strftime('%m/%d/%Y')
     fil_date = now.strftime('%Y-%m-%d')
@@ -2365,6 +2534,11 @@ def execute_full_cycle():
         lsv = scraper_engine.scrape_livesoccertv()
         print(f"    -> لايف سوكر تي في: {len(lsv)} مباراة")
         all_raw += lsv
+    if SITES_CFG.get("ysscores", {}).get("enabled", False):
+        yss = scraper_engine.scrape_ysscores()
+        print(f"    -> يلا شووت: {len(yss)} مباراة")
+        scraper_engine._enrich_ysscores_details(yss)
+        all_raw += yss
 
     print(f"\n-> [Debug] Total Raw Matches Extracted: {len(all_raw)}")
 
@@ -2394,9 +2568,17 @@ def execute_full_cycle():
             if m['source'] not in merged[key]['source']: 
                 merged[key]['source'] += f" + {m['source']}"
                 
-            # 4. 💡 التحديث الشامل: نقل الشعارات المفقودة
-            if not merged[key]['homeLogo'] and m['homeLogo']: merged[key]['homeLogo'] = m['homeLogo']
-            if not merged[key]['awayLogo'] and m['awayLogo']: merged[key]['awayLogo'] = m['awayLogo']
+            # 4. 💡 نقل الشعارات — يلا شووت (128px) أولاً ثم أي مصدر آخر
+            if m['source'] == 'YSscores' or 'YSscores' in m['source']:
+                if m['homeLogo']:
+                    merged[key]['homeLogo'] = m['homeLogo']
+                if m['awayLogo']:
+                    merged[key]['awayLogo'] = m['awayLogo']
+            else:
+                if not merged[key]['homeLogo'] and m['homeLogo']:
+                    merged[key]['homeLogo'] = m['homeLogo']
+                if not merged[key]['awayLogo'] and m['awayLogo']:
+                    merged[key]['awayLogo'] = m['awayLogo']
             
             # 5. 💡 التحديث الشامل: إحلال النتيجة الحية بدلاً من وقت المباراة
             old_score = merged[key]['scoreOrTime']
@@ -2419,7 +2601,7 @@ def execute_full_cycle():
 
             # 7. 💡 نقل مفاتيح التفاصيل الخاصة (رابط بطولات / رقم فيلجول)
             #    حتى تصل لخطوة التعبئة اللاحقة للأهداف لو بقيت فارغة
-            for pk in ('_btolat_details', '_filgoal_id', '_match_id'):
+            for pk in ('_btolat_details', '_filgoal_id', '_match_id', '_ysscores_id', '_ysscores_detail'):
                 if not merged[key].get(pk) and m.get(pk):
                     merged[key][pk] = m[pk]
 
@@ -2433,6 +2615,8 @@ def execute_full_cycle():
     for m in final_list:
         m.pop('_btolat_details', None)
         m.pop('_filgoal_id', None)
+        m.pop('_ysscores_id', None)
+        m.pop('_ysscores_detail', None)
 
     print("\n-> VIP Matches Extracted & Standardized:")
     if not final_list:
@@ -2456,6 +2640,9 @@ def execute_full_cycle():
 
     # 💡 حفظ كاش تفاصيل بطولات (أهداف المباريات المنتهية)
     _save_btolat_detail_cache()
+
+    # 💡 حفظ كاش شعارات يلا شووت (يتحدث تلقائياً مع كل دورة)
+    _save_ysscores_logos_cache()
 
     return final_list
 

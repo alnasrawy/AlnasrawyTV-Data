@@ -16,6 +16,9 @@
     },
     "livesoccertv": {
       "enabled": true
+    },
+    "ysscores": {
+      "enabled": true
     }
   },
   "vip": {
