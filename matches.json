@@ -43,8 +43,10 @@
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/teamlogo/476px-Coventry_City4517-1-2014-21-55-44.png",
         "scoreOrTime": "22:00",
         "status": "لم تبدأ",
-        "channels": [],
-        "commentator": "",
+        "channels": [
+            "beIN SPORTS 1 HD"
+        ],
+        "commentator": "حفيظ دراجي",
         "source": "Yallakora + FilGoal + Btolat",
         "_match_id": "374400"
     },
@@ -95,7 +97,9 @@
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\29\\RealSociedad2018_7_29_14_56.jpg",
         "scoreOrTime": "22:00",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "beIN SPORTS 2 HD"
+        ],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat",
         "_match_id": "375000"
@@ -115,12 +119,14 @@
     {
         "league": "الدوري الفرنسي",
         "homeTeam": "أولمبيك مارسيليا",
-        "homeLogo": "https://img.btolat.com/teamslogo/10042.png?v=326",
+        "homeLogo": "https://img.btolat.com/teamslogo/10042.png?v=287",
         "awayTeam": "ستراسبورج",
-        "awayLogo": "https://img.btolat.com/teamslogo/10124.png?v=559",
+        "awayLogo": "https://img.btolat.com/teamslogo/10124.png?v=335",
         "scoreOrTime": "21:45",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "BEIN SPORTS 4"
+        ],
         "commentator": "",
         "source": "FilGoal + Btolat",
         "_match_id": "374877"
@@ -235,9 +241,9 @@
     {
         "league": "الدوري العراقي",
         "homeTeam": "كربلاء",
-        "homeLogo": "https://img.btolat.com/teamslogo/11524.png?v=701",
+        "homeLogo": "https://img.btolat.com/teamslogo/11524.png?v=578",
         "awayTeam": "الزوراء",
-        "awayLogo": "https://img.btolat.com/teamslogo/11518.png?v=504",
+        "awayLogo": "https://img.btolat.com/teamslogo/11518.png?v=232",
         "scoreOrTime": "18:30",
         "status": "لم تبدأ",
         "channels": [
@@ -250,9 +256,9 @@
     {
         "league": "الدوري العراقي",
         "homeTeam": "أربيل",
-        "homeLogo": "https://img.btolat.com/teamslogo/11519.png?v=205",
+        "homeLogo": "https://img.btolat.com/teamslogo/11519.png?v=597",
         "awayTeam": "القوة الجوية",
-        "awayLogo": "https://img.btolat.com/teamslogo/11510.png?v=267",
+        "awayLogo": "https://img.btolat.com/teamslogo/11510.png?v=269",
         "scoreOrTime": "21:00",
         "status": "لم تبدأ",
         "channels": [
@@ -265,9 +271,9 @@
     {
         "league": "الدوري العراقي",
         "homeTeam": "الكرمة",
-        "homeLogo": "https://img.btolat.com/teamslogo/41313.png?v=847",
+        "homeLogo": "https://img.btolat.com/teamslogo/41313.png?v=716",
         "awayTeam": "الشرطة",
-        "awayLogo": "https://img.btolat.com/teamslogo/11512.png?v=547",
+        "awayLogo": "https://img.btolat.com/teamslogo/11512.png?v=785",
         "scoreOrTime": "21:00",
         "status": "لم تبدأ",
         "channels": [
@@ -450,9 +456,9 @@
     {
         "league": "الدوري القطري",
         "homeTeam": "العربي القطري",
-        "homeLogo": "https://img.btolat.com/teamslogo/14496.png?v=410",
+        "homeLogo": "https://img.btolat.com/teamslogo/14496.png?v=372",
         "awayTeam": "الشمال",
-        "awayLogo": "https://img.btolat.com/teamslogo/14506.png?v=314",
+        "awayLogo": "https://img.btolat.com/teamslogo/14506.png?v=708",
         "scoreOrTime": "07:30 م",
         "status": "لم تبدأ",
         "channels": [],
@@ -471,6 +477,19 @@
         "commentator": "",
         "source": "FilGoal",
         "_match_id": "376228"
+    },
+    {
+        "league": "كأس السوبر الأردني - النهائي",
+        "homeTeam": "الفيصلي",
+        "homeLogo": "",
+        "awayTeam": "الوحدات",
+        "awayLogo": "",
+        "scoreOrTime": "20:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal",
+        "_match_id": "376587"
     },
     {
         "league": "الدوري الأمريكي",
