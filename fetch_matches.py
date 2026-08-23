@@ -236,6 +236,240 @@ def send_telegram_photo(png_bytes, caption=""):
 # ================= مولّد بطاقة المباراة (صورة احترافية) =================
 _FONT_CACHE = {}
 _LOGO_CACHE = {}
+LOGOS_CACHE_DIR = os.path.join(BASE_DIR, "logos_cache")
+
+# خريطة الأسماء العربية المُطبّعة → slugs على footylogos.com (لوجوهات 1500×1500)
+# ⚠️ الأولوية: أندية أوروبية جماهيرية أولاً، ثم الإقليمية
+_TEAM_LOGO_FOOTYLOGOS = {
+    # ══════════════════════════════════════════════════════════════
+    # 🏆 الدوريات الأوروبية الكبرى (أعلى أولوية)
+    # ══════════════════════════════════════════════════════════════
+    # Premier League
+    "مانشسترسيتي": "manchester-city",
+    "ارسنال": "arsenal",
+    "ليفربول": "liverpool-fc",
+    "تشيلسي": "chelsea-fc",
+    "مانشستريونايتد": "manchester-united",
+    "توتنهامهوتسبر": "tottenham-hotspur",
+    "نيوكاسل": "newcastle-united",
+    "نيوكاسليونايتد": "newcastle-united",
+    "استونفيلا": "aston-villa",
+    "وستهاميونايتد": "west-ham-united",
+    "برايتون": "brighton-and-hove-albion",
+    "برينتفورد": "brentford-fc",
+    "فولهام": "fulham-fc",
+    "كريستالبالاس": "crystal-palace",
+    "ويلفرهامبتون": "wolverhampton-wanderers",
+    "بورنموث": "afc-bournemouth",
+    "نوتنهام": "nottingham-forest",
+    "نوتنجهامفورست": "nottingham-forest",
+    "ليسترسيتي": "leicester-city",
+    "ليدزيونايتد": "leeds-united",
+    "بيرنلي": "burnley-fc",
+    "شيفيلديونايتد": "sheffield-united",
+    "هالسيتي": "hull-city",
+    "كوفنتريسيتي": "coventry-city",
+    "وستبروميتش": "west-bromwich-albion",
+    "وستبروميتشالبيون": "west-bromwich-albion",
+    "برمنجهامسيتي": "birmingham-city",
+    "ميدلسبره": "middlesbrough-fc",
+    "ستوكسيتي": "stoke-city",
+    "نورويتشسيتي": "norwich-city",
+    "ساوثامبتون": "southampton",
+    "بورتسموث": "portsmouth-fc",
+    "كوينزباركرينجرز": "queens-park-rangers",
+    "ميلوول": "millwall-fc",
+    "ديربيكاونتي": "derby-county",
+    "تشارلتوناثليتيك": "charlton-athletic",
+    "تشارلتوناتليتك": "charlton-athletic",
+    "شيفيلدوينزداي": "sheffield-wednesday",
+    "لينكولنسيتي": "lincoln-city",
+    "بريستون": "preston-north-end",
+    "بولتونواندررز": "bolton-wanderers",
+    "ويجان": "wigan-athletic",
+    "ويمبلدون": "afc-wimbledon",
+    # La Liga
+    "ريالمدريد": "real-madrid",
+    "برشلونه": "fc-barcelona",
+    "اتلتيكومدريد": "atletico-madrid",
+    "اتليتكبلباو": "athletic-club-bilbao",
+    "ريالسوسيداد": "real-sociedad",
+    "ريالبيتيس": "real-betis-balompie",
+    "فياريال": "villarreal-cf",
+    "اشبيليه": "sevilla-fc",
+    "جيرونا": "girona-fc",
+    "فالنسيا": "valencia-cf",
+    "سيلتافيجو": "celta-vigo",
+    "خيتافي": "getafe-cf",
+    "اوساسونا": "osasuna",
+    "رايوفاييكانو": "rayo-vallecano",
+    "ريالمايوركا": "rcd-mallorca",
+    "لاسبالماس": "las-palmas",
+    "اسبانيول": "espanyol",
+    "ريالسرقسطه": "real-zaragoza",
+    "ايبار": "sd-eibar",
+    "مالقا": "malaga-cf",
+    "ديبورتيفولكورونيا": "deportivo-alaves",
+    # Serie A
+    "انترميلان": "inter-milan",
+    "ميلان": "ac-milan",
+    "يوفنتوس": "juventus-fc",
+    "اتالانتا": "atalanta-bc",
+    "روما": "as-roma",
+    "لاتسيو": "ss-lazio",
+    "فيورنتينا": "acf-fiorentina",
+    "بولونيا": "bologna-fc",
+    "تورينو": "torino-fc",
+    "مونزا": "ac-monza",
+    "كالياري": "cagliari-calcio",
+    "ليتشي": "us-lecce",
+    "بارما": "parma-calcio",
+    "كومو": "como-1907",
+    "اودينيزي": "udinese-calcio",
+    "كييفوفيرونا": "hellas-verona",
+    "فروزينوني": "frosinone-calcio",
+    "امبولي": "empoli-fc",
+    "انتر": "inter-milan",
+    # Bundesliga
+    "بايرنميونيخ": "bayern-munich",
+    "بايرنب": "bayern-munich",
+    "بروسيادورتموند": "borussia-dortmund",
+    "بايرليفركوزن": "bayer-04-leverkusen",
+    "لايبزيج": "rb-leipzig",
+    "شتوتجارت": "vfb-stuttgart",
+    "اينتراختفرانكفورت": "eintracht-frankfurt",
+    "فولفسبورج": "vfl-wolfsburg",
+    "فرايبورج": "sc-freiburg",
+    "بوروسيامونشنجلادباخ": "borussia-monchengladbach",
+    "ماينز05": "1-fsv-mainz-05",
+    "فيردربريمن": "werder-bremen",
+    "هيرتابرلين": "union-berlin",
+    "اوجسبورج": "fc-augsburg",
+    "هوفنهايم": "tsg-1899-hoffenheim",
+    "كولن": "1-fc-koln",
+    "سانتباولي": "fc-saint-pauli",
+    "بوخوم": "vfl-bochum",
+    "نورنبرج": "1-fc-nurnberg",
+    "شالكه": "fc-schalke-04",
+    "دارمشتات": "sv-darmstadt-98",
+    "هامبورج": "hamburger-sv",
+    "هانوفر": "hannover-96",
+    "هانزاروستوك": "f-c-hansa-rostock",
+    "جرويترفيورث": "spvgg-greuther-furth",
+    "فورتونادوسلدورف": "fortuna-dusseldorf",
+    # Ligue 1
+    "باريسسانجيرمان": "paris-saint-germain-psg",
+    "اولمبيكمارسيليا": "olympique-de-marseille-om",
+    "موناكو": "as-monaco",
+    "ليل": "losc-lille",
+    "اولمبيكليون": "olympique-lyonnais",
+    "نيس": "ogc-nice",
+    "ستادرين": "stade-rennais",
+    "لانس": "rc-lens",
+    "تولوز": "toulouse-fc",
+    "ستادبريست29": "stade-brestois-29",
+    "اميان": "amiens-sc",
+    "ميتز": "fc-metz",
+    "سانتايتيان": "as-saint-etienne",
+    "تروا": "troyes-ac",
+    "اوكسير": "aj-auxerre",
+    "لومان": "le-mans-fc",
+    "سوشو": "fc-sochaux",
+    # Eredivisie + Primeira Liga
+    "ايندهوفن": "psv-eindhoven",
+    # ══════════════════════════════════════════════════════════════
+    # 🇹🇷 الدوري التركي
+    # ══════════════════════════════════════════════════════════════
+    "جالاتسراي": "galatasaray",
+    "فنربختشه": "fenerbahce",
+    "بشكتاش": "besiktas",
+    # ══════════════════════════════════════════════════════════════
+    # 🏴󠁧󠁢󠁳󠁣󠁴󠁿 اسكتلندا + البرتغال
+    # ══════════════════════════════════════════════════════════════
+    "سيلتك": "celtic",
+    "رينجرز": "rangers-fc",
+    "بنفيكا": "sl-benfica",
+    "بورتو": "fc-porto",
+    # ══════════════════════════════════════════════════════════════
+    # 🇸🇦 الدوري السعودي (مرتبة ثانية)
+    # ══════════════════════════════════════════════════════════════
+    "الهلال": "al-hilal",
+    "النصر": "al-nassr",
+    "الاتحاد": "al-ittihad-club-jeddah",
+    "الاهلي": "al-ahly-sc",
+    "الشباب": "al-shabab-fc",
+    "الفتح": "al-fateh-sc",
+    "الاتفاق": "al-ettifaq-fc",
+    "الاخدود": "al-okhdood-cl",
+    "الخليج": "al-khaleej-cl",
+    "القادسيه": "al-qadsiah-fc",
+    "الوحده": "al-wehda-club-makkah",
+    "الفيحاء": "al-fayha-fc",
+    "ضمك": "damac-fc",
+    "نيوم": "neom-fc",
+    "الرائد": "al-raed-fc",
+    "الطائي": "al-tai-fc",
+    # ══════════════════════════════════════════════════════════════
+    # 🇪🇬 الدوري المصري
+    # ══════════════════════════════════════════════════════════════
+    "الزمالك": "zamalek-sc",
+    "بيراميدز": "pyramids-fc",
+    # ══════════════════════════════════════════════════════════════
+    # 🇮🇶 الدوري العراقي
+    # ══════════════════════════════════════════════════════════════
+    "الزوراء": "al-zawraa-sc",
+    "الشرطة": "al-shorta-sc",
+    "الطلبه": "al-talaba-sc",
+    "الكرخ": "al-karkh-sc",
+    "الميناء": "al-minaa-sc",
+    "دهوك": "duhok-sc",
+    # ══════════════════════════════════════════════════════════════
+    # 🇶🇦🇦🇪 الدوريات الخليجية
+    # ══════════════════════════════════════════════════════════════
+    "السد": "al-sadd-sc",
+    "الدحيل": "al-duhail-sc",
+    "الريان": "al-rayyan-sc",
+    "الغرافه": "al-gharafa-sc",
+    "العربي": "al-arabi-sc",
+    "الشارقه": "sharjah-cfc",
+    "الجزيره": "al-jazira-club",
+    # ══════════════════════════════════════════════════════════════
+    # 🌍 المنتخبات
+    # ══════════════════════════════════════════════════════════════
+    "مصر": "egypt-national-team",
+    "المغرب": "morocco-national-team",
+    "تونس": "tunisia-national-team",
+    "الجزائر": "algeria-national-team",
+    "العراق": "iraq-national-team",
+    "السعوديه": "saudi-arabia-national-team",
+    "قطر": "qatar-national-team",
+    "الامارات": "united-arab-emirates-national-team",
+    "ايران": "iran-national-team",
+    "اليابان": "japan-national-team",
+    "كوريا": "south-korea-national-team",
+    "استراليا": "australia-national-team",
+    "البرازيل": "brazil-national-team",
+    "ارجنتين": "argentina-national-team",
+    "فرنسا": "france-national-team",
+    "اسبانيا": "spain-national-team",
+    "المانيا": "germany-national-team",
+    "انجلترا": "england-national-team",
+    "ايطاليا": "italy-national-team",
+    "البرتغال": "portugal-national-team",
+    "هولندا": "netherlands-national-team-dutch",
+    "بلجيكا": "belgium-national-team",
+    "كرواتيا": "croatia-national-team",
+    "نيجيريا": "nigeria-national-team",
+    "السنغال": "senegal-national-team",
+    "غانا": "ghana-national-team",
+    "الكاميرون": "cameroon-national-team",
+    "ساحلعاج": "ivory-coast-national-team",
+    # ══════════════════════════════════════════════════════════════
+    # 🆕 فرق جديدة (محصّلة حديثاً)
+    # ══════════════════════════════════════════════════════════════
+    "طلائع الجيش": "talaea-el-geish",
+}
+
 _SHAPE_WARNED = {"once": False}
 _RAQM = {"done": False, "value": False}
 
@@ -694,37 +928,21 @@ def _team_color(name):
 
 
 def _load_team_logo(url, team_name, league=None, size=210):
-    """تحميل لوجو الفريق من رابط المسح، فإن فشل نجرب خريطة اللوجوهات الثابتة
-    (مفاتيح أسماء مُطبّعة)، ثم نرسم دائرة ملونة بأول حرف من اسم الفريق."""
+    """تحميل لوجو الفريق: أولاً من الكاش المحلي (footylogos 1500×1500)،
+    ثم من رابط المسح، ثم خريطة اللوجوهات الثابتة، ثم دائرة ملونة."""
     key = (url, team_name, league, size)
     if key in _LOGO_CACHE:
         return _LOGO_CACHE[key]
-    candidates = [url] if url else []
     tkey = _norm_key(team_name)
-    yss_logo = YSSCORES_LOGOS.get(tkey)
-    if yss_logo and yss_logo not in candidates:
-        candidates.insert(0, yss_logo)
-    fb = _TEAM_LOGO_FALLBACK.get(tkey)
-    if fb and fb not in candidates:
-        candidates.append(fb)
-    fb_lg = _TEAM_LOGO_FALLBACK_LEAGUE.get(f"{_norm_key(league)}|{tkey}")
-    if fb_lg and fb_lg not in candidates:
-        candidates.append(fb_lg)
     img = None
-    for u in candidates:
-        try:
-            ref = "https://www.filgoal.com/"
-            if "ysscores" in u:
-                ref = "https://www.ysscores.com/"
-            elif "btolat" in u:
-                ref = "https://www.btolat.com/"
-            elif "livesoccertv" in u:
-                ref = "https://www.livesoccertv.com/"
-            r = requests.get(u, timeout=15, impersonate="chrome120",
-                             headers={"Referer": ref})
-            if r.status_code == 200 and len(r.content) > 100:
-                img = Image.open(io.BytesIO(r.content)).convert("RGBA")
-                # قص الفراغ الشفاف حول اللوجو ثم تكبيره ليملأ الدائرة تقريباً
+
+    # 1) الكاش المحلي — footylogos slugs (1500×1500 PNG)
+    footy_slug = _TEAM_LOGO_FOOTYLOGOS.get(tkey)
+    if footy_slug:
+        local_path = os.path.join(LOGOS_CACHE_DIR, footy_slug + ".png")
+        if os.path.isfile(local_path) and os.path.getsize(local_path) > 500:
+            try:
+                img = Image.open(local_path).convert("RGBA")
                 try:
                     bbox = img.getbbox()
                     if bbox:
@@ -738,9 +956,73 @@ def _load_team_logo(url, team_name, league=None, size=210):
                 if small and small < target_small:
                     f = target_small / small
                     img = img.resize((max(1, int(w * f)), max(1, int(h * f))), Image.LANCZOS)
-                break
-        except Exception:
-            img = None
+            except Exception:
+                img = None
+
+    # 2) كاش يلا شووت (128px)
+    if img is None:
+        yss_logo = YSSCORES_LOGOS.get(tkey)
+        if yss_logo:
+            try:
+                ref = "https://www.ysscores.com/"
+                r = requests.get(yss_logo, timeout=15, impersonate="chrome120",
+                                 headers={"Referer": ref})
+                if r.status_code == 200 and len(r.content) > 100:
+                    img = Image.open(io.BytesIO(r.content)).convert("RGBA")
+                    try:
+                        bbox = img.getbbox()
+                        if bbox:
+                            img = img.crop(bbox)
+                    except Exception:
+                        pass
+                    img.thumbnail((size, size), Image.LANCZOS)
+                    w, h = img.size
+                    small = min(w, h)
+                    target_small = size * 0.92
+                    if small and small < target_small:
+                        f = target_small / small
+                        img = img.resize((max(1, int(w * f)), max(1, int(h * f))), Image.LANCZOS)
+            except Exception:
+                img = None
+
+    # 3) رابط المسح + الخرائط الثابتة
+    if img is None:
+        candidates = [url] if url else []
+        fb = _TEAM_LOGO_FALLBACK.get(tkey)
+        if fb and fb not in candidates:
+            candidates.append(fb)
+        fb_lg = _TEAM_LOGO_FALLBACK_LEAGUE.get(f"{_norm_key(league)}|{tkey}")
+        if fb_lg and fb_lg not in candidates:
+            candidates.append(fb_lg)
+        for u in candidates:
+            try:
+                ref = "https://www.filgoal.com/"
+                if "ysscores" in u:
+                    ref = "https://www.ysscores.com/"
+                elif "btolat" in u:
+                    ref = "https://www.btolat.com/"
+                elif "livesoccertv" in u:
+                    ref = "https://www.livesoccertv.com/"
+                r = requests.get(u, timeout=15, impersonate="chrome120",
+                                 headers={"Referer": ref})
+                if r.status_code == 200 and len(r.content) > 100:
+                    img = Image.open(io.BytesIO(r.content)).convert("RGBA")
+                    try:
+                        bbox = img.getbbox()
+                        if bbox:
+                            img = img.crop(bbox)
+                    except Exception:
+                        pass
+                    img.thumbnail((size, size), Image.LANCZOS)
+                    w, h = img.size
+                    small = min(w, h)
+                    target_small = size * 0.92
+                    if small and small < target_small:
+                        f = target_small / small
+                        img = img.resize((max(1, int(w * f)), max(1, int(h * f))), Image.LANCZOS)
+                    break
+            except Exception:
+                img = None
     canvas = Image.new("RGBA", (size, size), (255, 255, 255, 255))
     d = ImageDraw.Draw(canvas)
     if img is not None:
@@ -2413,6 +2695,11 @@ def filter_and_rank(matches_list):
     filtered = []
     for m in matches_list:
         raw_league = m['league']
+        
+        # 🔒 فلترة القائمة السوداء أولاً (يمنع أي مباراة محظورة مهما كان اسم البطولة)
+        if any(b in raw_league for b in BLOCKLIST):
+            continue
+        
         std_league = raw_league
         is_vip_league = False
         league_rank = 999 
