@@ -1,5 +1,51 @@
 [
     {
+        "league": "الدوري السعودي",
+        "homeTeam": "أبها",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/9091690299913.png",
+        "awayTeam": "الخليج",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/7451690299071.png",
+        "scoreOrTime": "1 - 1",
+        "status": "الشوط الأول",
+        "channels": [
+            "تطبيق ثمانية"
+        ],
+        "commentator": "",
+        "source": "Yallakora + FilGoal + Btolat + YSscores",
+        "_match_id": "375131",
+        "scorers": {
+            "home": [
+                [
+                    "كشيم القحطاني",
+                    "24'"
+                ]
+            ],
+            "away": [
+                [
+                    "جوشوا كينج",
+                    "17'"
+                ]
+            ]
+        }
+    },
+    {
+        "league": "الدوري السعودي",
+        "homeTeam": "التعاون",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/9971724321815.png",
+        "awayTeam": "الفيحاء",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/9981690292497.png",
+        "scoreOrTime": "0 - 0",
+        "status": "الشوط الأول",
+        "channels": [
+            "ثمانية 2",
+            "ثمانية 3",
+            "تطبيق ثمانية"
+        ],
+        "commentator": "عبدالله الحربي",
+        "source": "Yallakora + FilGoal + Btolat + YSscores",
+        "_match_id": "375132"
+    },
+    {
         "league": "دوري أبطال أوروبا",
         "homeTeam": "صباح إف كيه",
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\SABAH FC LOGO 112026_8_19_19_51.webp",
@@ -59,11 +105,20 @@
         "homeLogo": "https://img.btolat.com/teamslogo/28874.png?v=214",
         "awayTeam": "هابويل بير شيفا",
         "awayLogo": "https://img.btolat.com/teamslogo/11650.png?v=845",
-        "scoreOrTime": "07:45 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 1",
+        "status": "4'",
         "channels": [],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": [
+                [
+                    "إيغور زلاتانوفيتش",
+                    "3'"
+                ]
+            ]
+        }
     },
     {
         "league": "دوري أبطال أوروبا",
@@ -99,8 +154,8 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/4281751838036.png",
         "awayTeam": "بئر السبع",
         "awayLogo": "https://imgs.ysscores.com/teams/128/511751837961.png",
-        "scoreOrTime": "07:45 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0-1",
+        "status": "جارية",
         "channels": [],
         "commentator": "",
         "source": "YSscores"
@@ -236,7 +291,7 @@
         "awayTeam": "النصر",
         "awayLogo": "https://imgs.ysscores.com/teams/128/1371747772080.png",
         "scoreOrTime": "21:00",
-        "status": "لم تبدأ",
+        "status": "بعد قليل",
         "channels": [
             "ثمانية 1",
             "تطبيق ثمانية"
@@ -261,51 +316,28 @@
         "source": "Btolat"
     },
     {
-        "league": "الدوري السعودي",
-        "homeTeam": "أبها",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/9091690299913.png",
-        "awayTeam": "الخليج",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/7451690299071.png",
-        "scoreOrTime": "19:05",
-        "status": "لم تبدأ",
-        "channels": [
-            "تطبيق ثمانية"
-        ],
-        "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat + YSscores",
-        "_match_id": "375131"
-    },
-    {
-        "league": "الدوري السعودي",
-        "homeTeam": "التعاون",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/9971724321815.png",
-        "awayTeam": "الفيحاء",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/9981690292497.png",
-        "scoreOrTime": "19:10",
-        "status": "لم تبدأ",
-        "channels": [
-            "ثمانية 2",
-            "ثمانية 3",
-            "تطبيق ثمانية"
-        ],
-        "commentator": "عبدالله الحربي",
-        "source": "Yallakora + FilGoal + Btolat + YSscores",
-        "_match_id": "375132"
-    },
-    {
         "league": "الدوري العراقي",
         "homeTeam": "الجولان",
         "homeLogo": "https://imgs.ysscores.com/teams/128/7291760739383.png",
         "awayTeam": "الشرطة",
         "awayLogo": "https://imgs.ysscores.com/teams/128/8281729976264.png",
-        "scoreOrTime": "0 - 0",
-        "status": "18'",
+        "scoreOrTime": "0 - 1",
+        "status": "'",
         "channels": [
             "العراقية الرياضية"
         ],
         "commentator": "",
         "source": "FilGoal + Btolat + YSscores",
-        "_match_id": "376618"
+        "_match_id": "376618",
+        "scorers": {
+            "home": [],
+            "away": [
+                [
+                    "Lionel Atiba",
+                    "41'"
+                ]
+            ]
+        }
     },
     {
         "league": "الدوري العراقي",
@@ -340,7 +372,7 @@
         "awayTeam": "أربيل",
         "awayLogo": "https://imgs.ysscores.com/teams/128/2581695657262.png",
         "scoreOrTime": "0 - 1",
-        "status": "34'",
+        "status": "58'",
         "channels": [
             "العراقية السريانية"
         ],
@@ -363,12 +395,21 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/17854185482743.png",
         "awayTeam": "ديالى",
         "awayLogo": "https://imgs.ysscores.com/teams/128/7671726654821.png",
-        "scoreOrTime": "0 - 0",
-        "status": "15'",
+        "scoreOrTime": "1 - 1",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat + YSscores",
-        "_match_id": "376619"
+        "_match_id": "376619",
+        "scorers": {
+            "home": [
+                [
+                    "سيفو مبيول",
+                    "40'"
+                ]
+            ],
+            "away": []
+        }
     },
     {
         "league": "الدوري المصري",
@@ -376,7 +417,7 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/2188.png",
         "awayTeam": "الزمالك",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/2.png",
-        "scoreOrTime": "14:00",
+        "scoreOrTime": "20:00",
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "محمد الشاذلي",
@@ -389,7 +430,7 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/653.png",
         "awayTeam": "طلائع الجيش",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/304.png",
-        "scoreOrTime": "14:00",
+        "scoreOrTime": "20:00",
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "هشام معمر",
@@ -402,7 +443,7 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/860.png",
         "awayTeam": "بترول أسيوط",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/610.png",
-        "scoreOrTime": "11:00",
+        "scoreOrTime": "17:00",
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "طارق الأدور",
