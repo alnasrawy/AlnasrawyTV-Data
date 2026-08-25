@@ -1,49 +1,34 @@
 [
     {
         "league": "الدوري السعودي",
-        "homeTeam": "أبها",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/9091690299913.png",
-        "awayTeam": "الخليج",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/7451690299071.png",
-        "scoreOrTime": "1 - 1",
-        "status": "الشوط الثاني",
+        "homeTeam": "الشباب",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/4261690298871.png",
+        "awayTeam": "الرياض",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/7341730889148.png",
+        "scoreOrTime": "0 - 0",
+        "status": "الشوط الأول",
         "channels": [
+            "ثمانية 3",
+            "ثمانية 2",
             "تطبيق ثمانية"
         ],
-        "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat + YSscores",
-        "_match_id": "375131",
-        "scorers": {
-            "home": [
-                [
-                    "كشيم القحطاني",
-                    "24'"
-                ]
-            ],
-            "away": [
-                [
-                    "جوشوا كينج",
-                    "17'"
-                ]
-            ]
-        }
+        "commentator": "راشد الدوسري",
+        "source": "Yallakora + FilGoal + YSscores",
+        "_match_id": "375134"
     },
     {
         "league": "الدوري السعودي",
-        "homeTeam": "التعاون",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/9971724321815.png",
-        "awayTeam": "الفيحاء",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/9981690292497.png",
+        "homeTeam": "الاتفـــــاق",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\Ettifaq2018_7_25_17_9.jpg",
+        "awayTeam": "النصر",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\5\\19\\xdDArNPC_400x4002025_5_19_22_38.webp",
         "scoreOrTime": "0 - 0",
-        "status": "الشوط الثاني",
+        "status": "الشوط الأول",
         "channels": [
-            "ثمانية 2",
-            "ثمانية 3",
-            "تطبيق ثمانية"
+            "ثمانية 1"
         ],
-        "commentator": "عبدالله الحربي",
-        "source": "Yallakora + FilGoal + Btolat + YSscores",
-        "_match_id": "375132"
+        "commentator": "",
+        "source": "Yallakora"
     },
     {
         "league": "دوري أبطال أوروبا",
@@ -106,7 +91,7 @@
         "awayTeam": "هابويل بير شيفا",
         "awayLogo": "https://img.btolat.com/teamslogo/11650.png?v=845",
         "scoreOrTime": "1 - 1",
-        "status": "'",
+        "status": "60'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
@@ -160,7 +145,7 @@
         "awayTeam": "بئر السبع",
         "awayLogo": "https://imgs.ysscores.com/teams/128/511751837961.png",
         "scoreOrTime": "1-1",
-        "status": "متوقفة",
+        "status": "جارية",
         "channels": [],
         "commentator": "",
         "source": "YSscores"
@@ -219,37 +204,6 @@
     },
     {
         "league": "الدوري السعودي",
-        "homeTeam": "الشباب",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/4261690298871.png",
-        "awayTeam": "الرياض",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/7341730889148.png",
-        "scoreOrTime": "21:00",
-        "status": "لم تبدأ",
-        "channels": [
-            "ثمانية 3",
-            "ثمانية 2",
-            "تطبيق ثمانية"
-        ],
-        "commentator": "راشد الدوسري",
-        "source": "Yallakora + FilGoal + YSscores",
-        "_match_id": "375134"
-    },
-    {
-        "league": "الدوري السعودي",
-        "homeTeam": "الاتفـــــاق",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\Ettifaq2018_7_25_17_9.jpg",
-        "awayTeam": "النصر",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\5\\19\\xdDArNPC_400x4002025_5_19_22_38.webp",
-        "scoreOrTime": "21:00",
-        "status": "لم تبدأ",
-        "channels": [
-            "ثمانية 1"
-        ],
-        "commentator": "",
-        "source": "Yallakora"
-    },
-    {
-        "league": "الدوري السعودي",
         "homeTeam": "الاتحاد",
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/175.png",
         "awayTeam": "الحزم",
@@ -295,8 +249,8 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/1151690298845.png",
         "awayTeam": "النصر",
         "awayLogo": "https://imgs.ysscores.com/teams/128/1371747772080.png",
-        "scoreOrTime": "21:00",
-        "status": "بعد قليل",
+        "scoreOrTime": "0 - 0",
+        "status": "مباشر",
         "channels": [
             "ثمانية 1",
             "تطبيق ثمانية"
@@ -311,14 +265,64 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15017.png?v=462",
         "awayTeam": "الرياض",
         "awayLogo": "https://img.btolat.com/teamslogo/15016.png?v=698",
-        "scoreOrTime": "09:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "6'",
         "channels": [
             "ثمانية 2",
             "تطبيق ثمانية"
         ],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
+    },
+    {
+        "league": "الدوري السعودي",
+        "homeTeam": "أبها",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/9091690299913.png",
+        "awayTeam": "الخليج",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/7451690299071.png",
+        "scoreOrTime": "1 - 1",
+        "status": "انتهت",
+        "channels": [
+            "تطبيق ثمانية"
+        ],
+        "commentator": "",
+        "source": "Yallakora + FilGoal + Btolat + YSscores",
+        "_match_id": "375131",
+        "scorers": {
+            "home": [
+                [
+                    "كشيم القحطاني",
+                    "24'"
+                ]
+            ],
+            "away": [
+                [
+                    "جوشوا كينج",
+                    "17'"
+                ]
+            ]
+        }
+    },
+    {
+        "league": "الدوري السعودي",
+        "homeTeam": "التعاون",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/9971724321815.png",
+        "awayTeam": "الفيحاء",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/9981690292497.png",
+        "scoreOrTime": "0 - 0",
+        "status": "انتهت",
+        "channels": [
+            "ثمانية 2",
+            "ثمانية 3",
+            "تطبيق ثمانية"
+        ],
+        "commentator": "عبدالله الحربي",
+        "source": "Yallakora + FilGoal + Btolat + YSscores",
+        "_match_id": "375132"
     },
     {
         "league": "الدوري العراقي",
@@ -354,8 +358,8 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/2961729878835.png",
         "awayTeam": "نفط ميسان ",
         "awayLogo": "https://imgs.ysscores.com/teams/128/711695656259.png",
-        "scoreOrTime": "21:00",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "9'",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat + YSscores",
@@ -495,8 +499,8 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/3761690370521.png",
         "awayTeam": "نوريتش سيتي",
         "awayLogo": "https://imgs.ysscores.com/teams/128/5201690370543.png",
-        "scoreOrTime": "09:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0-0",
+        "status": "جارية",
         "channels": [],
         "commentator": "",
         "source": "YSscores"
