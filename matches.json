@@ -298,8 +298,8 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/7291760739383.png",
         "awayTeam": "الشرطة",
         "awayLogo": "https://imgs.ysscores.com/teams/128/8281729976264.png",
-        "scoreOrTime": "18:45",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "18'",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -339,14 +339,23 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/3891695656397.png",
         "awayTeam": "أربيل",
         "awayLogo": "https://imgs.ysscores.com/teams/128/2581695657262.png",
-        "scoreOrTime": "18:30",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 1",
+        "status": "34'",
         "channels": [
             "العراقية السريانية"
         ],
         "commentator": "",
         "source": "FilGoal + Btolat + YSscores",
-        "_match_id": "376627"
+        "_match_id": "376627",
+        "scorers": {
+            "home": [],
+            "away": [
+                [
+                    "إبراهيم بايش",
+                    "4'"
+                ]
+            ]
+        }
     },
     {
         "league": "الدوري العراقي",
@@ -354,8 +363,8 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/17854185482743.png",
         "awayTeam": "ديالى",
         "awayLogo": "https://imgs.ysscores.com/teams/128/7671726654821.png",
-        "scoreOrTime": "18:45",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "15'",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat + YSscores",
