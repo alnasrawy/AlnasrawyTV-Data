@@ -166,8 +166,8 @@
         "scoreOrTime": "21:00",
         "status": "لم تبدأ",
         "channels": [
-            "ثمانية 2",
             "ثمانية 3",
+            "ثمانية 2",
             "تطبيق ثمانية"
         ],
         "commentator": "راشد الدوسري",
@@ -182,7 +182,9 @@
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\5\\19\\xdDArNPC_400x4002025_5_19_22_38.webp",
         "scoreOrTime": "21:00",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "ثمانية 1"
+        ],
         "commentator": "",
         "source": "Yallakora"
     },
@@ -282,9 +284,9 @@
         "scoreOrTime": "19:10",
         "status": "لم تبدأ",
         "channels": [
+            "ثمانية 2",
             "ثمانية 3",
-            "تطبيق ثمانية",
-            "ثمانية 2"
+            "تطبيق ثمانية"
         ],
         "commentator": "عبدالله الحربي",
         "source": "Yallakora + FilGoal + Btolat + YSscores",
@@ -361,10 +363,10 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/2188.png",
         "awayTeam": "الزمالك",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/2.png",
-        "scoreOrTime": "17:00",
+        "scoreOrTime": "14:00",
         "status": "لم تبدأ",
         "channels": [],
-        "commentator": "",
+        "commentator": "محمد الشاذلي",
         "source": "FilGoal",
         "_match_id": "375871"
     },
@@ -374,10 +376,10 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/653.png",
         "awayTeam": "طلائع الجيش",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/304.png",
-        "scoreOrTime": "17:00",
+        "scoreOrTime": "14:00",
         "status": "لم تبدأ",
         "channels": [],
-        "commentator": "",
+        "commentator": "هشام معمر",
         "source": "FilGoal",
         "_match_id": "375870"
     },
@@ -387,10 +389,10 @@
         "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/860.png",
         "awayTeam": "بترول أسيوط",
         "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/610.png",
-        "scoreOrTime": "14:00",
+        "scoreOrTime": "11:00",
         "status": "لم تبدأ",
         "channels": [],
-        "commentator": "",
+        "commentator": "طارق الأدور",
         "source": "FilGoal",
         "_match_id": "375869"
     },
