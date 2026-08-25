@@ -1,12 +1,42 @@
 [
     {
+        "league": "دوري أبطال أوروبا",
+        "homeTeam": "لاسك لينز",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\7\\15\\Lask2021_7_15_9_46.jpg",
+        "awayTeam": "سلتيك",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\8\\12\\Celtic2018_8_12_13_0.jpg",
+        "scoreOrTime": "0 - 0",
+        "status": "الشوط الأول",
+        "channels": [
+            "beIN SPORTS 1 HD"
+        ],
+        "commentator": "عبد الله الغامدي",
+        "source": "Yallakora + FilGoal",
+        "_match_id": "376505"
+    },
+    {
+        "league": "الدوري الإسباني",
+        "homeTeam": "فالنسيا",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/7881690196747.png",
+        "awayTeam": "ريال بيتيس",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/17645945054618.png",
+        "scoreOrTime": "0 - 0",
+        "status": "الشوط الأول",
+        "channels": [
+            "BEIN SPORTS 3"
+        ],
+        "commentator": "",
+        "source": "Yallakora + FilGoal + Btolat + YSscores",
+        "_match_id": "374875"
+    },
+    {
         "league": "الدوري السعودي",
         "homeTeam": "الشباب",
         "homeLogo": "https://imgs.ysscores.com/teams/128/4261690298871.png",
         "awayTeam": "الرياض",
         "awayLogo": "https://imgs.ysscores.com/teams/128/7341730889148.png",
         "scoreOrTime": "2 - 2",
-        "status": "الشوط الأول",
+        "status": "الشوط الثاني",
         "channels": [
             "ثمانية 3",
             "ثمانية 2",
@@ -28,6 +58,10 @@
             ],
             "away": [
                 [
+                    "تيدي أوكو",
+                    "57'"
+                ],
+                [
                     "لياندرو أنتونيس",
                     "41'"
                 ],
@@ -45,7 +79,7 @@
         "awayTeam": "النصر",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\5\\19\\xdDArNPC_400x4002025_5_19_22_38.webp",
         "scoreOrTime": "2 - 0",
-        "status": "الشوط الأول",
+        "status": "الشوط الثاني",
         "channels": [
             "ثمانية 1"
         ],
@@ -63,21 +97,6 @@
         "channels": [],
         "commentator": "",
         "source": "Yallakora"
-    },
-    {
-        "league": "دوري أبطال أوروبا",
-        "homeTeam": "لاسك لينز",
-        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\7\\15\\Lask2021_7_15_9_46.jpg",
-        "awayTeam": "سلتيك",
-        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\8\\12\\Celtic2018_8_12_13_0.jpg",
-        "scoreOrTime": "22:00",
-        "status": "لم تبدأ",
-        "channels": [
-            "beIN SPORTS 1 HD"
-        ],
-        "commentator": "عبد الله الغامدي",
-        "source": "Yallakora + FilGoal",
-        "_match_id": "376505"
     },
     {
         "league": "دوري أبطال أوروبا",
@@ -112,13 +131,21 @@
         "homeLogo": "https://img.btolat.com/teamslogo/28874.png?v=214",
         "awayTeam": "هابويل بير شيفا",
         "awayLogo": "https://img.btolat.com/teamslogo/11650.png?v=845",
-        "scoreOrTime": "3 - 2",
-        "status": "100'",
+        "scoreOrTime": "5 - 2",
+        "status": "120'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
         "scorers": {
             "home": [
+                [
+                    "جوي لانس ميكيلز",
+                    "115'"
+                ],
+                [
+                    "أورفي مبينا",
+                    "101'"
+                ],
                 [
                     "تيلور موتاليموف",
                     "90'"
@@ -150,13 +177,17 @@
         "homeLogo": "https://img.btolat.com/teamslogo/13694.png?v=438",
         "awayTeam": "نيميجن",
         "awayLogo": "https://img.btolat.com/teamslogo/13340.png?v=733",
-        "scoreOrTime": "10:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "21'",
         "channels": [
             "BEIN SPORTS 2"
         ],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
     },
     {
         "league": "دوري أبطال أوروبا",
@@ -164,13 +195,22 @@
         "homeLogo": "https://img.btolat.com/teamslogo/6413.png?v=334",
         "awayTeam": "سيلتيك",
         "awayLogo": "https://img.btolat.com/teamslogo/15049.png?v=55",
-        "scoreOrTime": "10:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0 - 0",
+        "status": "21'",
         "channels": [
             "BEIN SPORTS 1"
         ],
         "commentator": "",
-        "source": "Btolat"
+        "source": "Btolat",
+        "scorers": {
+            "home": [],
+            "away": [
+                [
+                    "كيران تيرني",
+                    "21'"
+                ]
+            ]
+        }
     },
     {
         "league": "دوري أبطال أوروبا",
@@ -178,7 +218,7 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/4281751838036.png",
         "awayTeam": "بئر السبع",
         "awayLogo": "https://imgs.ysscores.com/teams/128/511751837961.png",
-        "scoreOrTime": "3-2",
+        "scoreOrTime": "5-2",
         "status": "جارية",
         "channels": [],
         "commentator": "",
@@ -190,8 +230,8 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/5301690370548.png",
         "awayTeam": "سيلتك",
         "awayLogo": "https://imgs.ysscores.com/teams/128/9291690387713.png",
-        "scoreOrTime": "10:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0-0",
+        "status": "جارية",
         "channels": [],
         "commentator": "",
         "source": "YSscores"
@@ -202,8 +242,8 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/8781690370522.png",
         "awayTeam": "نيميخن",
         "awayLogo": "https://imgs.ysscores.com/teams/128/2531690996921.png",
-        "scoreOrTime": "10:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0-0",
+        "status": "جارية",
         "channels": [],
         "commentator": "",
         "source": "YSscores"
@@ -220,21 +260,6 @@
         "commentator": "",
         "source": "FilGoal",
         "_match_id": "374873"
-    },
-    {
-        "league": "الدوري الإسباني",
-        "homeTeam": "فالنسيا",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/7881690196747.png",
-        "awayTeam": "ريال بيتيس",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/17645945054618.png",
-        "scoreOrTime": "22:00",
-        "status": "لم تبدأ",
-        "channels": [
-            "BEIN SPORTS 3"
-        ],
-        "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat + YSscores",
-        "_match_id": "374875"
     },
     {
         "league": "الدوري السعودي",
@@ -303,7 +328,12 @@
                     "31'"
                 ]
             ],
-            "away": []
+            "away": [
+                [
+                    "ساديو ماني",
+                    "53'"
+                ]
+            ]
         }
     },
     {
@@ -312,8 +342,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/15017.png?v=462",
         "awayTeam": "الرياض",
         "awayLogo": "https://img.btolat.com/teamslogo/15016.png?v=698",
-        "scoreOrTime": "2 - 2",
-        "status": "'",
+        "scoreOrTime": "2 - 3",
+        "status": "60'",
         "channels": [
             "ثمانية 2",
             "تطبيق ثمانية"
@@ -332,6 +362,10 @@
                 ]
             ],
             "away": [
+                [
+                    "تيدي أوكو",
+                    "57'"
+                ],
                 [
                     "لياندرو أنتونيس",
                     "41'"
@@ -424,7 +458,7 @@
         "awayTeam": "نفط ميسان ",
         "awayLogo": "https://imgs.ysscores.com/teams/128/711695656259.png",
         "scoreOrTime": "3 - 0",
-        "status": "'",
+        "status": "61'",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat + YSscores",
@@ -582,7 +616,7 @@
         "awayTeam": "نوريتش سيتي",
         "awayLogo": "https://imgs.ysscores.com/teams/128/5201690370543.png",
         "scoreOrTime": "0-1",
-        "status": "متوقفة",
+        "status": "جارية",
         "channels": [],
         "commentator": "",
         "source": "YSscores"
@@ -593,8 +627,8 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/1011690370546.png",
         "awayTeam": "ميدلزبره",
         "awayLogo": "https://imgs.ysscores.com/teams/128/7871690370529.png",
-        "scoreOrTime": "0-0",
-        "status": "جارية",
+        "scoreOrTime": "0-1",
+        "status": "متوقفة",
         "channels": [],
         "commentator": "",
         "source": "YSscores"
@@ -605,7 +639,7 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/781690370534.png",
         "awayTeam": "شيفيلد",
         "awayLogo": "https://imgs.ysscores.com/teams/128/5951690118629.png",
-        "scoreOrTime": "0-0",
+        "scoreOrTime": "0-1",
         "status": "جارية",
         "channels": [],
         "commentator": "",
@@ -617,7 +651,7 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/4761693482598.png",
         "awayTeam": "لينكولن",
         "awayLogo": "https://imgs.ysscores.com/teams/128/17801568048336.png",
-        "scoreOrTime": "0-0",
+        "scoreOrTime": "0-1",
         "status": "جارية",
         "channels": [],
         "commentator": "",
@@ -641,7 +675,7 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/3891690370559.png",
         "awayTeam": "شروسبري تاون",
         "awayLogo": "https://imgs.ysscores.com/teams/128/2051690370545.png",
-        "scoreOrTime": "0-0",
+        "scoreOrTime": "3-0",
         "status": "جارية",
         "channels": [],
         "commentator": "",
@@ -665,7 +699,7 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/4641690370558.png",
         "awayTeam": "ريدينج",
         "awayLogo": "https://imgs.ysscores.com/teams/128/6501690370541.png",
-        "scoreOrTime": "0-0",
+        "scoreOrTime": "0-2",
         "status": "جارية",
         "channels": [],
         "commentator": "",
@@ -677,7 +711,7 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/3521690370525.png",
         "awayTeam": "وست هام",
         "awayLogo": "https://imgs.ysscores.com/teams/128/7191690118603.png",
-        "scoreOrTime": "0-0",
+        "scoreOrTime": "1-0",
         "status": "جارية",
         "channels": [],
         "commentator": "",
@@ -689,7 +723,7 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/3341690370541.png",
         "awayTeam": "بيتربورو يونايتد",
         "awayLogo": "https://imgs.ysscores.com/teams/128/7041690370535.png",
-        "scoreOrTime": "0-0",
+        "scoreOrTime": "0-2",
         "status": "جارية",
         "channels": [],
         "commentator": "",
@@ -701,7 +735,7 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/5711690370522.png",
         "awayTeam": "كوفنتري",
         "awayLogo": "https://imgs.ysscores.com/teams/128/3861690370535.png",
-        "scoreOrTime": "0-2",
+        "scoreOrTime": "1-2",
         "status": "جارية",
         "channels": [],
         "commentator": "",
@@ -713,8 +747,8 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/7741690119007.png",
         "awayTeam": "ليدز يونايتد",
         "awayLogo": "https://imgs.ysscores.com/teams/128/4691690458244.png",
-        "scoreOrTime": "10:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0-0",
+        "status": "جارية",
         "channels": [],
         "commentator": "",
         "source": "YSscores"
@@ -725,8 +759,8 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/3121690370534.png",
         "awayTeam": "برينتفورد",
         "awayLogo": "https://imgs.ysscores.com/teams/128/4791690118957.png",
-        "scoreOrTime": "10:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "0-1",
+        "status": "جارية",
         "channels": [],
         "commentator": "",
         "source": "YSscores"
