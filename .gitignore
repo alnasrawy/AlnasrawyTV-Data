@@ -14,20 +14,11 @@ ai_context.md
 # Runtime data (auto-committed by CI)
 filgoal_cache.json
 btolat_detail_cache.json
-
-# Reverse-engineering artifacts (not part of the project)
-apk/
-*.apk
+ysscores_logos.json
+footylogos_index.json
 
 # Secrets
 .env
 
-# Android
-android/.gradle/
-android/build/
-android/app/build/
-android/local.properties
-android/.idea/
-android/captures/
-*.keystore
-*.jks
+# Temporary
+*.tmp

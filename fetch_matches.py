@@ -1016,8 +1016,6 @@ def extract_first_match_time(matches_list):
     return earliest_time
 
 
-_YSSCORES_LOGOS_FILE = os.path.join(BASE_DIR, "ysscores_logos.json")
-
 class GhostScraper:
     def __init__(self):
         self._session = None
@@ -1195,7 +1193,6 @@ class GhostScraper:
 scraper_engine = GhostScraper()
 
 def execute_full_cycle():
-    global _YSSCORES_LOGOS_FILE
     now = datetime.now(TZ)
     print(f"\n-> Fetching Matches for Date: {now.strftime('%Y-%m-%d')}...")
 
