@@ -13,7 +13,6 @@ ai_context.md
 
 # Runtime data (auto-committed by CI)
 matches.json
-state.json
 filgoal_cache.json
 btolat_detail_cache.json
 
