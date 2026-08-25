@@ -5,7 +5,7 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\7\\15\\Lask2021_7_15_9_46.jpg",
         "awayTeam": "سلتيك",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\8\\12\\Celtic2018_8_12_13_0.jpg",
-        "scoreOrTime": "2 - 1",
+        "scoreOrTime": "3 - 1",
         "status": "الشوط الثاني",
         "channels": [
             "beIN SPORTS 1 HD"
@@ -27,7 +27,16 @@
         ],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat + YSscores",
-        "_match_id": "374875"
+        "_match_id": "374875",
+        "scorers": {
+            "home": [],
+            "away": [
+                [
+                    "بابلو غارسيا",
+                    "83'"
+                ]
+            ]
+        }
     },
     {
         "league": "دوري أبطال أوروبا",
@@ -120,8 +129,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/13694.png?v=689",
         "awayTeam": "نيميجن",
         "awayLogo": "https://img.btolat.com/teamslogo/13340.png?v=733",
-        "scoreOrTime": "2 - 0",
-        "status": "53'",
+        "scoreOrTime": "3 - 0",
+        "status": "86'",
         "channels": [
             "BEIN SPORTS 2"
         ],
@@ -129,6 +138,10 @@
         "source": "Btolat",
         "scorers": {
             "home": [
+                [
+                    "ديفرون فونفيل \r\n                                        (on)",
+                    "73'"
+                ],
                 [
                     "سوندر أوكليند",
                     "45'"
@@ -147,8 +160,8 @@
         "homeLogo": "https://img.btolat.com/teamslogo/6413.png?v=334",
         "awayTeam": "سيلتيك",
         "awayLogo": "https://img.btolat.com/teamslogo/15049.png?v=55",
-        "scoreOrTime": "2 - 1",
-        "status": "56'",
+        "scoreOrTime": "3 - 1",
+        "status": "89'",
         "channels": [
             "BEIN SPORTS 1"
         ],
@@ -156,6 +169,10 @@
         "source": "Btolat",
         "scorers": {
             "home": [
+                [
+                    "صامويل أدينيران",
+                    "58'"
+                ],
                 [
                     "روبرت ليوبيسيتش",
                     "48'"
@@ -179,7 +196,7 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/5301690370548.png",
         "awayTeam": "سيلتك",
         "awayLogo": "https://imgs.ysscores.com/teams/128/9291690387713.png",
-        "scoreOrTime": "2-1",
+        "scoreOrTime": "3-1",
         "status": "جارية",
         "channels": [],
         "commentator": "",
@@ -191,7 +208,7 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/8781690370522.png",
         "awayTeam": "نيميخن",
         "awayLogo": "https://imgs.ysscores.com/teams/128/2531690996921.png",
-        "scoreOrTime": "2-0",
+        "scoreOrTime": "3-0",
         "status": "جارية",
         "channels": [],
         "commentator": "",
@@ -369,7 +386,7 @@
     {
         "league": "الدوري السعودي",
         "homeTeam": "الشباب السعودي",
-        "homeLogo": "https://img.btolat.com/teamslogo/15017.png?v=462",
+        "homeLogo": "https://img.btolat.com/teamslogo/15017.png?v=967",
         "awayTeam": "الرياض",
         "awayLogo": "https://img.btolat.com/teamslogo/15016.png?v=698",
         "scoreOrTime": "3 - 3",
@@ -521,7 +538,7 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/4301729966980.png",
         "awayTeam": "غاز الشمال",
         "awayLogo": "https://imgs.ysscores.com/teams/128/8861760380650.png",
-        "scoreOrTime": "0-1",
+        "scoreOrTime": "1-1",
         "status": "جارية",
         "channels": [],
         "commentator": "",
@@ -645,131 +662,11 @@
     },
     {
         "league": "كأس الرابطة الإنجليزية",
-        "homeTeam": "دونكاستر روفرز",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/1011690370546.png",
-        "awayTeam": "ميدلزبره",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/7871690370529.png",
-        "scoreOrTime": "0-2",
-        "status": "جارية",
-        "channels": [],
-        "commentator": "",
-        "source": "YSscores"
-    },
-    {
-        "league": "كأس الرابطة الإنجليزية",
-        "homeTeam": "بلاكبيرن روفرز",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/781690370534.png",
-        "awayTeam": "شيفيلد",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/5951690118629.png",
-        "scoreOrTime": "1-1",
-        "status": "جارية",
-        "channels": [],
-        "commentator": "",
-        "source": "YSscores"
-    },
-    {
-        "league": "كأس الرابطة الإنجليزية",
-        "homeTeam": "بلاكبول",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/4761693482598.png",
-        "awayTeam": "لينكولن",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/17801568048336.png",
-        "scoreOrTime": "1-3",
-        "status": "جارية",
-        "channels": [],
-        "commentator": "",
-        "source": "YSscores"
-    },
-    {
-        "league": "كأس الرابطة الإنجليزية",
-        "homeTeam": "شيفيلد وينزداي",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/2131690370554.png",
-        "awayTeam": "وولفرهامبتون",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/9631690118479.png",
-        "scoreOrTime": "0-2",
-        "status": "جارية",
-        "channels": [],
-        "commentator": "",
-        "source": "YSscores"
-    },
-    {
-        "league": "كأس الرابطة الإنجليزية",
-        "homeTeam": "فليتوود تاون",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/3891690370559.png",
-        "awayTeam": "شروسبري تاون",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/2051690370545.png",
-        "scoreOrTime": "3-0",
-        "status": "جارية",
-        "channels": [],
-        "commentator": "",
-        "source": "YSscores"
-    },
-    {
-        "league": "كأس الرابطة الإنجليزية",
-        "homeTeam": "إيبسويتش",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/8291690370545.png",
-        "awayTeam": "ليستر سيتي",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/5531690711879.png",
-        "scoreOrTime": "1-1",
-        "status": "جارية",
-        "channels": [],
-        "commentator": "",
-        "source": "YSscores"
-    },
-    {
-        "league": "كأس الرابطة الإنجليزية",
-        "homeTeam": "ستيفنيج",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/4641690370558.png",
-        "awayTeam": "ريدينج",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/6501690370541.png",
-        "scoreOrTime": "0-2",
-        "status": "جارية",
-        "channels": [],
-        "commentator": "",
-        "source": "YSscores"
-    },
-    {
-        "league": "كأس الرابطة الإنجليزية",
-        "homeTeam": "ساوثهامبتون",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/3521690370525.png",
-        "awayTeam": "وست هام",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/7191690118603.png",
-        "scoreOrTime": "1-2",
-        "status": "جارية",
-        "channels": [],
-        "commentator": "",
-        "source": "YSscores"
-    },
-    {
-        "league": "كأس الرابطة الإنجليزية",
-        "homeTeam": "واتفورد",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/3341690370541.png",
-        "awayTeam": "بيتربورو يونايتد",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/7041690370535.png",
-        "scoreOrTime": "0-5",
-        "status": "جارية",
-        "channels": [],
-        "commentator": "",
-        "source": "YSscores"
-    },
-    {
-        "league": "كأس الرابطة الإنجليزية",
-        "homeTeam": "بليموث أرجايل",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/5711690370522.png",
-        "awayTeam": "كوفنتري",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/3861690370535.png",
-        "scoreOrTime": "2-3",
-        "status": "جارية",
-        "channels": [],
-        "commentator": "",
-        "source": "YSscores"
-    },
-    {
-        "league": "كأس الرابطة الإنجليزية",
         "homeTeam": "نوتينغهام",
         "homeLogo": "https://imgs.ysscores.com/teams/128/7741690119007.png",
         "awayTeam": "ليدز يونايتد",
         "awayLogo": "https://imgs.ysscores.com/teams/128/4691690458244.png",
-        "scoreOrTime": "0-1",
+        "scoreOrTime": "0-2",
         "status": "جارية",
         "channels": [],
         "commentator": "",
@@ -781,7 +678,7 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/3121690370534.png",
         "awayTeam": "برينتفورد",
         "awayLogo": "https://imgs.ysscores.com/teams/128/4791690118957.png",
-        "scoreOrTime": "1-3",
+        "scoreOrTime": "1-6",
         "status": "جارية",
         "channels": [],
         "commentator": "",
@@ -794,6 +691,126 @@
         "awayTeam": "نوريتش سيتي",
         "awayLogo": "https://imgs.ysscores.com/teams/128/5201690370543.png",
         "scoreOrTime": "1-2",
+        "status": "انتهت",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "دونكاستر روفرز",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/1011690370546.png",
+        "awayTeam": "ميدلزبره",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/7871690370529.png",
+        "scoreOrTime": "1-3",
+        "status": "انتهت",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "بلاكبيرن روفرز",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/781690370534.png",
+        "awayTeam": "شيفيلد",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/5951690118629.png",
+        "scoreOrTime": "1-2",
+        "status": "انتهت",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "بلاكبول",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/4761693482598.png",
+        "awayTeam": "لينكولن",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/17801568048336.png",
+        "scoreOrTime": "1-4",
+        "status": "انتهت",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "شيفيلد وينزداي",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/2131690370554.png",
+        "awayTeam": "وولفرهامبتون",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/9631690118479.png",
+        "scoreOrTime": "0-2",
+        "status": "انتهت",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "فليتوود تاون",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/3891690370559.png",
+        "awayTeam": "شروسبري تاون",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/2051690370545.png",
+        "scoreOrTime": "4-0",
+        "status": "انتهت",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "إيبسويتش",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/8291690370545.png",
+        "awayTeam": "ليستر سيتي",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/5531690711879.png",
+        "scoreOrTime": "3-1",
+        "status": "انتهت",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "ستيفنيج",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/4641690370558.png",
+        "awayTeam": "ريدينج",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/6501690370541.png",
+        "scoreOrTime": "0-3",
+        "status": "انتهت",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "ساوثهامبتون",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/3521690370525.png",
+        "awayTeam": "وست هام",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/7191690118603.png",
+        "scoreOrTime": "1-4",
+        "status": "انتهت",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "واتفورد",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/3341690370541.png",
+        "awayTeam": "بيتربورو يونايتد",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/7041690370535.png",
+        "scoreOrTime": "1-5",
+        "status": "انتهت",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "بليموث أرجايل",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/5711690370522.png",
+        "awayTeam": "كوفنتري",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/3861690370535.png",
+        "scoreOrTime": "2-4",
         "status": "انتهت",
         "channels": [],
         "commentator": "",
