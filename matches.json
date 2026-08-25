@@ -1,0 +1,575 @@
+[
+    {
+        "league": "دوري أبطال أوروبا",
+        "homeTeam": "صباح إف كيه",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\SABAH FC LOGO 112026_8_19_19_51.webp",
+        "awayTeam": "هابويل بئر سبع",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2022\\9\\15\\YK-Generic-team-logo2022_9_15_22_0.jpg",
+        "scoreOrTime": "19:45",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Yallakora"
+    },
+    {
+        "league": "دوري أبطال أوروبا",
+        "homeTeam": "لاسك لينز",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\7\\15\\Lask2021_7_15_9_46.jpg",
+        "awayTeam": "سلتيك",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\8\\12\\Celtic2018_8_12_13_0.jpg",
+        "scoreOrTime": "22:00",
+        "status": "لم تبدأ",
+        "channels": [
+            "beIN SPORTS 1 HD"
+        ],
+        "commentator": "عبد الله الغامدي",
+        "source": "Yallakora + FilGoal",
+        "_match_id": "376505"
+    },
+    {
+        "league": "دوري أبطال أوروبا",
+        "homeTeam": "جليمت",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2021\\9\\8\\32021_9_8_20_53.jpg",
+        "awayTeam": "إن إي سي نيميخن",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\NEC Nijmegen12026_8_19_20_8.webp",
+        "scoreOrTime": "22:00",
+        "status": "لم تبدأ",
+        "channels": [
+            "بى ان سبورت 2 HD"
+        ],
+        "commentator": "",
+        "source": "Yallakora"
+    },
+    {
+        "league": "دوري أبطال أوروبا",
+        "homeTeam": "أولمبيك ليون",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/211.png",
+        "awayTeam": "فنربخشة",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/350.png",
+        "scoreOrTime": "22:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal",
+        "_match_id": "376508"
+    },
+    {
+        "league": "دوري أبطال أوروبا",
+        "homeTeam": "نادي صباح",
+        "homeLogo": "https://img.btolat.com/teamslogo/28874.png?v=214",
+        "awayTeam": "هابويل بير شيفا",
+        "awayLogo": "https://img.btolat.com/teamslogo/11650.png?v=845",
+        "scoreOrTime": "07:45 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Btolat"
+    },
+    {
+        "league": "دوري أبطال أوروبا",
+        "homeTeam": "بودو جليمت",
+        "homeLogo": "https://img.btolat.com/teamslogo/13694.png?v=438",
+        "awayTeam": "نيميجن",
+        "awayLogo": "https://img.btolat.com/teamslogo/13340.png?v=733",
+        "scoreOrTime": "10:00 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Btolat"
+    },
+    {
+        "league": "دوري أبطال أوروبا",
+        "homeTeam": "لاسك لينز",
+        "homeLogo": "https://img.btolat.com/teamslogo/6413.png?v=403",
+        "awayTeam": "سيلتيك",
+        "awayLogo": "https://img.btolat.com/teamslogo/15049.png?v=55",
+        "scoreOrTime": "10:00 م",
+        "status": "لم تبدأ",
+        "channels": [
+            "BEIN SPORTS 1"
+        ],
+        "commentator": "",
+        "source": "Btolat"
+    },
+    {
+        "league": "دوري أبطال أوروبا",
+        "homeTeam": "صباح",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/4281751838036.png",
+        "awayTeam": "بئر السبع",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/511751837961.png",
+        "scoreOrTime": "07:45 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "دوري أبطال أوروبا",
+        "homeTeam": "لاسك",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/5301690370548.png",
+        "awayTeam": "سيلتك",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/9291690387713.png",
+        "scoreOrTime": "10:00 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "دوري أبطال أوروبا",
+        "homeTeam": "بودو/غليمت",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/8781690370522.png",
+        "awayTeam": "نيميخن",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/2531690996921.png",
+        "scoreOrTime": "10:00 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "الدوري الإسباني",
+        "homeTeam": "ريال مدريد",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/110.png",
+        "awayTeam": "ريال سوسيداد",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/124.png",
+        "scoreOrTime": "22:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal",
+        "_match_id": "374873"
+    },
+    {
+        "league": "الدوري الإسباني",
+        "homeTeam": "فالنسيا",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/7881690196747.png",
+        "awayTeam": "ريال بيتيس",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/17645945054618.png",
+        "scoreOrTime": "22:00",
+        "status": "لم تبدأ",
+        "channels": [
+            "بى ان سبورت 3 HD"
+        ],
+        "commentator": "",
+        "source": "Yallakora + FilGoal + Btolat + YSscores",
+        "_match_id": "374875"
+    },
+    {
+        "league": "الدوري السعودي",
+        "homeTeam": "الشباب",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/4261690298871.png",
+        "awayTeam": "الرياض",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/7341730889148.png",
+        "scoreOrTime": "21:00",
+        "status": "لم تبدأ",
+        "channels": [
+            "ثمانية 2",
+            "تطبيق ثمانية"
+        ],
+        "commentator": "راشد الدوسري",
+        "source": "Yallakora + FilGoal + YSscores",
+        "_match_id": "375134"
+    },
+    {
+        "league": "الدوري السعودي",
+        "homeTeam": "الاتفـــــاق",
+        "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2018\\7\\25\\Ettifaq2018_7_25_17_9.jpg",
+        "awayTeam": "النصر",
+        "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2025\\5\\19\\xdDArNPC_400x4002025_5_19_22_38.webp",
+        "scoreOrTime": "21:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "Yallakora"
+    },
+    {
+        "league": "الدوري السعودي",
+        "homeTeam": "الاتحاد",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/175.png",
+        "awayTeam": "الحزم",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/521.png",
+        "scoreOrTime": "3 - 2",
+        "status": "انتهت",
+        "channels": [
+            "ثمانية 1"
+        ],
+        "commentator": "مشاري القرني",
+        "source": "FilGoal",
+        "_match_id": "375130",
+        "scorers": {
+            "home": [
+                [
+                    "ستيفن بيرخفاين",
+                    "81'"
+                ],
+                [
+                    "ستيفن بيرخفاين",
+                    "41'"
+                ],
+                [
+                    "ستيفن بيرخفاين",
+                    "34'"
+                ]
+            ],
+            "away": [
+                [
+                    "سفيان بن دبكة",
+                    "59'"
+                ],
+                [
+                    "عبد العزيز الضويحي",
+                    "18'"
+                ]
+            ]
+        }
+    },
+    {
+        "league": "الدوري السعودي",
+        "homeTeam": "الاتفاق",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/1151690298845.png",
+        "awayTeam": "النصر",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/1371747772080.png",
+        "scoreOrTime": "21:00",
+        "status": "لم تبدأ",
+        "channels": [
+            "ثمانية 1",
+            "تطبيق ثمانية"
+        ],
+        "commentator": "فارس عوض / فارس عوض / جعفر الصليح",
+        "source": "FilGoal + Btolat + YSscores",
+        "_match_id": "375133"
+    },
+    {
+        "league": "الدوري السعودي",
+        "homeTeam": "الشباب السعودي",
+        "homeLogo": "https://img.btolat.com/teamslogo/15017.png?v=462",
+        "awayTeam": "الرياض",
+        "awayLogo": "https://img.btolat.com/teamslogo/15016.png?v=698",
+        "scoreOrTime": "09:00 م",
+        "status": "لم تبدأ",
+        "channels": [
+            "ثمانية 2",
+            "تطبيق ثمانية"
+        ],
+        "commentator": "",
+        "source": "Btolat"
+    },
+    {
+        "league": "الدوري السعودي",
+        "homeTeam": "أبها",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/9091690299913.png",
+        "awayTeam": "الخليج",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/7451690299071.png",
+        "scoreOrTime": "19:05",
+        "status": "لم تبدأ",
+        "channels": [
+            "تطبيق ثمانية"
+        ],
+        "commentator": "",
+        "source": "Yallakora + FilGoal + Btolat + YSscores",
+        "_match_id": "375131"
+    },
+    {
+        "league": "الدوري السعودي",
+        "homeTeam": "التعاون",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/9971724321815.png",
+        "awayTeam": "الفيحاء",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/9981690292497.png",
+        "scoreOrTime": "19:10",
+        "status": "لم تبدأ",
+        "channels": [
+            "ثمانية 3",
+            "تطبيق ثمانية"
+        ],
+        "commentator": "عبدالله الحربي",
+        "source": "Yallakora + FilGoal + Btolat + YSscores",
+        "_match_id": "375132"
+    },
+    {
+        "league": "الدوري العراقي",
+        "homeTeam": "الجولان",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/7291760739383.png",
+        "awayTeam": "الشرطة",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/8281729976264.png",
+        "scoreOrTime": "18:45",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal + Btolat + YSscores",
+        "_match_id": "376618"
+    },
+    {
+        "league": "الدوري العراقي",
+        "homeTeam": "الزوراء",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/2961729878835.png",
+        "awayTeam": "نفط ميسان ",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/711695656259.png",
+        "scoreOrTime": "21:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal + Btolat + YSscores",
+        "_match_id": "376620"
+    },
+    {
+        "league": "الدوري العراقي",
+        "homeTeam": "القوة الجوية",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/4301729966980.png",
+        "awayTeam": "غاز الشمال",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/8861760380650.png",
+        "scoreOrTime": "21:45",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal + YSscores",
+        "_match_id": "376621"
+    },
+    {
+        "league": "الدوري العراقي",
+        "homeTeam": "الكرخ ",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/3891695656397.png",
+        "awayTeam": "أربيل",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/2581695657262.png",
+        "scoreOrTime": "18:30",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal + Btolat + YSscores",
+        "_match_id": "376627"
+    },
+    {
+        "league": "الدوري العراقي",
+        "homeTeam": "زاخو",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/17854185482743.png",
+        "awayTeam": "ديالى",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/7671726654821.png",
+        "scoreOrTime": "18:45",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal + Btolat + YSscores",
+        "_match_id": "376619"
+    },
+    {
+        "league": "الدوري المصري",
+        "homeTeam": "البنك الأهلي",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/2188.png",
+        "awayTeam": "الزمالك",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/2.png",
+        "scoreOrTime": "20:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal",
+        "_match_id": "375871"
+    },
+    {
+        "league": "الدوري المصري",
+        "homeTeam": "م.السـويس بتروجت",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/653.png",
+        "awayTeam": "طلائع الجيش",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/304.png",
+        "scoreOrTime": "20:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal",
+        "_match_id": "375870"
+    },
+    {
+        "league": "الدوري المصري",
+        "homeTeam": "سموحة",
+        "homeLogo": "https://semedia.filgoal.com/Photos/Team/Small/860.png",
+        "awayTeam": "بترول أسيوط",
+        "awayLogo": "https://semedia.filgoal.com/Photos/Team/Small/610.png",
+        "scoreOrTime": "17:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal",
+        "_match_id": "375869"
+    },
+    {
+        "league": "دوري أبطال أوروبا - التصفيات التأهيلية",
+        "homeTeam": "صباح باكو",
+        "homeLogo": "",
+        "awayTeam": "هابويل بئر السبع",
+        "awayLogo": "",
+        "scoreOrTime": "19:45",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal",
+        "_match_id": "376503"
+    },
+    {
+        "league": "دوري أبطال أوروبا - التصفيات التأهيلية",
+        "homeTeam": "بودو/جليمت",
+        "homeLogo": "",
+        "awayTeam": "نيميجين",
+        "awayLogo": "",
+        "scoreOrTime": "22:00",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "FilGoal",
+        "_match_id": null
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "كارديف سيتي",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/3761690370521.png",
+        "awayTeam": "نوريتش سيتي",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/5201690370543.png",
+        "scoreOrTime": "09:00 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "دونكاستر روفرز",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/1011690370546.png",
+        "awayTeam": "ميدلزبره",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/7871690370529.png",
+        "scoreOrTime": "09:30 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "بلاكبيرن روفرز",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/781690370534.png",
+        "awayTeam": "شيفيلد",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/5951690118629.png",
+        "scoreOrTime": "09:45 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "بلاكبول",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/4761693482598.png",
+        "awayTeam": "لينكولن",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/17801568048336.png",
+        "scoreOrTime": "09:45 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "شيفيلد وينزداي",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/2131690370554.png",
+        "awayTeam": "وولفرهامبتون",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/9631690118479.png",
+        "scoreOrTime": "09:45 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "فليتوود تاون",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/3891690370559.png",
+        "awayTeam": "شروسبري تاون",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/2051690370545.png",
+        "scoreOrTime": "09:45 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "إيبسويتش",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/8291690370545.png",
+        "awayTeam": "ليستر سيتي",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/5531690711879.png",
+        "scoreOrTime": "09:45 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "ستيفنيج",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/4641690370558.png",
+        "awayTeam": "ريدينج",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/6501690370541.png",
+        "scoreOrTime": "09:45 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "ساوثهامبتون",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/3521690370525.png",
+        "awayTeam": "وست هام",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/7191690118603.png",
+        "scoreOrTime": "09:45 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "واتفورد",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/3341690370541.png",
+        "awayTeam": "بيتربورو يونايتد",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/7041690370535.png",
+        "scoreOrTime": "09:45 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "بليموث أرجايل",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/5711690370522.png",
+        "awayTeam": "كوفنتري",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/3861690370535.png",
+        "scoreOrTime": "09:45 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "نوتينغهام",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/7741690119007.png",
+        "awayTeam": "ليدز يونايتد",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/4691690458244.png",
+        "scoreOrTime": "10:00 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    },
+    {
+        "league": "كأس الرابطة الإنجليزية",
+        "homeTeam": "برمنغهام",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/3121690370534.png",
+        "awayTeam": "برينتفورد",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/4791690118957.png",
+        "scoreOrTime": "10:00 م",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores"
+    }
+]
