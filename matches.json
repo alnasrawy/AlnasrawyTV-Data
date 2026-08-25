@@ -1,12 +1,41 @@
 [
     {
         "league": "الدوري السعودي",
+        "homeTeam": "أبها",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/9091690299913.png",
+        "awayTeam": "الخليج",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/7451690299071.png",
+        "scoreOrTime": "1 - 1",
+        "status": "الشوط الثاني",
+        "channels": [
+            "تطبيق ثمانية"
+        ],
+        "commentator": "",
+        "source": "Yallakora + FilGoal + Btolat + YSscores",
+        "_match_id": "375131",
+        "scorers": {
+            "home": [
+                [
+                    "كشيم القحطاني",
+                    "24'"
+                ]
+            ],
+            "away": [
+                [
+                    "جوشوا كينج",
+                    "17'"
+                ]
+            ]
+        }
+    },
+    {
+        "league": "الدوري السعودي",
         "homeTeam": "التعاون",
         "homeLogo": "https://imgs.ysscores.com/teams/128/9971724321815.png",
         "awayTeam": "الفيحاء",
         "awayLogo": "https://imgs.ysscores.com/teams/128/9981690292497.png",
         "scoreOrTime": "0 - 0",
-        "status": "الشوط الأول",
+        "status": "الشوط الثاني",
         "channels": [
             "ثمانية 2",
             "ثمانية 3",
@@ -22,8 +51,8 @@
         "homeLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2026\\8\\19\\SABAH FC LOGO 112026_8_19_19_51.webp",
         "awayTeam": "هابويل بئر سبع",
         "awayLogo": "https://mediayk.gemini.media/img/yallakora/iosteams/120\\2022\\9\\15\\YK-Generic-team-logo2022_9_15_22_0.jpg",
-        "scoreOrTime": "19:45",
-        "status": "لم تبدأ",
+        "scoreOrTime": "1 - 1",
+        "status": "مباشر",
         "channels": [],
         "commentator": "",
         "source": "Yallakora"
@@ -76,13 +105,18 @@
         "homeLogo": "https://img.btolat.com/teamslogo/28874.png?v=214",
         "awayTeam": "هابويل بير شيفا",
         "awayLogo": "https://img.btolat.com/teamslogo/11650.png?v=845",
-        "scoreOrTime": "0 - 1",
-        "status": "33'",
+        "scoreOrTime": "1 - 1",
+        "status": "'",
         "channels": [],
         "commentator": "",
         "source": "Btolat",
         "scorers": {
-            "home": [],
+            "home": [
+                [
+                    "كريستيان نواتشوكو",
+                    "38'"
+                ]
+            ],
             "away": [
                 [
                     "إيغور زلاتانوفيتش",
@@ -125,8 +159,8 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/4281751838036.png",
         "awayTeam": "بئر السبع",
         "awayLogo": "https://imgs.ysscores.com/teams/128/511751837961.png",
-        "scoreOrTime": "0-1",
-        "status": "جارية",
+        "scoreOrTime": "1-1",
+        "status": "متوقفة",
         "channels": [],
         "commentator": "",
         "source": "YSscores"
@@ -287,42 +321,13 @@
         "source": "Btolat"
     },
     {
-        "league": "الدوري السعودي",
-        "homeTeam": "أبها",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/9091690299913.png",
-        "awayTeam": "الخليج",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/7451690299071.png",
-        "scoreOrTime": "1 - 1",
-        "status": "استراحة",
-        "channels": [
-            "تطبيق ثمانية"
-        ],
-        "commentator": "",
-        "source": "Yallakora + FilGoal + Btolat + YSscores",
-        "_match_id": "375131",
-        "scorers": {
-            "home": [
-                [
-                    "كشيم القحطاني",
-                    "24'"
-                ]
-            ],
-            "away": [
-                [
-                    "جوشوا كينج",
-                    "17'"
-                ]
-            ]
-        }
-    },
-    {
         "league": "الدوري العراقي",
         "homeTeam": "الجولان",
         "homeLogo": "https://imgs.ysscores.com/teams/128/7291760739383.png",
         "awayTeam": "الشرطة",
         "awayLogo": "https://imgs.ysscores.com/teams/128/8281729976264.png",
         "scoreOrTime": "0 - 1",
-        "status": "73'",
+        "status": "انتهت",
         "channels": [
             "العراقية الرياضية"
         ],
@@ -376,7 +381,7 @@
         "awayTeam": "أربيل",
         "awayLogo": "https://imgs.ysscores.com/teams/128/2581695657262.png",
         "scoreOrTime": "0 - 1",
-        "status": "87'",
+        "status": "انتهت",
         "channels": [
             "العراقية السريانية"
         ],
@@ -399,14 +404,18 @@
         "homeLogo": "https://imgs.ysscores.com/teams/128/17854185482743.png",
         "awayTeam": "ديالى",
         "awayLogo": "https://imgs.ysscores.com/teams/128/7671726654821.png",
-        "scoreOrTime": "2 - 1",
-        "status": "73'",
+        "scoreOrTime": "2 - 2",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "FilGoal + Btolat + YSscores",
         "_match_id": "376619",
         "scorers": {
             "home": [
+                [
+                    "شيركو كريم",
+                    "63'"
+                ],
                 [
                     "سيفو مبيول",
                     "40'"
