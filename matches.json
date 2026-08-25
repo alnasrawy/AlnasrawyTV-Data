@@ -73,7 +73,9 @@
         "awayLogo": "https://img.btolat.com/teamslogo/13340.png?v=733",
         "scoreOrTime": "10:00 م",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "BEIN SPORTS 2"
+        ],
         "commentator": "",
         "source": "Btolat"
     },
@@ -149,7 +151,7 @@
         "scoreOrTime": "22:00",
         "status": "لم تبدأ",
         "channels": [
-            "بى ان سبورت 3 HD"
+            "BEIN SPORTS 3"
         ],
         "commentator": "",
         "source": "Yallakora + FilGoal + Btolat + YSscores",
