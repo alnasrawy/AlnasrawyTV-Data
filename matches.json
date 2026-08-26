@@ -106,32 +106,32 @@
         }
     },
     {
-        "homeTeam": "الفيصلي",
-        "awayTeam": "الفتح",
+        "homeTeam": "الدرعية",
+        "awayTeam": "الخلود",
         "league": "الدوري السعودي",
-        "scoreOrTime": "",
-        "status": "انتهت",
+        "scoreOrTime": "—",
+        "status": "مباشر",
         "channels": [],
         "commentator": "",
         "source": "YSscores",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/5731692998559.png",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/4171690300306.png",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/17835195657588.png",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/5501757530062.png",
         "scorers": {
             "home": [],
             "away": []
         }
     },
     {
-        "homeTeam": "الدرعية",
-        "awayTeam": "الخلود",
+        "homeTeam": "الفيصلي",
+        "awayTeam": "الفتح",
         "league": "الدوري السعودي",
-        "scoreOrTime": "09:00 م",
+        "scoreOrTime": "1-1",
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
         "source": "YSscores",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/17835195657588.png",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/5501757530062.png",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/5731692998559.png",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/4171690300306.png",
         "scorers": {
             "home": [],
             "away": []
@@ -156,45 +156,11 @@
         }
     },
     {
-        "homeTeam": "النفط",
-        "awayTeam": "دهوك",
-        "league": "الدوري العراقي",
-        "scoreOrTime": "—",
-        "status": "مباشر",
-        "channels": [
-            "Iraqia Syriac"
-        ],
-        "commentator": "حيدر كاظم",
-        "source": "YSscores",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/7661722514776.png",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/7641716672160.png",
-        "scorers": {
-            "home": [],
-            "away": []
-        }
-    },
-    {
-        "homeTeam": "الكهرباء",
-        "awayTeam": "الكرمة",
-        "league": "الدوري العراقي",
-        "scoreOrTime": "—",
-        "status": "مباشر",
-        "channels": [],
-        "commentator": "",
-        "source": "YSscores",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/8081715870157.png",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/2331726654564.png",
-        "scorers": {
-            "home": [],
-            "away": []
-        }
-    },
-    {
         "homeTeam": "الموصل",
         "awayTeam": "كربلاء",
         "league": "الدوري العراقي",
-        "scoreOrTime": "09:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "—",
+        "status": "مباشر",
         "channels": [
             "Iraqia ENT"
         ],
@@ -211,8 +177,8 @@
         "homeTeam": "الميناء",
         "awayTeam": "الغراف",
         "league": "الدوري العراقي",
-        "scoreOrTime": "09:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "—",
+        "status": "مباشر",
         "channels": [
             "Iraqia Syriac"
         ],
@@ -226,11 +192,45 @@
         }
     },
     {
+        "homeTeam": "النفط",
+        "awayTeam": "دهوك",
+        "league": "الدوري العراقي",
+        "scoreOrTime": "1-1",
+        "status": "لم تبدأ",
+        "channels": [
+            "Iraqia Syriac"
+        ],
+        "commentator": "حيدر كاظم",
+        "source": "YSscores",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/7661722514776.png",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/7641716672160.png",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
+    },
+    {
+        "homeTeam": "الكهرباء",
+        "awayTeam": "الكرمة",
+        "league": "الدوري العراقي",
+        "scoreOrTime": "1-1",
+        "status": "لم تبدأ",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/8081715870157.png",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/2331726654564.png",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
+    },
+    {
         "homeTeam": "البنك الأهلي",
         "awayTeam": "الزمالك",
         "league": "الدوري المصري",
-        "scoreOrTime": "08:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "—",
+        "status": "مباشر",
         "channels": [
             "ON Sport"
         ],
@@ -265,8 +265,8 @@
         "homeTeam": "الأهلي",
         "awayTeam": "أوكلاند",
         "league": "كأس القارات للأندية",
-        "scoreOrTime": "09:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "—",
+        "status": "مباشر",
         "channels": [],
         "commentator": "",
         "source": "YSscores",
@@ -278,29 +278,11 @@
         }
     },
     {
-        "homeTeam": "الشباب",
-        "awayTeam": "الجهراء",
-        "league": "الدوري الكويتي",
-        "scoreOrTime": "",
-        "status": "انتهت",
-        "channels": [
-            "KTV Sport"
-        ],
-        "commentator": "علي خلف الشمري",
-        "source": "YSscores",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/4011756846304.png",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/4191756846035.png",
-        "scorers": {
-            "home": [],
-            "away": []
-        }
-    },
-    {
         "homeTeam": "السالمية",
         "awayTeam": "النصر",
         "league": "الدوري الكويتي",
-        "scoreOrTime": "09:00 م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "—",
+        "status": "مباشر",
         "channels": [
             "KTV Sport"
         ],
@@ -308,6 +290,24 @@
         "source": "YSscores",
         "homeLogo": "https://imgs.ysscores.com/teams/128/9401723156497.png",
         "awayLogo": "https://imgs.ysscores.com/teams/128/9001723156578.png",
+        "scorers": {
+            "home": [],
+            "away": []
+        }
+    },
+    {
+        "homeTeam": "الشباب",
+        "awayTeam": "الجهراء",
+        "league": "الدوري الكويتي",
+        "scoreOrTime": "3-2",
+        "status": "لم تبدأ",
+        "channels": [
+            "KTV Sport"
+        ],
+        "commentator": "علي خلف الشمري",
+        "source": "YSscores",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/4011756846304.png",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/4191756846035.png",
         "scorers": {
             "home": [],
             "away": []
