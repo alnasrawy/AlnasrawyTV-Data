@@ -1058,30 +1058,23 @@ class GhostScraper:
                     home_logo = home_logo.replace('/teams/64/', '/teams/128/')
                 if away_logo:
                     away_logo = away_logo.replace('/teams/64/', '/teams/128/')
-                status_div = match_a.select_one('.result-status-text')
-                status_text = status_div.get_text(strip=True) if status_div else ''
+                match_date_el = match_a.select_one('.match-date')
+                match_date_text = match_date_el.get_text(strip=True) if match_date_el else ''
                 classes = match_a.get('class', [])
                 is_live = any('live-match' in c for c in classes)
                 is_stopped = any('stopped-match' in c for c in classes)
-                home_score = match_a.select_one('.first-team-result')
-                away_score = match_a.select_one('.second-team-result')
-                hs = home_score.get_text(strip=True) if home_score else ''
-                aws = away_score.get_text(strip=True) if away_score else ''
-                if is_live and hs and aws:
-                    status = f"مباشر {status_text}" if status_text else "مباشر"
-                    score = f"{hs}-{aws}"
-                elif is_stopped or (hs and aws and status_text in ["انتهت", "نهاية", ""]):
-                    status = "انتهت"
-                    score = f"{hs}-{aws}"
-                elif hs and aws:
-                    status = "انتهت"
-                    score = f"{hs}-{aws}"
-                elif ':' in (status_text or ''):
+                if ':' in match_date_text and '-' not in match_date_text:
                     status = "لم تبدأ"
-                    score = status_text
+                    score = match_date_text
+                elif is_live:
+                    status = "مباشر"
+                    score = match_date_text or "—"
+                elif is_stopped or 'انتهت' in match_date_text:
+                    status = "انتهت"
+                    score = match_date_text
                 else:
-                    status = status_text or "لم تبدأ"
-                    score = status_text or "—"
+                    status = "لم تبدأ"
+                    score = match_date_text or "—"
                 detail_url = match_a.get('href', '').strip()
                 today = datetime.now(TZ).strftime('%Y-%m-%d')
                 m = {
