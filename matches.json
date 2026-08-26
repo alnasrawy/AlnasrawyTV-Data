@@ -3,7 +3,7 @@
         "homeTeam": "أيك أثينا",
         "awayTeam": "ليفسكي",
         "league": "دوري أبطال أوروبا",
-        "scoreOrTime": "—",
+        "scoreOrTime": "10:00 م",
         "status": "لم تبدأ",
         "channels": [
             "Bein Sport 4"
@@ -21,7 +21,7 @@
         "homeTeam": "فايكنج",
         "awayTeam": "دينامو زغرب",
         "league": "دوري أبطال أوروبا",
-        "scoreOrTime": "—",
+        "scoreOrTime": "10:00 م",
         "status": "لم تبدأ",
         "channels": [
             "Bein Sport 3"
@@ -39,7 +39,7 @@
         "homeTeam": "سيليي",
         "awayTeam": "براتيسلافا",
         "league": "دوري أبطال أوروبا",
-        "scoreOrTime": "—",
+        "scoreOrTime": "10:00 م",
         "status": "لم تبدأ",
         "channels": [
             "Bein Sport 5"
@@ -57,7 +57,7 @@
         "homeTeam": "ليون",
         "awayTeam": "فنربخشة",
         "league": "دوري أبطال أوروبا",
-        "scoreOrTime": "—",
+        "scoreOrTime": "10:00 م",
         "status": "لم تبدأ",
         "channels": [
             "Bein Sport 2"
@@ -75,7 +75,7 @@
         "homeTeam": "رابيد فيينا",
         "awayTeam": "هارتس",
         "league": "دوري المؤتمر الأوروبي",
-        "scoreOrTime": "—",
+        "scoreOrTime": "07:45 م",
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
@@ -91,7 +91,7 @@
         "homeTeam": "ريال مدريد",
         "awayTeam": "ريال سوسيداد",
         "league": "الدوري الإسباني",
-        "scoreOrTime": "—",
+        "scoreOrTime": "10:00 م",
         "status": "لم تبدأ",
         "channels": [
             "beIN Sport 1"
@@ -109,7 +109,7 @@
         "homeTeam": "الفيصلي",
         "awayTeam": "الفتح",
         "league": "الدوري السعودي",
-        "scoreOrTime": "—",
+        "scoreOrTime": "07:00 م",
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
@@ -125,7 +125,7 @@
         "homeTeam": "الدرعية",
         "awayTeam": "الخلود",
         "league": "الدوري السعودي",
-        "scoreOrTime": "—",
+        "scoreOrTime": "09:00 م",
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
@@ -141,7 +141,7 @@
         "homeTeam": "الطلبة",
         "awayTeam": "نوروز",
         "league": "الدوري العراقي",
-        "scoreOrTime": "—",
+        "scoreOrTime": "09:45 م",
         "status": "لم تبدأ",
         "channels": [
             "Iraqia Sport"
@@ -159,7 +159,7 @@
         "homeTeam": "النفط",
         "awayTeam": "دهوك",
         "league": "الدوري العراقي",
-        "scoreOrTime": "—",
+        "scoreOrTime": "06:30 م",
         "status": "لم تبدأ",
         "channels": [
             "Iraqia Syriac"
@@ -177,7 +177,7 @@
         "homeTeam": "الكهرباء",
         "awayTeam": "الكرمة",
         "league": "الدوري العراقي",
-        "scoreOrTime": "—",
+        "scoreOrTime": "06:45 م",
         "status": "لم تبدأ",
         "channels": [
             "Iraqia Sport"
@@ -195,7 +195,7 @@
         "homeTeam": "الموصل",
         "awayTeam": "كربلاء",
         "league": "الدوري العراقي",
-        "scoreOrTime": "—",
+        "scoreOrTime": "09:00 م",
         "status": "لم تبدأ",
         "channels": [
             "Iraqia ENT"
@@ -213,7 +213,7 @@
         "homeTeam": "الميناء",
         "awayTeam": "الغراف",
         "league": "الدوري العراقي",
-        "scoreOrTime": "—",
+        "scoreOrTime": "09:00 م",
         "status": "لم تبدأ",
         "channels": [
             "Iraqia Syriac"
@@ -231,7 +231,7 @@
         "homeTeam": "البنك الأهلي",
         "awayTeam": "الزمالك",
         "league": "الدوري المصري",
-        "scoreOrTime": "—",
+        "scoreOrTime": "08:00 م",
         "status": "لم تبدأ",
         "channels": [
             "ON Sport"
@@ -249,7 +249,7 @@
         "homeTeam": "توتنهام",
         "awayTeam": "تشارلتون أثلتيك",
         "league": "كأس الرابطة الإنجليزية",
-        "scoreOrTime": "—",
+        "scoreOrTime": "09:45 م",
         "status": "لم تبدأ",
         "channels": [
             "beIN Sports 8"
@@ -267,7 +267,7 @@
         "homeTeam": "الأهلي",
         "awayTeam": "أوكلاند",
         "league": "كأس القارات للأندية",
-        "scoreOrTime": "—",
+        "scoreOrTime": "09:00 م",
         "status": "لم تبدأ",
         "channels": [],
         "commentator": "",
@@ -283,7 +283,7 @@
         "homeTeam": "الشباب",
         "awayTeam": "الجهراء",
         "league": "الدوري الكويتي",
-        "scoreOrTime": "—",
+        "scoreOrTime": "06:45 م",
         "status": "لم تبدأ",
         "channels": [
             "KTV Sport"
@@ -301,7 +301,7 @@
         "homeTeam": "السالمية",
         "awayTeam": "النصر",
         "league": "الدوري الكويتي",
-        "scoreOrTime": "—",
+        "scoreOrTime": "09:00 م",
         "status": "لم تبدأ",
         "channels": [
             "KTV Sport"
