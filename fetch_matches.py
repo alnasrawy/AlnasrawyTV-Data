@@ -516,6 +516,12 @@ def _team_color(name):
     h = int(hashlib.md5(name.encode("utf-8")).hexdigest(), 16)
     return _TEAM_PALETTE[h % len(_TEAM_PALETTE)]
 
+_CHANNEL_APP_KEYWORDS = ['تطبيق', 'thmanyah app', 'thmanyah ']
+
+def _is_app_channel(name):
+    n = str(name).lower().strip()
+    return any(k in n for k in _CHANNEL_APP_KEYWORDS)
+
 def _norm_key(s):
     s = re.sub(r'[\s\-_ـ]+', '', s or '')
     return s.replace('أ', 'ا').replace('إ', 'ا').replace('آ', 'ا').replace('ة', 'ه').replace('ى', 'ي').lower()
@@ -1152,7 +1158,7 @@ class GhostScraper:
                 continue
         channels = []
         commentators = []
-        for item in soup.select('.match-info-item:not(.sub)'):
+        for item in soup.select('.match-info-item'):
             title_el = item.select_one('.title')
             title_text = title_el.get_text(strip=True) if title_el else ''
             if 'البطولة' in title_text:
@@ -1173,33 +1179,51 @@ class GhostScraper:
                     co_name = co_el.get_text(strip=True)
                     if co_name and co_name not in commentators:
                         commentators.append(co_name)
+            else:
+                co_el = item.select_one('.content a[href*="/commentator/"]')
+                if co_el:
+                    co_name = co_el.get_text(strip=True)
+                    if co_name and co_name not in commentators:
+                        commentators.append(co_name)
         en_url = detail_url.replace('/ar/', '/en/')
         if en_url != detail_url:
             en_html = self.fetch(en_url, f"YSscores EN (detail {match_id})")
             if en_html:
                 en_soup = BeautifulSoup(en_html, 'html.parser')
                 seen_keys = set()
-                for item in en_soup.select('.match-info-item:not(.sub)'):
-                    title_el = item.select_one('.title')
-                    title_text = title_el.get_text(strip=True) if title_el else ''
-                    if 'Channel' in title_text:
-                        ch_el = item.select_one('.content a.channel_info')
-                        if ch_el:
-                            ch_name = ch_el.get_text(strip=True)
-                            k = ch_name.lower().replace(' ', '')
+                for item in en_soup.select('.match-info-item'):
+                    ch_el = item.select_one('.title a.channel_info')
+                    if ch_el:
+                        ch_name = ch_el.get_text(strip=True)
+                        k = ch_name.lower().replace(' ', '').replace('-', '')
+                        if ch_name and k not in seen_keys:
+                            channels.append(ch_name)
+                            seen_keys.add(k)
+                    else:
+                        title_el = item.select_one('.title')
+                        title_text = title_el.get_text(strip=True) if title_el else ''
+                        if 'Channel' in title_text:
+                            ch_el2 = item.select_one('.content a.channel_info')
+                            ch_name = ch_el2.get_text(strip=True) if ch_el2 else ''
+                            if not ch_name:
+                                ch_el2 = item.select_one('.content')
+                                ch_name = ch_el2.get_text(strip=True) if ch_el2 else ''
+                            k = ch_name.lower().replace(' ', '').replace('-', '')
                             if ch_name and k not in seen_keys:
                                 channels.append(ch_name)
                                 seen_keys.add(k)
         if not channels:
-            for item in soup.select('.match-info-item:not(.sub)'):
-                title_el = item.select_one('.title')
-                title_text = title_el.get_text(strip=True) if title_el else ''
-                if 'القناة' in title_text:
-                    ch_el = item.select_one('.content a.channel_info')
-                    if ch_el:
-                        ch_name = ch_el.get_text(strip=True)
-                        if ch_name and ch_name not in channels:
-                            channels.append(ch_name)
+            subs = soup.select('.match-info-item.sub')
+            seen_keys = set()
+            for item in subs:
+                ch_el = item.select_one('.title a.channel_info')
+                if ch_el:
+                    ch_name = ch_el.get_text(strip=True)
+                    k = ch_name.lower().replace(' ', '').replace('-', '')
+                    if ch_name and k not in seen_keys:
+                        channels.append(ch_name)
+                        seen_keys.add(k)
+        channels = [c for c in channels if not _is_app_channel(c)]
         if channels:
             result['channels'] = channels
         if commentators:
