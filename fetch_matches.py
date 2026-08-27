@@ -1016,6 +1016,7 @@ def filter_and_rank(matches_list):
             m['team_rank'] = 0 if is_vip_team else 1
             filtered.append(m)
     filtered.sort(key=lambda x: (
+        x.get('_order', 0),
         0 if "دقيقة" in x['status'] or "شوط" in x['status'] else 1,
         x['league_rank'],
         x['team_rank']
@@ -1074,6 +1075,7 @@ class GhostScraper:
         for champ_div in soup.select('div.matches-wrapper'):
             league = champ_div.get('champ_title', '').strip()
             for match_a in champ_div.select('a.ajax-match-item'):
+                _order = len(matches)
                 match_id = match_a.get('match_id', '')
                 home_name = match_a.get('home_name', '').strip()
                 away_name = match_a.get('away_name', '').strip()
@@ -1116,6 +1118,7 @@ class GhostScraper:
                     'homeLogo': home_logo if home_logo.startswith('http') else '',
                     'awayLogo': away_logo if away_logo.startswith('http') else '',
                     'scorers': {"home": [], "away": []},
+                    '_order': _order,
                     '_ysscores_detail': detail_url,
                     '_ysscores_id': match_id,
                     '_match_date': today,
@@ -1142,6 +1145,8 @@ class GhostScraper:
                     loc = data.get('location', {})
                     if loc.get('name'):
                         result['stadium'] = loc['name']
+                    if data.get('startDate'):
+                        result['_startDate'] = data['startDate']
                     break
             except Exception:
                 continue
@@ -1150,7 +1155,19 @@ class GhostScraper:
         for item in soup.select('.match-info-item:not(.sub)'):
             title_el = item.select_one('.title')
             title_text = title_el.get_text(strip=True) if title_el else ''
-            if 'المعلق' in title_text:
+            if 'البطولة' in title_text:
+                champ_el = item.select_one('.content a[href*="/championship/"]')
+                if champ_el:
+                    result['_rawLeague'] = champ_el.get_text(strip=True)
+            elif 'الجولة' in title_text:
+                round_el = item.select_one('.content')
+                if round_el:
+                    result['round'] = round_el.get_text(strip=True)
+            elif 'ملعب' in title_text and 'stadium' not in result:
+                st_el = item.select_one('.content')
+                if st_el:
+                    result['stadium'] = st_el.get_text(strip=True)
+            elif 'المعلق' in title_text:
                 co_el = item.select_one('.content a[href*="/commentator/"]')
                 if co_el:
                     co_name = co_el.get_text(strip=True)
@@ -1187,6 +1204,32 @@ class GhostScraper:
             result['channels'] = channels
         if commentators:
             result['commentator'] = ' / '.join(commentators)
+
+        scorers = {"home": [], "away": []}
+        for ev in soup.select('.match-event-item'):
+            cls = ' '.join(ev.get('class', []))
+            if 'goal' not in cls:
+                continue
+            minute_txt = ''
+            for txt_el in ev.find_all(string=True, recursive=True):
+                t = txt_el.strip()
+                if t and (t.endswith("'") or t.endswith("’")):
+                    minute_txt = t
+                    break
+            minute = minute_txt.strip().rstrip("'’")
+            names = []
+            for nm in ev.find_all(class_=lambda c: c and ('player' in ' '.join(c) or 'team_name' in ' '.join(c))):
+                t = nm.get_text(strip=True)
+                if t and t not in ('Offside', 'Penalty'):
+                    names.append(t)
+            if not names:
+                continue
+            if 'for-team-b' in cls:
+                scorers['away'].append((names[0], minute))
+            else:
+                scorers['home'].append((names[0], minute))
+        if scorers['home'] or scorers['away']:
+            result['scorers'] = scorers
         return result
 
     def _enrich_ysscores_details(self, matches):
@@ -1207,6 +1250,14 @@ class GhostScraper:
                 m['channels'] = detail['channels']
             if detail.get('commentator') and not m.get('commentator'):
                 m['commentator'] = detail['commentator']
+            if detail.get('round') and not m.get('round'):
+                m['round'] = detail['round']
+            if detail.get('stadium') and not m.get('stadium'):
+                m['stadium'] = detail['stadium']
+            if detail.get('scorers'):
+                m['scorers'] = detail['scorers']
+            if detail.get('_rawLeague') and not m.get('_rawLeague'):
+                m['_rawLeague'] = detail['_rawLeague']
             time.sleep(_rnd.uniform(1.0, 2.0))
 
 
@@ -1228,6 +1279,9 @@ def execute_full_cycle():
         m.pop('_ysscores_id', None)
         m.pop('_ysscores_detail', None)
         m.pop('_match_date', None)
+        m.pop('_order', None)
+        m.pop('_startDate', None)
+        m.pop('_rawLeague', None)
 
     print("\n-> VIP Matches Extracted & Standardized:")
     if not final_list:
