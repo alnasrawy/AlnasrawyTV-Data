@@ -46,7 +46,9 @@
         "league": "الدوري السعودي",
         "scoreOrTime": "09:00م",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "Thmanyah 2"
+        ],
         "commentator": "راشد الدوسري",
         "source": "YSscores",
         "homeLogo": "https://imgs.ysscores.com/teams/128/7451690299071.png",
@@ -64,7 +66,9 @@
         "league": "الدوري السعودي",
         "scoreOrTime": "09:00م",
         "status": "لم تبدأ",
-        "channels": [],
+        "channels": [
+            "Thmanyah 1"
+        ],
         "commentator": "فهد العتيبي",
         "source": "YSscores",
         "homeLogo": "https://imgs.ysscores.com/teams/128/1371747772080.png",

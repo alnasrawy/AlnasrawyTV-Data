@@ -516,7 +516,7 @@ def _team_color(name):
     h = int(hashlib.md5(name.encode("utf-8")).hexdigest(), 16)
     return _TEAM_PALETTE[h % len(_TEAM_PALETTE)]
 
-_CHANNEL_APP_KEYWORDS = ['تطبيق', 'thmanyah app', 'thmanyah ']
+_CHANNEL_APP_KEYWORDS = ['تطبيق', 'thmanyah app']
 
 def _is_app_channel(name):
     n = str(name).lower().strip()
