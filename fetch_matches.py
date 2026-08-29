@@ -52,17 +52,6 @@ LEAGUES_MAPPING = {
     "الدوري القطري": ["قطري", "القطري", "نجوم قطر", "إكسبو"],
 }
 
-GENERAL_VIP_KEYWORDS = ["سوبر", "كأس الملك", "كأس الأمير", "كأس الرابطة", "كأس الاتحاد", "تصفيات", "كأس خادم الحرمين", "كأس مصر"]
-
-VIP_TEAMS = [
-    "ريال مدريد", "برشلونة", "أتلتيكو", "بايرن", "باريس", "مانشستر", "ليفربول", "أرسنال", "تشيلسي", "توتنهام", "يوفنتوس", "ميلان", "إنتر", "روما",
-    "الهلال", "النصر", "الاتحاد", "الأهلي", "الشباب", "الزوراء", "القوة الجوية", "الشرطة", "الطلبة", "الزمالك", "الترجي", "الوداد", "الرجاء"
-]
-
-BLOCKLIST = ["شباب", "رديف", "u23", "u19", "درجة ثانية", "درجة ثالثة", "هواة", "سيدات"]
-
-TOP_LEAGUE_TEAMS = {}
-
 def _load_config(path=None):
     if path is None:
         path = os.path.join(BASE_DIR, "config.json")
@@ -76,15 +65,6 @@ _CFG = _load_config()
 _cfg_vip = _CFG.get("vip", {}) or {}
 if _cfg_vip.get("leagues"):
     LEAGUES_MAPPING = _cfg_vip["leagues"]
-if _cfg_vip.get("general_keywords"):
-    GENERAL_VIP_KEYWORDS = _cfg_vip["general_keywords"]
-if _cfg_vip.get("teams"):
-    VIP_TEAMS = _cfg_vip["teams"]
-if _cfg_vip.get("blocklist"):
-    BLOCKLIST = _cfg_vip["blocklist"]
-if _cfg_vip.get("top_league_teams"):
-    for k, v in _cfg_vip["top_league_teams"].items():
-        TOP_LEAGUE_TEAMS[k] = v
 
 TELEGRAM = _CFG.get("telegram", {}) or {}
 GLOBAL_DELAY = _CFG.get("global_delay", [1.0, 2.0]) or [1.0, 2.0]
@@ -897,12 +877,14 @@ def _run_telegram_notifications(final_list, state):
                 try:
                     hm = time_str.replace('م', '').replace('ص', '').strip()
                     start_dt = datetime.combine(now.date(), datetime.strptime(hm, '%H:%M').time()).replace(tzinfo=TZ)
-                    window = timedelta(minutes=TELEGRAM.get("start_alert_minutes", 15))
+                    window = timedelta(minutes=TELEGRAM.get("start_alert_minutes", 10))
                     if now >= start_dt - window and now < start_dt:
+                        cap_comm = f"🎙️ {m['commentator']}" if m.get('commentator') else ""
                         caption = (f"🔔 تبدأ قريباً\n\n"
                                    f"🏆 {m['league']}\n"
                                    f"⚽ {m['homeTeam']} 🆚 {m['awayTeam']}\n"
-                                   f"⏰ {m['scoreOrTime']}\n\n"
+                                   f"⏰ {m['scoreOrTime']}\n"
+                                   f"{cap_comm}\n\n"
                                    f"{_format_channels(m['channels'])}")
                         card = compose_match_card(m, 'start')
                         ok = send_telegram_photo(card, caption) if card else False
@@ -940,114 +922,25 @@ def _run_telegram_notifications(final_list, state):
         print(f"    -> 📨 Telegram notifications sent: {len(sent)}")
 
 
-_CUP_QUALIFIER_KEYWORDS = ['كأس', 'تصفيات', 'الرابطة', 'كأس الاتحاد', 'كأس مصر', 'كأس إيطاليا', 'كأس إنجلترا', 'كأس إسبانيا', 'كأس ألمانيا', 'كأس فرنسا']
-
-_QUALIFIER_LEAGUES = ['الأدوار الإقصائية', 'التصفيات', 'ال Compile', 'الأ预选']
-_EUROPEAN_CUP_LEAGUES = ['دوري أبطال أوروبا', 'الدوري الأوروبي', 'دوري المؤتمر الأوروبي']
-
-_TOP_ALWAYS_SHOW_LEAGUES = [
-    "الدوري الإنجليزي", "الدوري الإسباني", "الدوري الإيطالي", "الدوري الألماني", "الدوري الفرنسي",
-]
-
-def _is_cup_or_qualifier(raw_league):
-    return any(kw in raw_league for kw in _CUP_QUALIFIER_KEYWORDS)
-
-def _is_qualifier(raw_league):
-    return any(kw in raw_league for kw in _QUALIFIER_LEAGUES)
-
-def _is_top_league_match(m, official_name):
-    wl = TOP_LEAGUE_TEAMS.get(official_name)
-    if not wl:
-        return True
-    ht = m['homeTeam']
-    at = m['awayTeam']
-    return any(t in ht for t in wl) and any(t in at for t in wl)
-
-def filter_and_rank(matches_list):
+def prepare_all_matches(matches_list):
+    """Keep every match from the source — no filtering or restrictions."""
     today = datetime.now(TZ).strftime('%Y-%m-%d')
-    filtered = []
+    prepared = []
     for m in matches_list:
-        raw_league = m['league']
         m_date = m.get('_match_date', '')
         if m_date and m_date != today:
             continue
-        if any(b in raw_league for b in BLOCKLIST):
-            continue
+        # Normalize the league name to a clean/standard label when we can.
+        raw_league = m['league'] or ''
         std_league = raw_league
-        is_vip_league = False
-        league_rank = 999
-        is_cup = _is_cup_or_qualifier(raw_league)
-        is_qualifier = _is_qualifier(raw_league)
-        if is_cup:
-            is_vip_league = True
-            league_rank = 50
-        elif any(v in raw_league for v in GENERAL_VIP_KEYWORDS):
-            is_vip_league = True
-            league_rank = 50
-        else:
-            for idx, (official_name, keywords) in enumerate(LEAGUES_MAPPING.items()):
-                if any(kw in raw_league for kw in keywords):
-                    std_league = official_name
-                    is_vip_league = True
-                    league_rank = idx
-                    break
-        if is_vip_league and not is_cup and not is_qualifier and not _is_top_league_match(m, std_league):
-            continue
-        is_vip_team = False
-        home_norm = _norm_key(m['homeTeam'])
-        away_norm = _norm_key(m['awayTeam'])
-        for t in VIP_TEAMS:
-            tn = _norm_key(t)
-            for tn_check in (home_norm, away_norm):
-                idx = tn_check.find(tn)
-                if idx < 0:
-                    continue
-                before_ok = (idx == 0) or not tn_check[idx-1].isalpha()
-                after_pos = idx + len(tn)
-                after_ok = (after_pos >= len(tn_check)) or not tn_check[after_pos].isalpha()
-                if before_ok and after_ok:
-                    is_vip_team = True
-                    break
-            if is_vip_team:
+        for official_name, keywords in LEAGUES_MAPPING.items():
+            if any(kw in raw_league for kw in keywords):
+                std_league = official_name
                 break
-        is_european_cup = any(ec in raw_league for ec in _EUROPEAN_CUP_LEAGUES)
-        if (is_cup or is_qualifier or is_european_cup) and not is_vip_team:
-            continue
-        is_top_always = std_league in _TOP_ALWAYS_SHOW_LEAGUES
-        if not is_vip_team and not is_top_always:
-            continue
-        if is_vip_league or is_vip_team:
-            m['league'] = std_league
-            m['league_rank'] = league_rank if is_vip_league else 100
-            m['team_rank'] = 0 if is_vip_team else 1
-            filtered.append(m)
-    filtered.sort(key=lambda x: (
-        x.get('_order', 0),
-        0 if "دقيقة" in x['status'] or "شوط" in x['status'] else 1,
-        x['league_rank'],
-        x['team_rank']
-    ))
-    for m in filtered:
-        m.pop('league_rank', None)
-        m.pop('team_rank', None)
-        m.pop('priority', None)
-    return filtered
-
-def extract_first_match_time(matches_list):
-    earliest_time = None
-    for m in matches_list:
-        if m.get('status') == "انتهت":
-            continue
-        score_val = m.get('scoreOrTime', '')
-        if ':' in score_val and '-' not in score_val:
-            try:
-                time_str = score_val.strip().replace('م', '').replace('ص', '').strip()
-                match_time = datetime.strptime(time_str, '%H:%M').time()
-                if earliest_time is None or match_time < earliest_time:
-                    earliest_time = match_time
-            except Exception:
-                continue
-    return earliest_time
+        m['league'] = std_league
+        prepared.append(m)
+    prepared.sort(key=lambda x: x.get('_order', 0))
+    return prepared
 
 
 class GhostScraper:
@@ -1297,7 +1190,7 @@ def execute_full_cycle():
 
     print(f"\n-> [Debug] Total Raw Matches Extracted: {len(yss)}")
 
-    final_list = filter_and_rank(yss)
+    final_list = prepare_all_matches(yss)
 
     for m in final_list:
         m.pop('_ysscores_id', None)
@@ -1307,9 +1200,9 @@ def execute_full_cycle():
         m.pop('_startDate', None)
         m.pop('_rawLeague', None)
 
-    print("\n-> VIP Matches Extracted & Standardized:")
+    print("\n-> All Matches Extracted:")
     if not final_list:
-        print("   [No VIP matches found!]")
+        print("   [No matches found!]")
     else:
         for m in final_list:
             print(f"   ✅ [{m['league']}] {m['homeTeam']} {m['scoreOrTime']} {m['awayTeam']} | {m['status']} | {', '.join(m['channels'])}")
@@ -1317,7 +1210,7 @@ def execute_full_cycle():
     with open(MATCHES_FILE, "w", encoding="utf-8") as f:
         json.dump(final_list, f, ensure_ascii=False, indent=4)
 
-    print(f"\n-> [OK] Smart-Filtered & Saved {len(final_list)} matches to matches.json.")
+    print(f"\n-> [OK] Saved {len(final_list)} matches to matches.json.")
 
     state = _load_state()
     _run_telegram_notifications(final_list, state)
@@ -1329,24 +1222,6 @@ def execute_full_cycle():
 if __name__ == "__main__":
     try:
         print("-> GitHub Actions Cycle Triggered...")
-        now = datetime.now(TZ)
-
-        is_midnight_sync = (now.hour == 0 or now.hour == 1 or not os.path.exists(MATCHES_FILE))
-
-        if not is_midnight_sync:
-            with open(MATCHES_FILE, "r", encoding="utf-8") as f:
-                try:
-                    saved_matches = json.load(f)
-                    first_time = extract_first_match_time(saved_matches)
-                    if first_time:
-                        match_dt = datetime.combine(now.date(), first_time).replace(tzinfo=TZ)
-                        wake_dt = match_dt - timedelta(minutes=15)
-                        if now < wake_dt:
-                            print(f"-> 🌙 أقرب مباراة ستكون الساعة {first_time}. الوقت لا يزال مبكراً.")
-                            print(f"-> 💤 السكربت سيتوقف فوراً لتوفير رصيد GitHub.")
-                            sys.exit(0)
-                except Exception:
-                    pass
 
         execute_full_cycle()
 

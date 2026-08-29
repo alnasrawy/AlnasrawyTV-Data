@@ -466,7 +466,7 @@
   "telegram": {
     "enabled": true,
     "channel": "@AlnasrawyTV",
-    "start_alert_minutes": 15,
+    "start_alert_minutes": 10,
     "send_start_alerts": true,
     "send_end_summary": true
   }
