@@ -3,8 +3,8 @@
         "homeTeam": "بورنموث",
         "awayTeam": "إيفرتون",
         "league": "الدوري الإنجليزي",
-        "scoreOrTime": "—",
-        "status": "مباشر",
+        "scoreOrTime": "1-1",
+        "status": "لم تبدأ",
         "channels": [
             "beIN Sport 1"
         ],
@@ -23,8 +23,8 @@
         "homeTeam": "كوفنتري",
         "awayTeam": "هال سيتي",
         "league": "الدوري الإنجليزي",
-        "scoreOrTime": "—",
-        "status": "مباشر",
+        "scoreOrTime": "0-1",
+        "status": "لم تبدأ",
         "channels": [
             "Bein Sport 2"
         ],
@@ -43,7 +43,7 @@
         "homeTeam": "توتنهام",
         "awayTeam": "نيوكاسل",
         "league": "الدوري الإنجليزي",
-        "scoreOrTime": "07:30م",
+        "scoreOrTime": "0-2",
         "status": "لم تبدأ",
         "channels": [
             "beIN Sport 1"
@@ -60,31 +60,11 @@
         "stadium": "استاد توتنهام هوتسبير"
     },
     {
-        "homeTeam": "ليفانتي",
-        "awayTeam": "ريال بيتيس",
-        "league": "الدوري الإسباني",
-        "scoreOrTime": "—",
-        "status": "مباشر",
-        "channels": [
-            "Bein Sport 5"
-        ],
-        "commentator": "عبدالله الغامدي",
-        "source": "YSscores",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/2601690370530.png",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/17645945054618.png",
-        "scorers": {
-            "home": [],
-            "away": []
-        },
-        "round": "الجولة 3 - مباراة الذهاب",
-        "stadium": "ملعب سيوداد دي فالنسيا"
-    },
-    {
         "homeTeam": "ريال سوسيداد",
         "awayTeam": "إسبانيول",
         "league": "الدوري الإسباني",
-        "scoreOrTime": "08:00م",
-        "status": "لم تبدأ",
+        "scoreOrTime": "—",
+        "status": "مباشر",
         "channels": [
             "Bein Sport 3"
         ],
@@ -120,46 +100,24 @@
         "stadium": "رامون سانشيز بيزخوان"
     },
     {
-        "homeTeam": "مونزا",
-        "awayTeam": "أودينيزي",
-        "league": "الدوري الإيطالي",
-        "scoreOrTime": "07:30م",
+        "homeTeam": "ليفانتي",
+        "awayTeam": "ريال بيتيس",
+        "league": "الدوري الإسباني",
+        "scoreOrTime": "5-2",
         "status": "لم تبدأ",
         "channels": [
-            "StarzPlay",
-            "STC TV App"
+            "Bein Sport 5"
         ],
-        "commentator": "حازم عبدالسلام",
+        "commentator": "عبدالله الغامدي",
         "source": "YSscores",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/5671690283001.png",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/8741690284718.png",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/2601690370530.png",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/17645945054618.png",
         "scorers": {
             "home": [],
             "away": []
         },
-        "round": "الجولة 2 - مباراة الذهاب",
-        "stadium": "استاد بريانتيو"
-    },
-    {
-        "homeTeam": "ساسولو",
-        "awayTeam": "تورينو",
-        "league": "الدوري الإيطالي",
-        "scoreOrTime": "07:30م",
-        "status": "لم تبدأ",
-        "channels": [
-            "StarzPlay",
-            "STC TV App"
-        ],
-        "commentator": "أحمد الحامد",
-        "source": "YSscores",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/731690283001.png",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/7501690283003.png",
-        "scorers": {
-            "home": [],
-            "away": []
-        },
-        "round": "الجولة 2 - مباراة الذهاب",
-        "stadium": "ملعب مابي - مدينة التريكولور"
+        "round": "الجولة 3 - مباراة الذهاب",
+        "stadium": "ملعب سيوداد دي فالنسيا"
     },
     {
         "homeTeam": "يوفنتوس",
@@ -184,11 +142,53 @@
         "stadium": "أليانز ستاديوم"
     },
     {
+        "homeTeam": "مونزا",
+        "awayTeam": "أودينيزي",
+        "league": "الدوري الإيطالي",
+        "scoreOrTime": "2-3",
+        "status": "لم تبدأ",
+        "channels": [
+            "StarzPlay",
+            "STC TV App"
+        ],
+        "commentator": "حازم عبدالسلام",
+        "source": "YSscores",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/5671690283001.png",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/8741690284718.png",
+        "scorers": {
+            "home": [],
+            "away": []
+        },
+        "round": "الجولة 2 - مباراة الذهاب",
+        "stadium": "استاد بريانتيو"
+    },
+    {
+        "homeTeam": "ساسولو",
+        "awayTeam": "تورينو",
+        "league": "الدوري الإيطالي",
+        "scoreOrTime": "2-1",
+        "status": "لم تبدأ",
+        "channels": [
+            "StarzPlay",
+            "STC TV App"
+        ],
+        "commentator": "أحمد الحامد",
+        "source": "YSscores",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/731690283001.png",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/7501690283003.png",
+        "scorers": {
+            "home": [],
+            "away": []
+        },
+        "round": "الجولة 2 - مباراة الذهاب",
+        "stadium": "ملعب مابي - مدينة التريكولور"
+    },
+    {
         "homeTeam": "كولن",
         "awayTeam": "هوفنهايم",
         "league": "الدوري الألماني",
-        "scoreOrTime": "—",
-        "status": "مباشر",
+        "scoreOrTime": "3-2",
+        "status": "لم تبدأ",
         "channels": [
             "MBC Shahid | Sports"
         ],
@@ -207,8 +207,8 @@
         "homeTeam": "لايبزيج",
         "awayTeam": "مونشنغلادباخ",
         "league": "الدوري الألماني",
-        "scoreOrTime": "—",
-        "status": "مباشر",
+        "scoreOrTime": "3-0",
+        "status": "لم تبدأ",
         "channels": [
             "MBC Shahid | Sports"
         ],
@@ -227,8 +227,8 @@
         "homeTeam": "يونيون برلين",
         "awayTeam": "فرانكفورت",
         "league": "الدوري الألماني",
-        "scoreOrTime": "—",
-        "status": "مباشر",
+        "scoreOrTime": "3-3",
+        "status": "لم تبدأ",
         "channels": [
             "MBC Action",
             "MBC Shahid | Sports"
@@ -305,10 +305,30 @@
         "stadium": "دو موستوار"
     },
     {
+        "homeTeam": "الفتح",
+        "awayTeam": "الاتحاد",
+        "league": "الدوري السعودي",
+        "scoreOrTime": "—",
+        "status": "مباشر",
+        "channels": [
+            "Thmanyah 1"
+        ],
+        "commentator": "جعفر الصليح",
+        "source": "YSscores",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/4171690300306.png",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/2231690298782.png",
+        "scorers": {
+            "home": [],
+            "away": []
+        },
+        "round": "الجولة 4 - مباراة الذهاب",
+        "stadium": "ميدان تمويل الأولى"
+    },
+    {
         "homeTeam": "الخلود",
         "awayTeam": "الأهلي",
         "league": "الدوري السعودي",
-        "scoreOrTime": "07:05م",
+        "scoreOrTime": "3-1",
         "status": "لم تبدأ",
         "channels": [
             "Thmanyah 2"
@@ -325,30 +345,30 @@
         "stadium": "ملعب نادي الحزم"
     },
     {
-        "homeTeam": "الفتح",
-        "awayTeam": "الاتحاد",
-        "league": "الدوري السعودي",
-        "scoreOrTime": "09:00م",
-        "status": "لم تبدأ",
+        "homeTeam": "الزوراء",
+        "awayTeam": "زاخو",
+        "league": "الدوري العراقي",
+        "scoreOrTime": "—",
+        "status": "مباشر",
         "channels": [
-            "Thmanyah 1"
+            "Iraqia Sport"
         ],
-        "commentator": "جعفر الصليح",
+        "commentator": "حسين سمير",
         "source": "YSscores",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/4171690300306.png",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/2231690298782.png",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/2961729878835.png",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/17854185482743.png",
         "scorers": {
             "home": [],
             "away": []
         },
         "round": "الجولة 4 - مباراة الذهاب",
-        "stadium": "ميدان تمويل الأولى"
+        "stadium": "استاد الزوراء"
     },
     {
         "homeTeam": "القوة الجوية",
         "awayTeam": "نفط ميسان",
         "league": "الدوري العراقي",
-        "scoreOrTime": "06:30م",
+        "scoreOrTime": "1-1",
         "status": "لم تبدأ",
         "channels": [
             "Iraqia Sport"
@@ -363,26 +383,6 @@
         },
         "round": "الجولة 4 - مباراة الذهاب",
         "stadium": "استاد الكابتن شرار حيدر"
-    },
-    {
-        "homeTeam": "الزوراء",
-        "awayTeam": "زاخو",
-        "league": "الدوري العراقي",
-        "scoreOrTime": "09:00م",
-        "status": "لم تبدأ",
-        "channels": [
-            "Iraqia Sport"
-        ],
-        "commentator": "حسين سمير",
-        "source": "YSscores",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/2961729878835.png",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/17854185482743.png",
-        "scorers": {
-            "home": [],
-            "away": []
-        },
-        "round": "الجولة 4 - مباراة الذهاب",
-        "stadium": "استاد الزوراء"
     },
     {
         "homeTeam": "سيئون",
