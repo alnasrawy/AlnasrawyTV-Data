@@ -1,5 +1,7 @@
 {
- "started_notified": {},
+ "started_notified": {
+  "القوة الجوية_نفط ميسان": true
+ },
  "ended_notified": {
   "بئر السبع_صباح": true,
   "سيلتك_لاسك": true,
