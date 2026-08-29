@@ -168,11 +168,11 @@
         "scoreOrTime": "09:45م",
         "status": "لم تبدأ",
         "channels": [
-            "Shasha",
             "StarzPlay",
-            "STC TV App"
+            "STC TV App",
+            "Shasha"
         ],
-        "commentator": "فهد العتيبي / فيصل الهندي",
+        "commentator": "فيصل الهندي / فهد العتيبي",
         "source": "YSscores",
         "homeLogo": "https://imgs.ysscores.com/teams/128/9331690283003.png",
         "awayLogo": "https://imgs.ysscores.com/teams/128/4061690823331.png",
