@@ -1222,8 +1222,43 @@ def execute_full_cycle():
 if __name__ == "__main__":
     try:
         print("-> GitHub Actions Cycle Triggered...")
+        now = datetime.now(TZ)
 
-        execute_full_cycle()
+        # —— Credit-saver: skip running while we're still more than the alert
+        # window (default 10 min) ahead of the earliest *upcoming* match.
+        too_early = False
+        if os.path.exists(MATCHES_FILE):
+            try:
+                with open(MATCHES_FILE, "r", encoding="utf-8") as f:
+                    saved_matches = json.load(f)
+                alert_min = int(TELEGRAM.get("start_alert_minutes", 10))
+                upcoming_dts = []
+                for m in saved_matches:
+                    if m.get('status') != "لم تبدأ":
+                        continue
+                    sv = m.get('scoreOrTime', '')
+                    if ':' not in sv or '-' in sv:
+                        continue
+                    try:
+                        hm = sv.replace('م', '').replace('ص', '').strip()
+                        dt = datetime.combine(now.date(), datetime.strptime(hm, '%H:%M').time()).replace(tzinfo=TZ)
+                        upcoming_dts.append(dt)
+                    except Exception:
+                        continue
+                future = [dt for dt in upcoming_dts if dt >= now]
+                if future:
+                    earliest = min(future)
+                    wake_dt = earliest - timedelta(minutes=alert_min)
+                    if now < wake_dt:
+                        too_early = True
+                        print(f"-> 🌙 أقرب مباراة قادمة ستكون الساعة {earliest.strftime('%H:%M')}.")
+                        print(f"-> 💤 الوقت ما زال قبلها بأكثر من {alert_min} دقائق. الخروج الفوري لتوفير رصيد GitHub.")
+                        sys.exit(0)
+            except Exception:
+                pass
+
+        if not too_early:
+            execute_full_cycle()
 
     except SystemExit:
         pass
