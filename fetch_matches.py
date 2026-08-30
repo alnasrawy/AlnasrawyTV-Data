@@ -860,6 +860,21 @@ def _format_channels(channels):
     return "\n".join(lines)
 
 
+def _parse_match_dt(time_str, now):
+    """Convert Arabic match time (HH:MMص/م) to a timezone-aware datetime on now's date."""
+    t = (time_str or '').strip()
+    is_pm = t.endswith('م')
+    hm = t.replace('م', '').replace('ص', '').strip()
+    dt = datetime.combine(now.date(), datetime.strptime(hm, '%H:%M').time()).replace(tzinfo=TZ)
+    if is_pm:
+        if dt.hour != 12:
+            dt = dt.replace(hour=dt.hour + 12)
+    else:
+        if dt.hour == 12:
+            dt = dt.replace(hour=0)
+    return dt
+
+
 def _run_telegram_notifications(final_list, state):
     now = datetime.now(TZ)
     sent = []
@@ -875,8 +890,7 @@ def _run_telegram_notifications(final_list, state):
             time_str = m['scoreOrTime']
             if ':' in time_str and '-' not in time_str:
                 try:
-                    hm = time_str.replace('م', '').replace('ص', '').strip()
-                    start_dt = datetime.combine(now.date(), datetime.strptime(hm, '%H:%M').time()).replace(tzinfo=TZ)
+                    start_dt = _parse_match_dt(time_str, now)
                     window = timedelta(minutes=TELEGRAM.get("start_alert_minutes", 10))
                     if now >= start_dt - window and now < start_dt:
                         cap_comm = f"🎙️ {m['commentator']}" if m.get('commentator') else ""
@@ -1293,8 +1307,7 @@ if __name__ == "__main__":
                     if ':' not in sv or '-' in sv:
                         continue
                     try:
-                        hm = sv.replace('م', '').replace('ص', '').strip()
-                        dt = datetime.combine(now.date(), datetime.strptime(hm, '%H:%M').time()).replace(tzinfo=TZ)
+                        dt = _parse_match_dt(sv, now)
                         upcoming_dts.append(dt)
                     except Exception:
                         continue
