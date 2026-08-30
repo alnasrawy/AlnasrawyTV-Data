@@ -1051,7 +1051,18 @@ class GhostScraper:
                 classes = match_a.get('class', [])
                 is_live = any('live-match' in c for c in classes)
                 is_stopped = any('stopped-match' in c for c in classes)
-                if ':' in match_date_text and '-' not in match_date_text:
+                r1 = match_a.select_one('.first-team-result')
+                r2 = match_a.select_one('.second-team-result')
+                live_score = None
+                if r1 is not None and r2 is not None:
+                    s1 = r1.get_text(strip=True)
+                    s2 = r2.get_text(strip=True)
+                    if s1 or s2:
+                        live_score = f"{s1 or '0'} - {s2 or '0'}"
+                if live_score:
+                    status = "مباشر" if is_live else "انتهت"
+                    score = live_score
+                elif ':' in match_date_text and '-' not in match_date_text:
                     status = "لم تبدأ"
                     score = match_date_text
                 elif is_live:
@@ -1299,6 +1310,7 @@ if __name__ == "__main__":
                 with open(MATCHES_FILE, "r", encoding="utf-8") as f:
                     saved_matches = json.load(f)
                 alert_min = int(TELEGRAM.get("start_alert_minutes", 10))
+                has_live = any(m.get('status') == "مباشر" for m in saved_matches)
                 upcoming_dts = []
                 horizon = now + timedelta(days=1)
                 for m in saved_matches:
@@ -1315,7 +1327,7 @@ if __name__ == "__main__":
                     except Exception:
                         continue
                 future = [dt for dt in upcoming_dts if now <= dt <= horizon]
-                if future:
+                if future and not has_live:
                     earliest = min(future)
                     wake_dt = earliest - timedelta(minutes=alert_min)
                     if now < wake_dt:
