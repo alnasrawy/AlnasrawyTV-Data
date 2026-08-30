@@ -943,6 +943,52 @@ def prepare_all_matches(matches_list):
     return prepared
 
 
+_CHAMP_LOGO_CACHE = {}
+
+def fetch_championship_logo(link):
+    """Return the championship (league) logo URL from its YSscores page."""
+    if not link:
+        return ''
+    if link in _CHAMP_LOGO_CACHE:
+        return _CHAMP_LOGO_CACHE[link]
+    logo = ''
+    try:
+        html = GhostScraper().fetch(link, "YSscores championship")
+        if html:
+            soup = BeautifulSoup(html, 'html.parser')
+            el = soup.select_one('img.club-logo')
+            if el and el.get('src'):
+                logo = el['src']
+            else:
+                og = soup.select_one('meta[property="og:image"]')
+                if og and og.get('content'):
+                    logo = og['content']
+    except Exception:
+        logo = ''
+    _CHAMP_LOGO_CACHE[link] = logo
+    return logo
+
+
+def build_grouped_list(final_list):
+    """Reorder matches grouped by league, inserting a league header before each group."""
+    grouped = []
+    seen_leagues = {}
+    for m in final_list:
+        league = m.get('league') or ''
+        if league and league not in seen_leagues:
+            seen_leagues[league] = True
+            champ_link = m.get('_championship_link') or ''
+            grouped.append({
+                'type': 'league',
+                'league': league,
+                'leagueLogo': fetch_championship_logo(champ_link),
+            })
+        mm = dict(m)
+        mm['type'] = 'match'
+        grouped.append(mm)
+    return grouped
+
+
 class GhostScraper:
     def __init__(self):
         self._session = None
@@ -1058,6 +1104,9 @@ class GhostScraper:
                 champ_el = item.select_one('.content a[href*="/championship/"]')
                 if champ_el:
                     result['_rawLeague'] = champ_el.get_text(strip=True)
+                    champ_href = champ_el.get('href')
+                    if champ_href:
+                        result['_championship_link'] = champ_href
             elif 'الجولة' in title_text:
                 round_el = item.select_one('.content')
                 if round_el:
@@ -1175,6 +1224,8 @@ class GhostScraper:
                 m['scorers'] = detail['scorers']
             if detail.get('_rawLeague') and not m.get('_rawLeague'):
                 m['_rawLeague'] = detail['_rawLeague']
+            if detail.get('_championship_link') and not m.get('_championship_link'):
+                m['_championship_link'] = detail['_championship_link']
             time.sleep(_rnd.uniform(1.0, 2.0))
 
 
@@ -1207,10 +1258,12 @@ def execute_full_cycle():
         for m in final_list:
             print(f"   ✅ [{m['league']}] {m['homeTeam']} {m['scoreOrTime']} {m['awayTeam']} | {m['status']} | {', '.join(m['channels'])}")
 
-    with open(MATCHES_FILE, "w", encoding="utf-8") as f:
-        json.dump(final_list, f, ensure_ascii=False, indent=4)
+    grouped_list = build_grouped_list(final_list)
 
-    print(f"\n-> [OK] Saved {len(final_list)} matches to matches.json.")
+    with open(MATCHES_FILE, "w", encoding="utf-8") as f:
+        json.dump(grouped_list, f, ensure_ascii=False, indent=4)
+
+    print(f"\n-> [OK] Grouped by league & Saved to matches.json (headers + {len(final_list)} matches).")
 
     state = _load_state()
     _run_telegram_notifications(final_list, state)
