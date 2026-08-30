@@ -1300,6 +1300,7 @@ if __name__ == "__main__":
                     saved_matches = json.load(f)
                 alert_min = int(TELEGRAM.get("start_alert_minutes", 10))
                 upcoming_dts = []
+                horizon = now + timedelta(days=1)
                 for m in saved_matches:
                     if m.get('status') != "لم تبدأ":
                         continue
@@ -1308,10 +1309,12 @@ if __name__ == "__main__":
                         continue
                     try:
                         dt = _parse_match_dt(sv, now)
+                        if dt < now:
+                            dt = dt + timedelta(days=1)  # فجر الغد
                         upcoming_dts.append(dt)
                     except Exception:
                         continue
-                future = [dt for dt in upcoming_dts if dt >= now]
+                future = [dt for dt in upcoming_dts if now <= dt <= horizon]
                 if future:
                     earliest = min(future)
                     wake_dt = earliest - timedelta(minutes=alert_min)
