@@ -983,11 +983,56 @@ def fetch_championship_logo(link):
     return logo
 
 
-def build_grouped_list(final_list):
+def _match_day(m, now=None):
+    """Classify a match into 'yesterday' / 'today' / 'tomorrow' strictly by its
+    actual start date (in the +3 timezone). Because the day comes from the *fixed
+    start time*, a match that started at 23:00 yesterday and ends at 01:00 today
+    stays in 'yesterday' forever — it can never overlap with the new day."""
+    now = now or datetime.now(TZ)
+    # 1) Explicity inherited start date (from retained store / earlier scrape)
+    raw = m.get('_start_date')
+    if raw:
+        try:
+            start_dt = datetime.fromisoformat(raw)
+            if start_dt.tzinfo is None:
+                start_dt = start_dt.replace(tzinfo=TZ)
+            d = start_dt.date()
+            today = now.date()
+            if d == today:
+                return "today"
+            if d == today - timedelta(days=1):
+                return "yesterday"
+            if d == today + timedelta(days=1):
+                return "tomorrow"
+            return "today" if start_dt >= now else "yesterday"
+        except Exception:
+            pass
+    # 2) Not-started: compute the day from the start clock time.
+    score = m.get('scoreOrTime', '')
+    if m.get('status') == "لم تبدأ" and ':' in score and '-' not in score:
+        try:
+            start_dt = _parse_match_dt(score, now)
+        except Exception:
+            start_dt = now
+    else:
+        # Live / finished with no inherited date: assume the current day.
+        start_dt = now
+    d = start_dt.date()
+    today = now.date()
+    if d == today:
+        return "today"
+    if d == today - timedelta(days=1):
+        return "yesterday"
+    if d == today + timedelta(days=1):
+        return "tomorrow"
+    return "today" if start_dt >= now else "yesterday"
+
+
+def _group_with_headers(matches):
     """Reorder matches grouped by league, inserting a league header before each group."""
     grouped = []
     seen_leagues = {}
-    for m in final_list:
+    for m in matches:
         league = m.get('league') or ''
         if league and league not in seen_leagues:
             seen_leagues[league] = True
@@ -999,8 +1044,106 @@ def build_grouped_list(final_list):
             })
         mm = dict(m)
         mm['type'] = 'match'
+        mm.pop('_start_date', None)
+        mm.pop('_match_date', None)
+        mm.pop('_order', None)
         grouped.append(mm)
     return grouped
+
+
+def build_grouped_list(final_list):
+    """Build the root-object matches.json:
+    {'yesterday': [...], 'today': [...], 'tomorrow': [...]},
+    each section a league-grouped, header-inserted list.
+
+    Matches are retained across cycles in state['day_matches'] so that 'yesterday'
+    stays populated and no match is lost, and an extended (overnight) match is kept
+    strictly in the section of its start day (no overlap with the new day).
+    """
+    now = datetime.now(TZ)
+    today_d = now.date()
+
+    # Load the retained day buckets first so fresh live/finished matches can
+    # inherit their original start date (keeps overnight matches in their day).
+    state = _load_state()
+    day_store = state.setdefault('day_matches', {})
+
+    # Build an index: retained match key -> its earliest (original) start date iso.
+    retained_start = {}
+    for iso, bucket in list(day_store.items()):
+        for rm in bucket:
+            key = "_".join(sorted([rm.get('homeTeam', ''), rm.get('awayTeam', '')]))
+            sd = rm.get('_start_date')
+            if not sd:
+                continue
+            prev = retained_start.get(key)
+            if prev is None:
+                retained_start[key] = sd
+            else:
+                # keep the earliest timestamp (the original kickoff)
+                try:
+                    a = datetime.fromisoformat(sd)
+                    b = datetime.fromisoformat(prev)
+                    if a.tzinfo is None: a = a.replace(tzinfo=TZ)
+                    if b.tzinfo is None: b = b.replace(tzinfo=TZ)
+                    if a < b:
+                        retained_start[key] = sd
+                except Exception:
+                    pass
+
+    # Fresh fetch: inherit start date for finished/live matches, compute for the rest.
+    sections = {"yesterday": [], "today": [], "tomorrow": []}
+    for m in final_list:
+        key = "_".join(sorted([m.get('homeTeam', ''), m.get('awayTeam', '')]))
+        if m.get('status') != "لم تبدأ" and not m.get('_start_date'):
+            if key in retained_start:
+                m['_start_date'] = retained_start[key]
+        if not m.get('_start_date'):
+            m['_start_date'] = _match_start_iso(m, now)
+        day = _match_day(m, now)
+        sections[day].append(m)
+
+    # Store this cycle's classification into the day buckets.
+    for day_key, day_date in (("yesterday", today_d - timedelta(days=1)),
+                              ("today", today_d),
+                              ("tomorrow", today_d + timedelta(days=1))):
+        iso = day_date.strftime('%Y-%m-%d')
+        if sections[day_key]:
+            day_store[iso] = [m for m in sections[day_key]
+                              if _match_start_iso(m, now).startswith(iso)]
+
+    # Prune buckets older than 4 days to keep state small.
+    cutoff = (today_d - timedelta(days=4)).strftime('%Y-%m-%d')
+    for k in [k for k in day_store if k < cutoff]:
+        day_store.pop(k, None)
+
+    # Assemble final output: fresh classification is authoritative where provided,
+    # otherwise the retained store (preserves yesterday incl. extended overnight).
+    out = {}
+    for day_key, day_date in (("yesterday", today_d - timedelta(days=1)),
+                              ("today", today_d),
+                              ("tomorrow", today_d + timedelta(days=1))):
+        iso = day_date.strftime('%Y-%m-%d')
+        bucket = list(day_store.get(iso, []))
+        if sections[day_key]:
+            bucket = list(sections[day_key])
+        bucket.sort(key=lambda x: x.get('_order', 0))
+        out[day_key] = _group_with_headers(bucket)
+
+    _save_state(state)
+    return out
+
+
+def _match_start_iso(m, now=None):
+    now = now or datetime.now(TZ)
+    score = m.get('scoreOrTime', '')
+    if m.get('status') == "لم تبدأ" and ':' in score and '-' not in score:
+        try:
+            return _parse_match_dt(score, now).isoformat()
+        except Exception:
+            pass
+    raw = m.get('_start_date')
+    return raw or now.isoformat()
 
 
 class GhostScraper:
@@ -1288,7 +1431,10 @@ def execute_full_cycle():
     with open(MATCHES_FILE, "w", encoding="utf-8") as f:
         json.dump(grouped_list, f, ensure_ascii=False, indent=4)
 
-    print(f"\n-> [OK] Grouped by league & Saved to matches.json (headers + {len(final_list)} matches).")
+    sec_counts = {k: sum(1 for x in v if x.get('type') == 'match') for k, v in grouped_list.items()}
+    print(f"\n-> [OK] Saved to matches.json (sections): "
+          f"yesterday={sec_counts.get('yesterday', 0)}, today={sec_counts.get('today', 0)}, "
+          f"tomorrow={sec_counts.get('tomorrow', 0)} (headers included).")
 
     state = _load_state()
     _run_telegram_notifications(final_list, state)
@@ -1309,7 +1455,14 @@ if __name__ == "__main__":
         if os.path.exists(MATCHES_FILE):
             try:
                 with open(MATCHES_FILE, "r", encoding="utf-8") as f:
-                    saved_matches = json.load(f)
+                    file_data = json.load(f)
+                # matches.json is now a root object of day sections -> flatten.
+                if isinstance(file_data, dict):
+                    saved_matches = [m for sec in file_data.values()
+                                     for m in (sec if isinstance(sec, list) else [])
+                                     if isinstance(m, dict)]
+                else:
+                    saved_matches = file_data
                 state = _load_state()
                 ended_notified = state.get('ended_notified', {})
                 alert_min = int(TELEGRAM.get("start_alert_minutes", 10))
