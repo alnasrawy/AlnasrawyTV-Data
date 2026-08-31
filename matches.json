@@ -494,28 +494,6 @@
         "leagueLogo": "https://imgs.ysscores.com/championship/150/17693689565274.png"
     },
     {
-        "homeTeam": "ريفادافيا",
-        "awayTeam": "راسينغ",
-        "league": "دوري الدرجة الأولى الأرجنتيني",
-        "scoreOrTime": "1 - 1",
-        "status": "مباشر",
-        "channels": [
-            "Dubai Sports 1"
-        ],
-        "commentator": "",
-        "source": "YSscores",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/2411718579396.png",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/2551715593780.png",
-        "scorers": {
-            "home": [],
-            "away": []
-        },
-        "round": "الجولة 7 - مباراة الذهاب",
-        "stadium": "استاد باوتيستا جارجانتيني",
-        "_championship_link": "https://www.ysscores.com/ar/championship/75166/Argentine-Primera-División",
-        "type": "match"
-    },
-    {
         "homeTeam": "إنديبندينتي",
         "awayTeam": "جيمناسيا",
         "league": "دوري الدرجة الأولى الأرجنتيني",
@@ -532,6 +510,28 @@
         },
         "round": "الجولة 7 - مباراة الذهاب",
         "stadium": "ملعب ليبرتادوريس دي أمريكا",
+        "_championship_link": "https://www.ysscores.com/ar/championship/75166/Argentine-Primera-División",
+        "type": "match"
+    },
+    {
+        "homeTeam": "ريفادافيا",
+        "awayTeam": "راسينغ",
+        "league": "دوري الدرجة الأولى الأرجنتيني",
+        "scoreOrTime": "3 - 1",
+        "status": "انتهت",
+        "channels": [
+            "Dubai Sports 1"
+        ],
+        "commentator": "",
+        "source": "YSscores",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/2411718579396.png",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/2551715593780.png",
+        "scorers": {
+            "home": [],
+            "away": []
+        },
+        "round": "الجولة 7 - مباراة الذهاب",
+        "stadium": "استاد باوتيستا جارجانتيني",
         "_championship_link": "https://www.ysscores.com/ar/championship/75166/Argentine-Primera-División",
         "type": "match"
     },
@@ -818,8 +818,8 @@
         "homeTeam": "تولكا",
         "awayTeam": "خواريز",
         "league": "الدوري المكسيكي الممتاز",
-        "scoreOrTime": "3 - 0",
-        "status": "مباشر",
+        "scoreOrTime": "4 - 0",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "YSscores",
@@ -838,8 +838,8 @@
         "homeTeam": "مونتيري",
         "awayTeam": "أتلتيكو سان لويس",
         "league": "الدوري المكسيكي الممتاز",
-        "scoreOrTime": "05:10ص",
-        "status": "لم تبدأ",
+        "scoreOrTime": "1 - 3",
+        "status": "انتهت",
         "channels": [],
         "commentator": "",
         "source": "YSscores",
