@@ -308,8 +308,8 @@
         "homeTeam": "سانت لويس",
         "awayTeam": "دالاس",
         "league": "الدوري الأمريكي لكرة القدم",
-        "scoreOrTime": "1 - 1",
-        "status": "مباشر",
+        "scoreOrTime": "3 - 3",
+        "status": "انتهت",
         "channels": [
             "Apple TV"
         ],
@@ -429,26 +429,6 @@
         "leagueLogo": "https://imgs.ysscores.com/championship/150/751691418644.png"
     },
     {
-        "homeTeam": "باهيا",
-        "awayTeam": "إنترناسيونال",
-        "league": "الدوري البرازيلي",
-        "scoreOrTime": "3 - 2",
-        "status": "مباشر",
-        "channels": [],
-        "commentator": "",
-        "source": "YSscores",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/3961691418709.png",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/3841691418709.png",
-        "scorers": {
-            "home": [],
-            "away": []
-        },
-        "round": "الجولة 25 - مباراة الإياب",
-        "stadium": "أرينا فونتي نوفا",
-        "_championship_link": "https://www.ysscores.com/ar/championship/40224/Campeonato-Brasileiro-Série-A",
-        "type": "match"
-    },
-    {
         "homeTeam": "ميراسول",
         "awayTeam": "بالميراس",
         "league": "الدوري البرازيلي",
@@ -489,36 +469,36 @@
         "type": "match"
     },
     {
+        "homeTeam": "باهيا",
+        "awayTeam": "إنترناسيونال",
+        "league": "الدوري البرازيلي",
+        "scoreOrTime": "3 - 2",
+        "status": "انتهت",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/3961691418709.png",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/3841691418709.png",
+        "scorers": {
+            "home": [],
+            "away": []
+        },
+        "round": "الجولة 25 - مباراة الإياب",
+        "stadium": "أرينا فونتي نوفا",
+        "_championship_link": "https://www.ysscores.com/ar/championship/40224/Campeonato-Brasileiro-Série-A",
+        "type": "match"
+    },
+    {
         "type": "league",
         "league": "دوري الدرجة الأولى الأرجنتيني",
         "leagueLogo": "https://imgs.ysscores.com/championship/150/17693689565274.png"
     },
     {
-        "homeTeam": "إنديبندينتي",
-        "awayTeam": "جيمناسيا",
-        "league": "دوري الدرجة الأولى الأرجنتيني",
-        "scoreOrTime": "0 - 3",
-        "status": "مباشر",
-        "channels": [],
-        "commentator": "",
-        "source": "YSscores",
-        "homeLogo": "https://imgs.ysscores.com/teams/128/1241723538068.png",
-        "awayLogo": "https://imgs.ysscores.com/teams/128/17673035697322.png",
-        "scorers": {
-            "home": [],
-            "away": []
-        },
-        "round": "الجولة 7 - مباراة الذهاب",
-        "stadium": "ملعب ليبرتادوريس دي أمريكا",
-        "_championship_link": "https://www.ysscores.com/ar/championship/75166/Argentine-Primera-División",
-        "type": "match"
-    },
-    {
         "homeTeam": "ريفادافيا",
         "awayTeam": "راسينغ",
         "league": "دوري الدرجة الأولى الأرجنتيني",
-        "scoreOrTime": "03:30ص",
-        "status": "لم تبدأ",
+        "scoreOrTime": "1 - 1",
+        "status": "مباشر",
         "channels": [
             "Dubai Sports 1"
         ],
@@ -532,6 +512,26 @@
         },
         "round": "الجولة 7 - مباراة الذهاب",
         "stadium": "استاد باوتيستا جارجانتيني",
+        "_championship_link": "https://www.ysscores.com/ar/championship/75166/Argentine-Primera-División",
+        "type": "match"
+    },
+    {
+        "homeTeam": "إنديبندينتي",
+        "awayTeam": "جيمناسيا",
+        "league": "دوري الدرجة الأولى الأرجنتيني",
+        "scoreOrTime": "0 - 3",
+        "status": "انتهت",
+        "channels": [],
+        "commentator": "",
+        "source": "YSscores",
+        "homeLogo": "https://imgs.ysscores.com/teams/128/1241723538068.png",
+        "awayLogo": "https://imgs.ysscores.com/teams/128/17673035697322.png",
+        "scorers": {
+            "home": [],
+            "away": []
+        },
+        "round": "الجولة 7 - مباراة الذهاب",
+        "stadium": "ملعب ليبرتادوريس دي أمريكا",
         "_championship_link": "https://www.ysscores.com/ar/championship/75166/Argentine-Primera-División",
         "type": "match"
     },
@@ -818,8 +818,8 @@
         "homeTeam": "تولكا",
         "awayTeam": "خواريز",
         "league": "الدوري المكسيكي الممتاز",
-        "scoreOrTime": "03:00ص",
-        "status": "لم تبدأ",
+        "scoreOrTime": "3 - 0",
+        "status": "مباشر",
         "channels": [],
         "commentator": "",
         "source": "YSscores",
