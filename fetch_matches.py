@@ -891,6 +891,9 @@ def _run_telegram_notifications(final_list, state):
             if ':' in time_str and '-' not in time_str:
                 try:
                     start_dt = _parse_match_dt(time_str, now)
+                    # Fajr (post-midnight) matches belong to the next day.
+                    if start_dt < now:
+                        start_dt = start_dt + timedelta(days=1)
                     window = timedelta(minutes=TELEGRAM.get("start_alert_minutes", 10))
                     if now >= start_dt - window and now < start_dt:
                         cap_comm = f"🎙️ {m['commentator']}" if m.get('commentator') else ""
@@ -1008,10 +1011,15 @@ def _match_day(m, now=None):
         except Exception:
             pass
     # 2) Not-started: compute the day from the start clock time.
+    #    A match whose kickoff (on today's date) is ALREADY in the past while
+    #    still marked "لم تبدأ" cannot be today — it must be a post-midnight
+    #    (fajr) match of the next day, i.e. tomorrow.
     score = m.get('scoreOrTime', '')
     if m.get('status') == "لم تبدأ" and ':' in score and '-' not in score:
         try:
             start_dt = _parse_match_dt(score, now)
+            if start_dt < now:
+                start_dt = start_dt + timedelta(days=1)  # فجر الغد
         except Exception:
             start_dt = now
     else:
@@ -1139,7 +1147,10 @@ def _match_start_iso(m, now=None):
     score = m.get('scoreOrTime', '')
     if m.get('status') == "لم تبدأ" and ':' in score and '-' not in score:
         try:
-            return _parse_match_dt(score, now).isoformat()
+            start_dt = _parse_match_dt(score, now)
+            if start_dt < now:
+                start_dt = start_dt + timedelta(days=1)  # فجر الغد
+            return start_dt.isoformat()
         except Exception:
             pass
     raw = m.get('_start_date')
