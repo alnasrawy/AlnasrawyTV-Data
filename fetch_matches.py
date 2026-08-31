@@ -890,7 +890,15 @@ def _run_telegram_notifications(final_list, state):
             time_str = m['scoreOrTime']
             if ':' in time_str and '-' not in time_str:
                 try:
-                    start_dt = _parse_match_dt(time_str, now)
+                    ref = now
+                    mdate = m.get('_match_date', '')
+                    if mdate:
+                        try:
+                            ref = datetime.combine(datetime.fromisoformat(mdate).date(),
+                                                   now.time().replace(tzinfo=None)).replace(tzinfo=TZ)
+                        except Exception:
+                            ref = now
+                    start_dt = _parse_match_dt(time_str, ref)
                     # Fajr (post-midnight) matches belong to the next day.
                     if start_dt < now:
                         start_dt = start_dt + timedelta(days=1)
@@ -940,12 +948,14 @@ def _run_telegram_notifications(final_list, state):
 
 
 def prepare_all_matches(matches_list):
-    """Keep every match from the source — no filtering or restrictions."""
+    """Keep matches from today and tomorrow — no other restrictions."""
     today = datetime.now(TZ).strftime('%Y-%m-%d')
+    tomorrow = (datetime.now(TZ).date() + timedelta(days=1)).strftime('%Y-%m-%d')
+    allowed = {today, tomorrow}
     prepared = []
     for m in matches_list:
         m_date = m.get('_match_date', '')
-        if m_date and m_date != today:
+        if m_date and m_date not in allowed:
             continue
         # Normalize the league name to a clean/standard label when we can.
         raw_league = m['league'] or ''
@@ -1147,7 +1157,17 @@ def _match_start_iso(m, now=None):
     score = m.get('scoreOrTime', '')
     if m.get('status') == "لم تبدأ" and ':' in score and '-' not in score:
         try:
-            start_dt = _parse_match_dt(score, now)
+            # Parse the kickoff relative to the match's own target date when it
+            # points to another day (e.g. tomorrow's page), else today's date.
+            ref = now
+            mdate = m.get('_match_date', '')
+            if mdate:
+                try:
+                    ref = datetime.combine(datetime.fromisoformat(mdate).date(),
+                                           now.time().replace(tzinfo=None)).replace(tzinfo=TZ)
+                except Exception:
+                    ref = now
+            start_dt = _parse_match_dt(score, ref)
             if start_dt < now:
                 start_dt = start_dt + timedelta(days=1)  # فجر الغد
             return start_dt.isoformat()
@@ -1166,11 +1186,51 @@ class GhostScraper:
         s = CurlImpersonate("chrome120")
         return s
 
+    def _session_headers(self, referer=""):
+        h = {
+            "Accept-Language": "ar,en;q=0.9",
+            "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                           "AppleWebKit/537.36 (KHTML, like Gecko) "
+                           "Chrome/124.0.0.0 Safari/537.36"),
+        }
+        if referer:
+            h["Referer"] = referer
+        return h
+
+    def _ensure_session(self):
+        """Create (once) a real session that keeps the cookies the site issues,
+        so the CSRF XSRF-TOKEN cookie is available for match_date_to POSTs."""
+        if self._session is not None:
+            return self._session
+        from curl_cffi import requests as _req
+        s = _req.Session()
+        base = "https://www.ysscores.com/ar/today_matches"
+        try:
+            r = s.get(base, impersonate="chrome124", timeout=30,
+                      headers=self._session_headers(base))
+            if r.status_code != 200:
+                print(f"    ❌ [YSscores session] HTTP {r.status_code}")
+        except Exception as e:
+            print(f"    ❌ [YSscores session] Error: {e}")
+        self._session = s
+        return s
+
+    def _csrf_header(self):
+        from urllib.parse import unquote
+        cookies = dict(self._session.cookies) if self._session else {}
+        xsrf = cookies.get("XSRF-TOKEN", "")
+        return unquote(xsrf)
+
     def fetch(self, url, source_name=""):
         try:
             time.sleep(random.uniform(1.0, 2.0))
-            r = requests.get(url, impersonate="chrome120", timeout=30,
-                             headers={"Accept-Language": "ar,en;q=0.9"})
+            s = self._session
+            if s is not None:
+                r = s.get(url, impersonate="chrome124", timeout=30,
+                          headers=self._session_headers(url))
+            else:
+                r = requests.get(url, impersonate="chrome120", timeout=30,
+                                 headers=self._session_headers(url))
             if r.status_code == 200:
                 return r.text
             print(f"    ❌ [{source_name}] HTTP {r.status_code}: {url}")
@@ -1178,9 +1238,115 @@ class GhostScraper:
             print(f"    ❌ [{source_name}] Error: {e}")
         return None
 
+    def fetch_matches_html(self, locale_date, source_name=""):
+        """POST match_date_to to fetch the matches block for a given locale date
+        (e.g. 'September 1,2026'). Returns the raw HTML of the matches."""
+        s = self._ensure_session()
+        token = self._csrf_header()
+        post_url = "https://www.ysscores.com/ar/match_date_to"
+        headers = {
+            "X-XSRF-TOKEN": token,
+            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            "X-Requested-With": "XMLHttpRequest",
+            "Accept": "text/html, */*; q=0.01",
+            "Referer": "https://www.ysscores.com/ar/today_matches",
+        }
+        headers.update(self._session_headers())
+        try:
+            time.sleep(random.uniform(1.0, 2.0))
+            r = s.post(post_url, data={"get_date": locale_date}, headers=headers,
+                       impersonate="chrome124", timeout=30)
+            if r.status_code == 200:
+                return r.text
+            print(f"    ❌ [{source_name}] HTTP {r.status_code}: {post_url} (for {locale_date})")
+        except Exception as e:
+            print(f"    ❌ [{source_name}] Error: {e}")
+        return None
+
+    def _parse_match_node(self, match_a, match_date):
+        """Parse a single a.ajax-match-item node into a match dict."""
+        home_name = match_a.get('home_name', '').strip()
+        away_name = match_a.get('away_name', '').strip()
+        if not home_name or not away_name:
+            return None
+        home_logo = match_a.get('home_image', '').strip()
+        away_logo = match_a.get('away_image', '').strip()
+        if home_logo:
+            home_logo = home_logo.replace('/teams/64/', '/teams/128/')
+        if away_logo:
+            away_logo = away_logo.replace('/teams/64/', '/teams/128/')
+        match_date_el = match_a.select_one('.match-date')
+        match_date_text = match_date_el.get_text(strip=True) if match_date_el else ''
+        classes = match_a.get('class', [])
+        is_live = any('live-match' in c for c in classes)
+        is_stopped = any('stopped-match' in c for c in classes)
+        r1 = match_a.select_one('.first-team-result')
+        r2 = match_a.select_one('.second-team-result')
+        live_score = None
+        if r1 is not None and r2 is not None:
+            s1 = r1.get_text(strip=True)
+            s2 = r2.get_text(strip=True)
+            if s1 or s2:
+                live_score = f"{s1 or '0'} - {s2 or '0'}"
+        if live_score:
+            status = "مباشر" if is_live else "انتهت"
+            score = live_score
+        elif ':' in match_date_text and '-' not in match_date_text:
+            status = "لم تبدأ"
+            score = match_date_text
+        elif is_live:
+            status = "مباشر"
+            score = match_date_text or "—"
+        elif is_stopped or 'انتهت' in match_date_text:
+            status = "انتهت"
+            score = match_date_text
+        else:
+            status = "لم تبدأ"
+            score = match_date_text or "—"
+        detail_url = match_a.get('href', '').strip()
+        return {
+            'homeTeam': home_name,
+            'awayTeam': away_name,
+            'league': '',
+            'scoreOrTime': score,
+            'status': status,
+            'channels': [],
+            'commentator': '',
+            'source': 'YSscores',
+            'homeLogo': home_logo if home_logo.startswith('http') else '',
+            'awayLogo': away_logo if away_logo.startswith('http') else '',
+            'scorers': {"home": [], "away": []},
+            '_order': 0,
+            '_ysscores_detail': detail_url,
+            '_ysscores_id': match_a.get('match_id', ''),
+            '_match_date': match_date,
+        }
+
     def scrape_ysscores(self):
         url = "https://www.ysscores.com/ar/today_matches"
+        s = self._ensure_session()
+        self._session = s
         html = self.fetch(url, "YSscores")
+        if not html:
+            return []
+        soup = BeautifulSoup(html, 'html.parser')
+        matches = []
+        today = datetime.now(TZ).strftime('%Y-%m-%d')
+        for champ_div in soup.select('div.matches-wrapper'):
+            league = champ_div.get('champ_title', '').strip()
+            for match_a in champ_div.select('a.ajax-match-item'):
+                m = self._parse_match_node(match_a, today)
+                if m is None:
+                    continue
+                m['_order'] = len(matches)
+                m['league'] = league
+                matches.append(m)
+        return matches
+
+    def scrape_ysscores_for_date(self, locale_date, iso_date):
+        """Fetch matches for an arbitrary date (e.g. tomorrow) and return
+        parsed match dicts tagged with that date."""
+        html = self.fetch_matches_html(locale_date, f"YSscores {iso_date}")
         if not html:
             return []
         soup = BeautifulSoup(html, 'html.parser')
@@ -1188,65 +1354,11 @@ class GhostScraper:
         for champ_div in soup.select('div.matches-wrapper'):
             league = champ_div.get('champ_title', '').strip()
             for match_a in champ_div.select('a.ajax-match-item'):
-                _order = len(matches)
-                match_id = match_a.get('match_id', '')
-                home_name = match_a.get('home_name', '').strip()
-                away_name = match_a.get('away_name', '').strip()
-                if not home_name or not away_name:
+                m = self._parse_match_node(match_a, iso_date)
+                if m is None:
                     continue
-                home_logo = match_a.get('home_image', '').strip()
-                away_logo = match_a.get('away_image', '').strip()
-                if home_logo:
-                    home_logo = home_logo.replace('/teams/64/', '/teams/128/')
-                if away_logo:
-                    away_logo = away_logo.replace('/teams/64/', '/teams/128/')
-                match_date_el = match_a.select_one('.match-date')
-                match_date_text = match_date_el.get_text(strip=True) if match_date_el else ''
-                classes = match_a.get('class', [])
-                is_live = any('live-match' in c for c in classes)
-                is_stopped = any('stopped-match' in c for c in classes)
-                r1 = match_a.select_one('.first-team-result')
-                r2 = match_a.select_one('.second-team-result')
-                live_score = None
-                if r1 is not None and r2 is not None:
-                    s1 = r1.get_text(strip=True)
-                    s2 = r2.get_text(strip=True)
-                    if s1 or s2:
-                        live_score = f"{s1 or '0'} - {s2 or '0'}"
-                if live_score:
-                    status = "مباشر" if is_live else "انتهت"
-                    score = live_score
-                elif ':' in match_date_text and '-' not in match_date_text:
-                    status = "لم تبدأ"
-                    score = match_date_text
-                elif is_live:
-                    status = "مباشر"
-                    score = match_date_text or "—"
-                elif is_stopped or 'انتهت' in match_date_text:
-                    status = "انتهت"
-                    score = match_date_text
-                else:
-                    status = "لم تبدأ"
-                    score = match_date_text or "—"
-                detail_url = match_a.get('href', '').strip()
-                today = datetime.now(TZ).strftime('%Y-%m-%d')
-                m = {
-                    'homeTeam': home_name,
-                    'awayTeam': away_name,
-                    'league': league,
-                    'scoreOrTime': score,
-                    'status': status,
-                    'channels': [],
-                    'commentator': '',
-                    'source': 'YSscores',
-                    'homeLogo': home_logo if home_logo.startswith('http') else '',
-                    'awayLogo': away_logo if away_logo.startswith('http') else '',
-                    'scorers': {"home": [], "away": []},
-                    '_order': _order,
-                    '_ysscores_detail': detail_url,
-                    '_ysscores_id': match_id,
-                    '_match_date': today,
-                }
+                m['_order'] = len(matches)
+                m['league'] = league
                 matches.append(m)
         return matches
 
@@ -1415,17 +1527,34 @@ def execute_full_cycle():
     print(f"\n-> Fetching Matches for Date: {now.strftime('%Y-%m-%d')}...")
 
     yss = scraper_engine.scrape_ysscores()
-    print(f"    -> يلا شووت: {len(yss)} مباراة")
+    print(f"    -> يلا شووت (اليوم): {len(yss)} مباراة")
     scraper_engine._enrich_ysscores_details(yss)
 
-    print(f"\n-> [Debug] Total Raw Matches Extracted: {len(yss)}")
+    # —— Tomorrow: fetch via match_date_to endpoint (POST + CSRF session).
+    tomorrow_d = now.date() + timedelta(days=1)
+    tomorrow = tomorrow_d.strftime('%Y-%m-%d')
+    locale_months = ["January","February","March","April","May","June","July",
+                     "August","September","October","November","December"]
+    locale_date = f"{locale_months[tomorrow_d.month - 1]} {tomorrow_d.day},{tomorrow_d.year}"
+    yss_tomorrow = scraper_engine.scrape_ysscores_for_date(locale_date, tomorrow)
+    if yss_tomorrow:
+        print(f"    -> يلا شووت (الغد): {len(yss_tomorrow)} مباراة")
+        scraper_engine._enrich_ysscores_details(yss_tomorrow)
+    else:
+        print("    -> يلا شووت (الغد): 0 مباراة")
 
-    final_list = prepare_all_matches(yss)
+    all_matches = yss + yss_tomorrow
 
+    print(f"\n-> [Debug] Total Raw Matches Extracted: {len(all_matches)}")
+
+    final_list = prepare_all_matches(all_matches)
+
+    # NB: keep _match_date through build_grouped_list/_run_telegram_notifications;
+    # it drives tomorrow's start-date classification and alert windows. The final
+    # matches.json output strips it via _group_with_headers (no leak).
     for m in final_list:
         m.pop('_ysscores_id', None)
         m.pop('_ysscores_detail', None)
-        m.pop('_match_date', None)
         m.pop('_order', None)
         m.pop('_startDate', None)
         m.pop('_rawLeague', None)
