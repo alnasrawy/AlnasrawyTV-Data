@@ -1302,15 +1302,30 @@ if __name__ == "__main__":
         print("-> GitHub Actions Cycle Triggered...")
         now = datetime.now(TZ)
 
-        # —— Credit-saver: skip running while we're still more than the alert
-        # window (default 10 min) ahead of the earliest *upcoming* match.
+        # —— Credit-saver: skip running only when there is nothing to do.
+        # We must NOT skip while live matches exist, nor while any finished match
+        # still needs its final result to be sent (so results post promptly).
         too_early = False
         if os.path.exists(MATCHES_FILE):
             try:
                 with open(MATCHES_FILE, "r", encoding="utf-8") as f:
                     saved_matches = json.load(f)
+                state = _load_state()
+                ended_notified = state.get('ended_notified', {})
                 alert_min = int(TELEGRAM.get("start_alert_minutes", 10))
                 has_live = any(m.get('status') == "مباشر" for m in saved_matches)
+
+                # Is every finished match in the file already notified?
+                all_ended_notified = True
+                for m in saved_matches:
+                    if m.get('type') == 'league':
+                        continue
+                    if m.get('status') == "انتهت":
+                        key = "_".join(sorted([m['homeTeam'], m['awayTeam']]))
+                        if key not in ended_notified:
+                            all_ended_notified = False
+                            break
+
                 upcoming_dts = []
                 horizon = now + timedelta(days=1)
                 for m in saved_matches:
@@ -1327,8 +1342,17 @@ if __name__ == "__main__":
                     except Exception:
                         continue
                 future = [dt for dt in upcoming_dts if now <= dt <= horizon]
-                if future and not has_live:
-                    earliest = min(future)
+                earliest = min(future) if future else None
+
+                # Nothing in play and no pending results and no upcoming match -> sleep.
+                if not has_live and all_ended_notified and not future:
+                    too_early = True
+                    print("-> 💤 لا توجد مباريات قادمة أو جارية أو نتائج معلّقة. الخروج الفوري لتوفير رصيد GitHub.")
+                    sys.exit(0)
+
+                # Before the day starts: sleep until we are within the alert window
+                # of the earliest upcoming match (and no live/pending results).
+                if not has_live and all_ended_notified and earliest is not None:
                     wake_dt = earliest - timedelta(minutes=alert_min)
                     if now < wake_dt:
                         too_early = True
