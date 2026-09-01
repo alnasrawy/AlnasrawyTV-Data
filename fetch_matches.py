@@ -66,6 +66,83 @@ _cfg_vip = _CFG.get("vip", {}) or {}
 if _cfg_vip.get("leagues"):
     LEAGUES_MAPPING = _cfg_vip["leagues"]
 
+# ──────────────────────────────────────────────────────────────────
+# League filtering: hide leagues with little/no Arab fanbase plus the
+# regional leagues the channel owner wants off. Applied at scrape time so
+# blocked matches are neither displayed nor Telegram-notified (and cost no
+# API calls / credits).
+# ──────────────────────────────────────────────────────────────────
+# المجموعة 1 — جماهيرية عربية شبه معدومة + إقليمية يُراد إخفاؤها
+BLOCKED_LEAGUE_KEYWORDS = [
+    "ياباني", "الياباني", "japan",                 # الدوري الياباني الممتاز
+    "أرجنتين", "الأرجنتيني", "الارجنتيني", "argentin",  # الأرجنتيني + كأس الأرجنتين
+    "سويسري", "السويسري", "سويسرا", "swiss",       # دوري السوبر السويسري
+    "سويدي", "السويدي", "السويد", "swedish", "allsvenskan",  # الدوري السويدي
+    "دنمارك", "الدنماركي", "دانمارك", "danish",      # دوري السوبر الدنماركي
+    "بلجيكي", "البلجيكي", "belgian",               # الدوري البلجيكي
+    "يوناني", "اليوناني", "greece",                # الدوري اليوناني
+    "أمريكا", "الأمريكي", "امريكا", "mls",         # الدوري الأمريكي (كوبا أمريكا مستثناة أدناه)
+    "مكسيكي", "المكسيكي", "mexican",               # الدوري المكسيكي الممتاز
+    "كويتي", "الكويتي", "kuwait",                  # الدوري الكويتي
+    "عماني", "العماني", "سلطنة عمان", "oman",       # دوري المحترفين العماني
+    "بحريني", "البحريني", "bahrain",               # الدوري البحريني الممتاز
+]
+
+# المجموعة 2 — دوريات تُعرض لكن لأنديتها الجماهيرية فقط
+GROUP2_ALLOWED_CLUBS = {
+    "scottish": {
+        "keywords": ("إسكتلندي", "الاسكتلندي", "سكوتلندي", "scottish"),
+        "clubs": ("سيلتك", "رينجرز", "celtic", "rangers"),
+    },
+    "brazil": {
+        "keywords": ("برازيل", "البرازيلي", "brasileir", "brazil"),
+        "clubs": (
+            "فلامينغو", "كورينثيانز", "بالميراس", "سانتوس", "ساو باولو",
+            "فاسكو دا غاما", "غريميو", "إنترناسيونال", "كروزيرو",
+            "أتلتيكو مينيرو", "بوتافوغو", "فلومينينسي",
+            "flamengo", "corinthians", "palmeiras", "santos", "sao paulo",
+            "vasco", "gremio", "internacional", "cruzeiro", "atletico mg",
+            "botafogo", "fluminense",
+        ),
+    },
+    "portugal": {
+        "keywords": ("برتغالي", "البرتغالي", "portugal", "portuguese"),
+        "clubs": ("بنفيكا", "بورتو", "سبورتينغ", "براغا",
+                  "benfica", "porto", "sporting", "braga"),
+    },
+}
+
+# الدوريات الموحّدة المعروفة (شعبية عربياً) تُحفظ كلها دون فلترة
+KEEP_LEAGUES = set(LEAGUES_MAPPING.keys())
+
+
+def _std_league_name(raw):
+    for official_name, keywords in LEAGUES_MAPPING.items():
+        if any(kw in raw for kw in keywords):
+            return official_name
+    return raw
+
+
+def _should_keep_match(m):
+    raw = (m.get('league') or '') or (m.get('_rawLeague') or '')
+    std = _std_league_name(raw)
+    if std in KEEP_LEAGUES:
+        return True
+    # استثناء أمني: كأس كوبا أمريكا (لا تُحسب ضمن "أمريكا" المحجوبة)
+    if "كوبا أمريكا" in raw or "كوبا امريكا" in raw:
+        return True
+    if any(kw in raw for kw in BLOCKED_LEAGUE_KEYWORDS):
+        return False
+    home = (m.get('homeTeam') or '') + ' ' + (m.get('awayTeam') or '')
+    for cfg in GROUP2_ALLOWED_CLUBS.values():
+        if any(kw in raw for kw in cfg["keywords"]):
+            for club in cfg["clubs"]:
+                if club in home:
+                    return True
+            return False
+    # غير مصنّف: يُترك ظاهراً ليبقى قابلاً للمراجعة لاحقاً
+    return True
+
 TELEGRAM = _CFG.get("telegram", {}) or {}
 GLOBAL_DELAY = _CFG.get("global_delay", [1.0, 2.0]) or [1.0, 2.0]
 
@@ -959,12 +1036,7 @@ def prepare_all_matches(matches_list):
             continue
         # Normalize the league name to a clean/standard label when we can.
         raw_league = m['league'] or ''
-        std_league = raw_league
-        for official_name, keywords in LEAGUES_MAPPING.items():
-            if any(kw in raw_league for kw in keywords):
-                std_league = official_name
-                break
-        m['league'] = std_league
+        m['league'] = _std_league_name(raw_league)
         prepared.append(m)
     prepared.sort(key=lambda x: x.get('_order', 0))
     return prepared
@@ -1137,12 +1209,13 @@ def build_grouped_list(final_list):
 
     # Assemble final output: fresh classification is authoritative where provided,
     # otherwise the retained store (preserves yesterday incl. extended overnight).
+    # Retained entries also pass the league filter so blocked leagues never linger.
     out = {}
     for day_key, day_date in (("yesterday", today_d - timedelta(days=1)),
                               ("today", today_d),
                               ("tomorrow", today_d + timedelta(days=1))):
         iso = day_date.strftime('%Y-%m-%d')
-        bucket = list(day_store.get(iso, []))
+        bucket = [m for m in day_store.get(iso, []) if _should_keep_match(m)]
         if sections[day_key]:
             bucket = list(sections[day_key])
         bucket.sort(key=lambda x: x.get('_order', 0))
@@ -1345,6 +1418,7 @@ class GhostScraper:
             return []
         soup = BeautifulSoup(html, 'html.parser')
         matches = []
+        skipped = 0
         today = datetime.now(TZ).strftime('%Y-%m-%d')
         for champ_div in soup.select('div.matches-wrapper'):
             league = champ_div.get('champ_title', '').strip()
@@ -1354,7 +1428,12 @@ class GhostScraper:
                     continue
                 m['_order'] = len(matches)
                 m['league'] = league
+                if not _should_keep_match(m):
+                    skipped += 1
+                    continue
                 matches.append(m)
+        if skipped:
+            print(f"    -> استُبعد {skipped} مباراة (دوريات محجوبة) من قائمة اليوم")
         return matches
 
     def scrape_ysscores_for_date(self, locale_date, iso_date):
@@ -1365,6 +1444,7 @@ class GhostScraper:
             return []
         soup = BeautifulSoup(html, 'html.parser')
         matches = []
+        skipped = 0
         for champ_div in soup.select('div.matches-wrapper'):
             league = champ_div.get('champ_title', '').strip()
             for match_a in champ_div.select('a.ajax-match-item'):
@@ -1373,7 +1453,12 @@ class GhostScraper:
                     continue
                 m['_order'] = len(matches)
                 m['league'] = league
+                if not _should_keep_match(m):
+                    skipped += 1
+                    continue
                 matches.append(m)
+        if skipped:
+            print(f"    -> استُبعد {skipped} مباراة (دوريات محجوبة) من قائمة {iso_date}")
         return matches
 
     def _fetch_ysscores_detail(self, detail_url, match_id=""):
