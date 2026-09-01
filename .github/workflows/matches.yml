@@ -12,6 +12,14 @@ on:
 
   workflow_dispatch: # متاح للتشغيل اليدوي للطوارئ
 
+  # أي تعديل على الكود يشغّل دورة فوراً (bounded to code files so the bot's
+  # own data-commits never retrigger a cycle)
+  push:
+    branches: [main]
+    paths:
+      - 'fetch_matches.py'
+      - '.github/workflows/matches.yml'
+
 permissions:
   contents: write
 
