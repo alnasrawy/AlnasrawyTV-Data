@@ -1232,8 +1232,22 @@ class GhostScraper:
                 r = requests.get(url, impersonate="chrome120", timeout=30,
                                  headers=self._session_headers(url))
             if r.status_code == 200:
-                return r.text
+                try:
+                    return r.content.decode('utf-8', errors='replace')
+                except Exception:
+                    return r.text
             print(f"    ❌ [{source_name}] HTTP {r.status_code}: {url}")
+        except UnicodeDecodeError:
+            # curl_cffi guessed 'ascii' for this response; retry through the
+            # plain path which honours the real charset (never fatal).
+            try:
+                r2 = requests.get(url, impersonate="chrome120", timeout=30,
+                                  headers=self._session_headers(url))
+                if r2.status_code == 200:
+                    return r2.content.decode('utf-8', errors='replace')
+            except Exception:
+                pass
+            print(f"    ❌ [{source_name}] decode retry failed: {url}")
         except Exception as e:
             print(f"    ❌ [{source_name}] Error: {e}")
         return None
@@ -1531,6 +1545,10 @@ def execute_full_cycle():
     scraper_engine._enrich_ysscores_details(yss)
 
     # —— Tomorrow: fetch via match_date_to endpoint (POST + CSRF session).
+    #    We deliberately do NOT enrich tomorrow's matches now: they carry no
+    #    channels/commentators until tomorrow's own cycle re-fetches them as
+    #    "today" and enriches them — this keeps the current cycle fast enough to
+    #    stay inside each live match's 10-minute reminder window.
     tomorrow_d = now.date() + timedelta(days=1)
     tomorrow = tomorrow_d.strftime('%Y-%m-%d')
     locale_months = ["January","February","March","April","May","June","July",
@@ -1539,7 +1557,6 @@ def execute_full_cycle():
     yss_tomorrow = scraper_engine.scrape_ysscores_for_date(locale_date, tomorrow)
     if yss_tomorrow:
         print(f"    -> يلا شووت (الغد): {len(yss_tomorrow)} مباراة")
-        scraper_engine._enrich_ysscores_details(yss_tomorrow)
     else:
         print("    -> يلا شووت (الغد): 0 مباراة")
 
@@ -1604,37 +1621,68 @@ if __name__ == "__main__":
                 else:
                     saved_matches = file_data
                 state = _load_state()
+
+                # Credit-saver needs the matches that actually carry a start
+                # instant. state['day_matches'] retains _start_date (the true iso
+                # kickoff, incl. tomorrow's), whereas matches.json strips those
+                # internals — so union both, preferring the fresher/day-store copy.
+                day_store_all = []
+                for _bucket in (state.get('day_matches', {}) or {}).values():
+                    for _m in (_bucket or []):
+                        if isinstance(_m, dict) and _m.get('homeTeam') and _m.get('awayTeam'):
+                            day_store_all.append(_m)
+                relevant = {}
+                for _m in saved_matches + day_store_all:
+                    if _m.get('type') == 'league':
+                        continue
+                    if not _m.get('homeTeam') or not _m.get('awayTeam'):
+                        continue
+                    _k = "_".join(sorted([_m['homeTeam'], _m['awayTeam']]))
+                    relevant[_k] = _m  # later copies (day_store) win
+
                 ended_notified = state.get('ended_notified', {})
                 alert_min = int(TELEGRAM.get("start_alert_minutes", 10))
-                has_live = any(m.get('status') == "مباشر" for m in saved_matches)
+                has_live = any(m.get('status') == "مباشر" for m in relevant.values())
 
-                # Is every finished match in the file already notified?
+                # Is every finished match already notified?
                 all_ended_notified = True
-                for m in saved_matches:
-                    if m.get('type') == 'league':
-                        continue
+                for m in relevant.values():
                     if m.get('status') == "انتهت":
                         key = "_".join(sorted([m['homeTeam'], m['awayTeam']]))
                         if key not in ended_notified:
                             all_ended_notified = False
                             break
 
+                # Build the real upcoming kickoff list. Prefer the stored
+                # _start_date iso (correct for both today's and tomorrow's
+                # matches); fall back to parsing the clock time on today's date.
                 upcoming_dts = []
                 horizon = now + timedelta(days=1)
-                for m in saved_matches:
+                for m in relevant.values():
                     if m.get('status') != "لم تبدأ":
                         continue
-                    sv = m.get('scoreOrTime', '')
-                    if ':' not in sv or '-' in sv:
-                        continue
-                    try:
-                        dt = _parse_match_dt(sv, now)
-                        if dt < now:
-                            dt = dt + timedelta(days=1)  # فجر الغد
-                        upcoming_dts.append(dt)
-                    except Exception:
-                        continue
-                future = [dt for dt in upcoming_dts if now <= dt <= horizon]
+                    dt = None
+                    sd = m.get('_start_date')
+                    if sd:
+                        try:
+                            candidate = datetime.fromisoformat(sd)
+                            if candidate.tzinfo is None:
+                                candidate = candidate.replace(tzinfo=TZ)
+                            dt = candidate
+                        except Exception:
+                            dt = None
+                    if dt is None:
+                        sv = m.get('scoreOrTime', '')
+                        if ':' not in sv or '-' in sv:
+                            continue
+                        try:
+                            dt = _parse_match_dt(sv, now)
+                            if dt < now:
+                                dt = dt + timedelta(days=1)  # فجر الغد
+                        except Exception:
+                            continue
+                    upcoming_dts.append(dt)
+                future = [d for d in upcoming_dts if now <= d <= horizon]
                 earliest = min(future) if future else None
 
                 # Nothing in play and no pending results and no upcoming match -> sleep.
