@@ -302,33 +302,6 @@
         },
         {
             "type": "league",
-            "league": "الدوري الأمريكي لكرة القدم",
-            "leagueLogo": "https://imgs.ysscores.com/championship/150/671691408606.png"
-        },
-        {
-            "homeTeam": "سانت لويس",
-            "awayTeam": "دالاس",
-            "league": "الدوري الأمريكي لكرة القدم",
-            "scoreOrTime": "3 - 3",
-            "status": "انتهت",
-            "channels": [
-                "Apple TV"
-            ],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/8261691410367.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/781691410999.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 22 - مباراة الإياب",
-            "stadium": "سيتي بارك",
-            "_championship_link": "https://www.ysscores.com/ar/championship/79123/Major-League-Soccer",
-            "type": "match"
-        },
-        {
-            "type": "league",
             "league": "الدوري البرتغالي الممتاز",
             "leagueLogo": ""
         },
@@ -369,53 +342,6 @@
             "round": "الجولة 4 - مباراة الذهاب",
             "stadium": "ملعب النور",
             "_championship_link": "https://www.ysscores.com/ar/championship/54416/Liga-Portugal",
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "دوري السوبر الدنماركي",
-            "leagueLogo": ""
-        },
-        {
-            "homeTeam": "كوبنهاغن",
-            "awayTeam": "سونديريوسك",
-            "league": "دوري السوبر الدنماركي",
-            "scoreOrTime": "08:00م",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/1701690822703.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/911721557659.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "الدوري اليوناني",
-            "leagueLogo": "https://imgs.ysscores.com/championship/150/8761754000394.png"
-        },
-        {
-            "homeTeam": "ليفادياكوس",
-            "awayTeam": "باناثينايكوس",
-            "league": "الدوري اليوناني",
-            "scoreOrTime": "07:30م",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/5491739336020.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/8301690821553.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 2 - مباراة الذهاب",
-            "stadium": "إستاديو ليفاديا",
-            "_championship_link": "https://www.ysscores.com/ar/championship/138192/Super-League-Greece",
             "type": "match"
         },
         {
@@ -478,191 +404,6 @@
             "round": "الجولة 25 - مباراة الإياب",
             "stadium": "أرينا فونتي نوفا",
             "_championship_link": "https://www.ysscores.com/ar/championship/40224/Campeonato-Brasileiro-Série-A",
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "دوري الدرجة الأولى الأرجنتيني",
-            "leagueLogo": ""
-        },
-        {
-            "homeTeam": "إنديبندينتي",
-            "awayTeam": "جيمناسيا",
-            "league": "دوري الدرجة الأولى الأرجنتيني",
-            "scoreOrTime": "0 - 3",
-            "status": "انتهت",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/1241723538068.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/17673035697322.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 7 - مباراة الذهاب",
-            "stadium": "ملعب ليبرتادوريس دي أمريكا",
-            "_championship_link": "https://www.ysscores.com/ar/championship/75166/Argentine-Primera-División",
-            "type": "match"
-        },
-        {
-            "homeTeam": "ريفادافيا",
-            "awayTeam": "راسينغ",
-            "league": "دوري الدرجة الأولى الأرجنتيني",
-            "scoreOrTime": "3 - 1",
-            "status": "انتهت",
-            "channels": [
-                "Dubai Sports 1"
-            ],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/2411718579396.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/2551715593780.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 7 - مباراة الذهاب",
-            "stadium": "استاد باوتيستا جارجانتيني",
-            "_championship_link": "https://www.ysscores.com/ar/championship/75166/Argentine-Primera-División",
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "الدوري الكويتي",
-            "leagueLogo": "https://imgs.ysscores.com/championship/150/6261723224041.png"
-        },
-        {
-            "homeTeam": "الصليبخات",
-            "awayTeam": "الشباب",
-            "league": "الدوري الكويتي",
-            "scoreOrTime": "06:40م",
-            "status": "لم تبدأ",
-            "channels": [
-                "KTV Sport"
-            ],
-            "commentator": "محمد العتيبي",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/17874214659659.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/4011756846304.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 2 - مباراة الذهاب",
-            "stadium": "ملعب عبد الله الخليفة",
-            "_championship_link": "https://www.ysscores.com/ar/championship/41480/Kuwait-Premier-League",
-            "type": "match"
-        },
-        {
-            "homeTeam": "القادسية",
-            "awayTeam": "الكويت",
-            "league": "الدوري الكويتي",
-            "scoreOrTime": "08:55م",
-            "status": "لم تبدأ",
-            "channels": [
-                "KTV Sport"
-            ],
-            "commentator": "حماد العنزي",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/451723127217.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/7471694354180.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 2 - مباراة الذهاب",
-            "stadium": "استاد محمد الحمد",
-            "_championship_link": "https://www.ysscores.com/ar/championship/41480/Kuwait-Premier-League",
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "دوري المحترفين العماني",
-            "leagueLogo": "https://imgs.ysscores.com/championship/150/2201691928047.png"
-        },
-        {
-            "homeTeam": "نادي عُمان",
-            "awayTeam": "ظفار",
-            "league": "دوري المحترفين العماني",
-            "scoreOrTime": "2 - 0",
-            "status": "مباشر",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/9041691931536.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/3391691930804.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 1 - مباراة الذهاب",
-            "stadium": "مجمع السلطان قابوس الرياضي",
-            "_championship_link": "https://www.ysscores.com/ar/championship/91130/Oman-Professional-League",
-            "type": "match"
-        },
-        {
-            "homeTeam": "سمائل",
-            "awayTeam": "صحم",
-            "league": "دوري المحترفين العماني",
-            "scoreOrTime": "1 - 0",
-            "status": "مباشر",
-            "channels": [
-                "Oman TV Sport"
-            ],
-            "commentator": "شبيب الحبسي",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/7331753867950.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/1541722176368.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 1 - مباراة الذهاب",
-            "stadium": "المجمع الرياضي بنزوي",
-            "_championship_link": "https://www.ysscores.com/ar/championship/91130/Oman-Professional-League",
-            "type": "match"
-        },
-        {
-            "homeTeam": "صحار",
-            "awayTeam": "عبري",
-            "league": "دوري المحترفين العماني",
-            "scoreOrTime": "07:15م",
-            "status": "لم تبدأ",
-            "channels": [
-                "Oman TV Sport"
-            ],
-            "commentator": "صلاح الحمداني",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/3001691931931.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/801691932066.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 1 - مباراة الذهاب",
-            "stadium": "مجمع البريمي (النهضة)",
-            "_championship_link": "https://www.ysscores.com/ar/championship/91130/Oman-Professional-League",
-            "type": "match"
-        },
-        {
-            "homeTeam": "صور",
-            "awayTeam": "الشباب",
-            "league": "دوري المحترفين العماني",
-            "scoreOrTime": "07:15م",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/3801691931317.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/8431691931857.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 1 - مباراة الذهاب",
-            "stadium": "مجمع صور الرياضي",
-            "_championship_link": "https://www.ysscores.com/ar/championship/91130/Oman-Professional-League",
             "type": "match"
         },
         {
@@ -734,104 +475,6 @@
             "round": "الجولة 3 - مباراة الذهاب",
             "stadium": "استاد الأمير عبدالعزيز بن مساعد بن جلوي",
             "_championship_link": "https://www.ysscores.com/ar/championship/89554/First-Division-League",
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "الدوري السويدي الممتاز",
-            "leagueLogo": ""
-        },
-        {
-            "homeTeam": "يورغوردينس",
-            "awayTeam": "ميالبي",
-            "league": "الدوري السويدي الممتاز",
-            "scoreOrTime": "08:00م",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/2891690370541.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/6581690370514.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "غايس غوتنبرغ",
-            "awayTeam": "برومابوجكارنا",
-            "league": "الدوري السويدي الممتاز",
-            "scoreOrTime": "08:00م",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/8981690370519.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/5181690370527.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 19 - مباراة الإياب",
-            "stadium": "غاملا أوليفي",
-            "_championship_link": "https://www.ysscores.com/ar/championship/252344/Sweden-League",
-            "type": "match"
-        },
-        {
-            "homeTeam": "سيريوس",
-            "awayTeam": "مالمو",
-            "league": "الدوري السويدي الممتاز",
-            "scoreOrTime": "08:00م",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/8671690370506.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/4081690370557.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "الدوري المكسيكي الممتاز",
-            "leagueLogo": ""
-        },
-        {
-            "homeTeam": "تولكا",
-            "awayTeam": "خواريز",
-            "league": "الدوري المكسيكي الممتاز",
-            "scoreOrTime": "4 - 0",
-            "status": "انتهت",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/6661718133451.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/2681716208505.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "مونتيري",
-            "awayTeam": "أتلتيكو سان لويس",
-            "league": "الدوري المكسيكي الممتاز",
-            "scoreOrTime": "1 - 3",
-            "status": "انتهت",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/2211709821895.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/9561722759581.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
             "type": "match"
         }
     ],
@@ -990,126 +633,6 @@
             "leagueLogo": "https://imgs.ysscores.com/championship/150/4861690937574.png"
         },
         {
-            "homeTeam": "لينكولن",
-            "awayTeam": "بلاكبيرن روفرز",
-            "league": "الدوري الإنجليزي",
-            "scoreOrTime": "0 - 0",
-            "status": "مباشر",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/17801568048336.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/781690370534.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 4 - مباراة الذهاب",
-            "stadium": "سيلسيل بانك",
-            "_championship_link": "https://www.ysscores.com/ar/championship/41019/EFL-Championship",
-            "type": "match"
-        },
-        {
-            "homeTeam": "بورتسموث",
-            "awayTeam": "ديربي كاونتي",
-            "league": "الدوري الإنجليزي",
-            "scoreOrTime": "0 - 2",
-            "status": "مباشر",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/5401690370525.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/8071690370554.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 4 - مباراة الذهاب",
-            "stadium": "فراتون بارك",
-            "_championship_link": "https://www.ysscores.com/ar/championship/41019/EFL-Championship",
-            "type": "match"
-        },
-        {
-            "homeTeam": "بريستون",
-            "awayTeam": "بريستول",
-            "league": "الدوري الإنجليزي",
-            "scoreOrTime": "1 - 2",
-            "status": "مباشر",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/4581690370523.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/4621690370523.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 4 - مباراة الذهاب",
-            "stadium": "ديبديل",
-            "_championship_link": "https://www.ysscores.com/ar/championship/41019/EFL-Championship",
-            "type": "match"
-        },
-        {
-            "homeTeam": "شيفيلد",
-            "awayTeam": "بولتون",
-            "league": "الدوري الإنجليزي",
-            "scoreOrTime": "2 - 2",
-            "status": "مباشر",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/5951690118629.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/3561690370529.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 4 - مباراة الذهاب",
-            "stadium": "برامول لين",
-            "_championship_link": "https://www.ysscores.com/ar/championship/41019/EFL-Championship",
-            "type": "match"
-        },
-        {
-            "homeTeam": "سوانزي",
-            "awayTeam": "واتفورد",
-            "league": "الدوري الإنجليزي",
-            "scoreOrTime": "2 - 0",
-            "status": "مباشر",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/4561723590559.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/3341690370541.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 4 - مباراة الذهاب",
-            "stadium": "سوانزي دوت كوم",
-            "_championship_link": "https://www.ysscores.com/ar/championship/41019/EFL-Championship",
-            "type": "match"
-        },
-        {
-            "homeTeam": "وست هام",
-            "awayTeam": "وولفرهامبتون",
-            "league": "الدوري الإنجليزي",
-            "scoreOrTime": "4 - 2",
-            "status": "مباشر",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/7191690118603.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/9631690118479.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 4 - مباراة الذهاب",
-            "stadium": "استاد لندن الأولمبي",
-            "_championship_link": "https://www.ysscores.com/ar/championship/41019/EFL-Championship",
-            "type": "match"
-        },
-        {
             "homeTeam": "برمنغهام",
             "awayTeam": "ساوثهامبتون",
             "league": "الدوري الإنجليزي",
@@ -1152,107 +675,123 @@
             "type": "match"
         },
         {
-            "type": "league",
-            "league": "الدوري البرازيلي",
-            "leagueLogo": ""
-        },
-        {
-            "homeTeam": "ريمو",
-            "awayTeam": "كوريتيبا",
-            "league": "الدوري البرازيلي",
-            "scoreOrTime": "2 - 3",
-            "status": "انتهت",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/17673059547919.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/4391691431942.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 25 - مباراة الإياب",
-            "stadium": "استاد مانجويراو",
-            "_championship_link": "https://www.ysscores.com/ar/championship/40224/Campeonato-Brasileiro-Série-A",
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "دوري الدرجة الأولى الأرجنتيني",
-            "leagueLogo": ""
-        },
-        {
-            "homeTeam": "خوستيكا",
-            "awayTeam": "بلاتينسي",
-            "league": "دوري الدرجة الأولى الأرجنتيني",
-            "scoreOrTime": "1 - 0",
-            "status": "انتهت",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/8621711750295.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/6751717933744.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "إستوديانتيس",
-            "awayTeam": "نيولز",
-            "league": "دوري الدرجة الأولى الأرجنتيني",
+            "homeTeam": "لينكولن",
+            "awayTeam": "بلاكبيرن روفرز",
+            "league": "الدوري الإنجليزي",
             "scoreOrTime": "0 - 0",
             "status": "انتهت",
             "channels": [],
             "commentator": "",
             "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/9621711808779.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/5511706892334.png",
+            "homeLogo": "https://imgs.ysscores.com/teams/128/17801568048336.png",
+            "awayLogo": "https://imgs.ysscores.com/teams/128/781690370534.png",
             "scorers": {
                 "home": [],
                 "away": []
             },
-            "round": "الجولة 7 - مباراة الذهاب",
-            "stadium": "استاد خورخي لويس هيرسشاي",
-            "_championship_link": "https://www.ysscores.com/ar/championship/75166/Argentine-Primera-División",
+            "round": "الجولة 4 - مباراة الذهاب",
+            "stadium": "سيلسيل بانك",
+            "_championship_link": "https://www.ysscores.com/ar/championship/41019/EFL-Championship",
             "type": "match"
         },
         {
-            "homeTeam": "انيستتوتو",
-            "awayTeam": "سان لورينزو",
-            "league": "دوري الدرجة الأولى الأرجنتيني",
-            "scoreOrTime": "1 - 0",
+            "homeTeam": "بورتسموث",
+            "awayTeam": "ديربي كاونتي",
+            "league": "الدوري الإنجليزي",
+            "scoreOrTime": "0 - 2",
             "status": "انتهت",
             "channels": [],
             "commentator": "",
             "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/3131717933825.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/8421711808886.png",
+            "homeLogo": "https://imgs.ysscores.com/teams/128/5401690370525.png",
+            "awayLogo": "https://imgs.ysscores.com/teams/128/8071690370554.png",
             "scorers": {
                 "home": [],
                 "away": []
             },
-            "round": "الجولة 7 - مباراة الذهاب",
-            "stadium": "استاد ماريو ألبيرتو كيمبس",
-            "_championship_link": "https://www.ysscores.com/ar/championship/75166/Argentine-Primera-División",
+            "round": "الجولة 4 - مباراة الذهاب",
+            "stadium": "فراتون بارك",
+            "_championship_link": "https://www.ysscores.com/ar/championship/41019/EFL-Championship",
             "type": "match"
         },
         {
-            "homeTeam": "تيغري",
-            "awayTeam": "باراكاس",
-            "league": "دوري الدرجة الأولى الأرجنتيني",
-            "scoreOrTime": "0 - 0",
+            "homeTeam": "بريستون",
+            "awayTeam": "بريستول",
+            "league": "الدوري الإنجليزي",
+            "scoreOrTime": "1 - 3",
             "status": "انتهت",
             "channels": [],
             "commentator": "",
             "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/6041717935703.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/1021717935858.png",
+            "homeLogo": "https://imgs.ysscores.com/teams/128/4581690370523.png",
+            "awayLogo": "https://imgs.ysscores.com/teams/128/4621690370523.png",
             "scorers": {
                 "home": [],
                 "away": []
             },
+            "round": "الجولة 4 - مباراة الذهاب",
+            "stadium": "ديبديل",
+            "_championship_link": "https://www.ysscores.com/ar/championship/41019/EFL-Championship",
+            "type": "match"
+        },
+        {
+            "homeTeam": "شيفيلد",
+            "awayTeam": "بولتون",
+            "league": "الدوري الإنجليزي",
+            "scoreOrTime": "3 - 2",
+            "status": "انتهت",
+            "channels": [],
+            "commentator": "",
+            "source": "YSscores",
+            "homeLogo": "https://imgs.ysscores.com/teams/128/5951690118629.png",
+            "awayLogo": "https://imgs.ysscores.com/teams/128/3561690370529.png",
+            "scorers": {
+                "home": [],
+                "away": []
+            },
+            "round": "الجولة 4 - مباراة الذهاب",
+            "stadium": "برامول لين",
+            "_championship_link": "https://www.ysscores.com/ar/championship/41019/EFL-Championship",
+            "type": "match"
+        },
+        {
+            "homeTeam": "سوانزي",
+            "awayTeam": "واتفورد",
+            "league": "الدوري الإنجليزي",
+            "scoreOrTime": "2 - 0",
+            "status": "انتهت",
+            "channels": [],
+            "commentator": "",
+            "source": "YSscores",
+            "homeLogo": "https://imgs.ysscores.com/teams/128/4561723590559.png",
+            "awayLogo": "https://imgs.ysscores.com/teams/128/3341690370541.png",
+            "scorers": {
+                "home": [],
+                "away": []
+            },
+            "round": "الجولة 4 - مباراة الذهاب",
+            "stadium": "سوانزي دوت كوم",
+            "_championship_link": "https://www.ysscores.com/ar/championship/41019/EFL-Championship",
+            "type": "match"
+        },
+        {
+            "homeTeam": "وست هام",
+            "awayTeam": "وولفرهامبتون",
+            "league": "الدوري الإنجليزي",
+            "scoreOrTime": "4 - 2",
+            "status": "انتهت",
+            "channels": [],
+            "commentator": "",
+            "source": "YSscores",
+            "homeLogo": "https://imgs.ysscores.com/teams/128/7191690118603.png",
+            "awayLogo": "https://imgs.ysscores.com/teams/128/9631690118479.png",
+            "scorers": {
+                "home": [],
+                "away": []
+            },
+            "round": "الجولة 4 - مباراة الذهاب",
+            "stadium": "استاد لندن الأولمبي",
+            "_championship_link": "https://www.ysscores.com/ar/championship/41019/EFL-Championship",
             "type": "match"
         },
         {
@@ -1265,7 +804,7 @@
             "awayTeam": "دورتموند",
             "league": "الدوري الألماني",
             "scoreOrTime": "0 - 5",
-            "status": "مباشر",
+            "status": "انتهت",
             "channels": [
                 "AD Sports 1"
             ],
@@ -1331,55 +870,6 @@
             "round": "نصف نهائي",
             "stadium": "استاد جاسم بن حمد",
             "_championship_link": "https://www.ysscores.com/ar/championship/769121/Qatar-Cup",
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "الدوري الكويتي",
-            "leagueLogo": "https://imgs.ysscores.com/championship/150/6261723224041.png"
-        },
-        {
-            "homeTeam": "كاظمة",
-            "awayTeam": "الساحل",
-            "league": "الدوري الكويتي",
-            "scoreOrTime": "0 - 0",
-            "status": "انتهت",
-            "channels": [
-                "KTV Sport"
-            ],
-            "commentator": "بدر شداد",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/7631723156417.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/17874216584706.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 2 - مباراة الذهاب",
-            "stadium": "استاد الصداقة والسلام",
-            "_championship_link": "https://www.ysscores.com/ar/championship/41480/Kuwait-Premier-League",
-            "type": "match"
-        },
-        {
-            "homeTeam": "التضامن",
-            "awayTeam": "السالمية",
-            "league": "الدوري الكويتي",
-            "scoreOrTime": "0 - 2",
-            "status": "انتهت",
-            "channels": [
-                "Kuwait Sports 2"
-            ],
-            "commentator": "علي خلف الشمري",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/5481723156962.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/9401723156497.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "round": "الجولة 2 - مباراة الذهاب",
-            "stadium": "ملعب التضامن",
-            "_championship_link": "https://www.ysscores.com/ar/championship/41480/Kuwait-Premier-League",
             "type": "match"
         },
         {
@@ -1457,7 +947,7 @@
             "homeTeam": "الجونة",
             "awayTeam": "المقاولون العرب",
             "league": "الدوري المصري",
-            "scoreOrTime": "07:00ص",
+            "scoreOrTime": "10:00ص",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1474,7 +964,7 @@
             "homeTeam": "أبو قير",
             "awayTeam": "الإتحاد",
             "league": "الدوري المصري",
-            "scoreOrTime": "10:00ص",
+            "scoreOrTime": "01:00م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1491,7 +981,7 @@
             "homeTeam": "سيراميكا",
             "awayTeam": "مودرن سبورت",
             "league": "الدوري المصري",
-            "scoreOrTime": "10:00ص",
+            "scoreOrTime": "01:00م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1513,7 +1003,7 @@
             "homeTeam": "ساسولو",
             "awayTeam": "فروزينوني",
             "league": "الدوري الإيطالي",
-            "scoreOrTime": "06:00ص",
+            "scoreOrTime": "09:00ص",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1530,7 +1020,7 @@
             "homeTeam": "أودينيزي",
             "awayTeam": "فينيسا",
             "league": "الدوري الإيطالي",
-            "scoreOrTime": "09:00ص",
+            "scoreOrTime": "12:00م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1552,7 +1042,7 @@
             "homeTeam": "كوينز بارك رينجرز",
             "awayTeam": "كارديف سيتي",
             "league": "الدوري الإنجليزي",
-            "scoreOrTime": "11:45ص",
+            "scoreOrTime": "02:45م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1569,7 +1059,7 @@
             "homeTeam": "وست بروميتش",
             "awayTeam": "تشارلتون أثلتيك",
             "league": "الدوري الإنجليزي",
-            "scoreOrTime": "11:45ص",
+            "scoreOrTime": "02:45م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1586,7 +1076,7 @@
             "homeTeam": "ميلوول",
             "awayTeam": "ريكسهام",
             "league": "الدوري الإنجليزي",
-            "scoreOrTime": "11:45ص",
+            "scoreOrTime": "02:45م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1603,57 +1093,13 @@
             "homeTeam": "بيرنلي",
             "awayTeam": "ميدلزبره",
             "league": "الدوري الإنجليزي",
-            "scoreOrTime": "12:00م",
+            "scoreOrTime": "03:00م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
             "source": "YSscores",
             "homeLogo": "https://imgs.ysscores.com/teams/128/7301690118156.png",
             "awayLogo": "https://imgs.ysscores.com/teams/128/7871690370529.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "الدوري البلجيكي",
-            "leagueLogo": ""
-        },
-        {
-            "homeTeam": "سينت ترويدن",
-            "awayTeam": "سان جيلواز",
-            "league": "الدوري البلجيكي",
-            "scoreOrTime": "11:30ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/6271690370550.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/3651690370510.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "دوري السوبر الدنماركي",
-            "leagueLogo": ""
-        },
-        {
-            "homeTeam": "اوروس",
-            "awayTeam": "ميتييلاند",
-            "league": "دوري السوبر الدنماركي",
-            "scoreOrTime": "11:00ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/5081691095768.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/7731691095830.png",
             "scorers": {
                 "home": [],
                 "away": []
@@ -1669,7 +1115,7 @@
             "homeTeam": "سيلتك",
             "awayTeam": "أبردين",
             "league": "الدوري الإسكتلندي الممتاز",
-            "scoreOrTime": "11:45ص",
+            "scoreOrTime": "02:45م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1683,61 +1129,10 @@
             "type": "match"
         },
         {
-            "homeTeam": "دندي",
-            "awayTeam": "سانت جونستون",
-            "league": "الدوري الإسكتلندي الممتاز",
-            "scoreOrTime": "11:45ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/2331690370518.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/8731690370526.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "كيلمارنوك",
-            "awayTeam": "سانت ميرين",
-            "league": "الدوري الإسكتلندي الممتاز",
-            "scoreOrTime": "11:45ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/4141690370531.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/1661690370541.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "ماذرويل",
-            "awayTeam": "دندي يونايتد",
-            "league": "الدوري الإسكتلندي الممتاز",
-            "scoreOrTime": "11:45ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/9511690370547.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/1541754872814.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
             "homeTeam": "فالكريك",
             "awayTeam": "رينجرز",
             "league": "الدوري الإسكتلندي الممتاز",
-            "scoreOrTime": "12:00م",
+            "scoreOrTime": "03:00م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1759,7 +1154,7 @@
             "homeTeam": "فلامينغو",
             "awayTeam": "ميراسول",
             "league": "الدوري البرازيلي",
-            "scoreOrTime": "03:30م",
+            "scoreOrTime": "06:30م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1781,125 +1176,13 @@
             "homeTeam": "أسنابروك",
             "awayTeam": "بايرن ميونخ",
             "league": "الدوري الألماني",
-            "scoreOrTime": "11:45ص",
+            "scoreOrTime": "02:45م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
             "source": "YSscores",
             "homeLogo": "https://imgs.ysscores.com/teams/128/3631690370539.png",
             "awayLogo": "https://imgs.ysscores.com/teams/128/2351690288818.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "دوري السوبر السويسري",
-            "leagueLogo": ""
-        },
-        {
-            "homeTeam": "جراسهوبرز",
-            "awayTeam": "سانت جالين",
-            "league": "دوري السوبر السويسري",
-            "scoreOrTime": "11:30ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/5311690370548.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/9231690370555.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "لوسرن",
-            "awayTeam": "فادوتس",
-            "league": "دوري السوبر السويسري",
-            "scoreOrTime": "11:30ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/7211690370556.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/4421722539824.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "زيورخ",
-            "awayTeam": "يانغ بويز",
-            "league": "دوري السوبر السويسري",
-            "scoreOrTime": "2 - 4",
-            "status": "مباشر",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/4531690370557.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/851690370555.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "ثون",
-            "awayTeam": "لوزان",
-            "league": "دوري السوبر السويسري",
-            "scoreOrTime": "11:30ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/9991690370555.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/1471690370506.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "الدوري البحريني الممتاز",
-            "leagueLogo": ""
-        },
-        {
-            "homeTeam": "الرفاع الشرقي",
-            "awayTeam": "سترة",
-            "league": "الدوري البحريني الممتاز",
-            "scoreOrTime": "09:00ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/2271692197859.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/3231692198181.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "المالكية",
-            "awayTeam": "النجمة",
-            "league": "الدوري البحريني الممتاز",
-            "scoreOrTime": "09:00ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/3381729346609.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/111692197201.png",
             "scorers": {
                 "home": [],
                 "away": []
@@ -1915,7 +1198,7 @@
             "homeTeam": "هجر",
             "awayTeam": "الأنوار",
             "league": "الدوري السعودي",
-            "scoreOrTime": "08:40ص",
+            "scoreOrTime": "11:40ص",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1932,7 +1215,7 @@
             "homeTeam": "الوحدة",
             "awayTeam": "ضمك",
             "league": "الدوري السعودي",
-            "scoreOrTime": "09:15ص",
+            "scoreOrTime": "12:15م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1949,210 +1232,13 @@
             "homeTeam": "العلا",
             "awayTeam": "الرائد",
             "league": "الدوري السعودي",
-            "scoreOrTime": "10:40ص",
+            "scoreOrTime": "01:40م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
             "source": "YSscores",
             "homeLogo": "https://imgs.ysscores.com/teams/128/17835196183481.png",
             "awayLogo": "https://imgs.ysscores.com/teams/128/251724712283.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "كأس الأرجنتين",
-            "leagueLogo": ""
-        },
-        {
-            "homeTeam": "سارسفيلد",
-            "awayTeam": "بوكا جونيورز",
-            "league": "كأس الأرجنتين",
-            "scoreOrTime": "05:15م",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/4581717933514.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/17769918946692.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "الدوري الياباني الممتاز",
-            "leagueLogo": ""
-        },
-        {
-            "homeTeam": "أفيسبا",
-            "awayTeam": "أوراوا ريد",
-            "league": "الدوري الياباني الممتاز",
-            "scoreOrTime": "03:00ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/8051739525504.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/631692707079.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "سيريزو أوساكا",
-            "awayTeam": "كاشيوا ريسول",
-            "league": "الدوري الياباني الممتاز",
-            "scoreOrTime": "03:00ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/9551690370498.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/2641739391967.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "تشيبا",
-            "awayTeam": "فاجيانو أوكاياما",
-            "league": "الدوري الياباني الممتاز",
-            "scoreOrTime": "03:00ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/17860222345503.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/1951743689727.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "ماتشيدا زيلفيا",
-            "awayTeam": "كاواساكي",
-            "league": "الدوري الياباني الممتاز",
-            "scoreOrTime": "03:00ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/8161755286167.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/2751693171166.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "ميتوهولي",
-            "awayTeam": "كاشيما أنتلرز",
-            "league": "الدوري الياباني الممتاز",
-            "scoreOrTime": "03:00ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/17860227301970.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/7411716579425.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "هيروشيما",
-            "awayTeam": "ناغويا",
-            "league": "الدوري الياباني الممتاز",
-            "scoreOrTime": "03:00ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/6631690370500.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/5211739627145.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "شيميزو إس بالس",
-            "awayTeam": "طوكيو",
-            "league": "الدوري الياباني الممتاز",
-            "scoreOrTime": "03:00ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/17860225263172.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/5491739531912.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "طوكيو فيردي",
-            "awayTeam": "فيسيل كوبي",
-            "league": "الدوري الياباني الممتاز",
-            "scoreOrTime": "03:00ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/4071716203719.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/6111690370498.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "ناغاساكي",
-            "awayTeam": "غامبا أوساكا",
-            "league": "الدوري الياباني الممتاز",
-            "scoreOrTime": "03:00ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/8491739395789.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/1681690370505.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "يوكوهاما",
-            "awayTeam": "كيوتو سانغا",
-            "league": "الدوري الياباني الممتاز",
-            "scoreOrTime": "03:00ص",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/441690370504.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/6711716579567.png",
             "scorers": {
                 "home": [],
                 "away": []
@@ -2168,7 +1254,7 @@
             "homeTeam": "تولكا",
             "awayTeam": "ليون",
             "league": "كأس الدوريات",
-            "scoreOrTime": "06:00م",
+            "scoreOrTime": "09:00م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -2185,7 +1271,7 @@
             "homeTeam": "كلوب أمريكا",
             "awayTeam": "مونتيري",
             "league": "كأس الدوريات",
-            "scoreOrTime": "08:30م",
+            "scoreOrTime": "11:30م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
