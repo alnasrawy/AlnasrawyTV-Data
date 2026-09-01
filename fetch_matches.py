@@ -1619,6 +1619,45 @@ class GhostScraper:
             time.sleep(_rnd.uniform(1.0, 2.0))
 
 
+def _matches_needing_details(matches, state=None):
+    """When running in always-on (accuracy) mode we still avoid hammering the
+    source site with per-match detail calls every 5 minutes. Only matches that
+    actually need richer data THIS cycle get enriched: live ones, finished ones
+    whose final result is still pending, and upcoming ones inside (or just
+    outside) the start-alert window."""
+    now = datetime.now(TZ)
+    if state is None:
+        state = _load_state()
+    ended = state.get('ended_notified', {}) or {}
+    alert_min = int(TELEGRAM.get("start_alert_minutes", 10))
+    margin = max(alert_min, 15)  # enrich a little early so the reminder is ready
+    needed = []
+    for m in matches:
+        st = m.get('status')
+        if st == "مباشر":
+            needed.append(m)
+            continue
+        if st == "انتهت":
+            key = "_".join(sorted([m.get('homeTeam', ''), m.get('awayTeam', '')]))
+            if key not in ended:
+                needed.append(m)
+            continue
+        if st == "لم تبدأ":
+            try:
+                score = m.get('scoreOrTime', '')
+                if ':' in score and '-' not in score:
+                    sd = _match_start_iso(m, now)
+                    if sd:
+                        d = datetime.fromisoformat(sd)
+                        if d.tzinfo is None:
+                            d = d.replace(tzinfo=TZ)
+                        if d - timedelta(minutes=margin) <= now < d:
+                            needed.append(m)
+            except Exception:
+                pass
+    return needed
+
+
 scraper_engine = GhostScraper()
 
 def execute_full_cycle():
@@ -1627,7 +1666,10 @@ def execute_full_cycle():
 
     yss = scraper_engine.scrape_ysscores()
     print(f"    -> يلا شووت (اليوم): {len(yss)} مباراة")
-    scraper_engine._enrich_ysscores_details(yss)
+    pending = _matches_needing_details(yss, _load_state())
+    if pending:
+        print(f"    -> تهذيب تفاصيل {len(pending)} مباراة (مباشرة/منتهية/قريبة) …")
+        scraper_engine._enrich_ysscores_details(pending)
 
     # —— Tomorrow: fetch via match_date_to endpoint (POST + CSRF session).
     #    We deliberately do NOT enrich tomorrow's matches now: they carry no
@@ -1688,108 +1730,13 @@ def execute_full_cycle():
 if __name__ == "__main__":
     try:
         print("-> GitHub Actions Cycle Triggered...")
-        now = datetime.now(TZ)
 
-        # —— Credit-saver: skip running only when there is nothing to do.
-        # We must NOT skip while live matches exist, nor while any finished match
-        # still needs its final result to be sent (so results post promptly).
-        too_early = False
-        if os.path.exists(MATCHES_FILE):
-            try:
-                with open(MATCHES_FILE, "r", encoding="utf-8") as f:
-                    file_data = json.load(f)
-                # matches.json is now a root object of day sections -> flatten.
-                if isinstance(file_data, dict):
-                    saved_matches = [m for sec in file_data.values()
-                                     for m in (sec if isinstance(sec, list) else [])
-                                     if isinstance(m, dict)]
-                else:
-                    saved_matches = file_data
-                state = _load_state()
-
-                # Credit-saver needs the matches that actually carry a start
-                # instant. state['day_matches'] retains _start_date (the true iso
-                # kickoff, incl. tomorrow's), whereas matches.json strips those
-                # internals — so union both, preferring the fresher/day-store copy.
-                day_store_all = []
-                for _bucket in (state.get('day_matches', {}) or {}).values():
-                    for _m in (_bucket or []):
-                        if isinstance(_m, dict) and _m.get('homeTeam') and _m.get('awayTeam'):
-                            day_store_all.append(_m)
-                relevant = {}
-                for _m in saved_matches + day_store_all:
-                    if _m.get('type') == 'league':
-                        continue
-                    if not _m.get('homeTeam') or not _m.get('awayTeam'):
-                        continue
-                    _k = "_".join(sorted([_m['homeTeam'], _m['awayTeam']]))
-                    relevant[_k] = _m  # later copies (day_store) win
-
-                ended_notified = state.get('ended_notified', {})
-                alert_min = int(TELEGRAM.get("start_alert_minutes", 10))
-                has_live = any(m.get('status') == "مباشر" for m in relevant.values())
-
-                # Is every finished match already notified?
-                all_ended_notified = True
-                for m in relevant.values():
-                    if m.get('status') == "انتهت":
-                        key = "_".join(sorted([m['homeTeam'], m['awayTeam']]))
-                        if key not in ended_notified:
-                            all_ended_notified = False
-                            break
-
-                # Build the real upcoming kickoff list. Prefer the stored
-                # _start_date iso (correct for both today's and tomorrow's
-                # matches); fall back to parsing the clock time on today's date.
-                upcoming_dts = []
-                horizon = now + timedelta(days=1)
-                for m in relevant.values():
-                    if m.get('status') != "لم تبدأ":
-                        continue
-                    dt = None
-                    sd = m.get('_start_date')
-                    if sd:
-                        try:
-                            candidate = datetime.fromisoformat(sd)
-                            if candidate.tzinfo is None:
-                                candidate = candidate.replace(tzinfo=TZ)
-                            dt = candidate
-                        except Exception:
-                            dt = None
-                    if dt is None:
-                        sv = m.get('scoreOrTime', '')
-                        if ':' not in sv or '-' in sv:
-                            continue
-                        try:
-                            dt = _parse_match_dt(sv, now)
-                            if dt < now:
-                                dt = dt + timedelta(days=1)  # فجر الغد
-                        except Exception:
-                            continue
-                    upcoming_dts.append(dt)
-                future = [d for d in upcoming_dts if now <= d <= horizon]
-                earliest = min(future) if future else None
-
-                # Nothing in play and no pending results and no upcoming match -> sleep.
-                if not has_live and all_ended_notified and not future:
-                    too_early = True
-                    print("-> 💤 لا توجد مباريات قادمة أو جارية أو نتائج معلّقة. الخروج الفوري لتوفير رصيد GitHub.")
-                    sys.exit(0)
-
-                # Before the day starts: sleep until we are within the alert window
-                # of the earliest upcoming match (and no live/pending results).
-                if not has_live and all_ended_notified and earliest is not None:
-                    wake_dt = earliest - timedelta(minutes=alert_min)
-                    if now < wake_dt:
-                        too_early = True
-                        print(f"-> 🌙 أقرب مباراة قادمة ستكون الساعة {earliest.strftime('%H:%M')}.")
-                        print(f"-> 💤 الوقت ما زال قبلها بأكثر من {alert_min} دقائق. الخروج الفوري لتوفير رصيد GitHub.")
-                        sys.exit(0)
-            except Exception:
-                pass
-
-        if not too_early:
-            execute_full_cycle()
+        # —— Accuracy mode: public repo → GitHub Actions minutes are free and
+        # unlimited, so no credit-saver. Run the full cycle every time so every
+        # start alert / live update / final result is pushed on the next run.
+        # Guards (started_notified / ended_notified) prevent duplicate sends,
+        # and _matches_needing_details keeps per-match detail fetches lean.
+        execute_full_cycle()
 
     except SystemExit:
         pass
