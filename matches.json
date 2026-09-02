@@ -462,16 +462,18 @@
         {
             "type": "league",
             "league": "الدوري المصري",
-            "leagueLogo": ""
+            "leagueLogo": "https://imgs.ysscores.com/championship/150/17882926672499.png"
         },
         {
             "homeTeam": "الجونة",
             "awayTeam": "المقاولون العرب",
             "league": "الدوري المصري",
-            "scoreOrTime": "05:00م",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
+            "scoreOrTime": "0 - 0",
+            "status": "مباشر",
+            "channels": [
+                "On Sport Plus"
+            ],
+            "commentator": "محمود أبو الركب",
             "source": "YSscores",
             "homeLogo": "https://imgs.ysscores.com/teams/128/3751731169729.png",
             "awayLogo": "https://imgs.ysscores.com/teams/128/2721694082551.png",
@@ -479,6 +481,9 @@
                 "home": [],
                 "away": []
             },
+            "round": "الجولة 3",
+            "stadium": "استاد خالد بشارة",
+            "_championship_link": "https://www.ysscores.com/ar/championship/58553/Egyptian-League",
             "type": "match"
         },
         {
@@ -518,16 +523,18 @@
         {
             "type": "league",
             "league": "الدوري الإيطالي",
-            "leagueLogo": ""
+            "leagueLogo": "https://imgs.ysscores.com/championship/150/1221691618877.png"
         },
         {
             "homeTeam": "ساسولو",
             "awayTeam": "فروزينوني",
             "league": "الدوري الإيطالي",
-            "scoreOrTime": "04:00م",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
+            "scoreOrTime": "1 - 2",
+            "status": "مباشر",
+            "channels": [
+                "MBC Shahid | Sports"
+            ],
+            "commentator": "غازي العمري",
             "source": "YSscores",
             "homeLogo": "https://imgs.ysscores.com/teams/128/731690283001.png",
             "awayLogo": "https://imgs.ysscores.com/teams/128/5761690283004.png",
@@ -535,6 +542,9 @@
                 "home": [],
                 "away": []
             },
+            "round": "الدور الثاني",
+            "stadium": "استاد مابي",
+            "_championship_link": "https://www.ysscores.com/ar/championship/17027/Coppa-Italia",
             "type": "match"
         },
         {
@@ -743,6 +753,84 @@
                 "away": []
             },
             "type": "match"
+        },
+        {
+            "type": "league",
+            "league": "دوري الدرجة الأولى التشيكي",
+            "leagueLogo": ""
+        },
+        {
+            "homeTeam": "زبروجوفكا برنو",
+            "awayTeam": "كرالوفه",
+            "league": "دوري الدرجة الأولى التشيكي",
+            "scoreOrTime": "07:00م",
+            "status": "لم تبدأ",
+            "channels": [],
+            "commentator": "",
+            "source": "YSscores",
+            "homeLogo": "https://imgs.ysscores.com/teams/128/9841690373245.png",
+            "awayLogo": "https://imgs.ysscores.com/teams/128/17871856444990.png",
+            "scorers": {
+                "home": [],
+                "away": []
+            },
+            "type": "match"
+        },
+        {
+            "homeTeam": "بوهيميانز 1905",
+            "awayTeam": "يابلونك",
+            "league": "دوري الدرجة الأولى التشيكي",
+            "scoreOrTime": "09:00م",
+            "status": "لم تبدأ",
+            "channels": [],
+            "commentator": "",
+            "source": "YSscores",
+            "homeLogo": "https://imgs.ysscores.com/teams/128/4751751579798.png",
+            "awayLogo": "https://imgs.ysscores.com/teams/128/7761690370506.png",
+            "scorers": {
+                "home": [],
+                "away": []
+            },
+            "type": "match"
+        },
+        {
+            "type": "league",
+            "league": "الدوري النمساوي",
+            "leagueLogo": ""
+        },
+        {
+            "homeTeam": "أوستريا فيينا",
+            "awayTeam": "تيرول",
+            "league": "الدوري النمساوي",
+            "scoreOrTime": "07:30م",
+            "status": "لم تبدأ",
+            "channels": [],
+            "commentator": "",
+            "source": "YSscores",
+            "homeLogo": "https://imgs.ysscores.com/teams/128/3341690370551.png",
+            "awayLogo": "https://imgs.ysscores.com/teams/128/7741690371869.png",
+            "scorers": {
+                "home": [],
+                "away": []
+            },
+            "type": "match"
+        },
+        {
+            "homeTeam": "سالزبورج",
+            "awayTeam": "رابيد فيينا",
+            "league": "الدوري النمساوي",
+            "scoreOrTime": "09:30م",
+            "status": "لم تبدأ",
+            "channels": [],
+            "commentator": "",
+            "source": "YSscores",
+            "homeLogo": "https://imgs.ysscores.com/teams/128/3591690370551.png",
+            "awayLogo": "https://imgs.ysscores.com/teams/128/4121690370552.png",
+            "scorers": {
+                "home": [],
+                "away": []
+            },
+            "type": "match"
         }
     ],
     "tomorrow": [
@@ -755,7 +843,7 @@
             "homeTeam": "ريال سوسيداد",
             "awayTeam": "سيلتا فيغو",
             "league": "الدوري الإسباني",
-            "scoreOrTime": "12:00م",
+            "scoreOrTime": "03:00م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -777,7 +865,7 @@
             "homeTeam": "تولوز",
             "awayTeam": "نادي ليل",
             "league": "الدوري الفرنسي",
-            "scoreOrTime": "11:45ص",
+            "scoreOrTime": "02:45م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -799,7 +887,7 @@
             "homeTeam": "الفيحاء",
             "awayTeam": "الخلود",
             "league": "الدوري السعودي",
-            "scoreOrTime": "08:55ص",
+            "scoreOrTime": "11:55ص",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -816,7 +904,7 @@
             "homeTeam": "نيوم",
             "awayTeam": "الخليج",
             "league": "الدوري السعودي",
-            "scoreOrTime": "09:30ص",
+            "scoreOrTime": "12:30م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -833,7 +921,7 @@
             "homeTeam": "الدرعية",
             "awayTeam": "القادسية",
             "league": "الدوري السعودي",
-            "scoreOrTime": "11:00ص",
+            "scoreOrTime": "02:00م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -855,7 +943,7 @@
             "homeTeam": "الأهلي",
             "awayTeam": "سموحة",
             "league": "الدوري المصري",
-            "scoreOrTime": "10:00ص",
+            "scoreOrTime": "01:00م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -877,7 +965,7 @@
             "homeTeam": "باليرمو",
             "awayTeam": "مانتوفا",
             "league": "الدوري الإيطالي",
-            "scoreOrTime": "09:00ص",
+            "scoreOrTime": "12:00م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -894,7 +982,7 @@
             "homeTeam": "كالياري",
             "awayTeam": "هيلاس فيرونا",
             "league": "الدوري الإيطالي",
-            "scoreOrTime": "12:00م",
+            "scoreOrTime": "03:00م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -916,7 +1004,7 @@
             "homeTeam": "ديالى",
             "awayTeam": "الكرمة",
             "league": "الدوري العراقي",
-            "scoreOrTime": "08:45ص",
+            "scoreOrTime": "11:45ص",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -933,7 +1021,7 @@
             "homeTeam": "الموصل",
             "awayTeam": "الزوراء",
             "league": "الدوري العراقي",
-            "scoreOrTime": "08:45ص",
+            "scoreOrTime": "11:45ص",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -950,7 +1038,7 @@
             "homeTeam": "دهوك",
             "awayTeam": "القوة الجوية",
             "league": "الدوري العراقي",
-            "scoreOrTime": "11:00ص",
+            "scoreOrTime": "02:00م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -967,35 +1055,13 @@
             "homeTeam": "الكهرباء",
             "awayTeam": "الغراف",
             "league": "الدوري العراقي",
-            "scoreOrTime": "11:00ص",
+            "scoreOrTime": "02:00م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
             "source": "YSscores",
             "homeLogo": "https://imgs.ysscores.com/teams/128/8081715870157.png",
             "awayLogo": "https://imgs.ysscores.com/teams/128/6311734617665.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "الدوري البرازيلي",
-            "leagueLogo": ""
-        },
-        {
-            "homeTeam": "فلامينغو",
-            "awayTeam": "ميراسول",
-            "league": "الدوري البرازيلي",
-            "scoreOrTime": "03:30م",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/6861691418710.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/3731739640033.png",
             "scorers": {
                 "home": [],
                 "away": []
@@ -1011,7 +1077,7 @@
             "homeTeam": "وفاق سطيف",
             "awayTeam": "بن عكنون",
             "league": "الرابطة المحترفة الجزائرية الأولى",
-            "scoreOrTime": "11:00ص",
+            "scoreOrTime": "02:00م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1028,7 +1094,7 @@
             "homeTeam": "شبيبة الأبيار",
             "awayTeam": "أولمبيك أقبو",
             "league": "الرابطة المحترفة الجزائرية الأولى",
-            "scoreOrTime": "01:00م",
+            "scoreOrTime": "04:00م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1050,7 +1116,7 @@
             "homeTeam": "الأهلي",
             "awayTeam": "قطر",
             "league": "الدوري القطري",
-            "scoreOrTime": "07:00ص",
+            "scoreOrTime": "10:00ص",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1067,7 +1133,7 @@
             "homeTeam": "السيلية",
             "awayTeam": "العربي",
             "league": "الدوري القطري",
-            "scoreOrTime": "09:15ص",
+            "scoreOrTime": "12:15م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1084,7 +1150,7 @@
             "homeTeam": "البقعة",
             "awayTeam": "دوقرة",
             "league": "الدوري السعودي",
-            "scoreOrTime": "09:00ص",
+            "scoreOrTime": "12:00م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1101,7 +1167,7 @@
             "homeTeam": "السكة الحديد",
             "awayTeam": "مالية كفر الزيات",
             "league": "الدوري المصري",
-            "scoreOrTime": "06:30ص",
+            "scoreOrTime": "09:30ص",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1118,7 +1184,7 @@
             "homeTeam": "ديروط",
             "awayTeam": "وي",
             "league": "الدوري المصري",
-            "scoreOrTime": "06:30ص",
+            "scoreOrTime": "09:30ص",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1135,7 +1201,7 @@
             "homeTeam": "المنصورة",
             "awayTeam": "كهرباء الإسماعيلية",
             "league": "الدوري المصري",
-            "scoreOrTime": "06:30ص",
+            "scoreOrTime": "09:30ص",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1152,7 +1218,7 @@
             "homeTeam": "حرس الحدود",
             "awayTeam": "الإنتاج الحربي",
             "league": "الدوري المصري",
-            "scoreOrTime": "06:30ص",
+            "scoreOrTime": "09:30ص",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1169,7 +1235,7 @@
             "homeTeam": "لا فينا",
             "awayTeam": "تيم",
             "league": "الدوري المصري",
-            "scoreOrTime": "06:30ص",
+            "scoreOrTime": "09:30ص",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1191,7 +1257,7 @@
             "homeTeam": "راكوف تشيستوخوفا",
             "awayTeam": "غورنيك زابجه",
             "league": "الدوري البولندي الممتاز",
-            "scoreOrTime": "09:00ص",
+            "scoreOrTime": "12:00م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1208,52 +1274,13 @@
             "homeTeam": "ليخ بوزنان",
             "awayTeam": "بياليستوك",
             "league": "الدوري البولندي الممتاز",
-            "scoreOrTime": "11:30ص",
+            "scoreOrTime": "02:30م",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
             "source": "YSscores",
             "homeLogo": "https://imgs.ysscores.com/teams/128/5751690370495.png",
             "awayLogo": "https://imgs.ysscores.com/teams/128/7871722374006.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "كأس الدوريات",
-            "leagueLogo": ""
-        },
-        {
-            "homeTeam": "تولكا",
-            "awayTeam": "ليون",
-            "league": "كأس الدوريات",
-            "scoreOrTime": "06:00م",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/6661718133451.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/6881722774196.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "homeTeam": "كلوب أمريكا",
-            "awayTeam": "مونتيري",
-            "league": "كأس الدوريات",
-            "scoreOrTime": "08:30م",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/7881703173149.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/2211709821895.png",
             "scorers": {
                 "home": [],
                 "away": []
@@ -1269,7 +1296,7 @@
             "homeTeam": "سلام الغرفة",
             "awayTeam": "أهلي عدن",
             "league": "كأس الجمهورية اليمنية",
-            "scoreOrTime": "06:00ص",
+            "scoreOrTime": "09:00ص",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
@@ -1291,7 +1318,7 @@
             "homeTeam": "هلال الحديدة",
             "awayTeam": "وحدة صنعاء",
             "league": "الدوري اليمني",
-            "scoreOrTime": "06:00ص",
+            "scoreOrTime": "09:00ص",
             "status": "لم تبدأ",
             "channels": [],
             "commentator": "",
