@@ -665,9 +665,6 @@
                 "home": [],
                 "away": []
             },
-            "round": "الجولة 4 - مباراة الذهاب",
-            "stadium": "ماراكانا",
-            "_championship_link": "https://www.ysscores.com/ar/championship/40224/Campeonato-Brasileiro-Série-A",
             "type": "match"
         },
         {
@@ -898,8 +895,8 @@
             "homeTeam": "تولكا",
             "awayTeam": "ليون",
             "league": "كأس الدوريات",
-            "scoreOrTime": "0 - 0",
-            "status": "مباشر",
+            "scoreOrTime": "2 - 0",
+            "status": "انتهت",
             "channels": [],
             "commentator": "",
             "source": "YSscores",
@@ -915,8 +912,8 @@
             "homeTeam": "كلوب أمريكا",
             "awayTeam": "مونتيري",
             "league": "كأس الدوريات",
-            "scoreOrTime": "06:30ص",
-            "status": "لم تبدأ",
+            "scoreOrTime": "2 - 2",
+            "status": "انتهت",
             "channels": [],
             "commentator": "",
             "source": "YSscores",
