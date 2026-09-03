@@ -709,16 +709,18 @@
         {
             "type": "league",
             "league": "الدوري القطري",
-            "leagueLogo": ""
+            "leagueLogo": "https://imgs.ysscores.com/championship/150/17873600366627.png"
         },
         {
             "homeTeam": "الأهلي",
             "awayTeam": "قطر",
             "league": "الدوري القطري",
-            "scoreOrTime": "05:00م",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
+            "scoreOrTime": "0 - 0",
+            "status": "انتهت",
+            "channels": [
+                "Alkass 5"
+            ],
+            "commentator": "سمير اليعقوبي",
             "source": "YSscores",
             "homeLogo": "https://imgs.ysscores.com/teams/128/17873500708904.png",
             "awayLogo": "https://imgs.ysscores.com/teams/128/5761752963369.png",
@@ -726,6 +728,9 @@
                 "home": [],
                 "away": []
             },
+            "round": "الجولة 3 - مباراة الذهاب",
+            "stadium": "استاد الثمامة",
+            "_championship_link": "https://www.ysscores.com/ar/championship/83369/Qatar-Stars-League",
             "type": "match"
         },
         {
@@ -766,8 +771,8 @@
             "homeTeam": "السكة الحديد",
             "awayTeam": "مالية كفر الزيات",
             "league": "الدوري المصري",
-            "scoreOrTime": "04:30م",
-            "status": "لم تبدأ",
+            "scoreOrTime": "0 - 1",
+            "status": "مباشر",
             "channels": [],
             "commentator": "",
             "source": "YSscores",
@@ -777,14 +782,17 @@
                 "home": [],
                 "away": []
             },
+            "round": "الجولة 3 - مباراة الذهاب",
+            "stadium": "نادي النادي بالعاصمة",
+            "_championship_link": "https://www.ysscores.com/ar/championship/38371/Egyptian-Second-Division",
             "type": "match"
         },
         {
             "homeTeam": "ديروط",
             "awayTeam": "وي",
             "league": "الدوري المصري",
-            "scoreOrTime": "04:30م",
-            "status": "لم تبدأ",
+            "scoreOrTime": "0 - 0",
+            "status": "مباشر",
             "channels": [],
             "commentator": "",
             "source": "YSscores",
@@ -794,14 +802,17 @@
                 "home": [],
                 "away": []
             },
+            "round": "الجولة 3 - مباراة الذهاب",
+            "stadium": "استاد كلية الشرطة",
+            "_championship_link": "https://www.ysscores.com/ar/championship/38371/Egyptian-Second-Division",
             "type": "match"
         },
         {
             "homeTeam": "المنصورة",
             "awayTeam": "كهرباء الإسماعيلية",
             "league": "الدوري المصري",
-            "scoreOrTime": "04:30م",
-            "status": "لم تبدأ",
+            "scoreOrTime": "0 - 0",
+            "status": "مباشر",
             "channels": [],
             "commentator": "",
             "source": "YSscores",
@@ -811,14 +822,17 @@
                 "home": [],
                 "away": []
             },
+            "round": "الجولة 3 - مباراة الذهاب",
+            "stadium": "استاد المنصورة",
+            "_championship_link": "https://www.ysscores.com/ar/championship/38371/Egyptian-Second-Division",
             "type": "match"
         },
         {
             "homeTeam": "حرس الحدود",
             "awayTeam": "الإنتاج الحربي",
             "league": "الدوري المصري",
-            "scoreOrTime": "04:30م",
-            "status": "لم تبدأ",
+            "scoreOrTime": "2 - 1",
+            "status": "مباشر",
             "channels": [],
             "commentator": "",
             "source": "YSscores",
@@ -828,14 +842,17 @@
                 "home": [],
                 "away": []
             },
+            "round": "الجولة 3 - مباراة الذهاب",
+            "stadium": "استاد حرس الحدود",
+            "_championship_link": "https://www.ysscores.com/ar/championship/38371/Egyptian-Second-Division",
             "type": "match"
         },
         {
             "homeTeam": "لا فينا",
             "awayTeam": "تيم",
             "league": "الدوري المصري",
-            "scoreOrTime": "04:30م",
-            "status": "لم تبدأ",
+            "scoreOrTime": "0 - 0",
+            "status": "مباشر",
             "channels": [],
             "commentator": "",
             "source": "YSscores",
@@ -845,6 +862,9 @@
                 "home": [],
                 "away": []
             },
+            "round": "الجولة 3 - مباراة الذهاب",
+            "stadium": "استاد الأسيوطي",
+            "_championship_link": "https://www.ysscores.com/ar/championship/38371/Egyptian-Second-Division",
             "type": "match"
         },
         {
@@ -919,28 +939,6 @@
             "source": "YSscores",
             "homeLogo": "https://imgs.ysscores.com/teams/128/7881703173149.png",
             "awayLogo": "https://imgs.ysscores.com/teams/128/2211709821895.png",
-            "scorers": {
-                "home": [],
-                "away": []
-            },
-            "type": "match"
-        },
-        {
-            "type": "league",
-            "league": "الدوري اليمني",
-            "leagueLogo": ""
-        },
-        {
-            "homeTeam": "هلال الحديدة",
-            "awayTeam": "وحدة صنعاء",
-            "league": "الدوري اليمني",
-            "scoreOrTime": "04:00م",
-            "status": "لم تبدأ",
-            "channels": [],
-            "commentator": "",
-            "source": "YSscores",
-            "homeLogo": "https://imgs.ysscores.com/teams/128/17750601104520.png",
-            "awayLogo": "https://imgs.ysscores.com/teams/128/6981744414807.png",
             "scorers": {
                 "home": [],
                 "away": []
@@ -1467,6 +1465,28 @@
             "source": "YSscores",
             "homeLogo": "https://imgs.ysscores.com/teams/128/6781694082759.png",
             "awayLogo": "https://imgs.ysscores.com/teams/128/8291715096887.png",
+            "scorers": {
+                "home": [],
+                "away": []
+            },
+            "type": "match"
+        },
+        {
+            "type": "league",
+            "league": "الدوري اليمني",
+            "leagueLogo": ""
+        },
+        {
+            "homeTeam": "هلال الحديدة",
+            "awayTeam": "وحدة صنعاء",
+            "league": "الدوري اليمني",
+            "scoreOrTime": "04:00م",
+            "status": "لم تبدأ",
+            "channels": [],
+            "commentator": "",
+            "source": "YSscores",
+            "homeLogo": "https://imgs.ysscores.com/teams/128/17750601104520.png",
+            "awayLogo": "https://imgs.ysscores.com/teams/128/6981744414807.png",
             "scorers": {
                 "home": [],
                 "away": []

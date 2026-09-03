@@ -137,7 +137,8 @@
   "رابيد فيينا_سالزبورج": true,
   "فلامينغو_ميراسول": true,
   "تولكا_ليون": true,
-  "كلوب أمريكا_مونتيري": true
+  "كلوب أمريكا_مونتيري": true,
+  "الأهلي_قطر": true
  },
  "prev_status": {
   "صباحافكيه_هابويلبئرسبع": "لم تبدأ",
@@ -504,14 +505,14 @@
   "الغراف_الكهرباء": "لم تبدأ",
   "بن عكنون_وفاق سطيف": "لم تبدأ",
   "أولمبيك أقبو_شبيبة الأبيار": "لم تبدأ",
-  "الأهلي_قطر": "لم تبدأ",
+  "الأهلي_قطر": "انتهت",
   "السيلية_العربي": "لم تبدأ",
   "البقعة_دوقرة": "لم تبدأ",
-  "السكة الحديد_مالية كفر الزيات": "لم تبدأ",
-  "ديروط_وي": "لم تبدأ",
-  "المنصورة_كهرباء الإسماعيلية": "لم تبدأ",
-  "الإنتاج الحربي_حرس الحدود": "لم تبدأ",
-  "تيم_لا فينا": "لم تبدأ",
+  "السكة الحديد_مالية كفر الزيات": "مباشر",
+  "ديروط_وي": "مباشر",
+  "المنصورة_كهرباء الإسماعيلية": "مباشر",
+  "الإنتاج الحربي_حرس الحدود": "مباشر",
+  "تيم_لا فينا": "مباشر",
   "راكوف تشيستوخوفا_غورنيك زابجه": "لم تبدأ",
   "بياليستوك_ليخ بوزنان": "لم تبدأ",
   "أهلي عدن_سلام الغرفة": "لم تبدأ",
@@ -2460,10 +2461,12 @@
     "homeTeam": "الأهلي",
     "awayTeam": "قطر",
     "league": "الدوري القطري",
-    "scoreOrTime": "05:00م",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
+    "scoreOrTime": "0 - 0",
+    "status": "انتهت",
+    "channels": [
+     "Alkass 5"
+    ],
+    "commentator": "سمير اليعقوبي",
     "source": "YSscores",
     "homeLogo": "https://imgs.ysscores.com/teams/128/17873500708904.png",
     "awayLogo": "https://imgs.ysscores.com/teams/128/5761752963369.png",
@@ -2472,6 +2475,9 @@
      "away": []
     },
     "_match_date": "2026-09-03",
+    "round": "الجولة 3 - مباراة الذهاب",
+    "stadium": "استاد الثمامة",
+    "_championship_link": "https://www.ysscores.com/ar/championship/83369/Qatar-Stars-League",
     "_start_date": "2026-09-03T17:00:00+03:00"
    },
    {
@@ -2514,8 +2520,8 @@
     "homeTeam": "السكة الحديد",
     "awayTeam": "مالية كفر الزيات",
     "league": "الدوري المصري",
-    "scoreOrTime": "04:30م",
-    "status": "لم تبدأ",
+    "scoreOrTime": "0 - 1",
+    "status": "مباشر",
     "channels": [],
     "commentator": "",
     "source": "YSscores",
@@ -2526,14 +2532,17 @@
      "away": []
     },
     "_match_date": "2026-09-03",
+    "round": "الجولة 3 - مباراة الذهاب",
+    "stadium": "نادي النادي بالعاصمة",
+    "_championship_link": "https://www.ysscores.com/ar/championship/38371/Egyptian-Second-Division",
     "_start_date": "2026-09-03T16:30:00+03:00"
    },
    {
     "homeTeam": "ديروط",
     "awayTeam": "وي",
     "league": "الدوري المصري",
-    "scoreOrTime": "04:30م",
-    "status": "لم تبدأ",
+    "scoreOrTime": "0 - 0",
+    "status": "مباشر",
     "channels": [],
     "commentator": "",
     "source": "YSscores",
@@ -2544,14 +2553,17 @@
      "away": []
     },
     "_match_date": "2026-09-03",
+    "round": "الجولة 3 - مباراة الذهاب",
+    "stadium": "استاد كلية الشرطة",
+    "_championship_link": "https://www.ysscores.com/ar/championship/38371/Egyptian-Second-Division",
     "_start_date": "2026-09-03T16:30:00+03:00"
    },
    {
     "homeTeam": "المنصورة",
     "awayTeam": "كهرباء الإسماعيلية",
     "league": "الدوري المصري",
-    "scoreOrTime": "04:30م",
-    "status": "لم تبدأ",
+    "scoreOrTime": "0 - 0",
+    "status": "مباشر",
     "channels": [],
     "commentator": "",
     "source": "YSscores",
@@ -2562,14 +2574,17 @@
      "away": []
     },
     "_match_date": "2026-09-03",
+    "round": "الجولة 3 - مباراة الذهاب",
+    "stadium": "استاد المنصورة",
+    "_championship_link": "https://www.ysscores.com/ar/championship/38371/Egyptian-Second-Division",
     "_start_date": "2026-09-03T16:30:00+03:00"
    },
    {
     "homeTeam": "حرس الحدود",
     "awayTeam": "الإنتاج الحربي",
     "league": "الدوري المصري",
-    "scoreOrTime": "04:30م",
-    "status": "لم تبدأ",
+    "scoreOrTime": "2 - 1",
+    "status": "مباشر",
     "channels": [],
     "commentator": "",
     "source": "YSscores",
@@ -2580,14 +2595,17 @@
      "away": []
     },
     "_match_date": "2026-09-03",
+    "round": "الجولة 3 - مباراة الذهاب",
+    "stadium": "استاد حرس الحدود",
+    "_championship_link": "https://www.ysscores.com/ar/championship/38371/Egyptian-Second-Division",
     "_start_date": "2026-09-03T16:30:00+03:00"
    },
    {
     "homeTeam": "لا فينا",
     "awayTeam": "تيم",
     "league": "الدوري المصري",
-    "scoreOrTime": "04:30م",
-    "status": "لم تبدأ",
+    "scoreOrTime": "0 - 0",
+    "status": "مباشر",
     "channels": [],
     "commentator": "",
     "source": "YSscores",
@@ -2598,6 +2616,9 @@
      "away": []
     },
     "_match_date": "2026-09-03",
+    "round": "الجولة 3 - مباراة الذهاب",
+    "stadium": "استاد الأسيوطي",
+    "_championship_link": "https://www.ysscores.com/ar/championship/38371/Egyptian-Second-Division",
     "_start_date": "2026-09-03T16:30:00+03:00"
    },
    {
@@ -2671,24 +2692,6 @@
     },
     "_match_date": "2026-09-03",
     "_start_date": "2026-09-03T06:30:00+03:00"
-   },
-   {
-    "homeTeam": "هلال الحديدة",
-    "awayTeam": "وحدة صنعاء",
-    "league": "الدوري اليمني",
-    "scoreOrTime": "04:00م",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
-    "source": "YSscores",
-    "homeLogo": "https://imgs.ysscores.com/teams/128/17750601104520.png",
-    "awayLogo": "https://imgs.ysscores.com/teams/128/6981744414807.png",
-    "scorers": {
-     "home": [],
-     "away": []
-    },
-    "_match_date": "2026-09-03",
-    "_start_date": "2026-09-03T16:00:00+03:00"
    }
   ],
   "2026-09-04": [
@@ -3177,6 +3180,24 @@
     },
     "_match_date": "2026-09-04",
     "_start_date": "2026-09-04T06:30:00+03:00"
+   },
+   {
+    "homeTeam": "هلال الحديدة",
+    "awayTeam": "وحدة صنعاء",
+    "league": "الدوري اليمني",
+    "scoreOrTime": "04:00م",
+    "status": "لم تبدأ",
+    "channels": [],
+    "commentator": "",
+    "source": "YSscores",
+    "homeLogo": "https://imgs.ysscores.com/teams/128/17750601104520.png",
+    "awayLogo": "https://imgs.ysscores.com/teams/128/6981744414807.png",
+    "scorers": {
+     "home": [],
+     "away": []
+    },
+    "_match_date": "2026-09-03",
+    "_start_date": "2026-09-04T16:00:00+03:00"
    },
    {
     "homeTeam": "بروكسي",
