@@ -7,7 +7,9 @@
   "سمائل_صحم": true,
   "الطلبة_النفط": true,
   "الشباب_الصليبخات": true,
-  "الرمثا_شباب الأردن": true
+  "الرمثا_شباب الأردن": true,
+  "شتوتجارت_كولن": true,
+  "بياست غليويس_كاتوفيتسه": true
  },
  "ended_notified": {
   "بئر السبع_صباح": true,
@@ -163,7 +165,22 @@
   "بن عكنون_وفاق سطيف": true,
   "بياليستوك_ليخ بوزنان": true,
   "الشحانية_الشمال": true,
-  "أهلي عدن_سلام الغرفة": true
+  "أهلي عدن_سلام الغرفة": true,
+  "أبها_الاتفاق": true,
+  "الكرخ_كربلاء": true,
+  "الجولان_غاز الشمال": true,
+  "اتحاد العاصمة_اتحاد خنشلة": true,
+  "الوكرة_لوسيل": true,
+  "العين_كلباء": true,
+  "الوصل_خورفكان": true,
+  "الرمثا_شباب الأردن": true,
+  "بلدية المحلة_دلتا يونايتد": true,
+  "الداخلية_فاركو": true,
+  "الإسماعيلي_النصر": true,
+  "الترسانة_بروكسي": true,
+  "طنطا_مسار": true,
+  "الهلال الساحل_جامعة ولوالو": true,
+  "الجرجيسي_ديامبارس": true
  },
  "prev_status": {
   "صباحافكيه_هابويلبئرسبع": "لم تبدأ",
@@ -550,39 +567,39 @@
   "ريال بيتيس_ريال مدريد": "لم تبدأ",
   "جنوى_كومو": "لم تبدأ",
   "شتوتجارت_كولن": "لم تبدأ",
-  "أوكسير_ليون": "لم تبدأ",
+  "أوكسير_ليون": "مباشر",
   "باريس_موناكو": "لم تبدأ",
-  "أبها_الاتفاق": "لم تبدأ",
-  "الأهلي_الرياض": "لم تبدأ",
-  "الشباب_الهلال": "لم تبدأ",
-  "باشاك شهير_غلطة سراي": "لم تبدأ",
-  "الكرخ_كربلاء": "لم تبدأ",
-  "الجولان_غاز الشمال": "لم تبدأ",
-  "أربيل_الشرطة": "لم تبدأ",
-  "نفط ميسان_نوروز": "لم تبدأ",
-  "روتردام_زفوله": "لم تبدأ",
+  "أبها_الاتفاق": "انتهت",
+  "الأهلي_الرياض": "مباشر",
+  "الشباب_الهلال": "مباشر",
+  "باشاك شهير_غلطة سراي": "مباشر",
+  "الكرخ_كربلاء": "انتهت",
+  "الجولان_غاز الشمال": "انتهت",
+  "أربيل_الشرطة": "مباشر",
+  "نفط ميسان_نوروز": "مباشر",
+  "روتردام_زفوله": "مباشر",
   "بورتو_موريرنسي": "لم تبدأ",
-  "اتحاد العاصمة_اتحاد خنشلة": "لم تبدأ",
+  "اتحاد العاصمة_اتحاد خنشلة": "انتهت",
   "شبيبة القبائل_مستقبل الرويسات": "لم تبدأ",
   "الشحانية_الشمال": "انتهت",
-  "الوكرة_لوسيل": "لم تبدأ",
-  "العين_كلباء": "مباشر",
-  "الوصل_خورفكان": "لم تبدأ",
-  "الرمثا_شباب الأردن": "لم تبدأ",
-  "الفيصلي_الوحدات": "لم تبدأ",
-  "بلدية المحلة_دلتا يونايتد": "مباشر",
-  "الداخلية_فاركو": "مباشر",
-  "الإسماعيلي_النصر": "مباشر",
-  "الترسانة_بروكسي": "مباشر",
-  "طنطا_مسار": "مباشر",
-  "بودو/غليمت_فريدريكستاد": "لم تبدأ",
-  "أوليسوند_ستارت": "لم تبدأ",
+  "الوكرة_لوسيل": "انتهت",
+  "العين_كلباء": "انتهت",
+  "الوصل_خورفكان": "انتهت",
+  "الرمثا_شباب الأردن": "انتهت",
+  "الفيصلي_الوحدات": "مباشر",
+  "بلدية المحلة_دلتا يونايتد": "انتهت",
+  "الداخلية_فاركو": "انتهت",
+  "الإسماعيلي_النصر": "انتهت",
+  "الترسانة_بروكسي": "انتهت",
+  "طنطا_مسار": "انتهت",
+  "بودو/غليمت_فريدريكستاد": "مباشر",
+  "أوليسوند_ستارت": "مباشر",
   "سانديفيورد_فايكنج": "لم تبدأ",
-  "إسترا 1961_فارازدين": "لم تبدأ",
+  "إسترا 1961_فارازدين": "مباشر",
   "بياست غليويس_كاتوفيتسه": "لم تبدأ",
-  "حوريا_شبيبة الساورة": "لم تبدأ",
-  "السويحلي_فالانتيا زنجبار": "لم تبدأ",
-  "الزمالك_الميناء الجيبوتي": "لم تبدأ",
+  "حوريا_شبيبة الساورة": "مباشر",
+  "السويحلي_فالانتيا زنجبار": "مباشر",
+  "الزمالك_الميناء الجيبوتي": "مباشر",
   "بورنموث_نيوكاسل": "لم تبدأ",
   "برينتفورد_سندرلاند": "لم تبدأ",
   "برايتون_ليدز يونايتد": "لم تبدأ",
@@ -676,9 +693,9 @@
   "المريخ_باور ديناموز": "لم تبدأ",
   "الإفريقي_دجوليبا": "لم تبدأ",
   "الأهلي طرابلس_كمكم زانزيبار": "لم تبدأ",
-  "الجرجيسي_ديامبارس": "لم تبدأ",
+  "الجرجيسي_ديامبارس": "انتهت",
   "الصفاقسي_شوتينغ ستارز": "لم تبدأ",
-  "الهلال الساحل_جامعة ولوالو": "لم تبدأ",
+  "الهلال الساحل_جامعة ولوالو": "انتهت",
   "برنو_فيكتوريا بيلزن": "لم تبدأ"
  },
  "day_matches": {
@@ -2918,10 +2935,12 @@
     "homeTeam": "ليون",
     "awayTeam": "أوكسير",
     "league": "الدوري الفرنسي",
-    "scoreOrTime": "08:00م",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
+    "scoreOrTime": "3 - 1",
+    "status": "مباشر",
+    "channels": [
+     "Bein Sport 4"
+    ],
+    "commentator": "محمد بركات",
     "source": "YSscores",
     "homeLogo": "https://imgs.ysscores.com/teams/128/4081690287528.png",
     "awayLogo": "https://imgs.ysscores.com/teams/128/8671690370530.png",
@@ -2930,6 +2949,9 @@
      "away": []
     },
     "_match_date": "2026-09-04",
+    "round": "الجولة 3 - مباراة الذهاب",
+    "stadium": "غروباما",
+    "_championship_link": "https://www.ysscores.com/ar/championship/1985/Ligue-1",
     "_start_date": "2026-09-04T20:00:00+03:00"
    },
    {
@@ -2951,31 +2973,15 @@
     "_start_date": "2026-09-04T22:05:00+03:00"
    },
    {
-    "homeTeam": "أبها",
-    "awayTeam": "الاتفاق",
-    "league": "الدوري السعودي",
-    "scoreOrTime": "07:00م",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
-    "source": "YSscores",
-    "homeLogo": "https://imgs.ysscores.com/teams/128/9091690299913.png",
-    "awayLogo": "https://imgs.ysscores.com/teams/128/1151690298845.png",
-    "scorers": {
-     "home": [],
-     "away": []
-    },
-    "_match_date": "2026-09-04",
-    "_start_date": "2026-09-04T19:00:00+03:00"
-   },
-   {
     "homeTeam": "الأهلي",
     "awayTeam": "الرياض",
     "league": "الدوري السعودي",
-    "scoreOrTime": "09:00م",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
+    "scoreOrTime": "1 - 0",
+    "status": "مباشر",
+    "channels": [
+     "Thmanyah 3"
+    ],
+    "commentator": "سليمان الشريف",
     "source": "YSscores",
     "homeLogo": "https://imgs.ysscores.com/teams/128/9091751485160.png",
     "awayLogo": "https://imgs.ysscores.com/teams/128/7341730889148.png",
@@ -2984,16 +2990,21 @@
      "away": []
     },
     "_match_date": "2026-09-04",
+    "round": "الجولة 5 - مباراة الذهاب",
+    "stadium": "استاد الأمير عبدالله الفيصل",
+    "_championship_link": "https://www.ysscores.com/ar/championship/7167/Saudi-Pro-League",
     "_start_date": "2026-09-04T21:00:00+03:00"
    },
    {
     "homeTeam": "الشباب",
     "awayTeam": "الهلال",
     "league": "الدوري السعودي",
-    "scoreOrTime": "09:00م",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
+    "scoreOrTime": "0 - 0",
+    "status": "مباشر",
+    "channels": [
+     "Thmanyah 1"
+    ],
+    "commentator": "مشاري القرني",
     "source": "YSscores",
     "homeLogo": "https://imgs.ysscores.com/teams/128/4261690298871.png",
     "awayLogo": "https://imgs.ysscores.com/teams/128/8761690298716.png",
@@ -3002,15 +3013,44 @@
      "away": []
     },
     "_match_date": "2026-09-04",
+    "round": "الجولة 5 - مباراة الذهاب",
+    "stadium": "اس اتش جي ارينا",
+    "_championship_link": "https://www.ysscores.com/ar/championship/7167/Saudi-Pro-League",
     "_start_date": "2026-09-04T21:00:00+03:00"
+   },
+   {
+    "homeTeam": "أبها",
+    "awayTeam": "الاتفاق",
+    "league": "الدوري السعودي",
+    "scoreOrTime": "0 - 1",
+    "status": "انتهت",
+    "channels": [
+     "Thmanyah 2"
+    ],
+    "commentator": "خالد المديفر",
+    "source": "YSscores",
+    "homeLogo": "https://imgs.ysscores.com/teams/128/9091690299913.png",
+    "awayLogo": "https://imgs.ysscores.com/teams/128/1151690298845.png",
+    "scorers": {
+     "home": [],
+     "away": []
+    },
+    "_match_date": "2026-09-04",
+    "round": "الجولة 5 - مباراة الذهاب",
+    "stadium": "استاد مدينة الأمير سلطان بن عبدالعزيز الرياضية",
+    "_championship_link": "https://www.ysscores.com/ar/championship/7167/Saudi-Pro-League",
+    "_start_date": "2026-09-04T19:00:00+03:00"
    },
    {
     "homeTeam": "باشاك شهير",
     "awayTeam": "غلطة سراي",
     "league": "الدوري التركي الممتاز",
-    "scoreOrTime": "08:00م",
-    "status": "لم تبدأ",
-    "channels": [],
+    "scoreOrTime": "0 - 1",
+    "status": "مباشر",
+    "channels": [
+     "Bein Sport 5",
+     "beIN Sports HD 1 TR"
+    ],
     "commentator": "",
     "source": "YSscores",
     "homeLogo": "https://imgs.ysscores.com/teams/128/6801690127203.png",
@@ -3020,52 +3060,21 @@
      "away": []
     },
     "_match_date": "2026-09-04",
+    "round": "الجولة 4 - مباراة الذهاب",
+    "stadium": "باشاك شهير فاتح تريم",
+    "_championship_link": "https://www.ysscores.com/ar/championship/6682/Süper-Lig",
     "_start_date": "2026-09-04T20:00:00+03:00"
-   },
-   {
-    "homeTeam": "كربلاء",
-    "awayTeam": "الكرخ",
-    "league": "الدوري العراقي",
-    "scoreOrTime": "06:45م",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
-    "source": "YSscores",
-    "homeLogo": "https://imgs.ysscores.com/teams/128/481746473184.png",
-    "awayLogo": "https://imgs.ysscores.com/teams/128/3891695656397.png",
-    "scorers": {
-     "home": [],
-     "away": []
-    },
-    "_match_date": "2026-09-04",
-    "_start_date": "2026-09-04T18:45:00+03:00"
-   },
-   {
-    "homeTeam": "غاز الشمال",
-    "awayTeam": "الجولان",
-    "league": "الدوري العراقي",
-    "scoreOrTime": "06:45م",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
-    "source": "YSscores",
-    "homeLogo": "https://imgs.ysscores.com/teams/128/8861760380650.png",
-    "awayLogo": "https://imgs.ysscores.com/teams/128/7291760739383.png",
-    "scorers": {
-     "home": [],
-     "away": []
-    },
-    "_match_date": "2026-09-04",
-    "_start_date": "2026-09-04T18:45:00+03:00"
    },
    {
     "homeTeam": "نفط ميسان",
     "awayTeam": "نوروز",
     "league": "الدوري العراقي",
-    "scoreOrTime": "09:00م",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
+    "scoreOrTime": "0 - 0",
+    "status": "مباشر",
+    "channels": [
+     "Iraqia Syriac"
+    ],
+    "commentator": "فراس الذهبي",
     "source": "YSscores",
     "homeLogo": "https://imgs.ysscores.com/teams/128/711695656259.png",
     "awayLogo": "https://imgs.ysscores.com/teams/128/1311754243359.png",
@@ -3074,16 +3083,21 @@
      "away": []
     },
     "_match_date": "2026-09-04",
+    "round": "الجولة 5 - مباراة الذهاب",
+    "stadium": "ملعب ميسان",
+    "_championship_link": "https://www.ysscores.com/ar/championship/99376/Iraq-Stars-League",
     "_start_date": "2026-09-04T21:00:00+03:00"
    },
    {
     "homeTeam": "الشرطة",
     "awayTeam": "أربيل",
     "league": "الدوري العراقي",
-    "scoreOrTime": "09:00م",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
+    "scoreOrTime": "0 - 0",
+    "status": "مباشر",
+    "channels": [
+     "Iraqia Sport"
+    ],
+    "commentator": "أمير علي",
     "source": "YSscores",
     "homeLogo": "https://imgs.ysscores.com/teams/128/8281729976264.png",
     "awayLogo": "https://imgs.ysscores.com/teams/128/2581695657262.png",
@@ -3092,14 +3106,63 @@
      "away": []
     },
     "_match_date": "2026-09-04",
+    "round": "الجولة 5 - مباراة الذهاب",
+    "stadium": "استاد القفص",
+    "_championship_link": "https://www.ysscores.com/ar/championship/99376/Iraq-Stars-League",
     "_start_date": "2026-09-04T21:00:00+03:00"
+   },
+   {
+    "homeTeam": "كربلاء",
+    "awayTeam": "الكرخ",
+    "league": "الدوري العراقي",
+    "scoreOrTime": "1 - 0",
+    "status": "انتهت",
+    "channels": [
+     "Iraqia Syriac"
+    ],
+    "commentator": "حسين الساعدي",
+    "source": "YSscores",
+    "homeLogo": "https://imgs.ysscores.com/teams/128/481746473184.png",
+    "awayLogo": "https://imgs.ysscores.com/teams/128/3891695656397.png",
+    "scorers": {
+     "home": [],
+     "away": []
+    },
+    "_match_date": "2026-09-04",
+    "round": "الجولة 5 - مباراة الذهاب",
+    "stadium": "استاد النجف الدولي",
+    "_championship_link": "https://www.ysscores.com/ar/championship/99376/Iraq-Stars-League",
+    "_start_date": "2026-09-04T18:45:00+03:00"
+   },
+   {
+    "homeTeam": "غاز الشمال",
+    "awayTeam": "الجولان",
+    "league": "الدوري العراقي",
+    "scoreOrTime": "0 - 1",
+    "status": "انتهت",
+    "channels": [
+     "Iraqia Sport"
+    ],
+    "commentator": "رعد ناهي",
+    "source": "YSscores",
+    "homeLogo": "https://imgs.ysscores.com/teams/128/8861760380650.png",
+    "awayLogo": "https://imgs.ysscores.com/teams/128/7291760739383.png",
+    "scorers": {
+     "home": [],
+     "away": []
+    },
+    "_match_date": "2026-09-04",
+    "round": "الجولة 5 - مباراة الذهاب",
+    "stadium": "استاد نوروز",
+    "_championship_link": "https://www.ysscores.com/ar/championship/99376/Iraq-Stars-League",
+    "_start_date": "2026-09-04T18:45:00+03:00"
    },
    {
     "homeTeam": "روتردام",
     "awayTeam": "زفوله",
     "league": "الدوري الهولندي الممتاز",
-    "scoreOrTime": "09:00م",
-    "status": "لم تبدأ",
+    "scoreOrTime": "0 - 0",
+    "status": "مباشر",
     "channels": [],
     "commentator": "",
     "source": "YSscores",
@@ -3110,6 +3173,9 @@
      "away": []
     },
     "_match_date": "2026-09-04",
+    "round": "الجولة 5 - مباراة الذهاب",
+    "stadium": "ستاد هيت كاستيل",
+    "_championship_link": "https://www.ysscores.com/ar/championship/47821/Eredivisie",
     "_start_date": "2026-09-04T21:00:00+03:00"
    },
    {
@@ -3131,24 +3197,6 @@
     "_start_date": "2026-09-04T22:15:00+03:00"
    },
    {
-    "homeTeam": "اتحاد خنشلة",
-    "awayTeam": "اتحاد العاصمة",
-    "league": "الرابطة المحترفة الجزائرية الأولى",
-    "scoreOrTime": "07:00م",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
-    "source": "YSscores",
-    "homeLogo": "https://imgs.ysscores.com/teams/128/3231693418426.png",
-    "awayLogo": "https://imgs.ysscores.com/teams/128/9611695834503.png",
-    "scorers": {
-     "home": [],
-     "away": []
-    },
-    "_match_date": "2026-09-04",
-    "_start_date": "2026-09-04T19:00:00+03:00"
-   },
-   {
     "homeTeam": "شبيبة القبائل",
     "awayTeam": "مستقبل الرويسات",
     "league": "الرابطة المحترفة الجزائرية الأولى",
@@ -3167,15 +3215,36 @@
     "_start_date": "2026-09-04T23:00:00+03:00"
    },
    {
+    "homeTeam": "اتحاد خنشلة",
+    "awayTeam": "اتحاد العاصمة",
+    "league": "الرابطة المحترفة الجزائرية الأولى",
+    "scoreOrTime": "0 - 0",
+    "status": "انتهت",
+    "channels": [
+     "Algeria 4"
+    ],
+    "commentator": "",
+    "source": "YSscores",
+    "homeLogo": "https://imgs.ysscores.com/teams/128/3231693418426.png",
+    "awayLogo": "https://imgs.ysscores.com/teams/128/9611695834503.png",
+    "scorers": {
+     "home": [],
+     "away": []
+    },
+    "_match_date": "2026-09-04",
+    "round": "الجولة 1 - مباراة الذهاب",
+    "stadium": "حمّام عمار",
+    "_championship_link": "https://www.ysscores.com/ar/championship/57146/Algerian-Professional-League-1",
+    "_start_date": "2026-09-04T19:00:00+03:00"
+   },
+   {
     "homeTeam": "الشمال",
     "awayTeam": "الشحانية",
     "league": "الدوري القطري",
-    "scoreOrTime": "1 - 1",
+    "scoreOrTime": "4 - 2",
     "status": "انتهت",
-    "channels": [
-     "Alkass 5"
-    ],
-    "commentator": "منتصر الأزهري",
+    "channels": [],
+    "commentator": "",
     "source": "YSscores",
     "homeLogo": "https://imgs.ysscores.com/teams/128/2961722879498.png",
     "awayLogo": "https://imgs.ysscores.com/teams/128/17880036659453.png",
@@ -3184,19 +3253,18 @@
      "away": []
     },
     "_match_date": "2026-09-04",
-    "round": "الجولة 3 - مباراة الذهاب",
-    "stadium": "استاد البيت",
-    "_championship_link": "https://www.ysscores.com/ar/championship/83369/Qatar-Stars-League",
     "_start_date": "2026-09-04T17:00:00+03:00"
    },
    {
     "homeTeam": "لوسيل",
     "awayTeam": "الوكرة",
     "league": "الدوري القطري",
-    "scoreOrTime": "07:15م",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
+    "scoreOrTime": "4 - 0",
+    "status": "انتهت",
+    "channels": [
+     "Alkass Six"
+    ],
+    "commentator": "محمد السعدي",
     "source": "YSscores",
     "homeLogo": "https://imgs.ysscores.com/teams/128/17873618452700.png",
     "awayLogo": "https://imgs.ysscores.com/teams/128/17838172914849.png",
@@ -3205,6 +3273,9 @@
      "away": []
     },
     "_match_date": "2026-09-04",
+    "round": "الجولة 3 - مباراة الذهاب",
+    "stadium": "استاد لوسيل",
+    "_championship_link": "https://www.ysscores.com/ar/championship/83369/Qatar-Stars-League",
     "_start_date": "2026-09-04T19:15:00+03:00"
    },
    {
@@ -3212,7 +3283,7 @@
     "awayTeam": "العين",
     "league": "الدوري السعودي",
     "scoreOrTime": "0 - 2",
-    "status": "مباشر",
+    "status": "انتهت",
     "channels": [
      "AD Sports 1",
      "Sharjah Sports"
@@ -3235,10 +3306,14 @@
     "homeTeam": "الوصل",
     "awayTeam": "خورفكان",
     "league": "الدوري السعودي",
-    "scoreOrTime": "07:15م",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
+    "scoreOrTime": "5 - 2",
+    "status": "انتهت",
+    "channels": [
+     "AD Sports 1",
+     "Dubai Sports 1",
+     "Maraya App"
+    ],
+    "commentator": "عيسى الحربين / حماد العنزي / محمد الهنائي",
     "source": "YSscores",
     "homeLogo": "https://imgs.ysscores.com/teams/128/5291690300472.png",
     "awayLogo": "https://imgs.ysscores.com/teams/128/8671756044964.png",
@@ -3247,14 +3322,40 @@
      "away": []
     },
     "_match_date": "2026-09-04",
+    "round": "الجولة 4 - مباراة الذهاب",
+    "stadium": "استاد زعبيل",
+    "_championship_link": "https://www.ysscores.com/ar/championship/9468/UAE-Pro-League",
     "_start_date": "2026-09-04T19:15:00+03:00"
+   },
+   {
+    "homeTeam": "الوحدات",
+    "awayTeam": "الفيصلي",
+    "league": "الدوري السعودي",
+    "scoreOrTime": "0 - 0",
+    "status": "مباشر",
+    "channels": [
+     "Jordan Sport"
+    ],
+    "commentator": "ماجد العدوان",
+    "source": "YSscores",
+    "homeLogo": "https://imgs.ysscores.com/teams/128/5171690936731.png",
+    "awayLogo": "https://imgs.ysscores.com/teams/128/361690936683.png",
+    "scorers": {
+     "home": [],
+     "away": []
+    },
+    "_match_date": "2026-09-04",
+    "round": "الجولة 1 - مباراة الذهاب",
+    "stadium": "استاد عمّان الدولي",
+    "_championship_link": "https://www.ysscores.com/ar/championship/81518/Jordanian-Pro-League",
+    "_start_date": "2026-09-04T20:30:00+03:00"
    },
    {
     "homeTeam": "شباب الأردن",
     "awayTeam": "الرمثا",
     "league": "الدوري السعودي",
-    "scoreOrTime": "06:00م",
-    "status": "لم تبدأ",
+    "scoreOrTime": "1 - 1",
+    "status": "انتهت",
     "channels": [
      "Jordan Sport"
     ],
@@ -3273,29 +3374,11 @@
     "_start_date": "2026-09-04T18:00:00+03:00"
    },
    {
-    "homeTeam": "الوحدات",
-    "awayTeam": "الفيصلي",
-    "league": "الدوري السعودي",
-    "scoreOrTime": "08:30م",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
-    "source": "YSscores",
-    "homeLogo": "https://imgs.ysscores.com/teams/128/5171690936731.png",
-    "awayLogo": "https://imgs.ysscores.com/teams/128/361690936683.png",
-    "scorers": {
-     "home": [],
-     "away": []
-    },
-    "_match_date": "2026-09-04",
-    "_start_date": "2026-09-04T20:30:00+03:00"
-   },
-   {
     "homeTeam": "بلدية المحلة",
     "awayTeam": "دلتا يونايتد",
     "league": "الدوري المصري",
-    "scoreOrTime": "0 - 0",
-    "status": "مباشر",
+    "scoreOrTime": "1 - 0",
+    "status": "انتهت",
     "channels": [],
     "commentator": "",
     "source": "YSscores",
@@ -3316,7 +3399,7 @@
     "awayTeam": "فاركو",
     "league": "الدوري المصري",
     "scoreOrTime": "0 - 0",
-    "status": "مباشر",
+    "status": "انتهت",
     "channels": [],
     "commentator": "",
     "source": "YSscores",
@@ -3336,8 +3419,8 @@
     "homeTeam": "الإسماعيلي",
     "awayTeam": "النصر",
     "league": "الدوري المصري",
-    "scoreOrTime": "1 - 0",
-    "status": "مباشر",
+    "scoreOrTime": "1 - 1",
+    "status": "انتهت",
     "channels": [],
     "commentator": "",
     "source": "YSscores",
@@ -3357,8 +3440,8 @@
     "homeTeam": "بروكسي",
     "awayTeam": "الترسانة",
     "league": "الدوري المصري",
-    "scoreOrTime": "1 - 0",
-    "status": "مباشر",
+    "scoreOrTime": "2 - 0",
+    "status": "انتهت",
     "channels": [],
     "commentator": "",
     "source": "YSscores",
@@ -3379,11 +3462,11 @@
     "awayTeam": "مسار",
     "league": "الدوري المصري",
     "scoreOrTime": "0 - 1",
-    "status": "مباشر",
+    "status": "انتهت",
     "channels": [
      "On Sport Max"
     ],
-    "commentator": "",
+    "commentator": "هشام فرحات",
     "source": "YSscores",
     "homeLogo": "https://imgs.ysscores.com/teams/128/8591728755099.png",
     "awayLogo": "https://imgs.ysscores.com/teams/128/9871753647957.png",
@@ -3401,8 +3484,8 @@
     "homeTeam": "فريدريكستاد",
     "awayTeam": "بودو/غليمت",
     "league": "الدوري النرويجي الممتاز",
-    "scoreOrTime": "08:00م",
-    "status": "لم تبدأ",
+    "scoreOrTime": "1 - 1",
+    "status": "مباشر",
     "channels": [],
     "commentator": "",
     "source": "YSscores",
@@ -3419,8 +3502,8 @@
     "homeTeam": "أوليسوند",
     "awayTeam": "ستارت",
     "league": "الدوري النرويجي الممتاز",
-    "scoreOrTime": "08:00م",
-    "status": "لم تبدأ",
+    "scoreOrTime": "2 - 0",
+    "status": "مباشر",
     "channels": [],
     "commentator": "",
     "source": "YSscores",
@@ -3431,6 +3514,9 @@
      "away": []
     },
     "_match_date": "2026-09-04",
+    "round": "الجولة 20 - مباراة الإياب",
+    "stadium": "ملعب كولور لاين",
+    "_championship_link": "https://www.ysscores.com/ar/championship/233484/Eliteserien",
     "_start_date": "2026-09-04T20:00:00+03:00"
    },
    {
@@ -3455,8 +3541,8 @@
     "homeTeam": "فارازدين",
     "awayTeam": "إسترا 1961",
     "league": "الدوري الكرواتي الممتاز",
-    "scoreOrTime": "09:00م",
-    "status": "لم تبدأ",
+    "scoreOrTime": "0 - 0",
+    "status": "مباشر",
     "channels": [],
     "commentator": "",
     "source": "YSscores",
@@ -3467,6 +3553,9 @@
      "away": []
     },
     "_match_date": "2026-09-04",
+    "round": "الجولة 6 - مباراة الذهاب",
+    "stadium": "استاد فارتكس",
+    "_championship_link": "https://www.ysscores.com/ar/championship/904490/Croatian-Football-League",
     "_start_date": "2026-09-04T21:00:00+03:00"
    },
    {
@@ -3485,16 +3574,21 @@
      "away": []
     },
     "_match_date": "2026-09-04",
+    "round": "الجولة 7 - مباراة الذهاب",
+    "stadium": "الملعب البلدي في غليفيتسه",
+    "_championship_link": "https://www.ysscores.com/ar/championship/827478/Ekstraklasa",
     "_start_date": "2026-09-04T21:30:00+03:00"
    },
    {
     "homeTeam": "السويحلي",
     "awayTeam": "فالانتيا زنجبار",
     "league": "دوري أبطال أفريقيا",
-    "scoreOrTime": "08:00م",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
+    "scoreOrTime": "0 - 0",
+    "status": "مباشر",
+    "channels": [
+     "Libya Sports"
+    ],
+    "commentator": "خليل البلوشي",
     "source": "YSscores",
     "homeLogo": "https://imgs.ysscores.com/teams/128/17656587578495.png",
     "awayLogo": "https://imgs.ysscores.com/teams/128/17883822937486.png",
@@ -3503,16 +3597,21 @@
      "away": []
     },
     "_match_date": "2026-09-04",
+    "round": "الدور الأول - مباراة الذهاب",
+    "stadium": "ملعب مصراتة",
+    "_championship_link": "https://www.ysscores.com/ar/championship/97533/CAF-Champions-League-|-Qualification",
     "_start_date": "2026-09-04T20:00:00+03:00"
    },
    {
     "homeTeam": "الميناء الجيبوتي",
     "awayTeam": "الزمالك",
     "league": "دوري أبطال أفريقيا",
-    "scoreOrTime": "08:00م",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
+    "scoreOrTime": "0 - 2",
+    "status": "مباشر",
+    "channels": [
+     "ON Sport"
+    ],
+    "commentator": "عصام عبده",
     "source": "YSscores",
     "homeLogo": "https://imgs.ysscores.com/teams/128/17882944105420.png",
     "awayLogo": "https://imgs.ysscores.com/teams/128/7971694082496.png",
@@ -3521,16 +3620,21 @@
      "away": []
     },
     "_match_date": "2026-09-04",
+    "round": "الدور الأول - مباراة الذهاب",
+    "stadium": "استاد القاهرة الدولي",
+    "_championship_link": "https://www.ysscores.com/ar/championship/97533/CAF-Champions-League-|-Qualification",
     "_start_date": "2026-09-04T20:00:00+03:00"
    },
    {
     "homeTeam": "شبيبة الساورة",
     "awayTeam": "حوريا",
     "league": "دوري أبطال أفريقيا",
-    "scoreOrTime": "09:00م",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
+    "scoreOrTime": "0 - 0",
+    "status": "مباشر",
+    "channels": [
+     "TV 6 HD Algérie"
+    ],
+    "commentator": "سيف الدين بن زردة",
     "source": "YSscores",
     "homeLogo": "https://imgs.ysscores.com/teams/128/6231693417939.png",
     "awayLogo": "https://imgs.ysscores.com/teams/128/5601692282599.png",
@@ -3539,6 +3643,9 @@
      "away": []
     },
     "_match_date": "2026-09-04",
+    "round": "الدور الأول - مباراة الذهاب",
+    "stadium": "ميلود هدفي",
+    "_championship_link": "https://www.ysscores.com/ar/championship/97533/CAF-Champions-League-|-Qualification",
     "_start_date": "2026-09-04T21:00:00+03:00"
    },
    {
@@ -3547,9 +3654,7 @@
     "league": "كأس الجمهورية اليمنية",
     "scoreOrTime": "1 - 0",
     "status": "انتهت",
-    "channels": [
-     "Yemen Shabab"
-    ],
+    "channels": [],
     "commentator": "",
     "source": "YSscores",
     "homeLogo": "https://imgs.ysscores.com/teams/128/17750599105317.png",
@@ -3559,9 +3664,6 @@
      "away": []
     },
     "_match_date": "2026-09-04",
-    "round": "دور الـ 16",
-    "stadium": "استاد سيئون",
-    "_championship_link": "https://www.ysscores.com/ar/championship/559469/Yemen-Republic-Cup",
     "_start_date": "2026-09-04T15:45:00+03:00"
    }
   ],
@@ -3570,7 +3672,7 @@
     "homeTeam": "نيوكاسل",
     "awayTeam": "بورنموث",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "06:30ص",
+    "scoreOrTime": "04:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3582,13 +3684,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T06:30:00+03:00"
+    "_start_date": "2026-09-05T04:30:00+03:00"
    },
    {
     "homeTeam": "برينتفورد",
     "awayTeam": "سندرلاند",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "09:00ص",
+    "scoreOrTime": "07:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3600,13 +3702,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:00:00+03:00"
+    "_start_date": "2026-09-05T07:00:00+03:00"
    },
    {
     "homeTeam": "برايتون",
     "awayTeam": "ليدز يونايتد",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "09:00ص",
+    "scoreOrTime": "07:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3618,13 +3720,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:00:00+03:00"
+    "_start_date": "2026-09-05T07:00:00+03:00"
    },
    {
     "homeTeam": "فولهام",
     "awayTeam": "كريستال بالاس",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "09:00ص",
+    "scoreOrTime": "07:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3636,13 +3738,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:00:00+03:00"
+    "_start_date": "2026-09-05T07:00:00+03:00"
    },
    {
     "homeTeam": "مان سيتي",
     "awayTeam": "كوفنتري",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "09:00ص",
+    "scoreOrTime": "07:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3654,13 +3756,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:00:00+03:00"
+    "_start_date": "2026-09-05T07:00:00+03:00"
    },
    {
     "homeTeam": "نوتينغهام",
     "awayTeam": "توتنهام",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "09:00ص",
+    "scoreOrTime": "07:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3672,13 +3774,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:00:00+03:00"
+    "_start_date": "2026-09-05T07:00:00+03:00"
    },
    {
     "homeTeam": "هال سيتي",
     "awayTeam": "أستون فيلا",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "11:30ص",
+    "scoreOrTime": "09:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3690,13 +3792,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T11:30:00+03:00"
+    "_start_date": "2026-09-05T09:30:00+03:00"
    },
    {
     "homeTeam": "أتلتيك بلباو",
     "awayTeam": "أتلتيكو مدريد",
     "league": "الدوري الإسباني",
-    "scoreOrTime": "09:15ص",
+    "scoreOrTime": "07:15ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3708,13 +3810,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:15:00+03:00"
+    "_start_date": "2026-09-05T07:15:00+03:00"
    },
    {
     "homeTeam": "رايو فاليكانو",
     "awayTeam": "راسينغ",
     "league": "الدوري الإسباني",
-    "scoreOrTime": "11:30ص",
+    "scoreOrTime": "09:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3726,13 +3828,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T11:30:00+03:00"
+    "_start_date": "2026-09-05T09:30:00+03:00"
    },
    {
     "homeTeam": "فياريال",
     "awayTeam": "لاكورونيا",
     "league": "الدوري الإسباني",
-    "scoreOrTime": "02:00م",
+    "scoreOrTime": "12:00م",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3744,13 +3846,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T14:00:00+03:00"
+    "_start_date": "2026-09-05T12:00:00+03:00"
    },
    {
     "homeTeam": "فيورنتينا",
     "awayTeam": "تورينو",
     "league": "الدوري الإيطالي",
-    "scoreOrTime": "08:00ص",
+    "scoreOrTime": "06:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3762,13 +3864,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T08:00:00+03:00"
+    "_start_date": "2026-09-05T06:00:00+03:00"
    },
    {
     "homeTeam": "إنتر ميلان",
     "awayTeam": "نابولي",
     "league": "الدوري الإيطالي",
-    "scoreOrTime": "11:00ص",
+    "scoreOrTime": "09:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3780,13 +3882,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T11:00:00+03:00"
+    "_start_date": "2026-09-05T09:00:00+03:00"
    },
    {
     "homeTeam": "روما",
     "awayTeam": "أتالانتا",
     "league": "الدوري الإيطالي",
-    "scoreOrTime": "01:45م",
+    "scoreOrTime": "11:45ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3798,13 +3900,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T13:45:00+03:00"
+    "_start_date": "2026-09-05T11:45:00+03:00"
    },
    {
     "homeTeam": "باير ليفركوزن",
     "awayTeam": "يونيون برلين",
     "league": "الدوري الألماني",
-    "scoreOrTime": "08:30ص",
+    "scoreOrTime": "06:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3816,13 +3918,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T08:30:00+03:00"
+    "_start_date": "2026-09-05T06:30:00+03:00"
    },
    {
     "homeTeam": "مونشنغلادباخ",
     "awayTeam": "إلفيرسبيرج",
     "league": "الدوري الألماني",
-    "scoreOrTime": "08:30ص",
+    "scoreOrTime": "06:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3834,13 +3936,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T08:30:00+03:00"
+    "_start_date": "2026-09-05T06:30:00+03:00"
    },
    {
     "homeTeam": "هوفنهايم",
     "awayTeam": "دورتموند",
     "league": "الدوري الألماني",
-    "scoreOrTime": "08:30ص",
+    "scoreOrTime": "06:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3852,13 +3954,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T08:30:00+03:00"
+    "_start_date": "2026-09-05T06:30:00+03:00"
    },
    {
     "homeTeam": "بادربورن",
     "awayTeam": "فرايبورج",
     "league": "الدوري الألماني",
-    "scoreOrTime": "08:30ص",
+    "scoreOrTime": "06:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3870,13 +3972,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T08:30:00+03:00"
+    "_start_date": "2026-09-05T06:30:00+03:00"
    },
    {
     "homeTeam": "فيردر بريمن",
     "awayTeam": "لايبزيج",
     "league": "الدوري الألماني",
-    "scoreOrTime": "08:30ص",
+    "scoreOrTime": "06:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3888,13 +3990,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T08:30:00+03:00"
+    "_start_date": "2026-09-05T06:30:00+03:00"
    },
    {
     "homeTeam": "شالكه",
     "awayTeam": "بايرن ميونخ",
     "league": "الدوري الألماني",
-    "scoreOrTime": "11:30ص",
+    "scoreOrTime": "09:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3906,13 +4008,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T11:30:00+03:00"
+    "_start_date": "2026-09-05T09:30:00+03:00"
    },
    {
     "homeTeam": "لانس",
     "awayTeam": "لوريان",
     "league": "الدوري الفرنسي",
-    "scoreOrTime": "10:15ص",
+    "scoreOrTime": "08:15ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3924,13 +4026,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T10:15:00+03:00"
+    "_start_date": "2026-09-05T08:15:00+03:00"
    },
    {
     "homeTeam": "لوهافر",
     "awayTeam": "بريست",
     "league": "الدوري الفرنسي",
-    "scoreOrTime": "01:45م",
+    "scoreOrTime": "11:45ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3942,13 +4044,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T13:45:00+03:00"
+    "_start_date": "2026-09-05T11:45:00+03:00"
    },
    {
     "homeTeam": "نيس",
     "awayTeam": "لو مان",
     "league": "الدوري الفرنسي",
-    "scoreOrTime": "01:45م",
+    "scoreOrTime": "11:45ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3960,13 +4062,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T13:45:00+03:00"
+    "_start_date": "2026-09-05T11:45:00+03:00"
    },
    {
     "homeTeam": "الفيصلي",
     "awayTeam": "الحزم",
     "league": "الدوري السعودي",
-    "scoreOrTime": "10:50ص",
+    "scoreOrTime": "08:50ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3978,13 +4080,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T10:50:00+03:00"
+    "_start_date": "2026-09-05T08:50:00+03:00"
    },
    {
     "homeTeam": "التعاون",
     "awayTeam": "الفتح",
     "league": "الدوري السعودي",
-    "scoreOrTime": "10:55ص",
+    "scoreOrTime": "08:55ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -3996,13 +4098,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T10:55:00+03:00"
+    "_start_date": "2026-09-05T08:55:00+03:00"
    },
    {
     "homeTeam": "الاتحاد",
     "awayTeam": "النصر",
     "league": "الدوري السعودي",
-    "scoreOrTime": "01:00م",
+    "scoreOrTime": "11:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4014,13 +4116,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T13:00:00+03:00"
+    "_start_date": "2026-09-05T11:00:00+03:00"
    },
    {
     "homeTeam": "أرضروم سبور",
     "awayTeam": "قونيا سبور",
     "league": "الدوري التركي الممتاز",
-    "scoreOrTime": "09:00ص",
+    "scoreOrTime": "07:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4032,13 +4134,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:00:00+03:00"
+    "_start_date": "2026-09-05T07:00:00+03:00"
    },
    {
     "homeTeam": "فنربخشة",
     "awayTeam": "بشكتاش",
     "league": "الدوري التركي الممتاز",
-    "scoreOrTime": "12:00م",
+    "scoreOrTime": "10:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4050,13 +4152,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T12:00:00+03:00"
+    "_start_date": "2026-09-05T10:00:00+03:00"
    },
    {
     "homeTeam": "زاخو",
     "awayTeam": "الطلبة",
     "league": "الدوري العراقي",
-    "scoreOrTime": "10:45ص",
+    "scoreOrTime": "08:45ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4068,13 +4170,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T10:45:00+03:00"
+    "_start_date": "2026-09-05T08:45:00+03:00"
    },
    {
     "homeTeam": "الميناء",
     "awayTeam": "النفط",
     "league": "الدوري العراقي",
-    "scoreOrTime": "01:00م",
+    "scoreOrTime": "11:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4086,13 +4188,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T13:00:00+03:00"
+    "_start_date": "2026-09-05T11:00:00+03:00"
    },
    {
     "homeTeam": "لينكولن",
     "awayTeam": "ساوثهامبتون",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "06:30ص",
+    "scoreOrTime": "04:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4104,13 +4206,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T06:30:00+03:00"
+    "_start_date": "2026-09-05T04:30:00+03:00"
    },
    {
     "homeTeam": "بريستون",
     "awayTeam": "بلاكبيرن روفرز",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "06:30ص",
+    "scoreOrTime": "04:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4122,13 +4224,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T06:30:00+03:00"
+    "_start_date": "2026-09-05T04:30:00+03:00"
    },
    {
     "homeTeam": "ستوك سيتي",
     "awayTeam": "تشارلتون أثلتيك",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "06:30ص",
+    "scoreOrTime": "04:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4140,13 +4242,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T06:30:00+03:00"
+    "_start_date": "2026-09-05T04:30:00+03:00"
    },
    {
     "homeTeam": "بيرنلي",
     "awayTeam": "بريستول",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "09:00ص",
+    "scoreOrTime": "07:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4158,13 +4260,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:00:00+03:00"
+    "_start_date": "2026-09-05T07:00:00+03:00"
    },
    {
     "homeTeam": "ميلوول",
     "awayTeam": "بولتون",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "09:00ص",
+    "scoreOrTime": "07:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4176,13 +4278,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:00:00+03:00"
+    "_start_date": "2026-09-05T07:00:00+03:00"
    },
    {
     "homeTeam": "بورتسموث",
     "awayTeam": "كارديف سيتي",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "09:00ص",
+    "scoreOrTime": "07:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4194,13 +4296,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:00:00+03:00"
+    "_start_date": "2026-09-05T07:00:00+03:00"
    },
    {
     "homeTeam": "كوينز بارك رينجرز",
     "awayTeam": "ميدلزبره",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "09:00ص",
+    "scoreOrTime": "07:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4212,13 +4314,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:00:00+03:00"
+    "_start_date": "2026-09-05T07:00:00+03:00"
    },
    {
     "homeTeam": "شيفيلد",
     "awayTeam": "نوريتش سيتي",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "09:00ص",
+    "scoreOrTime": "07:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4230,13 +4332,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:00:00+03:00"
+    "_start_date": "2026-09-05T07:00:00+03:00"
    },
    {
     "homeTeam": "وست بروميتش",
     "awayTeam": "واتفورد",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "09:00ص",
+    "scoreOrTime": "07:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4248,13 +4350,34 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:00:00+03:00"
+    "_start_date": "2026-09-05T07:00:00+03:00"
+   },
+   {
+    "homeTeam": "الهلال الساحل",
+    "awayTeam": "جامعة ولوالو",
+    "league": "كأس الكونفيدرالية | الأدوار الإقصائية",
+    "scoreOrTime": "1 - 1",
+    "status": "انتهت",
+    "channels": [],
+    "commentator": "",
+    "source": "YSscores",
+    "homeLogo": "https://imgs.ysscores.com/teams/128/17787852293194.png",
+    "awayLogo": "https://imgs.ysscores.com/teams/128/17869891411719.png",
+    "scorers": {
+     "home": [],
+     "away": []
+    },
+    "_match_date": "2026-09-04",
+    "round": "دور الإقصائيات - مباراة الذهاب",
+    "stadium": "ملعب نياميرامبو",
+    "_championship_link": "https://www.ysscores.com/ar/championship/44444/CAF-Confederation-Cup-|-Qualification",
+    "_start_date": "2026-09-05T10:00:00+03:00"
    },
    {
     "homeTeam": "وست هام",
     "awayTeam": "ديربي كاونتي",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "09:00ص",
+    "scoreOrTime": "07:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4266,13 +4389,36 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:00:00+03:00"
+    "_start_date": "2026-09-05T07:00:00+03:00"
+   },
+   {
+    "homeTeam": "الجرجيسي",
+    "awayTeam": "ديامبارس",
+    "league": "كأس الكونفيدرالية | الأدوار الإقصائية",
+    "scoreOrTime": "3 - 1",
+    "status": "انتهت",
+    "channels": [
+     "Tunisia Nat 1"
+    ],
+    "commentator": "",
+    "source": "YSscores",
+    "homeLogo": "https://imgs.ysscores.com/teams/128/7511723790588.png",
+    "awayLogo": "https://imgs.ysscores.com/teams/128/17869890184630.png",
+    "scorers": {
+     "home": [],
+     "away": []
+    },
+    "_match_date": "2026-09-04",
+    "round": "دور الإقصائيات - مباراة الذهاب",
+    "stadium": "الطيب المهيري",
+    "_championship_link": "https://www.ysscores.com/ar/championship/44444/CAF-Confederation-Cup-|-Qualification",
+    "_start_date": "2026-09-05T09:30:00+03:00"
    },
    {
     "homeTeam": "سوانزي",
     "awayTeam": "ريكسهام",
     "league": "الدوري الإنجليزي",
-    "scoreOrTime": "02:00م",
+    "scoreOrTime": "12:00م",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4284,13 +4430,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T14:00:00+03:00"
+    "_start_date": "2026-09-05T12:00:00+03:00"
    },
    {
     "homeTeam": "نيميخن",
     "awayTeam": "فاينورد",
     "league": "الدوري الهولندي الممتاز",
-    "scoreOrTime": "09:30ص",
+    "scoreOrTime": "07:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4302,13 +4448,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:30:00+03:00"
+    "_start_date": "2026-09-05T07:30:00+03:00"
    },
    {
     "homeTeam": "أوترخت",
     "awayTeam": "جو أهيد إيجلز",
     "league": "الدوري الهولندي الممتاز",
-    "scoreOrTime": "11:45ص",
+    "scoreOrTime": "09:45ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4320,13 +4466,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T11:45:00+03:00"
+    "_start_date": "2026-09-05T09:45:00+03:00"
    },
    {
     "homeTeam": "أياكس أمستردام",
     "awayTeam": "آيندهوفن",
     "league": "الدوري الهولندي الممتاز",
-    "scoreOrTime": "01:00م",
+    "scoreOrTime": "11:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4338,13 +4484,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T13:00:00+03:00"
+    "_start_date": "2026-09-05T11:00:00+03:00"
    },
    {
     "homeTeam": "فيليم II",
     "awayTeam": "إكسيلسيور",
     "league": "الدوري الهولندي الممتاز",
-    "scoreOrTime": "02:00م",
+    "scoreOrTime": "12:00م",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4356,13 +4502,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T14:00:00+03:00"
+    "_start_date": "2026-09-05T12:00:00+03:00"
    },
    {
     "homeTeam": "ألفيركا",
     "awayTeam": "سبورتينغ براغا",
     "league": "الدوري البرتغالي الممتاز",
-    "scoreOrTime": "12:00م",
+    "scoreOrTime": "10:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4374,13 +4520,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T12:00:00+03:00"
+    "_start_date": "2026-09-05T10:00:00+03:00"
    },
    {
     "homeTeam": "ماريتيمو",
     "awayTeam": "بنفيكا",
     "league": "الدوري البرتغالي الممتاز",
-    "scoreOrTime": "12:00م",
+    "scoreOrTime": "10:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4392,13 +4538,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T12:00:00+03:00"
+    "_start_date": "2026-09-05T10:00:00+03:00"
    },
    {
     "homeTeam": "سبورتينغ لشبونة",
     "awayTeam": "ناسيونال ماديرا",
     "league": "الدوري البرتغالي الممتاز",
-    "scoreOrTime": "02:30م",
+    "scoreOrTime": "12:30م",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4410,13 +4556,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T14:30:00+03:00"
+    "_start_date": "2026-09-05T12:30:00+03:00"
    },
    {
     "homeTeam": "رينجرز",
     "awayTeam": "ماذرويل",
     "league": "الدوري الإسكتلندي الممتاز",
-    "scoreOrTime": "09:00ص",
+    "scoreOrTime": "07:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4428,13 +4574,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:00:00+03:00"
+    "_start_date": "2026-09-05T07:00:00+03:00"
    },
    {
     "homeTeam": "سانت ميرين",
     "awayTeam": "سيلتك",
     "league": "الدوري الإسكتلندي الممتاز",
-    "scoreOrTime": "02:00م",
+    "scoreOrTime": "12:00م",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4446,13 +4592,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T14:00:00+03:00"
+    "_start_date": "2026-09-05T12:00:00+03:00"
    },
    {
     "homeTeam": "ساو باولو",
     "awayTeam": "أتلتيكو مينيرو",
     "league": "الدوري البرازيلي",
-    "scoreOrTime": "04:30م",
+    "scoreOrTime": "02:30م",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4464,13 +4610,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T16:30:00+03:00"
+    "_start_date": "2026-09-05T14:30:00+03:00"
    },
    {
     "homeTeam": "فلومينينسي",
     "awayTeam": "فاسكو دا غاما",
     "league": "الدوري البرازيلي",
-    "scoreOrTime": "07:00م",
+    "scoreOrTime": "05:00م",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4482,13 +4628,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T19:00:00+03:00"
+    "_start_date": "2026-09-05T17:00:00+03:00"
    },
    {
     "homeTeam": "تموشنت",
     "awayTeam": "النادي القسنطيني",
     "league": "الرابطة المحترفة الجزائرية الأولى",
-    "scoreOrTime": "01:00م",
+    "scoreOrTime": "11:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4500,13 +4646,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T13:00:00+03:00"
+    "_start_date": "2026-09-05T11:00:00+03:00"
    },
    {
     "homeTeam": "أولمبي الشلف",
     "awayTeam": "شباب بلوزداد",
     "league": "الرابطة المحترفة الجزائرية الأولى",
-    "scoreOrTime": "03:00م",
+    "scoreOrTime": "01:00م",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4518,13 +4664,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T15:00:00+03:00"
+    "_start_date": "2026-09-05T13:00:00+03:00"
    },
    {
     "homeTeam": "البنزرتي",
     "awayTeam": "الأولمبي الباجي",
     "league": "الرابطة التونسية لكرة القدم",
-    "scoreOrTime": "10:30ص",
+    "scoreOrTime": "08:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4536,13 +4682,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T10:30:00+03:00"
+    "_start_date": "2026-09-05T08:30:00+03:00"
    },
    {
     "homeTeam": "تقدم ساقية الدائر",
     "awayTeam": "حمام الأنف",
     "league": "الرابطة التونسية لكرة القدم",
-    "scoreOrTime": "10:30ص",
+    "scoreOrTime": "08:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4554,13 +4700,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T10:30:00+03:00"
+    "_start_date": "2026-09-05T08:30:00+03:00"
    },
    {
     "homeTeam": "الريان",
     "awayTeam": "الدحيل",
     "league": "الدوري القطري",
-    "scoreOrTime": "09:00ص",
+    "scoreOrTime": "07:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4572,13 +4718,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:00:00+03:00"
+    "_start_date": "2026-09-05T07:00:00+03:00"
    },
    {
     "homeTeam": "السد",
     "awayTeam": "الغرافة",
     "league": "الدوري القطري",
-    "scoreOrTime": "11:15ص",
+    "scoreOrTime": "09:15ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4590,13 +4736,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T11:15:00+03:00"
+    "_start_date": "2026-09-05T09:15:00+03:00"
    },
    {
     "homeTeam": "الشارقة",
     "awayTeam": "يونايتد",
     "league": "الدوري السعودي",
-    "scoreOrTime": "08:45ص",
+    "scoreOrTime": "06:45ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4608,13 +4754,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T08:45:00+03:00"
+    "_start_date": "2026-09-05T06:45:00+03:00"
    },
    {
     "homeTeam": "بني ياس",
     "awayTeam": "حتا",
     "league": "الدوري السعودي",
-    "scoreOrTime": "08:45ص",
+    "scoreOrTime": "06:45ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4626,13 +4772,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T08:45:00+03:00"
+    "_start_date": "2026-09-05T06:45:00+03:00"
    },
    {
     "homeTeam": "شباب الأهلي",
     "awayTeam": "الجزيرة",
     "league": "الدوري السعودي",
-    "scoreOrTime": "11:15ص",
+    "scoreOrTime": "09:15ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4644,13 +4790,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T11:15:00+03:00"
+    "_start_date": "2026-09-05T09:15:00+03:00"
    },
    {
     "homeTeam": "العربي",
     "awayTeam": "السلط",
     "league": "الدوري السعودي",
-    "scoreOrTime": "10:00ص",
+    "scoreOrTime": "08:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4662,13 +4808,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T10:00:00+03:00"
+    "_start_date": "2026-09-05T08:00:00+03:00"
    },
    {
     "homeTeam": "الحسين",
     "awayTeam": "الجزيرة",
     "league": "الدوري السعودي",
-    "scoreOrTime": "12:30م",
+    "scoreOrTime": "10:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4680,13 +4826,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T12:30:00+03:00"
+    "_start_date": "2026-09-05T10:30:00+03:00"
    },
    {
     "homeTeam": "روسنبورغ",
     "awayTeam": "هام كام",
     "league": "الدوري النرويجي الممتاز",
-    "scoreOrTime": "09:00ص",
+    "scoreOrTime": "07:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4698,13 +4844,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:00:00+03:00"
+    "_start_date": "2026-09-05T07:00:00+03:00"
    },
    {
     "homeTeam": "بران",
     "awayTeam": "ليلستروم",
     "league": "الدوري النرويجي الممتاز",
-    "scoreOrTime": "11:00ص",
+    "scoreOrTime": "09:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4716,13 +4862,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T11:00:00+03:00"
+    "_start_date": "2026-09-05T09:00:00+03:00"
    },
    {
     "homeTeam": "ووهان ثري تاونز",
     "awayTeam": "تشينغداو",
     "league": "دوري السوبر الصيني",
-    "scoreOrTime": "06:00ص",
+    "scoreOrTime": "04:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4734,13 +4880,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T06:00:00+03:00"
+    "_start_date": "2026-09-05T04:00:00+03:00"
    },
    {
     "homeTeam": "داليان",
     "awayTeam": "تشينغداو",
     "league": "دوري السوبر الصيني",
-    "scoreOrTime": "06:35ص",
+    "scoreOrTime": "04:35ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4752,13 +4898,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T06:35:00+03:00"
+    "_start_date": "2026-09-05T04:35:00+03:00"
    },
    {
     "homeTeam": "شنغهاي بورت",
     "awayTeam": "بكين",
     "league": "دوري السوبر الصيني",
-    "scoreOrTime": "06:35ص",
+    "scoreOrTime": "04:35ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4770,13 +4916,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T06:35:00+03:00"
+    "_start_date": "2026-09-05T04:35:00+03:00"
    },
    {
     "homeTeam": "تايشان",
     "awayTeam": "شنتشن بينغ سيتي",
     "league": "دوري السوبر الصيني",
-    "scoreOrTime": "07:00ص",
+    "scoreOrTime": "05:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4788,13 +4934,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T07:00:00+03:00"
+    "_start_date": "2026-09-05T05:00:00+03:00"
    },
    {
     "homeTeam": "دينامو زغرب",
     "awayTeam": "غوريتسا",
     "league": "الدوري الكرواتي الممتاز",
-    "scoreOrTime": "11:00ص",
+    "scoreOrTime": "09:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4806,13 +4952,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T11:00:00+03:00"
+    "_start_date": "2026-09-05T09:00:00+03:00"
    },
    {
     "homeTeam": "رييكا",
     "awayTeam": "أوسيجك",
     "league": "الدوري الكرواتي الممتاز",
-    "scoreOrTime": "02:00م",
+    "scoreOrTime": "12:00م",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4824,13 +4970,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T14:00:00+03:00"
+    "_start_date": "2026-09-05T12:00:00+03:00"
    },
    {
     "homeTeam": "وودج",
     "awayTeam": "رادومياك",
     "league": "الدوري البولندي الممتاز",
-    "scoreOrTime": "07:45ص",
+    "scoreOrTime": "05:45ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4842,13 +4988,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T07:45:00+03:00"
+    "_start_date": "2026-09-05T05:45:00+03:00"
    },
    {
     "homeTeam": "كورونا كيلسي",
     "awayTeam": "فيسلا كراكوف",
     "league": "الدوري البولندي الممتاز",
-    "scoreOrTime": "10:30ص",
+    "scoreOrTime": "08:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4860,13 +5006,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T10:30:00+03:00"
+    "_start_date": "2026-09-05T08:30:00+03:00"
    },
    {
     "homeTeam": "موتور لوبلين",
     "awayTeam": "ليجيا وارسو",
     "league": "الدوري البولندي الممتاز",
-    "scoreOrTime": "01:15م",
+    "scoreOrTime": "11:15ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4878,13 +5024,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T13:15:00+03:00"
+    "_start_date": "2026-09-05T11:15:00+03:00"
    },
    {
     "homeTeam": "سيغما",
     "awayTeam": "بوهيميانز 1905",
     "league": "دوري الدرجة الأولى التشيكي",
-    "scoreOrTime": "08:00ص",
+    "scoreOrTime": "06:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4896,13 +5042,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T08:00:00+03:00"
+    "_start_date": "2026-09-05T06:00:00+03:00"
    },
    {
     "homeTeam": "سلافيا براغ",
     "awayTeam": "زبروجوفكا برنو",
     "league": "دوري الدرجة الأولى التشيكي",
-    "scoreOrTime": "08:00ص",
+    "scoreOrTime": "06:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4914,13 +5060,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T08:00:00+03:00"
+    "_start_date": "2026-09-05T06:00:00+03:00"
    },
    {
     "homeTeam": "سلوفاكو",
     "awayTeam": "باردوبيس",
     "league": "دوري الدرجة الأولى التشيكي",
-    "scoreOrTime": "08:00ص",
+    "scoreOrTime": "06:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4932,13 +5078,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T08:00:00+03:00"
+    "_start_date": "2026-09-05T06:00:00+03:00"
    },
    {
     "homeTeam": "برنو",
     "awayTeam": "فيكتوريا بيلزن",
     "league": "دوري الدرجة الأولى التشيكي",
-    "scoreOrTime": "11:00ص",
+    "scoreOrTime": "09:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4950,13 +5096,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T11:00:00+03:00"
+    "_start_date": "2026-09-05T09:00:00+03:00"
    },
    {
     "homeTeam": "كريليا سوفيتوف سامارا",
     "awayTeam": "كراسنودار",
     "league": "الدوري الروسي الممتاز",
-    "scoreOrTime": "06:00ص",
+    "scoreOrTime": "04:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4968,13 +5114,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T06:00:00+03:00"
+    "_start_date": "2026-09-05T04:00:00+03:00"
    },
    {
     "homeTeam": "زينيت",
     "awayTeam": "سيسكا موسكو",
     "league": "الدوري الروسي الممتاز",
-    "scoreOrTime": "08:30ص",
+    "scoreOrTime": "06:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -4986,13 +5132,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T08:30:00+03:00"
+    "_start_date": "2026-09-05T06:30:00+03:00"
    },
    {
     "homeTeam": "روستوف",
     "awayTeam": "فاكل",
     "league": "الدوري الروسي الممتاز",
-    "scoreOrTime": "11:00ص",
+    "scoreOrTime": "09:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -5004,13 +5150,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T11:00:00+03:00"
+    "_start_date": "2026-09-05T09:00:00+03:00"
    },
    {
     "homeTeam": "المريخ بانتيو",
     "awayTeam": "هيغان",
     "league": "دوري أبطال أفريقيا",
-    "scoreOrTime": "08:00ص",
+    "scoreOrTime": "06:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -5022,13 +5168,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T08:00:00+03:00"
+    "_start_date": "2026-09-05T06:00:00+03:00"
    },
    {
     "homeTeam": "أيغل نوار",
     "awayTeam": "الهلال",
     "league": "دوري أبطال أفريقيا",
-    "scoreOrTime": "08:00ص",
+    "scoreOrTime": "06:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -5040,13 +5186,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T08:00:00+03:00"
+    "_start_date": "2026-09-05T06:00:00+03:00"
    },
    {
     "homeTeam": "أندوهارانوفوتسي",
     "awayTeam": "ليجاباثو",
     "league": "دوري أبطال أفريقيا",
-    "scoreOrTime": "09:00ص",
+    "scoreOrTime": "07:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -5058,13 +5204,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:00:00+03:00"
+    "_start_date": "2026-09-05T07:00:00+03:00"
    },
    {
     "homeTeam": "مانغاسبورت",
     "awayTeam": "أفريقيا ستارز",
     "league": "دوري أبطال أفريقيا",
-    "scoreOrTime": "09:30ص",
+    "scoreOrTime": "07:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -5076,13 +5222,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:30:00+03:00"
+    "_start_date": "2026-09-05T07:30:00+03:00"
    },
    {
     "homeTeam": "إيجلونز",
     "awayTeam": "سيداما",
     "league": "دوري أبطال أفريقيا",
-    "scoreOrTime": "09:30ص",
+    "scoreOrTime": "07:30ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -5094,13 +5240,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:30:00+03:00"
+    "_start_date": "2026-09-05T07:30:00+03:00"
    },
    {
     "homeTeam": "15 دي أغوستو",
     "awayTeam": "فومبوني",
     "league": "دوري أبطال أفريقيا",
-    "scoreOrTime": "10:00ص",
+    "scoreOrTime": "08:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -5112,13 +5258,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T10:00:00+03:00"
+    "_start_date": "2026-09-05T08:00:00+03:00"
    },
    {
     "homeTeam": "ستار سبورت",
     "awayTeam": "ميدينا",
     "league": "دوري أبطال أفريقيا",
-    "scoreOrTime": "11:00ص",
+    "scoreOrTime": "09:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -5130,31 +5276,31 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T11:00:00+03:00"
+    "_start_date": "2026-09-05T09:00:00+03:00"
    },
    {
     "homeTeam": "كانشونغو",
     "awayTeam": "تونغيث",
     "league": "دوري أبطال أفريقيا",
-    "scoreOrTime": "11:00ص",
+    "scoreOrTime": "09:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
     "source": "YSscores",
-    "homeLogo": "https://imgs.ysscores.com/teams/128/17869929425014.png",
+    "homeLogo": "https://imgs.ysscores.com/teams/128/17885417305027.png",
     "awayLogo": "https://imgs.ysscores.com/teams/128/1121720802094.png",
     "scorers": {
      "home": [],
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T11:00:00+03:00"
+    "_start_date": "2026-09-05T09:00:00+03:00"
    },
    {
     "homeTeam": "سان بيدرو",
     "awayTeam": "ريفرز يونايتد",
     "league": "دوري أبطال أفريقيا",
-    "scoreOrTime": "11:00ص",
+    "scoreOrTime": "09:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -5166,13 +5312,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T11:00:00+03:00"
+    "_start_date": "2026-09-05T09:00:00+03:00"
    },
    {
     "homeTeam": "فيبرس",
     "awayTeam": "نواذيبو",
     "league": "دوري أبطال أفريقيا",
-    "scoreOrTime": "11:00ص",
+    "scoreOrTime": "09:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -5184,13 +5330,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T11:00:00+03:00"
+    "_start_date": "2026-09-05T09:00:00+03:00"
    },
    {
     "homeTeam": "غابورون يونايتد",
     "awayTeam": "يانغ أفريكانز",
     "league": "دوري أبطال أفريقيا",
-    "scoreOrTime": "12:00م",
+    "scoreOrTime": "10:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -5202,13 +5348,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T12:00:00+03:00"
+    "_start_date": "2026-09-05T10:00:00+03:00"
    },
    {
     "homeTeam": "المريخ",
     "awayTeam": "باور ديناموز",
     "league": "دوري أبطال أفريقيا",
-    "scoreOrTime": "12:00م",
+    "scoreOrTime": "10:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -5220,13 +5366,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T12:00:00+03:00"
+    "_start_date": "2026-09-05T10:00:00+03:00"
    },
    {
     "homeTeam": "الإفريقي",
     "awayTeam": "دجوليبا",
     "league": "دوري أبطال أفريقيا",
-    "scoreOrTime": "01:00م",
+    "scoreOrTime": "11:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -5238,13 +5384,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T13:00:00+03:00"
+    "_start_date": "2026-09-05T11:00:00+03:00"
    },
    {
     "homeTeam": "كمكم زانزيبار",
     "awayTeam": "الأهلي طرابلس",
     "league": "كأس الكونفيدرالية | الأدوار الإقصائية",
-    "scoreOrTime": "08:00ص",
+    "scoreOrTime": "06:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -5256,31 +5402,13 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T08:00:00+03:00"
-   },
-   {
-    "homeTeam": "الجرجيسي",
-    "awayTeam": "ديامبارس",
-    "league": "كأس الكونفيدرالية | الأدوار الإقصائية",
-    "scoreOrTime": "09:30ص",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
-    "source": "YSscores",
-    "homeLogo": "https://imgs.ysscores.com/teams/128/7511723790588.png",
-    "awayLogo": "https://imgs.ysscores.com/teams/128/17869890184630.png",
-    "scorers": {
-     "home": [],
-     "away": []
-    },
-    "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T09:30:00+03:00"
+    "_start_date": "2026-09-05T06:00:00+03:00"
    },
    {
     "homeTeam": "شوتينغ ستارز",
     "awayTeam": "الصفاقسي",
     "league": "كأس الكونفيدرالية | الأدوار الإقصائية",
-    "scoreOrTime": "10:00ص",
+    "scoreOrTime": "08:00ص",
     "status": "لم تبدأ",
     "channels": [],
     "commentator": "",
@@ -5292,25 +5420,7 @@
      "away": []
     },
     "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T10:00:00+03:00"
-   },
-   {
-    "homeTeam": "الهلال الساحل",
-    "awayTeam": "جامعة ولوالو",
-    "league": "كأس الكونفيدرالية | الأدوار الإقصائية",
-    "scoreOrTime": "10:00ص",
-    "status": "لم تبدأ",
-    "channels": [],
-    "commentator": "",
-    "source": "YSscores",
-    "homeLogo": "https://imgs.ysscores.com/teams/128/17787852293194.png",
-    "awayLogo": "https://imgs.ysscores.com/teams/128/17869891411719.png",
-    "scorers": {
-     "home": [],
-     "away": []
-    },
-    "_match_date": "2026-09-05",
-    "_start_date": "2026-09-05T10:00:00+03:00"
+    "_start_date": "2026-09-05T08:00:00+03:00"
    }
   ]
  }
