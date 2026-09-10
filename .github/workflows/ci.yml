@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ci-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: State store (16 checks)
+        run: python state_store/selftest.py
+
+      - name: Scheduler simulated full day (14 checks)
+        run: python scheduler_selftest.py
+
+      - name: Telegram publisher retries (4 checks)
+        run: python telegram_publisher_selftest.py

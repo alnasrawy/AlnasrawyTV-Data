@@ -3,6 +3,7 @@ scheduler (4) + telegram publisher (a).
 
     python main.py                  # run the scheduler forever
     python main.py --test-day today # print today's data, publish nothing
+    python main.py --trial          # one live end-to-end card (GitHub cron)
 
 Test mode never touches Telegram — it is only a safe data-layer dump, so
 you can exercise the scraper without disturbing the real channel.
@@ -23,8 +24,9 @@ from data_layer import config as dl_config
 from data_layer.fetcher import Fetcher
 from data_layer.main import load_day
 from notify import LogPublisher
+from renderer import render_fulltime_image, render_prematch_image
 from scheduler import Scheduler, SchedulerConfig
-from telegram_publisher import alert_admin, publish_photo_to_channels
+from telegram_publisher import alert_admin, publish_photo_to_channels, send_message
 
 logger = logging.getLogger("main")
 
@@ -89,6 +91,53 @@ def run_scheduler() -> None:
     Scheduler(publisher=publisher, notifier=notifier, config=cfg).run()
 
 
+def run_trial() -> int:
+    """Daily end-to-end smoke used by the GitHub Actions cron job."""
+    now = datetime.now(dl_config.TZ)
+    logger.info("trial run (%s) — live fetch, publish a single card", now.isoformat())
+    with Fetcher() as fetcher:
+        championships = load_day(fetcher, now.date())
+    items = [(c, m) for c in championships for m in c.matches]
+    if not items:
+        print("TRIAL: no matches today — nothing to publish")
+        return 0
+
+    live = [x for x in items if x[1].status == "live"]
+    upcoming = sorted(
+        (x for x in items if x[1].kickoff and x[1].kickoff >= now),
+        key=lambda x: x[1].kickoff,
+    )
+    if live:
+        ch, match = live[0]
+    elif upcoming:
+        ch, match = upcoming[0]
+    else:  # today already finished — publish a fulltime card of the last match
+        ch, match = max(items, key=lambda x: x[1].kickoff)
+
+    image = config.image_dir / f"trial_{match.match_id}.png"
+    if match.status == "ended":
+        render_fulltime_image(
+            match, str(image),
+            championship_name=ch.name, championship_logo_url=ch.logo_url,
+        )
+        caption = f"التجربة اليومية — {match.home.name} {match.score[0]}-{match.score[1]} {match.away.name}"
+    else:
+        render_prematch_image(
+            match, str(image),
+            championship_name=ch.name, championship_logo_url=ch.logo_url,
+        )
+        caption = f"التجربة اليومية — {match.home.name} ضد {match.away.name}"
+
+    if not config.telegram_ready:
+        print(f"TRIAL: telegram not configured — card kept at {image}")
+        return 0
+    publish_photo_to_channels(str(image), caption)
+    if config.admin_chat_id:
+        send_message(config.admin_chat_id, f"التجربة اليومية تمت: {caption}")
+    print(f"TRIAL: published -> {config.chat_ids}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -103,6 +152,11 @@ def main(argv: list[str] | None = None) -> int:
         default=None,
         help="limit detail fetches in --test-day mode (faster dry runs)",
     )
+    parser.add_argument(
+        "--trial",
+        action="store_true",
+        help="one end-to-end card to Telegram (used by the GitHub daily cron)",
+    )
     args = parser.parse_args(argv)
 
     logging.basicConfig(
@@ -110,6 +164,8 @@ def main(argv: list[str] | None = None) -> int:
         format="%(asctime)s %(levelname)-7s %(name)s: %(message)s",
     )
 
+    if args.trial:
+        return run_trial()
     if args.test_day:
         return _test_day(_alias(args.test_day), args.max_details)
 
