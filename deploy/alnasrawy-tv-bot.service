@@ -1,0 +1,20 @@
+[Unit]
+Description=AlnasrawyTV-Data: match cards + Telegram publisher
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+# Use a dedicated low-privilege user on production:
+#   adduser --no-create-home --disabled-password deploy
+User=deploy
+Group=deploy
+WorkingDirectory=/opt/alnasrawy/AlnasrawyTV-Data
+EnvironmentFile=/opt/alnasrawy/AlnasrawyTV-Data/.env
+ExecStart=/opt/alnasrawy/AlnasrawyTV-Data/.venv/bin/python main.py
+Restart=always
+RestartSec=20
+TimeoutStartSec=60
+
+[Install]
+WantedBy=multi-user.target

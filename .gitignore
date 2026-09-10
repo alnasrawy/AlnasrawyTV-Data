@@ -1,0 +1,26 @@
+# secrets
+.env
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# sqlite state (step 3)
+*.db
+*.db-wal
+*.db-shm
+
+# generated artifacts
+out_imgs/
+demo_out/
+matches_*.json
+
+# logo cache (downloaded once, re-fetchable)
+renderer/assets/logos/
+
+# os / ide
+.DS_Store
+Thumbs.db
+.idea/
