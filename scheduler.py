@@ -30,8 +30,8 @@ from zoneinfo import ZoneInfo
 
 from data_layer.fetcher import Fetcher
 from data_layer.main import load_day
-from data_layer.models import Match
-from data_layer.parser import parse_fixtures_html
+from data_layer.models import Match, Team
+from data_layer.parser import parse_fixtures_html, parse_match_details_html
 from notify import LogPublisher, build_publisher, Notifier, Publisher
 from renderer import render_fulltime_image, render_prematch_image
 from state_store import (
@@ -165,17 +165,92 @@ class Scheduler:
                 self._notifier.alert(f"خطأ غير متوقع في الحلقة: {exc}")
                 self._clock.sleep(self.cfg.active_interval)
 
-    def _tick(self) -> None:
+    def sweep(self) -> None:
+        """Run exactly one cycle — used by the GitHub Actions cron (step 5).
+        Each workflow run is a fresh process, so this is like one boot
+        (plan built/seeded, all due cards checked, no sleeping)."""
+        self._tick(sleep=False)
+
+    def _tick(self, *, sleep: bool = True) -> None:
         now = self._clock.now()
-        if self._plan_due(now):
-            self._daily_cycle(now.date())
+        self._ensure_plan(now)
 
         self._refresh_and_send(now)
         self._decide_mode(now)
+        if not sleep:
+            return
         if self._mode == MODE_ACTIVE:
             self._clock.sleep(self.cfg.active_interval)
         else:
             self._clock.sleep(self.cfg.idle_interval)
+
+    def _ensure_plan(self, now: datetime) -> None:
+        """Plan is (re)built only when truly needed.
+
+        - A fresh boot (each GitHub cron run is a fresh process) reuses the
+          persisted ``daily_plan`` instead of hammering the site with a full
+          detail fetch every 10 minutes; the light fixtures refresh below
+          re-verifies kickoffs/status.
+        - The heavy full fetch happens once per day (first boot with an
+          empty store, or daily rollover at/after 01:00 Baghdad).
+        """
+        if not self._plan_due(now):
+            return
+        # fresh boot (e.g. each GitHub Actions run) reuses the persisted plan
+        # when it still covers today; the light refresh re-verifies it.
+        if self._plan_ref_date is None:
+            stored = get_daily_plan()
+            if self._plan_covers(stored, now.date()):
+                self._adopt_stored_plan(stored, now.date())
+                self._log(
+                    "استخدام الخطة المخزنة | stored plan",
+                    f"date={now.date()} matches={len(self._matches)}",
+                )
+                return
+        # first boot ever, or the daily 01:00 rollover -> full reload
+        self._daily_cycle(now.date())
+
+    @staticmethod
+    def _plan_kickoff(row: dict) -> Optional[datetime]:
+        """Reconstruct a Baghdad-aware kickoff from the stored date+time."""
+        if not row.get("match_date") or not row.get("match_time"):
+            return None
+        try:
+            return datetime.strptime(
+                f"{row['match_date']} {row['match_time']}", "%Y-%m-%d %H:%M"
+            ).replace(tzinfo=BAGHDAD)
+        except ValueError:
+            return None
+
+    @staticmethod
+    def _plan_covers(rows: list[dict], today: datetime.date) -> bool:
+        for r in rows:
+            kickoff = Scheduler._plan_kickoff(r)
+            if kickoff is not None and kickoff.date() == today:
+                return True
+        return False
+
+    def _adopt_stored_plan(
+        self, rows: list[dict], ref_date: datetime.date
+    ) -> None:
+        """Light-weight plan adopted from the SQLite ``daily_plan`` rows.
+        The fixtures refresh below replaces these stubs with fresh list
+        objects (real team names/logos), and due cards fetch their details.
+        """
+        self._matches = {}
+        for r in rows:
+            kickoff = self._plan_kickoff(r)
+            m = Match(
+                match_id=r["match_id"],
+                source_url="",
+                home=Team(""), away=Team(""),
+                kickoff=kickoff, status=r.get("status", "not_started"),
+            )
+            self._matches[r["match_id"]] = m
+        # seed from the stored statuses so matches that ended while we were
+        # offline still fire their fulltime card exactly once.
+        self._last_status = {r["match_id"]: r.get("status", "not_started") for r in rows}
+        self._plan_ref_date = ref_date
 
     def _plan_due(self, now: datetime) -> bool:
         """Full replan: first boot, or every day at/after 01:00 Baghdad."""
@@ -275,7 +350,8 @@ class Scheduler:
 
         for mid, lm in light.items():
             m = self._matches.get(mid)
-            if m is None:
+            if m is None or not getattr(m.home, "name", None):
+                # stub from the stored plan -> take the fresh list object
                 self._matches[mid] = lm
             else:
                 m.kickoff = lm.kickoff
@@ -293,6 +369,12 @@ class Scheduler:
             remaining = (m.kickoff - now).total_seconds()
             if not (0 <= remaining <= self.cfg.prematch_window):
                 continue
+            if not m.channels or not m.commentator:  # plan loaded from store
+                try:
+                    self._fetcher.fetch_detail(m)
+                except Exception as exc:  # noqa: BLE001 — retry next tick
+                    self._handle_fetch_failure(exc, "detail")
+                    continue
             path = f"{self.cfg.image_dir / m.match_id}_prematch.png"
             try:
                 self._render_prematch(m, path)

@@ -1,9 +1,10 @@
 """Unified entry point (step 5/5): data (1) + cards (2) + state (3) +
 scheduler (4) + telegram publisher (a).
 
-    python main.py                  # run the scheduler forever
+    python main.py                  # run the scheduler forever (long-lived host)
+    python main.py --cron           # one sweep — the GitHub Actions poller
     python main.py --test-day today # print today's data, publish nothing
-    python main.py --trial          # one live end-to-end card (GitHub cron)
+    python main.py --trial          # one live end-to-end card (manual check)
 
 Test mode never touches Telegram — it is only a safe data-layer dump, so
 you can exercise the scraper without disturbing the real channel.
@@ -138,6 +139,31 @@ def run_trial() -> int:
     return 0
 
 
+def run_cron() -> int:
+    """One operational sweep — GitHub Actions runs this every few minutes.
+    Behaves like a boot of the scheduler: builds the day plan, seeds last
+    statuses from the persisted state, sends whatever is due, exits 0.
+    State stays durable because the workflow commits ``state.db`` back."""
+    if not config.telegram_ready:
+        logger.warning("TG_BOT_TOKEN/TG_CHANNELS empty — console mode only")
+    publisher = ChannelPublisher() if config.telegram_ready else LogPublisher()
+    notifier = ChannelPublisher() if config.admin_chat_id else LogNotifier()
+
+    scheduler = Scheduler(
+        publisher=publisher,
+        notifier=notifier,
+        config=SchedulerConfig(image_dir=config.image_dir),
+    )
+    try:
+        scheduler.sweep()
+    except Exception as exc:  # surface as a red run so failures are visible
+        logger.exception("cron sweep failed")
+        alert_admin(f"فشلت جولة المجدول (GitHub Actions): {exc}")
+        return 1
+    print("CRON: sweep finished cleanly")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -157,6 +183,11 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="one end-to-end card to Telegram (used by the GitHub daily cron)",
     )
+    parser.add_argument(
+        "--cron",
+        action="store_true",
+        help="one scheduler sweep (used by the GitHub Actions poller)",
+    )
     args = parser.parse_args(argv)
 
     logging.basicConfig(
@@ -164,6 +195,8 @@ def main(argv: list[str] | None = None) -> int:
         format="%(asctime)s %(levelname)-7s %(name)s: %(message)s",
     )
 
+    if args.cron:
+        return run_cron()
     if args.trial:
         return run_trial()
     if args.test_day:

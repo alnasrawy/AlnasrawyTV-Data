@@ -1,0 +1,54 @@
+name: AlnasrawyTV
+
+# The system runs ENTIRELY on GitHub (like the previous script).
+# A scheduled poll performs one full sweep every few minutes, commits the
+# SQLite state back so nothing is ever sent twice, and exits.
+#
+#   schedule: every 10 minutes (*/10). GitHub schedules UTC; the code
+#             converts everything to Asia/Baghdad internally.
+#   dispatch: also triggerable manually from the Actions tab.
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: alnasrawy-poll
+  cancel-in-progress: false
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Sweep (fetch + cards + Telegram)
+        env:
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHANNELS: ${{ secrets.TG_CHANNELS }}
+          TG_ADMIN_CHAT_ID: ${{ secrets.TG_ADMIN_CHAT_ID }}
+        run: python main.py --cron
+
+      - name: Persist state (dedup across runs)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state.db
+          if ! git diff --cached --quiet; then
+            git commit -m "state: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push
+          else
+            echo "no state change"
+          fi

@@ -7,8 +7,8 @@ __pycache__/
 .venv/
 venv/
 
-# sqlite state (step 3)
-*.db
+# sqlite state (step 3) — state.db IS tracked so GitHub Actions can
+# persist the "already sent" set between runs; only the aux files are ignored
 *.db-wal
 *.db-shm
 
