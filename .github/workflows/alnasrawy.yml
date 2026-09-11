@@ -42,7 +42,7 @@ jobs:
         run: python main.py --cron
 
       - name: Build matches feed for the app
-        run: python main.py --feed today
+        run: python main.py --feed all
 
       - name: Persist state + feed (dedup + raw JSON URL)
         run: |

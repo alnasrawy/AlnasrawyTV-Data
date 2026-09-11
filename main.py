@@ -165,53 +165,57 @@ def run_cron() -> int:
     return 0
 
 
-def _feed(target: date, out: Path) -> int:
-    """Build the public matches.json feed (matches of one day) for the companion app.
+def _feed(days: list[tuple[str, date]], out: Path) -> int:
+    """Build the public matches.json feed for the companion app.
 
-    One cheap list fetch — no detail pages — then a JSON dump committed by the
-    GitHub Actions poller so the app can read a stable raw URL.
+    ``days`` = (day_label, date) list, e.g. [("yesterday", d-1), ("today", d),
+    ("tomorrow", d+1)]. One cheap list fetch per day (no detail pages) keeps
+    the poller light; each match is tagged with its ``day`` label so the app
+    can group them. Committed by the GitHub Actions poller → stable raw URL.
     """
-    logger.info("feed %s -> %s (one list fetch, no details)", target.isoformat(), out)
-    with Fetcher() as fetcher:
-        if target == datetime.now(dl_config.TZ).date():
-            html = fetcher.fetch_fixtures_html()
-            championships = parse_fixtures_html(html, day=target)
-        else:
-            championships = load_day(fetcher, target, max_details=None)
+    labels = " ".join(f"{lab}:{day.isoformat()}" for lab, day in days)
+    logger.info("feed [%s] -> %s (list fetches, no details)", labels, out)
 
     matches = []
-    for ch in championships:
-        for m in ch.matches:
-            score = {"home": m.score.home, "away": m.score.away} if m.score else None
-            pen = None
-            if m.penalty_score and any(m.penalty_score):
-                pen = {"home": m.penalty_score[0], "away": m.penalty_score[1]}
-            live_minute = m.live_minute if m.status == "live" else ""
-            matches.append(
-                {
-                    "match_id": m.match_id,
-                    "championship": ch.name,
-                    "championship_logo_url": ch.logo_url,
-                    "round": m.round,
-                    "source_url": m.source_url,
-                    "kickoff": m.kickoff.isoformat(timespec="minutes") if m.kickoff else None,
-                    "status": m.status,
-                    "live_minute": live_minute,
-                    "teams": {
-                        "home": {"name": m.home.name, "logo_url": m.home.logo_url},
-                        "away": {"name": m.away.name, "logo_url": m.away.logo_url},
-                    },
-                    "score": score,
-                    "penalty_score": pen,
-                    "channels": list(m.channels) if m.channels else [],
-                    "commentator": m.commentator or "",
-                }
-            )
+    with Fetcher() as fetcher:
+        for day_label, target in days:
+            if target == datetime.now(dl_config.TZ).date():
+                championships = parse_fixtures_html(fetcher.fetch_fixtures_html(), day=target)
+            else:
+                championships = load_day(fetcher, target, max_details=0)
+            for ch in championships:
+                for m in ch.matches:
+                    score = {"home": m.score.home, "away": m.score.away} if m.score else None
+                    pen = None
+                    if m.penalty_score and any(m.penalty_score):
+                        pen = {"home": m.penalty_score[0], "away": m.penalty_score[1]}
+                    matches.append(
+                        {
+                            "day": day_label,
+                            "date": target.isoformat(),
+                            "match_id": m.match_id,
+                            "championship": ch.name,
+                            "championship_logo_url": ch.logo_url,
+                            "round": m.round,
+                            "source_url": m.source_url,
+                            "kickoff": m.kickoff.isoformat(timespec="minutes") if m.kickoff else None,
+                            "status": m.status,
+                            "live_minute": m.live_minute if m.status == "live" else "",
+                            "teams": {
+                                "home": {"name": m.home.name, "logo_url": m.home.logo_url},
+                                "away": {"name": m.away.name, "logo_url": m.away.logo_url},
+                            },
+                            "score": score,
+                            "penalty_score": pen,
+                            "channels": list(m.channels) if m.channels else [],
+                            "commentator": m.commentator or "",
+                        }
+                    )
 
     payload = {
         "source": "ysscores",
-        "feed_version": 1,
-        "date": target.isoformat(),
+        "feed_version": 2,
+        "days": [day.isoformat() for _, day in days],
         "timezone": str(dl_config.TZ),
         "generated_at": datetime.now(dl_config.TZ).isoformat(timespec="seconds"),
         "count": len(matches),
@@ -219,10 +223,20 @@ def _feed(target: date, out: Path) -> int:
     }
     out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"FEED: {len(matches)} matches -> {out}")
-    print("FEED: raw URL (after GitHub commits it):",
-          "https://raw.githubusercontent.com/alnasrawy/AlnasrawyTV-Data/main/matches.json",
-          "- on the app side the first run (no commit yet) may 404 for a few minutes")
     return 0
+
+
+def _feed_days(spec: str) -> list[tuple[str, date]]:
+    today = datetime.now(dl_config.TZ).date()
+    if spec == "all":
+        return [
+            ("yesterday", today - timedelta(days=1)),
+            ("today", today),
+            ("tomorrow", today + timedelta(days=1)),
+        ]
+    if spec in ("yesterday", "today", "tomorrow"):
+        return [(spec, _alias(spec))]
+    return [("custom", date.fromisoformat(spec))]
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -253,7 +267,8 @@ def main(argv: list[str] | None = None) -> int:
         "--feed",
         metavar="SPEC",
         default=None,
-        help="today | yesterday | tomorrow | YYYY-MM-DD — write matches.json for the companion app",
+        help="all (yesterday+today+tomorrow) | today | yesterday | tomorrow | YYYY-MM-DD "
+        "— write matches.json for the companion app",
     )
     parser.add_argument(
         "--feed-out",
@@ -274,7 +289,7 @@ def main(argv: list[str] | None = None) -> int:
         return run_trial()
     if args.feed:
         out = Path(args.feed_out) if args.feed_out else Path(__file__).resolve().parent / "matches.json"
-        return _feed(_alias(args.feed), out)
+        return _feed(_feed_days(args.feed), out)
     if args.test_day:
         return _test_day(_alias(args.test_day), args.max_details)
 
