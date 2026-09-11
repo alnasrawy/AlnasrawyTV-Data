@@ -3,7 +3,7 @@
   "feed_version": 1,
   "date": "2026-09-11",
   "timezone": "Asia/Baghdad",
-  "generated_at": "2026-09-11T12:50:23+03:00",
+  "generated_at": "2026-09-11T16:31:09+03:00",
   "count": 56,
   "matches": [
     {
@@ -906,8 +906,8 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17860218241233.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5803579/Kyoto-Sanga-vs-Kashiwa-Reysol",
-      "kickoff": "2026-09-11T03:00+03:00",
-      "status": "not_started",
+      "kickoff": null,
+      "status": "ended",
       "live_minute": "",
       "teams": {
         "home": {
@@ -919,7 +919,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/2641739391967.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 2,
+        "away": 3
+      },
       "penalty_score": null,
       "channels": [],
       "commentator": ""
@@ -930,8 +933,8 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17860218241233.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5803586/Vissel-Kobe-vs-Kashima-Antlers",
-      "kickoff": "2026-09-11T03:00+03:00",
-      "status": "not_started",
+      "kickoff": null,
+      "status": "ended",
       "live_minute": "",
       "teams": {
         "home": {
@@ -943,7 +946,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/7411716579425.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 2,
+        "away": 1
+      },
       "penalty_score": null,
       "channels": [],
       "commentator": ""
@@ -1203,9 +1209,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17841265197197.png",
       "round": "دور الـ 16",
       "source_url": "https://www.ysscores.com/ar/match/11666525/Shaab-Ibb-SCC-vs-May-22-Sanaa",
-      "kickoff": "2026-09-11T05:45+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "40",
       "teams": {
         "home": {
           "name": "شعب",
@@ -1216,7 +1222,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/17841246818675.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 3,
+        "away": 0
+      },
       "penalty_score": null,
       "channels": [],
       "commentator": ""
@@ -1251,9 +1260,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9061752573146.png",
       "round": "الجولة 1",
       "source_url": "https://www.ysscores.com/ar/match/16661331/Amanat-Baghdad-vs-Al-Hashd-Al-Shaabi",
-      "kickoff": "2026-09-11T06:00+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "25",
       "teams": {
         "home": {
           "name": "أمانة بغداد",
@@ -1264,7 +1273,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/17704035074927.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
       "penalty_score": null,
       "channels": [],
       "commentator": ""
@@ -1275,9 +1287,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9061752573146.png",
       "round": "الجولة 1",
       "source_url": "https://www.ysscores.com/ar/match/19342083/Al-Etisalat-SC-vs-Al-Hedod-SC",
-      "kickoff": "2026-09-11T06:00+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "16",
       "teams": {
         "home": {
           "name": "الاتصالات",
@@ -1288,7 +1300,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/5221695656525.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
       "penalty_score": null,
       "channels": [],
       "commentator": ""
@@ -1299,9 +1314,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9061752573146.png",
       "round": "الجولة 1",
       "source_url": "https://www.ysscores.com/ar/match/65436903/Al-Qasim-SC-vs-Al-Kadhimiya-SC",
-      "kickoff": "2026-09-11T06:00+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "24",
       "teams": {
         "home": {
           "name": "القاسم",
@@ -1312,7 +1327,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/17749534599051.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
       "penalty_score": null,
       "channels": [],
       "commentator": ""
