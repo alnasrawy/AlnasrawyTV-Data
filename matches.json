@@ -1,9 +1,9 @@
 {
   "source": "ysscores",
   "feed_version": 1,
-  "date": "2026-09-11",
+  "date": "2026-09-12",
   "timezone": "Asia/Baghdad",
-  "generated_at": "2026-09-11T22:40:10+03:00",
+  "generated_at": "2026-09-12T00:55:19+03:00",
   "count": 56,
   "matches": [
     {
@@ -13,8 +13,8 @@
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/5868059/Sevilla-FC-vs-Valencia-CF",
       "kickoff": null,
-      "status": "live",
-      "live_minute": "37",
+      "status": "ended",
+      "live_minute": "",
       "teams": {
         "home": {
           "name": "إشبيلية",
@@ -26,7 +26,7 @@
         }
       },
       "score": {
-        "home": 0,
+        "home": 1,
         "away": 0
       },
       "penalty_score": null,
@@ -40,7 +40,7 @@
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5749679/Venezia-FC-vs-ACF-Fiorentina",
       "kickoff": null,
-      "status": "not_started",
+      "status": "ended",
       "live_minute": "",
       "teams": {
         "home": {
@@ -52,7 +52,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/1231690283002.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 2,
+        "away": 4
+      },
       "penalty_score": null,
       "channels": [],
       "commentator": ""
@@ -64,8 +67,8 @@
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/5881169/1.FC-Union-Berlin-vs-FC-Schalke-04",
       "kickoff": null,
-      "status": "live",
-      "live_minute": "51",
+      "status": "ended",
+      "live_minute": "",
       "teams": {
         "home": {
           "name": "يونيون برلين",
@@ -77,8 +80,8 @@
         }
       },
       "score": {
-        "home": 0,
-        "away": 2
+        "home": 1,
+        "away": 3
       },
       "penalty_score": null,
       "channels": [],
@@ -91,7 +94,7 @@
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5802935/Stade-Rennais-FC-vs-Olympique-Marseille",
       "kickoff": null,
-      "status": "not_started",
+      "status": "ended",
       "live_minute": "",
       "teams": {
         "home": {
@@ -103,33 +106,9 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/17816370094121.png"
         }
       },
-      "score": null,
-      "penalty_score": null,
-      "channels": [],
-      "commentator": ""
-    },
-    {
-      "match_id": "5970135",
-      "championship": "الدوري السعودي للمحترفين",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/5111703719091.png",
-      "round": "الجولة 7",
-      "source_url": "https://www.ysscores.com/ar/match/5970135/Al-Ahli-SFC-vs-Al-Hazem-SC",
-      "kickoff": null,
-      "status": "live",
-      "live_minute": "75",
-      "teams": {
-        "home": {
-          "name": "الأهلي",
-          "logo_url": "https://imgs.ysscores.com/teams/64/9091751485160.png"
-        },
-        "away": {
-          "name": "الحزم",
-          "logo_url": "https://imgs.ysscores.com/teams/64/111690298803.png"
-        }
-      },
       "score": {
-        "home": 3,
-        "away": 1
+        "home": 1,
+        "away": 0
       },
       "penalty_score": null,
       "channels": [],
@@ -190,6 +169,33 @@
       "commentator": ""
     },
     {
+      "match_id": "5970135",
+      "championship": "الدوري السعودي للمحترفين",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/5111703719091.png",
+      "round": "الجولة 7",
+      "source_url": "https://www.ysscores.com/ar/match/5970135/Al-Ahli-SFC-vs-Al-Hazem-SC",
+      "kickoff": null,
+      "status": "ended",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "الأهلي",
+          "logo_url": "https://imgs.ysscores.com/teams/64/9091751485160.png"
+        },
+        "away": {
+          "name": "الحزم",
+          "logo_url": "https://imgs.ysscores.com/teams/64/111690298803.png"
+        }
+      },
+      "score": {
+        "home": 3,
+        "away": 1
+      },
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
       "match_id": "5904747",
       "championship": "الدوري التركي الممتاز",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/1191723239247.png",
@@ -223,8 +229,8 @@
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5836837/West-Ham-United-vs-Wrexham-AFC",
       "kickoff": null,
-      "status": "live",
-      "live_minute": "38",
+      "status": "ended",
+      "live_minute": "",
       "teams": {
         "home": {
           "name": "وست هام",
@@ -236,7 +242,7 @@
         }
       },
       "score": {
-        "home": 2,
+        "home": 6,
         "away": 0
       },
       "penalty_score": null,
@@ -250,8 +256,8 @@
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5781742/AZ-Alkmaar-vs-Willem-II-Tilburg",
       "kickoff": null,
-      "status": "live",
-      "live_minute": "82",
+      "status": "ended",
+      "live_minute": "",
       "teams": {
         "home": {
           "name": "إي زد آلكمار",
@@ -277,7 +283,7 @@
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5811755/KV-Mechelen-vs-RSC-Anderlecht",
       "kickoff": null,
-      "status": "not_started",
+      "status": "ended",
       "live_minute": "",
       "teams": {
         "home": {
@@ -289,7 +295,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/1651733919643.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
       "penalty_score": null,
       "channels": [],
       "commentator": ""
@@ -381,9 +390,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17693689565274.png",
       "round": "الجولة 9",
       "source_url": "https://www.ysscores.com/ar/match/5116004/CA-Newells-Old-Boys-vs-CA-Vélez-Sarsfield",
-      "kickoff": "2026-09-11T13:00+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "90",
       "teams": {
         "home": {
           "name": "نيولز",
@@ -394,7 +403,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/4581717933514.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 1,
+        "away": 1
+      },
       "penalty_score": null,
       "channels": [],
       "commentator": ""
@@ -406,8 +418,8 @@
       "round": "الجولة 2",
       "source_url": "https://www.ysscores.com/ar/match/5989820/MC-Oran-vs-CR-Temouchent",
       "kickoff": null,
-      "status": "live",
-      "live_minute": "76",
+      "status": "ended",
+      "live_minute": "",
       "teams": {
         "home": {
           "name": "مولودية وهران",
@@ -419,7 +431,7 @@
         }
       },
       "score": {
-        "home": 0,
+        "home": 2,
         "away": 0
       },
       "penalty_score": null,
@@ -432,8 +444,8 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8131693416988.png",
       "round": "الجولة 2",
       "source_url": "https://www.ysscores.com/ar/match/5989818/CR-Belouizdad-vs-ES-Sétif",
-      "kickoff": "2026-09-11T13:00+03:00",
-      "status": "not_started",
+      "kickoff": null,
+      "status": "ended",
       "live_minute": "",
       "teams": {
         "home": {
@@ -445,7 +457,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/4981693417652.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
       "penalty_score": null,
       "channels": [],
       "commentator": ""
@@ -753,7 +768,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/2201691928047.png",
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/6014398/Al-Nasr-Club-vs-Al-Mussanah-Club",
-      "kickoff": "2026-09-11T07:55+03:00",
+      "kickoff": "2026-09-12T08:55+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -1042,33 +1057,6 @@
       "commentator": ""
     },
     {
-      "match_id": "5803983",
-      "championship": "الدوري البولندي الممتاز",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17851012782760.png",
-      "round": "الجولة 8",
-      "source_url": "https://www.ysscores.com/ar/match/5803983/Wisla-Kraków-vs-Jagiellonia-Bialystok",
-      "kickoff": null,
-      "status": "live",
-      "live_minute": "52",
-      "teams": {
-        "home": {
-          "name": "فيسلا كراكوف",
-          "logo_url": "https://imgs.ysscores.com/teams/64/1181724279824.png"
-        },
-        "away": {
-          "name": "بياليستوك",
-          "logo_url": "https://imgs.ysscores.com/teams/64/7871722374006.png"
-        }
-      },
-      "score": {
-        "home": 2,
-        "away": 0
-      },
-      "penalty_score": null,
-      "channels": [],
-      "commentator": ""
-    },
-    {
       "match_id": "5803981",
       "championship": "الدوري البولندي الممتاز",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17851012782760.png",
@@ -1090,6 +1078,33 @@
       "score": {
         "home": 2,
         "away": 1
+      },
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "match_id": "5803983",
+      "championship": "الدوري البولندي الممتاز",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17851012782760.png",
+      "round": "الجولة 8",
+      "source_url": "https://www.ysscores.com/ar/match/5803983/Wisla-Kraków-vs-Jagiellonia-Bialystok",
+      "kickoff": null,
+      "status": "ended",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "فيسلا كراكوف",
+          "logo_url": "https://imgs.ysscores.com/teams/64/1181724279824.png"
+        },
+        "away": {
+          "name": "بياليستوك",
+          "logo_url": "https://imgs.ysscores.com/teams/64/7871722374006.png"
+        }
+      },
+      "score": {
+        "home": 2,
+        "away": 0
       },
       "penalty_score": null,
       "channels": [],
