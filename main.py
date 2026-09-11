@@ -24,6 +24,7 @@ from config import config
 from data_layer import config as dl_config
 from data_layer.fetcher import Fetcher
 from data_layer.main import load_day
+from data_layer.parser import parse_fixtures_html
 from notify import LogPublisher
 from renderer import render_fulltime_image, render_prematch_image
 from scheduler import Scheduler, SchedulerConfig
@@ -164,6 +165,66 @@ def run_cron() -> int:
     return 0
 
 
+def _feed(target: date, out: Path) -> int:
+    """Build the public matches.json feed (matches of one day) for the companion app.
+
+    One cheap list fetch — no detail pages — then a JSON dump committed by the
+    GitHub Actions poller so the app can read a stable raw URL.
+    """
+    logger.info("feed %s -> %s (one list fetch, no details)", target.isoformat(), out)
+    with Fetcher() as fetcher:
+        if target == datetime.now(dl_config.TZ).date():
+            html = fetcher.fetch_fixtures_html()
+            championships = parse_fixtures_html(html, day=target)
+        else:
+            championships = load_day(fetcher, target, max_details=None)
+
+    matches = []
+    for ch in championships:
+        for m in ch.matches:
+            score = {"home": m.score.home, "away": m.score.away} if m.score else None
+            pen = None
+            if m.penalty_score and any(m.penalty_score):
+                pen = {"home": m.penalty_score[0], "away": m.penalty_score[1]}
+            live_minute = m.live_minute if m.status == "live" else ""
+            matches.append(
+                {
+                    "match_id": m.match_id,
+                    "championship": ch.name,
+                    "championship_logo_url": ch.logo_url,
+                    "round": m.round,
+                    "source_url": m.source_url,
+                    "kickoff": m.kickoff.isoformat(timespec="minutes") if m.kickoff else None,
+                    "status": m.status,
+                    "live_minute": live_minute,
+                    "teams": {
+                        "home": {"name": m.home.name, "logo_url": m.home.logo_url},
+                        "away": {"name": m.away.name, "logo_url": m.away.logo_url},
+                    },
+                    "score": score,
+                    "penalty_score": pen,
+                    "channels": list(m.channels) if m.channels else [],
+                    "commentator": m.commentator or "",
+                }
+            )
+
+    payload = {
+        "source": "ysscores",
+        "feed_version": 1,
+        "date": target.isoformat(),
+        "timezone": str(dl_config.TZ),
+        "generated_at": datetime.now(dl_config.TZ).isoformat(timespec="seconds"),
+        "count": len(matches),
+        "matches": matches,
+    }
+    out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"FEED: {len(matches)} matches -> {out}")
+    print("FEED: raw URL (after GitHub commits it):",
+          "https://raw.githubusercontent.com/alnasrawy/AlnasrawyTV-Data/main/matches.json",
+          "- on the app side the first run (no commit yet) may 404 for a few minutes")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -188,6 +249,18 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="one scheduler sweep (used by the GitHub Actions poller)",
     )
+    parser.add_argument(
+        "--feed",
+        metavar="SPEC",
+        default=None,
+        help="today | yesterday | tomorrow | YYYY-MM-DD — write matches.json for the companion app",
+    )
+    parser.add_argument(
+        "--feed-out",
+        metavar="PATH",
+        default=None,
+        help="where to write the feed (default: matches.json next to main.py)",
+    )
     args = parser.parse_args(argv)
 
     logging.basicConfig(
@@ -199,6 +272,9 @@ def main(argv: list[str] | None = None) -> int:
         return run_cron()
     if args.trial:
         return run_trial()
+    if args.feed:
+        out = Path(args.feed_out) if args.feed_out else Path(__file__).resolve().parent / "matches.json"
+        return _feed(_alias(args.feed), out)
     if args.test_day:
         return _test_day(_alias(args.test_day), args.max_details)
 

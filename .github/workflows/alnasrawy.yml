@@ -41,14 +41,17 @@ jobs:
           TG_ADMIN_CHAT_ID: ${{ secrets.TG_ADMIN_CHAT_ID }}
         run: python main.py --cron
 
-      - name: Persist state (dedup across runs)
+      - name: Build matches feed for the app
+        run: python main.py --feed today
+
+      - name: Persist state + feed (dedup + raw JSON URL)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add state.db
+          git add state.db matches.json
           if ! git diff --cached --quiet; then
-            git commit -m "state: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git commit -m "state+feed: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
             git push
           else
-            echo "no state change"
+            echo "no state or feed change"
           fi
