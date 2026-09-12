@@ -7,7 +7,7 @@
     "2026-09-13"
   ],
   "timezone": "Asia/Baghdad",
-  "generated_at": "2026-09-12T16:19:24+03:00",
+  "generated_at": "2026-09-12T16:47:59+03:00",
   "count": 146,
   "matches": [
     {
@@ -912,7 +912,7 @@
       "source_url": "https://www.ysscores.com/ar/match/5868056/Racing-Santander-vs-Deportivo-Alavés",
       "kickoff": null,
       "status": "live",
-      "live_minute": "58",
+      "live_minute": "86",
       "teams": {
         "home": {
           "name": "راسينغ",
@@ -1023,7 +1023,7 @@
       "source_url": "https://www.ysscores.com/ar/match/5749672/Genoa-CFC-vs-Frosinone-Calcio",
       "kickoff": null,
       "status": "live",
-      "live_minute": "8",
+      "live_minute": "36",
       "teams": {
         "home": {
           "name": "جنوى",
@@ -1036,7 +1036,7 @@
       },
       "score": {
         "home": 0,
-        "away": 0
+        "away": 1
       },
       "penalty_score": null,
       "channels": [
@@ -1105,9 +1105,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6171690288722.png",
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/5881161/FC-Augsburg-vs-Bayer-04-Leverkusen",
-      "kickoff": "2026-09-12T09:30+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "15",
       "teams": {
         "home": {
           "name": "أوجسبورغ",
@@ -1118,7 +1118,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/7151690288816.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
       "penalty_score": null,
       "channels": [
         "MBC شاهد | رياضة"
@@ -1133,9 +1136,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6171690288722.png",
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/5881162/Borussia-Dortmund-vs-SC-Paderborn-07",
-      "kickoff": "2026-09-12T09:30+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "14",
       "teams": {
         "home": {
           "name": "دورتموند",
@@ -1146,7 +1149,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/3911690370525.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
       "penalty_score": null,
       "channels": [
         "MBC Action",
@@ -1162,9 +1168,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6171690288722.png",
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/5881165/SC-Freiburg-vs-Borussia-Mönchengladbach",
-      "kickoff": "2026-09-12T09:30+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "15",
       "teams": {
         "home": {
           "name": "فرايبورج",
@@ -1175,7 +1181,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/4571690288818.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
       "penalty_score": null,
       "channels": [
         "MBC شاهد | رياضة"
@@ -1190,9 +1199,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6171690288722.png",
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/5881166/TSG-1899-Hoffenheim-vs-VfB-Stuttgart",
-      "kickoff": "2026-09-12T09:30+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "15",
       "teams": {
         "home": {
           "name": "هوفنهايم",
@@ -1203,7 +1212,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/8731690288819.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
       "penalty_score": null,
       "channels": [
         "MBC شاهد | رياضة"
@@ -1218,9 +1230,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6171690288722.png",
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/5881167/1.FSV-Mainz-05-vs-Eintracht-Frankfurt",
-      "kickoff": "2026-09-12T09:30+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "15",
       "teams": {
         "home": {
           "name": "ماينتس",
@@ -1231,7 +1243,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/231690288818.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
       "penalty_score": null,
       "channels": [
         "MBC شاهد | رياضة"
@@ -1497,8 +1512,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "العراقية السريانية"
+      ],
+      "commentator": "حسن سالم"
     },
     {
       "day": "today",
@@ -1890,10 +1907,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "دبي الرياضية 1"
-      ],
-      "commentator": "محمد البدواوي"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "today",
@@ -2104,7 +2119,7 @@
       "source_url": "https://www.ysscores.com/ar/match/6019468/Nsingizini-Hotspurs-FC-vs-Scottland-Football-Club",
       "kickoff": null,
       "status": "live",
-      "live_minute": "6",
+      "live_minute": "44",
       "teams": {
         "home": {
           "name": "نسنجيزيني",
@@ -2133,7 +2148,7 @@
       "source_url": "https://www.ysscores.com/ar/match/6019472/African-Stars-Windhoek-vs-AS-Mangasport-Moanda",
       "kickoff": null,
       "status": "live",
-      "live_minute": "5",
+      "live_minute": "44",
       "teams": {
         "home": {
           "name": "أفريقيا ستارز",
@@ -2145,7 +2160,7 @@
         }
       },
       "score": {
-        "home": 0,
+        "home": 1,
         "away": 0
       },
       "penalty_score": null,
@@ -2162,7 +2177,7 @@
       "source_url": "https://www.ysscores.com/ar/match/6019474/Orlando-Pirates-vs-La-Cure-Sylvester-SC",
       "kickoff": null,
       "status": "live",
-      "live_minute": "6",
+      "live_minute": "44",
       "teams": {
         "home": {
           "name": "أورلاندو بيراتس",
@@ -2174,8 +2189,8 @@
         }
       },
       "score": {
-        "home": 0,
-        "away": 0
+        "home": 3,
+        "away": 1
       },
       "penalty_score": null,
       "channels": [],
@@ -2191,7 +2206,7 @@
       "source_url": "https://www.ysscores.com/ar/match/6019490/Heegan-FC-vs-El-Merriekh-FC-Bentiu",
       "kickoff": null,
       "status": "live",
-      "live_minute": "15",
+      "live_minute": "44",
       "teams": {
         "home": {
           "name": "هيغان",
@@ -2220,7 +2235,7 @@
       "source_url": "https://www.ysscores.com/ar/match/6019496/Al-Hilal-Club-(Omdurman)-vs-Aigle-Noir-FC-de-Makamba",
       "kickoff": null,
       "status": "live",
-      "live_minute": "15",
+      "live_minute": "43",
       "teams": {
         "home": {
           "name": "الهلال",
@@ -2232,7 +2247,7 @@
         }
       },
       "score": {
-        "home": 0,
+        "home": 1,
         "away": 0
       },
       "penalty_score": null,
@@ -2249,7 +2264,7 @@
       "source_url": "https://www.ysscores.com/ar/match/6019518/Power-Dynamos-FC-vs-Al-Merrikh-SC",
       "kickoff": null,
       "status": "live",
-      "live_minute": "15",
+      "live_minute": "44",
       "teams": {
         "home": {
           "name": "باور ديناموز",
@@ -2278,7 +2293,7 @@
       "source_url": "https://www.ysscores.com/ar/match/6019520/TP-Mazembe-vs-Medeama-SC",
       "kickoff": null,
       "status": "live",
-      "live_minute": "16",
+      "live_minute": "44",
       "teams": {
         "home": {
           "name": "مازيمبي",
@@ -2541,7 +2556,7 @@
       "source_url": "https://www.ysscores.com/ar/match/54611720/Tusker-FC-vs-Al-Ahli-Wad-Madani",
       "kickoff": null,
       "status": "live",
-      "live_minute": "52",
+      "live_minute": "81",
       "teams": {
         "home": {
           "name": "توسكر",
@@ -2553,7 +2568,7 @@
         }
       },
       "score": {
-        "home": 0,
+        "home": 1,
         "away": 0
       },
       "penalty_score": null,
