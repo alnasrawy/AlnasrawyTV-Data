@@ -25,7 +25,14 @@ from PIL import Image, ImageDraw
 
 from data_layer.models import Match, Score
 from renderer.channels import english_channels
-from renderer.shaping import draw_centered, fit_font, load_font, shaped, text_width
+from renderer.shaping import (
+    draw_centered,
+    draw_text,
+    fit_font,
+    load_font,
+    text_bbox,
+    text_width,
+)
 from renderer.logos import load_logo
 
 CANVAS = (1080, 720)
@@ -113,8 +120,8 @@ def _team_header(
 
 
 def _line_height(draw: ImageDraw.ImageDraw, text: str, font) -> int:
-    """Visual ink height of a shaped line (Negative bounds above baseline)."""
-    box = draw.textbbox((0, 0), shaped(text), font=font)
+    """Visual ink height of a text line (negative bounds above baseline)."""
+    box = text_bbox(draw, text, font)
     return box[3] - box[1], box[1], box[3]
 
 
@@ -160,8 +167,8 @@ def _scorers(
         )
     for label, yy, font, _bb in rows:
         width = text_width(draw, label, font)
-        draw.text((cx - width // 2 + 2, yy + 3), shaped(label), font=font, fill=(8, 16, 26))
-        draw.text((cx - width // 2, yy), shaped(label), font=font, fill=GOLD)
+        draw_text(draw, (cx - width // 2 + 2, yy + 3), label, font, (8, 16, 26))
+        draw_text(draw, (cx - width // 2, yy), label, font, GOLD)
     return cur
 
 
@@ -198,9 +205,9 @@ def _watermark(
     else:
         font = load_font(20, bold=True)
         width = text_width(draw, text, font)
-        draw.text(
-            (CANVAS[0] - width - 16, CANVAS[1] - 34), shaped(text),
-            font=font, fill=(255, 255, 255, 72),
+        draw_text(
+            draw, (CANVAS[0] - width - 16, CANVAS[1] - 34), text,
+            font, (255, 255, 255, 72),
         )
     return Image.alpha_composite(base.convert("RGBA"), overlay).convert("RGB")
 
@@ -288,38 +295,49 @@ def render_prematch_image(
     draw_centered(base, draw, CANVAS[0] // 2, y2, time_text, 40, PRIMARY,
                   font=font_time, max_width=560, shadow=True)
 
-    # ── bottom band: broadcasting channels + commentators ───────────────────
+# ── bottom band: broadcasting channels + commentators ───────────────────
     channels = english_channels([c for c in match.channels if c.strip()])
     comm_lines = _commentator_lines(match)
 
-    rows: list[tuple[str, int, bool]] = []  # (text, size, gold?)
+    DIVIDER = "__DIVIDER__"
+    rows: list[tuple[str, int, bool]] = []  # (text, size, gold?) or __DIVIDER__
     if channels:
         rows.extend((c, 28, False) for c in channels[:4])
     else:
         rows.append(("القناة غير محددة", 24, False))
     if comm_lines:
-        sep = ("─" * 16, 18, True)
-        rows.append(sep)
+        rows.append((DIVIDER, 1, True))
         rows.extend(("المعلق: " + c, 24, True) for c in comm_lines[:2])
 
     # fonts + line spacing measured
     y_top_row = CANVAS[1] - 40 - 42 * len(rows)
     if y_top_row < 360:
         y_top_row = 360
-    draw_ys: list[int] = []
+    draw_ys: list[tuple] = []
     cur = y_top_row
     for text, size, _gold in rows:
-        font = fit_font(draw, text, 860, size, bold=_gold)
-        h, _, _ = _line_height(draw, text, font)
+        if text == DIVIDER:
+            h = 10
+            font = None
+        else:
+            font = fit_font(draw, text, 860, size, bold=_gold)
+            h, _, _ = _line_height(draw, text, font)
         draw_ys.append((text, cur, font, size, _gold))
         cur += h + 10
 
     _panel(base, (150, y_top_row - 12, 930, cur - 2), radius=24, alpha=50)
     for text, yy, font, _size, gold in draw_ys:
+        if text == DIVIDER:
+            cx = CANVAS[0] // 2
+            draw.rounded_rectangle(
+                (cx - 148, int(yy + 4), cx + 148, int(yy + 7)),
+                radius=2, fill=GOLD_SOFT,
+            )
+            continue
         width = text_width(draw, text, font)
         fill = GOLD if gold else PRIMARY
-        draw.text((540 - width // 2 + 2, yy + 3), shaped(text), font=font, fill=(8, 16, 26))
-        draw.text((540 - width // 2, yy), shaped(text), font=font, fill=fill)
+        draw_text(draw, (540 - width // 2 + 2, yy + 3), text, font, (8, 16, 26))
+        draw_text(draw, (540 - width // 2, yy), text, font, fill)
 
     return _save(_watermark(base, logo_path=watermark_logo_path), output_path)
 

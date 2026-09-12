@@ -14,7 +14,7 @@ import re
 import httpx
 from PIL import Image, ImageDraw, ImageFilter
 
-from renderer.shaping import load_font, shaped, text_width
+from renderer.shaping import draw_text, load_font, text_width
 
 _ASSETS = pathlib.Path(__file__).resolve().parent / "assets"
 CACHE_DIR = _ASSETS / "logos"
@@ -102,9 +102,9 @@ def _placeholder(label: str, size: int) -> Image.Image:
     char = (label or "؟").strip()[:1] or "؟"
     font = load_font(int(size * 0.48), bold=True)
     width = text_width(draw, char, font)
-    draw.text(
-        ((size - width) // 2, int(size * 0.24)), shaped(char), font=font,
-        fill=(238, 193, 72, 255),
+    draw_text(
+        draw, ((size - width) // 2, int(size * 0.24)), char, font,
+        (238, 193, 72, 255),
     )
     return img
 

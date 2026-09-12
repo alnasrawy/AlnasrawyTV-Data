@@ -15,7 +15,7 @@ from functools import lru_cache
 
 import arabic_reshaper
 from bidi.algorithm import get_display
-from PIL import ImageDraw, ImageFont, Image
+from PIL import ImageDraw, ImageFont, Image, features
 
 _ASSETS = pathlib.Path(__file__).resolve().parent / "assets"
 FONT_DIR = _ASSETS / "fonts"
@@ -28,10 +28,45 @@ _reshaper = arabic_reshaper.ArabicReshaper(
     configuration={"delete_harakat": False, "support_ligatures": True}
 )
 
+# Pillow wheels differ in their FreeType libraqm support (Ubuntu runners have
+# it, Windows local builds usually do not). libraqm re-runs the unicode bidi
+# algorithm on whatever string we hand to `draw.text`, so pre-shaped
+# presentation forms would get reversed a second time. Every draw/measure below
+# therefore picks the correct input per build: raw logical text when raqm is
+# present (PIL shapes+orders it), otherwise OUR pre-shaped visual string.
+HAS_RAQM = features.check("raqm")
+
 
 def shaped(text: str) -> str:
     """Reshape an (RTL-first) string for correct Arabic rendering."""
     return get_display(_reshaper.reshape(text))
+
+
+def draw_text(
+    draw: ImageDraw.ImageDraw,
+    xy: tuple[int, int],
+    text: str,
+    font: ImageFont.FreeTypeFont,
+    fill,
+    *,
+    anchor=None,
+) -> None:
+    """Draw text with correct Arabic layout on any Pillow build."""
+    if HAS_RAQM:
+        draw.text(xy, text, font=font, fill=fill, anchor=anchor)
+    else:
+        draw.text(xy, shaped(text), font=font, fill=fill, anchor=anchor)
+
+
+def text_bbox(
+    draw: ImageDraw.ImageDraw,
+    text: str,
+    font: ImageFont.FreeTypeFont,
+) -> tuple[int, int, int, int]:
+    """Ink bounding box of *as-drawn* text (mirrors :func:`draw_text`)."""
+    if HAS_RAQM:
+        return draw.textbbox((0, 0), text, font=font)
+    return draw.textbbox((0, 0), shaped(text), font=font)
 
 
 @lru_cache(maxsize=256)
@@ -46,7 +81,9 @@ def load_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
 
 
 def text_width(draw: ImageDraw.ImageDraw, text: str, font: ImageFont.FreeTypeFont) -> int:
-    """Width of *shaped* text in pixels."""
+    """Width of *as-drawn* text in pixels (mirrors :func:`draw_text`)."""
+    if HAS_RAQM:
+        return int(draw.textlength(text, font=font))
     return int(draw.textlength(shaped(text), font=font))
 
 
@@ -86,6 +123,6 @@ def draw_centered(
     width = text_width(draw, text, font)
     x = cx - width // 2
     if shadow:
-        draw.text((x + 2, y + 3), shaped(text), font=font, fill=(8, 16, 26))
-    draw.text((x, y), shaped(text), font=font, fill=fill)
+        draw_text(draw, (x + 2, y + 3), text, font, (8, 16, 26))
+    draw_text(draw, (x, y), text, font, fill)
     return y + int(size * 1.4)
