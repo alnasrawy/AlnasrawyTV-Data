@@ -7,7 +7,7 @@
     "2026-09-13"
   ],
   "timezone": "Asia/Baghdad",
-  "generated_at": "2026-09-12T19:36:38+03:00",
+  "generated_at": "2026-09-12T21:45:33+03:00",
   "count": 146,
   "matches": [
     {
@@ -36,8 +36,10 @@
         "away": 0
       },
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "بي إن سبورت 4"
+      ],
+      "commentator": "محمد بركات"
     },
     {
       "day": "yesterday",
@@ -65,8 +67,12 @@
         "away": 4
       },
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "StarzPlay",
+        "تطبيق STC TV",
+        "منصة شاشا"
+      ],
+      "commentator": "أحمد الحامد"
     },
     {
       "day": "yesterday",
@@ -94,8 +100,11 @@
         "away": 3
       },
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "MBC Action",
+        "MBC شاهد | رياضة"
+      ],
+      "commentator": "عصام عبده"
     },
     {
       "day": "yesterday",
@@ -123,8 +132,10 @@
         "away": 0
       },
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "بي إن سبورت 2"
+      ],
+      "commentator": "عامر الخوذيري"
     },
     {
       "day": "yesterday",
@@ -152,8 +163,11 @@
         "away": 3
       },
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "ثمانية 1",
+        "تطبيق ثمانية"
+      ],
+      "commentator": "جعفر الصليح"
     },
     {
       "day": "yesterday",
@@ -181,8 +195,11 @@
         "away": 3
       },
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "ثمانية 2",
+        "تطبيق ثمانية"
+      ],
+      "commentator": "خالد المديفر"
     },
     {
       "day": "yesterday",
@@ -712,37 +729,6 @@
     {
       "day": "today",
       "date": "2026-09-12",
-      "match_id": "5795454",
-      "championship": "الدوري الإنجليزي الممتاز",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/3411694791422.png",
-      "round": "الجولة 4",
-      "source_url": "https://www.ysscores.com/ar/match/5795454/Tottenham-Hotspur-vs-Everton-FC",
-      "kickoff": null,
-      "status": "live",
-      "live_minute": "3",
-      "teams": {
-        "home": {
-          "name": "توتنهام",
-          "logo_url": "https://imgs.ysscores.com/teams/64/2501692467226.png"
-        },
-        "away": {
-          "name": "إيفرتون",
-          "logo_url": "https://imgs.ysscores.com/teams/64/8461690118694.png"
-        }
-      },
-      "score": {
-        "home": 0,
-        "away": 0
-      },
-      "penalty_score": null,
-      "channels": [
-        "بي إن سبورت 1"
-      ],
-      "commentator": "حفيظ دراجي"
-    },
-    {
-      "day": "today",
-      "date": "2026-09-12",
       "match_id": "5795453",
       "championship": "الدوري الإنجليزي الممتاز",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/3411694791422.png",
@@ -763,8 +749,11 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "بي إن سبورت 1",
+        "beIN 4K"
+      ],
+      "commentator": "خليل البلوشي"
     },
     {
       "day": "today",
@@ -914,22 +903,22 @@
     {
       "day": "today",
       "date": "2026-09-12",
-      "match_id": "5868051",
-      "championship": "الدوري الإسباني",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/8641690196626.png",
-      "round": "الجولة 5",
-      "source_url": "https://www.ysscores.com/ar/match/5868051/Athletic-Bilbao-vs-Elche-CF",
+      "match_id": "5795454",
+      "championship": "الدوري الإنجليزي الممتاز",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/3411694791422.png",
+      "round": "الجولة 4",
+      "source_url": "https://www.ysscores.com/ar/match/5795454/Tottenham-Hotspur-vs-Everton-FC",
       "kickoff": null,
-      "status": "live",
-      "live_minute": "2",
+      "status": "ended",
+      "live_minute": "",
       "teams": {
         "home": {
-          "name": "أتلتيك بلباو",
-          "logo_url": "https://imgs.ysscores.com/teams/64/1061690197944.png"
+          "name": "توتنهام",
+          "logo_url": "https://imgs.ysscores.com/teams/64/2501692467226.png"
         },
         "away": {
-          "name": "إلتشي",
-          "logo_url": "https://imgs.ysscores.com/teams/64/6441698766179.png"
+          "name": "إيفرتون",
+          "logo_url": "https://imgs.ysscores.com/teams/64/8461690118694.png"
         }
       },
       "score": {
@@ -937,10 +926,8 @@
         "away": 0
       },
       "penalty_score": null,
-      "channels": [
-        "بي إن سبورت 2"
-      ],
-      "commentator": "أحمد فؤاد"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "today",
@@ -965,8 +952,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "بي إن سبورت 2"
+      ],
+      "commentator": "حسن العيدروس"
     },
     {
       "day": "today",
@@ -1029,35 +1018,31 @@
     {
       "day": "today",
       "date": "2026-09-12",
-      "match_id": "5749674",
-      "championship": "الدوري الإيطالي",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/6281692568873.png",
-      "round": "الجولة 4",
-      "source_url": "https://www.ysscores.com/ar/match/5749674/SS-Lazio-vs-AC-Milan",
+      "match_id": "5868051",
+      "championship": "الدوري الإسباني",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/8641690196626.png",
+      "round": "الجولة 5",
+      "source_url": "https://www.ysscores.com/ar/match/5868051/Athletic-Bilbao-vs-Elche-CF",
       "kickoff": null,
-      "status": "live",
-      "live_minute": "32",
+      "status": "ended",
+      "live_minute": "",
       "teams": {
         "home": {
-          "name": "لاتسيو",
-          "logo_url": "https://imgs.ysscores.com/teams/64/5111690283002.png"
+          "name": "أتلتيك بلباو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/1061690197944.png"
         },
         "away": {
-          "name": "ميلان",
-          "logo_url": "https://imgs.ysscores.com/teams/64/3181690283002.png"
+          "name": "إلتشي",
+          "logo_url": "https://imgs.ysscores.com/teams/64/6441698766179.png"
         }
       },
       "score": {
         "home": 1,
-        "away": 0
+        "away": 1
       },
       "penalty_score": null,
-      "channels": [
-        "StarzPlay",
-        "تطبيق STC TV",
-        "منصة شاشا"
-      ],
-      "commentator": "عامر عبدالله"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "today",
@@ -1120,33 +1105,31 @@
     {
       "day": "today",
       "date": "2026-09-12",
-      "match_id": "5881164",
-      "championship": "الدوري الألماني",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/6171690288722.png",
-      "round": "الجولة 3",
-      "source_url": "https://www.ysscores.com/ar/match/5881164/1.FC-Köln-vs-SV-Werder-Bremen",
+      "match_id": "5749674",
+      "championship": "الدوري الإيطالي",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/6281692568873.png",
+      "round": "الجولة 4",
+      "source_url": "https://www.ysscores.com/ar/match/5749674/SS-Lazio-vs-AC-Milan",
       "kickoff": null,
-      "status": "live",
-      "live_minute": "3",
+      "status": "ended",
+      "live_minute": "",
       "teams": {
         "home": {
-          "name": "كولن",
-          "logo_url": "https://imgs.ysscores.com/teams/64/2071690288818.png"
+          "name": "لاتسيو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/5111690283002.png"
         },
         "away": {
-          "name": "فيردر بريمن",
-          "logo_url": "https://imgs.ysscores.com/teams/64/9771690288817.png"
+          "name": "ميلان",
+          "logo_url": "https://imgs.ysscores.com/teams/64/3181690283002.png"
         }
       },
       "score": {
-        "home": 0,
-        "away": 0
+        "home": 2,
+        "away": 2
       },
       "penalty_score": null,
-      "channels": [
-        "MBC شاهد | رياضة"
-      ],
-      "commentator": "رياض الحمروني"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "today",
@@ -1296,33 +1279,31 @@
     {
       "day": "today",
       "date": "2026-09-12",
-      "match_id": "5802936",
-      "championship": "الدوري الفرنسي",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/9551719862665.png",
-      "round": "الجولة 4",
-      "source_url": "https://www.ysscores.com/ar/match/5802936/RC-Strasbourg-Alsace-vs-AS-Monaco",
+      "match_id": "5881164",
+      "championship": "الدوري الألماني",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/6171690288722.png",
+      "round": "الجولة 3",
+      "source_url": "https://www.ysscores.com/ar/match/5881164/1.FC-Köln-vs-SV-Werder-Bremen",
       "kickoff": null,
-      "status": "live",
-      "live_minute": "56",
+      "status": "ended",
+      "live_minute": "",
       "teams": {
         "home": {
-          "name": "ستراسبورغ",
-          "logo_url": "https://imgs.ysscores.com/teams/64/8951690287872.png"
+          "name": "كولن",
+          "logo_url": "https://imgs.ysscores.com/teams/64/2071690288818.png"
         },
         "away": {
-          "name": "موناكو",
-          "logo_url": "https://imgs.ysscores.com/teams/64/3861690287583.png"
+          "name": "فيردر بريمن",
+          "logo_url": "https://imgs.ysscores.com/teams/64/9771690288817.png"
         }
       },
       "score": {
         "home": 1,
-        "away": 0
+        "away": 1
       },
       "penalty_score": null,
-      "channels": [
-        "بي إن سبورت 8"
-      ],
-      "commentator": "عبدالله الغامدي"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "today",
@@ -1439,34 +1420,31 @@
     {
       "day": "today",
       "date": "2026-09-12",
-      "match_id": "5970142",
-      "championship": "الدوري السعودي للمحترفين",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/5111703719091.png",
-      "round": "الجولة 7",
-      "source_url": "https://www.ysscores.com/ar/match/5970142/Al-Taawoun-FC-vs-Al-Hilal-SFC",
+      "match_id": "5802936",
+      "championship": "الدوري الفرنسي",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/9551719862665.png",
+      "round": "الجولة 4",
+      "source_url": "https://www.ysscores.com/ar/match/5802936/RC-Strasbourg-Alsace-vs-AS-Monaco",
       "kickoff": null,
-      "status": "live",
-      "live_minute": "43",
+      "status": "ended",
+      "live_minute": "",
       "teams": {
         "home": {
-          "name": "التعاون",
-          "logo_url": "https://imgs.ysscores.com/teams/64/9971724321815.png"
+          "name": "ستراسبورغ",
+          "logo_url": "https://imgs.ysscores.com/teams/64/8951690287872.png"
         },
         "away": {
-          "name": "الهلال",
-          "logo_url": "https://imgs.ysscores.com/teams/64/8761690298716.png"
+          "name": "موناكو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/3861690287583.png"
         }
       },
       "score": {
-        "home": 0,
-        "away": 3
+        "home": 1,
+        "away": 1
       },
       "penalty_score": null,
-      "channels": [
-        "ثمانية 2",
-        "تطبيق ثمانية"
-      ],
-      "commentator": "فارس عوض"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "today",
@@ -1476,9 +1454,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/5111703719091.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5970138/Al-Khaleej-FC-vs-Al-Nassr-FC",
-      "kickoff": "2026-09-12T14:00+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "42",
       "teams": {
         "home": {
           "name": "الخليج",
@@ -1489,7 +1467,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/1371747772080.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
       "penalty_score": null,
       "channels": [
         "ثمانية 1",
@@ -1505,9 +1486,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/5111703719091.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5970141/Al-Shabab-FC-vs-Al-Fayha-FC",
-      "kickoff": "2026-09-12T14:00+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "42",
       "teams": {
         "home": {
           "name": "الشباب",
@@ -1518,7 +1499,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/9981690292497.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
       "penalty_score": null,
       "channels": [
         "ثمانية 3",
@@ -1529,25 +1513,28 @@
     {
       "day": "today",
       "date": "2026-09-12",
-      "match_id": "42790316",
-      "championship": "الدوري العراقي",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/4931702381720.png",
+      "match_id": "5970142",
+      "championship": "الدوري السعودي للمحترفين",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/5111703719091.png",
       "round": "الجولة 7",
-      "source_url": "https://www.ysscores.com/ar/match/42790316/Diyala-SC-vs-Al-Gharraf-SC",
+      "source_url": "https://www.ysscores.com/ar/match/5970142/Al-Taawoun-FC-vs-Al-Hilal-SFC",
       "kickoff": null,
-      "status": "not_started",
+      "status": "ended",
       "live_minute": "",
       "teams": {
         "home": {
-          "name": "ديالى",
-          "logo_url": "https://imgs.ysscores.com/teams/64/7671726654821.png"
+          "name": "التعاون",
+          "logo_url": "https://imgs.ysscores.com/teams/64/9971724321815.png"
         },
         "away": {
-          "name": "الغراف",
-          "logo_url": "https://imgs.ysscores.com/teams/64/6311734617665.png"
+          "name": "الهلال",
+          "logo_url": "https://imgs.ysscores.com/teams/64/8761690298716.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 0,
+        "away": 6
+      },
       "penalty_score": null,
       "channels": [],
       "commentator": ""
@@ -1560,9 +1547,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4931702381720.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/67485042/Al-Shorta-SC-vs-Ghaz-Al-Shamal-SC",
-      "kickoff": "2026-09-12T14:00+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "44",
       "teams": {
         "home": {
           "name": "الشرطة",
@@ -1573,7 +1560,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/8861760380650.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
       "penalty_score": null,
       "channels": [
         "العراقية الرياضية"
@@ -1583,25 +1573,28 @@
     {
       "day": "today",
       "date": "2026-09-12",
-      "match_id": "5781748",
-      "championship": "الدوري الهولندي الممتاز",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/2571696547488.png",
-      "round": "الجولة 6",
-      "source_url": "https://www.ysscores.com/ar/match/5781748/Go-Ahead-Eagles-vs-FC-Groningen",
-      "kickoff": "2026-09-12T12:45+03:00",
-      "status": "not_started",
+      "match_id": "42790316",
+      "championship": "الدوري العراقي",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/4931702381720.png",
+      "round": "الجولة 7",
+      "source_url": "https://www.ysscores.com/ar/match/42790316/Diyala-SC-vs-Al-Gharraf-SC",
+      "kickoff": null,
+      "status": "ended",
       "live_minute": "",
       "teams": {
         "home": {
-          "name": "جو أهيد إيجلز",
-          "logo_url": "https://imgs.ysscores.com/teams/64/3951690996987.png"
+          "name": "ديالى",
+          "logo_url": "https://imgs.ysscores.com/teams/64/7671726654821.png"
         },
         "away": {
-          "name": "غرونينغن",
-          "logo_url": "https://imgs.ysscores.com/teams/64/10001690370535.png"
+          "name": "الغراف",
+          "logo_url": "https://imgs.ysscores.com/teams/64/6311734617665.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 3,
+        "away": 1
+      },
       "penalty_score": null,
       "channels": [],
       "commentator": ""
@@ -1614,9 +1607,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/2571696547488.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5781747/Fortuna-Sittard-vs-Ajax-Amsterdam",
-      "kickoff": "2026-09-12T14:00+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "40",
       "teams": {
         "home": {
           "name": "فورتونا سيتارد",
@@ -1627,7 +1620,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/1361751718344.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
       "penalty_score": null,
       "channels": [
         "دبي الرياضية 1"
@@ -1692,14 +1688,43 @@
     {
       "day": "today",
       "date": "2026-09-12",
+      "match_id": "5781748",
+      "championship": "الدوري الهولندي الممتاز",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/2571696547488.png",
+      "round": "الجولة 6",
+      "source_url": "https://www.ysscores.com/ar/match/5781748/Go-Ahead-Eagles-vs-FC-Groningen",
+      "kickoff": null,
+      "status": "ended",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "جو أهيد إيجلز",
+          "logo_url": "https://imgs.ysscores.com/teams/64/3951690996987.png"
+        },
+        "away": {
+          "name": "غرونينغن",
+          "logo_url": "https://imgs.ysscores.com/teams/64/10001690370535.png"
+        }
+      },
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "today",
+      "date": "2026-09-12",
       "match_id": "5887630",
       "championship": "الدوري البرتغالي الممتاز",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/7301690383928.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5887630/Casa-Pia-AC-vs-FC-Porto",
-      "kickoff": "2026-09-12T13:00+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "77",
       "teams": {
         "home": {
           "name": "كاسا بيا",
@@ -1710,7 +1735,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/4801690385949.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 1,
+        "away": 3
+      },
       "penalty_score": null,
       "channels": [
         "منصة شاشا",
@@ -1888,7 +1916,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17693689565274.png",
       "round": "الجولة 9",
       "source_url": "https://www.ysscores.com/ar/match/5115999/Club-Estudiantes-de-La-Plata-vs-Club-Atlético-Platense",
-      "kickoff": "2026-09-12T13:45+03:00",
+      "kickoff": null,
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -1914,7 +1942,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17693689565274.png",
       "round": "الجولة 9",
       "source_url": "https://www.ysscores.com/ar/match/5116002/CS-Independiente-Rivadavia-vs-CA-Aldosivi",
-      "kickoff": "2026-09-12T13:45+03:00",
+      "kickoff": null,
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -1955,8 +1983,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "دبي الرياضية 1"
+      ],
+      "commentator": "محمد البدواوي"
     },
     {
       "day": "today",
@@ -2019,37 +2049,6 @@
     {
       "day": "today",
       "date": "2026-09-12",
-      "match_id": "5952270",
-      "championship": "الدوري القطري",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17873600366627.png",
-      "round": "الجولة 4",
-      "source_url": "https://www.ysscores.com/ar/match/5952270/Al-Duhail-SC-vs-Al-Shahania-SC",
-      "kickoff": null,
-      "status": "live",
-      "live_minute": "18",
-      "teams": {
-        "home": {
-          "name": "الدحيل",
-          "logo_url": "https://imgs.ysscores.com/teams/64/3211693170386.png"
-        },
-        "away": {
-          "name": "الشحانية",
-          "logo_url": "https://imgs.ysscores.com/teams/64/17880036659453.png"
-        }
-      },
-      "score": {
-        "home": 0,
-        "away": 0
-      },
-      "penalty_score": null,
-      "channels": [
-        "الكأس 6"
-      ],
-      "commentator": "منتصر الأزهري"
-    },
-    {
-      "day": "today",
-      "date": "2026-09-12",
       "match_id": "5952271",
       "championship": "الدوري القطري",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17873600366627.png",
@@ -2071,6 +2070,35 @@
       "score": {
         "home": 0,
         "away": 0
+      },
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "today",
+      "date": "2026-09-12",
+      "match_id": "5952270",
+      "championship": "الدوري القطري",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17873600366627.png",
+      "round": "الجولة 4",
+      "source_url": "https://www.ysscores.com/ar/match/5952270/Al-Duhail-SC-vs-Al-Shahania-SC",
+      "kickoff": null,
+      "status": "ended",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "الدحيل",
+          "logo_url": "https://imgs.ysscores.com/teams/64/3211693170386.png"
+        },
+        "away": {
+          "name": "الشحانية",
+          "logo_url": "https://imgs.ysscores.com/teams/64/17880036659453.png"
+        }
+      },
+      "score": {
+        "home": 1,
+        "away": 1
       },
       "penalty_score": null,
       "channels": [],
@@ -2166,159 +2194,14 @@
     {
       "day": "today",
       "date": "2026-09-12",
-      "match_id": "6019470",
-      "championship": "دوري أبطال أفريقيا | الأدوار الإقصائية",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
-      "round": "الدور الأول",
-      "source_url": "https://www.ysscores.com/ar/match/6019470/CA-Petróleos-Luanda-vs-UD-Songo",
-      "kickoff": null,
-      "status": "live",
-      "live_minute": "69",
-      "teams": {
-        "home": {
-          "name": "بيترو أتلتيكو",
-          "logo_url": "https://imgs.ysscores.com/teams/64/8531690370562.png"
-        },
-        "away": {
-          "name": "يونياو دو سونجو",
-          "logo_url": "https://imgs.ysscores.com/teams/64/8541692283522.png"
-        }
-      },
-      "score": {
-        "home": 2,
-        "away": 1
-      },
-      "penalty_score": null,
-      "channels": [],
-      "commentator": ""
-    },
-    {
-      "day": "today",
-      "date": "2026-09-12",
-      "match_id": "6019500",
-      "championship": "دوري أبطال أفريقيا | الأدوار الإقصائية",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
-      "round": "الدور الأول",
-      "source_url": "https://www.ysscores.com/ar/match/6019500/Rahimo-FC-vs-MAS-Fès",
-      "kickoff": null,
-      "status": "live",
-      "live_minute": "71",
-      "teams": {
-        "home": {
-          "name": "راحيمو",
-          "logo_url": "https://imgs.ysscores.com/teams/64/1611739528925.png"
-        },
-        "away": {
-          "name": "المغرب الفاسي",
-          "logo_url": "https://imgs.ysscores.com/teams/64/17869850204497.png"
-        }
-      },
-      "score": {
-        "home": 0,
-        "away": 0
-      },
-      "penalty_score": null,
-      "channels": [],
-      "commentator": ""
-    },
-    {
-      "day": "today",
-      "date": "2026-09-12",
-      "match_id": "6019482",
-      "championship": "دوري أبطال أفريقيا | الأدوار الإقصائية",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
-      "round": "الدور الأول",
-      "source_url": "https://www.ysscores.com/ar/match/6019482/Young-Africans-SC-vs-Gaborone-United",
-      "kickoff": null,
-      "status": "live",
-      "live_minute": "34",
-      "teams": {
-        "home": {
-          "name": "يانغ أفريكانز",
-          "logo_url": "https://imgs.ysscores.com/teams/64/2951692283216.png"
-        },
-        "away": {
-          "name": "غابورون يونايتد",
-          "logo_url": "https://imgs.ysscores.com/teams/64/1381755469080.png"
-        }
-      },
-      "score": {
-        "home": 1,
-        "away": 0
-      },
-      "penalty_score": null,
-      "channels": [],
-      "commentator": ""
-    },
-    {
-      "day": "today",
-      "date": "2026-09-12",
-      "match_id": "6019498",
-      "championship": "دوري أبطال أفريقيا | الأدوار الإقصائية",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
-      "round": "الدور الأول",
-      "source_url": "https://www.ysscores.com/ar/match/6019498/Medina-United-FA-vs-Star-Sport-Academy",
-      "kickoff": null,
-      "status": "live",
-      "live_minute": "15",
-      "teams": {
-        "home": {
-          "name": "ميدينا",
-          "logo_url": "https://imgs.ysscores.com/teams/64/17869929036074.png"
-        },
-        "away": {
-          "name": "ستار سبورت",
-          "logo_url": "https://imgs.ysscores.com/teams/64/17883853755781.png"
-        }
-      },
-      "score": {
-        "home": 0,
-        "away": 0
-      },
-      "penalty_score": null,
-      "channels": [],
-      "commentator": ""
-    },
-    {
-      "day": "today",
-      "date": "2026-09-12",
-      "match_id": "6019522",
-      "championship": "دوري أبطال أفريقيا | الأدوار الإقصائية",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
-      "round": "الدور الأول",
-      "source_url": "https://www.ysscores.com/ar/match/6019522/Djoliba-AC-vs-Club-Africain",
-      "kickoff": null,
-      "status": "live",
-      "live_minute": "24",
-      "teams": {
-        "home": {
-          "name": "دجوليبا",
-          "logo_url": "https://imgs.ysscores.com/teams/64/7181732355083.png"
-        },
-        "away": {
-          "name": "الإفريقي",
-          "logo_url": "https://imgs.ysscores.com/teams/64/5191692795665.png"
-        }
-      },
-      "score": {
-        "home": 1,
-        "away": 1
-      },
-      "penalty_score": null,
-      "channels": [],
-      "commentator": ""
-    },
-    {
-      "day": "today",
-      "date": "2026-09-12",
       "match_id": "6019488",
       "championship": "دوري أبطال أفريقيا | الأدوار الإقصائية",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019488/Zamalek-SC-vs-AS-Port",
-      "kickoff": "2026-09-12T13:00+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "78",
       "teams": {
         "home": {
           "name": "الزمالك",
@@ -2329,7 +2212,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/17882944105420.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 3,
+        "away": 0
+      },
       "penalty_score": null,
       "channels": [
         "ON Sport"
@@ -2597,14 +2483,159 @@
     {
       "day": "today",
       "date": "2026-09-12",
+      "match_id": "6019470",
+      "championship": "دوري أبطال أفريقيا | الأدوار الإقصائية",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
+      "round": "الدور الأول",
+      "source_url": "https://www.ysscores.com/ar/match/6019470/CA-Petróleos-Luanda-vs-UD-Songo",
+      "kickoff": null,
+      "status": "ended",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "بيترو أتلتيكو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/8531690370562.png"
+        },
+        "away": {
+          "name": "يونياو دو سونجو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/8541692283522.png"
+        }
+      },
+      "score": {
+        "home": 2,
+        "away": 2
+      },
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "today",
+      "date": "2026-09-12",
+      "match_id": "6019500",
+      "championship": "دوري أبطال أفريقيا | الأدوار الإقصائية",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
+      "round": "الدور الأول",
+      "source_url": "https://www.ysscores.com/ar/match/6019500/Rahimo-FC-vs-MAS-Fès",
+      "kickoff": null,
+      "status": "ended",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "راحيمو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/1611739528925.png"
+        },
+        "away": {
+          "name": "المغرب الفاسي",
+          "logo_url": "https://imgs.ysscores.com/teams/64/17869850204497.png"
+        }
+      },
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "today",
+      "date": "2026-09-12",
+      "match_id": "6019482",
+      "championship": "دوري أبطال أفريقيا | الأدوار الإقصائية",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
+      "round": "الدور الأول",
+      "source_url": "https://www.ysscores.com/ar/match/6019482/Young-Africans-SC-vs-Gaborone-United",
+      "kickoff": null,
+      "status": "ended",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "يانغ أفريكانز",
+          "logo_url": "https://imgs.ysscores.com/teams/64/2951692283216.png"
+        },
+        "away": {
+          "name": "غابورون يونايتد",
+          "logo_url": "https://imgs.ysscores.com/teams/64/1381755469080.png"
+        }
+      },
+      "score": {
+        "home": 2,
+        "away": 1
+      },
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "today",
+      "date": "2026-09-12",
+      "match_id": "6019498",
+      "championship": "دوري أبطال أفريقيا | الأدوار الإقصائية",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
+      "round": "الدور الأول",
+      "source_url": "https://www.ysscores.com/ar/match/6019498/Medina-United-FA-vs-Star-Sport-Academy",
+      "kickoff": null,
+      "status": "ended",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "ميدينا",
+          "logo_url": "https://imgs.ysscores.com/teams/64/17869929036074.png"
+        },
+        "away": {
+          "name": "ستار سبورت",
+          "logo_url": "https://imgs.ysscores.com/teams/64/17883853755781.png"
+        }
+      },
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "today",
+      "date": "2026-09-12",
+      "match_id": "6019522",
+      "championship": "دوري أبطال أفريقيا | الأدوار الإقصائية",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
+      "round": "الدور الأول",
+      "source_url": "https://www.ysscores.com/ar/match/6019522/Djoliba-AC-vs-Club-Africain",
+      "kickoff": null,
+      "status": "ended",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "دجوليبا",
+          "logo_url": "https://imgs.ysscores.com/teams/64/7181732355083.png"
+        },
+        "away": {
+          "name": "الإفريقي",
+          "logo_url": "https://imgs.ysscores.com/teams/64/5191692795665.png"
+        }
+      },
+      "score": {
+        "home": 2,
+        "away": 2
+      },
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "today",
+      "date": "2026-09-12",
       "match_id": "13726181",
       "championship": "كأس الكونفيدرالية | الأدوار الإقصائية",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638085806160.png",
       "round": "دور الإقصائيات",
       "source_url": "https://www.ysscores.com/ar/match/13726181/Al-Ahli-SC-Libya-vs-Kikosi-Maalum-cha-Kuzuia-Magendo-FC",
-      "kickoff": "2026-09-12T13:00+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "80",
       "teams": {
         "home": {
           "name": "الأهلي طرابلس",
@@ -2615,7 +2646,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/461692205179.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 4,
+        "away": 0
+      },
       "penalty_score": null,
       "channels": [
         "ليبيا الرياضية"
@@ -2630,9 +2664,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638085806160.png",
       "round": "دور الإقصائيات",
       "source_url": "https://www.ysscores.com/ar/match/31057540/Diambars-de-Saly-FC-vs-ES-Zarzis",
-      "kickoff": "2026-09-12T13:00+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "80",
       "teams": {
         "home": {
           "name": "ديامبارس",
@@ -2643,7 +2677,10 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/7511723790588.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
       "penalty_score": null,
       "channels": [],
       "commentator": ""
@@ -2656,9 +2693,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638085806160.png",
       "round": "دور الإقصائيات",
       "source_url": "https://www.ysscores.com/ar/match/60307708/AS-Ali-SabiehDjibouti-Télécom-vs-Zed-FC",
-      "kickoff": "2026-09-12T13:00+03:00",
-      "status": "not_started",
-      "live_minute": "",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "83",
       "teams": {
         "home": {
           "name": "جيبوتي تيليكوم",
@@ -2669,12 +2706,15 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/8411694619351.png"
         }
       },
-      "score": null,
+      "score": {
+        "home": 1,
+        "away": 1
+      },
       "penalty_score": null,
       "channels": [
         "On Sport Max"
       ],
-      "commentator": ""
+      "commentator": "طارق الأدور"
     },
     {
       "day": "today",
@@ -2731,8 +2771,8 @@
         "away": 1
       },
       "penalty_score": {
-        "home": 5,
-        "away": 3
+        "home": 4,
+        "away": 1
       },
       "channels": [],
       "commentator": ""
@@ -4037,8 +4077,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "ON Sport"
+      ],
+      "commentator": "مؤمن حسن"
     },
     {
       "day": "tomorrow",
