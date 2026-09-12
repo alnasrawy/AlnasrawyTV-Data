@@ -52,7 +52,7 @@ _IGNORED_INFO_LABELS = {
     "الشوط الأول", "الشوط الثاني", "الشوط الثالث", "الشوط الرابع",
     "الوقت الإضافي", "ركلات الترجيح",
 }
-_NON_COMMENTATOR_VALUES = {"غير محدد", "غير معروف", "لا يوجد", "بدون معلق", "غير متوفر"}
+_NON_COMMENTATOR_VALUES = {"غير محدد", "غير معروف", "لا يوجد", "بدون معلق", "غير متوفر", "غير مدرج", "غير معلن", "لا يوجد تعليق"}
 _SCORE_LINE_RE = re.compile(r"-?\d+\s*-\s*\d+")
 # Penalty events (5) are scored penalties: Philadelphia 5-0 decomposed into
 # 3 classic goals (1) + 2 penalty goals (5).
