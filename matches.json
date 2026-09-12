@@ -7,8 +7,8 @@
     "2026-09-13"
   ],
   "timezone": "Asia/Baghdad",
-  "generated_at": "2026-09-12T15:03:50+03:00",
-  "count": 294,
+  "generated_at": "2026-09-12T14:59:17+03:00",
+  "count": 305,
   "matches": [
     {
       "day": "yesterday",
@@ -361,27 +361,56 @@
     {
       "day": "yesterday",
       "date": "2026-09-11",
-      "match_id": "5103631",
-      "championship": "الدوري البرازيلي",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/1611696522405.png",
-      "round": "الجولة 27",
-      "source_url": "https://www.ysscores.com/ar/match/5103631/Coritiba-Foot-Ball-Club-vs-Club-Athletico-Paranaense",
+      "match_id": "6022167",
+      "championship": "كوبا ليبرتادوريس",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/8811695760721.png",
+      "round": "ربع نهائي",
+      "source_url": "https://www.ysscores.com/ar/match/6022167/Independiente-del-Valle-vs-CR-Flamengo",
       "kickoff": null,
       "status": "ended",
       "live_minute": "",
       "teams": {
         "home": {
-          "name": "كوريتيبا",
-          "logo_url": "https://imgs.ysscores.com/teams/64/4391691431942.png"
+          "name": "انديبندينتي",
+          "logo_url": "https://imgs.ysscores.com/teams/64/8331690370569.png"
         },
         "away": {
-          "name": "باراناينسي",
-          "logo_url": "https://imgs.ysscores.com/teams/64/5811691418710.png"
+          "name": "فلامينغو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/6861691418710.png"
         }
       },
       "score": {
-        "home": 3,
-        "away": 3
+        "home": 0,
+        "away": 2
+      },
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "yesterday",
+      "date": "2026-09-11",
+      "match_id": "6070403",
+      "championship": "كوبا سودا أمريكانا",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/9171711749112.png",
+      "round": "ربع نهائي",
+      "source_url": "https://www.ysscores.com/ar/match/6070403/Club-Cienciano-vs-Montevideo-City-Torque",
+      "kickoff": null,
+      "status": "ended",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "سينسيانو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/8021736449678.png"
+        },
+        "away": {
+          "name": "مونتيفيديو توركي",
+          "logo_url": "https://imgs.ysscores.com/teams/64/6181739337945.png"
+        }
+      },
+      "score": {
+        "home": 2,
+        "away": 0
       },
       "penalty_score": null,
       "channels": [],
@@ -410,64 +439,6 @@
       },
       "score": {
         "home": 1,
-        "away": 1
-      },
-      "penalty_score": null,
-      "channels": [],
-      "commentator": ""
-    },
-    {
-      "day": "yesterday",
-      "date": "2026-09-11",
-      "match_id": "5115997",
-      "championship": "دوري الدرجة الأولى الأرجنتيني",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17693689565274.png",
-      "round": "الجولة 9",
-      "source_url": "https://www.ysscores.com/ar/match/5115997/Defensa-y-Justicia-vs-Gimnasia-y-Esgrima-de-Mendoza",
-      "kickoff": null,
-      "status": "ended",
-      "live_minute": "",
-      "teams": {
-        "home": {
-          "name": "خوستيكا",
-          "logo_url": "https://imgs.ysscores.com/teams/64/8621711750295.png"
-        },
-        "away": {
-          "name": "جيمناسيا",
-          "logo_url": "https://imgs.ysscores.com/teams/64/17673035697322.png"
-        }
-      },
-      "score": {
-        "home": 2,
-        "away": 0
-      },
-      "penalty_score": null,
-      "channels": [],
-      "commentator": ""
-    },
-    {
-      "day": "yesterday",
-      "date": "2026-09-11",
-      "match_id": "5115996",
-      "championship": "دوري الدرجة الأولى الأرجنتيني",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17693689565274.png",
-      "round": "الجولة 9",
-      "source_url": "https://www.ysscores.com/ar/match/5115996/CA-Boca-Juniors-vs-CA-Central-Córdoba-(SdE)",
-      "kickoff": null,
-      "status": "ended",
-      "live_minute": "",
-      "teams": {
-        "home": {
-          "name": "بوكا جونيورز",
-          "logo_url": "https://imgs.ysscores.com/teams/64/17769918946692.png"
-        },
-        "away": {
-          "name": "كوردوبا",
-          "logo_url": "https://imgs.ysscores.com/teams/64/6201717935912.png"
-        }
-      },
-      "score": {
-        "home": 3,
         "away": 1
       },
       "penalty_score": null,
@@ -859,7 +830,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/2201691928047.png",
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/6014398/Al-Nasr-Club-vs-Al-Mussanah-Club",
-      "kickoff": "2026-09-11T10:55+03:00",
+      "kickoff": "2026-09-11T17:55+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -1228,84 +1199,26 @@
     {
       "day": "yesterday",
       "date": "2026-09-11",
-      "match_id": "5830898",
+      "match_id": "5830896",
       "championship": "الدوري المكسيكي الممتاز",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870051622077.png",
-      "round": "الجولة 8",
-      "source_url": "https://www.ysscores.com/ar/match/5830898/Club-Necaxa-vs-Puebla-FC",
+      "round": "الجولة 7",
+      "source_url": "https://www.ysscores.com/ar/match/5830896/UNAM-Pumas-vs-Club-León-FC",
       "kickoff": null,
       "status": "ended",
       "live_minute": "",
       "teams": {
         "home": {
-          "name": "نيكاكسا",
-          "logo_url": "https://imgs.ysscores.com/teams/64/8491690370492.png"
+          "name": "بوماس",
+          "logo_url": "https://imgs.ysscores.com/teams/64/541722733792.png"
         },
         "away": {
-          "name": "بويبلا",
-          "logo_url": "https://imgs.ysscores.com/teams/64/1651722759654.png"
+          "name": "ليون",
+          "logo_url": "https://imgs.ysscores.com/teams/64/6881722774196.png"
         }
       },
       "score": {
-        "home": 0,
-        "away": 1
-      },
-      "penalty_score": null,
-      "channels": [],
-      "commentator": ""
-    },
-    {
-      "day": "yesterday",
-      "date": "2026-09-11",
-      "match_id": "5830899",
-      "championship": "الدوري المكسيكي الممتاز",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870051622077.png",
-      "round": "الجولة 8",
-      "source_url": "https://www.ysscores.com/ar/match/5830899/CF-Atlante-vs-CF-Pachuca",
-      "kickoff": null,
-      "status": "ended",
-      "live_minute": "",
-      "teams": {
-        "home": {
-          "name": "أتلانتي",
-          "logo_url": "https://imgs.ysscores.com/teams/64/6751739395090.png"
-        },
-        "away": {
-          "name": "باتشوكا",
-          "logo_url": "https://imgs.ysscores.com/teams/64/5451709821991.png"
-        }
-      },
-      "score": {
-        "home": 0,
-        "away": 3
-      },
-      "penalty_score": null,
-      "channels": [],
-      "commentator": ""
-    },
-    {
-      "day": "yesterday",
-      "date": "2026-09-11",
-      "match_id": "5830900",
-      "championship": "الدوري المكسيكي الممتاز",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870051622077.png",
-      "round": "الجولة 8",
-      "source_url": "https://www.ysscores.com/ar/match/5830900/Club-Tijuana-vs-Querétaro-FC",
-      "kickoff": null,
-      "status": "ended",
-      "live_minute": "",
-      "teams": {
-        "home": {
-          "name": "تيخوانا",
-          "logo_url": "https://imgs.ysscores.com/teams/64/7771722729992.png"
-        },
-        "away": {
-          "name": "كويريتارو",
-          "logo_url": "https://imgs.ysscores.com/teams/64/1851722759475.png"
-        }
-      },
-      "score": {
-        "home": 0,
+        "home": 3,
         "away": 1
       },
       "penalty_score": null,
@@ -1365,6 +1278,64 @@
       "score": {
         "home": 2,
         "away": 1
+      },
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "yesterday",
+      "date": "2026-09-11",
+      "match_id": "6119120",
+      "championship": "كأس الكونكاكاف أمريكا الوسطى",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/6201722903301.png",
+      "round": "ربع نهائي",
+      "source_url": "https://www.ysscores.com/ar/match/6119120/CD-Marathón-vs-LD-Alajuelense",
+      "kickoff": null,
+      "status": "ended",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "ماراثون",
+          "logo_url": "https://imgs.ysscores.com/teams/64/4321722904796.png"
+        },
+        "away": {
+          "name": "ألاجولينسي",
+          "logo_url": "https://imgs.ysscores.com/teams/64/6811709823414.png"
+        }
+      },
+      "score": {
+        "home": 2,
+        "away": 2
+      },
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "yesterday",
+      "date": "2026-09-11",
+      "match_id": "6119121",
+      "championship": "كأس الكونكاكاف أمريكا الوسطى",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/6201722903301.png",
+      "round": "ربع نهائي",
+      "source_url": "https://www.ysscores.com/ar/match/6119121/CD-Luis-Angel-Firpo-vs-CD-Olimpia",
+      "kickoff": null,
+      "status": "ended",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "فيربو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/8021722904633.png"
+        },
+        "away": {
+          "name": "أوليمبيا",
+          "logo_url": "https://imgs.ysscores.com/teams/64/3091722928998.png"
+        }
+      },
+      "score": {
+        "home": 0,
+        "away": 3
       },
       "penalty_score": null,
       "channels": [],
@@ -1674,7 +1645,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/3411694791422.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5795445/AFC-Bournemouth-vs-Brentford-FC",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -1689,8 +1660,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "بي إن سبورت 3"
+      ],
+      "commentator": "محمد المبروكي"
     },
     {
       "day": "today",
@@ -1700,7 +1673,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/3411694791422.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5795446/Aston-Villa-vs-Nottingham-Forest",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -1715,8 +1688,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "بي إن سبورت 2"
+      ],
+      "commentator": "علي محمد علي"
     },
     {
       "day": "today",
@@ -1726,7 +1701,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/3411694791422.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5795447/Chelsea-FC-vs-Hull-City",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -1741,8 +1716,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "بي إن سبورت 4"
+      ],
+      "commentator": "عصام الشوالي"
     },
     {
       "day": "today",
@@ -1752,7 +1729,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/3411694791422.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5795449/Crystal-Palace-vs-Ipswich-Town",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -1767,8 +1744,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "بي إن سبورت 5"
+      ],
+      "commentator": "سمير اليعقوبي"
     },
     {
       "day": "today",
@@ -1778,7 +1757,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/3411694791422.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5795451/Liverpool-FC-vs-Fulham-FC",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -1793,8 +1772,11 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "بي إن سبورت 1",
+        "beIN 4K"
+      ],
+      "commentator": "عامر الخوذيري"
     },
     {
       "day": "today",
@@ -1804,7 +1786,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/3411694791422.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5795454/Tottenham-Hotspur-vs-Everton-FC",
-      "kickoff": "2026-09-12T12:30+03:00",
+      "kickoff": "2026-09-12T19:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -1830,7 +1812,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/3411694791422.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5795453/Sunderland-AFC-vs-Arsenal-FC",
-      "kickoff": "2026-09-12T15:00+03:00",
+      "kickoff": "2026-09-12T22:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -1856,9 +1838,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8641690196626.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/5868056/Racing-Santander-vs-Deportivo-Alavés",
-      "kickoff": null,
-      "status": "live",
-      "live_minute": "1",
+      "kickoff": "2026-09-12T15:00+03:00",
+      "status": "not_started",
+      "live_minute": "",
       "teams": {
         "home": {
           "name": "راسينغ",
@@ -1869,10 +1851,7 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/2381690196746.png"
         }
       },
-      "score": {
-        "home": 0,
-        "away": 0
-      },
+      "score": null,
       "penalty_score": null,
       "channels": [
         "beIN Xtra 1"
@@ -1887,7 +1866,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8641690196626.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/5868055/CA-Osasuna-vs-RCD-Espanyol-Barcelona",
-      "kickoff": "2026-09-12T10:15+03:00",
+      "kickoff": "2026-09-12T17:15+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -1902,8 +1881,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "beIN Xtra 1"
+      ],
+      "commentator": "محمد السعدي"
     },
     {
       "day": "today",
@@ -1913,7 +1894,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8641690196626.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/5868051/Athletic-Bilbao-vs-Elche-CF",
-      "kickoff": "2026-09-12T12:30+03:00",
+      "kickoff": "2026-09-12T19:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -1939,7 +1920,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8641690196626.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/5868057/Real-Madrid-vs-Rayo-Vallecano",
-      "kickoff": "2026-09-12T15:00+03:00",
+      "kickoff": "2026-09-12T22:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -1965,7 +1946,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6281692568873.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5749672/Genoa-CFC-vs-Frosinone-Calcio",
-      "kickoff": "2026-09-12T09:00+03:00",
+      "kickoff": "2026-09-12T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -1980,8 +1961,11 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "StarzPlay",
+        "تطبيق STC TV"
+      ],
+      "commentator": "أحمد الخير"
     },
     {
       "day": "today",
@@ -1991,7 +1975,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6281692568873.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5749674/SS-Lazio-vs-AC-Milan",
-      "kickoff": "2026-09-12T12:00+03:00",
+      "kickoff": "2026-09-12T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2006,8 +1990,12 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "StarzPlay",
+        "تطبيق STC TV",
+        "منصة شاشا"
+      ],
+      "commentator": "عامر عبدالله"
     },
     {
       "day": "today",
@@ -2017,7 +2005,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6281692568873.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5749670/Atalanta-BC-vs-Cagliari-Calcio",
-      "kickoff": "2026-09-12T14:45+03:00",
+      "kickoff": "2026-09-12T21:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2043,7 +2031,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6171690288722.png",
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/5881161/FC-Augsburg-vs-Bayer-04-Leverkusen",
-      "kickoff": "2026-09-12T09:30+03:00",
+      "kickoff": "2026-09-12T16:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2058,8 +2046,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "MBC شاهد | رياضة"
+      ],
+      "commentator": "محمد الخامسي"
     },
     {
       "day": "today",
@@ -2069,7 +2059,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6171690288722.png",
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/5881162/Borussia-Dortmund-vs-SC-Paderborn-07",
-      "kickoff": "2026-09-12T09:30+03:00",
+      "kickoff": "2026-09-12T16:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2084,8 +2074,11 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "MBC Action",
+        "MBC شاهد | رياضة"
+      ],
+      "commentator": "محمد حسين"
     },
     {
       "day": "today",
@@ -2095,7 +2088,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6171690288722.png",
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/5881165/SC-Freiburg-vs-Borussia-Mönchengladbach",
-      "kickoff": "2026-09-12T09:30+03:00",
+      "kickoff": "2026-09-12T16:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2110,8 +2103,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "MBC شاهد | رياضة"
+      ],
+      "commentator": "فهد الدريبي"
     },
     {
       "day": "today",
@@ -2121,7 +2116,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6171690288722.png",
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/5881166/TSG-1899-Hoffenheim-vs-VfB-Stuttgart",
-      "kickoff": "2026-09-12T09:30+03:00",
+      "kickoff": "2026-09-12T16:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2136,8 +2131,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "MBC شاهد | رياضة"
+      ],
+      "commentator": "فهد عريشي"
     },
     {
       "day": "today",
@@ -2147,7 +2144,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6171690288722.png",
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/5881167/1.FSV-Mainz-05-vs-Eintracht-Frankfurt",
-      "kickoff": "2026-09-12T09:30+03:00",
+      "kickoff": "2026-09-12T16:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2162,8 +2159,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "MBC شاهد | رياضة"
+      ],
+      "commentator": "عائد العصيمي"
     },
     {
       "day": "today",
@@ -2173,7 +2172,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6171690288722.png",
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/5881164/1.FC-Köln-vs-SV-Werder-Bremen",
-      "kickoff": "2026-09-12T12:30+03:00",
+      "kickoff": "2026-09-12T19:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2199,7 +2198,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9551719862665.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5802936/RC-Strasbourg-Alsace-vs-AS-Monaco",
-      "kickoff": "2026-09-12T11:15+03:00",
+      "kickoff": "2026-09-12T18:15+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2214,8 +2213,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "بي إن سبورت 8"
+      ],
+      "commentator": "عبدالله الغامدي"
     },
     {
       "day": "today",
@@ -2225,7 +2226,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9551719862665.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5802928/AJ-Auxerre-vs-OGC-Nice",
-      "kickoff": "2026-09-12T14:45+03:00",
+      "kickoff": "2026-09-12T21:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2251,7 +2252,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9551719862665.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5802930/Le-Havre-AC-vs-Angers-SCO",
-      "kickoff": "2026-09-12T14:45+03:00",
+      "kickoff": "2026-09-12T21:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2277,7 +2278,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9551719862665.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5802933/FC-Lorient-vs-FC-Toulouse",
-      "kickoff": "2026-09-12T14:45+03:00",
+      "kickoff": "2026-09-12T21:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2303,7 +2304,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9551719862665.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5802934/Paris-FC-vs-Olympique-Lyon",
-      "kickoff": "2026-09-12T14:45+03:00",
+      "kickoff": "2026-09-12T21:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2329,7 +2330,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/5111703719091.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5970142/Al-Taawoun-FC-vs-Al-Hilal-SFC",
-      "kickoff": "2026-09-12T11:50+03:00",
+      "kickoff": "2026-09-12T18:50+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2344,8 +2345,11 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "ثمانية 2",
+        "تطبيق ثمانية"
+      ],
+      "commentator": "فارس عوض"
     },
     {
       "day": "today",
@@ -2355,7 +2359,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/5111703719091.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5970138/Al-Khaleej-FC-vs-Al-Nassr-FC",
-      "kickoff": "2026-09-12T14:00+03:00",
+      "kickoff": "2026-09-12T21:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2381,7 +2385,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/5111703719091.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5970141/Al-Shabab-FC-vs-Al-Fayha-FC",
-      "kickoff": "2026-09-12T14:00+03:00",
+      "kickoff": "2026-09-12T21:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2407,7 +2411,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/1191723239247.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/5904741/Eyüpspor-vs-Caykur-Rizespor",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2422,8 +2426,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "beIN Sports HD 2 TR"
+      ],
+      "commentator": "غير مدرج"
     },
     {
       "day": "today",
@@ -2433,7 +2439,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/1191723239247.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/5904748/Samsunspor-vs-Corum-FK",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2448,8 +2454,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "beIN Sports HD 1 TR"
+      ],
+      "commentator": "غير مدرج"
     },
     {
       "day": "today",
@@ -2459,7 +2467,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/1191723239247.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/5904742/Alanyaspor-vs-Göztepe",
-      "kickoff": "2026-09-12T13:00+03:00",
+      "kickoff": "2026-09-12T20:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2485,7 +2493,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/1191723239247.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/5904745/Konyaspor-vs-Trabzonspor",
-      "kickoff": "2026-09-12T13:00+03:00",
+      "kickoff": "2026-09-12T20:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2511,7 +2519,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4931702381720.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/42790316/Diyala-SC-vs-Al-Gharraf-SC",
-      "kickoff": "2026-09-12T11:30+03:00",
+      "kickoff": "2026-09-12T18:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2526,8 +2534,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "العراقية السريانية"
+      ],
+      "commentator": "حسن سالم"
     },
     {
       "day": "today",
@@ -2537,7 +2547,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4931702381720.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/67485042/Al-Shorta-SC-vs-Ghaz-Al-Shamal-SC",
-      "kickoff": "2026-09-12T14:00+03:00",
+      "kickoff": "2026-09-12T21:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2565,7 +2575,7 @@
       "source_url": "https://www.ysscores.com/ar/match/5836827/Bolton-Wanderers-vs-Cardiff-City",
       "kickoff": null,
       "status": "live",
-      "live_minute": "30",
+      "live_minute": "25",
       "teams": {
         "home": {
           "name": "بولتون",
@@ -2594,7 +2604,7 @@
       "source_url": "https://www.ysscores.com/ar/match/5836829/Derby-County-vs-Birmingham-City",
       "kickoff": null,
       "status": "live",
-      "live_minute": "31",
+      "live_minute": "26",
       "teams": {
         "home": {
           "name": "ديربي كاونتي",
@@ -2625,7 +2635,7 @@
       "source_url": "https://www.ysscores.com/ar/match/5836836/West-Bromwich-Albion-vs-Queens-Park-Rangers",
       "kickoff": null,
       "status": "live",
-      "live_minute": "30",
+      "live_minute": "25",
       "teams": {
         "home": {
           "name": "وست بروميتش",
@@ -2652,7 +2662,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4861690937574.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5836826/Blackburn-Rovers-vs-Millwall-FC",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2678,7 +2688,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4861690937574.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5836828/Charlton-Athletic-vs-Portsmouth-FC",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2704,7 +2714,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4861690937574.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5836830/Middlesbrough-FC-vs-Norwich-City",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2730,7 +2740,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4861690937574.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5836831/Preston-North-End-vs-Lincoln-City",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2756,7 +2766,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4861690937574.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5836833/Southampton-FC-vs-Bristol-City",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2782,7 +2792,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4861690937574.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5836834/Swansea-City-vs-Burnley-FC",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2808,7 +2818,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4861690937574.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5836835/Watford-FC-vs-Stoke-City",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2823,8 +2833,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "beIN Xtra 4"
+      ],
+      "commentator": "غير مدرج"
     },
     {
       "day": "today",
@@ -2834,7 +2846,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/2571696547488.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5781746/Twente-Enschede-FC-vs-ADO-Den-Haag",
-      "kickoff": "2026-09-12T10:30+03:00",
+      "kickoff": "2026-09-12T17:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2860,7 +2872,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/2571696547488.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5781748/Go-Ahead-Eagles-vs-FC-Groningen",
-      "kickoff": "2026-09-12T12:45+03:00",
+      "kickoff": "2026-09-12T19:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2886,7 +2898,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/2571696547488.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5781747/Fortuna-Sittard-vs-Ajax-Amsterdam",
-      "kickoff": "2026-09-12T14:00+03:00",
+      "kickoff": "2026-09-12T21:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2912,7 +2924,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/2571696547488.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5781741/SC-Cambuur-Leeuwarden-vs-NEC-Nijmegen",
-      "kickoff": "2026-09-12T15:00+03:00",
+      "kickoff": "2026-09-12T22:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2938,7 +2950,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/7301690383928.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5887633/CD-Nacional-vs-FC-Alverca",
-      "kickoff": "2026-09-12T10:30+03:00",
+      "kickoff": "2026-09-12T17:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2964,7 +2976,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/7301690383928.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5887630/Casa-Pia-AC-vs-FC-Porto",
-      "kickoff": "2026-09-12T13:00+03:00",
+      "kickoff": "2026-09-12T20:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -2990,7 +3002,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/7301690383928.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5887627/Académico-Viseu-FC-vs-Vitória-Guimarães-SC",
-      "kickoff": "2026-09-12T15:30+03:00",
+      "kickoff": "2026-09-12T22:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3016,7 +3028,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9251692797287.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5811756/SK-Beveren-vs-Sint-Truidense-VV",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3042,7 +3054,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9251692797287.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5811757/KVC-Westerlo-vs-Standard-Liège",
-      "kickoff": "2026-09-12T12:15+03:00",
+      "kickoff": "2026-09-12T19:15+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3068,7 +3080,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9251692797287.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5811758/Oud-Heverlee-Leuven-vs-Cercle-Brugge",
-      "kickoff": "2026-09-12T14:45+03:00",
+      "kickoff": "2026-09-12T21:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3094,7 +3106,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9251692797287.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5811759/Union-Saint-Gilloise-vs-Lommel-SK",
-      "kickoff": "2026-09-12T14:45+03:00",
+      "kickoff": "2026-09-12T21:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3120,7 +3132,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8761754000394.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5943250/Olympiacos-Piraeus-vs-OFI-Crete-FC",
-      "kickoff": "2026-09-12T12:00+03:00",
+      "kickoff": "2026-09-12T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3146,7 +3158,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8761754000394.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5943247/Iraklis-Thessaloniki-vs-Atromitos-Athens",
-      "kickoff": "2026-09-12T14:00+03:00",
+      "kickoff": "2026-09-12T21:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3172,7 +3184,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/1611696522405.png",
       "round": "الجولة 27",
       "source_url": "https://www.ysscores.com/ar/match/5103629/Clube-Atlético-Mineiro-vs-Fluminense-Football-Club",
-      "kickoff": "2026-09-12T15:00+03:00",
+      "kickoff": "2026-09-12T22:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3198,7 +3210,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/1611696522405.png",
       "round": "الجولة 27",
       "source_url": "https://www.ysscores.com/ar/match/5103630/Grêmio-Foot-Ball-Porto-Alegrense-vs-Clube-de-Regatas-Vasco-da-Gama",
-      "kickoff": "2026-09-12T15:00+03:00",
+      "kickoff": "2026-09-12T22:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3224,7 +3236,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/1611696522405.png",
       "round": "الجولة 27",
       "source_url": "https://www.ysscores.com/ar/match/5103633/Associação-Chapecoense-de-Futebol-vs-Sport-Club-Internacional",
-      "kickoff": "2026-09-12T16:00+03:00",
+      "kickoff": "2026-09-12T23:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3279,7 +3291,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17693689565274.png",
       "round": "الجولة 9",
       "source_url": "https://www.ysscores.com/ar/match/5115999/Club-Estudiantes-de-La-Plata-vs-Club-Atlético-Platense",
-      "kickoff": "2026-09-12T13:45+03:00",
+      "kickoff": "2026-09-12T20:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3305,7 +3317,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17693689565274.png",
       "round": "الجولة 9",
       "source_url": "https://www.ysscores.com/ar/match/5116002/CS-Independiente-Rivadavia-vs-CA-Aldosivi",
-      "kickoff": "2026-09-12T13:45+03:00",
+      "kickoff": "2026-09-12T20:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3331,7 +3343,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17693689565274.png",
       "round": "الجولة 9",
       "source_url": "https://www.ysscores.com/ar/match/5115994/Club-Atlético-Tucumán-vs-CA-River-Plate",
-      "kickoff": "2026-09-12T16:30+03:00",
+      "kickoff": "2026-09-12T23:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3346,10 +3358,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "دبي الرياضية 1"
-      ],
-      "commentator": "محمد البدواوي"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "today",
@@ -3417,7 +3427,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/641753995259.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5804262/FC-St.-Gallen-1879-vs-FC-Sion",
-      "kickoff": "2026-09-12T12:00+03:00",
+      "kickoff": "2026-09-12T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3443,7 +3453,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/641753995259.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5804263/FC-Thun-vs-Grasshopper-Club-Zurich",
-      "kickoff": "2026-09-12T12:00+03:00",
+      "kickoff": "2026-09-12T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3469,7 +3479,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/641753995259.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5804264/FC-Lugano-vs-BSC-Young-Boys",
-      "kickoff": "2026-09-12T13:00+03:00",
+      "kickoff": "2026-09-12T20:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3495,7 +3505,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8131693416988.png",
       "round": "الجولة 2",
       "source_url": "https://www.ysscores.com/ar/match/5989814/MB-Rouissat-vs-Olympique-Akbou",
-      "kickoff": "2026-09-12T14:00+03:00",
+      "kickoff": "2026-09-12T21:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3521,7 +3531,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8131693416988.png",
       "round": "الجولة 2",
       "source_url": "https://www.ysscores.com/ar/match/5989819/CS-Constantine-vs-ASO-Chlef",
-      "kickoff": "2026-09-12T16:00+03:00",
+      "kickoff": "2026-09-12T23:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3536,10 +3546,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "الرياضية ويب"
-      ],
-      "commentator": "غير مدرج"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "today",
@@ -3549,7 +3557,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/5641693174914.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/14765203/ES-Hammam-Sousse-vs-Stade-Tunisien",
-      "kickoff": "2026-09-12T11:00+03:00",
+      "kickoff": "2026-09-12T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3564,8 +3572,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "الوطنية 2"
+      ],
+      "commentator": "غير مدرج"
     },
     {
       "day": "today",
@@ -3575,7 +3585,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/5641693174914.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/15742590/AS-Marsa-vs-Etoile-Sportive-du-Sahel",
-      "kickoff": "2026-09-12T11:00+03:00",
+      "kickoff": "2026-09-12T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3590,8 +3600,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "الوطنية 1"
+      ],
+      "commentator": "غير مدرج"
     },
     {
       "day": "today",
@@ -3601,7 +3613,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/5641693174914.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/35873830/US-Monastir-vs-Union-Sportive-de-Ben-Guerdane",
-      "kickoff": "2026-09-12T11:00+03:00",
+      "kickoff": "2026-09-12T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3627,7 +3639,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17873600366627.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5952271/Al-Arabi-SC-vs-Qatar-SC",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3642,8 +3654,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "الكأس 5"
+      ],
+      "commentator": "خليل البلوشي"
     },
     {
       "day": "today",
@@ -3653,7 +3667,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17873600366627.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5952270/Al-Duhail-SC-vs-Al-Shahania-SC",
-      "kickoff": "2026-09-12T12:15+03:00",
+      "kickoff": "2026-09-12T19:15+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3679,7 +3693,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/671690936371.png",
       "round": "الجولة 2",
       "source_url": "https://www.ysscores.com/ar/match/62268563/Al-Ramtha-SC-vs-Al-Arabi-Irbid",
-      "kickoff": "2026-09-12T11:00+03:00",
+      "kickoff": "2026-09-12T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3694,8 +3708,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "الأردن الرياضية"
+      ],
+      "commentator": "حسين الوهادنة"
     },
     {
       "day": "today",
@@ -3705,7 +3721,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/671690936371.png",
       "round": "الجولة 2",
       "source_url": "https://www.ysscores.com/ar/match/76317603/Al-Salt-SC-vs-Al-Wehdat-SC",
-      "kickoff": "2026-09-12T13:30+03:00",
+      "kickoff": "2026-09-12T20:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3731,7 +3747,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9181692196485.png",
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/6024213/Al-Ahli-Club-(Bahrain)-vs-Al-Ettifaq-SC-(Bahrain)",
-      "kickoff": "2026-09-12T12:00+03:00",
+      "kickoff": "2026-09-12T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3746,8 +3762,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "يوتيوب الاتحاد البحريني"
+      ],
+      "commentator": "غير مدرج"
     },
     {
       "day": "today",
@@ -3757,7 +3775,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9181692196485.png",
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/6024214/Sitra-Club-vs-Hidd-SCC",
-      "kickoff": "2026-09-12T12:00+03:00",
+      "kickoff": "2026-09-12T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3772,8 +3790,10 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [],
-      "commentator": ""
+      "channels": [
+        "يوتيوب الاتحاد البحريني"
+      ],
+      "commentator": "غير مدرج"
     },
     {
       "day": "today",
@@ -3783,7 +3803,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870045308225.png",
       "round": "الجولة 21",
       "source_url": "https://www.ysscores.com/ar/match/5105003/Lillestrøm-SK-vs-Vålerenga-Fotball-Elite",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3809,7 +3829,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870045308225.png",
       "round": "الجولة 21",
       "source_url": "https://www.ysscores.com/ar/match/5105002/Rosenborg-BK-vs-Tromsø-IL",
-      "kickoff": "2026-09-12T12:00+03:00",
+      "kickoff": "2026-09-12T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3835,7 +3855,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17753016896749.png",
       "round": "الجولة 21",
       "source_url": "https://www.ysscores.com/ar/match/5107597/AIK-vs-Västerås-SK",
-      "kickoff": "2026-09-12T09:00+03:00",
+      "kickoff": "2026-09-12T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3861,7 +3881,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17753016896749.png",
       "round": "الجولة 21",
       "source_url": "https://www.ysscores.com/ar/match/5107600/IFK-Göteborg-vs-Halmstads-BK",
-      "kickoff": "2026-09-12T11:30+03:00",
+      "kickoff": "2026-09-12T18:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3915,7 +3935,7 @@
       "source_url": "https://www.ysscores.com/ar/match/5186542/Wuhan-Three-Towns-vs-Henan-FC",
       "kickoff": null,
       "status": "live",
-      "live_minute": "25",
+      "live_minute": "21",
       "teams": {
         "home": {
           "name": "ووهان ثري تاونز",
@@ -3942,7 +3962,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17883469647094.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5765928/NK-Osijek-vs-GNK-Dinamo-Zagreb",
-      "kickoff": "2026-09-12T11:00+03:00",
+      "kickoff": "2026-09-12T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3968,7 +3988,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17883469647094.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5765927/NK-Lokomotiva-Zagreb-vs-HNK-Rijeka",
-      "kickoff": "2026-09-12T14:00+03:00",
+      "kickoff": "2026-09-12T21:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -3989,6 +4009,35 @@
     {
       "day": "today",
       "date": "2026-09-12",
+      "match_id": "5803578",
+      "championship": "الدوري الياباني الممتاز",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17860218241233.png",
+      "round": "الجولة 7",
+      "source_url": "https://www.ysscores.com/ar/match/5803578/Gamba-Osaka-vs-FC-Tokyo",
+      "kickoff": null,
+      "status": "live",
+      "live_minute": "90",
+      "teams": {
+        "home": {
+          "name": "غامبا أوساكا",
+          "logo_url": "https://imgs.ysscores.com/teams/64/1681690370505.png"
+        },
+        "away": {
+          "name": "طوكيو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/5491739531912.png"
+        }
+      },
+      "score": {
+        "home": 0,
+        "away": 2
+      },
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "today",
+      "date": "2026-09-12",
       "match_id": "5803580",
       "championship": "الدوري الياباني الممتاز",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17860218241233.png",
@@ -3996,7 +4045,7 @@
       "source_url": "https://www.ysscores.com/ar/match/5803580/Machida-Zelvia-vs-Yokohama-F.-Marinos",
       "kickoff": null,
       "status": "live",
-      "live_minute": "90",
+      "live_minute": "85",
       "teams": {
         "home": {
           "name": "ماتشيدا زيلفيا",
@@ -4025,7 +4074,7 @@
       "source_url": "https://www.ysscores.com/ar/match/5803582/Sanfrecce-Hiroshima-vs-Cerezo-Osaka",
       "kickoff": null,
       "status": "live",
-      "live_minute": "90",
+      "live_minute": "88",
       "teams": {
         "home": {
           "name": "هيروشيما",
@@ -4038,7 +4087,7 @@
       },
       "score": {
         "home": 6,
-        "away": 1
+        "away": 0
       },
       "penalty_score": null,
       "channels": [],
@@ -4134,41 +4183,12 @@
     {
       "day": "today",
       "date": "2026-09-12",
-      "match_id": "5803578",
-      "championship": "الدوري الياباني الممتاز",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17860218241233.png",
-      "round": "الجولة 7",
-      "source_url": "https://www.ysscores.com/ar/match/5803578/Gamba-Osaka-vs-FC-Tokyo",
-      "kickoff": null,
-      "status": "ended",
-      "live_minute": "",
-      "teams": {
-        "home": {
-          "name": "غامبا أوساكا",
-          "logo_url": "https://imgs.ysscores.com/teams/64/1681690370505.png"
-        },
-        "away": {
-          "name": "طوكيو",
-          "logo_url": "https://imgs.ysscores.com/teams/64/5491739531912.png"
-        }
-      },
-      "score": {
-        "home": 0,
-        "away": 2
-      },
-      "penalty_score": null,
-      "channels": [],
-      "commentator": ""
-    },
-    {
-      "day": "today",
-      "date": "2026-09-12",
       "match_id": "5803982",
       "championship": "الدوري البولندي الممتاز",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17851012782760.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5803982/Slask-Wroclaw-vs-Korona-Kielce",
-      "kickoff": "2026-09-12T08:45+03:00",
+      "kickoff": "2026-09-12T15:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4194,7 +4214,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17851012782760.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5803977/Górnik-Zabrze-vs-Lech-Poznan",
-      "kickoff": "2026-09-12T11:30+03:00",
+      "kickoff": "2026-09-12T18:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4220,7 +4240,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17851012782760.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5803985/Zaglebie-Lubin-vs-GKS-Katowice",
-      "kickoff": "2026-09-12T14:15+03:00",
+      "kickoff": "2026-09-12T21:15+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4333,7 +4353,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17883482809163.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5831165/Bohemians-Prague-1905-vs-1.FC-Slovacko",
-      "kickoff": "2026-09-12T09:00+03:00",
+      "kickoff": "2026-09-12T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4359,7 +4379,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17883482809163.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5831167/FC-Slovan-Liberec-vs-FK-Mlada-Boleslav",
-      "kickoff": "2026-09-12T09:00+03:00",
+      "kickoff": "2026-09-12T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4385,7 +4405,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17883482809163.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5943692/FC-Zbrojovka-Brno-vs-SK-Artis-Brno",
-      "kickoff": "2026-09-12T09:00+03:00",
+      "kickoff": "2026-09-12T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4411,7 +4431,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17883482809163.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5831170/AC-Sparta-Prague-vs-FK-Jablonec",
-      "kickoff": "2026-09-12T12:00+03:00",
+      "kickoff": "2026-09-12T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4437,7 +4457,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17883477127566.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5845981/SCR-Altach-vs-Grazer-AK-1902",
-      "kickoff": "2026-09-12T11:00+03:00",
+      "kickoff": "2026-09-12T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4463,7 +4483,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17883477127566.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5845986/Wolfsberger-AC-vs-Rapid-Vienna",
-      "kickoff": "2026-09-12T13:30+03:00",
+      "kickoff": "2026-09-12T20:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4515,7 +4535,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870040182345.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5847182/Zenit-St.-Petersburg-vs-Lokomotiv-Moscow",
-      "kickoff": "2026-09-12T09:15+03:00",
+      "kickoff": "2026-09-12T16:15+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4541,7 +4561,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870040182345.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5847177/Dynamo-Moscow-vs-FC-Orenburg",
-      "kickoff": "2026-09-12T11:30+03:00",
+      "kickoff": "2026-09-12T18:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4567,7 +4587,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870040182345.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5847176/CSKA-Moscow-vs-Rubin-Kazan",
-      "kickoff": "2026-09-12T13:45+03:00",
+      "kickoff": "2026-09-12T20:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4593,7 +4613,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019468/Nsingizini-Hotspurs-FC-vs-Scottland-Football-Club",
-      "kickoff": "2026-09-12T09:00+03:00",
+      "kickoff": "2026-09-12T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4619,7 +4639,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019472/African-Stars-Windhoek-vs-AS-Mangasport-Moanda",
-      "kickoff": "2026-09-12T09:00+03:00",
+      "kickoff": "2026-09-12T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4645,7 +4665,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019474/Orlando-Pirates-vs-La-Cure-Sylvester-SC",
-      "kickoff": "2026-09-12T09:00+03:00",
+      "kickoff": "2026-09-12T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4671,7 +4691,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019490/Heegan-FC-vs-El-Merriekh-FC-Bentiu",
-      "kickoff": "2026-09-12T09:00+03:00",
+      "kickoff": "2026-09-12T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4697,7 +4717,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019496/Al-Hilal-Club-(Omdurman)-vs-Aigle-Noir-FC-de-Makamba",
-      "kickoff": "2026-09-12T09:00+03:00",
+      "kickoff": "2026-09-12T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4723,7 +4743,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019518/Power-Dynamos-FC-vs-Al-Merrikh-SC",
-      "kickoff": "2026-09-12T09:00+03:00",
+      "kickoff": "2026-09-12T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4749,7 +4769,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019480/Lijabatho-FC-vs-CFF-Andoharanofotsy",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4775,7 +4795,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019520/TP-Mazembe-vs-Medeama-SC",
-      "kickoff": "2026-09-12T10:00+03:00",
+      "kickoff": "2026-09-12T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4801,7 +4821,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019470/CA-Petróleos-Luanda-vs-UD-Songo",
-      "kickoff": "2026-09-12T11:00+03:00",
+      "kickoff": "2026-09-12T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4827,7 +4847,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019500/Rahimo-FC-vs-MAS-Fès",
-      "kickoff": "2026-09-12T11:00+03:00",
+      "kickoff": "2026-09-12T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4853,7 +4873,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019502/ASEC-Mimosas-vs-ASKO-Kara",
-      "kickoff": "2026-09-12T11:00+03:00",
+      "kickoff": "2026-09-12T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4879,7 +4899,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019482/Young-Africans-SC-vs-Gaborone-United",
-      "kickoff": "2026-09-12T12:00+03:00",
+      "kickoff": "2026-09-12T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4905,7 +4925,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019498/Medina-United-FA-vs-Star-Sport-Academy",
-      "kickoff": "2026-09-12T12:00+03:00",
+      "kickoff": "2026-09-12T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4931,7 +4951,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019522/Djoliba-AC-vs-Club-Africain",
-      "kickoff": "2026-09-12T12:00+03:00",
+      "kickoff": "2026-09-12T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4957,7 +4977,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019488/Zamalek-SC-vs-AS-Port",
-      "kickoff": "2026-09-12T13:00+03:00",
+      "kickoff": "2026-09-12T20:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -4983,7 +5003,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019510/MC-Algiers-vs-ASN-Nigelec",
-      "kickoff": "2026-09-12T15:00+03:00",
+      "kickoff": "2026-09-12T22:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5009,9 +5029,9 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638085806160.png",
       "round": "دور الإقصائيات",
       "source_url": "https://www.ysscores.com/ar/match/54611720/Tusker-FC-vs-Al-Ahli-Wad-Madani",
-      "kickoff": null,
-      "status": "live",
-      "live_minute": "0",
+      "kickoff": "2026-09-12T15:00+03:00",
+      "status": "not_started",
+      "live_minute": "",
       "teams": {
         "home": {
           "name": "توسكر",
@@ -5022,10 +5042,7 @@
           "logo_url": "https://imgs.ysscores.com/teams/64/441755826814.png"
         }
       },
-      "score": {
-        "home": 0,
-        "away": 0
-      },
+      "score": null,
       "penalty_score": null,
       "channels": [],
       "commentator": ""
@@ -5038,7 +5055,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638085806160.png",
       "round": "دور الإقصائيات",
       "source_url": "https://www.ysscores.com/ar/match/77967357/Wolwalo-Adigrat-University-FC-vs-Hilal-Al-Sahil-SC",
-      "kickoff": "2026-09-12T12:00+03:00",
+      "kickoff": "2026-09-12T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5064,7 +5081,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638085806160.png",
       "round": "دور الإقصائيات",
       "source_url": "https://www.ysscores.com/ar/match/13726181/Al-Ahli-SC-Libya-vs-Kikosi-Maalum-cha-Kuzuia-Magendo-FC",
-      "kickoff": "2026-09-12T13:00+03:00",
+      "kickoff": "2026-09-12T20:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5090,7 +5107,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638085806160.png",
       "round": "دور الإقصائيات",
       "source_url": "https://www.ysscores.com/ar/match/31057540/Diambars-de-Saly-FC-vs-ES-Zarzis",
-      "kickoff": "2026-09-12T13:00+03:00",
+      "kickoff": "2026-09-12T20:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5116,7 +5133,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638085806160.png",
       "round": "دور الإقصائيات",
       "source_url": "https://www.ysscores.com/ar/match/60307708/AS-Ali-SabiehDjibouti-Télécom-vs-Zed-FC",
-      "kickoff": "2026-09-12T13:00+03:00",
+      "kickoff": "2026-09-12T20:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5142,7 +5159,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9061752573146.png",
       "round": "الجولة 1",
       "source_url": "https://www.ysscores.com/ar/match/22817636/Al-Jaish-SC-(Iraq)-vs-Al-Hussein-SC-(Baghdad)",
-      "kickoff": "2026-09-12T09:00+03:00",
+      "kickoff": "2026-09-12T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5168,7 +5185,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9061752573146.png",
       "round": "الجولة 1",
       "source_url": "https://www.ysscores.com/ar/match/59046490/Masafi-Al-Junoob-SC-vs-Al-Najaf-FC",
-      "kickoff": "2026-09-12T09:00+03:00",
+      "kickoff": "2026-09-12T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5194,7 +5211,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9061752573146.png",
       "round": "الجولة 1",
       "source_url": "https://www.ysscores.com/ar/match/62693335/Al-Ramadi-FC-vs-Naft-Al-Wassat-SC",
-      "kickoff": "2026-09-12T09:00+03:00",
+      "kickoff": "2026-09-12T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5220,7 +5237,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9061752573146.png",
       "round": "الجولة 1",
       "source_url": "https://www.ysscores.com/ar/match/62945639/Al-Fahad-SC-vs-Masafi-Al-Wasat",
-      "kickoff": "2026-09-12T09:00+03:00",
+      "kickoff": "2026-09-12T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5246,7 +5263,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9061752573146.png",
       "round": "الجولة 1",
       "source_url": "https://www.ysscores.com/ar/match/70731435/Peshmerga-Sulaymaniya-SC-vs-North-Refineries-SC",
-      "kickoff": "2026-09-12T09:00+03:00",
+      "kickoff": "2026-09-12T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5272,7 +5289,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/3411694791422.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5795448/Coventry-City-vs-Brighton-&-Hove-Albion",
-      "kickoff": "2026-09-13T09:00+03:00",
+      "kickoff": "2026-09-13T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5287,10 +5304,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "بي إن سبورت 4"
-      ],
-      "commentator": "محمد بركات"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
@@ -5300,7 +5315,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/3411694791422.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5795452/Manchester-United-vs-Manchester-City",
-      "kickoff": "2026-09-13T11:30+03:00",
+      "kickoff": "2026-09-13T18:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5315,10 +5330,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "بي إن سبورت 1"
-      ],
-      "commentator": "حفيظ دراجي"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
@@ -5328,7 +5341,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8641690196626.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/5868052/Celta-de-Vigo-vs-Málaga-CF",
-      "kickoff": "2026-09-13T08:00+03:00",
+      "kickoff": "2026-09-13T15:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5343,10 +5356,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "بي إن سبورت 5"
-      ],
-      "commentator": "أحمد عبده"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
@@ -5356,7 +5367,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8641690196626.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/5868054/Levante-UD-vs-FC-Barcelona",
-      "kickoff": "2026-09-13T10:15+03:00",
+      "kickoff": "2026-09-13T17:15+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5371,10 +5382,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "بي إن سبورت 2"
-      ],
-      "commentator": "عصام الشوالي"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
@@ -5384,7 +5393,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8641690196626.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/5868053/Getafe-CF-vs-Deportivo-de-La-Coruña",
-      "kickoff": "2026-09-13T12:30+03:00",
+      "kickoff": "2026-09-13T19:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5399,10 +5408,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "بي إن سبورت 5"
-      ],
-      "commentator": "حسن العيدروس"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
@@ -5412,7 +5419,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8641690196626.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/5868058/Real-Sociedad-vs-Atlético-de-Madrid",
-      "kickoff": "2026-09-13T15:00+03:00",
+      "kickoff": "2026-09-13T22:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5438,7 +5445,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6281692568873.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5749675/US-Lecce-vs-AC-Monza",
-      "kickoff": "2026-09-13T09:00+03:00",
+      "kickoff": "2026-09-13T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5453,11 +5460,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "StarzPlay",
-        "تطبيق STC TV"
-      ],
-      "commentator": "غير مدرج"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
@@ -5467,7 +5471,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6281692568873.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5749676/SSC-Napoli-vs-Bologna-FC-1909",
-      "kickoff": "2026-09-13T12:00+03:00",
+      "kickoff": "2026-09-13T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5482,11 +5486,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "StarzPlay",
-        "تطبيق STC TV"
-      ],
-      "commentator": "غير مدرج"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
@@ -5496,7 +5497,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6281692568873.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5749677/US-Sassuolo-vs-Juventus-FC",
-      "kickoff": "2026-09-13T14:45+03:00",
+      "kickoff": "2026-09-13T21:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5522,7 +5523,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6171690288722.png",
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/5881168/RB-Leipzig-vs-Hamburger-SV",
-      "kickoff": "2026-09-13T09:30+03:00",
+      "kickoff": "2026-09-13T16:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5537,10 +5538,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "MBC شاهد | رياضة"
-      ],
-      "commentator": "غير مدرج"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
@@ -5550,7 +5549,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6171690288722.png",
       "round": "الجولة 3",
       "source_url": "https://www.ysscores.com/ar/match/5881163/SV-07-Elversberg-vs-Bayern-Munich",
-      "kickoff": "2026-09-13T11:30+03:00",
+      "kickoff": "2026-09-13T18:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5565,11 +5564,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "MBC Action",
-        "MBC شاهد | رياضة"
-      ],
-      "commentator": "غير مدرج"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
@@ -5579,7 +5575,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9551719862665.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5802932/LOSC-Lille-vs-ESTAC-Troyes",
-      "kickoff": "2026-09-13T09:00+03:00",
+      "kickoff": "2026-09-13T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5594,10 +5590,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "بي إن سبورت 3"
-      ],
-      "commentator": "محمد المبروكي"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
@@ -5607,7 +5601,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9551719862665.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5802931/Le-Mans-FC-vs-RC-Lens",
-      "kickoff": "2026-09-13T11:15+03:00",
+      "kickoff": "2026-09-13T18:15+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5622,10 +5616,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "بي إن سبورت 3"
-      ],
-      "commentator": "نوفل باشي"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
@@ -5635,7 +5627,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9551719862665.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5802929/Stade-Brestois-29-vs-Paris-Saint-Germain",
-      "kickoff": "2026-09-13T14:45+03:00",
+      "kickoff": "2026-09-13T21:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5661,7 +5653,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/5111703719091.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5970143/NEOM-SC-vs-Al-Fateh-SC",
-      "kickoff": "2026-09-13T12:20+03:00",
+      "kickoff": "2026-09-13T19:20+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5676,11 +5668,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "ثمانية 2",
-        "تطبيق ثمانية"
-      ],
-      "commentator": "سعد يحيى"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
@@ -5690,7 +5679,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/5111703719091.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5970136/Al-Diriyah-FC-vs-Abha-Club",
-      "kickoff": "2026-09-13T14:00+03:00",
+      "kickoff": "2026-09-13T21:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5716,7 +5705,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/5111703719091.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5970140/Al-Riyadh-SC-vs-Al-Kholood-Club",
-      "kickoff": "2026-09-13T14:00+03:00",
+      "kickoff": "2026-09-13T21:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5742,7 +5731,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/1191723239247.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/5904744/Genclerbirligi-Ankara-vs-Kasimpasa",
-      "kickoff": "2026-09-13T10:00+03:00",
+      "kickoff": "2026-09-13T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5768,7 +5757,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/1191723239247.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/5904743/Amed-SK-vs-Basaksehir-FK",
-      "kickoff": "2026-09-13T13:00+03:00",
+      "kickoff": "2026-09-13T20:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5794,7 +5783,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/1191723239247.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/5904746/Galatasaray-vs-Kocaelispor",
-      "kickoff": "2026-09-13T13:00+03:00",
+      "kickoff": "2026-09-13T20:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5809,10 +5798,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "بي إن سبورت 2"
-      ],
-      "commentator": "عبدالله الغامدي"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
@@ -5822,7 +5809,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4931702381720.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/34718501/Zakho-SC-vs-Mosul-SC",
-      "kickoff": "2026-09-13T11:45+03:00",
+      "kickoff": "2026-09-13T18:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5837,10 +5824,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "العراقية الرياضية"
-      ],
-      "commentator": "عباس هادي"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
@@ -5850,7 +5835,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4931702381720.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/85204098/Al-Kahrbaa-Club-vs-Al-Minaa-SC",
-      "kickoff": "2026-09-13T11:45+03:00",
+      "kickoff": "2026-09-13T18:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5865,10 +5850,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "العراقية السريانية"
-      ],
-      "commentator": "علي لفته"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
@@ -5878,7 +5861,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4931702381720.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/39193635/Al-Karkh-SC-vs-Duhok-SC",
-      "kickoff": "2026-09-13T14:00+03:00",
+      "kickoff": "2026-09-13T21:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5904,7 +5887,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4931702381720.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/77218729/Naft-Missan-vs-Al-Talaba-SC",
-      "kickoff": "2026-09-13T14:00+03:00",
+      "kickoff": "2026-09-13T21:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5930,7 +5913,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4861690937574.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5836832/Sheffield-United-vs-Wolverhampton-Wanderers",
-      "kickoff": "2026-09-13T07:00+03:00",
+      "kickoff": "2026-09-13T14:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -5945,30 +5928,28 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "بي إن سبورت 2"
-      ],
-      "commentator": "أحمد فؤاد"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
       "date": "2026-09-13",
-      "match_id": "5071363",
+      "match_id": "5071351",
       "championship": "الدوري الأمريكي لكرة القدم",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/671691408606.png",
       "round": "الجولة 25",
-      "source_url": "https://www.ysscores.com/ar/match/5071363/Chicago-Fire-FC-vs-New-England-Revolution",
-      "kickoff": "2026-09-13T17:30+03:00",
+      "source_url": "https://www.ysscores.com/ar/match/5071351/FC-Cincinnati-vs-Charlotte-FC",
+      "kickoff": "2026-09-13T02:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
         "home": {
-          "name": "شيكاغو فاير",
-          "logo_url": "https://imgs.ysscores.com/teams/64/9011691410859.png"
+          "name": "سينسيناتي",
+          "logo_url": "https://imgs.ysscores.com/teams/64/6371691409829.png"
         },
         "away": {
-          "name": "نيو إنجلاند",
-          "logo_url": "https://imgs.ysscores.com/teams/64/611691410629.png"
+          "name": "شارلوت",
+          "logo_url": "https://imgs.ysscores.com/teams/64/4701691409708.png"
         }
       },
       "score": null,
@@ -5979,22 +5960,22 @@
     {
       "day": "tomorrow",
       "date": "2026-09-13",
-      "match_id": "5071364",
+      "match_id": "5071352",
       "championship": "الدوري الأمريكي لكرة القدم",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/671691408606.png",
       "round": "الجولة 25",
-      "source_url": "https://www.ysscores.com/ar/match/5071364/Vancouver-Whitecaps-FC-vs-Austin-FC",
-      "kickoff": "2026-09-13T18:30+03:00",
+      "source_url": "https://www.ysscores.com/ar/match/5071352/Columbus-Crew-vs-New-York-Red-Bulls",
+      "kickoff": "2026-09-13T02:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
         "home": {
-          "name": "فانكوفر",
-          "logo_url": "https://imgs.ysscores.com/teams/64/5091691411892.png"
+          "name": "كولومبوس كرو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/7611691409915.png"
         },
         "away": {
-          "name": "أوستن",
-          "logo_url": "https://imgs.ysscores.com/teams/64/5881691410489.png"
+          "name": "نيويورك ريدبول",
+          "logo_url": "https://imgs.ysscores.com/teams/64/9311691411424.png"
         }
       },
       "score": null,
@@ -6005,22 +5986,256 @@
     {
       "day": "tomorrow",
       "date": "2026-09-13",
-      "match_id": "5071365",
+      "match_id": "5071353",
       "championship": "الدوري الأمريكي لكرة القدم",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/671691408606.png",
       "round": "الجولة 25",
-      "source_url": "https://www.ysscores.com/ar/match/5071365/San-Diego-FC-vs-Philadelphia-Union",
-      "kickoff": "2026-09-13T21:00+03:00",
+      "source_url": "https://www.ysscores.com/ar/match/5071353/D.C.-United-vs-Atlanta-United-FC",
+      "kickoff": "2026-09-13T02:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
         "home": {
-          "name": "سان دييغو",
-          "logo_url": "https://imgs.ysscores.com/teams/64/7471734730240.png"
+          "name": "دي سي يونايتد",
+          "logo_url": "https://imgs.ysscores.com/teams/64/5391691411214.png"
         },
         "away": {
-          "name": "فيلادلفيا",
-          "logo_url": "https://imgs.ysscores.com/teams/64/8641691411510.png"
+          "name": "أتلانتا يونايتد",
+          "logo_url": "https://imgs.ysscores.com/teams/64/5501691410013.png"
+        }
+      },
+      "score": null,
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "tomorrow",
+      "date": "2026-09-13",
+      "match_id": "5071354",
+      "championship": "الدوري الأمريكي لكرة القدم",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/671691408606.png",
+      "round": "الجولة 25",
+      "source_url": "https://www.ysscores.com/ar/match/5071354/Inter-Miami-CF-vs-Nashville-SC",
+      "kickoff": "2026-09-13T02:30+03:00",
+      "status": "not_started",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "إنتر ميامي",
+          "logo_url": "https://imgs.ysscores.com/teams/64/571691409672.png"
+        },
+        "away": {
+          "name": "ناشفيل",
+          "logo_url": "https://imgs.ysscores.com/teams/64/8971691410554.png"
+        }
+      },
+      "score": null,
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "tomorrow",
+      "date": "2026-09-13",
+      "match_id": "5071355",
+      "championship": "الدوري الأمريكي لكرة القدم",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/671691408606.png",
+      "round": "الجولة 25",
+      "source_url": "https://www.ysscores.com/ar/match/5071355/Orlando-City-SC-vs-Toronto-FC",
+      "kickoff": "2026-09-13T02:30+03:00",
+      "status": "not_started",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "أورلاندو سيتي",
+          "logo_url": "https://imgs.ysscores.com/teams/64/6901691410921.png"
+        },
+        "away": {
+          "name": "تورونتو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/6161691411599.png"
+        }
+      },
+      "score": null,
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "tomorrow",
+      "date": "2026-09-13",
+      "match_id": "5071362",
+      "championship": "الدوري الأمريكي لكرة القدم",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/671691408606.png",
+      "round": "الجولة 25",
+      "source_url": "https://www.ysscores.com/ar/match/5071362/St.-Louis-CITY-SC-vs-Minnesota-United-FC",
+      "kickoff": "2026-09-13T03:30+03:00",
+      "status": "not_started",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "سانت لويس",
+          "logo_url": "https://imgs.ysscores.com/teams/64/8261691410367.png"
+        },
+        "away": {
+          "name": "مينيسوتا",
+          "logo_url": "https://imgs.ysscores.com/teams/64/4161691411071.png"
+        }
+      },
+      "score": null,
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "tomorrow",
+      "date": "2026-09-13",
+      "match_id": "5071357",
+      "championship": "الدوري الأمريكي لكرة القدم",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/671691408606.png",
+      "round": "الجولة 25",
+      "source_url": "https://www.ysscores.com/ar/match/5071357/FC-Dallas-vs-Portland-Timbers",
+      "kickoff": "2026-09-13T03:30+03:00",
+      "status": "not_started",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "دالاس",
+          "logo_url": "https://imgs.ysscores.com/teams/64/781691410999.png"
+        },
+        "away": {
+          "name": "بورتلاند تمبرز",
+          "logo_url": "https://imgs.ysscores.com/teams/64/3221691410811.png"
+        }
+      },
+      "score": null,
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "tomorrow",
+      "date": "2026-09-13",
+      "match_id": "5071358",
+      "championship": "الدوري الأمريكي لكرة القدم",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/671691408606.png",
+      "round": "الجولة 25",
+      "source_url": "https://www.ysscores.com/ar/match/5071358/Sporting-Kansas-City-vs-Los-Angeles-FC",
+      "kickoff": "2026-09-13T03:30+03:00",
+      "status": "not_started",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "كانساس سيتي",
+          "logo_url": "https://imgs.ysscores.com/teams/64/4641691408719.png"
+        },
+        "away": {
+          "name": "لوس أنجلوس",
+          "logo_url": "https://imgs.ysscores.com/teams/64/4571691410080.png"
+        }
+      },
+      "score": null,
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "tomorrow",
+      "date": "2026-09-13",
+      "match_id": "5071360",
+      "championship": "الدوري الأمريكي لكرة القدم",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/671691408606.png",
+      "round": "الجولة 25",
+      "source_url": "https://www.ysscores.com/ar/match/5071360/Real-Salt-Lake-City-vs-New-York-City-FC",
+      "kickoff": "2026-09-13T04:30+03:00",
+      "status": "not_started",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "ريال سالت ليك",
+          "logo_url": "https://imgs.ysscores.com/teams/64/9521691410292.png"
+        },
+        "away": {
+          "name": "نيويورك سيتي",
+          "logo_url": "https://imgs.ysscores.com/teams/64/6771691411138.png"
+        }
+      },
+      "score": null,
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "tomorrow",
+      "date": "2026-09-13",
+      "match_id": "5071356",
+      "championship": "الدوري الأمريكي لكرة القدم",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/671691408606.png",
+      "round": "الجولة 25",
+      "source_url": "https://www.ysscores.com/ar/match/5071356/Colorado-Rapids-vs-CF-Montréal",
+      "kickoff": "2026-09-13T04:30+03:00",
+      "status": "not_started",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "كولورادو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/7481691410134.png"
+        },
+        "away": {
+          "name": "مونتريال",
+          "logo_url": "https://imgs.ysscores.com/teams/64/1021691411750.png"
+        }
+      },
+      "score": null,
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "tomorrow",
+      "date": "2026-09-13",
+      "match_id": "5071361",
+      "championship": "الدوري الأمريكي لكرة القدم",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/671691408606.png",
+      "round": "الجولة 25",
+      "source_url": "https://www.ysscores.com/ar/match/5071361/San-Jose-Earthquakes-vs-Houston-Dynamo-FC",
+      "kickoff": "2026-09-13T05:30+03:00",
+      "status": "not_started",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "سان خوسيه",
+          "logo_url": "https://imgs.ysscores.com/teams/64/7781691411961.png"
+        },
+        "away": {
+          "name": "هيوستن دينامو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/121691410757.png"
+        }
+      },
+      "score": null,
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "tomorrow",
+      "date": "2026-09-13",
+      "match_id": "5071359",
+      "championship": "الدوري الأمريكي لكرة القدم",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/671691408606.png",
+      "round": "الجولة 25",
+      "source_url": "https://www.ysscores.com/ar/match/5071359/Los-Angeles-Galaxy-vs-Seattle-Sounders-FC",
+      "kickoff": "2026-09-13T05:30+03:00",
+      "status": "not_started",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "غلاكسي",
+          "logo_url": "https://imgs.ysscores.com/teams/64/1931691410208.png"
+        },
+        "away": {
+          "name": "سياتل",
+          "logo_url": "https://imgs.ysscores.com/teams/64/241740040401.png"
         }
       },
       "score": null,
@@ -6036,7 +6251,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/2571696547488.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5781745/Excelsior-Rotterdam-vs-FC-Utrecht",
-      "kickoff": "2026-09-13T06:15+03:00",
+      "kickoff": "2026-09-13T13:15+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6062,7 +6277,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/2571696547488.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5781744/SC-Heerenveen-vs-SC-Telstar",
-      "kickoff": "2026-09-13T08:30+03:00",
+      "kickoff": "2026-09-13T15:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6088,7 +6303,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/2571696547488.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5781749/PEC-Zwolle-vs-Feyenoord-Rotterdam",
-      "kickoff": "2026-09-13T10:45+03:00",
+      "kickoff": "2026-09-13T17:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6114,7 +6329,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/2571696547488.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5781743/PSV-Eindhoven-vs-Sparta-Rotterdam",
-      "kickoff": "2026-09-13T14:00+03:00",
+      "kickoff": "2026-09-13T21:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6140,7 +6355,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/7301690383928.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5887628/FC-Arouca-vs-CD-Santa-Clara",
-      "kickoff": "2026-09-13T13:00+03:00",
+      "kickoff": "2026-09-13T20:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6166,7 +6381,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/7301690383928.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5887635/SL-Benfica-vs-Gil-Vicente-FC",
-      "kickoff": "2026-09-13T13:00+03:00",
+      "kickoff": "2026-09-13T20:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6192,7 +6407,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/7301690383928.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5887631/FC-Famalicão-vs-Sporting-CP",
-      "kickoff": "2026-09-13T15:30+03:00",
+      "kickoff": "2026-09-13T22:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6218,7 +6433,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9251692797287.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5811760/Club-Brugge-KV-vs-Royal-Antwerp-FC",
-      "kickoff": "2026-09-13T07:30+03:00",
+      "kickoff": "2026-09-13T14:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6244,7 +6459,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9251692797287.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5811761/KRC-Genk-vs-KAA-Gent",
-      "kickoff": "2026-09-13T10:00+03:00",
+      "kickoff": "2026-09-13T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6270,7 +6485,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9251692797287.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5811762/Zulte-Waregem-vs-Royal-Charleroi-SC",
-      "kickoff": "2026-09-13T12:30+03:00",
+      "kickoff": "2026-09-13T19:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6296,7 +6511,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/9251692797287.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5811763/RAAL-La-Louvière-vs-KV-Kortrijk",
-      "kickoff": "2026-09-13T13:15+03:00",
+      "kickoff": "2026-09-13T20:15+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6322,7 +6537,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6601696547585.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5739508/Lyngby-Boldklub-vs-Sönderjyske-Fodbold",
-      "kickoff": "2026-09-13T08:00+03:00",
+      "kickoff": "2026-09-13T15:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6348,7 +6563,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6601696547585.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5739510/Silkeborg-IF-vs-Viborg-FF",
-      "kickoff": "2026-09-13T08:00+03:00",
+      "kickoff": "2026-09-13T15:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6374,7 +6589,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6601696547585.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5739507/Randers-FC-vs-Odense-Boldklub",
-      "kickoff": "2026-09-13T10:00+03:00",
+      "kickoff": "2026-09-13T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6400,7 +6615,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/6601696547585.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5739511/FC-Nordsjaelland-vs-Aarhus-GF",
-      "kickoff": "2026-09-13T12:00+03:00",
+      "kickoff": "2026-09-13T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6426,7 +6641,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8761754000394.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5943248/Kalamata-FC-vs-Volos-NPS",
-      "kickoff": "2026-09-13T11:00+03:00",
+      "kickoff": "2026-09-13T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6452,7 +6667,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8761754000394.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5943246/Asteras-Aktor-vs-AEK-Athens",
-      "kickoff": "2026-09-13T12:00+03:00",
+      "kickoff": "2026-09-13T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6478,7 +6693,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8761754000394.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5943249/AE-Kifisia-vs-APO-Levadiakos",
-      "kickoff": "2026-09-13T14:00+03:00",
+      "kickoff": "2026-09-13T21:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6504,7 +6719,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8761754000394.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5943252/PAOK-Thessaloniki-vs-Aris-Thessaloniki",
-      "kickoff": "2026-09-13T14:00+03:00",
+      "kickoff": "2026-09-13T21:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6530,7 +6745,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/8761754000394.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/5943251/Panathinaikos-FC-vs-Panetolikos",
-      "kickoff": "2026-09-13T14:30+03:00",
+      "kickoff": "2026-09-13T21:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6551,12 +6766,90 @@
     {
       "day": "tomorrow",
       "date": "2026-09-13",
+      "match_id": "5103627",
+      "championship": "الدوري البرازيلي",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/1611696522405.png",
+      "round": "الجولة 27",
+      "source_url": "https://www.ysscores.com/ar/match/5103627/Sociedade-Esportiva-Palmeiras-vs-São-Paulo-Futebol-Clube",
+      "kickoff": "2026-09-13T00:30+03:00",
+      "status": "not_started",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "بالميراس",
+          "logo_url": "https://imgs.ysscores.com/teams/64/7971691418711.png"
+        },
+        "away": {
+          "name": "ساو باولو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/3781691418711.png"
+        }
+      },
+      "score": null,
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "tomorrow",
+      "date": "2026-09-13",
+      "match_id": "5103625",
+      "championship": "الدوري البرازيلي",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/1611696522405.png",
+      "round": "الجولة 27",
+      "source_url": "https://www.ysscores.com/ar/match/5103625/Botafogo-de-Futebol-e-Regatas-vs-Red-Bull-Bragantino",
+      "kickoff": "2026-09-13T02:30+03:00",
+      "status": "not_started",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "بوتافوغو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/2731691418709.png"
+        },
+        "away": {
+          "name": "براغانتينو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/4731690370563.png"
+        }
+      },
+      "score": null,
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "tomorrow",
+      "date": "2026-09-13",
+      "match_id": "5103626",
+      "championship": "الدوري البرازيلي",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/1611696522405.png",
+      "round": "الجولة 27",
+      "source_url": "https://www.ysscores.com/ar/match/5103626/Santos-FC-vs-Cruzeiro-Esporte-Clube",
+      "kickoff": "2026-09-13T03:00+03:00",
+      "status": "not_started",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "سانتوس",
+          "logo_url": "https://imgs.ysscores.com/teams/64/241691418709.png"
+        },
+        "away": {
+          "name": "كروزيرو",
+          "logo_url": "https://imgs.ysscores.com/teams/64/1871690370540.png"
+        }
+      },
+      "score": null,
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "tomorrow",
+      "date": "2026-09-13",
       "match_id": "5103628",
       "championship": "الدوري البرازيلي",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/1611696522405.png",
       "round": "الجولة 27",
       "source_url": "https://www.ysscores.com/ar/match/5103628/Mirassol-Futebol-Clube-(SP)-vs-Esporte-Clube-Vitória",
-      "kickoff": "2026-09-13T15:00+03:00",
+      "kickoff": "2026-09-13T22:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6582,7 +6875,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/1611696522405.png",
       "round": "الجولة 27",
       "source_url": "https://www.ysscores.com/ar/match/5103624/CR-Flamengo-vs-Sport-Club-Corinthians-Paulista",
-      "kickoff": "2026-09-13T16:30+03:00",
+      "kickoff": "2026-09-13T23:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6603,12 +6896,38 @@
     {
       "day": "tomorrow",
       "date": "2026-09-13",
+      "match_id": "5116006",
+      "championship": "دوري الدرجة الأولى الأرجنتيني",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17693689565274.png",
+      "round": "الجولة 9",
+      "source_url": "https://www.ysscores.com/ar/match/5116006/CA-Talleres-vs-CA-Unión-(Santa-Fe)",
+      "kickoff": "2026-09-13T02:00+03:00",
+      "status": "not_started",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "تاليريس",
+          "logo_url": "https://imgs.ysscores.com/teams/64/2661711809310.png"
+        },
+        "away": {
+          "name": "سانتا في",
+          "logo_url": "https://imgs.ysscores.com/teams/64/3311717935522.png"
+        }
+      },
+      "score": null,
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "tomorrow",
+      "date": "2026-09-13",
       "match_id": "5116005",
       "championship": "دوري الدرجة الأولى الأرجنتيني",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17693689565274.png",
       "round": "الجولة 9",
       "source_url": "https://www.ysscores.com/ar/match/5116005/CA-Sarmiento-(Junin)-vs-Club-Atlético-Belgrano",
-      "kickoff": "2026-09-13T13:45+03:00",
+      "kickoff": "2026-09-13T20:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6634,7 +6953,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17693689565274.png",
       "round": "الجولة 9",
       "source_url": "https://www.ysscores.com/ar/match/5116007/Club-Atlético-Tigre-vs-CA-Rosario-Central",
-      "kickoff": "2026-09-13T13:45+03:00",
+      "kickoff": "2026-09-13T20:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6660,7 +6979,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17693689565274.png",
       "round": "الجولة 9",
       "source_url": "https://www.ysscores.com/ar/match/5115993/AA-Argentinos-Juniors-vs-Club-de-Gimnasia-y-Esgrima-La-Plata",
-      "kickoff": "2026-09-13T16:00+03:00",
+      "kickoff": "2026-09-13T23:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6681,64 +7000,12 @@
     {
       "day": "tomorrow",
       "date": "2026-09-13",
-      "match_id": "5116001",
-      "championship": "دوري الدرجة الأولى الأرجنتيني",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17693689565274.png",
-      "round": "الجولة 9",
-      "source_url": "https://www.ysscores.com/ar/match/5116001/CA-Independiente-vs-CA-San-Lorenzo-de-Almagro",
-      "kickoff": "2026-09-13T18:15+03:00",
-      "status": "not_started",
-      "live_minute": "",
-      "teams": {
-        "home": {
-          "name": "إنديبندينتي",
-          "logo_url": "https://imgs.ysscores.com/teams/64/1241723538068.png"
-        },
-        "away": {
-          "name": "سان لورينزو",
-          "logo_url": "https://imgs.ysscores.com/teams/64/8421711808886.png"
-        }
-      },
-      "score": null,
-      "penalty_score": null,
-      "channels": [],
-      "commentator": ""
-    },
-    {
-      "day": "tomorrow",
-      "date": "2026-09-13",
-      "match_id": "5116000",
-      "championship": "دوري الدرجة الأولى الأرجنتيني",
-      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17693689565274.png",
-      "round": "الجولة 9",
-      "source_url": "https://www.ysscores.com/ar/match/5116000/CA-Huracán-vs-Racing-Club",
-      "kickoff": "2026-09-13T20:30+03:00",
-      "status": "not_started",
-      "live_minute": "",
-      "teams": {
-        "home": {
-          "name": "أوراكان",
-          "logo_url": "https://imgs.ysscores.com/teams/64/2031717933556.png"
-        },
-        "away": {
-          "name": "راسينغ",
-          "logo_url": "https://imgs.ysscores.com/teams/64/2551715593780.png"
-        }
-      },
-      "score": null,
-      "penalty_score": null,
-      "channels": [],
-      "commentator": ""
-    },
-    {
-      "day": "tomorrow",
-      "date": "2026-09-13",
       "match_id": "5804265",
       "championship": "دوري السوبر السويسري",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/641753995259.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5804265/FC-Zürich-vs-FC-Vaduz",
-      "kickoff": "2026-09-13T08:00+03:00",
+      "kickoff": "2026-09-13T15:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6764,7 +7031,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/641753995259.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5804266/FC-Lausanne-Sport-vs-Servette-FC",
-      "kickoff": "2026-09-13T10:30+03:00",
+      "kickoff": "2026-09-13T17:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6790,7 +7057,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/641753995259.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5804267/FC-Luzern-vs-FC-Basel-1893",
-      "kickoff": "2026-09-13T10:30+03:00",
+      "kickoff": "2026-09-13T17:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6816,7 +7083,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/5641693174914.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/91699516/Jeunesse-Sportive-Omrane-vs-Etoile-Sportive-Metlaoui",
-      "kickoff": "2026-09-13T11:00+03:00",
+      "kickoff": "2026-09-13T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6842,7 +7109,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/5641693174914.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/57560382/CS-Hammam-Lif-vs-Esperance-Tunis",
-      "kickoff": "2026-09-13T11:00+03:00",
+      "kickoff": "2026-09-13T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6868,7 +7135,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/5641693174914.png",
       "round": "الجولة 4",
       "source_url": "https://www.ysscores.com/ar/match/96085704/Olympique-Beja-vs-Progrès-Sportif-Sakiet-Eddaier",
-      "kickoff": "2026-09-13T11:00+03:00",
+      "kickoff": "2026-09-13T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6894,7 +7161,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4661694112676.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/67028439/Hajer-Club-vs-Al-Jabalain-FC",
-      "kickoff": "2026-09-13T11:30+03:00",
+      "kickoff": "2026-09-13T18:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6909,10 +7176,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "تطبيق ثمانية"
-      ],
-      "commentator": "غير مدرج"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
@@ -6922,7 +7187,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4661694112676.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/23853200/Al-Saqer-FC-vs-Al-Anwar-Club",
-      "kickoff": "2026-09-13T11:50+03:00",
+      "kickoff": "2026-09-13T18:50+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6937,10 +7202,8 @@
       },
       "score": null,
       "penalty_score": null,
-      "channels": [
-        "تطبيق ثمانية"
-      ],
-      "commentator": "غير مدرج"
+      "channels": [],
+      "commentator": ""
     },
     {
       "day": "tomorrow",
@@ -6950,7 +7213,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/4661694112676.png",
       "round": "الجولة 5",
       "source_url": "https://www.ysscores.com/ar/match/89561561/Al-Tai-FC-vs-Al-Zulfi-SFC",
-      "kickoff": "2026-09-13T13:20+03:00",
+      "kickoff": "2026-09-13T20:20+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -6976,7 +7239,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870045308225.png",
       "round": "الجولة 21",
       "source_url": "https://www.ysscores.com/ar/match/5105008/Viking-FK-vs-Kristiansund-BK",
-      "kickoff": "2026-09-13T08:30+03:00",
+      "kickoff": "2026-09-13T15:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7002,7 +7265,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870045308225.png",
       "round": "الجولة 21",
       "source_url": "https://www.ysscores.com/ar/match/5105001/IK-Start-vs-SK-Brann",
-      "kickoff": "2026-09-13T11:00+03:00",
+      "kickoff": "2026-09-13T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7028,7 +7291,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870045308225.png",
       "round": "الجولة 21",
       "source_url": "https://www.ysscores.com/ar/match/5105006/Hamarkameratene-vs-Molde-FK",
-      "kickoff": "2026-09-13T11:00+03:00",
+      "kickoff": "2026-09-13T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7054,7 +7317,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870045308225.png",
       "round": "الجولة 21",
       "source_url": "https://www.ysscores.com/ar/match/5105007/KFUM-Kameratene-Oslo-vs-Aalesunds-FK",
-      "kickoff": "2026-09-13T11:00+03:00",
+      "kickoff": "2026-09-13T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7080,7 +7343,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870045308225.png",
       "round": "الجولة 21",
       "source_url": "https://www.ysscores.com/ar/match/5105004/Fredrikstad-FK-vs-Sarpsborg-08-FF",
-      "kickoff": "2026-09-13T13:15+03:00",
+      "kickoff": "2026-09-13T20:15+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7106,7 +7369,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17753016896749.png",
       "round": "الجولة 21",
       "source_url": "https://www.ysscores.com/ar/match/5107599/Hammarby-IF-vs-IF-Brommapojkarna",
-      "kickoff": "2026-09-13T08:00+03:00",
+      "kickoff": "2026-09-13T15:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7132,7 +7395,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17753016896749.png",
       "round": "الجولة 21",
       "source_url": "https://www.ysscores.com/ar/match/5107603/IF-Elfsborg-vs-Kalmar-FF",
-      "kickoff": "2026-09-13T08:00+03:00",
+      "kickoff": "2026-09-13T15:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7158,7 +7421,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17753016896749.png",
       "round": "الجولة 21",
       "source_url": "https://www.ysscores.com/ar/match/5107602/Malmö-FF-vs-Örgryte-IS",
-      "kickoff": "2026-09-13T10:30+03:00",
+      "kickoff": "2026-09-13T17:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7184,7 +7447,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17883469647094.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5765926/NK-Istra-1961-vs-NK-Rudes",
-      "kickoff": "2026-09-13T11:00+03:00",
+      "kickoff": "2026-09-13T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7210,7 +7473,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17883469647094.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5765925/HNK-Hajduk-Split-vs-Slaven-Belupo-Koprivnica",
-      "kickoff": "2026-09-13T14:00+03:00",
+      "kickoff": "2026-09-13T21:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7236,7 +7499,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17860218241233.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5803585/Tokyo-Verdy-vs-JEF-United-Chiba",
-      "kickoff": "2026-09-13T05:00+03:00",
+      "kickoff": "2026-09-13T12:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7262,7 +7525,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17860218241233.png",
       "round": "الجولة 7",
       "source_url": "https://www.ysscores.com/ar/match/5803584/Urawa-Red-Diamonds-vs-Fagiano-Okayama",
-      "kickoff": "2026-09-13T05:30+03:00",
+      "kickoff": "2026-09-13T12:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7288,7 +7551,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17851012782760.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5803984/Wisla-Plock-vs-Cracovia",
-      "kickoff": "2026-09-13T06:15+03:00",
+      "kickoff": "2026-09-13T13:15+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7314,7 +7577,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17851012782760.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5803979/Pogon-Szczecin-vs-Wieczysta-Krakow",
-      "kickoff": "2026-09-13T08:45+03:00",
+      "kickoff": "2026-09-13T15:45+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7340,7 +7603,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17851012782760.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5803978/Legia-Warszawa-vs-Widzew-Lodz",
-      "kickoff": "2026-09-13T11:30+03:00",
+      "kickoff": "2026-09-13T18:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7361,22 +7624,22 @@
     {
       "day": "tomorrow",
       "date": "2026-09-13",
-      "match_id": "5830905",
+      "match_id": "5830903",
       "championship": "الدوري المكسيكي الممتاز",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870051622077.png",
       "round": "الجولة 8",
-      "source_url": "https://www.ysscores.com/ar/match/5830905/Santos-Laguna-vs-FC-Juárez",
-      "kickoff": "2026-09-13T21:00+03:00",
+      "source_url": "https://www.ysscores.com/ar/match/5830903/Deportivo-Toluca-vs-Atlas-Guadalajara",
+      "kickoff": "2026-09-13T02:05+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
         "home": {
-          "name": "سانتوس لاغونا",
-          "logo_url": "https://imgs.ysscores.com/teams/64/2891722734291.png"
+          "name": "تولكا",
+          "logo_url": "https://imgs.ysscores.com/teams/64/6661718133451.png"
         },
         "away": {
-          "name": "خواريز",
-          "logo_url": "https://imgs.ysscores.com/teams/64/2681716208505.png"
+          "name": "أطلس",
+          "logo_url": "https://imgs.ysscores.com/teams/64/4331722759929.png"
         }
       },
       "score": null,
@@ -7387,22 +7650,48 @@
     {
       "day": "tomorrow",
       "date": "2026-09-13",
-      "match_id": "5830904",
+      "match_id": "5830906",
       "championship": "الدوري المكسيكي الممتاز",
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870051622077.png",
       "round": "الجولة 8",
-      "source_url": "https://www.ysscores.com/ar/match/5830904/Deportivo-Guadalajara-vs-UNAM-Pumas",
-      "kickoff": "2026-09-13T21:07+03:00",
+      "source_url": "https://www.ysscores.com/ar/match/5830906/CF-Monterrey-vs-Tigres-UANL",
+      "kickoff": "2026-09-13T04:10+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
         "home": {
-          "name": "غوادالاخارا",
-          "logo_url": "https://imgs.ysscores.com/teams/64/6241690370508.png"
+          "name": "مونتيري",
+          "logo_url": "https://imgs.ysscores.com/teams/64/2211709821895.png"
         },
         "away": {
-          "name": "بوماس",
-          "logo_url": "https://imgs.ysscores.com/teams/64/541722733792.png"
+          "name": "تايجرز أونال",
+          "logo_url": "https://imgs.ysscores.com/teams/64/3241709822141.png"
+        }
+      },
+      "score": null,
+      "penalty_score": null,
+      "channels": [],
+      "commentator": ""
+    },
+    {
+      "day": "tomorrow",
+      "date": "2026-09-13",
+      "match_id": "5830902",
+      "championship": "الدوري المكسيكي الممتاز",
+      "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870051622077.png",
+      "round": "الجولة 8",
+      "source_url": "https://www.ysscores.com/ar/match/5830902/CD-Cruz-Azul-vs-CF-América",
+      "kickoff": "2026-09-13T06:15+03:00",
+      "status": "not_started",
+      "live_minute": "",
+      "teams": {
+        "home": {
+          "name": "كروز أزول",
+          "logo_url": "https://imgs.ysscores.com/teams/64/3351722759708.png"
+        },
+        "away": {
+          "name": "كلوب أمريكا",
+          "logo_url": "https://imgs.ysscores.com/teams/64/7881703173149.png"
         }
       },
       "score": null,
@@ -7418,7 +7707,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17883482809163.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5831168/FC-Banik-Ostrava-vs-FK-Pardubice",
-      "kickoff": "2026-09-13T07:00+03:00",
+      "kickoff": "2026-09-13T14:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7444,7 +7733,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17883482809163.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5831169/FC-Viktoria-Plzen-vs-SK-Sigma-Olomouc",
-      "kickoff": "2026-09-13T09:00+03:00",
+      "kickoff": "2026-09-13T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7470,7 +7759,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17883482809163.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5831172/FC-Zlin-vs-FC-Hradec-Kralove",
-      "kickoff": "2026-09-13T09:00+03:00",
+      "kickoff": "2026-09-13T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7496,7 +7785,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17883482809163.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5831171/FK-Teplice-vs-SK-Slavia-Prague",
-      "kickoff": "2026-09-13T12:00+03:00",
+      "kickoff": "2026-09-13T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7522,7 +7811,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17883477127566.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5845982/Austria-Vienna-vs-SC-Austria-Lustenau",
-      "kickoff": "2026-09-13T08:30+03:00",
+      "kickoff": "2026-09-13T15:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7548,7 +7837,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17883477127566.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5845985/WSG-Tirol-vs-TSV-Hartberg",
-      "kickoff": "2026-09-13T08:30+03:00",
+      "kickoff": "2026-09-13T15:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7574,7 +7863,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17883477127566.png",
       "round": "الجولة 6",
       "source_url": "https://www.ysscores.com/ar/match/5845984/SK-Sturm-Graz-vs-LASK",
-      "kickoff": "2026-09-13T11:00+03:00",
+      "kickoff": "2026-09-13T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7600,7 +7889,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870040182345.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5847175/Akhmat-Grozny-vs-Dinamo-Makhachkala",
-      "kickoff": "2026-09-13T07:30+03:00",
+      "kickoff": "2026-09-13T14:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7626,7 +7915,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870040182345.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5847181/Spartak-Moscow-vs-FC-Rostov",
-      "kickoff": "2026-09-13T10:00+03:00",
+      "kickoff": "2026-09-13T17:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7652,7 +7941,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17870040182345.png",
       "round": "الجولة 8",
       "source_url": "https://www.ysscores.com/ar/match/5847179/FC-Krasnodar-vs-Akron-Togliatti",
-      "kickoff": "2026-09-13T12:30+03:00",
+      "kickoff": "2026-09-13T19:30+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7678,7 +7967,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019478/Simba-SC-vs-Mighty-Wanderers-FC",
-      "kickoff": "2026-09-13T09:00+03:00",
+      "kickoff": "2026-09-13T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7704,7 +7993,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019484/Kikosi-cha-Valantia-Zanzibar-Sports-Club-vs-Asswehly-SC",
-      "kickoff": "2026-09-13T09:00+03:00",
+      "kickoff": "2026-09-13T16:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7730,7 +8019,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019512/Rivers-United-FC-vs-FC-San-Pedro",
-      "kickoff": "2026-09-13T11:00+03:00",
+      "kickoff": "2026-09-13T18:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7756,7 +8045,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019494/Sidama-Bunna-FC-vs-FC-Aiglons-(Tchad)",
-      "kickoff": "2026-09-13T12:00+03:00",
+      "kickoff": "2026-09-13T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7782,7 +8071,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019506/Stade-Malien-vs-Colombe-Sportive-du-Dja-et-Lobo",
-      "kickoff": "2026-09-13T12:00+03:00",
+      "kickoff": "2026-09-13T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7808,7 +8097,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019516/Horoya-AC-vs-JS-Saoura",
-      "kickoff": "2026-09-13T12:00+03:00",
+      "kickoff": "2026-09-13T19:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7834,7 +8123,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019492/Pyramids-FC-vs-Gor-Mahia-Nairobi",
-      "kickoff": "2026-09-13T13:00+03:00",
+      "kickoff": "2026-09-13T20:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7860,7 +8149,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019504/Teungueth-Football-Club-club-vs-FC-Canchungo",
-      "kickoff": "2026-09-13T13:00+03:00",
+      "kickoff": "2026-09-13T20:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7886,7 +8175,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638081961987.png",
       "round": "الدور الأول",
       "source_url": "https://www.ysscores.com/ar/match/6019514/FC-Nouadhibou-vs-Vipers-SC",
-      "kickoff": "2026-09-13T13:00+03:00",
+      "kickoff": "2026-09-13T20:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {
@@ -7912,7 +8201,7 @@
       "championship_logo_url": "https://imgs.ysscores.com/championship/48/17638085806160.png",
       "round": "دور الإقصائيات",
       "source_url": "https://www.ysscores.com/ar/match/17557193/CS-Sfaxien-vs-Shooting-Stars-Sports-Club",
-      "kickoff": "2026-09-13T13:00+03:00",
+      "kickoff": "2026-09-13T20:00+03:00",
       "status": "not_started",
       "live_minute": "",
       "teams": {

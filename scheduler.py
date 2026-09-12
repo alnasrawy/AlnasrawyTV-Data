@@ -29,6 +29,7 @@ from typing import Callable, Optional, Protocol
 from zoneinfo import ZoneInfo
 
 from data_layer.fetcher import Fetcher
+from data_layer.filters import filter_championships
 from data_layer.main import load_day
 from data_layer.models import Match, Team
 from data_layer.parser import parse_fixtures_html, parse_match_details_html
@@ -93,7 +94,7 @@ class SiteFetcher:
         """Yesterday + today + tomorrow, each fully enriched (details)."""
         out: list[Match] = []
         for day in (ref_date - timedelta(days=1), ref_date, ref_date + timedelta(days=1)):
-            for champ in load_day(self._fetcher, day):
+            for champ in filter_championships(load_day(self._fetcher, day)):
                 out.extend(champ.matches)
         return out
 
@@ -107,7 +108,7 @@ class SiteFetcher:
                 if day == today
                 else self._fetcher.fetch_matches_html_for_date(day)
             )
-            for champ in parse_fixtures_html(html, day):
+            for champ in filter_championships(parse_fixtures_html(html, day)):
                 for m in champ.matches:
                     out[m.match_id] = m
         return out
@@ -358,6 +359,11 @@ class Scheduler:
                 m.status = lm.status
                 m.score = lm.score
                 m.live_minute = lm.live_minute
+
+        # Drop adopted stubs that the (popular-filtered) fresh list no longer
+        # returns — keeps an older stored plan from leaking small leagues.
+        if light:
+            self._matches = {mid: m for mid, m in self._matches.items() if mid in light}
 
         self._send_prematches(now)
         self._send_fulltimes(now)

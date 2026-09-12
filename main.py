@@ -24,6 +24,7 @@ from pathlib import Path
 from config import config
 from data_layer import config as dl_config
 from data_layer.fetcher import Fetcher
+from data_layer.filters import filter_championships
 from data_layer.main import load_day
 from data_layer.parser import parse_fixtures_html, parse_match_details_html
 from notify import LogPublisher
@@ -186,7 +187,7 @@ def _feed(days: list[tuple[str, date]], out: Path) -> int:
                 championships = parse_fixtures_html(fetcher.fetch_fixtures_html(), day=target)
             else:
                 championships = load_day(fetcher, target, max_details=0)
-            for ch in championships:
+            for ch in filter_championships(championships):
                 for m in ch.matches:
                     collected.append((day_label, target, ch, m))
 
