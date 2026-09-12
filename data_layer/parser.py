@@ -46,6 +46,14 @@ _DISALLOWED_MARK = "ملغي"
 _GOAL_STATUSES = frozenset({"1", "4", "5"})
 _OWN_GOAL_STATUS = "4"
 _PENALTY_STATUS = "5"
+_IGNORED_INFO_LABELS = {
+    "البطولة", "الجولة", "ملعب المباراة", "الحكم", "وقت المباراة",
+    "تاريخ المباراة", "توقيت المباراة", "موعد المباراة", "الأحداث",
+    "الشوط الأول", "الشوط الثاني", "الشوط الثالث", "الشوط الرابع",
+    "الوقت الإضافي", "ركلات الترجيح",
+}
+_NON_COMMENTATOR_VALUES = {"غير محدد", "غير معروف", "لا يوجد", "بدون معلق", "غير متوفر"}
+_SCORE_LINE_RE = re.compile(r"-?\d+\s*-\s*\d+")
 # Penalty events (5) are scored penalties: Philadelphia 5-0 decomposed into
 # 3 classic goals (1) + 2 penalty goals (5).
 
@@ -224,30 +232,49 @@ def _championship_page_url(wrapper: Tag) -> str:
 
 
 def _fill_info_block(match: Match, soup: BeautifulSoup) -> None:
-    for block in soup.select(".match-block-item"):
-        title_el = block.select_one(".section-title")
-        if title_el is None or title_el.get_text(" ", strip=True) != "معلومات اللقاء":
+    for row in soup.select(".match-info-item"):
+        t_el = row.select_one(".title")
+        c_el = row.select_one(".content")
+        if t_el is None or c_el is None:
             continue
-        for row in block.select(".match-info-item"):
-            t_el = row.select_one(".title")
-            if t_el is None:
-                continue
-            label = t_el.get_text(" ", strip=True)
-            content_el = row.select_one(".content")
-            if content_el is None:
-                continue
-            if label == "القناة":
-                for ch in content_el.select("a.channel_info"):
+        title = t_el.get_text(" ", strip=True)
+        content_txt = c_el.get_text(" ", strip=True)
+
+        if title in _IGNORED_INFO_LABELS:
+            if title == "الجولة" and not match.round and content_txt:
+                match.round = content_txt
+            continue
+
+        if title in ("القناة", "القنوات", "القناة الناقلة"):
+            chs = c_el.select("a.channel_info") or c_el.select("a")
+            if chs:
+                for ch in chs:
                     name = ch.get_text(" ", strip=True).strip()
-                    if name and name not in match.channels:
+                    if name and name not in match.channels and name not in _NON_COMMENTATOR_VALUES:
                         match.channels.append(name)
-            elif label == "المعلق":
-                if not match.commentator:
-                    co = content_el.select_one('a[href*="/commentator/"]')
-                    if co is not None:
-                        match.commentator = co.get_text(" ", strip=True).strip()
-            elif label == "الجولة" and not match.round:
-                match.round = content_el.get_text(" ", strip=True).strip()
+            elif content_txt and content_txt not in _NON_COMMENTATOR_VALUES:
+                if content_txt not in match.channels:
+                    match.channels.append(content_txt)
+        elif title in ("المعلق", "المعلقين"):
+            co = c_el.select_one('a[href*="/commentator/"]') or c_el.select_one("a")
+            name = co.get_text(" ", strip=True).strip() if co else content_txt
+            if name and name not in _NON_COMMENTATOR_VALUES and not match.commentator:
+                match.commentator = name
+        else:
+            # Multi-channel layout: the row title IS the channel name and the
+            # row content is its commentator (e.g. "بي إن سبورت 1" / "beIN 4K").
+            # Guard against round/score lines that reuse the same columns.
+            if "مباراة" in title or _SCORE_LINE_RE.search(title):
+                continue
+            if title and title not in match.channels and title not in _NON_COMMENTATOR_VALUES:
+                match.channels.append(title)
+            if (
+                content_txt
+                and content_txt not in _NON_COMMENTATOR_VALUES
+                and not match.commentator
+                and not _SCORE_LINE_RE.search(content_txt)
+            ):
+                match.commentator = content_txt
 
 
 def _extract_goals(soup: BeautifulSoup, match: Match) -> list[GoalEvent]:

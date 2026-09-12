@@ -17,6 +17,7 @@ import json
 import logging
 import os
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
@@ -24,7 +25,7 @@ from config import config
 from data_layer import config as dl_config
 from data_layer.fetcher import Fetcher
 from data_layer.main import load_day
-from data_layer.parser import parse_fixtures_html
+from data_layer.parser import parse_fixtures_html, parse_match_details_html
 from notify import LogPublisher
 from renderer import render_fulltime_image, render_prematch_image
 from scheduler import Scheduler, SchedulerConfig
@@ -169,14 +170,16 @@ def _feed(days: list[tuple[str, date]], out: Path) -> int:
     """Build the public matches.json feed for the companion app.
 
     ``days`` = (day_label, date) list, e.g. [("yesterday", d-1), ("today", d),
-    ("tomorrow", d+1)]. One cheap list fetch per day (no detail pages) keeps
-    the poller light; each match is tagged with its ``day`` label so the app
-    can group them. Committed by the GitHub Actions poller → stable raw URL.
+    ("tomorrow", d+1)]. Each match keeps its ``day`` label so the app can
+    group them. List pages come first (light), then the feed enriches the
+    most relevant matches (live → today's upcoming → tomorrow's upcoming)
+    with their detail pages so channels & commentator are filled for the
+    matches the app actually cares about. Committed by the GitHub poller.
     """
     labels = " ".join(f"{lab}:{day.isoformat()}" for lab, day in days)
-    logger.info("feed [%s] -> %s (list fetches, no details)", labels, out)
+    logger.info("feed [%s] -> %s", labels, out)
 
-    matches = []
+    collected: list[tuple[str, date, object, object]] = []
     with Fetcher() as fetcher:
         for day_label, target in days:
             if target == datetime.now(dl_config.TZ).date():
@@ -185,32 +188,46 @@ def _feed(days: list[tuple[str, date]], out: Path) -> int:
                 championships = load_day(fetcher, target, max_details=0)
             for ch in championships:
                 for m in ch.matches:
-                    score = {"home": m.score.home, "away": m.score.away} if m.score else None
-                    pen = None
-                    if m.penalty_score and any(m.penalty_score):
-                        pen = {"home": m.penalty_score[0], "away": m.penalty_score[1]}
-                    matches.append(
-                        {
-                            "day": day_label,
-                            "date": target.isoformat(),
-                            "match_id": m.match_id,
-                            "championship": ch.name,
-                            "championship_logo_url": ch.logo_url,
-                            "round": m.round,
-                            "source_url": m.source_url,
-                            "kickoff": m.kickoff.isoformat(timespec="minutes") if m.kickoff else None,
-                            "status": m.status,
-                            "live_minute": m.live_minute if m.status == "live" else "",
-                            "teams": {
-                                "home": {"name": m.home.name, "logo_url": m.home.logo_url},
-                                "away": {"name": m.away.name, "logo_url": m.away.logo_url},
-                            },
-                            "score": score,
-                            "penalty_score": pen,
-                            "channels": list(m.channels) if m.channels else [],
-                            "commentator": m.commentator or "",
-                        }
-                    )
+                    collected.append((day_label, target, ch, m))
+
+        candidates = _feed_enrich_candidates(collected)
+        logger.info("feed: enriching %d/%d matches with detail pages",
+                    len(candidates), len(collected))
+        with ThreadPoolExecutor(max_workers=dl_config.MAX_CONCURRENCY) as pool:
+            futures = []
+            for m in candidates:
+                futures.append(pool.submit(_enrich_match, fetcher, m))
+            for future in futures:
+                future.result()  # never raises
+
+    matches = []
+    for day_label, target, ch, m in collected:
+        score = {"home": m.score.home, "away": m.score.away} if m.score else None
+        pen = None
+        if m.penalty_score and any(m.penalty_score):
+            pen = {"home": m.penalty_score[0], "away": m.penalty_score[1]}
+        matches.append(
+            {
+                "day": day_label,
+                "date": target.isoformat(),
+                "match_id": m.match_id,
+                "championship": ch.name,
+                "championship_logo_url": ch.logo_url,
+                "round": m.round,
+                "source_url": m.source_url,
+                "kickoff": m.kickoff.isoformat(timespec="minutes") if m.kickoff else None,
+                "status": m.status,
+                "live_minute": m.live_minute if m.status == "live" else "",
+                "teams": {
+                    "home": {"name": m.home.name, "logo_url": m.home.logo_url},
+                    "away": {"name": m.away.name, "logo_url": m.away.logo_url},
+                },
+                "score": score,
+                "penalty_score": pen,
+                "channels": list(m.channels) if m.channels else [],
+                "commentator": m.commentator or "",
+            }
+        )
 
     payload = {
         "source": "ysscores",
@@ -224,6 +241,42 @@ def _feed(days: list[tuple[str, date]], out: Path) -> int:
     out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"FEED: {len(matches)} matches -> {out}")
     return 0
+
+
+def _feed_enrich_candidates(collected: list[tuple[str, date, object, object]]) -> list:
+    """Pick the matches worth a detail fetch, keeping the poll fast.
+
+    Priority: live games first, then upcoming (soonest kickoff) from today
+    and tomorrow, capped so a full poll stays well under a minute of detail
+    fetches. Finished matches on earlier days only get details when cheap.
+    """
+    now = datetime.now(dl_config.TZ)
+    by_rank: list[tuple[tuple[int, float], object]] = []
+
+    def rank(m) -> tuple[int, float]:
+        if m.status == "live":
+            return (0, 0.0)
+        if m.status == "not_started" and m.kickoff:
+            diff = (m.kickoff - now).total_seconds()
+            bucket = 1 if diff >= 0 else 2
+            return (bucket, m.kickoff.timestamp())
+        return (3, 0.0)
+
+    for day_label, target, ch, m in collected:
+        by_rank.append((rank(m), m))
+
+    by_rank.sort(key=lambda x: x[0])
+    cap = dl_config.FEED_DETAIL_CAP
+    return [m for _, m in by_rank][:cap]
+
+
+def _enrich_match(fetcher: Fetcher, m) -> None:
+    """Fetch one detail page and merge channels/commentator into the Match."""
+    try:
+        html = fetcher.fetch_match_page(m.source_url)
+        parse_match_details_html(m, html)
+    except Exception:
+        logger.exception("feed detail fetch failed for match %s", m.match_id)
 
 
 def _feed_days(spec: str) -> list[tuple[str, date]]:

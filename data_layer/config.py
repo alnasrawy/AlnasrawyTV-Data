@@ -32,6 +32,13 @@ REQUEST_DELAY_RANGE: tuple[float, float] = (1.0, 3.0)
 # Only 1–2 connections in flight at the same time.
 MAX_CONCURRENCY = 2
 
+# ── matches.json feed ───────────────────────────────────────────────────────
+# How many detail pages the poller enriches per feed build (live first, then
+# scheduled soonest). Keeps a full every-10-min cycle well under a minute of
+# extra detail fetches while filling channels/commentator for the matches the
+# app shows. Raise only if the site tolerates it.
+FEED_DETAIL_CAP = 80
+
 # ── Robustness ─────────────────────────────────────────────────────────────
 HTTP_TIMEOUT = 25.0  # seconds, connect+read
 RETRY_MAX_ATTEMPTS = 3
